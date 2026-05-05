@@ -14,6 +14,11 @@ export type ProcessStep = {
   detail: string;
 };
 
+export type Industry = {
+  title: string;
+  slug: string;
+};
+
 export const heroSlides: HeroSlide[] = [
   {
     title: "Hear what matters",
@@ -50,13 +55,31 @@ export const services: Service[] = [
   },
 ];
 
-export const industries = [
-  "Financial services",
-  "Healthcare",
-  "Technology",
-  "Consumer markets",
-  "Energy and infrastructure",
-  "Private equity",
+export const industries: Industry[] = [
+  {
+    title: "Financial services",
+    slug: "financial-services",
+  },
+  {
+    title: "Healthcare",
+    slug: "healthcare",
+  },
+  {
+    title: "Technology",
+    slug: "technology",
+  },
+  {
+    title: "Consumer markets",
+    slug: "consumer-markets",
+  },
+  {
+    title: "Energy and infrastructure",
+    slug: "energy-and-infrastructure",
+  },
+  {
+    title: "Private equity",
+    slug: "private-equity",
+  },
 ];
 
 export const steps: ProcessStep[] = [

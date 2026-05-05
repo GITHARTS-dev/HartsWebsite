@@ -1,30 +1,48 @@
+import Link from "next/link";
+
+import { industries } from "../_data/home-content";
+
 const navItems = [
-  { href: "#services", label: "What We See" },
-  { href: "#process", label: "How We Work" },
-  { href: "#engage", label: "Where We Engage" },
-  { href: "#industries", label: "Industries" },
+  { href: "/#process", label: "How We Work" },
 ];
 
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand" href="#hero" aria-label="HARTS home">
+      <Link className="brand" href="/#hero" aria-label="HARTS home">
         <img src="/harts-logo-mark.svg" alt="HARTS Consulting" />
-      </a>
+      </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <a href={item.href} key={item.href}>
+          <Link href={item.href} key={item.href}>
             {item.label}
-          </a>
+          </Link>
         ))}
+        <div className="nav-menu">
+          <Link
+            aria-haspopup="true"
+            className="nav-menu-trigger"
+            href="/#engage"
+          >
+            Where We Engage
+          </Link>
+          <div className="nav-dropdown" aria-label="Industries">
+            {industries.map((industry) => (
+              <Link href={`/industries/${industry.slug}`} key={industry.slug}>
+                {industry.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Link href="/#services">How we help</Link>
       </nav>
       <div className="header-actions">
-        <a className="outline-button" href="#careers">
+        <Link className="outline-button" href="/#careers">
           Careers
-        </a>
-        <a className="solid-button" href="#contact">
+        </Link>
+        <Link className="solid-button" href="/#contact">
           Connect
-        </a>
+        </Link>
       </div>
     </header>
   );

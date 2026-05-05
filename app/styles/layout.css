@@ -43,6 +43,15 @@
   letter-spacing: 0.01em;
 }
 
+.nav-menu-trigger {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: default;
+  font-family: inherit;
+}
+
 .nav-menu {
   position: relative;
   display: inline-flex;

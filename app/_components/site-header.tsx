@@ -19,13 +19,13 @@ export function SiteHeader() {
           </Link>
         ))}
         <div className="nav-menu">
-          <Link
+          <button
             aria-haspopup="true"
             className="nav-menu-trigger"
-            href="/#engage"
+            type="button"
           >
             Where We Engage
-          </Link>
+          </button>
           <div className="nav-dropdown" aria-label="Industries">
             {industries.map((industry) => (
               <Link href={`/industries/${industry.slug}`} key={industry.slug}>

@@ -40,7 +40,7 @@ export function SiteHeader() {
         <Link className="outline-button" href="/#careers">
           Careers
         </Link>
-        <Link className="solid-button" href="/#contact">
+        <Link className="solid-button" href="/contact">
           Connect
         </Link>
       </div>

@@ -11,7 +11,9 @@
   .intro-band,
   .process-section,
   .engage-section,
-  .contact-section {
+  .contact-section,
+  .contact-grid,
+  .contact-hero {
     grid-template-columns: 1fr;
   }
 
@@ -25,7 +27,9 @@
   }
 
   .service-grid,
-  .metric-grid {
+  .metric-grid,
+  .offices-grid,
+  .locations-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -71,7 +75,9 @@
     right: 24px;
   }
 
-  .contact-form {
+  .contact-form,
+  .offices-grid,
+  .locations-grid {
     grid-template-columns: 1fr;
   }
 

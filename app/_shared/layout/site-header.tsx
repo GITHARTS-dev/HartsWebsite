@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${isHome ? "home-intro-header" : ""}`}>
       <Link className="brand" href="/#hero" aria-label="HARTS home">
-        <img src="/harts-logo-mark.svg" alt="HARTS Consulting" />
+        <img src="/HARTS Consulting LBG.png" alt="HARTS Consulting" />
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         {navItems.map((item) => (

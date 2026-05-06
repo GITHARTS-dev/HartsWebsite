@@ -145,20 +145,17 @@
 
 @media (max-width: 980px) {
   .consulting-section,
-  .premium-contact-section {
+  .footer {
     grid-template-columns: 1fr;
+  }
+
+  .challenge-grid,
+  .choose-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .consulting-visual {
     min-height: 520px;
-  }
-
-  .contact-intro {
-    position: static;
-  }
-
-  .premium-contact-links {
-    max-width: 760px;
   }
 }
 
@@ -166,7 +163,8 @@
   .welcome-screen,
   .consulting-section,
   .vision-statement-section,
-  .premium-contact-section {
+  .home-premium-section,
+  .partner-section {
     padding: 68px 20px;
   }
 
@@ -198,11 +196,34 @@
     padding: 18px;
   }
 
-  .premium-contact-links {
+  .challenge-grid,
+  .choose-grid {
     grid-template-columns: 1fr;
   }
 
-  .contact-link-card {
-    min-height: 148px;
+  .challenge-card:nth-child(2),
+  .challenge-card:nth-child(5) {
+    margin-top: 0;
+  }
+
+  .premium-info-card {
+    min-height: 220px;
+  }
+
+  .partner-actions {
+    width: 100%;
+  }
+
+  .partner-actions .solid-button,
+  .partner-actions .outline-button {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 42px 20px;
+  }
+
+  .footer-social-links {
+    justify-content: flex-start;
   }
 }

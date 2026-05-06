@@ -3,7 +3,8 @@ import Link from "next/link";
 import { industries } from "../_data/home-content";
 
 const navItems = [
-  { href: "/#process", label: "How We Work" },
+  { href: "/how-we-work", label: "How We Work" },
+  { href: "/how-we-help", label: "How We Help" },
 ];
 
 export function SiteHeader() {
@@ -34,7 +35,6 @@ export function SiteHeader() {
             ))}
           </div>
         </div>
-        <Link href="/#services">How we help</Link>
       </nav>
       <div className="header-actions">
         <Link className="outline-button" href="/#careers">

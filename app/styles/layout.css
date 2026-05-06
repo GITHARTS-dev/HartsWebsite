@@ -42,48 +42,117 @@
 .cta-row {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
 }
 
-.primary-nav a,
-.nav-menu-trigger {
-  position: relative;
+/* ── Unified nav pill ─────────────────────────────────── */
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 36px;
+  padding: 0 15px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-family: inherit;
   font-size: 13px;
   font-weight: 650;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 140ms ease,
+    box-shadow 200ms ease;
 }
 
-.primary-nav > a::after,
-.nav-menu-trigger::after {
-  position: absolute;
-  right: 0;
-  bottom: -8px;
-  left: 0;
-  height: 2px;
-  background: var(--gold);
-  opacity: 0;
-  transform: scaleX(0.2);
-  transition: opacity 160ms ease, transform 160ms ease;
+/* ghost hover */
+.nav-pill:hover,
+.nav-pill:focus-visible {
+  background: rgba(10, 10, 10, 0.07);
+  transform: translateY(-1px);
+}
+
+.nav-pill:active {
+  transform: scale(0.96) translateY(0);
+  background: rgba(10, 10, 10, 0.11);
+  transition-duration: 80ms;
+}
+
+/* active route indicator */
+.nav-pill--active {
+  background: rgba(10, 10, 10, 0.07);
+  font-weight: 720;
+}
+
+.nav-pill--active::before {
   content: "";
+  display: block;
+  position: absolute;
+  /* tiny gold dot — positioned via the pill's relative context */
 }
 
-.primary-nav > a:hover::after,
-.primary-nav > a:focus-visible::after,
-.nav-menu:hover .nav-menu-trigger::after,
-.nav-menu:focus-within .nav-menu-trigger::after {
-  opacity: 1;
-  transform: scaleX(1);
+/* outline variant — Careers */
+.nav-pill--outline {
+  border-color: rgba(10, 10, 10, 0.22);
 }
 
+.nav-pill--outline:hover,
+.nav-pill--outline:focus-visible {
+  background: rgba(10, 10, 10, 0.05);
+  border-color: rgba(10, 10, 10, 0.38);
+}
+
+/* solid variant — Connect */
+.nav-pill--solid {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.nav-pill--solid:hover,
+.nav-pill--solid:focus-visible {
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+  box-shadow: 0 8px 24px rgba(10, 10, 10, 0.22);
+}
+
+.nav-pill--solid:active {
+  background: #111;
+  border-color: #111;
+  box-shadow: none;
+}
+
+/* ── Dropdown trigger ─────────────────────────────────── */
 .nav-menu-trigger {
-  padding: 0;
-  border: 0;
-  color: inherit;
-  background: transparent;
-  cursor: default;
-  font-family: inherit;
+  /* inherits all nav-pill styles; just reset browser button defaults */
+  -webkit-appearance: none;
 }
 
+/* open state: trigger gets ghost-active look */
+.nav-menu:hover .nav-menu-trigger,
+.nav-menu:focus-within .nav-menu-trigger {
+  background: rgba(10, 10, 10, 0.07);
+  transform: translateY(-1px);
+}
+
+/* ── Chevron ─────────────────────────────────────────── */
+.nav-chevron {
+  flex-shrink: 0;
+  transition: transform 220ms cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.nav-menu:hover .nav-chevron,
+.nav-menu:focus-within .nav-chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown panel ──────────────────────────────────── */
 .nav-menu {
   position: relative;
   display: inline-flex;
@@ -92,21 +161,26 @@
 
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 10px);
   right: 0;
   display: grid;
-  min-width: 260px;
-  padding: 10px;
+  min-width: 240px;
+  padding: 8px;
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: #fff;
-  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-6px);
-  transition: opacity 160ms ease, transform 160ms ease;
+  transform: translateY(-8px) scale(0.97);
+  transform-origin: top right;
+  transition:
+    opacity 180ms ease,
+    transform 200ms cubic-bezier(0.34, 1.15, 0.64, 1);
 }
 
+/* hover bridge so cursor can travel from trigger to panel */
 .nav-dropdown::before {
   position: absolute;
   right: 0;
@@ -120,20 +194,28 @@
 .nav-menu:focus-within .nav-dropdown {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .nav-dropdown a {
-  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 8px;
   color: #31342f;
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+  font-size: 13.5px;
+  font-weight: 580;
+  transition:
+    background 140ms ease,
+    color 140ms ease,
+    transform 140ms ease;
 }
 
 .nav-dropdown a:hover,
 .nav-dropdown a:focus-visible {
-  color: var(--ink);
   background: #fffce8;
-  transform: translateX(4px);
+  color: var(--ink);
+  transform: translateX(3px);
 }
 
 .footer {

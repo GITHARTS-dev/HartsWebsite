@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
-import { HowWeHelpPage } from "../_components/how-we-help-page";
-import { SiteFooter } from "../_components/site-footer";
-import { SiteHeader } from "../_components/site-header";
+import { PageShell } from "../_components/layout/page-shell";
+import { ServicesOverview } from "../_components/pages/services-overview";
 
 export const metadata: Metadata = {
   title: "How We Help | HARTS",
@@ -12,10 +11,8 @@ export const metadata: Metadata = {
 
 export default function HowWeHelpRoute() {
   return (
-    <>
-      <SiteHeader />
-      <HowWeHelpPage />
-      <SiteFooter />
-    </>
+    <PageShell>
+      <ServicesOverview />
+    </PageShell>
   );
 }

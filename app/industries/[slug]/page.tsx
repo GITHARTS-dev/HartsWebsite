@@ -8,12 +8,11 @@ import {
   HealthcareIndustry,
   PrivateEquityIndustry,
   TechnologyIndustry,
-} from "../../_components/industry-pages";
-import { SiteFooter } from "../../_components/site-footer";
-import { SiteHeader } from "../../_components/site-header";
+} from "../../_components/pages/industry-detail-views";
+import { PageShell } from "../../_components/layout/page-shell";
 import { industries } from "../../_data/home-content";
 
-type IndustryPageProps = {
+type IndustryRouteProps = {
   params: Promise<{
     slug: string;
   }>;
@@ -27,7 +26,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: IndustryPageProps): Promise<Metadata> {
+}: IndustryRouteProps): Promise<Metadata> {
   const { slug } = await params;
   const industry = industries.find((item) => item.slug === slug);
 
@@ -36,7 +35,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function IndustryPage({ params }: IndustryPageProps) {
+export default async function IndustryRoute({ params }: IndustryRouteProps) {
   const { slug } = await params;
   let industryContent;
 
@@ -64,10 +63,8 @@ export default async function IndustryPage({ params }: IndustryPageProps) {
   }
 
   return (
-    <>
-      <SiteHeader />
+    <PageShell>
       {industryContent}
-      <SiteFooter />
-    </>
+    </PageShell>
   );
 }

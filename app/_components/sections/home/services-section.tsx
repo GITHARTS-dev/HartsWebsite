@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { serviceOfferings } from "../_data/services-content";
+import { serviceOfferings } from "../../../_data/services-content";
 
 export function ServicesSection() {
   return (

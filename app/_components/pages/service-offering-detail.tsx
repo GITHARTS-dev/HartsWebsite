@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-import type { ServiceOffering } from "../_data/services-content";
+import type { ServiceOffering } from "../../_data/services-content";
 
-export function ServiceDetailPage({
+export function ServiceOfferingDetail({
   service,
 }: {
   service: ServiceOffering;
 }) {
   return (
-    <main className="service-detail-page">
+    <main className="service-offering-detail">
       <section className="service-detail-hero">
         <div className="service-detail-copy reveal">
           <p className="eyebrow">How We Help</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { hqInfo } from '../_data/connect-content';
+import { hqInfo } from '../../_data/connect-content';
 
 export default function HeadquartersInfo() {
   return (

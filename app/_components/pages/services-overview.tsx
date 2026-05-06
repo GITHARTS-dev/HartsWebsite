@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { serviceOfferings } from "../_data/services-content";
+import { serviceOfferings } from "../../_data/services-content";
 
-export function HowWeHelpPage() {
+export function ServicesOverview() {
   return (
     <main className="help-page">
       <section className="help-hero">

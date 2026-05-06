@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { ServiceDetailPage } from "../../_components/service-detail-page";
-import { SiteFooter } from "../../_components/site-footer";
-import { SiteHeader } from "../../_components/site-header";
+import { PageShell } from "../../_components/layout/page-shell";
+import { ServiceOfferingDetail } from "../../_components/pages/service-offering-detail";
 import { serviceOfferings } from "../../_data/services-content";
 
-type ServicePageProps = {
+type ServiceRouteProps = {
   params: Promise<{
     slug: string;
   }>;
@@ -20,7 +19,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: ServicePageProps): Promise<Metadata> {
+}: ServiceRouteProps): Promise<Metadata> {
   const { slug } = await params;
   const service = serviceOfferings.find((item) => item.slug === slug);
 
@@ -30,7 +29,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function ServicePage({ params }: ServicePageProps) {
+export default async function ServiceOfferingRoute({
+  params,
+}: ServiceRouteProps) {
   const { slug } = await params;
   const service = serviceOfferings.find((item) => item.slug === slug);
 
@@ -39,10 +40,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
   }
 
   return (
-    <>
-      <SiteHeader />
-      <ServiceDetailPage service={service} />
-      <SiteFooter />
-    </>
+    <PageShell>
+      <ServiceOfferingDetail service={service} />
+    </PageShell>
   );
 }

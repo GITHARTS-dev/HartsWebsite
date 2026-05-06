@@ -38,9 +38,32 @@
 
 .primary-nav a,
 .nav-menu-trigger {
+  position: relative;
   font-size: 13px;
   font-weight: 650;
   letter-spacing: 0.01em;
+}
+
+.primary-nav > a::after,
+.nav-menu-trigger::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transform: scaleX(0.2);
+  transition: opacity 160ms ease, transform 160ms ease;
+  content: "";
+}
+
+.primary-nav > a:hover::after,
+.primary-nav > a:focus-visible::after,
+.nav-menu:hover .nav-menu-trigger::after,
+.nav-menu:focus-within .nav-menu-trigger::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .nav-menu-trigger {
@@ -66,6 +89,7 @@
   min-width: 260px;
   padding: 10px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   background: #fff;
   box-shadow: 0 22px 54px rgba(0, 0, 0, 0.14);
   opacity: 0;

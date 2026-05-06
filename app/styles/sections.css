@@ -111,7 +111,7 @@
 }
 
 .section {
-  padding: 96px 5vw;
+  padding: clamp(72px, 8vw, 112px) 5vw;
 }
 
 .intro-band {
@@ -143,6 +143,7 @@
   min-height: 300px;
   padding: 30px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   background: #fff;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
@@ -150,7 +151,7 @@
 .service-card:hover {
   transform: translateY(-8px);
   border-color: var(--ink);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lift);
 }
 
 .service-card span {
@@ -250,7 +251,8 @@
   color: #343834;
   background: #ffffff;
   line-height: 1.6;
-  box-shadow: 0 18px 42px rgba(30, 30, 20, 0.08);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
 }
 
 .engage-section {
@@ -360,6 +362,7 @@
   min-height: 440px;
   overflow: hidden;
   background: #e5e7eb;
+  border-radius: var(--radius-md);
 }
 
 .industry-hero-media img {
@@ -411,12 +414,16 @@
 .contact-hero-media {
   min-height: 320px;
   height: 100%;
-  background: #e5e7eb;
-  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.24)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&q=82");
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+  color: transparent;
   font-size: 14px;
 }
 
@@ -439,13 +446,17 @@
 .form-image {
   margin-top: 32px;
   height: 300px;
-  background: #e5e7eb;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.22)),
+    url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=82");
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+  color: transparent;
   font-size: 14px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 
 .hq-block {
@@ -455,13 +466,17 @@
 
 .hq-image {
   height: 300px;
-  background: #e5e7eb;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.2)),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=82");
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+  color: transparent;
   font-size: 14px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   margin-bottom: 28px;
 }
 
@@ -494,24 +509,29 @@
   background: #fff;
   padding: 24px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .office-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
 .office-image {
   height: 200px;
-  background: #e5e7eb;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.2)),
+    url("https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?auto=format&fit=crop&w=900&q=82");
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+  color: transparent;
   font-size: 12px;
   margin-bottom: 16px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
 }
 
 .office-card h3 {
@@ -542,14 +562,18 @@
 
 .location-image {
   height: 280px;
-  background: #e5e7eb;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.32)),
+    url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=82");
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9ca3af;
+  color: transparent;
   font-size: 14px;
   margin-bottom: 20px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 
 .location-card h3 {
@@ -864,7 +888,7 @@
 
 /* How We Help Pages */
 .help-page,
-.service-detail-page {
+.service-offering-detail {
   background: #fff;
   color: var(--ink);
 }
@@ -948,6 +972,7 @@
   flex-direction: column;
   padding: 24px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: #fff;
   transition:
@@ -959,7 +984,7 @@
 .help-service-card:hover {
   transform: translateY(-8px);
   border-color: var(--ink);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lift);
 }
 
 .help-service-index {
@@ -1027,6 +1052,7 @@
 .service-detail-panel {
   padding: 34px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   background: #fff;
 }
 

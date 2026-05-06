@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
-import { HowWeWorkTimeline } from "../_components/how-we-work-timeline";
-import { SiteFooter } from "../_components/site-footer";
-import { SiteHeader } from "../_components/site-header";
+import { PageShell } from "../_components/layout/page-shell";
+import { HowWeWorkTimeline } from "../_components/sections/work/how-we-work-timeline";
 
 export const metadata: Metadata = {
   title: "How We Work | HARTS",
@@ -10,10 +9,9 @@ export const metadata: Metadata = {
     "Explore the HARTS approach from diagnosis and design through build and sustain.",
 };
 
-export default function HowWeWorkPage() {
+export default function HowWeWorkRoute() {
   return (
-    <>
-      <SiteHeader />
+    <PageShell>
       <main className="work-page">
         <section className="work-hero">
           <div className="work-hero-copy reveal">
@@ -33,9 +31,6 @@ export default function HowWeWorkPage() {
             </div>
           </div>
         </section>
-
-        
-        
 
         <HowWeWorkTimeline />
 
@@ -65,7 +60,6 @@ export default function HowWeWorkPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-    </>
+    </PageShell>
   );
 }

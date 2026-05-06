@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { industries } from "../_data/home-content";
+import { industries } from "../../_data/home-content";
 
 const navItems = [
   { href: "/how-we-work", label: "How We Work" },

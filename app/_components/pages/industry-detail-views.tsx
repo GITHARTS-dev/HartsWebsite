@@ -81,7 +81,7 @@ const industryContent = {
   },
 } satisfies Record<string, IndustryContent>;
 
-function IndustryPageTemplate({ content }: { content: IndustryContent }) {
+function IndustryDetailTemplate({ content }: { content: IndustryContent }) {
   return (
     <main className="industry-page">
       <section className="industry-hero">
@@ -104,25 +104,25 @@ function IndustryPageTemplate({ content }: { content: IndustryContent }) {
 }
 
 export function FinancialServicesIndustry() {
-  return <IndustryPageTemplate content={industryContent.financialServices} />;
+  return <IndustryDetailTemplate content={industryContent.financialServices} />;
 }
 
 export function HealthcareIndustry() {
-  return <IndustryPageTemplate content={industryContent.healthcare} />;
+  return <IndustryDetailTemplate content={industryContent.healthcare} />;
 }
 
 export function TechnologyIndustry() {
-  return <IndustryPageTemplate content={industryContent.technology} />;
+  return <IndustryDetailTemplate content={industryContent.technology} />;
 }
 
 export function ConsumerMarketsIndustry() {
-  return <IndustryPageTemplate content={industryContent.consumerMarkets} />;
+  return <IndustryDetailTemplate content={industryContent.consumerMarkets} />;
 }
 
 export function EnergyInfrastructureIndustry() {
-  return <IndustryPageTemplate content={industryContent.energyInfrastructure} />;
+  return <IndustryDetailTemplate content={industryContent.energyInfrastructure} />;
 }
 
 export function PrivateEquityIndustry() {
-  return <IndustryPageTemplate content={industryContent.privateEquity} />;
+  return <IndustryDetailTemplate content={industryContent.privateEquity} />;
 }

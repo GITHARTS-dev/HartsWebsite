@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import { PageShell } from "../_components/layout/page-shell";
-import { HowWeWorkTimeline } from "../_components/sections/work/how-we-work-timeline";
+import { PageShell } from "../_shared/layout/page-shell";
+import { HowWeWorkTimeline } from "./_components/how-we-work-timeline";
 
 export const metadata: Metadata = {
   title: "How We Work | HARTS",

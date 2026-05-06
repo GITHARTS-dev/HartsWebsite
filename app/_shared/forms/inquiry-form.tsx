@@ -7,7 +7,7 @@ export default function InquiryForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
-    
+
     const formData = new FormData(e.currentTarget);
     const email = formData.get('email');
 
@@ -41,11 +41,11 @@ export default function InquiryForm() {
       ) : (
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={{ display: 'flex', gap: '0.5rem' }}>
-            <input 
-              type="email" 
-              name="email" 
-              placeholder="name@email.com" 
-              required 
+            <input
+              type="email"
+              name="email"
+              placeholder="name@email.com"
+              required
               style={{ flex: 1, padding: '0.75rem', border: '1px solid #d1d5db', borderRadius: '4px' }}
             />
             <button type="submit" className="solid-button" disabled={status === 'submitting'}>

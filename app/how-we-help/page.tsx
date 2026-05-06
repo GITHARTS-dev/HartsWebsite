@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import { PageShell } from "../_components/layout/page-shell";
-import { ServicesOverview } from "../_components/pages/services-overview";
+import { PageShell } from "../_shared/layout/page-shell";
+import { ServicesOverview } from "./_components/services-overview";
 
 export const metadata: Metadata = {
   title: "How We Help | HARTS",

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { PageShell } from "../../_components/layout/page-shell";
-import { ServiceOfferingDetail } from "../../_components/pages/service-offering-detail";
+import { PageShell } from "../../_shared/layout/page-shell";
+import { ServiceOfferingDetail } from "../_components/service-offering-detail";
 import { serviceOfferings } from "../../_data/services-content";
 
 type ServiceRouteProps = {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { heroSlides } from "../_data/home-content";
+import { heroSlides } from "../../../_data/home-content";
 
 export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);

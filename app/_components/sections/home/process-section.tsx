@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { steps } from "../_data/home-content";
+import { steps } from "../../../_data/home-content";
 
 export function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0);

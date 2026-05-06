@@ -1,5 +1,5 @@
 import React from 'react';
-import { globalOffices } from '../_data/connect-content';
+import { globalOffices } from '../../_data/connect-content';
 
 export default function GlobalOffices() {
   return (

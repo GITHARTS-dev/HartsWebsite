@@ -13,7 +13,15 @@
   .engage-section,
   .contact-section,
   .contact-grid,
-  .contact-hero {
+  .contact-hero,
+  .industry-hero,
+  .industry-body,
+  .work-hero,
+  .work-context,
+  .work-outcomes,
+  .help-hero,
+  .service-detail-hero,
+  .service-detail-body {
     grid-template-columns: 1fr;
   }
 
@@ -22,13 +30,23 @@
   }
 
   .hero-media,
-  .process-image {
+  .process-image,
+  .industry-hero-media,
+  .industry-hero-media img,
+  .work-hero-media,
+  .work-context-image,
+  .help-hero-media,
+  .service-detail-media,
+  .service-detail-media img {
     min-height: 520px;
   }
 
   .service-grid,
   .metric-grid,
   .offices-grid,
+  .work-context-grid,
+  .help-service-grid,
+  .service-workflow-grid,
   .locations-grid {
     grid-template-columns: 1fr;
   }
@@ -51,13 +69,37 @@
 
   .hero-copy,
   .section,
-  .contact-section {
+  .contact-section,
+  .industry-hero,
+  .work-hero,
+  .work-context,
+  .work-outcomes,
+  .help-hero,
+  .service-detail-hero,
+  .service-detail-body,
+  .service-workflow {
     padding: 56px 20px;
   }
 
   .hero-media,
-  .process-image {
+  .process-image,
+  .industry-hero-media,
+  .industry-hero-media img,
+  .work-hero-media,
+  .work-context-image,
+  .help-hero-media,
+  .service-detail-media,
+  .service-detail-media img {
     min-height: 440px;
+  }
+
+  .process-section {
+    scroll-margin-top: 68px;
+  }
+
+  .industry-body {
+    gap: 24px;
+    padding: 0 20px 56px;
   }
 
   .media-caption {
@@ -83,5 +125,51 @@
 
   .cta-row {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 760px) {
+  .work-phase,
+  .work-phase-left,
+  .work-phase-right {
+    justify-content: center;
+    padding-inline: 20px;
+    text-align: center;
+    transform: translateY(34px);
+  }
+
+  .work-phase.active {
+    transform: translateY(0);
+  }
+
+  .work-phase-copy {
+    width: min(100%, 430px);
+    padding-top: 148px;
+  }
+
+  .work-phase-left .work-phase-copy > p:last-of-type,
+  .work-phase-left ul,
+  .work-phase-copy > p:last-of-type,
+  .work-phase-copy ul {
+    margin-inline: auto;
+  }
+
+  .work-phase ul {
+    max-width: 360px;
+    text-align: left;
+  }
+
+  .work-phase-left li {
+    padding-right: 0;
+    padding-left: 18px;
+  }
+
+  .work-phase-left li::before {
+    right: auto;
+    left: 0;
+  }
+
+  .work-phase h2 {
+    font-size: clamp(40px, 14vw, 68px);
   }
 }

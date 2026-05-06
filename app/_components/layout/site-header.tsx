@@ -1,9 +1,10 @@
 import Link from "next/link";
 
-import { industries } from "../_data/home-content";
+import { industries } from "../../_data/home-content";
 
 const navItems = [
-  { href: "/#process", label: "How We Work" },
+  { href: "/how-we-work", label: "How We Work" },
+  { href: "/how-we-help", label: "How We Help" },
 ];
 
 export function SiteHeader() {
@@ -19,13 +20,13 @@ export function SiteHeader() {
           </Link>
         ))}
         <div className="nav-menu">
-          <Link
+          <button
             aria-haspopup="true"
             className="nav-menu-trigger"
-            href="/#engage"
+            type="button"
           >
             Where We Engage
-          </Link>
+          </button>
           <div className="nav-dropdown" aria-label="Industries">
             {industries.map((industry) => (
               <Link href={`/industries/${industry.slug}`} key={industry.slug}>
@@ -34,7 +35,6 @@ export function SiteHeader() {
             ))}
           </div>
         </div>
-        <Link href="/#services">How we help</Link>
       </nav>
       <div className="header-actions">
         <Link className="outline-button" href="/#careers">

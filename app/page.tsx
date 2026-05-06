@@ -1,5 +1,10 @@
-import { HomePage } from "./_components/home-page";
+import { PageShell } from "./_components/layout/page-shell";
+import { HomeExperience } from "./_components/pages/home-experience";
 
-export default function Home() {
-  return <HomePage />;
+export default function HomeRoute() {
+  return (
+    <PageShell>
+      <HomeExperience />
+    </PageShell>
+  );
 }

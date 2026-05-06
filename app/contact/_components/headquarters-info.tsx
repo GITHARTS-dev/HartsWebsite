@@ -7,7 +7,7 @@ export default function HeadquartersInfo() {
       <p className="eyebrow" style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: '#6b7280' }}>Connect</p>
       <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>HARTS global headquarters</h2>
       <p style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>{hqInfo.address}</p>
-      
+
       <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
         <li>🔗 {hqInfo.linkedin}</li>
         <li>🏢 {hqInfo.careers}</li>

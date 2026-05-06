@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ContactForm } from "../_components/forms/contact-form";
-import { PageShell } from "../_components/layout/page-shell";
+import { ContactForm } from "./_components/contact-form";
+import { PageShell } from "../_shared/layout/page-shell";
 
 export const metadata: Metadata = {
   title: "Contact Us | HARTS",

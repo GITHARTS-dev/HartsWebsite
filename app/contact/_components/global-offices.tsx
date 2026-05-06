@@ -10,7 +10,7 @@ export default function GlobalOffices() {
       </p>
 
       <p className="eyebrow" style={{ marginBottom: '2rem' }}>Locations</p>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', textAlign: 'left' }}>
         {globalOffices.map((office) => (
           <div key={office.id} className="office-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

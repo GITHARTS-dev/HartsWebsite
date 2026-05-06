@@ -8,8 +8,8 @@ import {
   HealthcareIndustry,
   PrivateEquityIndustry,
   TechnologyIndustry,
-} from "../../_components/pages/industry-detail-views";
-import { PageShell } from "../../_components/layout/page-shell";
+} from "./_components/industry-detail-views";
+import { PageShell } from "../../_shared/layout/page-shell";
 import { industries } from "../../_data/home-content";
 
 type IndustryRouteProps = {

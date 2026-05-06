@@ -15,23 +15,45 @@ export function SiteHeader() {
   const isHome = pathname === "/";
 
   return (
-    <header className={`site-header ${isHome ? "home-intro-header" : ""}`}>
+    <header className={`site-header${isHome ? " home-intro-header" : ""}`}>
       <Link className="brand" href="/#hero" aria-label="HARTS home">
         <img src="/HARTS Consulting LBG.png" alt="HARTS Consulting" />
       </Link>
+
       <nav className="primary-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <Link href={item.href} key={item.href}>
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`nav-pill${pathname.startsWith(item.href) ? " nav-pill--active" : ""}`}
+          >
             {item.label}
           </Link>
         ))}
+
         <div className="nav-menu">
           <button
+            className={`nav-pill nav-menu-trigger${pathname.startsWith("/industries") ? " nav-pill--active" : ""}`}
             aria-haspopup="true"
-            className="nav-menu-trigger"
             type="button"
           >
             Where We Engage
+            <svg
+              className="nav-chevron"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 5l4 4 4-4"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
           <div className="nav-dropdown" aria-label="Industries">
             {industries.map((industry) => (
@@ -42,6 +64,7 @@ export function SiteHeader() {
           </div>
         </div>
       </nav>
+
       <div className="header-actions">
         <Link className="outline-button" href="/#career">
           Career

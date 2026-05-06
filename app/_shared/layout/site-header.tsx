@@ -17,41 +17,21 @@ export function SiteHeader() {
   return (
     <header className={`site-header ${isHome ? "home-intro-header" : ""}`}>
       <Link className="brand" href="/#hero" aria-label="HARTS home">
-        <img src="/harts-logo-mark.svg" alt="HARTS Consulting" />
+        <img src="/HARTS Consulting LBG.png" alt="HARTS Consulting" />
       </Link>
       <nav className="primary-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <Link
-            href={item.href}
-            key={item.href}
-            className={`nav-pill${pathname.startsWith(item.href) ? " nav-pill--active" : ""}`}
-          >
+          <Link href={item.href} key={item.href}>
             {item.label}
           </Link>
         ))}
         <div className="nav-menu">
           <button
             aria-haspopup="true"
-            className="nav-pill nav-menu-trigger"
+            className="nav-menu-trigger"
             type="button"
           >
             Where We Engage
-            <svg
-              aria-hidden="true"
-              className="nav-chevron"
-              fill="none"
-              height="12"
-              viewBox="0 0 12 12"
-              width="12"
-            >
-              <path
-                d="M2 4L6 8L10 4"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.75"
-              />
-            </svg>
           </button>
           <div className="nav-dropdown" aria-label="Industries">
             {industries.map((industry) => (
@@ -63,10 +43,10 @@ export function SiteHeader() {
         </div>
       </nav>
       <div className="header-actions">
-        <Link className="nav-pill nav-pill--outline" href="/#careers">
-          Careers
+        <Link className="outline-button" href="/#career">
+          Career
         </Link>
-        <Link className="nav-pill nav-pill--solid" href="/contact">
+        <Link className="solid-button" href="/contact">
           Connect
         </Link>
       </div>

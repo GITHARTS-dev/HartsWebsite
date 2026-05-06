@@ -101,12 +101,7 @@ textarea {
 }
 
 .solid-button,
-.outline-button,
-.service-card button,
-.service-card a,
-.step,
-.arrow,
-.dot {
+.outline-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;

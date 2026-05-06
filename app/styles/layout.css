@@ -13,6 +13,15 @@
   backdrop-filter: blur(14px);
 }
 
+.site-header.home-intro-header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(-18px);
+  animation: header-arrive 700ms ease 3s forwards;
+}
+
 .brand {
   display: inline-flex;
   width: 188px;
@@ -142,4 +151,11 @@
 .footer span,
 .footer a {
   color: #555852;
+}
+
+@keyframes header-arrive {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

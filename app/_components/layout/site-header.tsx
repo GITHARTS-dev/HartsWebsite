@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { industries } from "../../_data/home-content";
 
@@ -8,8 +11,11 @@ const navItems = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${isHome ? "home-intro-header" : ""}`}>
       <Link className="brand" href="/#hero" aria-label="HARTS home">
         <img src="/harts-logo-mark.svg" alt="HARTS Consulting" />
       </Link>

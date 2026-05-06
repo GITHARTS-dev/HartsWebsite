@@ -95,4 +95,88 @@ export const serviceOfferings: ServiceOffering[] = [
       "Equip leaders with the narrative and cadence to mobilize teams",
     ],
   },
+  {
+    title: "Growth Strategy",
+    slug: "growth-strategy",
+    summary:
+      "Define where to grow next and build the investment case and roadmap to get there.",
+    lead:
+      "We help leadership teams identify and prioritise the markets, segments, and moves most likely to create durable value — and build the strategic case to act on them.",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1500&q=82",
+    imageAlt: "Business growth and market strategy planning session",
+    capabilities: [
+      "Market entry assessment and opportunity sizing",
+      "Adjacency and portfolio expansion analysis",
+      "Business case and investment thesis development",
+      "Growth roadmap with sequenced initiatives",
+    ],
+    benefits: [
+      "A clear view of where and how to compete for value",
+      "Prioritised growth bets with defensible rationale",
+      "Leadership conviction aligned around ambition",
+    ],
+    workflow: [
+      "Define the growth horizon and ambition",
+      "Map opportunity spaces with market evidence",
+      "Prioritise by value, risk, and organisational readiness",
+      "Build the case and mobilise teams around the plan",
+    ],
+  },
+  {
+    title: "Operating Model Design",
+    slug: "operating-model-design",
+    summary:
+      "Align your structure, processes, and resources precisely to your strategic priorities.",
+    lead:
+      "We help organisations design operating models that connect strategic intent to daily execution — with clarity on roles, decisions, and delivery rhythms.",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1500&q=82",
+    imageAlt: "Organisation design and operating model workshop with leadership team",
+    capabilities: [
+      "Organisational structure and accountability design",
+      "Process mapping and efficiency optimisation",
+      "Resource allocation and capacity planning",
+      "Ways of working and governance design",
+    ],
+    benefits: [
+      "Faster decisions with clearer accountability",
+      "Reduced duplication and operational friction",
+      "A structure that scales with strategic ambition",
+    ],
+    workflow: [
+      "Diagnose current model constraints and gaps",
+      "Design the future operating model",
+      "Sequence changes by impact and readiness",
+      "Implement and embed new ways of working",
+    ],
+  },
+  {
+    title: "Digital Enablement",
+    slug: "digital-enablement",
+    summary:
+      "Translate technology investments into measurable business capability and competitive advantage.",
+    lead:
+      "We help leadership teams make confident digital decisions — defining where technology creates real value, and how to build and sustain that capability over time.",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=82",
+    imageAlt: "Digital transformation planning with leadership and technology teams",
+    capabilities: [
+      "Digital strategy and technology roadmap",
+      "Platform and architecture decision support",
+      "Data and analytics capability building",
+      "Digital adoption and change enablement",
+    ],
+    benefits: [
+      "Technology investments tied to measurable business outcomes",
+      "Reduced delivery risk on complex programmes",
+      "Sustained digital capability beyond go-live",
+    ],
+    workflow: [
+      "Assess digital maturity and opportunity landscape",
+      "Define the technology vision and phased roadmap",
+      "Prioritise by value, risk, and organisational feasibility",
+      "Enable adoption and sustain performance over time",
+    ],
+  },
 ];

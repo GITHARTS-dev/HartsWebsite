@@ -8,18 +8,29 @@ export function ServiceOfferingDetail({
   service: ServiceOffering;
 }) {
   return (
-    <main className="service-offering-detail">
-      <section className="service-detail-hero">
+    <main className="service-offering-detail enhanced">
+      <div className="liquid-bg small" aria-hidden>
+        <svg className="blob blob-2" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+          <path fill="var(--gold)" fillOpacity="0.08" d="M470 300c0 94-76 170-170 170S130 394 130 300 206 130 300 130s170 76 170 170z" />
+        </svg>
+      </div>
+
+      <section className="service-detail-hero refined">
         <div className="service-detail-copy reveal">
           <p className="eyebrow">How We Help</p>
           <h1>{service.title}</h1>
-          <p>{service.lead}</p>
-          <Link className="solid-button large" href="/contact">
-            Connect With Us
-          </Link>
+          <p className="muted lead">{service.lead}</p>
+          <div className="hero-actions">
+            <Link className="outline-button" href="/how-we-help">Back to services</Link>
+            <Link className="solid-button large" href="/contact">Connect With Us</Link>
+          </div>
         </div>
+
         <div className="service-detail-media reveal delay-one">
-          <img src={service.image} alt={service.imageAlt} />
+          <div className="media-wrap">
+            <img src={service.image} alt={service.imageAlt} />
+            <div className="media-overlay" aria-hidden />
+          </div>
         </div>
       </section>
 
@@ -53,11 +64,11 @@ export function ServiceOfferingDetail({
         <div className="service-workflow-grid">
           {service.workflow.map((step, index) => (
             <article
-              className="reveal"
+              className="workflow-step reveal"
               key={step}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span className="step-index">{String(index + 1).padStart(2, "0")}</span>
               <p>{step}</p>
             </article>
           ))}

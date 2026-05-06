@@ -43,9 +43,9 @@ export default function ContactPage() {
             </div>
             <h2>HARTS global headquarters</h2>
             <p>
-              550 Madison Avenue<br />
-              New York, NY 10022<br />
-              United States
+              7C, Mayflower Signature, Avinashi Road <br />
+              Peelamedu<br />
+              Coimbatore - 641004
             </p>
             <p className="contact-info">
               <strong>Email:</strong> hello@hartsconsulting.example
@@ -70,26 +70,27 @@ export default function ContactPage() {
               <h3>Düsseldorf</h3>
               <p>Königsallee 60<br />Düsseldorf 40212<br />Germany</p>
             </article>
-            <article className="office-card reveal" style={{ animationDelay: "120ms" }}>
-              <div className="office-image">
-                <span>[ Copenhagen ]</span>
-              </div>
-              <h3>Copenhagen</h3>
-              <p>Klareboderne 4<br />Copenhagen 1001<br />Denmark</p>
-            </article>
+           
             <article className="office-card reveal" style={{ animationDelay: "240ms" }}>
               <div className="office-image">
-                <span>[ London ]</span>
+                <span>[ Pune ]</span>
               </div>
-              <h3>London</h3>
-              <p>30 Bevis Marks<br />London EC3A 8DQ<br />United Kingdom</p>
+              <h3>Pune</h3>
+              <p>Pune<br />Pune<br />India</p>
             </article>
             <article className="office-card reveal" style={{ animationDelay: "360ms" }}>
               <div className="office-image">
-                <span>[ Singapore ]</span>
+                <span>[Coimbatore]</span>
               </div>
-              <h3>Singapore</h3>
-              <p>1 Marina Boulevard<br />Singapore 018936<br />Singapore</p>
+              <h3>Coimbatore</h3>
+              <p>7C, Mayflower Signature<br />Peelamedu, Coimatore<br />India</p>
+            </article>
+            <article className="office-card reveal" style={{ animationDelay: "360ms" }}>
+              <div className="office-image">
+                <span>[Bangalore]</span>
+              </div>
+              <h3>Bangalore</h3>
+              <p>xxxxxxx<br />xxxxxxxx<br />India</p>
             </article>
           </div>
         </section>
@@ -104,13 +105,13 @@ export default function ContactPage() {
               <div className="location-image">
                 <span>[ Map 1 ]</span>
               </div>
-              <h3>Americas</h3>
+              <h3>Coimbatore</h3>
             </div>
             <div className="location-card reveal" style={{ animationDelay: "120ms" }}>
               <div className="location-image">
                 <span>[ Map 2 ]</span>
               </div>
-              <h3>EMEA</h3>
+              <h3>Düsseldorf</h3>
             </div>
           </div>
         </section>

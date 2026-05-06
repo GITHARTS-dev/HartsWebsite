@@ -156,6 +156,10 @@
   .contact-intro {
     position: static;
   }
+
+  .premium-contact-links {
+    max-width: 760px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -194,8 +198,11 @@
     padding: 18px;
   }
 
-  .premium-contact-form {
+  .premium-contact-links {
     grid-template-columns: 1fr;
-    padding: 24px;
+  }
+
+  .contact-link-card {
+    min-height: 148px;
   }
 }

@@ -55,8 +55,7 @@
   overflow: hidden;
   isolation: isolate;
   background:
-    linear-gradient(115deg, rgba(255, 229, 0, 0.1), transparent 34%),
-    radial-gradient(circle at 50% 22%, rgba(32, 54, 79, 0.12), transparent 32%),
+    linear-gradient(115deg, rgba(255, 229, 0, 0.08), transparent 36%),
     linear-gradient(180deg, #ffffff 0%, #f8f8f4 58%, #f2f1ec 100%);
 }
 
@@ -74,17 +73,6 @@
   background: linear-gradient(90deg, transparent, rgba(10, 10, 10, 0.2), transparent);
 }
 
-.welcome-glow {
-  position: absolute;
-  width: min(54vw, 640px);
-  aspect-ratio: 1;
-  border-radius: 999px;
-  background: rgba(255, 229, 0, 0.18);
-  filter: blur(80px);
-  opacity: 0;
-  animation: welcome-glow 1800ms ease 500ms both;
-}
-
 .welcome-logo-backdrop {
   position: absolute;
   z-index: 0;
@@ -96,20 +84,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  filter: blur(1.2px) drop-shadow(0 22px 64px rgba(255, 229, 0, 0.18));
+  filter: blur(0.9px);
   opacity: 0;
   transform: translateY(8px) scale(0.96);
   animation: logo-breathe 7s ease-in-out 950ms infinite;
   mix-blend-mode: multiply;
   pointer-events: none;
-}
-
-.welcome-logo-backdrop::after {
-  position: absolute;
-  inset: -26%;
-  background: radial-gradient(circle, rgba(255, 229, 0, 0.16), transparent 58%);
-  content: "";
-  opacity: 0.72;
 }
 
 .welcome-content {
@@ -270,10 +250,10 @@
   display: grid;
   grid-template-columns: minmax(300px, 0.82fr) minmax(340px, 1.18fr);
   gap: clamp(42px, 6vw, 80px);
-  align-items: start;
+  align-items: center;
   padding: clamp(82px, 9vw, 132px) 5vw;
   background:
-    linear-gradient(120deg, rgba(10, 10, 10, 0.88), rgba(32, 54, 79, 0.78)),
+    linear-gradient(120deg, rgba(10, 10, 10, 0.9), rgba(32, 54, 79, 0.76)),
     url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=84");
   background-position: center;
   background-size: cover;
@@ -294,41 +274,69 @@
   color: rgba(255, 255, 255, 0.76);
 }
 
-.premium-contact-form {
+.premium-contact-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  padding: clamp(24px, 4vw, 42px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(18px);
+  gap: 14px;
 }
 
-.premium-contact-form label {
+.contact-link-card {
+  position: relative;
   display: grid;
-  gap: 8px;
-  color: #2e332f;
-  font-size: 12px;
+  min-height: 190px;
+  align-content: space-between;
+  gap: 28px;
+  padding: clamp(22px, 3vw, 30px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.contact-link-card::after {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  content: "";
+  transition: width 220ms ease;
+}
+
+.contact-link-card:hover,
+.contact-link-card:focus-visible {
+  border-color: rgba(255, 229, 0, 0.58);
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 34px 92px rgba(0, 0, 0, 0.22);
+  transform: translateY(-6px);
+}
+
+.contact-link-card:hover::after,
+.contact-link-card:focus-visible::after {
+  width: 54px;
+}
+
+.contact-link-card span {
+  color: #fff7a6;
+  font-size: 11px;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.premium-contact-form .full,
-.premium-contact-form button,
-.premium-contact-form .form-note {
-  grid-column: 1 / -1;
-}
-
-.premium-contact-form input,
-.premium-contact-form textarea {
-  border-color: rgba(10, 10, 10, 0.16);
-  background: rgba(255, 255, 255, 0.92);
-}
-
-.premium-contact-form textarea {
-  min-height: 168px;
+.contact-link-card strong {
+  max-width: 330px;
+  color: #fff;
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 680;
+  line-height: 1.22;
 }
 
 @keyframes cinematic-rise {
@@ -343,31 +351,19 @@
   }
 }
 
-@keyframes welcome-glow {
-  from {
-    opacity: 0;
-    transform: scale(0.84);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @keyframes logo-breathe {
   0% {
-    opacity: 0.055;
+    opacity: 0.05;
     transform: translateY(8px) scale(0.96);
   }
 
   18%,
   100% {
-    opacity: 0.095;
+    opacity: 0.082;
   }
 
   50% {
-    opacity: 0.14;
+    opacity: 0.11;
     transform: translateY(-8px) scale(1.01);
   }
 }

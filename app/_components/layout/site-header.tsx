@@ -43,8 +43,8 @@ export function SiteHeader() {
         </div>
       </nav>
       <div className="header-actions">
-        <Link className="outline-button" href="/#careers">
-          Careers
+        <Link className="outline-button" href="/#career">
+          Career
         </Link>
         <Link className="solid-button" href="/contact">
           Connect

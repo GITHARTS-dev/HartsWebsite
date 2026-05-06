@@ -1,14 +1,31 @@
-"use client";
-
-import { useState } from "react";
+const contactLinks = [
+  {
+    label: "LinkedIn",
+    detail: "Follow HARTS insights and leadership updates",
+    href: "https://www.linkedin.com/company/harts-consulting/",
+  },
+  {
+    label: "Email",
+    detail: "hello@hartsconsulting.example",
+    href: "mailto:hello@hartsconsulting.example",
+  },
+  {
+    label: "Career",
+    detail: "Explore advisory and consulting opportunities",
+    href: "mailto:hello@hartsconsulting.example?subject=Career%20at%20HARTS",
+    id: "career",
+  },
+  {
+    label: "Offices",
+    detail: "Find HARTS locations and regional contacts",
+    href: "/contact",
+  },
+];
 
 export function HomeExperience() {
-  const [messageSent, setMessageSent] = useState(false);
-
   return (
     <main className="cinematic-home">
       <section className="welcome-screen" id="hero">
-        <div className="welcome-glow" aria-hidden="true" />
         <div className="welcome-logo-backdrop" aria-hidden="true" />
         <div className="welcome-content">
           <p className="welcome-kicker">Strategy. Transformation. Clarity.</p>
@@ -57,46 +74,26 @@ export function HomeExperience() {
       <section className="premium-contact-section" id="contact">
         <div className="contact-intro reveal">
           <p className="eyebrow">Contact</p>
-          <h2>Start the conversation.</h2>
+          <h2>Stay close to the work that matters.</h2>
           <p>
-            Share what you are working through, and the HARTS team will follow
-            up with a focused next step.
+            Connect with HARTS for advisory conversations, leadership updates,
+            career inquiries, and regional office details.
           </p>
         </div>
 
-        <form className="premium-contact-form reveal delay-one">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" placeholder="you@company.com" />
-          </label>
-          <label className="full">
-            Company Name
-            <input type="text" name="company" placeholder="Company name" />
-          </label>
-          <label className="full">
-            What are you looking for?
-            <textarea
-              name="need"
-              placeholder="Tell us about the decision, opportunity, or transformation ahead."
-            />
-          </label>
-          <button
-            className="solid-button large"
-            onClick={() => setMessageSent(true)}
-            type="button"
-          >
-            {messageSent ? "Thank you" : "Send Inquiry"}
-          </button>
-          {messageSent ? (
-            <p className="form-note">
-              Thanks. HARTS will review your note and follow up shortly.
-            </p>
-          ) : null}
-        </form>
+        <div className="premium-contact-links reveal delay-one">
+          {contactLinks.map((item) => (
+            <a
+              className="contact-link-card"
+              href={item.href}
+              id={item.id}
+              key={item.label}
+            >
+              <span>{item.label}</span>
+              <strong>{item.detail}</strong>
+            </a>
+          ))}
+        </div>
       </section>
     </main>
   );

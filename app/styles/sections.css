@@ -60,16 +60,10 @@
     linear-gradient(180deg, #ffffff 0%, #f8f8f4 58%, #f2f1ec 100%);
 }
 
-.welcome-screen::before,
 .welcome-screen::after {
   position: absolute;
   content: "";
   pointer-events: none;
-}
-
-.welcome-screen::before {
-  inset: 28px;
-  border: 1px solid rgba(10, 10, 10, 0.08);
 }
 
 .welcome-screen::after {
@@ -89,6 +83,33 @@
   filter: blur(80px);
   opacity: 0;
   animation: welcome-glow 1800ms ease 500ms both;
+}
+
+.welcome-logo-backdrop {
+  position: absolute;
+  z-index: 0;
+  width: min(86vw, 1080px);
+  aspect-ratio: 2.8 / 1;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.16) 48%, transparent 100%),
+    url("/logo (1).png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: blur(1.2px) drop-shadow(0 22px 64px rgba(255, 229, 0, 0.18));
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  animation: logo-breathe 7s ease-in-out 950ms infinite;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.welcome-logo-backdrop::after {
+  position: absolute;
+  inset: -26%;
+  background: radial-gradient(circle, rgba(255, 229, 0, 0.16), transparent 58%);
+  content: "";
+  opacity: 0.72;
 }
 
 .welcome-content {
@@ -322,6 +343,23 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes logo-breathe {
+  0% {
+    opacity: 0.055;
+    transform: translateY(8px) scale(0.96);
+  }
+
+  18%,
+  100% {
+    opacity: 0.095;
+  }
+
+  50% {
+    opacity: 0.14;
+    transform: translateY(-8px) scale(1.01);
   }
 }
 

@@ -166,8 +166,9 @@
     padding: 68px 20px;
   }
 
-  .welcome-screen::before {
-    inset: 16px;
+  .welcome-logo-backdrop {
+    width: min(132vw, 700px);
+    filter: blur(1px) drop-shadow(0 16px 42px rgba(255, 229, 0, 0.14));
   }
 
   .welcome-content h1 {

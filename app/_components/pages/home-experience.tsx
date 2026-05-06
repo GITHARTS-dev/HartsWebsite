@@ -9,6 +9,7 @@ export function HomeExperience() {
     <main className="cinematic-home">
       <section className="welcome-screen" id="hero">
         <div className="welcome-glow" aria-hidden="true" />
+        <div className="welcome-logo-backdrop" aria-hidden="true" />
         <div className="welcome-content">
           <p className="welcome-kicker">Strategy. Transformation. Clarity.</p>
           <h1>Welcome to HARTS</h1>

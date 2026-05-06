@@ -40,9 +40,9 @@ export default function ContactRoute() {
             <div className="hq-image" aria-label="HARTS office building" />
             <h2>HARTS global headquarters</h2>
             <p>
-              550 Madison Avenue<br />
-              New York, NY 10022<br />
-              United States
+              7C, Mayflower Signature, Avinashi Road <br />
+              Peelamedu<br />
+              Coimbatore - 641004
             </p>
             <p className="contact-info">
               <strong>Email:</strong> hello@hartsconsulting.example
@@ -72,24 +72,24 @@ export default function ContactRoute() {
               style={{ animationDelay: "120ms" }}
             >
               <div className="office-image" aria-label="Copenhagen office" />
-              <h3>Copenhagen</h3>
-              <p>Klareboderne 4<br />Copenhagen 1001<br />Denmark</p>
+              <h3>Coimbatore</h3>
+              <p>7C, Mayflower Signature<br />Avinashi road, Peelamedu<br />India</p>
             </article>
             <article
               className="office-card reveal"
               style={{ animationDelay: "240ms" }}
             >
               <div className="office-image" aria-label="London office" />
-              <h3>London</h3>
-              <p>30 Bevis Marks<br />London EC3A 8DQ<br />United Kingdom</p>
+              <h3>Pune</h3>
+              <p>xxxxxxxxxxxx<br />xxxxxxxx<br />India</p>
             </article>
             <article
               className="office-card reveal"
               style={{ animationDelay: "360ms" }}
             >
               <div className="office-image" aria-label="Singapore office" />
-              <h3>Singapore</h3>
-              <p>1 Marina Boulevard<br />Singapore 018936<br />Singapore</p>
+              <h3>Bangalore</h3>
+              <p>xxxxx<br />xxxxxxxxxxxxxx<br />India</p>
             </article>
           </div>
         </section>
@@ -104,14 +104,14 @@ export default function ContactRoute() {
               style={{ animationDelay: "0ms" }}
             >
               <div className="location-image" aria-label="Americas map" />
-              <h3>Americas</h3>
+              <h3>Coimbatore</h3>
             </div>
             <div
               className="location-card reveal"
               style={{ animationDelay: "120ms" }}
             >
               <div className="location-image" aria-label="EMEA map" />
-              <h3>EMEA</h3>
+              <h3>Düsseldorf</h3>
             </div>
           </div>
         </section>

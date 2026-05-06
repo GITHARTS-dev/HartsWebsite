@@ -1,0 +1,185 @@
+/* Contact Page 2D Animations & Transitions */
+
+/* Hero Section - Slide in animations */
+.contact-hero .contact-hero-content {
+  animation: slide-in-left 700ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.contact-hero .contact-hero-media {
+  animation: slide-in-right 700ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 100ms;
+  transition: background-color 300ms ease, border-color 300ms ease, transform 300ms ease;
+  border: 2px solid transparent;
+}
+
+.contact-hero-media:hover {
+  background-color: #d1d5db;
+  border-color: var(--gold);
+}
+
+/* gentle floating for hero media (2D only) */
+.contact-hero-media {
+  animation-name: slide-in-right, float-slow;
+  animation-duration: 700ms, 6000ms;
+  animation-fill-mode: both, both;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1), ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 100ms, 1200ms;
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float-slow {
+  from { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  to { transform: translateY(0); }
+}
+
+/* Contact Grid - Stagger animations */
+.contact-grid .contact-form-block,
+.contact-grid .hq-block {
+  animation: slide-up 700ms ease-out both;
+}
+
+.contact-grid .contact-form-block {
+  animation-delay: 0ms;
+}
+
+.contact-grid .hq-block {
+  animation-delay: 150ms;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inputs and buttons: subtle 2D focus and hover */
+.contact-form input,
+.contact-form textarea {
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  transform: translateY(-2px) scaleX(1.01);
+}
+
+.solid-button {
+  transition: transform 200ms ease, background 200ms ease, color 200ms ease;
+}
+
+.solid-button:hover {
+  transform: translateY(-4px);
+}
+
+/* Form and HQ image hover effects */
+.form-image,
+.hq-image {
+  transition: background-color 300ms ease, transform 300ms ease, border-color 300ms ease;
+  border: 2px solid transparent;
+}
+
+.form-image:hover,
+.hq-image:hover {
+  background-color: #d1d5db;
+  border-color: var(--gold);
+  transform: scale(1.02) translateY(-4px);
+}
+
+/* Office Cards - Smooth transitions */
+.office-card {
+  border-bottom: 3px solid transparent;
+  transition: transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1), border-color 280ms ease, background-color 280ms ease;
+  will-change: transform, border-color, background-color;
+}
+
+.office-card:hover {
+  transform: translateY(-8px) scaleX(1.01);
+  border-color: var(--gold);
+  border-bottom-color: var(--gold);
+  background-color: #fffce8;
+}
+
+/* staggered office card entrances (pure 2D) */
+.offices-grid .office-card:nth-child(1) { animation: slide-up 640ms ease-out both; animation-delay: 80ms; }
+.offices-grid .office-card:nth-child(2) { animation: slide-up 680ms ease-out both; animation-delay: 160ms; }
+.offices-grid .office-card:nth-child(3) { animation: slide-up 720ms ease-out both; animation-delay: 240ms; }
+.offices-grid .office-card:nth-child(4) { animation: slide-up 760ms ease-out both; animation-delay: 320ms; }
+
+.office-image {
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+
+.office-card:hover .office-image {
+  background-color: #d1d5db;
+  transform: scaleY(1.05);
+}
+
+/* Location Cards - Flat hover animations */
+.location-image {
+  transition: background-color 300ms ease, transform 300ms ease, border-color 300ms ease;
+  border: 2px solid transparent;
+}
+
+.location-card:hover .location-image {
+  background-color: #d1d5db;
+  border-color: var(--gold);
+  transform: scale(1.03) translateY(-6px);
+}
+
+.location-card h3 {
+  transition: color 300ms ease;
+}
+
+.location-card:hover h3 {
+  color: var(--gold);
+}
+
+/* Reduced motion: remove non-essential animations */
+@media (prefers-reduced-motion: reduce) {
+  .contact-hero .contact-hero-content,
+  .contact-hero .contact-hero-media,
+  .contact-grid .contact-form-block,
+  .contact-grid .hq-block,
+  .offices-grid .office-card,
+  .location-card {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-timing-function: ease;
+  }
+}

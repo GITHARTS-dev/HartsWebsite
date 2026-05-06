@@ -179,6 +179,14 @@
     min-height: 420px;
   }
 
+  .vision-statement-section {
+    min-height: 46vh;
+  }
+
+  .vision-statement h2 {
+    font-size: clamp(28px, 9vw, 42px);
+  }
+
   .visual-card {
     right: 16px;
     bottom: 16px;

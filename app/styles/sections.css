@@ -233,28 +233,37 @@
 }
 
 .vision-statement-section {
+  position: relative;
   display: grid;
-  min-height: 82vh;
+  min-height: 56vh;
   place-items: center;
-  padding: clamp(78px, 9vw, 136px) 5vw;
+  padding: clamp(64px, 8vw, 110px) 5vw;
   text-align: center;
+  overflow: hidden;
   background:
+    radial-gradient(circle at 50% 42%, rgba(255, 229, 0, 0.08), transparent 34%),
     linear-gradient(180deg, #f8f8f5 0%, #ffffff 48%, #f8f8f5 100%);
 }
 
 .vision-statement {
-  max-width: 980px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  max-width: 880px;
 }
 
 .vision-statement .eyebrow {
   color: var(--ink);
+  margin-bottom: 20px;
 }
 
 .vision-statement h2 {
   margin: 0;
-  font-size: clamp(38px, 6.4vw, 96px);
-  font-weight: 760;
-  line-height: 1.02;
+  font-size: clamp(30px, 4.2vw, 58px);
+  font-weight: 720;
+  line-height: 1.12;
+  letter-spacing: 0;
 }
 
 .premium-contact-section {

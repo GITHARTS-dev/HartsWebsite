@@ -341,7 +341,7 @@ export function HomeExperience() {
             <p className="eyebrow">Challenges We Solve</p>
             <h2>We help organizations navigate complexity with clarity.</h2>
             <p>
-              Modern organizations face increasing operational complexity,
+              Organizations face increasing operational complexity,
               fragmented systems, and accelerating digital expectations. HARTS
               helps leadership teams align strategy, intelligence, and
               transformation into one connected direction.
@@ -369,7 +369,7 @@ export function HomeExperience() {
         <div className="home-section-shell">
           <div className="home-section-heading centered scroll-reveal">
             <p className="eyebrow">Why Organizations Choose HARTS</p>
-            <h2>A trusted transformation partner for modern organizations.</h2>
+            <h2>A trusted transformation partner for organizations.</h2>
           </div>
 
           <div className="choose-network" aria-hidden="true" />
@@ -402,9 +402,6 @@ export function HomeExperience() {
             strategy and connected transformation.
           </p>
           <div className="partner-actions">
-            <Link className="solid-button large magnetic-button glow-button" href="/contact">
-              Schedule Consultation
-            </Link>
             <Link className="outline-button large magnetic-button ghost-glow-button" href="/contact">
               Connect With Us
             </Link>

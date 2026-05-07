@@ -1256,6 +1256,7 @@
   --work-bg: #f6f3ec;
   background: var(--work-bg);
   color: var(--ink);
+  padding-bottom: clamp(96px, 14vh, 180px);
 }
 
 .work-hero,

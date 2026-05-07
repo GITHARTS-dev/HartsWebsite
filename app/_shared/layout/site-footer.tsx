@@ -13,8 +13,7 @@ const navCols = [
     heading: "Company",
     links: [
       { label: "About", href: "/about-us" },
-      { label: "Careers", href: "/#career" },
-      { label: "Press", href: "#" },
+      { label: "Careers", href: "/careers" },
     ],
   },
   {
@@ -26,7 +25,7 @@ const navCols = [
         href: "https://www.linkedin.com/company/harts-consulting/",
         external: true,
       },
-      { label: "Newsletter", href: "#" },
+      
     ],
   },
 ];
@@ -36,13 +35,13 @@ export function SiteFooter() {
     <footer className="sf-footer">
       <div className="sf-inner">
         <div className="sf-brand">
-          <Link href="/" className="sf-logo-link" aria-label="HARTS home">
+          <div className="sf-logo-link" aria-hidden="true">
             <img
-              src="/HARTS Consulting LBG.png"
-              alt="HARTS Consulting"
+              src="/image.png"
+              alt="HARTS logo"
               className="sf-logo"
             />
-          </Link>
+          </div>
           <p className="sf-tagline">Strategy. Transformation. Clarity.</p>
         </div>
 

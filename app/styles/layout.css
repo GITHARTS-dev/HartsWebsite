@@ -189,7 +189,7 @@
 .sf-footer {
   background: #0B1E36;
   border-top: 1px solid rgba(244, 180, 26, 0.14);
-  padding: clamp(56px, 7vw, 96px) 5vw;
+  padding: clamp(20px, 3vw, 36px) 5vw;
 }
 
 .sf-inner {
@@ -198,13 +198,13 @@
   gap: clamp(48px, 8vw, 140px);
   max-width: 1280px;
   margin: 0 auto;
-  align-items: start;
+  align-items: center;
 }
 
 .sf-brand {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .sf-logo-link {
@@ -212,8 +212,9 @@
   line-height: 0;
 }
 .sf-logo {
-  height: 38px;
+  height: 44px;
   width: auto;
+  display: block;
 }
 
 .sf-tagline {
@@ -233,7 +234,7 @@
 .sf-nav-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .sf-col-head {

@@ -13,6 +13,7 @@
   .industry-body,
   .consulting-section,
   .work-hero,
+  .work-principles,
   .work-context,
   .work-outcomes,
   .help-hero,
@@ -38,10 +39,17 @@
 
   .offices-grid,
   .work-context-grid,
+  .work-principles-grid,
   .help-service-grid,
   .service-workflow-grid,
   .locations-grid {
     grid-template-columns: 1fr;
+  }
+
+  .work-principle-card,
+  .work-principle-card:nth-child(4),
+  .work-principle-card:nth-child(5) {
+    grid-column: auto;
   }
 
 }

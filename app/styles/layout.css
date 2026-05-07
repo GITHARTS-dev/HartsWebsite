@@ -8,22 +8,10 @@
   gap: clamp(18px, 3vw, 42px);
   min-height: 72px;
   padding: 0 5vw;
-  background: rgba(255, 255, 255, 0.94);
-  border-bottom: 1px solid rgba(216, 218, 214, 0.72);
-  backdrop-filter: blur(14px);
-}
-
-.site-header.home-intro-header {
-  position: fixed;
-  right: 0;
-  left: 0;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(248, 248, 244, 0.36));
-  border-bottom-color: rgba(216, 218, 214, 0.24);
+  background: rgba(246, 243, 236, 0.78);
+  border-bottom: 1px solid rgba(216, 218, 214, 0.24);
   box-shadow: 0 18px 60px rgba(32, 54, 79, 0.05);
-  opacity: 0;
-  transform: translateY(-18px);
-  animation: header-arrive 700ms ease 3s forwards;
+  backdrop-filter: blur(14px);
 }
 
 .brand {

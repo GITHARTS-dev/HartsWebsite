@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { PageShell } from "../_shared/layout/page-shell";
 import { HowWeWorkTimeline } from "./_components/how-we-work-timeline";
+import { TransformationPrinciples } from "./_components/transformation-principles";
 
 export const metadata: Metadata = {
   title: "How We Work | HARTS",
@@ -31,6 +32,8 @@ export default function HowWeWorkRoute() {
             </div>
           </div>
         </section>
+
+        <TransformationPrinciples />
 
         <HowWeWorkTimeline />
 

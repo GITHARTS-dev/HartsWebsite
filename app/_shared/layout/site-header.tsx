@@ -13,10 +13,9 @@ const navItems = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   return (
-    <header className={`site-header${isHome ? " home-intro-header" : ""}`}>
+    <header className="site-header">
       <Link className="brand" href="/#hero" aria-label="HARTS home">
         <img src="/HARTS Consulting LBG.png" alt="HARTS Consulting" />
       </Link>

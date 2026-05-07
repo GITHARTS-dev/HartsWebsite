@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactRoute() {
   return (
     <PageShell>
-      <main>
+      <main className="contact-page">
         <section className="section contact-hero reveal">
           <div className="contact-hero-content">
             <p className="eyebrow">Contact</p>

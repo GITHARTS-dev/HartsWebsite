@@ -66,6 +66,9 @@ const phases = [
   },
 ];
 
+const clamp = (value: number, min: number, max: number) =>
+  Math.max(min, Math.min(max, value));
+
 export function HowWeWorkTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number | null>(null);
@@ -139,34 +142,11 @@ export function HowWeWorkTimeline() {
 
   const ballSize = 32;
   const stageHeight = Math.max(360, viewportHeight - headerHeight);
-  let ballTop = ballSize / 2;
-  let lineHeight = 0;
-  let activeIndex = -1;
-
-  if (progress < 0.12) {
-    const phaseProgress = progress / 0.12;
-
-    ballTop =
-      ballSize / 2 +
-      phaseProgress * (stageHeight / 2 - ballSize / 2);
-    lineHeight = ballTop;
-  } else if (progress < 0.86) {
-    const contentProgress = (progress - 0.12) / 0.74;
-
-    ballTop = stageHeight / 2;
-    lineHeight = ballTop;
-    activeIndex = Math.min(
-      phases.length - 1,
-      Math.floor(contentProgress * phases.length),
-    );
-  } else {
-    const phaseProgress = (progress - 0.86) / 0.14;
-    const start = stageHeight / 2;
-    const end = stageHeight - ballSize / 2;
-
-    ballTop = start + phaseProgress * (end - start);
-    lineHeight = ballTop;
-  }
+  const ballProgress = progress * progress * (3 - 2 * progress);
+  const ballTop = ballSize / 2 + ballProgress * (stageHeight - ballSize);
+  const lineHeight = ballTop;
+  const contentProgress = clamp((progress - 0.04) / 0.9, 0, 1);
+  const phaseTravel = stageHeight * 1.62;
 
   return (
     <div ref={containerRef} className="work-timeline">
@@ -194,28 +174,47 @@ export function HowWeWorkTimeline() {
 
         <div className="work-timeline-content">
           <div className="work-timeline-inner">
-            {phases.map((phase, index) => (
-              <article
-                className={`work-phase work-phase-${phase.side} ${
-                  activeIndex === index ? "active" : ""
-                }`}
-                key={phase.title}
-              >
-                <div className="work-phase-copy">
-                  <p className="work-phase-kicker">
-                    Phase {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h2>{phase.title}</h2>
-                  <strong>{phase.focus}</strong>
-                  <p>{phase.desc}</p>
-                  <ul>
-                    {phase.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
+            {phases.map((phase, index) => {
+              const phaseProgress = contentProgress * phases.length - index;
+              const centerOffset = phaseProgress - 0.5;
+              const distanceFromCenter = Math.abs(centerOffset);
+              const centeredOffset =
+                distanceFromCenter < 0.1
+                  ? centerOffset * 0.24
+                  : Math.sign(centerOffset) * (distanceFromCenter - 0.076);
+              const verticalOffset = -centeredOffset * phaseTravel;
+              const edgeSoftness = clamp((distanceFromCenter - 0.36) / 0.46, 0, 1);
+              const visible = phaseProgress > -0.28 && phaseProgress < 1.28;
+              const opacity = visible ? 1 - edgeSoftness * 0.18 : 0;
+              const blur = edgeSoftness * 2.4;
+              const scale = 1 - Math.min(distanceFromCenter, 0.72) * 0.014;
+
+              return (
+                <article
+                  className={`work-phase work-phase-${phase.side}`}
+                  key={phase.title}
+                  style={{
+                    opacity,
+                    filter: `blur(${blur}px)`,
+                    transform: `translate3d(0, ${verticalOffset}px, 0) scale(${scale})`,
+                  }}
+                >
+                  <div className="work-phase-copy">
+                    <p className="work-phase-kicker">
+                      Phase {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h2>{phase.title}</h2>
+                    <strong>{phase.focus}</strong>
+                    <p>{phase.desc}</p>
+                    <ul>
+                      {phase.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>

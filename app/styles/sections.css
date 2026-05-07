@@ -41,22 +41,54 @@
 }
 
 .cinematic-home {
-  overflow: hidden;
+  overflow-x: hidden;
   color: var(--ink);
   background: #f8f8f5;
 }
 
-.welcome-screen {
+.welcome-scroll-scene {
   position: relative;
+  z-index: 2;
+  height: 100vh;
+  background: transparent;
+}
+
+.welcome-screen {
+  --welcome-text-y: 0px;
+  --welcome-text-scale: 1;
+  --welcome-text-blur: 0px;
+  --welcome-text-opacity: 1;
+  --welcome-logo-y: 0px;
+  --welcome-logo-scale: 0.82;
+  --welcome-logo-blur: 1px;
+  --welcome-logo-opacity: 0.12;
+  --welcome-logo-brightness: 1;
+  --welcome-logo-saturation: 1.12;
+  --welcome-surface-opacity: 1;
+  --welcome-bg-opacity: 1;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   display: grid;
+  height: 100vh;
   min-height: 100vh;
   place-items: center;
   padding: 96px 5vw;
   overflow: hidden;
   isolation: isolate;
+  background: rgba(248, 248, 245, var(--welcome-bg-opacity));
+}
+
+.welcome-screen::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background:
     linear-gradient(115deg, rgba(255, 229, 0, 0.08), transparent 36%),
     linear-gradient(180deg, #ffffff 0%, #f8f8f4 58%, #f2f1ec 100%);
+  content: "";
+  opacity: var(--welcome-surface-opacity);
+  pointer-events: none;
 }
 
 .welcome-screen::after {
@@ -69,36 +101,53 @@
   right: 12vw;
   bottom: 12vh;
   left: 12vw;
+  z-index: 3;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(10, 10, 10, 0.2), transparent);
 }
 
 .welcome-logo-backdrop {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   width: min(86vw, 1080px);
   aspect-ratio: 2.8 / 1;
-  background:
-    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.16) 48%, transparent 100%),
-    url("/logo (1).png");
+  background: url("/logo (1).png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  filter: blur(0.9px);
-  opacity: 0;
-  transform: translateY(8px) scale(0.96);
-  animation: logo-breathe 7s ease-in-out 950ms infinite;
-  mix-blend-mode: multiply;
+  filter:
+    blur(var(--welcome-logo-blur))
+    brightness(var(--welcome-logo-brightness))
+    saturate(var(--welcome-logo-saturation));
+  opacity: var(--welcome-logo-opacity);
+  transform: translate3d(0, var(--welcome-logo-y), 0) scale(var(--welcome-logo-scale));
   pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+.welcome-screen.intro-complete {
+  pointer-events: none;
+}
+
+.welcome-screen.intro-complete::before,
+.welcome-screen.intro-complete::after,
+.welcome-screen.intro-complete .welcome-logo-backdrop,
+.welcome-screen.intro-complete .welcome-content {
+  opacity: 0;
 }
 
 .welcome-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: grid;
   justify-items: center;
   max-width: 900px;
   text-align: center;
+  filter: blur(var(--welcome-text-blur));
+  opacity: var(--welcome-text-opacity);
+  transform: translate3d(0, var(--welcome-text-y), 0) scale(var(--welcome-text-scale));
+  transform-origin: center;
+  will-change: transform, opacity, filter;
 }
 
 .welcome-kicker {
@@ -113,6 +162,9 @@
 }
 
 .welcome-content h1 {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
   max-width: none;
   margin-bottom: 22px;
   font-size: clamp(58px, 10vw, 142px);
@@ -120,6 +172,17 @@
   line-height: 0.94;
   opacity: 0;
   animation: cinematic-rise 900ms ease 520ms both;
+}
+
+.welcome-title-soft {
+  font-size: 0.48em;
+  font-weight: 680;
+  line-height: 1;
+}
+
+.welcome-title-strong {
+  font-size: 1em;
+  line-height: 0.86;
 }
 
 .welcome-content p:last-child {
@@ -133,17 +196,43 @@
 }
 
 .consulting-section {
+  --consulting-rise: 0px;
+  --consulting-veil: 0;
+  --consulting-brightness: 0.42;
+  --consulting-opacity: 0.18;
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
   gap: clamp(42px, 6vw, 86px);
+  align-content: start;
   align-items: center;
   min-height: 100vh;
-  padding: clamp(82px, 9vw, 140px) 5vw;
+  margin-top: -100vh;
+  padding: clamp(72px, 7vw, 108px) 5vw clamp(82px, 9vw, 140px);
   background: #ffffff;
+  overflow: hidden;
+  filter: brightness(var(--consulting-brightness));
+  opacity: var(--consulting-opacity);
+  transform: translate3d(0, var(--consulting-rise), 0);
+  will-change: transform, opacity, filter;
+}
+
+.consulting-section::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(248, 248, 244, var(--consulting-veil)), transparent 36%);
+  content: "";
+  pointer-events: none;
 }
 
 .consulting-copy {
+  position: relative;
+  z-index: 1;
   max-width: 620px;
+  align-self: center;
+  transform: translateY(28px);
 }
 
 .consulting-copy h2 {
@@ -164,7 +253,11 @@
 
 .consulting-visual {
   position: relative;
-  min-height: clamp(420px, 56vw, 680px);
+  z-index: 1;
+  width: min(100%, 720px);
+  min-height: clamp(400px, 48vw, 590px);
+  justify-self: end;
+  align-self: center;
   overflow: hidden;
   border-radius: var(--radius-md);
   background:
@@ -1307,7 +1400,7 @@
 
 .work-timeline {
   position: relative;
-  height: 500vh;
+  height: 560vh;
 }
 
 .work-timeline-stage {
@@ -1323,7 +1416,7 @@
   left: 50%;
   z-index: 1;
   width: 2px;
-  background: #d8dad6;
+  background: var(--ink);
   transform: translateX(-50%);
 }
 
@@ -1335,6 +1428,7 @@
   background: var(--ink);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
   transform: translate(-50%, -50%);
+  will-change: top, transform;
 }
 
 .work-timeline-content {
@@ -1358,30 +1452,18 @@
   display: flex;
   align-items: center;
   opacity: 0;
-  filter: blur(14px);
-  transition:
-    opacity 860ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 860ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 940ms cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(3px);
   will-change: transform, opacity, filter;
 }
 
 .work-phase-left {
   justify-content: flex-start;
   text-align: right;
-  transform: translate3d(-150px, 0, 0) scale(0.98);
 }
 
 .work-phase-right {
   justify-content: flex-end;
   text-align: left;
-  transform: translate3d(150px, 0, 0) scale(0.98);
-}
-
-.work-phase.active {
-  opacity: 1;
-  filter: blur(0);
-  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .work-phase-copy {

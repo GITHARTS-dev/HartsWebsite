@@ -70,6 +70,142 @@ function revealStyle(index = 0): CSSProperties {
 
 export function HomeExperience() {
   useEffect(() => {
+    const heroScene = document.querySelector<HTMLElement>(".welcome-scroll-scene");
+    const hero = document.querySelector<HTMLElement>(".welcome-screen");
+    const nextSection = document.querySelector<HTMLElement>(".consulting-section");
+    let frameId: number | null = null;
+    let progress = window.scrollY > 8 ? 1 : 0;
+    let isComplete = progress >= 1;
+    let touchY = 0;
+
+    if (!heroScene || !hero) return;
+
+    const applyHeroTransition = () => {
+      const textProgress = Math.max(0, Math.min(1, progress / 0.52));
+      const logoBrightProgress = Math.max(0, Math.min(1, progress / 0.58));
+      const logoExitProgress = Math.max(0, Math.min(1, (progress - 0.58) / 0.32));
+      const sectionProgress = Math.max(0, Math.min(1, (progress - 0.68) / 0.32));
+      const easedProgress = textProgress * textProgress * (3 - 2 * textProgress);
+      const easedLogoBrightProgress =
+        logoBrightProgress * logoBrightProgress * (3 - 2 * logoBrightProgress);
+      const easedLogoExitProgress =
+        logoExitProgress * logoExitProgress * (3 - 2 * logoExitProgress);
+      const easedSectionProgress =
+        sectionProgress * sectionProgress * (3 - 2 * sectionProgress);
+      const textOpacity = Math.max(0, 1 - easedProgress);
+      const logoOpacity = Math.max(
+        0,
+        (0.12 + easedLogoBrightProgress * 0.56) * (1 - easedLogoExitProgress),
+      );
+
+      hero.style.setProperty("--hero-progress", easedProgress.toFixed(3));
+      hero.style.setProperty("--welcome-text-y", "0px");
+      hero.style.setProperty("--welcome-text-scale", "1");
+      hero.style.setProperty("--welcome-text-blur", "0px");
+      hero.style.setProperty("--welcome-text-opacity", textOpacity.toFixed(3));
+      hero.style.setProperty("--welcome-logo-y", `${(-easedLogoBrightProgress * 12).toFixed(2)}px`);
+      hero.style.setProperty("--welcome-logo-scale", (0.78 + easedLogoBrightProgress * 0.82).toFixed(3));
+      hero.style.setProperty("--welcome-logo-blur", `${(1.2 - easedLogoBrightProgress * 1.2 + easedLogoExitProgress * 6.5).toFixed(2)}px`);
+      hero.style.setProperty("--welcome-logo-opacity", logoOpacity.toFixed(3));
+      hero.style.setProperty("--welcome-logo-brightness", (0.96 + easedLogoBrightProgress * 0.18 + easedLogoExitProgress * 0.08).toFixed(3));
+      hero.style.setProperty("--welcome-surface-opacity", (1 - easedSectionProgress * 0.98).toFixed(3));
+      hero.style.setProperty("--welcome-bg-opacity", (1 - easedSectionProgress * 0.98).toFixed(3));
+      hero.classList.toggle("intro-complete", progress >= 0.995);
+
+      nextSection?.style.setProperty(
+        "--consulting-brightness",
+        (0.42 + easedSectionProgress * 0.58).toFixed(3),
+      );
+      nextSection?.style.setProperty(
+        "--consulting-opacity",
+        (0.18 + easedSectionProgress * 0.82).toFixed(3),
+      );
+
+      frameId = null;
+    };
+
+    const requestHeroTransition = () => {
+      if (frameId === null) {
+        frameId = window.requestAnimationFrame(applyHeroTransition);
+      }
+    };
+
+    const advanceIntro = (delta: number) => {
+      progress = Math.max(0, Math.min(1, progress + delta));
+      isComplete = progress >= 1;
+      requestHeroTransition();
+    };
+
+    const shouldLockHero = () =>
+      !isComplete && window.scrollY <= heroScene.offsetTop + 2;
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!shouldLockHero()) return;
+
+      event.preventDefault();
+      advanceIntro(event.deltaY / 720);
+    };
+
+    const handleTouchStart = (event: TouchEvent) => {
+      touchY = event.touches[0]?.clientY ?? 0;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (!shouldLockHero()) return;
+
+      const nextY = event.touches[0]?.clientY ?? touchY;
+      const delta = touchY - nextY;
+      touchY = nextY;
+      event.preventDefault();
+      advanceIntro(delta / 620);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!shouldLockHero()) return;
+
+      const forwardKeys = ["ArrowDown", "PageDown", " ", "Spacebar"];
+      const backwardKeys = ["ArrowUp", "PageUp"];
+
+      if (forwardKeys.includes(event.key)) {
+        event.preventDefault();
+        advanceIntro(0.16);
+      }
+
+      if (backwardKeys.includes(event.key)) {
+        event.preventDefault();
+        advanceIntro(-0.16);
+      }
+    };
+
+    const keepHeroPinned = () => {
+      if (shouldLockHero() && window.scrollY > heroScene.offsetTop) {
+        window.scrollTo(0, heroScene.offsetTop);
+      }
+    };
+
+    applyHeroTransition();
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("scroll", keepHeroPinned, { passive: true });
+    window.addEventListener("resize", requestHeroTransition);
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("scroll", keepHeroPinned);
+      window.removeEventListener("resize", requestHeroTransition);
+
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const revealItems = Array.from(
       document.querySelectorAll<HTMLElement>(".scroll-reveal"),
     );
@@ -147,14 +283,19 @@ export function HomeExperience() {
 
   return (
     <main className="cinematic-home">
-      <section className="welcome-screen" id="hero">
-        <div className="welcome-logo-backdrop" aria-hidden="true" />
-        <div className="welcome-content">
-          <p className="welcome-kicker">Strategy. Transformation. Clarity.</p>
-          <h1>Welcome to HARTS</h1>
-          <p>
-            Purpose-led consulting for leaders shaping decisive, durable change.
-          </p>
+      <section className="welcome-scroll-scene" id="hero">
+        <div className="welcome-screen">
+          <div className="welcome-logo-backdrop" aria-hidden="true" />
+          <div className="welcome-content">
+            <p className="welcome-kicker">Strategy. Transformation. Clarity.</p>
+            <h1>
+              <span className="welcome-title-soft">Welcome to</span>
+              <span className="welcome-title-strong">HARTS</span>
+            </h1>
+            <p>
+              Purpose-led consulting for leaders shaping decisive, durable change.
+            </p>
+          </div>
         </div>
       </section>
 

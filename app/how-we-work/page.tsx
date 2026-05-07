@@ -6,7 +6,7 @@ import { HowWeWorkTimeline } from "./_components/how-we-work-timeline";
 export const metadata: Metadata = {
   title: "How We Work | HARTS",
   description:
-    "Explore the HARTS approach from diagnosis and design through build and sustain.",
+    "Explore the HARTS approach from understanding and design through collaborative engagement, outcomes, and sustainment.",
 };
 
 export default function HowWeWorkRoute() {

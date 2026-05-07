@@ -71,7 +71,7 @@
   border-radius: 999px;
   background: transparent;
   color: var(--ink);
-  font-family: inherit;
+  font-family: DM Sans, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   font-weight: 620;
   letter-spacing: 0.01em;

@@ -4,47 +4,64 @@ import { useEffect, useRef, useState } from "react";
 
 const phases = [
   {
-    title: "Diagnose",
+    title: "Understanding",
     side: "left",
-    focus: "Clarity before motion",
-    desc: "We study how your teams, tools, data, and customers interact today so every recommendation is grounded in the realities of your business.",
+    focus: "Every transformation begins with clarity.",
+    desc: "HARTS begins by understanding organizational priorities, operational realities, leadership perspectives, and long-term ambitions before shaping strategic direction.",
     points: [
-      "Stakeholder interviews and operating model review",
-      "Process, platform, and data-flow assessment",
-      "Opportunity map with risk, effort, and value signals",
+      "Understanding the Organization",
+      "Leadership Alignment",
+      "Operational Review",
+      "Strategic Goals",
     ],
   },
   {
     title: "Design",
     side: "right",
-    focus: "Architecture with intent",
-    desc: "We turn the diagnosis into an actionable blueprint, shaping journeys, governance, and technical choices around measurable outcomes.",
+    focus: "Designing transformation with intention.",
+    desc: "HARTS designs transformation strategies that align people, operations, systems, and long-term organizational goals into one connected direction.",
     points: [
-      "Future-state journey and service design",
-      "System architecture and integration planning",
-      "Prioritized roadmap with decision checkpoints",
+      "Human-centered thinking",
+      "Strategic clarity",
+      "Scalable frameworks",
+      "Adaptive transformation",
     ],
   },
   {
-    title: "Build",
+    title: "Collaborative Engagement",
     side: "left",
-    focus: "Execution without drift",
-    desc: "We build in focused increments, keeping delivery, adoption, security, and performance visible throughout the implementation cycle.",
+    focus: "Transformation through collaboration.",
+    desc: "HARTS works closely with organizations through continuous alignment, shared visibility, and iterative engagement across every phase of transformation.",
     points: [
-      "Modular delivery sprints with transparent demos",
-      "Quality gates for security, reliability, and usability",
-      "Launch planning across product, process, and people",
+      "Leadership Collaboration",
+      "Strategic Planning",
+      "Team Alignment",
+      "Continuous Guidance",
+    ],
+  },
+  {
+    title: "Outcomes Over Deliverables",
+    side: "right",
+    focus: "Transformation should create measurable organizational progress.",
+    desc: "HARTS focuses on improving visibility, alignment, adaptability, and strategic decision-making rather than simply producing reports or frameworks.",
+    points: [
+      "Operational Visibility",
+      "Strategic Alignment",
+      "Cross-functional Collaboration",
+      "Sustainable Transformation",
+      "Future-ready Decision Systems",
     ],
   },
   {
     title: "Sustain",
-    side: "right",
-    focus: "Progress that compounds",
-    desc: "We help teams operate, improve, and scale what has been launched so transformation keeps creating value after the first release.",
+    side: "left",
+    focus: "Transformation is not a one-time initiative.",
+    desc: "HARTS continues supporting organizations through optimization, adaptation, strategic evolution, and ongoing transformation guidance beyond implementation.",
     points: [
-      "Performance monitoring and adoption feedback loops",
-      "Continuous optimization backlog",
-      "Knowledge transfer and enablement rituals",
+      "Continuous Optimization",
+      "Strategic Evolution",
+      "Operational Adaptability",
+      "Long-Term Advisory",
     ],
   },
 ];
@@ -126,15 +143,15 @@ export function HowWeWorkTimeline() {
   let lineHeight = 0;
   let activeIndex = -1;
 
-  if (progress < 0.2) {
-    const phaseProgress = progress / 0.2;
+  if (progress < 0.12) {
+    const phaseProgress = progress / 0.12;
 
     ballTop =
       ballSize / 2 +
       phaseProgress * (stageHeight / 2 - ballSize / 2);
     lineHeight = ballTop;
-  } else if (progress < 0.8) {
-    const contentProgress = (progress - 0.2) / 0.6;
+  } else if (progress < 0.86) {
+    const contentProgress = (progress - 0.12) / 0.74;
 
     ballTop = stageHeight / 2;
     lineHeight = ballTop;
@@ -143,7 +160,7 @@ export function HowWeWorkTimeline() {
       Math.floor(contentProgress * phases.length),
     );
   } else {
-    const phaseProgress = (progress - 0.8) / 0.2;
+    const phaseProgress = (progress - 0.86) / 0.14;
     const start = stageHeight / 2;
     const end = stageHeight - ballSize / 2;
 

@@ -104,16 +104,20 @@
     justify-content: center;
     padding-inline: 20px;
     text-align: center;
-    transform: translateY(34px);
+    transform: translate3d(-44px, 0, 0) scale(0.98);
+  }
+
+  .work-phase-right {
+    transform: translate3d(44px, 0, 0) scale(0.98);
   }
 
   .work-phase.active {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 
   .work-phase-copy {
     width: min(100%, 430px);
-    padding-top: 148px;
+    padding-top: 112px;
   }
 
   .work-phase-left .work-phase-copy > p:last-of-type,
@@ -139,7 +143,7 @@
   }
 
   .work-phase h2 {
-    font-size: clamp(40px, 14vw, 68px);
+    font-size: clamp(32px, 11vw, 56px);
   }
 }
 

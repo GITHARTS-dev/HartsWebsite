@@ -151,10 +151,23 @@ export function HomeExperience() {
         <div className="welcome-logo-backdrop" aria-hidden="true" />
         <div className="welcome-content">
           <p className="welcome-kicker">Strategy. Transformation. Clarity.</p>
-          <h1>Welcome to HARTS</h1>
-          <p>
+          <p className="welcome-headline">
             Purpose-led consulting for leaders shaping decisive, durable change.
           </p>
+          <div className="welcome-pillars" aria-label="Key metrics">
+            <div className="welcome-pillar">
+              <span className="wp-value">180+</span>
+              <span className="wp-label">Engagements</span>
+            </div>
+            <div className="welcome-pillar">
+              <span className="wp-value">27</span>
+              <span className="wp-label">Markets</span>
+            </div>
+            <div className="welcome-pillar">
+              <span className="wp-value">94%</span>
+              <span className="wp-label">Client retention</span>
+            </div>
+          </div>
         </div>
       </section>
 

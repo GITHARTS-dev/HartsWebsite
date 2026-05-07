@@ -125,7 +125,7 @@
   transform: translateY(-8px) scaleX(1.01);
   border-color: var(--gold);
   border-bottom-color: var(--gold);
-  background-color: #fffce8;
+  background-color: #f6f3ec;
 }
 
 /* staggered office card entrances (pure 2D) */

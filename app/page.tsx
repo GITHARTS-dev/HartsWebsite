@@ -1,10 +1,5 @@
-import { PageShell } from "./_shared/layout/page-shell";
-import { HomeExperience } from "./_components/home-experience";
+import { HomePortalPage } from "./_components/home-portal-page";
 
 export default function HomeRoute() {
-  return (
-    <PageShell>
-      <HomeExperience />
-    </PageShell>
-  );
+  return <HomePortalPage />;
 }

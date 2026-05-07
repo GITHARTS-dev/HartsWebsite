@@ -20,7 +20,7 @@
 }
 
 .hero-left h1 {
-  color: #fff;
+  color: #f6f3ec;
   font-size: 48px;
   font-weight: 700;
   margin: 0 0 20px;
@@ -52,7 +52,7 @@
 
 /* Values Section */
 .values-section {
-  background-color: #fff;
+  background-color: #f6f3ec;
   padding: 80px 40px;
 }
 
@@ -172,7 +172,7 @@
 
 /* CTA Section */
 .cta-section {
-  background-color: #fff;
+  background-color: #f6f3ec;
   padding: 80px 40px;
 }
 
@@ -273,7 +273,7 @@
 
 .btn-primary {
   background-color: #000;
-  color: #fff;
+  color: #f6f3ec;
 }
 
 .btn-primary:hover {
@@ -282,12 +282,12 @@
 
 .btn-secondary {
   background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #f6f3ec;
+  border: 1px solid #f6f3ec;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(246, 243, 236, 0.1);
 }
 
 /* Responsive */

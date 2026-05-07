@@ -2,7 +2,7 @@
   --ink: #0a0a0a;
   --muted: #5e625f;
   --line: #d8dad6;
-  --paper: #ffffff;
+  --paper: #f6f3ec;
   --soft: #f4f3ef;
   --sage: #607060;
   --blue: #20364f;
@@ -125,7 +125,7 @@ textarea {
 }
 
 .solid-button {
-  color: #fff;
+  color: #f6f3ec;
   background: var(--ink);
 }
 

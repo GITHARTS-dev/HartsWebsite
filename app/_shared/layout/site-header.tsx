@@ -8,6 +8,7 @@ import { industries } from "../../_data/home-content";
 const navItems = [
   { href: "/how-we-work", label: "How We Work" },
   { href: "/how-we-help", label: "How We Help" },
+  { href: "/about-us", label: "About Us" },
 ];
 
 export function SiteHeader() {

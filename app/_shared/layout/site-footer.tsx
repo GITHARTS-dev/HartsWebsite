@@ -1,64 +1,76 @@
-"use client";
+import Link from "next/link";
 
-import { useEffect, useRef, useState } from "react";
-
-const footerLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/harts-consulting/" },
-  { label: "Instagram", href: "https://www.instagram.com/" },
-  { label: "Email", href: "mailto:hello@hartsconsulting.example" },
+const navCols = [
   {
-    label: "Careers",
-    href: "mailto:hello@hartsconsulting.example?subject=Career%20at%20HARTS",
-    id: "career",
+    heading: "Practice",
+    links: [
+      { label: "How We Help", href: "/how-we-help" },
+      { label: "How We Work", href: "/how-we-work" },
+      { label: "Industries", href: "/industries" },
+    ],
   },
-  { label: "Contact Us", href: "/contact" },
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "/about-us" },
+      { label: "Careers", href: "/#career" },
+      { label: "Press", href: "#" },
+    ],
+  },
+  {
+    heading: "Connect",
+    links: [
+      { label: "Contact", href: "/contact" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/company/harts-consulting/",
+        external: true,
+      },
+      { label: "Newsletter", href: "#" },
+    ],
+  },
 ];
 
 export function SiteFooter() {
-  const footerRef = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const footer = footerRef.current;
-
-    if (!footer || !("IntersectionObserver" in window)) {
-      setVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
-    );
-
-    observer.observe(footer);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <footer className={`footer ${visible ? "footer-visible" : ""}`} ref={footerRef}>
-      <div className="footer-brand">
-        <strong>HARTS</strong>
-        <span>Strategy, transformation, and growth advisory.</span>
+    <footer className="sf-footer">
+      <div className="sf-inner">
+        <div className="sf-brand">
+          <Link href="/" className="sf-logo-link" aria-label="HARTS home">
+            <img
+              src="/HARTS Consulting LBG.png"
+              alt="HARTS Consulting"
+              className="sf-logo"
+            />
+          </Link>
+          <p className="sf-tagline">Strategy. Transformation. Clarity.</p>
+        </div>
+
+        <div className="sf-nav-cols">
+          {navCols.map((col) => (
+            <div className="sf-nav-col" key={col.heading}>
+              <p className="sf-col-head">{col.heading}</p>
+              {col.links.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="sf-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link key={link.label} href={link.href} className="sf-link">
+                    {link.label}
+                  </Link>
+                )
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-      <nav className="footer-social-links" aria-label="HARTS social and contact links">
-        {footerLinks.map((item, index) => (
-          <a
-            href={item.href}
-            id={item.id}
-            key={item.label}
-            style={{ animationDelay: `${index * 90}ms` }}
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
     </footer>
   );
 }

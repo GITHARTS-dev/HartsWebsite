@@ -36,32 +36,6 @@ export default function HowWeWorkRoute() {
         <TransformationPrinciples />
 
         <HowWeWorkTimeline />
-
-        <section className="work-outcomes">
-          <div className="work-outcomes-copy reveal">
-            <p className="eyebrow">What Carries Forward</p>
-            <h2>Teams leave with more than a launch.</h2>
-            <p>
-              The final handoff is designed to make ownership feel natural:
-              operating rituals, decision records, training material, and a
-              backlog that keeps improvement alive after the engagement.
-            </p>
-          </div>
-          <div className="work-outcome-list reveal delay-one">
-            <article>
-              <h3>Clear ownership</h3>
-              <p>Roles, responsibilities, and escalation paths are documented before scale.</p>
-            </article>
-            <article>
-              <h3>Measured adoption</h3>
-              <p>Usage, performance, and feedback loops show what is working and what needs attention.</p>
-            </article>
-            <article>
-              <h3>Continuous roadmap</h3>
-              <p>Future improvements are sequenced by value, effort, and organizational readiness.</p>
-            </article>
-          </div>
-        </section>
       </main>
     </PageShell>
   );

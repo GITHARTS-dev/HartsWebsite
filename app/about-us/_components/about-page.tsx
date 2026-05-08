@@ -10,63 +10,28 @@ const stats = [
   { value: "94%", label: "Client retention" },
 ];
 
-const values = [
-  {
-    title: "What we see",
-    body: "Markets shifting, organisations adapting, leaders seeking clarity amid complexity and rapid change.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.6" />
-      </svg>
-    ),
-  },
-  {
-    title: "How we work",
-    body: "Deep expertise combined with collaborative rigour — practical paths from strategic intent to measurable action.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="18" cy="5" r="3" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="6" cy="12" r="3" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="18" cy="19" r="3" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Where we engage",
-    body: "Across industries and functions, at the intersection where leadership conviction and execution discipline converge.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-];
-
 const team = [
   {
-    name: "James Hartley",
-    role: "Founder & Managing Partner",
+    name: "Sreema Nallasivam",
+    role: "CEO & Co-Founder",
+    image: "",
+    linkedin: "https://www.linkedin.com/in/sreema-nallasivam-6a74498/",
+  },
+  {
+    name: "Cristian Margaretic",
+    role: "CEO & Co-Founder",
     image: "",
     linkedin: "#",
   },
   {
-    name: "Sarah Okafor",
-    role: "Partner, Strategy & Growth",
+    name: "Savio James Abraham",
+    role: "Cheif Operating Officer",
     image: "",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/savio-james-abraham/",
   },
   {
-    name: "Marcus Reeves",
-    role: "Partner, Transformation",
-    image: "",
-    linkedin: "#",
-  },
-  {
-    name: "Priya Nair",
-    role: "Director, Digital Enablement",
+    name: "Flavio Gall",
+    role: "Director-Business Development",
     image: "",
     linkedin: "#",
   },
@@ -88,35 +53,32 @@ function LinkedInIcon() {
 }
 
 export function AboutPage() {
-  const valuesRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
-    const observers: IntersectionObserver[] = [];
 
-    [valuesRef.current, teamRef.current].forEach((container) => {
-      if (!container) return;
-      const items = Array.from(container.querySelectorAll<HTMLElement>(".au-reveal"));
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            const el = entry.target as HTMLElement;
-            const idx = items.indexOf(el);
-            el.style.transitionDelay = `${idx * 90}ms`;
-            el.classList.add("au-reveal--in");
-            el.addEventListener("transitionend", () => { el.style.transitionDelay = ""; }, { once: true });
-            obs.unobserve(el);
-          });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -48px 0px" }
-      );
-      items.forEach((el) => obs.observe(el));
-      observers.push(obs);
-    });
+    const container = teamRef.current;
+    if (!container) return;
 
-    return () => observers.forEach((obs) => obs.disconnect());
+    const items = Array.from(container.querySelectorAll<HTMLElement>(".au-reveal"));
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target as HTMLElement;
+          const idx = items.indexOf(el);
+          el.style.transitionDelay = `${idx * 90}ms`;
+          el.classList.add("au-reveal--in");
+          el.addEventListener("transitionend", () => { el.style.transitionDelay = ""; }, { once: true });
+          obs.unobserve(el);
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -48px 0px" }
+    );
+    items.forEach((el) => obs.observe(el));
+
+    return () => obs.disconnect();
   }, []);
 
   return (
@@ -138,7 +100,7 @@ export function AboutPage() {
             <div className="au-hero-body">
               <p>
                 HARTS was founded on a single belief: that the distance between
-                strategic intent and organisational reality can be closed — with
+                strategic intent and organisational reality can be closed with
                 the right rigour, the right people, and an uncompromising focus
                 on what actually moves the needle.
               </p>
@@ -154,26 +116,6 @@ export function AboutPage() {
             <div className="au-stat" key={s.label}>
               <span className="au-stat-value">{s.value}</span>
               <span className="au-stat-label">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ─── VALUES ────────────────────────────────────────────────── */}
-      <section className="au-values">
-        <div className="au-section-hd">
-          <p className="au-eyebrow">Our principles</p>
-          <h2>How we operate in the world</h2>
-          <p className="au-section-sub">
-            An approach rooted in clarity, rigour, and measurable impact across every engagement.
-          </p>
-        </div>
-        <div className="au-values-grid" ref={valuesRef}>
-          {values.map((v) => (
-            <div className="au-value-card au-reveal" key={v.title}>
-              <div className="au-value-icon">{v.icon}</div>
-              <h3 className="au-value-title">{v.title}</h3>
-              <p className="au-value-body">{v.body}</p>
             </div>
           ))}
         </div>

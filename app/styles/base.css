@@ -5,13 +5,15 @@
   --paper: #ffffff;
   --soft: #f4f3ef;
   --sage: #607060;
-  --blue: #20364f;
-  --gold: #ffe500;
-  --gold-deep: #b89f00;
+  --blue: #0B1E36;
+  --navy: #0B1E36;
+  --gold: #F4B41A;
+  --gold-deep: #c89400;
   --radius-sm: 6px;
   --radius-md: 8px;
   --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.08);
   --shadow-lift: 0 24px 60px rgba(0, 0, 0, 0.12);
+  --cta-shadow: 0 14px 32px rgba(244, 180, 26, 0.32);
 }
 
 * {
@@ -86,7 +88,7 @@ textarea {
 input:focus,
 textarea:focus {
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(255, 229, 0, 0.26);
+  box-shadow: 0 0 0 3px rgba(244, 180, 26, 0.26);
 }
 
 input {
@@ -117,27 +119,41 @@ textarea {
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
+  letter-spacing: 0.01em;
   transition:
     transform 180ms ease,
     background 180ms ease,
     color 180ms ease,
-    box-shadow 180ms ease;
+    box-shadow 180ms ease,
+    border-color 180ms ease;
 }
 
 .solid-button {
-  color: #fff;
-  background: var(--ink);
+  color: var(--navy);
+  background: var(--gold);
+  border-color: var(--gold);
+  font-weight: 800;
 }
 
 .outline-button {
   color: var(--ink);
   background: transparent;
+  border-color: rgba(10, 10, 10, 0.42);
 }
 
-.solid-button:hover,
+.solid-button:hover {
+  transform: translateY(-2px);
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
+  color: #fff;
+  box-shadow: var(--cta-shadow);
+}
+
 .outline-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  border-color: var(--ink);
+  background: rgba(10, 10, 10, 0.04);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
 }
 
 .solid-button:focus-visible,
@@ -146,7 +162,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(255, 229, 0, 0.46);
+  outline: 3px solid rgba(244, 180, 26, 0.46);
   outline-offset: 3px;
 }
 

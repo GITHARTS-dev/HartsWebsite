@@ -84,7 +84,7 @@ export function HomeExperience() {
       const textProgress = Math.max(0, Math.min(1, progress / 0.52));
       const logoBrightProgress = Math.max(0, Math.min(1, progress / 0.58));
       const logoExitProgress = Math.max(0, Math.min(1, (progress - 0.58) / 0.32));
-      const sectionProgress = Math.max(0, Math.min(1, (progress - 0.68) / 0.32));
+      const sectionProgress = Math.max(0, Math.min(1, (progress - 0.50) / 0.45));
       const easedProgress = textProgress * textProgress * (3 - 2 * textProgress);
       const easedLogoBrightProgress =
         logoBrightProgress * logoBrightProgress * (3 - 2 * logoBrightProgress);
@@ -143,7 +143,7 @@ export function HomeExperience() {
       if (!shouldLockHero()) return;
 
       event.preventDefault();
-      advanceIntro(event.deltaY / 720);
+      advanceIntro(event.deltaY / 380);
     };
 
     const handleTouchStart = (event: TouchEvent) => {
@@ -157,7 +157,7 @@ export function HomeExperience() {
       const delta = touchY - nextY;
       touchY = nextY;
       event.preventDefault();
-      advanceIntro(delta / 620);
+      advanceIntro(delta / 340);
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -168,12 +168,12 @@ export function HomeExperience() {
 
       if (forwardKeys.includes(event.key)) {
         event.preventDefault();
-        advanceIntro(0.16);
+        advanceIntro(0.28);
       }
 
       if (backwardKeys.includes(event.key)) {
         event.preventDefault();
-        advanceIntro(-0.16);
+        advanceIntro(-0.28);
       }
     };
 
@@ -295,6 +295,9 @@ export function HomeExperience() {
             <p>
               Purpose-led consulting for leaders shaping decisive, durable change.
             </p>
+          </div>
+          <div className="welcome-scroll-cue" aria-hidden="true">
+            <span className="welcome-scroll-line"><span /></span>
           </div>
         </div>
       </section>

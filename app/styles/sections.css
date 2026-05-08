@@ -3024,3 +3024,160 @@
   .au-cta-actions { flex-direction: column; align-items: stretch; }
   .au-btn-primary, .au-btn-ghost { align-self: stretch; justify-content: center; }
 }
+
+/* ── Industry CTA Band ───────────────────────────────────────────────────── */
+.industry-cta {
+  padding: clamp(72px, 8vw, 112px) 5vw;
+  background: #0B1E36;
+  text-align: center;
+}
+
+.industry-cta-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.industry-cta .eyebrow {
+  color: #F4B41A;
+}
+
+.industry-cta h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.industry-cta p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 18px;
+  line-height: 1.74;
+  margin-bottom: 36px;
+}
+
+.industry-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.industry-cta .solid-button {
+  background: #F4B41A;
+  border-color: #F4B41A;
+  color: #0B1E36;
+  font-weight: 800;
+}
+
+.industry-cta .solid-button:hover {
+  background: #e5a515;
+  border-color: #e5a515;
+}
+
+.industry-cta .outline-button {
+  border-color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.industry-cta .outline-button:hover {
+  border-color: rgba(255, 255, 255, 0.72);
+  color: #fff;
+}
+
+/* ── Contact hero CTA row ────────────────────────────────────────────────── */
+.contact-hero-cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* ── Office directions link ──────────────────────────────────────────────── */
+.office-directions {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 160ms ease;
+}
+
+.office-directions:hover {
+  color: var(--gold-deep);
+}
+
+/* ── Headquarters links & actions ────────────────────────────────────────── */
+.hq-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hq-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 160ms ease;
+}
+
+.hq-links a:hover {
+  color: var(--gold-deep);
+}
+
+.hq-links span {
+  font-size: 14px;
+  color: #555852;
+}
+
+.hq-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── Inquiry form ────────────────────────────────────────────────────────── */
+.iq-sub {
+  margin-bottom: 24px;
+  color: #555852;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.iq-success {
+  padding: 18px 22px;
+  background: rgba(31, 120, 64, 0.08);
+  border: 1px solid rgba(31, 120, 64, 0.26);
+  border-radius: var(--radius-md);
+  color: #1a5e36;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.iq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.iq-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.iq-row input {
+  flex: 1;
+}
+
+.iq-legal {
+  margin: 0;
+  font-size: 11px;
+  color: #888b85;
+  line-height: 1.6;
+}

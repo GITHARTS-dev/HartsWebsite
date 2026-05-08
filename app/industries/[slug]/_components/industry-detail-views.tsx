@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type IndustryContent = {
   title: string;
   lead: string;
@@ -98,6 +100,21 @@ function IndustryDetailTemplate({ content }: { content: IndustryContent }) {
         {content.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
+      </section>
+
+      <section className="industry-cta reveal">
+        <div className="industry-cta-inner">
+          <p className="eyebrow">Work with HARTS</p>
+          <h2>Ready to bring clarity to this challenge?</h2>
+          <p>
+            Tell us about the opportunity ahead. We will respond with a focused
+            perspective on how HARTS can help.
+          </p>
+          <div className="industry-cta-actions">
+            <Link className="solid-button large" href="/contact">Connect with us</Link>
+            <Link className="outline-button large" href="/how-we-help">Explore services</Link>
+          </div>
+        </div>
       </section>
     </main>
   );

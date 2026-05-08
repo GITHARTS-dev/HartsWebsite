@@ -225,15 +225,15 @@ export function AboutPage() {
       {/* ─── CTA ───────────────────────────────────────────────────── */}
       <section className="au-cta">
         <div className="au-cta-inner">
-          <p className="au-eyebrow au-eyebrow--muted">Get started</p>
-          <h2>Ready to see what's possible?</h2>
+          <p className="au-eyebrow au-eyebrow--muted">Work with HARTS</p>
+          <h2>The right partner changes everything.</h2>
           <p>
-            Let&apos;s explore how strategic clarity and disciplined execution can
-            unlock new value for your organisation.
+            Connect with HARTS to explore how strategic clarity and disciplined
+            execution can unlock transformative value for your organisation.
           </p>
           <div className="au-cta-actions">
             <Link className="au-btn-primary" href="/contact">
-              Contact us
+              Start a conversation
             </Link>
             <Link className="au-btn-ghost" href="/how-we-work">
               How we work

@@ -1,22 +1,28 @@
-import React from 'react';
 import { hqInfo } from '../../_data/connect-content';
 
 export default function HeadquartersInfo() {
   return (
-    <div className="hq-info-container reveal delay-one" style={{ marginTop: '4rem' }}>
-      <p className="eyebrow" style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: '#6b7280' }}>Connect</p>
-      <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>HARTS global headquarters</h2>
-      <p style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>{hqInfo.address}</p>
-
-      <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
-        <li>🔗 {hqInfo.linkedin}</li>
-        <li>🏢 {hqInfo.careers}</li>
-        <li>🌍 {hqInfo.offices}</li>
+    <div className="hq-block reveal delay-one">
+      <div className="hq-image" aria-label="HARTS global headquarters" />
+      <p className="eyebrow">Connect</p>
+      <h2>HARTS global headquarters</h2>
+      <p>{hqInfo.address}</p>
+      <ul className="hq-links">
+        <li>
+          <a
+            href="https://www.linkedin.com/company/harts-consulting/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {hqInfo.linkedin}
+          </a>
+        </li>
+        <li><a href="/careers">{hqInfo.careers}</a></li>
+        <li><span>{hqInfo.offices}</span></li>
       </ul>
-
-      <div style={{ display: 'flex', gap: '1rem' }}>
-        <button className="outline-button">Directions</button>
-        <button className="outline-button" style={{ border: 'none', textDecoration: 'underline' }}>Explore →</button>
+      <div className="hq-actions">
+        <a className="outline-button" href="#">Directions</a>
+        <a className="outline-button" href="/contact">Explore</a>
       </div>
     </div>
   );

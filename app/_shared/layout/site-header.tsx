@@ -67,7 +67,7 @@ export function SiteHeader() {
 
       <div className="header-actions">
         <Link className="outline-button" href="/#career">
-          Career
+          Careers
         </Link>
         <Link className="solid-button" href="/contact">
           Connect

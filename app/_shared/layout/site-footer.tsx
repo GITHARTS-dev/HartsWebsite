@@ -70,6 +70,11 @@ export function SiteFooter() {
           ))}
         </div>
       </div>
+      <div className="sf-bottom">
+        <p className="sf-legal">
+          &copy; {new Date().getFullYear()} HARTS Consulting. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 }

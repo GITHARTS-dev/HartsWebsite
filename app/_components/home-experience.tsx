@@ -328,8 +328,7 @@ export function HomeExperience() {
         <div className="vision-statement reveal">
           <p className="eyebrow">Vision</p>
           <h2>
-            To help ambitious organizations move through uncertainty with
-            clarity, purpose, and measurable confidence.
+            Bringing People Together Through Equity and Purpose to Create Lasting Value
           </h2>
         </div>
       </section>

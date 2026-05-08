@@ -304,7 +304,7 @@ export function HomeExperience() {
 
       <section className="consulting-section" id="consulting">
         <div className="consulting-copy reveal">
-          <p className="eyebrow">Consulting</p>
+          
           <h2>HARTS Consulting</h2>
           <p>
             HARTS partners with leadership teams to clarify strategy, align

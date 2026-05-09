@@ -339,15 +339,22 @@ export function HomeExperience() {
       <section className="home-premium-section challenges-section parallax-section" id="challenges">
         <div className="section-orb orb-one" aria-hidden="true" />
         <div className="home-section-shell">
-          <div className="home-section-heading scroll-reveal">
-            <p className="eyebrow">Challenges We Solve</p>
-            <h2>We help organizations navigate complexity with clarity.</h2>
-            <p>
-              Organizations face increasing operational complexity,
-              fragmented systems, and accelerating digital expectations. HARTS
-              helps leadership teams align strategy, intelligence, and
-              transformation into one connected direction.
-            </p>
+          <div className="challenges-intro">
+            <div className="home-section-heading scroll-reveal">
+              <p className="eyebrow">Challenges We Solve</p>
+              <h2>We help organizations navigate complexity with clarity.</h2>
+              <p>
+                Organizations face increasing operational complexity,
+                fragmented systems, and accelerating digital expectations. HARTS
+                helps leadership teams align strategy, intelligence, and
+                transformation into one connected direction.
+              </p>
+            </div>
+            <div
+              className="challenge-visual scroll-reveal reveal-soft-up"
+              style={revealStyle(2)}
+              aria-label="Leaders reviewing operational insights together"
+            />
           </div>
 
           <div className="challenge-grid">

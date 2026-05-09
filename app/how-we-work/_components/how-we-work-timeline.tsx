@@ -205,12 +205,12 @@ export function HowWeWorkTimeline() {
                     <h2>{phase.title}</h2>
                     <strong>{phase.focus}</strong>
                     <p>{phase.desc}</p>
-                    <ul>
-                      {phase.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
                   </div>
+                  <ul className="work-phase-points" aria-label={`${phase.title} focus areas`}>
+                    {phase.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
                 </article>
               );
             })}

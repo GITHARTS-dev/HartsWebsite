@@ -14,10 +14,11 @@ export default function ContactRoute() {
         <section className="section contact-hero reveal">
           <div className="contact-hero-content">
             <p className="eyebrow">Contact</p>
-            <h1>Connect with HARTS</h1>
+            <h1>Let&apos;s start a conversation.</h1>
             <p>
-              Reach out to our team to discuss your strategic challenges and
-              how we can help drive clarity and action.
+              Whether you are navigating a major transformation, exploring a
+              growth opportunity, or seeking an independent strategic perspective
+              — our team is ready to engage.
             </p>
           </div>
           <div
@@ -79,17 +80,17 @@ export default function ContactRoute() {
               className="office-card reveal"
               style={{ animationDelay: "240ms" }}
             >
-              <div className="office-image" aria-label="London office" />
+              <div className="office-image" aria-label="Pune office" />
               <h3>Pune</h3>
-              <p>xxxxxxxxxxxx<br />xxxxxxxx<br />India</p>
+              <p>Expanding our presence<br />India</p>
             </article>
             <article
               className="office-card reveal"
               style={{ animationDelay: "360ms" }}
             >
-              <div className="office-image" aria-label="Singapore office" />
+              <div className="office-image" aria-label="Bangalore office" />
               <h3>Bangalore</h3>
-              <p>xxxxx<br />xxxxxxxxxxxxxx<br />India</p>
+              <p>Expanding our presence<br />India</p>
             </article>
           </div>
         </section>

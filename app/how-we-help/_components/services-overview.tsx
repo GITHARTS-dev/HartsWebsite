@@ -79,7 +79,12 @@ const faqs = [
   },
 ];
 
-const phases = ["Diagnose", "Design", "Build", "Sustain"] as const;
+const engagementPrinciples = [
+  "Embedded, not remote",
+  "Decisions over decks",
+  "Capability transfer",
+  "Measurable progress",
+] as const;
 
 export function ServicesOverview() {
   const bentoRef = useRef<HTMLDivElement>(null);
@@ -197,10 +202,11 @@ export function ServicesOverview() {
         <div className="hwh-approach-inner">
           <div className="hwh-approach-copy">
             <p className="hwh-approach-eyebrow">Our Approach</p>
-            <h2>From question to outcome in four phases.</h2>
+            <h2>Built for outcomes, not artifacts.</h2>
             <p>
-              Every engagement follows a disciplined path — diagnosis first,
-              design next, then build and sustain. No shortcuts. No drift.
+              Every engagement balances strategic rigour with delivery
+              momentum — embedded with your team, measured by what changes
+              inside your organisation.
             </p>
             <Link className="hwh-approach-link" href="/how-we-work">
               See how we work
@@ -211,10 +217,9 @@ export function ServicesOverview() {
           </div>
 
           <div className="hwh-phases">
-            {phases.map((phase, i) => (
-              <div className="hwh-phase" key={phase}>
-                <span className="hwh-phase-num">{String(i + 1).padStart(2, "0")}</span>
-                <strong>{phase}</strong>
+            {engagementPrinciples.map((statement) => (
+              <div className="hwh-phase" key={statement}>
+                <strong>{statement}</strong>
               </div>
             ))}
           </div>

@@ -6,14 +6,14 @@ const navCols = [
     links: [
       { label: "How We Help", href: "/how-we-help" },
       { label: "How We Work", href: "/how-we-work" },
-      { label: "Industries", href: "/industries" },
+      { label: "Where We Engage", href: "/" },
     ],
   },
   {
     heading: "Company",
     links: [
       { label: "About", href: "/about-us" },
-      { label: "Careers", href: "/careers" },
+      { label: "Careers", href: "/#career" },
     ],
   },
   {
@@ -25,7 +25,6 @@ const navCols = [
         href: "https://www.linkedin.com/company/harts-consulting/",
         external: true,
       },
-      
     ],
   },
 ];
@@ -38,7 +37,7 @@ export function SiteFooter() {
           <div className="sf-logo-link" aria-hidden="true">
             <img
               src="/image.png"
-              alt="HARTS logo"
+              alt="HARTS Consulting"
               className="sf-logo"
             />
           </div>
@@ -69,6 +68,11 @@ export function SiteFooter() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="sf-bottom">
+        <p className="sf-legal">
+          &copy; {new Date().getFullYear()} HARTS Consulting. All rights reserved.
+        </p>
       </div>
     </footer>
   );

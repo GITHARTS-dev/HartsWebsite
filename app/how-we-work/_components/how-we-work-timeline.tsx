@@ -4,63 +4,68 @@ import { useEffect, useRef, useState } from "react";
 
 const phases = [
   {
-    title: "Diagnose",
+    title: "Understanding",
     side: "left",
-    focus: "We do not prescribe before we understand.",
-    desc: "HARTS begins by interrogating organizational priorities, leadership conviction, operational constraints, and long-term ambitions — forming a grounded baseline before a single recommendation is made.",
+    focus: "Every transformation begins with clarity.",
+    desc: "HARTS begins by understanding organizational priorities, operational realities, leadership perspectives, and long-term ambitions before shaping strategic direction.",
     points: [
-      "Organizational diagnostic",
-      "Leadership alignment mapping",
-      "Operational constraint review",
-      "Strategic horizon setting",
+      "Understanding the Organization",
+      "Leadership Alignment",
+      "Operational Review",
+      "Strategic Goals",
     ],
   },
   {
     title: "Design",
     side: "right",
-    focus: "Architecture before action.",
-    desc: "We design transformation strategies that connect people, processes, systems, and strategic intent into one coherent direction — engineered to last well beyond the engagement itself.",
+    focus: "Designing transformation with intention.",
+    desc: "HARTS designs transformation strategies that align people, operations, systems, and long-term organizational goals into one connected direction.",
     points: [
-      "Human-centered design principles",
-      "Strategic clarity sessions",
-      "Scalable operating frameworks",
-      "Adaptive transformation architecture",
+      "Human-centered thinking",
+      "Strategic clarity",
+      "Scalable frameworks",
+      "Adaptive transformation",
     ],
   },
   {
-    title: "Build",
+    title: "Collaborative Engagement",
     side: "left",
-    focus: "Embedded partnership, not remote delivery.",
-    desc: "HARTS works alongside your teams — maintaining shared visibility, iterating continuously, and holding the tension between strategic ambition and operational reality across every phase.",
+    focus: "Transformation through collaboration.",
+    desc: "HARTS works closely with organizations through continuous alignment, shared visibility, and iterative engagement across every phase of transformation.",
     points: [
-      "Embedded leadership collaboration",
-      "Milestone-driven execution planning",
-      "Cross-functional team alignment",
-      "Continuous guidance and course correction",
+      "Leadership Collaboration",
+      "Strategic Planning",
+      "Team Alignment",
+      "Continuous Guidance",
     ],
   },
   {
-    title: "Deliver",
+    title: "Outcomes Over Deliverables",
     side: "right",
-    focus: "Outcomes, not outputs.",
-    desc: "HARTS measures success by organizational progress — sharper decisions, greater alignment, improved adaptability — not by the volume of documents or frameworks produced.",
+    focus: "Transformation should create measurable organizational progress.",
+    desc: "HARTS focuses on improving visibility, alignment, adaptability, and strategic decision-making rather than simply producing reports or frameworks.",
+    image: {
+      src: "/business_image_1.png",
+      alt: "Business leaders reviewing transformation outcomes",
+    },
     points: [
-      "Decision-velocity uplift",
-      "Cross-functional capability transfer",
-      "Measurable transformation milestones",
-      "Sustainable performance indicators",
+      "Operational Visibility",
+      "Strategic Alignment",
+      "Cross-functional Collaboration",
+      "Sustainable Transformation",
+      "Future-ready Decision Systems",
     ],
   },
   {
     title: "Sustain",
     side: "left",
-    focus: "Transformation is not a single event.",
-    desc: "HARTS continues to support organizations through the next horizon — optimizing what was built, adapting to what has changed, and ensuring the capability to lead future change cycles lives inside your team.",
+    focus: "Transformation is not a one-time initiative.",
+    desc: "HARTS continues supporting organizations through optimization, adaptation, strategic evolution, and ongoing transformation guidance beyond implementation.",
     points: [
-      "Continuous performance optimization",
-      "Strategic evolution planning",
-      "Operational adaptability reviews",
-      "Long-term transformation advisory",
+      "Continuous Optimization",
+      "Strategic Evolution",
+      "Operational Adaptability",
+      "Long-Term Advisory",
     ],
   },
 ];
@@ -86,19 +91,6 @@ export function HowWeWorkTimeline() {
       setHeaderHeight(header?.offsetHeight ?? 72);
     };
 
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-
-      const rect = containerRef.current.getBoundingClientRect();
-      const totalHeight = Math.max(1, rect.height - window.innerHeight);
-      const scrolled = -rect.top;
-      targetProgressRef.current = Math.max(0, Math.min(1, scrolled / totalHeight));
-
-      if (frameRef.current === null) {
-        frameRef.current = window.requestAnimationFrame(animateProgress);
-      }
-    };
-
     const animateProgress = () => {
       const nextProgress =
         progressRef.current +
@@ -114,6 +106,19 @@ export function HowWeWorkTimeline() {
       progressRef.current = nextProgress;
       setProgress(nextProgress);
       frameRef.current = window.requestAnimationFrame(animateProgress);
+    };
+
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const totalHeight = Math.max(1, rect.height - window.innerHeight);
+      const scrolled = -rect.top;
+      targetProgressRef.current = clamp(scrolled / totalHeight, 0, 1);
+
+      if (frameRef.current === null) {
+        frameRef.current = window.requestAnimationFrame(animateProgress);
+      }
     };
 
     setMounted(true);
@@ -144,6 +149,7 @@ export function HowWeWorkTimeline() {
   const ballProgress = progress * progress * (3 - 2 * progress);
   const ballTop = ballSize / 2 + ballProgress * (stageHeight - ballSize);
   const lineHeight = ballTop;
+  const scrollHintOpacity = clamp(1 - progress / 0.035, 0, 1);
   const contentProgress = clamp((progress - 0.04) / 0.9, 0, 1);
   const phaseTravel = stageHeight * 1.62;
 
@@ -170,6 +176,16 @@ export function HowWeWorkTimeline() {
             top: `${ballTop}px`,
           }}
         />
+        <div
+          aria-hidden="true"
+          className="work-timeline-scroll-hint"
+          style={{
+            opacity: scrollHintOpacity,
+            top: `${ballTop + ballSize / 2 + 18}px`,
+          }}
+        >
+          Scroll down
+        </div>
 
         <div className="work-timeline-content">
           <div className="work-timeline-inner">
@@ -190,7 +206,9 @@ export function HowWeWorkTimeline() {
 
               return (
                 <article
-                  className={`work-phase work-phase-${phase.side}`}
+                  className={`work-phase work-phase-${phase.side}${
+                    phase.image ? " work-phase-with-media" : ""
+                  }`}
                   key={phase.title}
                   style={{
                     opacity,
@@ -198,6 +216,11 @@ export function HowWeWorkTimeline() {
                     transform: `translate3d(0, ${verticalOffset}px, 0) scale(${scale})`,
                   }}
                 >
+                  {phase.image ? (
+                    <div className="work-phase-media">
+                      <img src={phase.image.src} alt={phase.image.alt} />
+                    </div>
+                  ) : null}
                   <div className="work-phase-copy">
                     <p className="work-phase-kicker">
                       Phase {String(index + 1).padStart(2, "0")}
@@ -205,12 +228,12 @@ export function HowWeWorkTimeline() {
                     <h2>{phase.title}</h2>
                     <strong>{phase.focus}</strong>
                     <p>{phase.desc}</p>
+                    <ul>
+                      {phase.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="work-phase-points" aria-label={`${phase.title} focus areas`}>
-                    {phase.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
                 </article>
               );
             })}

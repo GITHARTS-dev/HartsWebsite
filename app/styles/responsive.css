@@ -115,8 +115,7 @@
   .work-phase,
   .work-phase-left,
   .work-phase-right {
-    grid-template-columns: 1fr;
-    row-gap: 22px;
+    justify-content: center;
     padding-inline: 20px;
     text-align: center;
   }
@@ -124,30 +123,24 @@
   .work-phase-copy {
     width: min(100%, 430px);
     padding-top: 112px;
-    justify-self: center;
-    grid-row: 1;
   }
 
-  .work-phase-points {
-    grid-row: 2;
+  .work-phase-with-media {
+    gap: 18px;
+  }
+
+  .work-phase-media {
+    display: none;
   }
 
   .work-phase-left .work-phase-copy > p:last-of-type,
-  .work-phase-copy > p:last-of-type {
+  .work-phase-left ul,
+  .work-phase-copy > p:last-of-type,
+  .work-phase-copy ul {
     margin-inline: auto;
   }
 
-  .work-phase-left .work-phase-copy,
-  .work-phase-right .work-phase-copy,
-  .work-phase-left .work-phase-points,
-  .work-phase-right .work-phase-points {
-    grid-column: 1;
-  }
-
-  .work-phase-points,
-  .work-phase-left .work-phase-points,
-  .work-phase-right .work-phase-points {
-    justify-self: center;
+  .work-phase ul {
     max-width: 360px;
     text-align: left;
   }

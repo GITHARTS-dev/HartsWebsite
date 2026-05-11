@@ -11,7 +11,13 @@ export const metadata: Metadata = {
     "Explore the HARTS approach from understanding and design through collaborative engagement, outcomes, and sustainment.",
 };
 
-const methodPreview = ["Diagnose", "Design", "Build", "Deliver", "Sustain"];
+const methodPreview = [
+  "Understanding",
+  "Design",
+  "Collaborative Engagement",
+  "Outcomes Over Deliverables",
+  "Sustain",
+];
 
 export default function HowWeWorkRoute() {
   return (

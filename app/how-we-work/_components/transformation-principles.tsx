@@ -1,28 +1,37 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useRef } from "react";
+import { Compass, Target, Users, RefreshCw, Telescope } from "lucide-react";
 
-const principles = [
+const ICON_SIZE = 28;
+const ICON_STROKE = 1.6;
+
+const principles: { title: string; text: string; icon: ReactNode }[] = [
   {
     title: "Clarity Before Complexity",
     text: "We simplify transformation into actionable direction instead of introducing unnecessary operational complexity.",
+    icon: <Compass size={ICON_SIZE} strokeWidth={ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Strategy With Execution",
     text: "Every strategy should translate into measurable operational progress and real organizational movement.",
+    icon: <Target size={ICON_SIZE} strokeWidth={ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Human-Centered Thinking",
     text: "Transformation succeeds when people, systems, and processes move together with clarity and alignment.",
+    icon: <Users size={ICON_SIZE} strokeWidth={ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Adaptive Systems",
     text: "Organizations must continuously evolve in response to changing operational and technological environments.",
+    icon: <RefreshCw size={ICON_SIZE} strokeWidth={ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Long-Term Perspective",
     text: "We design transformation strategies that create sustainable momentum beyond initial implementation.",
+    icon: <Telescope size={ICON_SIZE} strokeWidth={ICON_STROKE} aria-hidden="true" />,
   },
 ];
 
@@ -82,7 +91,7 @@ export function TransformationPrinciples() {
             key={principle.title}
             style={revealStyle(index)}
           >
-            <span>{String(index + 1).padStart(2, "0")}</span>
+            <span className="card-icon-only">{principle.icon}</span>
             <h3>{principle.title}</h3>
             <p>{principle.text}</p>
           </article>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Search, PencilRuler, Hammer, Rocket, Infinity as InfinityIcon } from "lucide-react";
 
 import { PageShell } from "../_shared/layout/page-shell";
 import { HowWeWorkTimeline } from "./_components/how-we-work-timeline";
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
 };
 
 const methodPreview = [
-  "Understanding",
-  "Design",
-  "Collaborative Engagement",
-  "Outcomes Over Deliverables",
-  "Sustain",
+  { name: "Diagnose", Icon: Search },
+  { name: "Design", Icon: PencilRuler },
+  { name: "Build", Icon: Hammer },
+  { name: "Deliver", Icon: Rocket },
+  { name: "Sustain", Icon: InfinityIcon },
 ];
 
 export default function HowWeWorkRoute() {
@@ -47,9 +48,12 @@ export default function HowWeWorkRoute() {
 
             <aside className="work-hero-method reveal delay-one" aria-label="Five-phase method">
               <ol className="work-method-list">
-                {methodPreview.map((name, i) => (
+                {methodPreview.map(({ name, Icon }, i) => (
                   <li className="work-method-item" key={name} style={{ ["--i" as string]: i }}>
                     <span className="work-method-num">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="work-method-icon" aria-hidden="true">
+                      <Icon size={16} strokeWidth={1.8} />
+                    </span>
                     <span className="work-method-rail" aria-hidden="true" />
                     <span className="work-method-name">{name}</span>
                   </li>

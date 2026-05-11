@@ -1,8 +1,20 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
+import { Search, PencilRuler, Hammer, Rocket, Infinity as InfinityIcon } from "lucide-react";
 
-const phases = [
+const PHASE_ICON_SIZE = 20;
+const PHASE_ICON_STROKE = 1.7;
+
+const phases: {
+  title: string;
+  side: string;
+  focus: string;
+  desc: string;
+  points: string[];
+  icon: ReactNode;
+}[] = [
   {
     title: "Understanding",
     side: "left",
@@ -14,6 +26,7 @@ const phases = [
       "Operational Review",
       "Strategic Goals",
     ],
+    icon: <Search size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Design",
@@ -26,6 +39,7 @@ const phases = [
       "Scalable frameworks",
       "Adaptive transformation",
     ],
+    icon: <PencilRuler size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Collaborative Engagement",
@@ -38,6 +52,7 @@ const phases = [
       "Team Alignment",
       "Continuous Guidance",
     ],
+    icon: <Hammer size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Outcomes Over Deliverables",
@@ -55,6 +70,7 @@ const phases = [
       "Sustainable Transformation",
       "Future-ready Decision Systems",
     ],
+    icon: <Rocket size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Sustain",
@@ -67,6 +83,7 @@ const phases = [
       "Operational Adaptability",
       "Long-Term Advisory",
     ],
+    icon: <InfinityIcon size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
 ];
 
@@ -223,6 +240,7 @@ export function HowWeWorkTimeline() {
                   ) : null}
                   <div className="work-phase-copy">
                     <p className="work-phase-kicker">
+                      <span className="work-phase-kicker-icon">{phase.icon}</span>
                       Phase {String(index + 1).padStart(2, "0")}
                     </p>
                     <h2>{phase.title}</h2>

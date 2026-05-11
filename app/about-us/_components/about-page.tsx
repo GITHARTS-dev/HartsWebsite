@@ -1,13 +1,34 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { CalendarClock, Briefcase, Building2, Award } from "lucide-react";
 
-const stats = [
-  { value: "20+", label: "Years of practice" },
-  { value: "300+", label: "Engagements delivered" },
-  { value: "40+", label: "Industries served" },
-  { value: "94%", label: "Client retention" },
+const STAT_ICON_SIZE = 26;
+const STAT_ICON_STROKE = 1.6;
+
+const stats: { value: string; label: string; icon: ReactNode }[] = [
+  {
+    value: "20+",
+    label: "Years of practice",
+    icon: <CalendarClock size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
+  },
+  {
+    value: "300+",
+    label: "Engagements delivered",
+    icon: <Briefcase size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
+  },
+  {
+    value: "40+",
+    label: "Industries served",
+    icon: <Building2 size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
+  },
+  {
+    value: "94%",
+    label: "Client retention",
+    icon: <Award size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
+  },
 ];
 
 const team = [
@@ -114,6 +135,7 @@ export function AboutPage() {
         <div className="au-stats-row">
           {stats.map((s) => (
             <div className="au-stat" key={s.label}>
+              <span className="au-stat-icon">{s.icon}</span>
               <span className="au-stat-value">{s.value}</span>
               <span className="au-stat-label">{s.label}</span>
             </div>

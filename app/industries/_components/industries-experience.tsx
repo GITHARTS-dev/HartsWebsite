@@ -1,39 +1,49 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
+import { Plane, Zap, Car, ShoppingCart, Factory, HardHat } from "lucide-react";
 
-const sectors = [
+const SECTOR_ICON_SIZE = 22;
+const SECTOR_ICON_STROKE = 1.7;
+
+const sectors: { title: string; text: string; icon: ReactNode }[] = [
   {
     title: "Aerospace & Defense",
     text:
       "Supporting operational modernization, strategic coordination, and complex system transformation across mission-critical environments.",
+    icon: <Plane size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Energy",
     text:
       "Helping organizations navigate sustainability transitions, infrastructure modernization, and evolving operational ecosystems.",
+    icon: <Zap size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Automotive",
     text:
       "Enabling connected mobility transformation, operational adaptability, and next-generation manufacturing evolution.",
+    icon: <Car size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "FMCG",
     text:
       "Improving supply-chain visibility, operational responsiveness, and large-scale organizational coordination.",
+    icon: <ShoppingCart size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Advanced Manufacturing",
     text:
       "Supporting industrial transformation through connected operations, adaptive systems, and scalable modernization strategies.",
+    icon: <Factory size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Engineering & Construction",
     text:
       "Helping organizations improve coordination, operational visibility, and transformation planning across complex delivery environments.",
+    icon: <HardHat size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
   },
 ];
 
@@ -115,7 +125,10 @@ export function IndustriesExperience() {
                 key={sector.title}
                 style={revealDelay(index)}
               >
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span className="industry-sector-num">
+                  <span className="industry-sector-icon">{sector.icon}</span>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h2>{sector.title}</h2>
                 <p>{sector.text}</p>
               </article>

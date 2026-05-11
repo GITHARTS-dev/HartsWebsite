@@ -4185,3 +4185,78 @@
   color: #888b85;
   line-height: 1.6;
 }
+
+/* ── Card icons (replace numbers) ───────────────────────────────────────── */
+.premium-info-card span.card-icon-only {
+  color: var(--gold-deep);
+}
+.premium-info-card span.card-icon-only svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.6;
+}
+
+/* ── Method preview icon (how-we-work hero) ─────────────────────────────── */
+.work-method-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(244, 180, 26, 0.12);
+  color: #F4B41A;
+  transition: background 220ms ease, transform 220ms ease;
+}
+.work-method-item:hover .work-method-icon {
+  background: rgba(244, 180, 26, 0.22);
+  transform: scale(1.06);
+}
+
+/* ── Timeline phase kicker icon ─────────────────────────────────────────── */
+.work-phase-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.work-phase-kicker-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(244, 180, 26, 0.14);
+  color: var(--gold-deep, #B8860B);
+}
+
+/* ── Industry sector card: icon beside number ───────────────────────────── */
+.industry-sector-card .industry-sector-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(244, 180, 26, 0.14);
+  color: var(--gold-deep);
+  font-size: initial;
+  letter-spacing: 0;
+}
+.industry-sector-card .industry-sector-icon::after {
+  display: none;
+}
+
+/* ── About stat icon ────────────────────────────────────────────────────── */
+.au-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  background: rgba(244, 180, 26, 0.12);
+  color: #F4B41A;
+}

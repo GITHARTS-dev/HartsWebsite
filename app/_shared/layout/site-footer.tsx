@@ -13,7 +13,7 @@ const navCols = [
     heading: "Company",
     links: [
       { label: "About", href: "/about-us" },
-      { label: "Careers", href: "/#career" },
+      { label: "Careers", href: "/careers" },
     ],
   },
   {

@@ -1720,10 +1720,10 @@
 
 /* How We Work Page */
 .work-page {
-  --work-bg: #f6f3ec;
+  --work-bg: #FAFAFA;
   background: var(--work-bg);
   color: var(--ink);
-  padding-bottom: clamp(96px, 14vh, 180px);
+  padding-bottom: clamp(40px, 6vh, 72px);
 }
 
 .work-hero,
@@ -2097,7 +2097,7 @@
 
 .work-timeline {
   position: relative;
-  height: 560vh;
+  height: 480vh;
 }
 
 .work-timeline-stage {
@@ -2198,13 +2198,26 @@
   justify-content: center;
 }
 
+.work-phase-left.work-phase-with-media .work-phase-copy {
+  order: 1;
+}
+
+.work-phase-left.work-phase-with-media .work-phase-media {
+  order: 2;
+}
+
+.work-phase-right.work-phase-with-media .work-phase-media {
+  order: 1;
+}
+
+.work-phase-right.work-phase-with-media .work-phase-copy {
+  order: 2;
+}
+
 .work-phase-media img {
   display: block;
   width: min(100%, 430px);
   aspect-ratio: 4 / 3;
-  border: 1px solid rgba(216, 218, 214, 0.82);
-  border-radius: var(--radius-md);
-  box-shadow: 0 28px 64px rgba(32, 54, 79, 0.14);
   object-fit: cover;
 }
 

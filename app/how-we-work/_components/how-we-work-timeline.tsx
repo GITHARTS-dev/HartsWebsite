@@ -1,8 +1,20 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
+import { Search, PencilRuler, Hammer, Rocket, Infinity as InfinityIcon } from "lucide-react";
 
-const phases = [
+const PHASE_ICON_SIZE = 20;
+const PHASE_ICON_STROKE = 1.7;
+
+const phases: {
+  title: string;
+  side: string;
+  focus: string;
+  desc: string;
+  points: string[];
+  icon: ReactNode;
+}[] = [
   {
     title: "Diagnose",
     side: "left",
@@ -14,6 +26,7 @@ const phases = [
       "Operational constraint review",
       "Strategic horizon setting",
     ],
+    icon: <Search size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Design",
@@ -26,6 +39,7 @@ const phases = [
       "Scalable operating frameworks",
       "Adaptive transformation architecture",
     ],
+    icon: <PencilRuler size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Build",
@@ -38,6 +52,7 @@ const phases = [
       "Cross-functional team alignment",
       "Continuous guidance and course correction",
     ],
+    icon: <Hammer size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Deliver",
@@ -50,6 +65,7 @@ const phases = [
       "Measurable transformation milestones",
       "Sustainable performance indicators",
     ],
+    icon: <Rocket size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Sustain",
@@ -62,6 +78,7 @@ const phases = [
       "Operational adaptability reviews",
       "Long-term transformation advisory",
     ],
+    icon: <InfinityIcon size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
 ];
 
@@ -200,6 +217,7 @@ export function HowWeWorkTimeline() {
                 >
                   <div className="work-phase-copy">
                     <p className="work-phase-kicker">
+                      <span className="work-phase-kicker-icon">{phase.icon}</span>
                       Phase {String(index + 1).padStart(2, "0")}
                     </p>
                     <h2>{phase.title}</h2>

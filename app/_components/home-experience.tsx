@@ -4,30 +4,85 @@ import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
 
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none" as const,
+  width: 15,
+  height: 15,
+  "aria-hidden": true as const,
+};
+
+const strokeProps = {
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
 const challenges = [
   {
     title: "Disconnected Systems",
     text: "Fragmented workflows and isolated platforms reduce visibility and slow collaboration.",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="6" cy="12" r="2.5" {...strokeProps} />
+        <circle cx="18" cy="12" r="2.5" {...strokeProps} />
+        <path d="M9 12h2M13 12h2" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "Slow Decision-Making",
     text: "Leaders need clearer insights and faster access to meaningful operational intelligence.",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="8.5" {...strokeProps} />
+        <path d="M12 7.5v5l3 2" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "Operational Inefficiencies",
     text: "Outdated processes and disconnected operations limit scalability and adaptability.",
+    icon: (
+      <svg {...iconProps}>
+        <path d="M3 7l9-4 9 4-9 4-9-4z" {...strokeProps} />
+        <path d="M3 12l9 4 9-4M3 17l9 4 9-4" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "Unclear Digital Direction",
     text: "Many organizations struggle to align transformation initiatives with long-term goals.",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="9" {...strokeProps} />
+        <path d="M15.5 8.5l-2.2 5.3-5.3 2.2 2.2-5.3 5.3-2.2z" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "Data Silos",
     text: "Disconnected data sources create gaps in visibility and enterprise-wide understanding.",
+    icon: (
+      <svg {...iconProps}>
+        <ellipse cx="12" cy="5" rx="7.5" ry="2.5" {...strokeProps} />
+        <path
+          d="M4.5 5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5V5M4.5 11v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6"
+          {...strokeProps}
+        />
+      </svg>
+    ),
   },
   {
     title: "Transformation Visibility",
     text: "Organizations need measurable clarity into transformation progress and outcomes.",
+    icon: (
+      <svg {...iconProps}>
+        <path d="M3 17l5-5 4 4 8-8" {...strokeProps} />
+        <path d="M14 8h6v6" {...strokeProps} />
+      </svg>
+    ),
   },
 ];
 
@@ -36,31 +91,77 @@ const reasons = [
     title: "Strategic Clarity",
     text: "We simplify complexity and help organizations focus on meaningful transformation priorities.",
     direction: "from-left",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="9" {...strokeProps} />
+        <circle cx="12" cy="12" r="5" {...strokeProps} />
+        <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+      </svg>
+    ),
   },
   {
     title: "Human-Centered Transformation",
     text: "We combine technology, operational thinking, and human experience into every engagement.",
     direction: "from-bottom",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="9" cy="8.5" r="3" {...strokeProps} />
+        <path d="M3.5 19a5.5 5.5 0 0 1 11 0" {...strokeProps} />
+        <circle cx="17" cy="10" r="2.5" {...strokeProps} />
+        <path d="M15 19a4 4 0 0 1 6.5-1.5" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "Scalable Execution",
     text: "Our frameworks are designed to adapt and scale across evolving business environments.",
     direction: "from-right",
+    icon: (
+      <svg {...iconProps}>
+        <path d="M4 10V4h6M14 4h6v6M20 14v6h-6M10 20H4v-6" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "Executive Alignment",
     text: "We help leadership teams move with shared visibility, direction, and confidence.",
     direction: "from-left",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="2.5" {...strokeProps} />
+        <circle cx="5" cy="5" r="2" {...strokeProps} />
+        <circle cx="19" cy="5" r="2" {...strokeProps} />
+        <circle cx="5" cy="19" r="2" {...strokeProps} />
+        <circle cx="19" cy="19" r="2" {...strokeProps} />
+        <path d="M6.5 6.5l3.7 3.7M17.5 6.5l-3.7 3.7M6.5 17.5l3.7-3.7M17.5 17.5l-3.7-3.7" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "AI-Enabled Intelligence",
     text: "We integrate intelligent systems and data-driven insights into future-ready operations.",
     direction: "from-bottom",
+    icon: (
+      <svg {...iconProps}>
+        <rect x="6" y="6" width="12" height="12" rx="2" {...strokeProps} />
+        <rect x="10" y="10" width="4" height="4" {...strokeProps} />
+        <path d="M10 3v3M14 3v3M10 18v3M14 18v3M3 10h3M3 14h3M18 10h3M18 14h3" {...strokeProps} />
+      </svg>
+    ),
   },
   {
     title: "Long-Term Partnership",
     text: "HARTS supports organizations beyond implementation through continuous transformation.",
     direction: "from-right",
+    icon: (
+      <svg {...iconProps}>
+        <path
+          d="M7 12c0-2.2 1.6-4 3.7-4 1.4 0 2.3.9 3.3 2 1 1.1 1.9 2 3.3 2 2.1 0 3.7-1.8 3.7-4M7 12c0 2.2 1.6 4 3.7 4 1.4 0 2.3-.9 3.3-2 1-1.1 1.9-2 3.3-2"
+          {...strokeProps}
+        />
+        <path d="M7 12c0-2.2-1.4-4-3-4s-3 1.8-3 4 1.4 4 3 4 3-1.8 3-4z" {...strokeProps} />
+      </svg>
+    ),
   },
 ];
 
@@ -364,7 +465,7 @@ export function HomeExperience() {
                 key={item.title}
                 style={revealStyle(index)}
               >
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>{item.icon}{String(index + 1).padStart(2, "0")}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>
@@ -389,7 +490,7 @@ export function HomeExperience() {
                 key={item.title}
                 style={revealStyle(index)}
               >
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span className="card-icon-only">{item.icon}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>

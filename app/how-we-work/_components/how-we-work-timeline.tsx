@@ -14,18 +14,26 @@ const phases: {
   desc: string;
   points: string[];
   icon: ReactNode;
+  image?: {
+    src: string;
+    alt: string;
+  };
 }[] = [
   {
-    title: "Understanding",
+    title: "Diagnose",
     side: "left",
-    focus: "Every transformation begins with clarity.",
-    desc: "HARTS begins by understanding organizational priorities, operational realities, leadership perspectives, and long-term ambitions before shaping strategic direction.",
+    focus: "We do not prescribe before we understand.",
+    desc: "HARTS begins by interrogating organizational priorities, leadership conviction, operational constraints, and long-term ambitions — forming a grounded baseline before a single recommendation is made.",
     points: [
-      "Understanding the Organization",
-      "Leadership Alignment",
-      "Operational Review",
-      "Strategic Goals",
+      "Organizational diagnostic",
+      "Leadership alignment mapping",
+      "Operational constraint review",
+      "Strategic horizon setting",
     ],
+    image: {
+      src: "/business_diagnose_image.png",
+      alt: "Leadership team reviewing diagnostic insights",
+    },
     icon: <Search size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
@@ -163,12 +171,13 @@ export function HowWeWorkTimeline() {
 
   const ballSize = 32;
   const stageHeight = Math.max(360, viewportHeight - headerHeight);
-  const ballProgress = progress * progress * (3 - 2 * progress);
+  const ballScrollProgress = clamp(progress / 0.88, 0, 1);
+  const ballProgress = ballScrollProgress * ballScrollProgress * (3 - 2 * ballScrollProgress);
   const ballTop = ballSize / 2 + ballProgress * (stageHeight - ballSize);
   const lineHeight = ballTop;
   const scrollHintOpacity = clamp(1 - progress / 0.035, 0, 1);
-  const contentProgress = clamp((progress - 0.04) / 0.9, 0, 1);
-  const phaseTravel = stageHeight * 1.62;
+  const contentProgress = clamp((progress + 0.04) / 0.92, 0, 1);
+  const phaseTravel = stageHeight * 1.32;
 
   return (
     <div ref={containerRef} className="work-timeline">

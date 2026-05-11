@@ -11,7 +11,7 @@ export function ServiceOfferingDetail({
     <main className="service-offering-detail enhanced">
       <div className="liquid-bg small" aria-hidden>
         <svg className="blob blob-2" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-          <path fill="var(--gold)" fillOpacity="0.08" d="M470 300c0 94-76 170-170 170S130 394 130 300 206 130 300 130s170 76 170 170z" />
+          <path fill="#E7473C" fillOpacity="0.08" d="M470 300c0 94-76 170-170 170S130 394 130 300 206 130 300 130s170 76 170 170z" />
         </svg>
       </div>
 

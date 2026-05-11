@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { industries } from "../../_data/home-content";
-
 const navItems = [
   { href: "/how-we-work", label: "How We Work" },
   { href: "/how-we-help", label: "How We Help" },
+  { href: "/industries", label: "Where We Engage" },
   { href: "/about-us", label: "About Us" },
 ];
 
@@ -31,38 +30,6 @@ export function SiteHeader() {
           </Link>
         ))}
 
-        <div className="nav-menu">
-          <button
-            className={`nav-pill nav-menu-trigger${pathname.startsWith("/industries") ? " nav-pill--active" : ""}`}
-            aria-haspopup="true"
-            type="button"
-          >
-            Where We Engage
-            <svg
-              className="nav-chevron"
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M3 5l4 4 4-4"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <div className="nav-dropdown" aria-label="Industries">
-            {industries.map((industry) => (
-              <Link href={`/industries/${industry.slug}`} key={industry.slug}>
-                {industry.title}
-              </Link>
-            ))}
-          </div>
-        </div>
       </nav>
 
       <div className="header-actions">

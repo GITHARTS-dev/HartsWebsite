@@ -6,7 +6,7 @@ const navCols = [
     links: [
       { label: "How We Help", href: "/how-we-help" },
       { label: "How We Work", href: "/how-we-work" },
-      { label: "Where We Engage", href: "/" },
+      { label: "Where We Engage", href: "/industries" },
     ],
   },
   {

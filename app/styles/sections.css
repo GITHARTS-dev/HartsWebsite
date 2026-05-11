@@ -1522,7 +1522,7 @@
 .work-hero--editorial .work-hero-copy h1 {
   color: #fff;
   margin-bottom: 28px;
-  font-style: italic;
+  font-style: normal;
   text-transform: uppercase;
   letter-spacing: -0.01em;
   line-height: 0.96;
@@ -2173,6 +2173,267 @@
   line-height: 1.65;
 }
 
+/* Careers page */
+.careers-page {
+  background: #fff;
+  color: var(--ink);
+}
+
+.careers-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  background: linear-gradient(180deg, #fff 0%, #fbfbf8 100%);
+}
+
+.careers-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+}
+
+.careers-hero-copy h1 {
+  margin-bottom: 22px;
+  font-size: clamp(46px, 5.6vw, 86px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.careers-hero-copy p:not(.eyebrow) {
+  max-width: 580px;
+  color: #343834;
+  font-size: 18px;
+  line-height: 1.74;
+}
+
+.careers-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.careers-ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 26px;
+  border: 1px solid rgba(11, 30, 54, 0.18);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 800;
+  min-height: 44px;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.careers-ghost-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(11, 30, 54, 0.34);
+  box-shadow: var(--shadow-soft);
+}
+
+.careers-hero-media {
+  position: relative;
+  min-height: 640px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(11, 30, 54, 0.08), rgba(244, 180, 26, 0.12)),
+    radial-gradient(circle at 70% 30%, rgba(244, 180, 26, 0.2), transparent 30%),
+    linear-gradient(180deg, #dfe3ea, #cfd6e0);
+  box-shadow: var(--shadow-lift);
+}
+
+.careers-hero-media::before {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.48), transparent 35%),
+    linear-gradient(180deg, rgba(11, 30, 54, 0.02), rgba(11, 30, 54, 0.08));
+  content: "";
+}
+
+.careers-media-card {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  display: grid;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.careers-media-chip {
+  color: var(--gold-deep);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.careers-media-card strong {
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.careers-media-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.careers-culture {
+  background: #f9faf8;
+}
+
+.careers-culture-inner,
+.careers-coming-soon-inner {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.careers-culture-inner h2,
+.careers-coming-soon-inner h2 {
+  margin-bottom: 18px;
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.02;
+}
+
+.careers-culture-inner p:not(.eyebrow),
+.careers-coming-soon-inner p:not(.eyebrow) {
+  margin: 0 auto;
+  max-width: 760px;
+  color: #343834;
+  font-size: 18px;
+  line-height: 1.74;
+}
+
+.careers-openings {
+  background: #fff;
+}
+
+.careers-opening-heading {
+  max-width: 720px;
+}
+
+.careers-opening-heading p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.careers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.careers-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  padding: 24px;
+  border: 1px solid rgba(11, 30, 54, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(32, 54, 79, 0.03);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.careers-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(11, 30, 54, 0.22);
+  box-shadow: var(--shadow-lift);
+}
+
+.careers-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--gold-deep);
+}
+
+.careers-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.careers-card-label {
+  margin: 18px 0 6px;
+  color: var(--gold-deep);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.careers-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.12;
+}
+
+.careers-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.careers-card-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.careers-card-link span {
+  color: var(--gold-deep);
+  transition: transform 180ms ease;
+}
+
+.careers-card:hover .careers-card-link span {
+  transform: translateX(3px);
+}
+
+.careers-coming-soon {
+  background: linear-gradient(180deg, #fbfaf6 0%, #fff 100%);
+}
+
+.careers-actions--center {
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .careers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .careers-hero { grid-template-columns: 1fr; }
+  .careers-hero-media { min-height: 460px; }
+}
+
+@media (max-width: 700px) {
+  .careers-grid { grid-template-columns: 1fr; }
+  .careers-hero-copy h1 { font-size: clamp(38px, 10vw, 56px); }
+  .careers-hero-media { min-height: 360px; }
+}
+
 .help-service-card strong {
   margin-top: auto;
   color: var(--blue);
@@ -2516,8 +2777,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  aspect-ratio: 1 / 1;
-  padding: clamp(20px, 2.6vw, 32px);
+  aspect-ratio: auto;
+  min-height: 140px;
+  padding: clamp(10px, 1.3vw, 20px);
   border: 1px solid rgba(11, 30, 54, 0.14);
   border-radius: 8px;
   background: rgba(11, 30, 54, 0.03);
@@ -2578,8 +2840,8 @@
 
 /* Icon — yellow, pushed toward vertical centre */
 .hwh-bento-icon {
-  margin-top: auto;
-  margin-bottom: 20px;
+  margin-top: 28px;
+  margin-bottom: 14px;
   color: #F4B41A;
   transition: transform 260ms cubic-bezier(0.34, 1.2, 0.64, 1);
 }

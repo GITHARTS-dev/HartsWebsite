@@ -17,6 +17,7 @@ const phases: {
   image?: {
     src: string;
     alt: string;
+    variant?: "soft-oval";
   };
 }[] = [
   {
@@ -33,6 +34,7 @@ const phases: {
     image: {
       src: "/business_diagnose_image.png",
       alt: "Leadership team reviewing diagnostic insights",
+      variant: "soft-oval",
     },
     icon: <Search size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
@@ -171,9 +173,14 @@ export function HowWeWorkTimeline() {
 
   const ballSize = 32;
   const stageHeight = Math.max(360, viewportHeight - headerHeight);
+  const timelineEndTop = clamp(
+    stageHeight * 0.78,
+    ballSize / 2,
+    stageHeight - ballSize / 2 - 24,
+  );
   const ballScrollProgress = clamp(progress / 0.88, 0, 1);
   const ballProgress = ballScrollProgress * ballScrollProgress * (3 - 2 * ballScrollProgress);
-  const ballTop = ballSize / 2 + ballProgress * (stageHeight - ballSize);
+  const ballTop = ballSize / 2 + ballProgress * (timelineEndTop - ballSize / 2);
   const lineHeight = ballTop;
   const scrollHintOpacity = clamp(1 - progress / 0.035, 0, 1);
   const contentProgress = clamp((progress + 0.04) / 0.92, 0, 1);
@@ -243,7 +250,11 @@ export function HowWeWorkTimeline() {
                   }}
                 >
                   {phase.image ? (
-                    <div className="work-phase-media">
+                    <div
+                      className={`work-phase-media${
+                        phase.image.variant ? ` work-phase-media--${phase.image.variant}` : ""
+                      }`}
+                    >
                       <img src={phase.image.src} alt={phase.image.alt} />
                     </div>
                   ) : null}

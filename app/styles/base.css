@@ -1,19 +1,23 @@
 :root {
-  --ink: #0a0a0a;
+  /* Palette migration: navy/yellow/sage now resolve to the new bright red
+     so every existing var(--gold), var(--navy), var(--sage), etc. reference
+     auto-redirects without per-rule edits. Neutral tokens (muted/line) stay
+     neutral. --soft lifted to white smoke. */
+  --ink: #1A1A1A;
   --muted: #5e625f;
   --line: #d8dad6;
   --paper: #ffffff;
-  --soft: #f4f3ef;
-  --sage: #607060;
-  --blue: #0B1E36;
-  --navy: #0B1E36;
-  --gold: #F4B41A;
-  --gold-deep: #c89400;
+  --soft: #F0F0F0;
+  --sage: #E7473C;
+  --blue: #E7473C;
+  --navy: #E7473C;
+  --gold: #E7473C;
+  --gold-deep: #E7473C;
   --radius-sm: 6px;
   --radius-md: 8px;
   --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.08);
   --shadow-lift: 0 24px 60px rgba(0, 0, 0, 0.12);
-  --cta-shadow: 0 14px 32px rgba(244, 180, 26, 0.32);
+  --cta-shadow: 0 14px 32px rgba(231, 71, 60, 0.32);
 }
 
 * {
@@ -88,7 +92,7 @@ textarea {
 input:focus,
 textarea:focus {
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(244, 180, 26, 0.26);
+  box-shadow: 0 0 0 3px rgba(231, 71, 60, 0.26);
 }
 
 input {
@@ -115,7 +119,7 @@ textarea {
 .outline-button {
   min-height: 42px;
   padding: 0 22px;
-  border: 1px solid var(--ink);
+  border: 1px solid #E7473C;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
@@ -129,31 +133,32 @@ textarea {
 }
 
 .solid-button {
-  color: var(--navy);
-  background: var(--gold);
-  border-color: var(--gold);
+  color: #FFFFFF;
+  background: #E7473C;
+  border-color: #E7473C;
   font-weight: 800;
 }
 
 .outline-button {
-  color: var(--ink);
+  color: #E7473C;
   background: transparent;
-  border-color: rgba(10, 10, 10, 0.42);
+  border-color: #E7473C;
 }
 
 .solid-button:hover {
   transform: translateY(-2px);
-  background: var(--gold-deep);
-  border-color: var(--gold-deep);
-  color: #fff;
-  box-shadow: var(--cta-shadow);
+  background: #E7473C;
+  border-color: #E7473C;
+  color: #FFFFFF;
+  box-shadow: 0 14px 30px rgba(231, 71, 60, 0.32);
 }
 
 .outline-button:hover {
   transform: translateY(-2px);
-  border-color: var(--ink);
-  background: rgba(10, 10, 10, 0.04);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+  border-color: #E7473C;
+  background: #E7473C;
+  color: #FFFFFF;
+  box-shadow: 0 14px 30px rgba(231, 71, 60, 0.32);
 }
 
 .solid-button:focus-visible,
@@ -162,7 +167,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(244, 180, 26, 0.46);
+  outline: 3px solid rgba(231, 71, 60, 0.5);
   outline-offset: 3px;
 }
 

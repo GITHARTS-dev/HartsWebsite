@@ -237,11 +237,18 @@ export function HowWeWorkTimeline() {
               const blur = edgeSoftness * 2.4;
               const scale = 1 - Math.min(distanceFromCenter, 0.72) * 0.014;
 
+              const underlayVariant: "design" | "engagement" | null =
+                phase.title === "Design"
+                  ? "design"
+                  : phase.title === "Collaborative Engagement"
+                    ? "engagement"
+                    : null;
+
               return (
                 <article
                   className={`work-phase work-phase-${phase.side}${
                     phase.image ? " work-phase-with-media" : ""
-                  }`}
+                  }${underlayVariant ? " work-phase--has-underlay" : ""}`}
                   key={phase.title}
                   style={{
                     opacity,
@@ -249,6 +256,12 @@ export function HowWeWorkTimeline() {
                     transform: `translate3d(0, ${verticalOffset}px, 0) scale(${scale})`,
                   }}
                 >
+                  {underlayVariant ? (
+                    <div
+                      className={`work-phase-underlay work-phase-underlay--${underlayVariant}`}
+                      aria-hidden="true"
+                    />
+                  ) : null}
                   {phase.image ? (
                     <div
                       className={`work-phase-media${

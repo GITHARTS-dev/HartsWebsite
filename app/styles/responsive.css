@@ -213,7 +213,7 @@
       blur(var(--welcome-logo-blur))
       brightness(var(--welcome-logo-brightness))
       saturate(var(--welcome-logo-saturation))
-      drop-shadow(0 16px 42px rgba(244, 180, 26, 0.14));
+      drop-shadow(0 16px 42px rgba(231, 71, 60, 0.14));
   }
 
   .welcome-content h1 {

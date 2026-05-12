@@ -8,9 +8,9 @@
   gap: clamp(18px, 3vw, 42px);
   min-height: 72px;
   padding: 0 5vw;
-  background: rgba(246, 243, 236, 0.78);
-  border-bottom: 1px solid rgba(216, 218, 214, 0.24);
-  box-shadow: 0 18px 60px rgba(32, 54, 79, 0.05);
+  background: #F0F0F0;
+  border-bottom: 1px solid rgba(231, 71, 60, 0.18);
+  box-shadow: 0 18px 60px rgba(231, 71, 60, 0.06);
   backdrop-filter: blur(14px);
 }
 
@@ -58,7 +58,7 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: var(--ink);
+  color: #E7473C;
   font-family: DM Sans, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14.5px;
   font-weight: 620;
@@ -74,7 +74,7 @@
 
 .nav-pill:hover,
 .nav-pill:focus-visible {
-  background: rgba(10, 10, 10, 0.07);
+  background: rgba(231, 71, 60, 0.1);
   outline: none;
 }
 
@@ -83,9 +83,10 @@
   transition-duration: 60ms;
 }
 
-/* Active route: filled background + gold underline pill */
+/* Active route: filled red background + white underline pill */
 .nav-pill--active {
-  background: rgba(10, 10, 10, 0.07);
+  background: #E7473C;
+  color: #FFFFFF;
   font-weight: 720;
 }
 
@@ -98,7 +99,7 @@
   width: 18px;
   height: 2px;
   border-radius: 999px;
-  background: var(--gold-deep);
+  background: #FFFFFF;
 }
 
 /* ── Chevron in dropdown trigger ───────────────────────────────── */
@@ -187,8 +188,8 @@
 
 /* ── Site Footer ─────────────────────────────────────────────────────────── */
 .sf-footer {
-  background: #0B1E36;
-  border-top: 1px solid rgba(244, 180, 26, 0.14);
+  background: #E7473C;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding: clamp(20px, 3vw, 36px) 5vw;
 }
 
@@ -221,7 +222,7 @@
   margin: 0;
   font-size: 14px;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.40);
+  color: #FFFFFF;
   max-width: 260px;
 }
 
@@ -243,17 +244,17 @@
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #F4B41A;
+  color: #FFFFFF;
 }
 
 .sf-link {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.52);
+  color: #FFFFFF;
   text-decoration: none;
-  transition: color 180ms ease;
+  transition: opacity 180ms ease;
 }
-.sf-link:hover { color: #fff; }
+.sf-link:hover { opacity: 0.8; }
 
 @media (max-width: 760px) {
   .sf-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -289,11 +290,11 @@
   max-width: 1280px;
   margin: clamp(20px, 3vw, 32px) auto 0;
   padding: clamp(16px, 2vw, 24px) 5vw 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sf-legal {
   margin: 0;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.28);
+  color: #FFFFFF;
 }

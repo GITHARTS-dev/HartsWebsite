@@ -128,7 +128,7 @@ function PortalOverlay({
           delay: PORTAL_DURATION * 0.70,
         },
       }}
-      style={{ ...GPU_LAYER, backgroundColor: "#0B1E36" }}
+      style={{ ...GPU_LAYER, backgroundColor: "#E7473C" }}
     >
       <div className="pr-orbs" aria-hidden="true">
         <span className="pr-orb pr-orb-1" />
@@ -182,7 +182,7 @@ function PortalOverlay({
           duration: PORTAL_DURATION * 0.28,
           ease: PORTAL_EASE,
         }}
-        style={{ ...GPU_LAYER_LIGHT, color: "#F4B41A" }}
+        style={{ ...GPU_LAYER_LIGHT, color: "#FFFFFF" }}
       >
         <span className="pr-scroll-label">Scroll to enter</span>
         <svg

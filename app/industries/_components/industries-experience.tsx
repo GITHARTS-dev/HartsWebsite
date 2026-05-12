@@ -3,47 +3,39 @@
 import type { CSSProperties, ReactNode } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
-import { Plane, Zap, Car, ShoppingCart, Factory, HardHat } from "lucide-react";
+import { Car, Factory, Landmark, Plane } from "lucide-react";
 
 const SECTOR_ICON_SIZE = 22;
 const SECTOR_ICON_STROKE = 1.7;
 
-const sectors: { title: string; text: string; icon: ReactNode }[] = [
+const sectors: { title: string; text: string; icon: ReactNode; href: string }[] = [
   {
-    title: "Aerospace & Defense",
+    title: "Aerospace",
     text:
-      "Supporting operational modernization, strategic coordination, and complex system transformation across mission-critical environments.",
+      "Modernizing engineering collaboration, supply chain visibility, operating maturity, and transformation governance across precision-driven aerospace enterprises.",
     icon: <Plane size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
-  },
-  {
-    title: "Energy",
-    text:
-      "Helping organizations navigate sustainability transitions, infrastructure modernization, and evolving operational ecosystems.",
-    icon: <Zap size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
+    href: "/industries/aerospace",
   },
   {
     title: "Automotive",
     text:
-      "Enabling connected mobility transformation, operational adaptability, and next-generation manufacturing evolution.",
+      "Accelerating manufacturing transformation, operational agility, mobility innovation, and enterprise-wide modernization across automotive ecosystems.",
     icon: <Car size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
+    href: "/industries/automotive",
   },
   {
-    title: "FMCG",
+    title: "Financial Services",
     text:
-      "Improving supply-chain visibility, operational responsiveness, and large-scale organizational coordination.",
-    icon: <ShoppingCart size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
+      "Strengthening governance, resilience, operating transparency, and scalable transformation for regulated financial institutions.",
+    icon: <Landmark size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
+    href: "/industries/financial-services",
   },
   {
-    title: "Advanced Manufacturing",
+    title: "Industrial Manufacturing",
     text:
-      "Supporting industrial transformation through connected operations, adaptive systems, and scalable modernization strategies.",
+      "Improving production efficiency, operational intelligence, process maturity, and multi-site scalability across industrial manufacturing networks.",
     icon: <Factory size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
-  },
-  {
-    title: "Engineering & Construction",
-    text:
-      "Helping organizations improve coordination, operational visibility, and transformation planning across complex delivery environments.",
-    icon: <HardHat size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
+    href: "/industries/industrial-manufacturing",
   },
 ];
 
@@ -120,10 +112,11 @@ export function IndustriesExperience() {
         <div className="industry-grid-shell">
           <div className="industry-card-grid">
             {sectors.map((sector, index) => (
-              <article
+              <Link
                 className="industry-sector-card industry-reveal"
                 key={sector.title}
                 style={revealDelay(index)}
+                href={sector.href}
               >
                 <span className="industry-sector-num">
                   <span className="industry-sector-icon">{sector.icon}</span>
@@ -131,7 +124,7 @@ export function IndustriesExperience() {
                 </span>
                 <h2>{sector.title}</h2>
                 <p>{sector.text}</p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

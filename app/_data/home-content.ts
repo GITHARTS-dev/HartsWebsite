@@ -5,27 +5,19 @@ export type Industry = {
 
 export const industries: Industry[] = [
   {
+    title: "Aerospace",
+    slug: "aerospace",
+  },
+  {
+    title: "Automotive",
+    slug: "automotive",
+  },
+  {
     title: "Financial services",
     slug: "financial-services",
   },
   {
-    title: "Healthcare",
-    slug: "healthcare",
-  },
-  {
-    title: "Technology",
-    slug: "technology",
-  },
-  {
-    title: "Consumer markets",
-    slug: "consumer-markets",
-  },
-  {
-    title: "Energy and infrastructure",
-    slug: "energy-and-infrastructure",
-  },
-  {
-    title: "Private equity",
-    slug: "private-equity",
+    title: "Industrial manufacturing",
+    slug: "industrial-manufacturing",
   },
 ];

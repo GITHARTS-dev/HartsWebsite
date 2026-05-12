@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import {
-  ConsumerMarketsIndustry,
-  EnergyInfrastructureIndustry,
+  AerospaceIndustry,
+  AutomotiveIndustry,
   FinancialServicesIndustry,
-  HealthcareIndustry,
-  PrivateEquityIndustry,
-  TechnologyIndustry,
+  IndustrialManufacturingIndustry,
 } from "./_components/industry-detail-views";
 import { PageShell } from "../../_shared/layout/page-shell";
 import { industries } from "../../_data/home-content";
@@ -40,23 +38,17 @@ export default async function IndustryRoute({ params }: IndustryRouteProps) {
   let industryContent;
 
   switch (slug) {
+    case "aerospace":
+      industryContent = <AerospaceIndustry />;
+      break;
+    case "automotive":
+      industryContent = <AutomotiveIndustry />;
+      break;
     case "financial-services":
       industryContent = <FinancialServicesIndustry />;
       break;
-    case "healthcare":
-      industryContent = <HealthcareIndustry />;
-      break;
-    case "technology":
-      industryContent = <TechnologyIndustry />;
-      break;
-    case "consumer-markets":
-      industryContent = <ConsumerMarketsIndustry />;
-      break;
-    case "energy-and-infrastructure":
-      industryContent = <EnergyInfrastructureIndustry />;
-      break;
-    case "private-equity":
-      industryContent = <PrivateEquityIndustry />;
+    case "industrial-manufacturing":
+      industryContent = <IndustrialManufacturingIndustry />;
       break;
     default:
       notFound();

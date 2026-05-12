@@ -1,58 +1,36 @@
 "use client";
 
-import type { ReactNode } from "react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { CalendarClock, Briefcase, Building2, Award } from "lucide-react";
 
-const STAT_ICON_SIZE = 26;
-const STAT_ICON_STROKE = 1.6;
-
-const stats: { value: string; label: string; icon: ReactNode }[] = [
-  {
-    value: "20+",
-    label: "Years of practice",
-    icon: <CalendarClock size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
-  },
-  {
-    value: "300+",
-    label: "Engagements delivered",
-    icon: <Briefcase size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
-  },
-  {
-    value: "40+",
-    label: "Industries served",
-    icon: <Building2 size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
-  },
-  {
-    value: "94%",
-    label: "Client retention",
-    icon: <Award size={STAT_ICON_SIZE} strokeWidth={STAT_ICON_STROKE} aria-hidden="true" />,
-  },
-];
+import { PageHero } from "../../_shared/layout/page-hero";
 
 const team = [
   {
     name: "Sreema Nallasivam",
     role: "CEO & Co-Founder",
+    intro: "Two decades guiding enterprise transformation across regulated, multi-market organisations.",
     image: "",
     linkedin: "https://www.linkedin.com/in/sreema-nallasivam-6a74498/",
   },
   {
     name: "Cristian Margaretic",
     role: "CEO & Co-Founder",
+    intro: "Operator-turned-advisor focused on strategy, operating models, and durable execution.",
     image: "",
     linkedin: "#",
   },
   {
     name: "Savio James Abraham",
-    role: "Cheif Operating Officer",
+    role: "Chief Operating Officer",
+    intro: "Builds the operational discipline that converts strategic intent into measurable progress.",
     image: "",
     linkedin: "https://www.linkedin.com/in/savio-james-abraham/",
   },
   {
     name: "Flavio Gall",
-    role: "Director-Business Development",
+    role: "Director — Business Development",
+    intro: "Partners with leadership teams on growth, market clarity, and long-horizon strategy.",
     image: "",
     linkedin: "#",
   },
@@ -104,65 +82,82 @@ export function AboutPage() {
 
   return (
     <main className="about-page">
+      <PageHero
+        scene="about"
+        eyebrow="About HARTS"
+        titleSoft="We exist to create"
+        titleStrong="clarity."
+        subtitle="HARTS closes the distance between strategic intent and organisational reality — with the right rigour, the right people, and an uncompromising focus on what actually moves the needle."
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "About Us" },
+        ]}
+        actions={
+          <>
+            <Link className="solid-button large" href="/contact">
+              Connect with us
+            </Link>
+            <Link className="outline-button large" href="/how-we-work">
+              How we work
+            </Link>
+          </>
+        }
+      />
 
-      {/* ─── HERO ──────────────────────────────────────────────────── */}
-      <section className="au-hero">
-        <div className="au-hero-inner">
-          <div className="au-hero-left">
-            <p className="au-eyebrow-pill">About HARTS</p>
-            <h1>
-              We exist<br />
-              to create<br />
-              <em className="au-accent">clarity.</em>
-            </h1>
+      <section className="au-story">
+        <div className="au-story-shell">
+          <div className="au-story-copy">
+            <p className="eyebrow">Our story</p>
+            <h2>Built for the moments where progress matters.</h2>
+            <p>
+              HARTS partners with leadership teams navigating moments of decisive
+              change — restructuring, expansion, modernisation, and the messy
+              middle of transformation. Our craft is helping organisations think
+              clearly, decide deliberately, and execute with operating discipline.
+            </p>
+            <p>
+              We are a senior team of strategists, operators, and technologists.
+              We work side-by-side with our clients, leave capability behind, and
+              measure ourselves by the durability of the outcomes we help create.
+            </p>
           </div>
-          <div className="au-hero-right">
-            <div className="au-hero-rule" aria-hidden="true" />
-            <div className="au-hero-body">
-              <p>
-                HARTS was founded on a single belief: that the distance between
-                strategic intent and organisational reality can be closed with
-                the right rigour, the right people, and an uncompromising focus
-                on what actually moves the needle.
-              </p>
-              <Link className="au-btn-primary" href="/contact">
-                Connect with us
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="au-stats-row">
-          {stats.map((s) => (
-            <div className="au-stat" key={s.label}>
-              <span className="au-stat-icon">{s.icon}</span>
-              <span className="au-stat-value">{s.value}</span>
-              <span className="au-stat-label">{s.label}</span>
-            </div>
-          ))}
+          <ul className="au-story-pillars">
+            <li>
+              <strong>Strategic clarity</strong>
+              <span>Sharper choices, calmer execution.</span>
+            </li>
+            <li>
+              <strong>Operating discipline</strong>
+              <span>Decisions translated into running cadence.</span>
+            </li>
+            <li>
+              <strong>Capability transfer</strong>
+              <span>Your teams own the outcome long after we leave.</span>
+            </li>
+          </ul>
         </div>
       </section>
 
-      {/* ─── TEAM ──────────────────────────────────────────────────── */}
       <section className="au-team">
         <div className="au-section-hd">
           <p className="au-eyebrow">Our people</p>
           <h2>The architects of clarity</h2>
           <p className="au-section-sub">
-            A diverse team of strategists and operators united by a commitment to sustainable, measurable change.
+            A senior team of strategists and operators united by a commitment to
+            sustainable, measurable change.
           </p>
         </div>
-        <div className="au-team-grid" ref={teamRef}>
+        <div className="au-team-grid au-team-grid--premium" ref={teamRef}>
           {team.map((member) => (
             <a
-              className="au-team-card au-reveal"
+              className="au-team-card au-team-card--premium au-reveal"
               key={member.name}
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${member.name} on LinkedIn`}
             >
-              <div className="au-team-portrait">
+              <div className="au-team-portrait au-team-portrait--rounded">
                 {member.image ? (
                   <img
                     src={member.image}
@@ -170,7 +165,9 @@ export function AboutPage() {
                     className="au-team-portrait-img"
                   />
                 ) : (
-                  <div className="au-team-portrait-placeholder" aria-hidden="true" />
+                  <div className="au-team-portrait-placeholder" aria-hidden="true">
+                    <span>{member.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}</span>
+                  </div>
                 )}
                 <div className="au-team-portrait-overlay" aria-hidden="true" />
               </div>
@@ -180,13 +177,13 @@ export function AboutPage() {
                   <LinkedInIcon />
                 </div>
                 <p className="au-team-role">{member.role}</p>
+                <p className="au-team-intro">{member.intro}</p>
               </div>
             </a>
           ))}
         </div>
       </section>
 
-      {/* ─── CTA ───────────────────────────────────────────────────── */}
       <section className="au-cta">
         <div className="au-cta-inner">
           <p className="au-eyebrow au-eyebrow--muted">Work with HARTS</p>
@@ -196,16 +193,15 @@ export function AboutPage() {
             execution can unlock transformative value for your organisation.
           </p>
           <div className="au-cta-actions">
-            <Link className="au-btn-primary" href="/contact">
+            <Link className="solid-button large" href="/contact">
               Start a conversation
             </Link>
-            <Link className="au-btn-ghost" href="/how-we-work">
+            <Link className="outline-button large" href="/how-we-work">
               How we work
             </Link>
           </div>
         </div>
       </section>
-
     </main>
   );
 }

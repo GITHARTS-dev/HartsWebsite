@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "./_components/contact-form";
 import { PageShell } from "../_shared/layout/page-shell";
+import { PageHero } from "../_shared/layout/page-hero";
 
 export const metadata: Metadata = {
   title: "Contact Us | HARTS",
@@ -11,23 +13,24 @@ export default function ContactRoute() {
   return (
     <PageShell>
       <main className="contact-page">
-        <section className="section contact-hero reveal">
-          <div className="contact-hero-content">
-            <p className="eyebrow">Contact</p>
-            <h1>Let&apos;s start a conversation.</h1>
-            <p>
-              Whether you are navigating a major transformation, exploring a
-              growth opportunity, or seeking an independent strategic perspective
-              — our team is ready to engage.
-            </p>
-          </div>
-          <div
-            className="contact-hero-media"
-            aria-label="Team discussing a consulting engagement"
-          />
-        </section>
+        <PageHero
+          scene="contact"
+          eyebrow="Contact"
+          titleSoft="Let’s start a"
+          titleStrong="conversation."
+          subtitle="Whether you are navigating a major transformation, exploring a growth opportunity, or seeking an independent strategic perspective — our team is ready to engage."
+          crumbs={[
+            { label: "Home", href: "/" },
+            { label: "Contact" },
+          ]}
+          actions={
+            <Link className="solid-button large" href="#inquiry">
+              Send an inquiry
+            </Link>
+          }
+        />
 
-        <section className="section contact-grid">
+        <section className="section contact-grid" id="inquiry">
           <div className="contact-form-block reveal">
             <h2>Send us your inquiry</h2>
             <ContactForm />

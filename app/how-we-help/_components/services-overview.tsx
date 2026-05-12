@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { serviceOfferings } from "../../_data/services-content";
+import { PageHero } from "../../_shared/layout/page-hero";
 
 function ServiceIcon({ slug }: { slug: string }) {
   switch (slug) {
@@ -116,39 +117,27 @@ export function ServicesOverview() {
 
   return (
     <main className="help-page">
-
-      {/* ─── HERO ─────────────────────────────────────────────────── */}
-      <section className="hwh-hero">
-        <div className="hwh-hero-inner">
-          <div className="hwh-hero-left">
-            <p className="hwh-eyebrow-pill">How We Help</p>
-            <h1>
-              Focused<br />
-              <em className="hwh-accent-text">expertise.</em>
-              <br />Decisive results.
-            </h1>
-          </div>
-
-          <div className="hwh-hero-right">
-            <div className="hwh-hero-divider" aria-hidden="true" />
-            <div className="hwh-hero-right-content">
-              <p>
-                We help leadership teams clarify choices, design practical
-                transformation, and mobilise people around work that matters.
-                Our services move from insight to action.
-              </p>
-              <div className="hwh-hero-actions">
-                <Link className="hwh-btn-primary" href="/contact">
-                  Connect With Us
-                </Link>
-                <Link className="hwh-btn-ghost" href="#services">
-                  Explore Services
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        scene="how-we-help"
+        eyebrow="How We Help"
+        titleSoft="Focused expertise."
+        titleStrong="Decisive results."
+        subtitle="We help leadership teams clarify choices, design practical transformation, and mobilise people around work that matters."
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "How We Help" },
+        ]}
+        actions={
+          <>
+            <Link className="solid-button large" href="/contact">
+              Connect with us
+            </Link>
+            <Link className="outline-button large" href="#services">
+              Explore services
+            </Link>
+          </>
+        }
+      />
 
       {/* ─── SERVICES: Bento Box ──────────────────────────────────── */}
       <section className="hwh-services" id="services">

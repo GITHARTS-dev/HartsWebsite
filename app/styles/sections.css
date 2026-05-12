@@ -49,33 +49,7 @@
   --sage: #E7473C;
   overflow-x: hidden;
   color: var(--ink);
-  /* Ambient texture: layered topographic contour rings from two focal points
-     on opposite sides of the viewport. The rings interlace to form an
-     organic, designed pattern of concentric curves — no clouds, no grid.
-     Fixed attachment keeps the rings viewport-anchored as the user scrolls. */
-  background-color: var(--landing-bg);
-  background-image:
-    repeating-radial-gradient(
-      circle at 15% 25%,
-      transparent 0,
-      transparent 56px,
-      rgba(231, 71, 60, 0.16) 57px,
-      rgba(231, 71, 60, 0.16) 58px
-    ),
-    repeating-radial-gradient(
-      circle at 85% 75%,
-      transparent 0,
-      transparent 68px,
-      rgba(231, 71, 60, 0.12) 69px,
-      rgba(231, 71, 60, 0.12) 70px
-    ),
-    radial-gradient(
-      ellipse 80% 70% at 50% 50%,
-      transparent 0%,
-      rgba(231, 71, 60, 0.04) 100%
-    );
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: var(--landing-bg);
 }
 
 .welcome-scroll-scene {
@@ -5417,3 +5391,435 @@
     padding: 54px 0;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────
+   PREMIUM REDESIGN ADDITIONS
+   – Inner-page shells and helpers shared across the redesigned pages
+   ────────────────────────────────────────────────────────────────────── */
+
+/* Shared shell for industry detail sections (replaces the removed
+   .industry-detail-layout / .industry-detail-content wrappers). */
+.industry-detail-shell {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+.industry-detail-section {
+  background: #FFFFFF;
+}
+
+.industry-detail-section.industry-overview-section {
+  background:
+    linear-gradient(180deg, rgba(231, 71, 60, 0.025) 0%, transparent 60%),
+    #FFFFFF;
+}
+
+.industry-detail-section.industry-challenges-section {
+  background: #F7F7F5;
+  border-bottom: 1px solid rgba(231, 71, 60, 0.08);
+}
+
+.industry-detail-section.industry-help-section {
+  background: #FFFFFF;
+}
+
+/* Help section — single premium card with icon + copy + Know More CTA */
+.industry-help-card {
+  display: grid;
+  grid-template-columns: minmax(120px, 160px) 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  padding: clamp(32px, 4vw, 56px);
+  border: 1px solid rgba(231, 71, 60, 0.14);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(231, 71, 60, 0.06), transparent 55%),
+    #FFFFFF;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 24px 60px rgba(231, 71, 60, 0.08);
+}
+
+.industry-help-icon {
+  display: grid;
+  place-items: center;
+  width: clamp(110px, 14vw, 150px);
+  aspect-ratio: 1;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(231, 71, 60, 0.22), transparent 65%),
+    linear-gradient(135deg, rgba(231, 71, 60, 0.16), rgba(231, 71, 60, 0.06));
+  color: #E7473C;
+  border: 1px solid rgba(231, 71, 60, 0.18);
+}
+
+.industry-help-copy {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.industry-help-copy h2 {
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.12;
+}
+
+.industry-help-copy p {
+  margin: 0;
+  color: #4f5557;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.72;
+}
+
+.industry-help-copy .solid-button {
+  margin-top: 10px;
+  justify-self: start;
+}
+
+@media (max-width: 760px) {
+  .industry-help-card { grid-template-columns: 1fr; text-align: left; }
+  .industry-help-icon { width: 96px; }
+}
+
+/* ── Industries page — premium 10-industry grid ─────────────────── */
+.industry-grid-section--premium {
+  padding: clamp(72px, 9vw, 120px) 5vw;
+  background: #FFFFFF;
+}
+
+.industry-grid-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.industry-grid-heading {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto clamp(40px, 6vw, 72px);
+  text-align: center;
+}
+
+.industry-grid-heading h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.industry-grid-heading p {
+  margin: 0;
+  color: #4f5557;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.72;
+}
+
+.industry-card-grid--ten {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(16px, 1.8vw, 22px);
+}
+
+.industry-sector-card--premium {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding: clamp(22px, 2.4vw, 30px);
+  border: 1px solid rgba(231, 71, 60, 0.12);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(247, 247, 245, 1) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 16px 40px rgba(231, 71, 60, 0.05);
+  color: var(--ink);
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.industry-sector-card--premium::before {
+  position: absolute;
+  inset: auto -40% -60% auto;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(231, 71, 60, 0.18), transparent 70%);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 360ms ease;
+}
+
+.industry-sector-card--premium > * {
+  position: relative;
+  z-index: 1;
+}
+
+.industry-sector-card--premium .industry-sector-icon-wrap {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(231, 71, 60, 0.22), transparent 65%),
+    linear-gradient(135deg, rgba(231, 71, 60, 0.16), rgba(231, 71, 60, 0.06));
+  color: #E7473C;
+  border: 1px solid rgba(231, 71, 60, 0.18);
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.industry-sector-card--premium .industry-sector-num {
+  position: absolute;
+  top: clamp(20px, 2.4vw, 28px);
+  right: clamp(20px, 2.4vw, 28px);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: rgba(231, 71, 60, 0.5);
+}
+
+.industry-sector-card--premium h3 {
+  margin: 4px 0 0;
+  font-size: clamp(20px, 1.7vw, 24px);
+  font-weight: 760;
+  letter-spacing: -0.005em;
+  line-height: 1.18;
+  color: var(--ink);
+}
+
+.industry-sector-card--premium p {
+  margin: 0;
+  color: #4f5557;
+  font-size: 14.5px;
+  line-height: 1.62;
+}
+
+.industry-sector-card--premium .industry-sector-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  color: #E7473C;
+  font-weight: 700;
+  transform: translateX(-6px);
+  opacity: 0.7;
+  transition: transform 280ms ease, opacity 280ms ease;
+}
+
+.industry-sector-card--premium:hover,
+.industry-sector-card--premium:focus-visible {
+  transform: translateY(-6px);
+  border-color: rgba(231, 71, 60, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 28px 64px rgba(231, 71, 60, 0.13);
+  outline: none;
+}
+
+.industry-sector-card--premium:hover::before { opacity: 1; }
+
+.industry-sector-card--premium:hover .industry-sector-icon-wrap {
+  transform: translateY(-3px) rotate(-3deg);
+}
+
+.industry-sector-card--premium:hover .industry-sector-arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Final CTA on industries page — keep light, brand-aligned */
+.industry-final-cta {
+  padding: clamp(72px, 9vw, 120px) 5vw;
+  background:
+    linear-gradient(135deg, rgba(231, 71, 60, 0.04), transparent 60%),
+    #F7F7F5;
+}
+
+.industry-final-cta-inner {
+  display: grid;
+  justify-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  gap: 16px;
+}
+
+.industry-final-cta-inner h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.12;
+}
+
+.industry-final-cta-inner p {
+  margin: 0;
+  color: #4f5557;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.72;
+}
+
+.industry-final-cta-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ── About page — premium story + leadership grid ──────────────── */
+.au-story {
+  padding: clamp(72px, 9vw, 120px) 5vw;
+  background: #FFFFFF;
+}
+
+.au-story-shell {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.au-story-copy h2 {
+  margin: 6px 0 18px;
+  color: var(--ink);
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.12;
+}
+
+.au-story-copy p {
+  margin: 0 0 14px;
+  color: #4f5557;
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.78;
+}
+
+.au-story-pillars {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.au-story-pillars li {
+  display: grid;
+  gap: 6px;
+  padding: 20px 22px;
+  border: 1px solid rgba(231, 71, 60, 0.14);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(231, 71, 60, 0.05), transparent 55%),
+    #FFFFFF;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 14px 32px rgba(231, 71, 60, 0.05);
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.au-story-pillars li:hover {
+  transform: translateY(-4px);
+  border-color: rgba(231, 71, 60, 0.26);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 22px 48px rgba(231, 71, 60, 0.1);
+}
+
+.au-story-pillars strong {
+  font-size: 15px;
+  font-weight: 760;
+  color: #E7473C;
+  letter-spacing: -0.005em;
+}
+
+.au-story-pillars span {
+  color: #4f5557;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (max-width: 880px) {
+  .au-story-shell { grid-template-columns: 1fr; }
+}
+
+/* Premium leadership card: curved corners + portrait + hover lift */
+.au-team-grid--premium {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.au-team-card--premium {
+  padding: 16px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, #FFFFFF 0%, #F7F7F5 100%);
+  border: 1px solid rgba(231, 71, 60, 0.1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 14px 36px rgba(231, 71, 60, 0.06);
+  transition:
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease;
+}
+
+.au-team-card--premium:hover {
+  transform: translateY(-8px);
+  border-color: rgba(231, 71, 60, 0.24);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 28px 60px rgba(231, 71, 60, 0.13);
+}
+
+.au-team-portrait--rounded {
+  border-radius: 18px;
+  margin-bottom: 14px;
+  background:
+    linear-gradient(165deg, rgba(231, 71, 60, 0.12) 0%, rgba(231, 71, 60, 0.04) 55%, rgba(231, 71, 60, 0.08) 100%);
+}
+
+.au-team-portrait--rounded .au-team-portrait-placeholder {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(231, 71, 60, 0.18), transparent 60%),
+    linear-gradient(165deg, rgba(231, 71, 60, 0.1), rgba(231, 71, 60, 0.04));
+}
+
+.au-team-portrait--rounded .au-team-portrait-placeholder span {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: rgba(231, 71, 60, 0.42);
+}
+
+.au-team-card--premium .au-team-info {
+  padding: 6px 10px 12px;
+}
+
+.au-team-intro {
+  margin: 8px 0 0;
+  color: #4f5557;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .au-team-grid--premium { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .au-team-grid--premium { grid-template-columns: 1fr; }
+}
+

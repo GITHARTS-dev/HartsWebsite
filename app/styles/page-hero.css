@@ -1,0 +1,368 @@
+/* ──────────────────────────────────────────────────────────────────────
+   Page Hero — reusable, premium hero for every inner page
+   Mirrors the home welcome-screen typography (welcome-kicker,
+   welcome-title-soft, welcome-title-strong) so the brand language is
+   identical across the site. Adds: breadcrumb, CACHE watermark, and a
+   page-specific abstract scene behind the typography.
+   ────────────────────────────────────────────────────────────────────── */
+
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: clamp(520px, 78vh, 720px);
+  padding: clamp(72px, 9vh, 112px) 5vw clamp(56px, 7vh, 84px);
+  overflow: hidden;
+  background: var(--soft, #F0F0F0);
+  color: var(--ink);
+}
+
+/* ── Scene: image + grid + veil layers ─────────────────────────────── */
+.page-hero-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-hero-scene-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-scene-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.92;
+  transform: scale(1.04);
+  animation: hero-scene-drift 22s ease-in-out infinite alternate;
+}
+
+.page-hero-scene-grid {
+  background-image:
+    linear-gradient(rgba(231, 71, 60, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(231, 71, 60, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(0, 0, 0, 0.9), transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(0, 0, 0, 0.9), transparent 75%);
+  opacity: 0.55;
+}
+
+.page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.08) 60%, transparent 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.0) 0%, rgba(240, 240, 240, 0.45) 100%);
+}
+
+@keyframes hero-scene-drift {
+  from { transform: scale(1.04) translate3d(-1%, 0, 0); }
+  to   { transform: scale(1.08) translate3d(1%, -1%, 0); }
+}
+
+/* ── Watermark text ────────────────────────────────────────────────── */
+.page-hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: clamp(140px, 22vw, 320px);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  color: rgba(231, 71, 60, 0.07);
+  white-space: nowrap;
+  transform: translate(-50%, -54%);
+  pointer-events: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+/* ── Shell layout ──────────────────────────────────────────────────── */
+.page-hero-shell {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: clamp(20px, 3vh, 36px);
+  width: 100%;
+  max-width: 1180px;
+  text-align: center;
+}
+
+/* ── Breadcrumb ────────────────────────────────────────────────────── */
+.page-hero-breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid rgba(231, 71, 60, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 8px 22px rgba(231, 71, 60, 0.08);
+  opacity: 0;
+  animation: cinematic-rise 700ms ease 120ms both;
+}
+
+.page-hero-crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+}
+
+.page-hero-crumb a {
+  color: rgba(26, 26, 26, 0.62);
+  transition: color 160ms ease;
+}
+
+.page-hero-crumb a:hover {
+  color: #E7473C;
+}
+
+.page-hero-crumb [aria-current="page"] {
+  color: #E7473C;
+}
+
+.page-hero-crumb-sep {
+  color: rgba(26, 26, 26, 0.28);
+  font-weight: 600;
+}
+
+/* ── Content (kicker + title + subtitle) ───────────────────────────── */
+.page-hero-content {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  max-width: 900px;
+}
+
+.page-hero-kicker {
+  margin: 0;
+}
+
+.page-hero-title {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  max-width: none;
+  margin: 0;
+  font-size: clamp(46px, 7.2vw, 100px);
+  font-weight: 780;
+  line-height: 0.96;
+  letter-spacing: -0.005em;
+  opacity: 0;
+  animation: cinematic-rise 900ms ease 360ms both;
+}
+
+.page-hero-title-soft {
+  font-size: 0.46em;
+  font-weight: 680;
+  line-height: 1;
+  color: rgba(26, 26, 26, 0.78);
+}
+
+.page-hero-title-strong {
+  font-size: 1em;
+  line-height: 0.92;
+}
+
+.page-hero-subtitle {
+  max-width: 680px;
+  margin: 6px 0 0;
+  color: #1A1A1A;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.62;
+  opacity: 0;
+  animation: cinematic-rise 900ms ease 620ms both;
+}
+
+.page-hero-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  opacity: 0;
+  animation: cinematic-rise 900ms ease 780ms both;
+}
+
+/* ── Scroll cue ────────────────────────────────────────────────────── */
+.page-hero-scroll-cue {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: clamp(12px, 2vh, 22px);
+}
+
+.page-hero-scroll-line {
+  position: relative;
+  width: 1.5px;
+  height: 48px;
+  background: rgba(231, 71, 60, 0.22);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.page-hero-scroll-line span {
+  position: absolute;
+  top: -55%;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: linear-gradient(180deg, rgba(231, 71, 60, 0) 0%, #E7473C 50%, #E7473C 100%);
+  animation: welcome-scroll-pulse 2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-scroll-line span { animation: none; top: 22%; }
+  .page-hero-scene-image { animation: none; }
+  .page-hero-breadcrumbs,
+  .page-hero-title,
+  .page-hero-subtitle,
+  .page-hero-actions { animation: none; opacity: 1; }
+}
+
+/* ── Page-specific scenes ──────────────────────────────────────────── */
+
+/* About — quiet executive wash with portrait halo */
+.page-hero--about .page-hero-scene-image {
+  background-image:
+    radial-gradient(circle at 22% 30%, rgba(231, 71, 60, 0.18), transparent 55%),
+    radial-gradient(circle at 78% 70%, rgba(231, 71, 60, 0.12), transparent 60%),
+    linear-gradient(135deg, #F7F7F5 0%, #EEEEEC 100%);
+}
+
+/* Industries — global network of interlocking circles */
+.page-hero--industries .page-hero-scene-image {
+  background-image:
+    repeating-radial-gradient(circle at 18% 28%, transparent 0, transparent 70px, rgba(231, 71, 60, 0.14) 71px, rgba(231, 71, 60, 0.14) 72px),
+    repeating-radial-gradient(circle at 82% 72%, transparent 0, transparent 82px, rgba(231, 71, 60, 0.11) 83px, rgba(231, 71, 60, 0.11) 84px),
+    linear-gradient(135deg, #F4F4F2 0%, #EDEDEA 100%);
+}
+
+/* How We Help — diagonal blueprint */
+.page-hero--how-we-help .page-hero-scene-image {
+  background-image:
+    repeating-linear-gradient(135deg, transparent 0, transparent 60px, rgba(231, 71, 60, 0.08) 60px, rgba(231, 71, 60, 0.08) 61px),
+    radial-gradient(circle at 30% 50%, rgba(231, 71, 60, 0.18), transparent 60%),
+    linear-gradient(135deg, #F6F4F2 0%, #EFEDEA 100%);
+}
+
+/* How We Work — process timeline rings */
+.page-hero--how-we-work .page-hero-scene-image {
+  background-image:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 90px, rgba(231, 71, 60, 0.1) 91px, rgba(231, 71, 60, 0.1) 92px),
+    linear-gradient(135deg, #F5F5F3 0%, #ECECE9 100%);
+}
+
+/* Careers — soft ascending arcs */
+.page-hero--careers .page-hero-scene-image {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(231, 71, 60, 0.22), transparent 70%),
+    linear-gradient(180deg, #F4F4F2 0%, #ECECE9 100%);
+}
+
+/* Contact — gentle inviting wash */
+.page-hero--contact .page-hero-scene-image {
+  background-image:
+    radial-gradient(circle at 70% 30%, rgba(231, 71, 60, 0.18), transparent 55%),
+    radial-gradient(circle at 30% 80%, rgba(231, 71, 60, 0.12), transparent 60%),
+    linear-gradient(135deg, #F6F4F2 0%, #EDEDEA 100%);
+}
+
+/* Industry detail scenes — each has a unique motif */
+.page-hero--industry-aerospace .page-hero-scene-image {
+  background-image:
+    repeating-linear-gradient(75deg, transparent 0, transparent 80px, rgba(231, 71, 60, 0.09) 80px, rgba(231, 71, 60, 0.09) 81px),
+    radial-gradient(ellipse 60% 40% at 70% 30%, rgba(231, 71, 60, 0.22), transparent 70%),
+    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+}
+
+.page-hero--industry-automotive .page-hero-scene-image {
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0, transparent 100px, rgba(231, 71, 60, 0.1) 100px, rgba(231, 71, 60, 0.1) 102px),
+    radial-gradient(ellipse 70% 30% at 50% 80%, rgba(231, 71, 60, 0.2), transparent 70%),
+    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+}
+
+.page-hero--industry-oil-gas .page-hero-scene-image {
+  background-image:
+    repeating-linear-gradient(180deg, transparent 0, transparent 24px, rgba(231, 71, 60, 0.07) 24px, rgba(231, 71, 60, 0.07) 25px),
+    radial-gradient(circle at 25% 70%, rgba(231, 71, 60, 0.22), transparent 60%),
+    linear-gradient(135deg, #F4F4F2 0%, #EBEBE8 100%);
+}
+
+.page-hero--industry-healthcare .page-hero-scene-image {
+  background-image:
+    radial-gradient(circle at 30% 35%, rgba(231, 71, 60, 0.16), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(231, 71, 60, 0.12), transparent 60%),
+    linear-gradient(135deg, #F6F5F3 0%, #EEEEEB 100%);
+}
+
+.page-hero--industry-chemicals .page-hero-scene-image {
+  background-image:
+    repeating-radial-gradient(circle at 25% 50%, transparent 0, transparent 60px, rgba(231, 71, 60, 0.1) 61px, rgba(231, 71, 60, 0.1) 62px),
+    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+}
+
+.page-hero--industry-life-sciences .page-hero-scene-image {
+  background-image:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 70px, rgba(231, 71, 60, 0.09) 71px, rgba(231, 71, 60, 0.09) 72px),
+    linear-gradient(135deg, #F6F5F3 0%, #EDEDEA 100%);
+}
+
+.page-hero--industry-energy .page-hero-scene-image {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 50px, rgba(231, 71, 60, 0.1) 50px, rgba(231, 71, 60, 0.1) 51px),
+    radial-gradient(ellipse 50% 40% at 70% 30%, rgba(231, 71, 60, 0.22), transparent 70%),
+    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+}
+
+.page-hero--industry-technology .page-hero-scene-image {
+  background-image:
+    linear-gradient(rgba(231, 71, 60, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(231, 71, 60, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 60% 40%, rgba(231, 71, 60, 0.18), transparent 60%),
+    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+.page-hero--industry-telecom .page-hero-scene-image {
+  background-image:
+    repeating-radial-gradient(circle at 80% 20%, transparent 0, transparent 50px, rgba(231, 71, 60, 0.12) 51px, rgba(231, 71, 60, 0.12) 52px),
+    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+}
+
+.page-hero--industry-transportation .page-hero-scene-image {
+  background-image:
+    repeating-linear-gradient(135deg, transparent 0, transparent 70px, rgba(231, 71, 60, 0.09) 70px, rgba(231, 71, 60, 0.09) 72px),
+    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+}
+
+/* ── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 880px) {
+  .page-hero { min-height: 560px; padding-top: clamp(64px, 12vh, 96px); }
+  .page-hero-watermark { font-size: clamp(120px, 32vw, 240px); }
+  .page-hero-breadcrumbs { font-size: 11px; }
+}
+
+@media (max-width: 560px) {
+  .page-hero { min-height: 500px; padding-inline: 6vw; }
+  .page-hero-title { font-size: clamp(38px, 11vw, 64px); }
+  .page-hero-subtitle { font-size: 15px; }
+  .page-hero-watermark { font-size: 38vw; transform: translate(-50%, -50%); }
+}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { PageHero } from "../../_shared/layout/page-hero";
 
 const revealEase = [0.22, 1, 0.36, 1] as const;
 
@@ -136,61 +137,27 @@ function OpeningIcon({ slug }: { slug: string }) {
 export function CareersPage() {
   return (
     <main className="careers-page">
-      <section className="careers-hero section">
-        <motion.div className="careers-hero-copy">
-          <motion.p
-            className="eyebrow"
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.04, ease: revealEase }}
-          >
-            Careers
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.08, ease: revealEase }}
-          >
-            Build a career that defines transformation.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: revealEase }}
-          >
-            Join our elite team of strategists, operators, and technologists shaping decisive,
-            durable change for global leaders.
-          </motion.p>
-
-          <motion.div
-            className="careers-actions"
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.16, ease: revealEase }}
-          >
+      <PageHero
+        scene="careers"
+        eyebrow="Careers"
+        titleSoft="Build a career that"
+        titleStrong="defines transformation."
+        subtitle="Join a senior team of strategists, operators, and technologists shaping decisive, durable change for global leaders."
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "Careers" },
+        ]}
+        actions={
+          <>
             <Link className="solid-button large" href="#openings">
               Explore open roles
             </Link>
-            <Link className="careers-ghost-button large" href="#culture">
+            <Link className="outline-button large" href="#culture">
               Our culture
             </Link>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="careers-hero-media"
-          aria-label="Placeholder for high-quality team photo showcasing collaborative environment"
-          initial={{ opacity: 0, x: 30, scale: 0.98 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.9, ease: revealEase, delay: 0.12 }}
-        >
-          <div className="careers-media-card">
-            <span className="careers-media-chip">2D motion • structured growth • collaborative impact</span>
-            <strong>Placeholder</strong>
-            <p>Team image or video block goes here.</p>
-          </div>
-        </motion.div>
-      </section>
+          </>
+        }
+      />
 
       <section className="careers-culture section" id="culture">
         <motion.div

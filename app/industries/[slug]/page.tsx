@@ -4,8 +4,14 @@ import { notFound } from "next/navigation";
 import {
   AerospaceIndustry,
   AutomotiveIndustry,
-  FinancialServicesIndustry,
-  IndustrialManufacturingIndustry,
+  ChemicalsIndustry,
+  EnergyIndustry,
+  HealthcareIndustry,
+  LifeSciencesIndustry,
+  OilGasIndustry,
+  TechnologyIndustry,
+  TelecomIndustry,
+  TransportationIndustry,
 } from "./_components/industry-detail-views";
 import { PageShell } from "../../_shared/layout/page-shell";
 import { industries } from "../../_data/home-content";
@@ -35,28 +41,42 @@ export async function generateMetadata({
 
 export default async function IndustryRoute({ params }: IndustryRouteProps) {
   const { slug } = await params;
-  let industryContent;
 
+  let industryContent;
   switch (slug) {
-    case "aerospace":
-      industryContent = <AerospaceIndustry />;
-      break;
     case "automotive":
       industryContent = <AutomotiveIndustry />;
       break;
-    case "financial-services":
-      industryContent = <FinancialServicesIndustry />;
+    case "aerospace":
+      industryContent = <AerospaceIndustry />;
       break;
-    case "industrial-manufacturing":
-      industryContent = <IndustrialManufacturingIndustry />;
+    case "oil-gas":
+      industryContent = <OilGasIndustry />;
+      break;
+    case "healthcare":
+      industryContent = <HealthcareIndustry />;
+      break;
+    case "chemicals":
+      industryContent = <ChemicalsIndustry />;
+      break;
+    case "life-sciences":
+      industryContent = <LifeSciencesIndustry />;
+      break;
+    case "energy":
+      industryContent = <EnergyIndustry />;
+      break;
+    case "technology":
+      industryContent = <TechnologyIndustry />;
+      break;
+    case "telecom":
+      industryContent = <TelecomIndustry />;
+      break;
+    case "transportation":
+      industryContent = <TransportationIndustry />;
       break;
     default:
       notFound();
   }
 
-  return (
-    <PageShell>
-      {industryContent}
-    </PageShell>
-  );
+  return <PageShell>{industryContent}</PageShell>;
 }

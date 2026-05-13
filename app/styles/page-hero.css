@@ -12,8 +12,9 @@
   display: grid;
   place-items: center;
   width: 100%;
-  min-height: clamp(520px, 78vh, 720px);
-  padding: clamp(72px, 9vh, 112px) 5vw clamp(56px, 7vh, 84px);
+  /* Compact hero — clearly shorter than before */
+  min-height: clamp(320px, 44vh, 440px);
+  padding: clamp(40px, 5vh, 64px) 5vw clamp(32px, 4vh, 52px);
   overflow: hidden;
   background: var(--soft, #F0F0F0);
   color: var(--ink);
@@ -36,26 +37,23 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.92;
+  opacity: 1;
   transform: scale(1.04);
   animation: hero-scene-drift 22s ease-in-out infinite alternate;
+  /* Local image acts as a fallback color/photo if external URLs aren't reachable. */
+  background-color: #EFEEEC;
 }
 
 .page-hero-scene-grid {
-  background-image:
-    linear-gradient(rgba(231, 71, 60, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(231, 71, 60, 0.06) 1px, transparent 1px);
-  background-size: 64px 64px;
-  background-position: center;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(0, 0, 0, 0.9), transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(0, 0, 0, 0.9), transparent 75%);
-  opacity: 0.55;
+  display: none;
 }
 
+/* Soft white veil so the photograph reads behind typography, while
+   keeping enough visibility for the image to register as a backdrop. */
 .page-hero-scene-veil {
   background:
-    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.08) 60%, transparent 100%),
-    linear-gradient(180deg, rgba(240, 240, 240, 0.0) 0%, rgba(240, 240, 240, 0.45) 100%);
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.28) 50%, rgba(255, 255, 255, 0.42) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.22) 0%, rgba(240, 240, 240, 0.40) 100%);
 }
 
 @keyframes hero-scene-drift {
@@ -65,11 +63,11 @@
 
 /* ── Watermark text ────────────────────────────────────────────────── */
 .page-hero-watermark {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 1;
-  display: block;
   font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-size: clamp(140px, 22vw, 320px);
   font-weight: 900;
@@ -95,27 +93,9 @@
   text-align: center;
 }
 
-/* ── Breadcrumb ────────────────────────────────────────────────────── */
+/* ── Breadcrumb (hidden — clean home-style hero with no Home pill) ──── */
 .page-hero-breadcrumbs {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border: 1px solid rgba(231, 71, 60, 0.18);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
-    0 8px 22px rgba(231, 71, 60, 0.08);
-  opacity: 0;
-  animation: cinematic-rise 700ms ease 120ms both;
+  display: none;
 }
 
 .page-hero-crumb {
@@ -153,6 +133,11 @@
 
 .page-hero-kicker {
   margin: 0;
+  color: #E7473C;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .page-hero-title {
@@ -161,32 +146,36 @@
   gap: 4px;
   max-width: none;
   margin: 0;
-  font-size: clamp(46px, 7.2vw, 100px);
+  /* Unified title size across every page */
+  font-size: clamp(38px, 5.4vw, 64px);
   font-weight: 780;
-  line-height: 0.96;
+  line-height: 1.02;
   letter-spacing: -0.005em;
+  color: #1A1A1A;
   opacity: 0;
   animation: cinematic-rise 900ms ease 360ms both;
 }
 
 .page-hero-title-soft {
-  font-size: 0.46em;
+  font-size: 0.5em;
   font-weight: 680;
-  line-height: 1;
-  color: rgba(26, 26, 26, 0.78);
+  line-height: 1.05;
+  color: rgba(26, 26, 26, 0.72);
 }
 
 .page-hero-title-strong {
   font-size: 1em;
-  line-height: 0.92;
+  line-height: 1;
+  color: #1A1A1A;
 }
 
 .page-hero-subtitle {
   max-width: 680px;
   margin: 6px 0 0;
   color: #1A1A1A;
-  font-size: clamp(16px, 1.4vw, 19px);
-  line-height: 1.62;
+  /* Unified subtitle size across every page */
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.6;
   opacity: 0;
   animation: cinematic-rise 900ms ease 620ms both;
 }
@@ -201,34 +190,13 @@
   animation: cinematic-rise 900ms ease 780ms both;
 }
 
-/* ── Scroll cue ────────────────────────────────────────────────────── */
-.page-hero-scroll-cue {
-  display: inline-flex;
-  justify-content: center;
-  margin-top: clamp(12px, 2vh, 22px);
-}
-
+/* ── Scroll cue — removed per request ──────────────────────────────── */
+.page-hero-scroll-cue,
 .page-hero-scroll-line {
-  position: relative;
-  width: 1.5px;
-  height: 48px;
-  background: rgba(231, 71, 60, 0.22);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.page-hero-scroll-line span {
-  position: absolute;
-  top: -55%;
-  left: 0;
-  width: 100%;
-  height: 55%;
-  background: linear-gradient(180deg, rgba(231, 71, 60, 0) 0%, #E7473C 50%, #E7473C 100%);
-  animation: welcome-scroll-pulse 2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+  display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page-hero-scroll-line span { animation: none; top: 22%; }
   .page-hero-scene-image { animation: none; }
   .page-hero-breadcrumbs,
   .page-hero-title,
@@ -236,133 +204,123 @@
   .page-hero-actions { animation: none; opacity: 1; }
 }
 
-/* ── Page-specific scenes ──────────────────────────────────────────── */
+/* ── Page-specific scenes: real photographs relevant to each page ───
+   Each page stacks a remote Unsplash photo on top of a local /public
+   image so heroes always have a photographic feel even if Unsplash is
+   blocked (e.g. air-gapped network, strict corporate proxy). */
 
-/* About — quiet executive wash with portrait halo */
+/* About — executive team / leadership */
 .page-hero--about .page-hero-scene-image {
   background-image:
-    radial-gradient(circle at 22% 30%, rgba(231, 71, 60, 0.18), transparent 55%),
-    radial-gradient(circle at 78% 70%, rgba(231, 71, 60, 0.12), transparent 60%),
-    linear-gradient(135deg, #F7F7F5 0%, #EEEEEC 100%);
+    url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1800&q=80"),
+    url("/business_diagnose_image.png");
 }
 
-/* Industries — global network of interlocking circles */
+/* Industries — industrial / cityscape */
 .page-hero--industries .page-hero-scene-image {
   background-image:
-    repeating-radial-gradient(circle at 18% 28%, transparent 0, transparent 70px, rgba(231, 71, 60, 0.14) 71px, rgba(231, 71, 60, 0.14) 72px),
-    repeating-radial-gradient(circle at 82% 72%, transparent 0, transparent 82px, rgba(231, 71, 60, 0.11) 83px, rgba(231, 71, 60, 0.11) 84px),
-    linear-gradient(135deg, #F4F4F2 0%, #EDEDEA 100%);
+    url("https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1800&q=80"),
+    url("/business_image_1.png");
 }
 
-/* How We Help — diagonal blueprint */
+/* How We Help — consulting workshop / collaboration */
 .page-hero--how-we-help .page-hero-scene-image {
   background-image:
-    repeating-linear-gradient(135deg, transparent 0, transparent 60px, rgba(231, 71, 60, 0.08) 60px, rgba(231, 71, 60, 0.08) 61px),
-    radial-gradient(circle at 30% 50%, rgba(231, 71, 60, 0.18), transparent 60%),
-    linear-gradient(135deg, #F6F4F2 0%, #EFEDEA 100%);
+    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=80"),
+    url("/business_diagnose_image.png");
 }
 
-/* How We Work — process timeline rings */
+/* How We Work — process planning / strategy whiteboard */
 .page-hero--how-we-work .page-hero-scene-image {
   background-image:
-    repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 90px, rgba(231, 71, 60, 0.1) 91px, rgba(231, 71, 60, 0.1) 92px),
-    linear-gradient(135deg, #F5F5F3 0%, #ECECE9 100%);
+    url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80"),
+    url("/business_image_1.png");
 }
 
-/* Careers — soft ascending arcs */
+/* Careers — modern office team */
 .page-hero--careers .page-hero-scene-image {
   background-image:
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(231, 71, 60, 0.22), transparent 70%),
-    linear-gradient(180deg, #F4F4F2 0%, #ECECE9 100%);
+    url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=80"),
+    url("/business_diagnose_image.png");
 }
 
-/* Contact — gentle inviting wash */
+/* Contact — meeting / handshake */
 .page-hero--contact .page-hero-scene-image {
   background-image:
-    radial-gradient(circle at 70% 30%, rgba(231, 71, 60, 0.18), transparent 55%),
-    radial-gradient(circle at 30% 80%, rgba(231, 71, 60, 0.12), transparent 60%),
-    linear-gradient(135deg, #F6F4F2 0%, #EDEDEA 100%);
+    url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1800&q=80"),
+    url("/business_image_1.png");
 }
 
-/* Industry detail scenes — each has a unique motif */
+/* Industry detail scenes — each gets a sector-relevant photo */
 .page-hero--industry-aerospace .page-hero-scene-image {
-  background-image:
-    repeating-linear-gradient(75deg, transparent 0, transparent 80px, rgba(231, 71, 60, 0.09) 80px, rgba(231, 71, 60, 0.09) 81px),
-    radial-gradient(ellipse 60% 40% at 70% 30%, rgba(231, 71, 60, 0.22), transparent 70%),
-    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+  background-image: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-automotive .page-hero-scene-image {
-  background-image:
-    repeating-linear-gradient(90deg, transparent 0, transparent 100px, rgba(231, 71, 60, 0.1) 100px, rgba(231, 71, 60, 0.1) 102px),
-    radial-gradient(ellipse 70% 30% at 50% 80%, rgba(231, 71, 60, 0.2), transparent 70%),
-    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+  background-image: url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-oil-gas .page-hero-scene-image {
-  background-image:
-    repeating-linear-gradient(180deg, transparent 0, transparent 24px, rgba(231, 71, 60, 0.07) 24px, rgba(231, 71, 60, 0.07) 25px),
-    radial-gradient(circle at 25% 70%, rgba(231, 71, 60, 0.22), transparent 60%),
-    linear-gradient(135deg, #F4F4F2 0%, #EBEBE8 100%);
+  background-image: url("https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-healthcare .page-hero-scene-image {
-  background-image:
-    radial-gradient(circle at 30% 35%, rgba(231, 71, 60, 0.16), transparent 55%),
-    radial-gradient(circle at 70% 70%, rgba(231, 71, 60, 0.12), transparent 60%),
-    linear-gradient(135deg, #F6F5F3 0%, #EEEEEB 100%);
+  background-image: url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-chemicals .page-hero-scene-image {
-  background-image:
-    repeating-radial-gradient(circle at 25% 50%, transparent 0, transparent 60px, rgba(231, 71, 60, 0.1) 61px, rgba(231, 71, 60, 0.1) 62px),
-    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+  background-image: url("https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-life-sciences .page-hero-scene-image {
-  background-image:
-    repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 70px, rgba(231, 71, 60, 0.09) 71px, rgba(231, 71, 60, 0.09) 72px),
-    linear-gradient(135deg, #F6F5F3 0%, #EDEDEA 100%);
+  background-image: url("https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-energy .page-hero-scene-image {
-  background-image:
-    repeating-linear-gradient(45deg, transparent 0, transparent 50px, rgba(231, 71, 60, 0.1) 50px, rgba(231, 71, 60, 0.1) 51px),
-    radial-gradient(ellipse 50% 40% at 70% 30%, rgba(231, 71, 60, 0.22), transparent 70%),
-    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+  background-image: url("https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-technology .page-hero-scene-image {
-  background-image:
-    linear-gradient(rgba(231, 71, 60, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(231, 71, 60, 0.1) 1px, transparent 1px),
-    radial-gradient(circle at 60% 40%, rgba(231, 71, 60, 0.18), transparent 60%),
-    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
-  background-size: 28px 28px, 28px 28px, auto, auto;
+  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-telecom .page-hero-scene-image {
-  background-image:
-    repeating-radial-gradient(circle at 80% 20%, transparent 0, transparent 50px, rgba(231, 71, 60, 0.12) 51px, rgba(231, 71, 60, 0.12) 52px),
-    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+  background-image: url("https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&w=1800&q=80");
 }
 
 .page-hero--industry-transportation .page-hero-scene-image {
-  background-image:
-    repeating-linear-gradient(135deg, transparent 0, transparent 70px, rgba(231, 71, 60, 0.09) 70px, rgba(231, 71, 60, 0.09) 72px),
-    linear-gradient(135deg, #F4F4F2 0%, #ECECE9 100%);
+  background-image: url("https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1800&q=80");
+}
+
+/* Default fallback — generic professional photo */
+.page-hero--default .page-hero-scene-image {
+  background-image: url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80");
 }
 
 /* ── Responsive ────────────────────────────────────────────────────── */
 @media (max-width: 880px) {
-  .page-hero { min-height: 560px; padding-top: clamp(64px, 12vh, 96px); }
+  .page-hero { min-height: 320px; padding-top: clamp(36px, 6vh, 56px); }
   .page-hero-watermark { font-size: clamp(120px, 32vw, 240px); }
   .page-hero-breadcrumbs { font-size: 11px; }
 }
 
 @media (max-width: 560px) {
-  .page-hero { min-height: 500px; padding-inline: 6vw; }
-  .page-hero-title { font-size: clamp(38px, 11vw, 64px); }
-  .page-hero-subtitle { font-size: 15px; }
+  .page-hero { min-height: 280px; padding-inline: 6vw; }
+  .page-hero-title { font-size: clamp(30px, 8.5vw, 46px); }
+  .page-hero-subtitle { font-size: 14px; }
   .page-hero-watermark { font-size: 38vw; transform: translate(-50%, -50%); }
+}
+
+/* ── Premium accents ──────────────────────────────────────────────── */
+/* Orb and title underline removed per request — keeping hero clean. */
+.page-hero-shell::before {
+  display: none;
+}
+
+.page-hero-title::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-shell::before { animation: none; }
 }

@@ -465,7 +465,7 @@ export function HomeExperience() {
                 key={item.title}
                 style={revealStyle(index)}
               >
-                <span>{item.icon}{String(index + 1).padStart(2, "0")}</span>
+                <span className="card-icon-only">{item.icon}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>

@@ -480,9 +480,8 @@ function IndustryDetailTemplate({ data }: { data: IndustryContent }) {
               className="industry-force-panel industry-detail-reveal"
               style={revealDelay(2)}
             >
-              {data.overview.forces.map((force, index) => (
+              {data.overview.forces.map((force) => (
                 <span key={force}>
-                  <i>{String(index + 1).padStart(2, "0")}</i>
                   {force}
                 </span>
               ))}

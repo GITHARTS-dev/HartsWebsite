@@ -3287,11 +3287,11 @@
   align-self: end;
 }
 
-/* ── Uniform square grid — 3 columns ─────────────────────────────────────── */
+/* ── Uniform square grid — 4 columns (8 services = 2 rows of 4) ─────────── */
 .hwh-bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -3721,6 +3721,10 @@
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .hwh-bento-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 960px) {
   .hwh-bento-grid { grid-template-columns: repeat(2, 1fr); }
   .hwh-services-hd { grid-template-columns: 1fr; }
@@ -5823,3 +5827,439 @@
   .au-team-grid--premium { grid-template-columns: 1fr; }
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════════
+   COMPACT SPACING OVERRIDE
+   Reduces the vertical padding of every major section by ~50%.
+   Applied last so it wins on specificity-tied rules.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* --- HOME PAGE sections --- */
+.vision-statement-section {
+  min-height: auto;
+  padding-top: clamp(32px, 4vw, 56px);
+  padding-bottom: clamp(32px, 4vw, 56px);
+}
+
+.home-premium-section {
+  padding-top: clamp(44px, 5vw, 72px);
+  padding-bottom: clamp(44px, 5vw, 72px);
+}
+
+.partner-section {
+  min-height: auto;
+  padding-top: clamp(44px, 5vw, 70px);
+  padding-bottom: clamp(44px, 5vw, 70px);
+}
+
+/* --- CHALLENGES (req 3): tighter intro + smaller visual + smaller heading --- */
+.challenges-intro {
+  margin-bottom: clamp(20px, 2.6vw, 32px);
+  gap: clamp(20px, 3.4vw, 48px);
+}
+
+.challenge-visual {
+  min-height: clamp(220px, 22vw, 320px);
+}
+
+.challenges-section .home-section-heading h2 {
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.16;
+}
+
+.challenges-section .home-section-heading p:not(.eyebrow) {
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.challenge-grid {
+  gap: 12px;
+}
+
+.challenge-card {
+  padding: clamp(14px, 1.5vw, 20px);
+}
+
+.challenge-card h3 {
+  font-size: 15px;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.challenge-card p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* --- ABOUT page sections --- */
+.au-story,
+.au-team,
+.au-cta {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* --- HOW WE HELP sections --- */
+.hwh-services,
+.hwh-cta {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+.hwh-services-hd {
+  margin-bottom: clamp(22px, 2.6vw, 36px);
+}
+
+/* --- HOW WE WORK sections --- */
+.how-we-work-page section,
+.process-page section {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* --- INDUSTRIES sections --- */
+.industry-grid-section,
+.industry-final-cta {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* --- INDUSTRY DETAIL sections --- */
+.industry-detail-section {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* --- CAREERS sections --- */
+.careers-culture,
+.careers-openings,
+.careers-coming-soon {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* --- CONTACT sections --- */
+.contact-section,
+.contact-form-section,
+.contact-info-section {
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
+/* --- Generic `.section` utility --- */
+.section {
+  padding-top: clamp(36px, 4vw, 56px);
+  padding-bottom: clamp(36px, 4vw, 56px);
+}
+
+/* --- Tighten internal heading margins consistently --- */
+.home-section-heading {
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PREMIUM POLISH — impress factor
+   Subtle gradient sheen on bento cards, refined card lift,
+   and a clean visual hierarchy lift on the FAQ accordions.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* A barely-visible diagonal sheen that travels across the card on hover.
+   Communicates "interactive premium card" without being gimmicky. */
+.hwh-bento-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(231, 71, 60, 0.06) 45%,
+    rgba(231, 71, 60, 0.10) 50%,
+    rgba(231, 71, 60, 0.06) 55%,
+    transparent 100%
+  );
+  transform: translateX(-30%) skewX(-12deg);
+  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hwh-bento-card:hover::before {
+  transform: translateX(320%) skewX(-12deg);
+}
+
+.hwh-bento-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* FAQ items — gentle lift on hover so the user feels the interactive
+   surface, plus a brand-coloured left accent that grows on open. */
+.hwh-faq-item {
+  position: relative;
+  transition: background 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.hwh-faq-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: #E7473C;
+  border-radius: 999px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hwh-faq-item[open]::before {
+  transform: scaleY(1);
+}
+
+.hwh-faq-item:hover {
+  background: rgba(231, 71, 60, 0.03);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   UNIFIED OVERRIDES — applied to every card/box style across all pages
+   so they share the same sizing, typography, and visual language.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Remove all the little red dashes (::after pseudo) ────────────── */
+.premium-info-card span::after,
+.premium-info-card:hover span::after,
+.premium-info-card:focus-within span::after,
+.industry-sector-card span::after {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* ── 2. Unify every info card to one consistent size ─────────────────── */
+.premium-info-card,
+.hwh-bento-card,
+.careers-card,
+.industry-sector-card--premium,
+.industry-detail-card,
+.work-principle-card,
+.choose-card,
+.challenge-card {
+  min-height: 240px !important;
+  padding: 24px !important;
+  border-radius: 12px !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(231, 71, 60, 0.18) !important;
+  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.06) !important;
+}
+
+/* The hwh bento card is a link → needs flex layout to push the arrow down */
+.hwh-bento-card {
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative;
+}
+
+/* Re-apply the grid layout on cards that originally used grid */
+.premium-info-card,
+.industry-sector-card--premium,
+.industry-detail-card {
+  display: grid !important;
+  gap: 12px !important;
+  align-content: start !important;
+}
+
+/* ── 3. Unify icon size across every card type ───────────────────────── */
+.premium-info-card span,
+.premium-info-card .card-icon-only,
+.hwh-bento-icon,
+.careers-card-icon,
+.industry-sector-card--premium .industry-sector-icon-wrap,
+.industry-card-icon {
+  width: 48px !important;
+  height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 0 4px 0 !important;
+  padding: 0 !important;
+  background: rgba(231, 71, 60, 0.10) !important;
+  color: #E7473C !important;
+  border-radius: 10px !important;
+  border: none !important;
+  font-size: 0 !important;       /* hides any leftover digits */
+  letter-spacing: 0 !important;
+}
+
+/* Icon SVG inside the icon wrap — same size everywhere */
+.premium-info-card span svg,
+.premium-info-card .card-icon-only svg,
+.hwh-bento-icon svg,
+.careers-card-icon svg,
+.industry-sector-card--premium .industry-sector-icon-wrap svg,
+.industry-card-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 1.7 !important;
+  color: #E7473C !important;
+}
+
+/* ── 4. Unify card title (h3) size — small black title ───────────────── */
+.premium-info-card h3,
+.hwh-bento-content h3,
+.careers-card h3,
+.industry-sector-card--premium h3,
+.industry-detail-card h3,
+.challenge-card h3 {
+  margin: 4px 0 6px !important;
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  font-weight: 720 !important;
+  color: #1A1A1A !important;
+}
+
+/* ── 5. Unify card paragraph — dark text on white ────────────────────── */
+.premium-info-card p,
+.hwh-bento-content p,
+.careers-card p,
+.industry-sector-card--premium p,
+.industry-detail-card p,
+.challenge-card p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #2A2A2A !important;
+}
+
+/* Hide the small uppercase career label since cards now show icon + title only */
+.careers-card-label {
+  display: none !important;
+}
+
+/* Unify card-label/eyebrow style inside cards (if any remain) */
+.premium-info-card span:not(.card-icon-only):not([class*="icon"]) {
+  font-size: 0 !important;
+}
+
+/* ── 6. Fix the How We Help arrow — always visible at bottom-right ───── */
+.hwh-bento-arrow {
+  position: absolute !important;
+  bottom: 16px !important;
+  right: 16px !important;
+  top: auto !important;
+  left: auto !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  border: 1.5px solid #E7473C !important;
+  background: #FFFFFF !important;
+  color: #E7473C !important;
+  opacity: 1 !important;
+  transform: none !important;
+  z-index: 5 !important;
+}
+
+.hwh-bento-card:hover .hwh-bento-arrow {
+  background: #E7473C !important;
+  color: #FFFFFF !important;
+  transform: translateX(2px) !important;
+}
+
+.hwh-bento-arrow svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Give the bento card room above the arrow */
+.hwh-bento-content {
+  padding-bottom: 36px;
+}
+
+/* Hide the leftover industry-sector-num element if it appears anywhere */
+.industry-sector-num,
+.hwh-bento-num {
+  display: none !important;
+}
+
+/* ── 7. Eyebrow / section heading: small red kicker + big black h2 ───── */
+.eyebrow,
+.au-eyebrow,
+.hwh-section-eyebrow,
+.hwh-cta-eyebrow,
+.hwh-faq-eyebrow {
+  color: #E7473C !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  margin: 0 0 12px !important;
+}
+
+/* Section h2 — big and black, consistent across every page */
+.home-section-heading h2,
+.au-section-hd h2,
+.hwh-services-hd h2,
+.hwh-cta h2,
+.work-principles-copy h2,
+.industry-grid-heading h2,
+.industry-detail-heading h2,
+.industry-final-cta h2,
+.au-story-copy h2,
+.au-cta h2,
+.careers-culture-inner h2,
+.careers-opening-heading h2,
+.careers-coming-soon-inner h2,
+.section-heading h2 {
+  color: #1A1A1A !important;
+  font-size: clamp(26px, 2.8vw, 38px) !important;
+  font-weight: 720 !important;
+  line-height: 1.15 !important;
+  margin: 0 0 14px !important;
+}
+
+/* Force black on any plain paragraph sitting on a white surface */
+.au-story p,
+.hwh-services-desc,
+.work-principles-copy p,
+.industry-grid-heading p,
+.industry-detail-heading p,
+.careers-culture-inner p,
+.au-section-sub {
+  color: #2A2A2A !important;
+}
+
+/* ── 8. Make sure red buttons keep white text ────────────────────────── */
+.solid-button,
+.solid-button:hover,
+.solid-button:focus,
+.solid-button:active,
+a.solid-button,
+a.solid-button:visited {
+  color: #FFFFFF !important;
+}
+
+/* ── 9. Reduce the home welcome hero so it matches the calmer feel ───── */
+.welcome-screen {
+  min-height: 86vh !important;
+  height: 86vh !important;
+}
+
+.welcome-scroll-scene {
+  height: 86vh !important;
+}
+
+/* Hide the home page's bottom scroll cue and decorative horizontal line — per request */
+.welcome-scroll-cue,
+.welcome-scroll-line {
+  display: none !important;
+}
+
+.welcome-screen::after {
+  display: none !important;
+}

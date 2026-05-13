@@ -133,7 +133,7 @@ textarea {
 }
 
 .solid-button {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   background: #E7473C;
   border-color: #E7473C;
   font-weight: 800;
@@ -147,9 +147,9 @@ textarea {
 
 .solid-button:hover {
   transform: translateY(-2px);
-  background: #E7473C;
-  border-color: #E7473C;
-  color: #FFFFFF;
+  background: #C93C32;
+  border-color: #C93C32;
+  color: #FFFFFF !important;
   box-shadow: 0 14px 30px rgba(231, 71, 60, 0.32);
 }
 
@@ -157,7 +157,7 @@ textarea {
   transform: translateY(-2px);
   border-color: #E7473C;
   background: #E7473C;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   box-shadow: 0 14px 30px rgba(231, 71, 60, 0.32);
 }
 

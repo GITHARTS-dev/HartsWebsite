@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
 
 export type Crumb = { label: string; href?: string };
 
@@ -54,25 +53,6 @@ export function PageHero({
       </span>
 
       <div className="page-hero-shell">
-        {crumbs && crumbs.length > 0 ? (
-          <nav className="page-hero-breadcrumbs" aria-label="Breadcrumb">
-            {crumbs.map((crumb, i) => (
-              <span key={`${crumb.label}-${i}`} className="page-hero-crumb">
-                {crumb.href ? (
-                  <Link href={crumb.href}>{crumb.label}</Link>
-                ) : (
-                  <span aria-current="page">{crumb.label}</span>
-                )}
-                {i < crumbs.length - 1 ? (
-                  <span className="page-hero-crumb-sep" aria-hidden="true">
-                    /
-                  </span>
-                ) : null}
-              </span>
-            ))}
-          </nav>
-        ) : null}
-
         <div className="page-hero-content">
           <p className="welcome-kicker page-hero-kicker">{eyebrow}</p>
           <h1 id="page-hero-title" className="page-hero-title">
@@ -83,12 +63,6 @@ export function PageHero({
           </h1>
           {subtitle ? <p className="page-hero-subtitle">{subtitle}</p> : null}
           {actions ? <div className="page-hero-actions">{actions}</div> : null}
-        </div>
-
-        <div className="page-hero-scroll-cue" aria-hidden="true">
-          <span className="page-hero-scroll-line">
-            <span />
-          </span>
         </div>
       </div>
     </section>

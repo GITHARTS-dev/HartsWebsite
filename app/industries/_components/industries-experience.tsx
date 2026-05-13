@@ -174,9 +174,6 @@ export function IndustriesExperience() {
                 <span className="industry-sector-icon-wrap" aria-hidden="true">
                   {sector.icon}
                 </span>
-                <span className="industry-sector-num">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
                 <h3>{sector.title}</h3>
                 <p>{sector.text}</p>
                 <span className="industry-sector-arrow" aria-hidden="true">

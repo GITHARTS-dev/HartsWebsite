@@ -7,52 +7,63 @@ import { PageHero } from "../../_shared/layout/page-hero";
 
 function ServiceIcon({ slug }: { slug: string }) {
   switch (slug) {
-    case "market-clarity":
+    case "innovation":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 12h4l3 8 4-16 3 8h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M12 3a6 6 0 0 0-3.5 10.9V16a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-2.1A6 6 0 0 0 12 3z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M10 20h4M11 22h2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
         </svg>
       );
-    case "transformation-design":
+    case "mergers-acquisitions":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
-          <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
-          <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
-          <path d="M17.5 14v7M14 17.5h7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <circle cx="8" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="16" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.6" />
         </svg>
       );
-    case "executive-alignment":
+    case "operation":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="8" cy="7" r="3" stroke="currentColor" strokeWidth="1.6" />
-          <circle cx="16" cy="7" r="3" stroke="currentColor" strokeWidth="1.6" />
-          <path d="M2 20c0-3 2.5-5 6-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-          <path d="M22 20c0-3-2.5-5-6-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-          <path d="M12 20c0-3-1.5-5-3-5h2c1.5 0 3 2 3 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
         </svg>
       );
-    case "growth-strategy":
+    case "strategy":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 18l5-7 4 4 5-8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M15 7h4v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="12" cy="12" r="1.6" fill="currentColor" />
         </svg>
       );
-    case "operating-model-design":
+    case "transformation":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="9" y="2" width="6" height="5" rx="1.2" stroke="currentColor" strokeWidth="1.6" />
-          <rect x="2" y="16" width="6" height="5" rx="1.2" stroke="currentColor" strokeWidth="1.6" />
-          <rect x="16" y="16" width="6" height="5" rx="1.2" stroke="currentColor" strokeWidth="1.6" />
-          <path d="M12 7v3.5M12 10.5H5v5.5M12 10.5h7v5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M4 8a8 8 0 0 1 14-4M20 16a8 8 0 0 1-14 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M18 3v5h-5M6 21v-5h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
-    case "digital-enablement":
+    case "gcc-setup":
       return (
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M2 9l10-6 10 6-10 6L2 9z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M2 15l10 6 10-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      );
+    case "sustainability":
+      return (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M5 19c4-4 8-7 14-14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      );
+    case "people-and-organization":
+      return (
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="16" cy="8" r="3" stroke="currentColor" strokeWidth="1.6" />
+          <path d="M2 19c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          <path d="M14 19c0-3 2.5-5 5-5s3 2 3 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
         </svg>
       );
     default:
@@ -79,13 +90,6 @@ const faqs = [
     a: "We prioritise decision-making over documentation. Every engagement produces clear owners, measurable milestones, and momentum your teams can sustain after the engagement ends.",
   },
 ];
-
-const engagementPrinciples = [
-  "Embedded, not remote",
-  "Decisions over decks",
-  "Capability transfer",
-  "Measurable progress",
-] as const;
 
 export function ServicesOverview() {
   const bentoRef = useRef<HTMLDivElement>(null);
@@ -122,11 +126,7 @@ export function ServicesOverview() {
         eyebrow="How We Help"
         titleSoft="Focused expertise."
         titleStrong="Decisive results."
-        subtitle="We help leadership teams clarify choices, design practical transformation, and mobilise people around work that matters."
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "How We Help" },
-        ]}
+        subtitle="Eight focused service lines — engineered to clarify choices, design practical transformation, and mobilise people around work that matters."
         actions={
           <>
             <Link className="solid-button large" href="/contact">
@@ -159,7 +159,6 @@ export function ServicesOverview() {
               href={`/how-we-help/${service.slug}`}
               className={`hwh-bento-card hwh-bento-card--${index + 1}`}
             >
-              <span className="hwh-bento-num">{String(index + 1).padStart(2, "0")}</span>
               <div className="hwh-bento-icon">
                 <ServiceIcon slug={service.slug} />
               </div>
@@ -183,35 +182,6 @@ export function ServicesOverview() {
               <path d="M3 7.5h9M8.5 4l4 3.5-4 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
-        </div>
-      </section>
-
-      {/* ─── APPROACH STRIP ───────────────────────────────────────── */}
-      <section className="hwh-approach">
-        <div className="hwh-approach-inner">
-          <div className="hwh-approach-copy">
-            <p className="hwh-approach-eyebrow">Our Approach</p>
-            <h2>Built for outcomes, not artifacts.</h2>
-            <p>
-              Every engagement balances strategic rigour with delivery
-              momentum — embedded with your team, measured by what changes
-              inside your organisation.
-            </p>
-            <Link className="hwh-approach-link" href="/how-we-work">
-              See how we work
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                <path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-
-          <div className="hwh-phases">
-            {engagementPrinciples.map((statement) => (
-              <div className="hwh-phase" key={statement}>
-                <strong>{statement}</strong>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

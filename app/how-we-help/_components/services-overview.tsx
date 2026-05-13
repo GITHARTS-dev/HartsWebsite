@@ -123,19 +123,15 @@ export function ServicesOverview() {
     <main className="help-page">
       <PageHero
         scene="how-we-help"
+        layout="split"
         eyebrow="How We Help"
         titleSoft="Focused expertise."
         titleStrong="Decisive results."
         subtitle="Eight focused service lines — engineered to clarify choices, design practical transformation, and mobilise people around work that matters."
         actions={
-          <>
-            <Link className="solid-button large" href="/contact">
-              Connect with us
-            </Link>
-            <Link className="outline-button large" href="#services">
-              Explore services
-            </Link>
-          </>
+          <Link className="solid-button large" href="/contact">
+            Connect with us
+          </Link>
         }
       />
 
@@ -146,10 +142,6 @@ export function ServicesOverview() {
             <p className="hwh-section-eyebrow">Capabilities</p>
             <h2>How we help</h2>
           </div>
-          <p className="hwh-services-desc">
-            Focused expertise across strategy, transformation, and leadership
-            alignment — rigorous thinking, practical action, lasting change.
-          </p>
         </div>
 
         <div className="hwh-bento-grid" ref={bentoRef}>

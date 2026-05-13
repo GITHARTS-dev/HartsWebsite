@@ -15,7 +15,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <Link className="brand" href="/#hero" aria-label="HARTS home">
+      <Link className="brand" href="/" aria-label="HARTS home">
         <img src="/HARTS Consulting LBG.png" alt="HARTS Consulting" />
       </Link>
 

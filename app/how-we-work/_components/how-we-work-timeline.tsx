@@ -237,12 +237,15 @@ export function HowWeWorkTimeline() {
               const blur = edgeSoftness * 2.4;
               const scale = 1 - Math.min(distanceFromCenter, 0.72) * 0.014;
 
-              const underlayVariant: "design" | "engagement" | null =
-                phase.title === "Design"
-                  ? "design"
-                  : phase.title === "Collaborative Engagement"
-                    ? "engagement"
-                    : null;
+              // Phase 02 (Design) uses flowing waves to signal fluid,
+              // adaptive transformation. Every other phase (except Outcomes)
+              // uses the dense low-poly mesh.
+              const underlayVariant: "mesh" | "waves" | null =
+                phase.title === "Outcomes Over Deliverables"
+                  ? null
+                  : phase.title === "Design"
+                    ? "waves"
+                    : "mesh";
 
               return (
                 <article

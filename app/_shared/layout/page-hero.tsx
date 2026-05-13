@@ -3,11 +3,12 @@ import type { ReactNode } from "react";
 export type Crumb = { label: string; href?: string };
 
 export type PageHeroProps = {
-  eyebrow: string;
+  eyebrow?: string;
   titleSoft?: string;
   titleStrong: string;
   subtitle?: ReactNode;
   watermark?: string;
+  /** Breadcrumb data is accepted for backwards compatibility but no longer rendered. */
   crumbs?: Crumb[];
   scene?:
     | "default"
@@ -27,6 +28,9 @@ export type PageHeroProps = {
     | "how-we-work"
     | "careers"
     | "contact";
+  /** Visual composition. `center` keeps the legacy centered hero, `split` aligns
+   *  text to the left over a red-to-transparent gradient layered on the scene image. */
+  layout?: "center" | "split";
   actions?: ReactNode;
 };
 
@@ -36,12 +40,15 @@ export function PageHero({
   titleStrong,
   subtitle,
   watermark = "CACHE",
-  crumbs,
   scene = "default",
+  layout = "center",
   actions,
 }: PageHeroProps) {
   return (
-    <section className={`page-hero page-hero--${scene}`} aria-labelledby="page-hero-title">
+    <section
+      className={`page-hero page-hero--${scene} page-hero--layout-${layout}`}
+      aria-labelledby="page-hero-title"
+    >
       <div className="page-hero-scene" aria-hidden="true">
         <div className="page-hero-scene-layer page-hero-scene-image" />
         <div className="page-hero-scene-layer page-hero-scene-grid" />
@@ -54,7 +61,9 @@ export function PageHero({
 
       <div className="page-hero-shell">
         <div className="page-hero-content">
-          <p className="welcome-kicker page-hero-kicker">{eyebrow}</p>
+          {eyebrow ? (
+            <p className="welcome-kicker page-hero-kicker">{eyebrow}</p>
+          ) : null}
           <h1 id="page-hero-title" className="page-hero-title">
             {titleSoft ? (
               <span className="welcome-title-soft page-hero-title-soft">{titleSoft}</span>

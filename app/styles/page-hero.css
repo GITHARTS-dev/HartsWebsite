@@ -12,12 +12,16 @@
   display: grid;
   place-items: center;
   width: 100%;
-  /* Compact hero — clearly shorter than before */
-  min-height: clamp(320px, 44vh, 440px);
-  padding: clamp(40px, 5vh, 64px) 5vw clamp(32px, 4vh, 52px);
+  /* Fill one full viewport panel (minus the 72px sticky header) so the next
+     section is only visible after the user scrolls down — mirrors the home
+     page's full-bleed welcome scene. */
+  min-height: calc(100vh - 72px);
+  padding: clamp(96px, 12vh, 128px) 5vw clamp(64px, 8vh, 96px);
   overflow: hidden;
   background: var(--soft, #F0F0F0);
   color: var(--ink);
+  /* Anchor scrolls land below the sticky 72px header. */
+  scroll-margin-top: 80px;
 }
 
 /* ── Scene: image + grid + veil layers ─────────────────────────────── */
@@ -323,4 +327,123 @@
 
 @media (prefers-reduced-motion: reduce) {
   .page-hero-shell::before { animation: none; }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Split layout — text on the left over a red→transparent gradient
+   overlaying the page's background photograph. Used by:
+   How We Work, How We Help, Where We Engage (industries), Connect (contact).
+   ────────────────────────────────────────────────────────────────────── */
+
+.page-hero--layout-split {
+  /* Inherits the base full-viewport sizing so it also fills the panel. */
+  align-items: center;
+}
+
+/* Soft red wash — the photo still reads through clearly on the left,
+   and the right side returns fully to the image. */
+.page-hero--layout-split .page-hero-scene-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(231, 71, 60, 0.78) 0%,
+      rgba(231, 71, 60, 0.66) 30%,
+      rgba(231, 71, 60, 0.42) 55%,
+      rgba(231, 71, 60, 0.18) 78%,
+      rgba(231, 71, 60, 0) 100%
+    );
+}
+
+.page-hero--layout-split .page-hero-shell {
+  justify-items: flex-start;
+  text-align: left;
+  max-width: 1280px;
+}
+
+.page-hero--layout-split .page-hero-content {
+  justify-items: flex-start;
+  text-align: left;
+  width: clamp(280px, 58%, 720px);
+  max-width: 58%;
+  gap: 16px;
+}
+
+.page-hero--layout-split .page-hero-title {
+  justify-items: flex-start;
+  text-align: left;
+  color: #FFFFFF;
+  text-shadow: 0 2px 16px rgba(20, 20, 20, 0.18);
+}
+
+.page-hero--layout-split .page-hero-kicker {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 6px rgba(20, 20, 20, 0.18);
+}
+
+.page-hero--layout-split .page-hero-title-soft {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.page-hero--layout-split .page-hero-title-strong {
+  color: #FFFFFF;
+}
+
+.page-hero--layout-split .page-hero-subtitle {
+  color: rgba(255, 255, 255, 0.94);
+  max-width: 540px;
+  text-shadow: 0 1px 10px rgba(20, 20, 20, 0.18);
+}
+
+/* Buttons stay on brand: red solid with white text, no border, clean pill. */
+.page-hero--layout-split .page-hero-actions .solid-button {
+  background: #E7473C;
+  border-color: #E7473C;
+  color: #FFFFFF;
+  box-shadow: 0 12px 28px rgba(20, 20, 20, 0.22);
+}
+
+.page-hero--layout-split .page-hero-actions .solid-button:hover {
+  background: #d23a30;
+  border-color: #d23a30;
+  color: #FFFFFF;
+  box-shadow: 0 16px 34px rgba(20, 20, 20, 0.28);
+}
+
+.page-hero--layout-split .page-hero-actions .outline-button {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #FFFFFF;
+}
+
+.page-hero--layout-split .page-hero-actions .outline-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 0 14px 30px rgba(20, 20, 20, 0.18);
+}
+
+/* Below 880px the gradient covers the full width so text stays legible.
+   Hero still fills the viewport, content padding accounts for header. */
+@media (max-width: 880px) {
+  .page-hero {
+    padding: 96px 5vw 56px;
+  }
+  .page-hero--layout-split {
+    padding: 96px 5vw 56px;
+  }
+
+  .page-hero--layout-split .page-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-hero--layout-split .page-hero-scene-veil {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(231, 71, 60, 0.78) 0%,
+        rgba(231, 71, 60, 0.7) 60%,
+        rgba(231, 71, 60, 0.62) 100%
+      );
+  }
 }

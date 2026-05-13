@@ -18,23 +18,14 @@ export default function HowWeWorkRoute() {
       <main className="work-page">
         <PageHero
           scene="how-we-work"
-          eyebrow="Our Process"
-          titleSoft="How we"
-          titleStrong="Work."
+          layout="split"
+          titleSoft="Disciplined Execution."
+          titleStrong="Measurable Outcomes."
           subtitle="We combine strategic diagnosis, product thinking, and disciplined delivery — moving from uncertain ideas to practical transformation with clear decisions, visible progress, and outcomes your teams can sustain."
-          crumbs={[
-            { label: "Home", href: "/" },
-            { label: "How We Work" },
-          ]}
           actions={
-            <>
-              <Link className="solid-button large" href="/contact">
-                Connect with us
-              </Link>
-              <Link className="outline-button large" href="#principles">
-                Our principles
-              </Link>
-            </>
+            <Link className="solid-button large" href="/contact">
+              Connect with us
+            </Link>
           }
         />
 

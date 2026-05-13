@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:3000/__TRACKED_VAR__ -o /dev/null -w '%{http_code}\\\\n' --max-time 30)"
+    ]
+  }
+}

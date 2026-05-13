@@ -127,23 +127,15 @@ export function IndustriesExperience() {
     <main className="industries-page">
       <PageHero
         scene="industries"
+        layout="split"
         eyebrow="Where We Engage"
         titleSoft="Industry expertise."
         titleStrong="Enterprise impact."
         subtitle="HARTS partners with leadership teams across regulated, capital-intensive, and digitally evolving industries — helping organisations align strategy, operations, and transformation execution."
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "Where We Engage" },
-        ]}
         actions={
-          <>
-            <Link className="solid-button large" href="#industry-sectors">
-              Explore sectors
-            </Link>
-            <Link className="outline-button large" href="/contact">
-              Schedule consultation
-            </Link>
-          </>
+          <Link className="solid-button large" href="/contact">
+            Schedule consultation
+          </Link>
         }
       />
 

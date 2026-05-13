@@ -86,23 +86,14 @@ const challenges = [
   },
 ];
 
+/* Why Choose HARTS — three pillar synthesis (People / Process / Technology).
+   Each pillar consolidates the prior six benefit cards so leadership sees a
+   single, executive-grade frame for our differentiation. */
 const reasons = [
   {
-    title: "Strategic Clarity",
-    text: "We simplify complexity and help organizations focus on meaningful transformation priorities.",
+    title: "People",
+    text: "Executive alignment, human-centered transformation, and long-term partnership — we move leadership teams with shared visibility and confidence.",
     direction: "from-left",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="12" cy="12" r="9" {...strokeProps} />
-        <circle cx="12" cy="12" r="5" {...strokeProps} />
-        <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    title: "Human-Centered Transformation",
-    text: "We combine technology, operational thinking, and human experience into every engagement.",
-    direction: "from-bottom",
     icon: (
       <svg {...iconProps}>
         <circle cx="9" cy="8.5" r="3" {...strokeProps} />
@@ -113,53 +104,26 @@ const reasons = [
     ),
   },
   {
-    title: "Scalable Execution",
-    text: "Our frameworks are designed to adapt and scale across evolving business environments.",
-    direction: "from-right",
-    icon: (
-      <svg {...iconProps}>
-        <path d="M4 10V4h6M14 4h6v6M20 14v6h-6M10 20H4v-6" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "Executive Alignment",
-    text: "We help leadership teams move with shared visibility, direction, and confidence.",
-    direction: "from-left",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="12" cy="12" r="2.5" {...strokeProps} />
-        <circle cx="5" cy="5" r="2" {...strokeProps} />
-        <circle cx="19" cy="5" r="2" {...strokeProps} />
-        <circle cx="5" cy="19" r="2" {...strokeProps} />
-        <circle cx="19" cy="19" r="2" {...strokeProps} />
-        <path d="M6.5 6.5l3.7 3.7M17.5 6.5l-3.7 3.7M6.5 17.5l3.7-3.7M17.5 17.5l-3.7-3.7" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "AI-Enabled Intelligence",
-    text: "We integrate intelligent systems and data-driven insights into future-ready operations.",
+    title: "Process",
+    text: "Strategic clarity and scalable execution — frameworks engineered to simplify complexity and adapt across evolving business environments.",
     direction: "from-bottom",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="9" {...strokeProps} />
+        <circle cx="12" cy="12" r="5" {...strokeProps} />
+        <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    title: "Technology",
+    text: "AI-enabled intelligence and connected data — intelligent systems and operating insight built for decisive, future-ready transformation.",
+    direction: "from-right",
     icon: (
       <svg {...iconProps}>
         <rect x="6" y="6" width="12" height="12" rx="2" {...strokeProps} />
         <rect x="10" y="10" width="4" height="4" {...strokeProps} />
         <path d="M10 3v3M14 3v3M10 18v3M14 18v3M3 10h3M3 14h3M18 10h3M18 14h3" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "Long-Term Partnership",
-    text: "HARTS supports organizations beyond implementation through continuous transformation.",
-    direction: "from-right",
-    icon: (
-      <svg {...iconProps}>
-        <path
-          d="M7 12c0-2.2 1.6-4 3.7-4 1.4 0 2.3.9 3.3 2 1 1.1 1.9 2 3.3 2 2.1 0 3.7-1.8 3.7-4M7 12c0 2.2 1.6 4 3.7 4 1.4 0 2.3-.9 3.3-2 1-1.1 1.9-2 3.3-2"
-          {...strokeProps}
-        />
-        <path d="M7 12c0-2.2-1.4-4-3-4s-3 1.8-3 4 1.4 4 3 4 3-1.8 3-4z" {...strokeProps} />
       </svg>
     ),
   },
@@ -413,9 +377,9 @@ export function HomeExperience() {
             bring structured thinking, market context, and practical operating
             discipline to moments where progress matters.
           </p>
-          <a className="solid-button large consulting-button" href="/about">
+          <Link className="solid-button large consulting-button" href="/about-us">
             About Us
-          </a>
+          </Link>
         </div>
         <div
           className="consulting-visual reveal delay-one"
@@ -452,11 +416,18 @@ export function HomeExperience() {
               </p>
             </div>
             <div
-              className="challenge-visual scroll-reveal reveal-soft-up"
+              className="challenge-visual challenge-visual--premium scroll-reveal reveal-soft-up"
               style={revealStyle(2)}
               aria-label="Leaders reviewing operational insights together"
-            />
+            >
+              <span className="challenge-visual-offset" aria-hidden="true" />
+              <span className="challenge-visual-grid" aria-hidden="true" />
+            </div>
           </div>
+
+          <p className="challenges-subheading scroll-reveal reveal-soft-up">
+            Six recurring fault lines we resolve for leadership teams.
+          </p>
 
           <div className="challenge-grid">
             {challenges.map((item, index) => (

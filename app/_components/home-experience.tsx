@@ -377,9 +377,9 @@ export function HomeExperience() {
             bring structured thinking, market context, and practical operating
             discipline to moments where progress matters.
           </p>
-          <Link className="solid-button large consulting-button" href="/about-us">
+          {/* <Link className="solid-button large consulting-button" href="/about-us">
             About Us
-          </Link>
+          </Link> */}
         </div>
         <div
           className="consulting-visual reveal delay-one"
@@ -426,7 +426,7 @@ export function HomeExperience() {
           </div>
 
           <p className="challenges-subheading scroll-reveal reveal-soft-up">
-            Six recurring fault lines we resolve for leadership teams.
+            Enterprise pain points we solve through strategic consulting
           </p>
 
           <div className="challenge-grid">

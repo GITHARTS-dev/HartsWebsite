@@ -187,7 +187,6 @@ export function IndustriesExperience() {
 
       <section className="industry-final-cta" aria-labelledby="industry-cta-heading">
         <div className="industry-final-cta-inner industry-reveal">
-          <p className="eyebrow">Work with HARTS</p>
           <h2 id="industry-cta-heading">
             Ready to navigate transformation with clarity?
           </h2>
@@ -200,7 +199,7 @@ export function IndustriesExperience() {
               Connect with HARTS
             </Link>
             <Link className="outline-button large" href="/how-we-help">
-              Explore services
+              How we help
             </Link>
           </div>
         </div>

@@ -543,7 +543,7 @@ function IndustryDetailTemplate({ data }: { data: IndustryContent }) {
           <p>{data.cta.text}</p>
           <div className="industry-detail-actions">
             <Link className="solid-button large" href="/contact">
-              Connect with us
+              Connect with HARTS
             </Link>
             <Link className="outline-button large" href="/industries">
               Explore other industries

@@ -34,6 +34,27 @@ export default function HowWeWorkRoute() {
         </div>
 
         <HowWeWorkTimeline />
+
+        <section className="work-cta" aria-labelledby="work-cta-heading">
+          <div className="work-cta-inner">
+            <h2 id="work-cta-heading">
+              Ready to move from ambition to execution?
+            </h2>
+            <p>
+              Connect with HARTS to shape a practical path from diagnosis to
+              sustained transformation, with clear decisions and measurable
+              progress at every step.
+            </p>
+            <div className="work-cta-actions">
+              <Link className="solid-button large" href="/contact">
+                Connect with HARTS
+              </Link>
+              <Link className="outline-button large" href="/about-us">
+                About us
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </PageShell>
   );

@@ -84,21 +84,15 @@ export function AboutPage() {
     <main className="about-page">
       <PageHero
         scene="about"
+        layout="split"
         eyebrow="About HARTS"
         titleSoft="We exist to create"
         titleStrong="clarity."
-        subtitle="HARTS closes the distance between strategic intent and organisational reality — with the right rigour, the right people, and an uncompromising focus on what actually moves the needle."
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "About Us" },
-        ]}
+        subtitle="HARTS closes the distance between strategic intent and organisational reality with the right rigour, the right people, and an uncompromising focus on what actually moves the needle."
         actions={
           <>
             <Link className="solid-button large" href="/contact">
-              Connect with us
-            </Link>
-            <Link className="outline-button large" href="/how-we-work">
-              How we work
+              Connect with HARTS
             </Link>
           </>
         }
@@ -186,7 +180,6 @@ export function AboutPage() {
 
       <section className="au-cta">
         <div className="au-cta-inner">
-          <p className="au-eyebrow au-eyebrow--muted">Work with HARTS</p>
           <h2>The right partner changes everything.</h2>
           <p>
             Connect with HARTS to explore how strategic clarity and disciplined
@@ -194,7 +187,7 @@ export function AboutPage() {
           </p>
           <div className="au-cta-actions">
             <Link className="solid-button large" href="/contact">
-              Start a conversation
+              Connect with HARTS
             </Link>
             <Link className="outline-button large" href="/how-we-work">
               How we work

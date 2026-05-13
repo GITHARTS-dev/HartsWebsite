@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/how-we-work", label: "How We Work" },
-  { href: "/how-we-help", label: "How We Help" },
   { href: "/industries", label: "Where We Engage" },
+  { href: "/how-we-help", label: "How We Help" },
+  { href: "/how-we-work", label: "How We Work" },
   { href: "/about-us", label: "About Us" },
 ];
 

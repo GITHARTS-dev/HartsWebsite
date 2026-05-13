@@ -201,7 +201,7 @@ export function ServicesOverview() {
       {/* ─── CTA BAND ────────────────────────────────────────────── */}
       <section className="hwh-cta">
         <div className="hwh-cta-inner">
-          <p className="hwh-cta-eyebrow">Get started</p>
+          
           <h2>Ready to bring clarity<br />to your next move?</h2>
           <p>
             Tell us about the challenge ahead. We will respond with a focused
@@ -209,7 +209,7 @@ export function ServicesOverview() {
           </p>
           <div className="hwh-cta-actions">
             <Link className="hwh-btn-primary" href="/contact">
-              Connect with us
+              Connect with HARTS
             </Link>
             <Link className="hwh-btn-ghost" href="/how-we-work">
               How we work

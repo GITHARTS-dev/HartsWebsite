@@ -9,20 +9,13 @@ const PHASE_ICON_STROKE = 1.7;
 
 const phases: {
   title: string;
-  side: string;
   focus: string;
   desc: string;
   points: string[];
   icon: ReactNode;
-  image?: {
-    src: string;
-    alt: string;
-    variant?: "soft-oval";
-  };
 }[] = [
   {
     title: "Diagnose",
-    side: "left",
     focus: "We do not prescribe before we understand.",
     desc: "HARTS begins by interrogating organizational priorities, leadership conviction, operational constraints, and long-term ambitions — forming a grounded baseline before a single recommendation is made.",
     points: [
@@ -31,16 +24,10 @@ const phases: {
       "Operational constraint review",
       "Strategic horizon setting",
     ],
-    image: {
-      src: "/business_diagnose_image.png",
-      alt: "Leadership team reviewing diagnostic insights",
-      variant: "soft-oval",
-    },
     icon: <Search size={PHASE_ICON_SIZE} strokeWidth={PHASE_ICON_STROKE} aria-hidden="true" />,
   },
   {
     title: "Design",
-    side: "right",
     focus: "Designing transformation with intention.",
     desc: "HARTS designs transformation strategies that align people, operations, systems, and long-term organizational goals into one connected direction.",
     points: [
@@ -53,7 +40,6 @@ const phases: {
   },
   {
     title: "Collaborative Engagement",
-    side: "left",
     focus: "Transformation through collaboration.",
     desc: "HARTS works closely with organizations through continuous alignment, shared visibility, and iterative engagement across every phase of transformation.",
     points: [
@@ -66,13 +52,8 @@ const phases: {
   },
   {
     title: "Outcomes Over Deliverables",
-    side: "right",
     focus: "Transformation should create measurable organizational progress.",
     desc: "HARTS focuses on improving visibility, alignment, adaptability, and strategic decision-making rather than simply producing reports or frameworks.",
-    image: {
-      src: "/business_image_1.png",
-      alt: "Business leaders reviewing transformation outcomes",
-    },
     points: [
       "Operational Visibility",
       "Strategic Alignment",
@@ -84,7 +65,6 @@ const phases: {
   },
   {
     title: "Sustain",
-    side: "left",
     focus: "Transformation is not a one-time initiative.",
     desc: "HARTS continues supporting organizations through optimization, adaptation, strategic evolution, and ongoing transformation guidance beyond implementation.",
     points: [
@@ -178,12 +158,12 @@ export function HowWeWorkTimeline() {
     ballSize / 2,
     stageHeight - ballSize / 2 - 24,
   );
-  const ballScrollProgress = clamp(progress / 0.88, 0, 1);
+  const ballScrollProgress = clamp(progress, 0, 1);
   const ballProgress = ballScrollProgress * ballScrollProgress * (3 - 2 * ballScrollProgress);
   const ballTop = ballSize / 2 + ballProgress * (timelineEndTop - ballSize / 2);
   const lineHeight = ballTop;
   const scrollHintOpacity = clamp(1 - progress / 0.035, 0, 1);
-  const contentProgress = clamp((progress + 0.04) / 0.92, 0, 1);
+  const contentProgress = clamp(progress, 0, 1);
   const phaseTravel = stageHeight * 1.32;
 
   return (
@@ -223,7 +203,8 @@ export function HowWeWorkTimeline() {
         <div className="work-timeline-content">
           <div className="work-timeline-inner">
             {phases.map((phase, index) => {
-              const phaseProgress = contentProgress * phases.length - index;
+              const phaseProgress =
+                contentProgress * (phases.length - 1) + 0.5 - index;
               const centerOffset = phaseProgress - 0.5;
               const distanceFromCenter = Math.abs(centerOffset);
               const centeredOffset =
@@ -236,22 +217,11 @@ export function HowWeWorkTimeline() {
               const opacity = visible ? 1 - edgeSoftness * 0.18 : 0;
               const blur = edgeSoftness * 2.4;
               const scale = 1 - Math.min(distanceFromCenter, 0.72) * 0.014;
-
-              // Phase 02 (Design) uses flowing waves to signal fluid,
-              // adaptive transformation. Every other phase (except Outcomes)
-              // uses the dense low-poly mesh.
-              const underlayVariant: "mesh" | "waves" | null =
-                phase.title === "Outcomes Over Deliverables"
-                  ? null
-                  : phase.title === "Design"
-                    ? "waves"
-                    : "mesh";
+              const side = index % 2 === 0 ? "left" : "right";
 
               return (
                 <article
-                  className={`work-phase work-phase-${phase.side}${
-                    phase.image ? " work-phase-with-media" : ""
-                  }${underlayVariant ? " work-phase--has-underlay" : ""}`}
+                  className={`work-phase work-phase-${side} work-phase--has-underlay`}
                   key={phase.title}
                   style={{
                     opacity,
@@ -259,21 +229,10 @@ export function HowWeWorkTimeline() {
                     transform: `translate3d(0, ${verticalOffset}px, 0) scale(${scale})`,
                   }}
                 >
-                  {underlayVariant ? (
-                    <div
-                      className={`work-phase-underlay work-phase-underlay--${underlayVariant}`}
-                      aria-hidden="true"
-                    />
-                  ) : null}
-                  {phase.image ? (
-                    <div
-                      className={`work-phase-media${
-                        phase.image.variant ? ` work-phase-media--${phase.image.variant}` : ""
-                      }`}
-                    >
-                      <img src={phase.image.src} alt={phase.image.alt} />
-                    </div>
-                  ) : null}
+                  <div
+                    className="work-phase-underlay work-phase-underlay--mesh"
+                    aria-hidden="true"
+                  />
                   <div className="work-phase-copy">
                     <p className="work-phase-kicker">
                       <span className="work-phase-kicker-icon">{phase.icon}</span>

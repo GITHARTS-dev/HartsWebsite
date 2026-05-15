@@ -204,7 +204,7 @@ export function AboutPage() {
                   {item.icon}
                 </div>
                 <div className="au-manifesto-body">
-                  <p className="au-manifesto-label">{item.label}</p>
+            
                   <h3 className="au-manifesto-title">{item.title}</h3>
                   <p className="au-manifesto-desc">{item.desc}</p>
                 </div>

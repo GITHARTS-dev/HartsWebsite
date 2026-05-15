@@ -92,7 +92,7 @@ const challenges = [
 const reasons = [
   {
     title: "People",
-    text: "Executive alignment, human-centered transformation, and long-term partnership — we move leadership teams with shared visibility and confidence.",
+    text: "Executive alignment, leadership development, and people-centered transformation that strengthen collaboration, adaptability, and long-term organizational resilience. We help teams navigate change with confidence and shared clarity.",
     direction: "from-left",
     icon: (
       <svg {...iconProps}>
@@ -105,7 +105,7 @@ const reasons = [
   },
   {
     title: "Process",
-    text: "Strategic clarity and scalable execution — frameworks engineered to simplify complexity and adapt across evolving business environments.",
+    text: "Strategic frameworks and scalable operating models engineered to simplify complexity, improve execution, and accelerate business performance across evolving operational environments.",
     direction: "from-bottom",
     icon: (
       <svg {...iconProps}>
@@ -117,7 +117,7 @@ const reasons = [
   },
   {
     title: "Technology",
-    text: "AI-enabled intelligence and connected data — intelligent systems and operating insight built for decisive, future-ready transformation.",
+    text: "AI-enabled intelligence, connected systems, and integrated data ecosystems that empower organizations with real-time insight, smarter decisions, and future-ready transformation.",
     direction: "from-right",
     icon: (
       <svg {...iconProps}>
@@ -194,7 +194,7 @@ export function HomeExperience() {
         eyebrow="Strategy. Transformation. Clarity."
         titleSoft="Welcome to"
         titleStrong="HARTS"
-        subtitle="Purpose-led consulting for leaders shaping decisive, durable change."
+        subtitle="Transforming ambitious organizations into resilient, future-ready enterprises."
         actions={
           <Link className="solid-button large" href="/contact">
             Connect with us
@@ -216,13 +216,10 @@ export function HomeExperience() {
         <div className="home-section-shell">
           <div className="challenges-intro">
             <div className="home-section-heading scroll-reveal">
-              <p className="eyebrow">Challenges We Solve</p>
-              <h2>We help organizations navigate complexity with clarity.</h2>
+              <p className="eyebrow">Strategic Challenges We Solve</p>
+              <h2>Navigating Complexity with Confidence.</h2>
               <p>
-                Organizations face increasing operational complexity,
-                fragmented systems, and accelerating digital expectations. HARTS
-                helps leadership teams align strategy, intelligence, and
-                transformation into one connected direction.
+                Organizations today face operational complexity, fragmented systems, and rapidly evolving expectations. HARTS helps leadership teams align strategy, transformation, and execution into one connected direction for sustainable growth.
               </p>
             </div>
             <div
@@ -260,7 +257,7 @@ export function HomeExperience() {
         <div className="home-section-shell">
           <div className="home-section-heading centered scroll-reveal">
             <p className="eyebrow">Why Organizations Choose HARTS</p>
-            <h2>A trusted transformation partner for organizations.</h2>
+            <h2>A Trusted Transformation Partner for Organizations.</h2>
           </div>
 
           <div className="choose-network" aria-hidden="true" />

@@ -96,12 +96,12 @@ export function IndustriesExperience() {
         scene="industries"
         layout="split"
         eyebrow="Where We Engage"
-        titleSoft="Industry expertise."
-        titleStrong="Enterprise impact."
-        subtitle="HARTS partners with leadership teams across regulated, capital-intensive, and digitally evolving industries — helping organisations align strategy, operations, and transformation execution."
+        titleSoft="Industry Intelligence."
+        titleStrong="Driving Enterprise Transformation."
+        subtitle="HARTS partners with leadership teams across complex and evolving industries, helping organizations align strategy, operations, and transformation initiatives for sustainable growth and measurable impact."
         actions={
           <Link className="solid-button large" href="/contact">
-            Schedule consultation
+            Start a Conversation
           </Link>
         }
       />
@@ -113,12 +113,10 @@ export function IndustriesExperience() {
       >
         <div className="industry-grid-shell">
           <div className="industry-grid-heading industry-reveal">
-            <p className="eyebrow">Sector Coverage</p>
-            <h2>Ten industries. One disciplined approach.</h2>
+            <p className="eyebrow">Sector Expertise at Scale</p>
+            <h2>Industry specific insight. Enterprise wide transformation.</h2>
             <p>
-              Whether the work calls for regulated rigour, capital-intensive
-              operational excellence, or fast-moving digital transformation, the
-              HARTS operating playbook adapts to industry reality.
+              HARTS adapts its consulting, operational, and technology frameworks to the realities of each industry enabling organizations to navigate complexity with clarity, resilience, and measurable impact.
             </p>
           </div>
 

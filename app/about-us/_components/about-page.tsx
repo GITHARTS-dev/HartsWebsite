@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 
 import { PageHero } from "../../_shared/layout/page-hero";
 
@@ -52,34 +51,6 @@ function LinkedInIcon() {
 }
 
 export function AboutPage() {
-  const teamRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof IntersectionObserver === "undefined") return;
-
-    const container = teamRef.current;
-    if (!container) return;
-
-    const items = Array.from(container.querySelectorAll<HTMLElement>(".au-reveal"));
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          const idx = items.indexOf(el);
-          el.style.transitionDelay = `${idx * 90}ms`;
-          el.classList.add("au-reveal--in");
-          el.addEventListener("transitionend", () => { el.style.transitionDelay = ""; }, { once: true });
-          obs.unobserve(el);
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -48px 0px" }
-    );
-    items.forEach((el) => obs.observe(el));
-
-    return () => obs.disconnect();
-  }, []);
-
   return (
     <main className="about-page">
       <PageHero
@@ -141,7 +112,7 @@ export function AboutPage() {
             sustainable, measurable change.
           </p>
         </div>
-        <div className="au-team-grid au-team-grid--premium" ref={teamRef}>
+        <div className="au-team-grid au-team-grid--premium">
           {team.map((member) => (
             <a
               className="au-team-card au-team-card--premium au-reveal"

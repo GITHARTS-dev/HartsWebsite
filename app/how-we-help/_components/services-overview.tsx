@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 import { serviceOfferings } from "../../_data/services-content";
 import { PageHero } from "../../_shared/layout/page-hero";
 
@@ -92,33 +91,6 @@ const faqs = [
 ];
 
 export function ServicesOverview() {
-  const bentoRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const grid = bentoRef.current;
-    if (!grid || typeof IntersectionObserver === "undefined") return;
-
-    const cards = Array.from(grid.querySelectorAll<HTMLElement>(".hwh-bento-card"));
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          const idx = cards.indexOf(el);
-          el.style.transitionDelay = `${idx * 60}ms`;
-          el.classList.add("hwh-bento-card--in");
-          el.addEventListener("transitionend", () => { el.style.transitionDelay = ""; }, { once: true });
-          obs.unobserve(el);
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
-    );
-
-    cards.forEach((card) => obs.observe(card));
-    return () => obs.disconnect();
-  }, []);
-
   return (
     <main className="help-page">
       <PageHero
@@ -140,11 +112,16 @@ export function ServicesOverview() {
         <div className="hwh-services-hd">
           <div>
             <p className="hwh-section-eyebrow">Capabilities</p>
-            <h2>How we help</h2>
+            <h2>Eight services. One disciplined approach.</h2>
           </div>
+          <p className="hwh-services-desc">
+            Whether the work calls for strategic clarity, operating discipline,
+            enterprise transformation, or capability building, the HARTS
+            consulting playbook adapts to the reality of the mandate.
+          </p>
         </div>
 
-        <div className="hwh-bento-grid" ref={bentoRef}>
+        <div className="hwh-bento-grid">
           {serviceOfferings.map((service, index) => (
             <Link
               key={service.slug}

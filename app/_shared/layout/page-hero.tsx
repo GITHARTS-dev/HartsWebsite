@@ -12,6 +12,7 @@ export type PageHeroProps = {
   crumbs?: Crumb[];
   scene?:
     | "default"
+    | "home"
     | "about"
     | "industries"
     | "industry-aerospace"
@@ -25,6 +26,14 @@ export type PageHeroProps = {
     | "industry-telecom"
     | "industry-transportation"
     | "how-we-help"
+    | "service-innovation"
+    | "service-mergers-acquisitions"
+    | "service-operation"
+    | "service-strategy"
+    | "service-transformation"
+    | "service-gcc-setup"
+    | "service-sustainability"
+    | "service-people-and-organization"
     | "how-we-work"
     | "careers"
     | "contact";

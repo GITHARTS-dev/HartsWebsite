@@ -1,10 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { PageHero } from "../../_shared/layout/page-hero";
-
-const revealEase = [0.22, 1, 0.36, 1] as const;
 
 const openings = [
   {
@@ -139,6 +136,7 @@ export function CareersPage() {
     <main className="careers-page">
       <PageHero
         scene="careers"
+        layout="split"
         eyebrow="Careers"
         titleSoft="Build a career that"
         titleStrong="defines transformation."
@@ -152,21 +150,12 @@ export function CareersPage() {
             <Link className="solid-button large" href="#openings">
               Explore open roles
             </Link>
-            <Link className="outline-button large" href="#culture">
-              Our culture
-            </Link>
           </>
         }
       />
 
       <section className="careers-culture section" id="culture">
-        <motion.div
-          className="careers-culture-inner"
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.75, ease: revealEase }}
-        >
+        <div className="careers-culture-inner">
           <p className="eyebrow">Culture</p>
           <h2>Shape the Future of Consulting.</h2>
           <p>
@@ -174,31 +163,21 @@ export function CareersPage() {
             and disciplined thinking. We’re looking for leaders who want to move fast and apply
             digital enablement to the world&apos;s most complex business challenges.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       <section className="careers-openings section" id="openings">
-        <motion.div
-          className="section-heading careers-opening-heading"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-12%" }}
-          transition={{ duration: 0.7, ease: revealEase }}
-        >
+        <div className="section-heading careers-opening-heading">
           <p className="eyebrow">Openings</p>
           <h2>Where you fit in</h2>
           <p>Eight disciplines. One mission. Find your place.</p>
-        </motion.div>
+        </div>
 
         <div className="careers-grid">
-          {openings.map((item, index) => (
-            <motion.article
+          {openings.map((item) => (
+            <article
               className="careers-card"
               key={item.slug}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-12%" }}
-              transition={{ duration: 0.65, delay: index * 0.05, ease: revealEase }}
             >
               <span className="careers-card-icon" aria-hidden="true">
                 <OpeningIcon slug={item.slug} />
@@ -210,19 +189,13 @@ export function CareersPage() {
                 View roles
                 <span aria-hidden="true">→</span>
               </Link>
-            </motion.article>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="careers-coming-soon section">
-        <motion.div
-          className="careers-coming-soon-inner"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.7, ease: revealEase }}
-        >
+        <div className="careers-coming-soon-inner">
           <p className="eyebrow">Coming soon</p>
           <h2>More openings will be published here shortly.</h2>
           <p>
@@ -237,7 +210,7 @@ export function CareersPage() {
               Talk to talent team
             </Link>
           </div>
-        </motion.div>
+        </div>
       </section>
     </main>
   );

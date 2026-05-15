@@ -1,0 +1,65 @@
+/* Unified page reveal system.
+   Content blocks appear as they enter the viewport, with a gentle stagger. */
+.site-reveal {
+  opacity: 0 !important;
+  filter: blur(10px);
+  transform: translate3d(0, 34px, 0);
+  transition:
+    opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transition-delay: var(--site-reveal-delay, 0ms) !important;
+  will-change: opacity, filter, transform;
+}
+
+.site-reveal.site-reveal--visible {
+  opacity: 1 !important;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Retire earlier page-specific entrance systems so the shared observer owns
+   scroll timing consistently across home, services, industries, work, about,
+   careers, and contact pages. Hover/focus transitions remain intact. */
+.reveal,
+.delay-one,
+.scroll-reveal,
+.industry-reveal,
+.industry-detail-reveal,
+.au-reveal,
+.au-reveal--in,
+.work-method-item,
+.welcome-kicker,
+.welcome-content h1,
+.welcome-content p:last-child,
+.about-home-hero-title,
+.about-home-hero-subtitle,
+.about-home-hero-actions,
+.contact-hero .contact-hero-content,
+.contact-hero .contact-hero-media,
+.contact-grid .contact-form-block,
+.contact-grid .hq-block,
+.offices-grid .office-card {
+  animation: none !important;
+}
+
+.scroll-reveal,
+.industry-reveal,
+.industry-detail-reveal,
+.au-reveal {
+  transition-delay: var(--site-reveal-delay, 0ms) !important;
+}
+
+.premium-info-card.is-visible,
+.choose-card.is-visible {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-reveal {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

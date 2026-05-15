@@ -264,6 +264,17 @@
   will-change: transform, opacity, filter;
 }
 
+/* Static variant — used now that the home hero is a standard PageHero and
+   the scroll-driven reveal of this section has been removed. Lays the
+   section after the hero (no negative margin), fully visible, no filter. */
+.consulting-section--static {
+  margin-top: 0;
+  filter: none;
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
 /* Veil layer — preserved for scroll-driven reveal animation */
 .consulting-section::before {
   position: absolute;
@@ -1531,7 +1542,9 @@
 
 /* Contact Page Styles */
 .contact-page {
-  --contact-bg: #f6f3ec;
+  /* Themed identically to the home page — same neutral landing background
+     so the contact route reads as a continuation of the home experience. */
+  --contact-bg: #F0F0F0;
   background: var(--contact-bg);
   color: var(--ink);
 }
@@ -3330,31 +3343,56 @@
   transform: translateY(0);
 }
 
-/* Red bottom border grows in on hover */
+/* Premium hover treatment — replaces the legacy sliding red bottom border.
+   On hover the card lifts slightly, a soft red radial glow emanates from
+   the bottom edge of the surface, and a thin solid red rule appears along
+   the top edge. The whole motion is calm, executive, and clearly readable
+   as "interactive" without feeling animated or playful. */
 .hwh-bento-card::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  bottom: auto;
+  height: 2px;
   background: #E7473C;
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: center;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hwh-bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      120% 70% at 50% 100%,
+      rgba(231, 71, 60, 0.18) 0%,
+      rgba(231, 71, 60, 0.08) 35%,
+      rgba(231, 71, 60, 0) 75%
+    );
+  opacity: 0;
+  transition: opacity 360ms ease;
+  pointer-events: none;
 }
 
 .hwh-bento-card:hover {
   background: #fff;
-  border-color: rgba(231, 71, 60, 0.4);
+  border-color: rgba(231, 71, 60, 0.45);
   transform: translateY(-6px);
   box-shadow:
-    0 16px 40px rgba(231, 71, 60, 0.12),
-    0 2px 8px rgba(231, 71, 60, 0.08);
+    0 18px 44px rgba(231, 71, 60, 0.14),
+    0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .hwh-bento-card:hover::after {
   transform: scaleX(1);
+}
+
+.hwh-bento-card:hover::before {
+  opacity: 1;
 }
 
 /* Service number — red accent, top-left */
@@ -6172,12 +6210,20 @@
 .hwh-bento-card:hover .hwh-bento-arrow {
   background: #E7473C !important;
   color: #FFFFFF !important;
-  transform: translateX(2px) !important;
+  transform: none !important;
 }
 
 .hwh-bento-arrow svg {
   width: 14px !important;
   height: 14px !important;
+}
+
+/* Keep How We Help service cards steady on hover. */
+.hwh-bento-card::before,
+.hwh-bento-card:hover::before {
+  display: none !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 /* Give the bento card room above the arrow */
@@ -6386,10 +6432,308 @@ a.solid-button:visited {
 /* Where We Engage — Sector Coverage block (eyebrow + h2 both red) */
 .industry-grid-section--premium .industry-grid-heading .eyebrow {
   color: #E7473C !important;
+  /* Match the Capabilities eyebrow on How We Help exactly so all section
+     kickers across the site read at the same visual weight. */
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  margin: 0 0 12px !important;
 }
 
 .work-principles .work-principles-copy .eyebrow {
   color: #E7473C !important;
+}
+
+/* How We Help overview: match the centered sector-heading language. */
+.hwh-services-hd {
+  display: grid !important;
+  justify-items: center !important;
+  grid-template-columns: 1fr !important;
+  gap: 18px !important;
+  max-width: 1160px !important;
+  margin: 0 auto clamp(34px, 5vw, 62px) !important;
+  text-align: center !important;
+}
+
+.hwh-services-hd > div {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.hwh-section-eyebrow {
+  color: #E7473C !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  margin: 0 !important;
+}
+
+.hwh-services-hd h2 {
+  max-width: 1120px !important;
+  margin: 0 !important;
+  color: #1A1A1A !important;
+  font-size: clamp(34px, 5.2vw, 72px) !important;
+  font-weight: 760 !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0 !important;
+}
+
+.hwh-services-desc {
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+  color: #343434 !important;
+  font-size: clamp(17px, 1.65vw, 25px) !important;
+  line-height: 1.55 !important;
+}
+
+.hwh-services-hd .hwh-section-eyebrow,
+.industry-grid-section--premium .industry-grid-heading .eyebrow,
+.work-principles .work-principles-copy .eyebrow {
+  color: #E7473C !important;
+}
+
+.hwh-services-hd h2,
+.industry-grid-section--premium .industry-grid-heading h2,
+.work-principles .work-principles-copy h2 {
+  color: #1A1A1A !important;
+  font-size: clamp(34px, 5.2vw, 72px) !important;
+  font-weight: 760 !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0 !important;
+}
+
+.hwh-services-desc,
+.industry-grid-section--premium .industry-grid-heading p,
+.work-principles .work-principles-copy p:not(.eyebrow) {
+  color: #343434 !important;
+  font-size: clamp(17px, 1.65vw, 25px) !important;
+  line-height: 1.62 !important;
+}
+
+/* Service detail pages now share the industry-detail visual architecture. */
+.service-industry-style {
+  background: #FFFFFF;
+}
+
+.service-industry-style .page-hero {
+  margin-bottom: 0;
+}
+
+.service-overview-grid {
+  align-items: stretch;
+}
+
+.service-body-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.service-body-panel {
+  min-height: 220px;
+  padding: clamp(22px, 2.5vw, 30px);
+  border: 1px solid rgba(231, 71, 60, 0.16);
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.06);
+}
+
+.service-body-panel p {
+  margin: 0;
+  color: #2A2A2A;
+  font-size: clamp(16px, 1.18vw, 18px);
+  line-height: 1.74;
+}
+
+.service-overview-image {
+  position: relative;
+  min-height: clamp(260px, 32vw, 430px);
+  border: 1px solid rgba(231, 71, 60, 0.18);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #F0F0F0;
+  box-shadow: 0 24px 62px rgba(26, 26, 26, 0.08);
+}
+
+.service-overview-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.service-overview-image::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(231, 71, 60, 0.2), rgba(231, 71, 60, 0.02) 52%),
+    linear-gradient(180deg, rgba(26, 26, 26, 0) 52%, rgba(26, 26, 26, 0.26) 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.service-industry-style .industry-overview-copy p {
+  color: #2A2A2A;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.78;
+}
+
+.service-industry-style .industry-detail-card h3 {
+  font-size: clamp(17px, 1.55vw, 21px) !important;
+}
+
+.service-value-card {
+  align-items: start;
+}
+
+.service-value-list {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.service-value-list li {
+  position: relative;
+  padding-left: 22px;
+  color: #2A2A2A;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.65;
+}
+
+.service-value-list li::before {
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #E7473C;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.service-workflow-section {
+  background: #F7F7F5 !important;
+}
+
+.service-detail-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 218, 214, 0.9);
+  border-radius: 12px;
+  background: rgba(216, 218, 214, 0.9);
+}
+
+.service-detail-workflow-grid .workflow-step {
+  display: grid;
+  min-height: 230px;
+  align-content: start;
+  gap: 30px;
+  padding: clamp(22px, 2.5vw, 30px);
+  border-radius: 0;
+  background: #FFFFFF;
+  transition:
+    transform 220ms ease,
+    background 220ms ease;
+}
+
+.service-detail-workflow-grid .workflow-step:hover {
+  background: #FDE9E8;
+  transform: translateY(-4px);
+}
+
+.service-detail-workflow-grid .step-index {
+  color: #E7473C;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.service-detail-workflow-grid p {
+  margin: 0;
+  color: #2A2A2A;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .service-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .hwh-services-hd h2 {
+    font-size: clamp(30px, 9vw, 44px) !important;
+  }
+
+.hwh-services-desc {
+    font-size: 16px !important;
+  }
+
+  .service-detail-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Home hero photo background — user-provided photograph at
+   /public/hero/home-hero.jpg. The static .welcome-scene-image layer above
+   handles the actual photo; this rule simply ensures the wrapper has the
+   correct fallback color and that the legacy ::before red tint is removed. */
+.cinematic-home .welcome-screen {
+  background: #0F1115 !important;
+}
+
+.cinematic-home .welcome-screen::before {
+  display: none !important;
+}
+
+.cinematic-home .welcome-logo-backdrop {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* Center the welcome content (home-style) — no longer left-aligned. */
+.cinematic-home .welcome-content {
+  justify-items: center;
+  width: min(100%, 900px);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cinematic-home .welcome-content h1 {
+  justify-items: center;
+  color: #FFFFFF;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.48);
+}
+
+.cinematic-home .welcome-kicker,
+.cinematic-home .welcome-content p:last-child {
+  color: rgba(255, 255, 255, 0.94) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.42);
+}
+
+@media (max-width: 720px) {
+  .cinematic-home .welcome-screen {
+    background-position: 58% center !important;
+  }
+
+  .cinematic-home .welcome-content {
+    text-align: center;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -6688,5 +7032,149 @@ a.solid-button:visited {
     width: 100%;
     flex-direction: column !important;
     align-items: stretch !important;
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────────────────────
+   Static photographic hero — replaces the scroll-locked welcome scene
+   on the home page. The hero is now a single full-bleed panel: a real
+   photograph + dark gradient veil + white typography. No scroll lock,
+   no entrance animation, no red logo backdrop, no scroll-cue line.
+   ────────────────────────────────────────────────────────────────────── */
+
+/* Drop the sticky/scroll behaviour so the hero is just a normal section
+   and the page scrolls naturally from frame 1. */
+.welcome-scroll-scene--static {
+  position: relative;
+  z-index: auto;
+  /* Override the legacy 86vh !important rule earlier in this file. */
+  height: auto !important;
+  background: transparent;
+}
+
+.welcome-screen--static {
+  position: relative;
+  top: auto;
+  z-index: auto;
+  display: grid;
+  /* Override the legacy 86vh !important rule earlier in this file. */
+  height: calc(100vh - 72px) !important;
+  min-height: 560px !important;
+  place-items: center;
+  padding: clamp(64px, 9vh, 120px) 5vw;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0F1115;
+  color: #FFFFFF;
+}
+
+/* Remove every decorative element the animated hero used to draw:
+   - the ::before landing-bg wash
+   - the ::after red separator line
+   - the .welcome-logo-backdrop red HARTS mark
+   - the .welcome-scroll-cue red scroll-down indicator */
+.welcome-screen--static::before,
+.welcome-screen--static::after {
+  content: none;
+  display: none;
+}
+
+.welcome-screen--static .welcome-logo-backdrop,
+.welcome-screen--static .welcome-scroll-cue,
+.welcome-screen--static .welcome-scroll-line {
+  display: none !important;
+}
+
+/* Photographic scene layers — image + soft dark veil for legibility. */
+.welcome-screen--static .welcome-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.welcome-screen--static .welcome-scene-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("/hero/home-hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* No animation — fully static. */
+}
+
+.welcome-screen--static .welcome-scene-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 12, 18, 0.46) 0%,
+      rgba(10, 12, 18, 0.34) 45%,
+      rgba(10, 12, 18, 0.62) 100%
+    );
+}
+
+/* Typography on the static hero — bright over the photograph, with no
+   entrance animation. */
+.welcome-screen--static .welcome-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  max-width: 900px;
+  text-align: center;
+  /* Reset the animated transform/blur variables the legacy hero used. */
+  filter: none;
+  opacity: 1;
+  transform: none;
+}
+
+.welcome-screen--static .welcome-kicker {
+  color: #FFFFFF;
+  opacity: 0.92;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  animation: none;
+}
+
+.welcome-screen--static .welcome-content h1 {
+  color: #FFFFFF;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.48);
+  opacity: 1;
+  animation: none;
+}
+
+.welcome-screen--static .welcome-title-soft {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.welcome-screen--static .welcome-title-strong {
+  color: #FFFFFF;
+}
+
+.welcome-screen--static .welcome-content p:last-child {
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.42);
+  opacity: 1;
+  animation: none;
+}
+
+/* On mobile the hero is shorter so the photo stays legible alongside
+   the typography. */
+@media (max-width: 880px) {
+  .welcome-screen--static {
+    height: auto;
+    min-height: 520px;
+    padding: 96px 5vw 80px;
+  }
+}
+
+@media (max-width: 560px) {
+  .welcome-screen--static {
+    min-height: 460px;
+  }
+  .welcome-screen--static .welcome-content h1 {
+    font-size: clamp(48px, 14vw, 96px);
   }
 }

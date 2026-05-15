@@ -1,7 +1,6 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useEffect } from "react";
 import Link from "next/link";
 import {
   Car,
@@ -47,12 +46,7 @@ const sectors: Sector[] = [
     icon: <Flame size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/oil-gas",
   },
-  {
-    title: "Healthcare",
-    text: "Care-delivery transformation, operating-model design, and digital enablement for hospital systems and provider networks.",
-    icon: <HeartPulse size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
-    href: "/industries/healthcare",
-  },
+ 
   {
     title: "Chemicals",
     text: "Process optimisation, safety governance, and scalable transformation across complex chemical-manufacturing networks.",
@@ -96,33 +90,6 @@ function revealDelay(index: number): CSSProperties {
 }
 
 export function IndustriesExperience() {
-  useEffect(() => {
-    const revealItems = Array.from(
-      document.querySelectorAll<HTMLElement>(".industry-reveal"),
-    );
-
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.16 },
-    );
-
-    revealItems.forEach((item) => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <main className="industries-page">
       <PageHero

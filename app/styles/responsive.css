@@ -64,6 +64,10 @@
     display: none;
   }
 
+  .header-actions .solid-button {
+    display: none;
+  }
+
   .brand {
     width: 154px;
     height: 54px;
@@ -205,6 +209,11 @@
 
   .welcome-scroll-scene {
     height: 100vh;
+  }
+
+  /* Static photographic hero opts out of the legacy 100vh sticky lock. */
+  .welcome-scroll-scene--static {
+    height: auto;
   }
 
   .welcome-logo-backdrop {

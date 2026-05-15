@@ -1,7 +1,6 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useEffect } from "react";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -409,33 +408,6 @@ function revealDelay(index: number): CSSProperties {
 }
 
 function IndustryDetailTemplate({ data }: { data: IndustryContent }) {
-  useEffect(() => {
-    const revealItems = Array.from(
-      document.querySelectorAll<HTMLElement>(".industry-detail-reveal"),
-    );
-
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.14 },
-    );
-
-    revealItems.forEach((item) => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, []);
-
   const HelpHeroIcon = data.HelpHeroIcon;
 
   return (

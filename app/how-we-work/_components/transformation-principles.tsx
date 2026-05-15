@@ -1,7 +1,6 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useEffect, useRef } from "react";
 import { Compass, Target, Users, RefreshCw, Telescope } from "lucide-react";
 
 const ICON_SIZE = 28;
@@ -40,40 +39,8 @@ function revealStyle(index = 0): CSSProperties {
 }
 
 export function TransformationPrinciples() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const revealItems = Array.from(
-      section.querySelectorAll<HTMLElement>(".scroll-reveal"),
-    );
-
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.18 },
-    );
-
-    revealItems.forEach((item) => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="work-principles" ref={sectionRef}>
+    <section className="work-principles">
       <div className="work-principles-copy scroll-reveal reveal-from-left">
         <p className="eyebrow">Our Principles</p>
         <h2>Principles That Guide Transformation</h2>

@@ -4,6 +4,8 @@ import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
 
+import { PageHero } from "../_shared/layout/page-hero";
+
 const iconProps = {
   viewBox: "0 0 24 24",
   fill: "none" as const,
@@ -86,9 +88,7 @@ const challenges = [
   },
 ];
 
-/* Why Choose HARTS — three pillar synthesis (People / Process / Technology).
-   Each pillar consolidates the prior six benefit cards so leadership sees a
-   single, executive-grade frame for our differentiation. */
+/* Why Choose HARTS — three pillar synthesis (People / Process / Technology). */
 const reasons = [
   {
     title: "People",
@@ -135,165 +135,6 @@ function revealStyle(index = 0): CSSProperties {
 
 export function HomeExperience() {
   useEffect(() => {
-    const heroScene = document.querySelector<HTMLElement>(".welcome-scroll-scene");
-    const hero = document.querySelector<HTMLElement>(".welcome-screen");
-    const nextSection = document.querySelector<HTMLElement>(".consulting-section");
-    let frameId: number | null = null;
-    let progress = window.scrollY > 8 ? 1 : 0;
-    let isComplete = progress >= 1;
-    let touchY = 0;
-
-    if (!heroScene || !hero) return;
-
-    const applyHeroTransition = () => {
-      const textProgress = Math.max(0, Math.min(1, progress / 0.52));
-      const logoBrightProgress = Math.max(0, Math.min(1, progress / 0.58));
-      const logoExitProgress = Math.max(0, Math.min(1, (progress - 0.58) / 0.32));
-      const sectionProgress = Math.max(0, Math.min(1, (progress - 0.50) / 0.45));
-      const easedProgress = textProgress * textProgress * (3 - 2 * textProgress);
-      const easedLogoBrightProgress =
-        logoBrightProgress * logoBrightProgress * (3 - 2 * logoBrightProgress);
-      const easedLogoExitProgress =
-        logoExitProgress * logoExitProgress * (3 - 2 * logoExitProgress);
-      const easedSectionProgress =
-        sectionProgress * sectionProgress * (3 - 2 * sectionProgress);
-      const textOpacity = Math.max(0, 1 - easedProgress);
-      const logoOpacity = Math.max(
-        0,
-        (0.12 + easedLogoBrightProgress * 0.56) * (1 - easedLogoExitProgress),
-      );
-
-      hero.style.setProperty("--hero-progress", easedProgress.toFixed(3));
-      hero.style.setProperty("--welcome-text-y", "0px");
-      hero.style.setProperty("--welcome-text-scale", "1");
-      hero.style.setProperty("--welcome-text-blur", "0px");
-      hero.style.setProperty("--welcome-text-opacity", textOpacity.toFixed(3));
-      hero.style.setProperty("--welcome-logo-y", `${(-easedLogoBrightProgress * 12).toFixed(2)}px`);
-      hero.style.setProperty("--welcome-logo-scale", (0.78 + easedLogoBrightProgress * 0.82).toFixed(3));
-      hero.style.setProperty("--welcome-logo-blur", `${(1.2 - easedLogoBrightProgress * 1.2 + easedLogoExitProgress * 6.5).toFixed(2)}px`);
-      hero.style.setProperty("--welcome-logo-opacity", logoOpacity.toFixed(3));
-      hero.style.setProperty("--welcome-logo-brightness", (0.96 + easedLogoBrightProgress * 0.18 + easedLogoExitProgress * 0.08).toFixed(3));
-      hero.style.setProperty("--welcome-surface-opacity", (1 - easedSectionProgress * 0.98).toFixed(3));
-      hero.style.setProperty("--welcome-bg-opacity", (1 - easedSectionProgress * 0.98).toFixed(3));
-      hero.classList.toggle("intro-complete", progress >= 0.995);
-
-      nextSection?.style.setProperty(
-        "--consulting-brightness",
-        (0.42 + easedSectionProgress * 0.58).toFixed(3),
-      );
-      nextSection?.style.setProperty(
-        "--consulting-opacity",
-        (0.18 + easedSectionProgress * 0.82).toFixed(3),
-      );
-
-      frameId = null;
-    };
-
-    const requestHeroTransition = () => {
-      if (frameId === null) {
-        frameId = window.requestAnimationFrame(applyHeroTransition);
-      }
-    };
-
-    const advanceIntro = (delta: number) => {
-      progress = Math.max(0, Math.min(1, progress + delta));
-      isComplete = progress >= 1;
-      requestHeroTransition();
-    };
-
-    const shouldLockHero = () =>
-      !isComplete && window.scrollY <= heroScene.offsetTop + 2;
-
-    const handleWheel = (event: WheelEvent) => {
-      if (!shouldLockHero()) return;
-
-      event.preventDefault();
-      advanceIntro(event.deltaY / 380);
-    };
-
-    const handleTouchStart = (event: TouchEvent) => {
-      touchY = event.touches[0]?.clientY ?? 0;
-    };
-
-    const handleTouchMove = (event: TouchEvent) => {
-      if (!shouldLockHero()) return;
-
-      const nextY = event.touches[0]?.clientY ?? touchY;
-      const delta = touchY - nextY;
-      touchY = nextY;
-      event.preventDefault();
-      advanceIntro(delta / 340);
-    };
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (!shouldLockHero()) return;
-
-      const forwardKeys = ["ArrowDown", "PageDown", " ", "Spacebar"];
-      const backwardKeys = ["ArrowUp", "PageUp"];
-
-      if (forwardKeys.includes(event.key)) {
-        event.preventDefault();
-        advanceIntro(0.28);
-      }
-
-      if (backwardKeys.includes(event.key)) {
-        event.preventDefault();
-        advanceIntro(-0.28);
-      }
-    };
-
-    const keepHeroPinned = () => {
-      if (shouldLockHero() && window.scrollY > heroScene.offsetTop) {
-        window.scrollTo(0, heroScene.offsetTop);
-      }
-    };
-
-    applyHeroTransition();
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchmove", handleTouchMove, { passive: false });
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("scroll", keepHeroPinned, { passive: true });
-    window.addEventListener("resize", requestHeroTransition);
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("scroll", keepHeroPinned);
-      window.removeEventListener("resize", requestHeroTransition);
-
-      if (frameId !== null) {
-        window.cancelAnimationFrame(frameId);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const revealItems = Array.from(
-      document.querySelectorAll<HTMLElement>(".scroll-reveal"),
-    );
-
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.18 },
-    );
-
-    revealItems.forEach((item) => observer.observe(item));
-
     const parallaxSections = Array.from(
       document.querySelectorAll<HTMLElement>(".parallax-section"),
     );
@@ -335,7 +176,6 @@ export function HomeExperience() {
     });
 
     return () => {
-      observer.disconnect();
       parallaxSections.forEach((section) => {
         section.removeEventListener("pointermove", moveSection);
       });
@@ -348,49 +188,19 @@ export function HomeExperience() {
 
   return (
     <main className="cinematic-home">
-      <section className="welcome-scroll-scene" id="hero">
-        <div className="welcome-screen">
-          <div className="welcome-logo-backdrop" aria-hidden="true" />
-          <div className="welcome-content">
-            <p className="welcome-kicker">Strategy. Transformation. Clarity.</p>
-            <h1>
-              <span className="welcome-title-soft">Welcome to</span>
-              <span className="welcome-title-strong">HARTS</span>
-            </h1>
-            <p>
-              Purpose-led consulting for leaders shaping decisive, durable change.
-            </p>
-          </div>
-          <div className="welcome-scroll-cue" aria-hidden="true">
-            <span className="welcome-scroll-line"><span /></span>
-          </div>
-        </div>
-      </section>
-
-      <section className="consulting-section" id="consulting">
-        <div className="consulting-copy reveal">
-          
-          <h2>HARTS Consulting</h2>
-          <p>
-            HARTS partners with leadership teams to clarify strategy, align
-            stakeholders, and turn complex decisions into focused action. We
-            bring structured thinking, market context, and practical operating
-            discipline to moments where progress matters.
-          </p>
-          {/* <Link className="solid-button large consulting-button" href="/about-us">
-            About Us
-          </Link> */}
-        </div>
-        <div
-          className="consulting-visual reveal delay-one"
-          aria-label="Consulting team shaping an enterprise strategy"
-        >
-          <div className="visual-card">
-            <span>Enterprise Strategy</span>
-            <strong>Clear decisions, aligned execution.</strong>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        scene="home"
+        layout="split"
+        eyebrow="Strategy. Transformation. Clarity."
+        titleSoft="Welcome to"
+        titleStrong="HARTS"
+        subtitle="Purpose-led consulting for leaders shaping decisive, durable change."
+        actions={
+          <Link className="solid-button large" href="/contact">
+            Connect with us
+          </Link>
+        }
+      />
 
       <section className="vision-statement-section" id="vision">
         <div className="vision-statement reveal">

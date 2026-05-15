@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
+import { ScrollReveal } from "./scroll-reveal";
 
 /**
  * Every route should land at scroll-y 0 on initial mount / navigation, so the
@@ -32,6 +33,7 @@ export function PageShell({ children }: { children: ReactNode }) {
 
   return (
     <>
+      <ScrollReveal />
       <SiteHeader />
       {children}
       <SiteFooter />

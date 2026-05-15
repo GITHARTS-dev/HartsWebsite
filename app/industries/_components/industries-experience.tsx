@@ -30,50 +30,50 @@ type Sector = {
 const sectors: Sector[] = [
   {
     title: "Automotive",
-    text: "Manufacturing transformation, mobility innovation, and enterprise-wide modernisation across automotive ecosystems.",
+    text: "Enabling connected manufacturing, smart mobility innovation, supply-chain resilience, and enterprise-wide operational modernization across rapidly evolving global automotive ecosystems.",
     icon: <Car size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/automotive",
   },
   {
     title: "Aerospace",
-    text: "Engineering collaboration, supply-chain visibility, and transformation governance for precision-driven aerospace enterprises.",
+    text: "Delivering engineering collaboration, operational visibility, compliance alignment, and scalable transformation governance for precision-focused aerospace and aviation enterprises worldwide.",
     icon: <Plane size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/aerospace",
   },
   {
     title: "Oil & Gas",
-    text: "Operational excellence, asset performance, and disciplined modernisation across upstream, midstream, and downstream operations.",
+    text: "Driving operational excellence, asset reliability, infrastructure modernization, and intelligent performance optimization across upstream, midstream, and downstream energy operations.",
     icon: <Flame size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/oil-gas",
   },
  
   {
     title: "Chemicals",
-    text: "Process optimisation, safety governance, and scalable transformation across complex chemical-manufacturing networks.",
+    text: "Supporting process optimization, safety governance, regulatory compliance, and scalable operational transformation across complex and globally connected chemical manufacturing environments.",
     icon: <FlaskConical size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/chemicals",
   },
   {
     title: "Life Sciences",
-    text: "Pipeline acceleration, regulatory rigour, and operating-model modernisation across pharma, biotech, and medical-device organisations.",
+    text: "Accelerating innovation, regulatory compliance, and operating-model transformation across pharmaceutical, biotechnology, healthcare, and medical-device organizations worldwide.",
     icon: <Dna size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/life-sciences",
   },
   {
     title: "Energy",
-    text: "Transition strategy, grid modernisation, and enterprise transformation across conventional, renewable, and integrated energy portfolios.",
+    text: "Enabling energy-transition strategies, infrastructure modernization, operational resilience, and enterprise transformation across renewable, conventional, and integrated energy ecosystems.",
     icon: <Zap size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/energy",
   },
   {
     title: "Technology",
-    text: "Operating-model design, growth scaling, and platform transformation for high-velocity technology enterprises.",
+    text: "Driving platform modernization, scalable operating models, intelligent automation, and growth transformation for rapidly evolving global technology enterprises.",
     icon: <Cpu size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/technology",
   },
   {
     title: "Telecommunications",
-    text: "Network modernisation, customer-experience transformation, and operating discipline across communications enterprises.",
+    text: "Strengthening network modernization, digital customer experiences, operational agility, and enterprise transformation across next-generation telecommunications ecosystems.",
     icon: <Radio size={SECTOR_ICON_SIZE} strokeWidth={SECTOR_ICON_STROKE} aria-hidden="true" />,
     href: "/industries/telecom",
   },

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="none">
+  <defs>
+    <!-- Each gradient: dark at the wave crest top, fades to transparent white below -->
+    <linearGradient id="b1" x1="0" y1="0"   x2="0" y2="72"  gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#9A9C9E"/>
+      <stop offset="0.45" stop-color="#B8BABB"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="0" y1="108" x2="0" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#ABABAC"/>
+      <stop offset="0.45" stop-color="#C4C6C7"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b3" x1="0" y1="214" x2="0" y2="284" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#B8BABC"/>
+      <stop offset="0.45" stop-color="#CECFD1"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b4" x1="0" y1="320" x2="0" y2="388" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#C4C6C8"/>
+      <stop offset="0.45" stop-color="#D6D8DA"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="b5" x1="0" y1="424" x2="0" y2="490" gradientUnits="userSpaceOnUse">
+      <stop offset="0"   stop-color="#CED0D2"/>
+      <stop offset="0.45" stop-color="#DCDEE0"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Pure white base — matches the #FAFAFA page background -->
+  <rect width="800" height="600" fill="#FFFFFF"/>
+
+  <!-- Band 1 — crest sits at very top edge of image, shadow falls below -->
+  <path d="M-10,-8 C130,28 270,-22 400,10 C530,42 670,-12 810,22
+           L810,72  C670,38  530,88  400,56  C270,24  130,74  -10,38 Z"
+        fill="url(#b1)"/>
+
+  <!-- Band 2 -->
+  <path d="M-10,108 C130,142 270,96  400,128 C530,160 670,114 810,146
+           L810,178 C670,144 530,190 400,158 C270,126 130,172 -10,138 Z"
+        fill="url(#b2)"/>
+
+  <!-- Band 3 -->
+  <path d="M-10,214 C130,248 270,202 400,234 C530,266 670,220 810,252
+           L810,284 C670,250 530,296 400,264 C270,232 130,278 -10,244 Z"
+        fill="url(#b3)"/>
+
+  <!-- Band 4 -->
+  <path d="M-10,320 C130,354 270,308 400,340 C530,372 670,326 810,358
+           L810,388 C670,354 530,400 400,368 C270,336 130,382 -10,348 Z"
+        fill="url(#b4)"/>
+
+  <!-- Band 5 — lightest, near bottom -->
+  <path d="M-10,424 C130,458 270,412 400,444 C530,476 670,430 810,462
+           L810,490 C670,456 530,502 400,470 C270,438 130,484 -10,450 Z"
+        fill="url(#b5)"/>
+</svg>

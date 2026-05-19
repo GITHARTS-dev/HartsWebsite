@@ -53,11 +53,11 @@
 
 /* Soft white veil so the photograph reads behind typography, while
    keeping enough visibility for the image to register as a backdrop. */
-.page-hero-scene-veil {
+/* .page-hero-scene-veil {
   background:
     radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.28) 50%, rgba(255, 255, 255, 0.42) 100%),
     linear-gradient(180deg, rgba(240, 240, 240, 0.22) 0%, rgba(240, 240, 240, 0.40) 100%);
-}
+} */
 
 @keyframes hero-scene-drift {
   from { transform: scale(1.04) translate3d(-1%, 0, 0); }
@@ -236,6 +236,10 @@
 /* How We Help - consulting workshop / collaboration (user-provided) */
 .page-hero--how-we-help .page-hero-scene-image {
   background-image: url("/hero/how-we-help-hero.jpg");
+}
+
+.page-hero--how-we-help {
+  box-shadow: 0 8px 32px rgba(20, 20, 20, 0.14);
 }
 
 /* ── Service detail pages - premium, executive-grade photography.
@@ -484,7 +488,7 @@
 
 /* Soft red wash - the photo still reads through clearly on the left,
    and the right side returns fully to the image. */
-.page-hero--layout-split .page-hero-scene-veil {
+/* .page-hero--layout-split .page-hero-scene-veil {
   background:
     linear-gradient(
       90deg,
@@ -494,7 +498,7 @@
       rgba(231, 71, 60, 0.18) 78%,
       rgba(231, 71, 60, 0) 100%
     );
-}
+} */
 
 .page-hero--layout-split .page-hero-shell {
   justify-items: flex-start;

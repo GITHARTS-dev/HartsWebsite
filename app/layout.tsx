@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "HARTS Consulting | Strategy, Transformation & Digital Enablement",
   description:
     "HARTS partners with senior leadership teams to navigate complexity, accelerate transformation, and deliver measurable outcomes across strategy, operations, and digital enablement.",
+  icons: {
+    icon: "/logo (1).png",
+    shortcut: "/logo (1).png",
+    apple: "/logo (1).png",
+  },
 };
 
 export default function RootLayout({

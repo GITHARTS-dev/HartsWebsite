@@ -19,7 +19,7 @@ export default function ContactRoute() {
           eyebrow="Connect"
           titleSoft="Let’s start a"
           titleStrong="conversation."
-          subtitle="Whether you are navigating a major transformation, exploring a growth opportunity, or seeking an independent strategic perspective — our team is ready to engage."
+          subtitle="Whether you are navigating a major transformation, exploring a growth opportunity, or seeking an independent strategic perspective - our team is ready to engage."
           actions={
             <Link className="solid-button large" href="#inquiry">
               Send an inquiry
@@ -56,14 +56,6 @@ export default function ContactRoute() {
               <p className="contact-info">
                 <strong>Phone:</strong> +91 422 000 0000
               </p>
-              <a
-                className="outline-button"
-                href="https://www.google.com/maps/search/7C,+Mayflower+Signature,+Avinashi+Road,+Peelamedu,+Coimbatore+641004"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Directions &rarr;
-              </a>
             </div>
             <div className="location-map-embed">
               <iframe

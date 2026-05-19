@@ -46,7 +46,7 @@ export function TransformationPrinciples() {
         <h2>Principles That Guide Transformation</h2>
         <p>
           HARTS approaches transformation through clarity, collaboration,
-          adaptability, and long-term thinking — helping organizations move
+          adaptability, and long-term thinking - helping organizations move
           forward with confidence and connected direction.
         </p>
       </div>

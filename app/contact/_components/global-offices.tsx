@@ -22,9 +22,6 @@ export default function GlobalOffices() {
             <div className="office-image" aria-label={`${office.city} office`} />
             <h3>{office.city}</h3>
             <p>{office.country}</p>
-            <a href={office.directionsUrl} className="office-directions">
-              Get directions &rarr;
-            </a>
           </article>
         ))}
       </div>

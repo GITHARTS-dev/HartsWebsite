@@ -28,10 +28,10 @@
     </linearGradient>
   </defs>
 
-  <!-- Pure white base — matches the #FAFAFA page background -->
+  <!-- Pure white base - matches the #FAFAFA page background -->
   <rect width="800" height="600" fill="#FFFFFF"/>
 
-  <!-- Band 1 — crest sits at very top edge of image, shadow falls below -->
+  <!-- Band 1 - crest sits at very top edge of image, shadow falls below -->
   <path d="M-10,-8 C130,28 270,-22 400,10 C530,42 670,-12 810,22
            L810,72  C670,38  530,88  400,56  C270,24  130,74  -10,38 Z"
         fill="url(#b1)"/>
@@ -51,7 +51,7 @@
            L810,388 C670,354 530,400 400,368 C270,336 130,382 -10,348 Z"
         fill="url(#b4)"/>
 
-  <!-- Band 5 — lightest, near bottom -->
+  <!-- Band 5 - lightest, near bottom -->
   <path d="M-10,424 C130,458 270,412 400,444 C530,476 670,430 810,462
            L810,490 C670,456 530,502 400,470 C270,438 130,484 -10,450 Z"
         fill="url(#b5)"/>

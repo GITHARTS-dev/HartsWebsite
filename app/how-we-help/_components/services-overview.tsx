@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "Do you work alongside our internal teams?",
-    a: "Yes — we embed with your teams, transfer capability throughout the engagement, and structure the work so your people own the outcome long after we step back.",
+    a: "Yes - we embed with your teams, transfer capability throughout the engagement, and structure the work so your people own the outcome long after we step back.",
   },
   {
     q: "What makes HARTS different from a traditional consultancy?",
@@ -99,7 +99,7 @@ export function ServicesOverview() {
         eyebrow="How We Help"
         titleSoft="Focused expertise."
         titleStrong="Decisive results."
-        subtitle="Focused service lines — engineered to clarify choices, design practical transformation, and mobilise people around work that matters."
+        subtitle="Focused service lines - engineered to clarify choices, design practical transformation, and mobilise people around work that matters."
         actions={
           <Link className="solid-button large" href="/contact">
             Connect with us
@@ -112,12 +112,12 @@ export function ServicesOverview() {
         <div className="hwh-services-hd">
           <div>
             <p className="hwh-section-eyebrow">Capabilities</p>
-            <h2>Distinct services. One disciplined approach.</h2>
+            <h2>Focused capabilities. Unified execution.</h2>
           </div>
           <p className="hwh-services-desc">
-            Whether the work calls for strategic clarity, operating discipline,
-            enterprise transformation, or capability building, the HARTS
-            consulting playbook adapts to the reality of the mandate.
+            HARTS brings together strategy, transformation, and operational
+            expertise to help organisations move forward with clarity and
+            confidence.
           </p>
         </div>
 

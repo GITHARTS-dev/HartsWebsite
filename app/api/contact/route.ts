@@ -24,11 +24,11 @@ export async function POST(request: Request) {
       from: `"HARTS Website" <${process.env.SMTP_USER}>`,
       to: RECIPIENT,
       replyTo: email,
-      subject: `New Inquiry from ${name} — HARTS Consulting`,
+      subject: `New Inquiry from ${name} - HARTS Consulting`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a1a1a;">
           <h2 style="border-bottom: 2px solid #c9a84c; padding-bottom: 12px; color: #1a1a1a;">
-            New Client Inquiry — HARTS Consulting
+            New Client Inquiry - HARTS Consulting
           </h2>
           <table style="width:100%; border-collapse: collapse; margin-top: 16px;">
             <tr>
@@ -37,11 +37,11 @@ export async function POST(request: Request) {
             </tr>
             <tr>
               <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Company</td>
-              <td style="padding: 8px 12px;">${company || '—'}</td>
+              <td style="padding: 8px 12px;">${company || '-'}</td>
             </tr>
             <tr>
               <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Role / Title</td>
-              <td style="padding: 8px 12px;">${role || '—'}</td>
+              <td style="padding: 8px 12px;">${role || '-'}</td>
             </tr>
             <tr>
               <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Email</td>
@@ -49,11 +49,11 @@ export async function POST(request: Request) {
             </tr>
             <tr>
               <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Phone</td>
-              <td style="padding: 8px 12px;">${phone || '—'}</td>
+              <td style="padding: 8px 12px;">${phone || '-'}</td>
             </tr>
             <tr>
               <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Area of Interest</td>
-              <td style="padding: 8px 12px;">${service || '—'}</td>
+              <td style="padding: 8px 12px;">${service || '-'}</td>
             </tr>
           </table>
           <div style="margin-top: 24px; padding: 16px; background: #f9f9f9; border-left: 4px solid #c9a84c; border-radius: 4px;">

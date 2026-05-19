@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────────────────────────────────
-   Page Hero — reusable, premium hero for every inner page
+   Page Hero - reusable, premium hero for every inner page
    Mirrors the home welcome-screen typography (welcome-kicker,
    welcome-title-soft, welcome-title-strong) so the brand language is
    identical across the site. Adds: breadcrumb, CACHE watermark, and a
@@ -13,7 +13,7 @@
   place-items: center;
   width: 100%;
   /* Fill one full viewport panel (minus the 72px sticky header) so the next
-     section is only visible after the user scrolls down — mirrors the home
+     section is only visible after the user scrolls down - mirrors the home
      page's full-bleed welcome scene. */
   min-height: calc(100vh - 72px);
   padding: clamp(96px, 12vh, 128px) 5vw clamp(64px, 8vh, 96px);
@@ -42,7 +42,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
-  /* Drift animation removed per request — hero scene is fully static. */
+  /* Drift animation removed per request - hero scene is fully static. */
   transform: none;
   background-color: #EFEEEC;
 }
@@ -96,7 +96,7 @@
   text-align: center;
 }
 
-/* ── Breadcrumb (hidden — clean home-style hero with no Home pill) ──── */
+/* ── Breadcrumb (hidden - clean home-style hero with no Home pill) ──── */
 .page-hero-breadcrumbs {
   display: none;
 }
@@ -157,7 +157,7 @@
   line-height: 1.02;
   letter-spacing: -0.005em;
   color: #1A1A1A;
-  /* Entrance animation removed per request — hero is fully static. */
+  /* Entrance animation removed per request - hero is fully static. */
   opacity: 1;
 }
 
@@ -196,7 +196,7 @@
   opacity: 1;
 }
 
-/* ── Scroll cue — removed per request ──────────────────────────────── */
+/* ── Scroll cue - removed per request ──────────────────────────────── */
 .page-hero-scroll-cue,
 .page-hero-scroll-line {
   display: none !important;
@@ -215,71 +215,71 @@
    image so heroes always have a photographic feel even if Unsplash is
    blocked (e.g. air-gapped network, strict corporate proxy). */
 
-/* About — leadership / team group portrait (user-provided photograph) */
+/* About - leadership / team group portrait (user-provided photograph) */
 .page-hero--about .page-hero-scene-image {
   background-image: url("/hero/about-hero.jpeg");
 }
 
-/* Home — sunrise team silhouette (user-provided photograph).
+/* Home - sunrise team silhouette (user-provided photograph).
    Uses the same split layout + red gradient veil as how-we-work so the
    home, careers, connect, and inner pages share one unified template. */
 .page-hero--home .page-hero-scene-image {
   background-image: url("/hero/home-hero.jpg");
 }
 
-/* Industries (Where We Engage) — capital-intensive infrastructure / global commerce. */
+/* Industries (Where We Engage) - capital-intensive infrastructure / global commerce. */
 .page-hero--industries .page-hero-scene-image {
   background-image: url("/hero/industries-hero.jpg");
   background-position: center 54%;
 }
 
-/* How We Help — consulting workshop / collaboration (user-provided) */
+/* How We Help - consulting workshop / collaboration (user-provided) */
 .page-hero--how-we-help .page-hero-scene-image {
   background-image: url("/hero/how-we-help-hero.jpg");
 }
 
-/* ── Service detail pages — premium, executive-grade photography.
+/* ── Service detail pages - premium, executive-grade photography.
    Every image is a wide, cinematic photograph that reads cleanly under
    the red gradient veil used by the split-layout heroes. Selected to
    evoke the substance of each service, not generic stock. */
 
-/* Innovation — laboratory of ideas / R&D environment */
+/* Innovation - laboratory of ideas / R&D environment */
 .page-hero--service-innovation .page-hero-scene-image {
   background-image: url("/hero/innovation-service-hero.png");
 }
 
-/* Mergers & Acquisitions — global financial district at dusk, cinematic
+/* Mergers & Acquisitions - global financial district at dusk, cinematic
    wide aspect (aerospace-caliber composition: single subject, atmospheric). */
 .page-hero--service-mergers-acquisitions .page-hero-scene-image {
   background-image: url("/hero/mergers-acquisitions-service-hero.png");
 }
 
-/* Operations — modern manufacturing / operational excellence, wide cinematic */
+/* Operations - modern manufacturing / operational excellence, wide cinematic */
 .page-hero--service-operation .page-hero-scene-image {
   background-image: url("/hero/operation-service-hero.png");
 }
 
-/* Strategy — executive workspace with strategic planning */
+/* Strategy - executive workspace with strategic planning */
 .page-hero--service-strategy .page-hero-scene-image {
   background-image: url("/hero/strategy-service-hero.jpg");
 }
 
-/* Transformation — futuristic corporate corridor, motion / change in flight */
+/* Transformation - futuristic corporate corridor, motion / change in flight */
 .page-hero--service-transformation .page-hero-scene-image {
   background-image: url("/hero/transformation-service-hero.png");
 }
 
-/* GCC Setup — enterprise data centre / global capability floor */
+/* GCC Setup - enterprise data centre / global capability floor */
 .page-hero--service-gcc-setup .page-hero-scene-image {
   background-image: url("/hero/gcc-setup-service-hero.png");
 }
 
-/* Sustainability — premium green corporate / clean energy */
+/* Sustainability - premium green corporate / clean energy */
 .page-hero--service-sustainability .page-hero-scene-image {
   background-image: url("/hero/sustainability-service-hero.jpg");
 }
 
-/* People & Organization — leadership team alignment / organisation design */
+/* People & Organization - leadership team alignment / organisation design */
 .page-hero--service-people-and-organization .page-hero-scene-image {
   background-image: url("/hero/people-organization-service-hero.jpg");
   background-position: center 58%;
@@ -291,24 +291,24 @@
     linear-gradient(180deg, rgba(240, 240, 240, 0.16) 0%, rgba(240, 240, 240, 0.34) 100%);
 }
 
-/* How We Work — strategy workshop with team (user-provided) */
+/* How We Work - strategy workshop with team (user-provided) */
 .page-hero--how-we-work .page-hero-scene-image {
   background-image: url("/hero/how-we-work-hero.jpg");
 }
 
-/* Careers — team gathering / culture (user-provided) */
+/* Careers - team gathering / culture (user-provided) */
 .page-hero--careers .page-hero-scene-image {
   background-image: url("/hero/careers-hero.jpg");
 }
 
-/* Contact (Connect) — themed identically to the home hero: same photograph,
+/* Contact (Connect) - themed identically to the home hero: same photograph,
    same dark veil, same white typography. Achieved by reusing /hero/home-hero.jpg
    and overriding the split layout's red gradient veil below. */
 .page-hero--contact .page-hero-scene-image {
   background-image: url("/hero/home-hero.jpg");
 }
 
-/* Industry detail scenes — each gets a sector-relevant photo */
+/* Industry detail scenes - each gets a sector-relevant photo */
 .page-hero--industry-aerospace .page-hero-scene-image {
   background-image: url("/hero/aerospace-hero.jpg");
   background-position: center 50%;
@@ -327,7 +327,7 @@
   filter: grayscale(50%) brightness(0.95);
 }
 
-/* Match the default aerospace-style veil — image shows through, text stays legible */
+/* Match the default aerospace-style veil - image shows through, text stays legible */
 .page-hero--industry-automotive .page-hero-scene-veil {
   background:
     radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
@@ -422,7 +422,7 @@
     linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
-/* Default fallback — generic professional photo */
+/* Default fallback - generic professional photo */
 .page-hero--default .page-hero-scene-image {
   background-image: url("/hero/default-hero.jpg");
 }
@@ -458,7 +458,7 @@
 }
 
 /* ── Premium accents ──────────────────────────────────────────────── */
-/* Orb and title underline removed per request — keeping hero clean. */
+/* Orb and title underline removed per request - keeping hero clean. */
 .page-hero-shell::before {
   display: none;
 }
@@ -472,7 +472,7 @@
 }
 
 /* ──────────────────────────────────────────────────────────────────────
-   Split layout — text on the left over a red→transparent gradient
+   Split layout - text on the left over a red→transparent gradient
    overlaying the page's background photograph. Used by:
    How We Work, How We Help, Where We Engage (industries), Connect (contact).
    ────────────────────────────────────────────────────────────────────── */
@@ -482,7 +482,7 @@
   align-items: center;
 }
 
-/* Soft red wash — the photo still reads through clearly on the left,
+/* Soft red wash - the photo still reads through clearly on the left,
    and the right side returns fully to the image. */
 .page-hero--layout-split .page-hero-scene-veil {
   background:
@@ -592,7 +592,7 @@
 
 
 /* ──────────────────────────────────────────────────────────────────────
-   Contact page — uses the same split layout + red gradient veil as the
+   Contact page - uses the same split layout + red gradient veil as the
    how-we-work hero. The image used is the home-hero photograph so the
    home and connect pages share the same hero visual.
    ────────────────────────────────────────────────────────────────────── */

@@ -134,7 +134,7 @@ export const serviceOfferings: ServiceOffering[] = [
     summary:
       "Run complex, multi-year change programmes with the discipline they actually require.",
     lead:
-      "We mobilise and steer enterprise-wide transformation — combining programme rigour, change leadership, and embedded delivery discipline so that ambition translates into durable outcomes.",
+      "We mobilise and steer enterprise-wide transformation - combining programme rigour, change leadership, and embedded delivery discipline so that ambition translates into durable outcomes.",
     image:
       "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1500&q=82",
     imageAlt: "Cross-functional team coordinating a transformation programme",
@@ -148,7 +148,7 @@ export const serviceOfferings: ServiceOffering[] = [
     benefits: [
       "Predictable delivery against committed outcomes",
       "Reduced cost and schedule slippage",
-      "Sustained adoption — change that actually lands",
+      "Sustained adoption - change that actually lands",
     ],
     workflow: [
       "Establish the blueprint, governance, and success metrics",
@@ -163,7 +163,7 @@ export const serviceOfferings: ServiceOffering[] = [
     summary:
       "Stand up Global Capability Centers that scale strategic capability at competitive economics.",
     lead:
-      "We help organisations design, build, and scale Global Capability Centers — from location strategy and entity setup through operating model, talent, and long-term value migration.",
+      "We help organisations design, build, and scale Global Capability Centers - from location strategy and entity setup through operating model, talent, and long-term value migration.",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1500&q=82",
     imageAlt: "Global Capability Center leadership team in a planning session",
@@ -192,7 +192,7 @@ export const serviceOfferings: ServiceOffering[] = [
     summary:
       "Move from ESG ambition to credible, measurable, audit-ready sustainability performance.",
     lead:
-      "We help organisations translate sustainability commitments into operating reality — embedding ESG into strategy, operations, reporting, and culture, with rigour your board, regulators, and investors can trust.",
+      "We help organisations translate sustainability commitments into operating reality - embedding ESG into strategy, operations, reporting, and culture, with rigour your board, regulators, and investors can trust.",
     image:
       "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1500&q=82",
     imageAlt: "Sustainability strategy session in front of a forested landscape",
@@ -221,7 +221,7 @@ export const serviceOfferings: ServiceOffering[] = [
     summary:
       "Design the organisation, leadership, and culture your strategy actually needs to succeed.",
     lead:
-      "We help leadership teams build the organisation that the strategy requires — aligning structure, roles, leadership, talent, and culture so the right people are doing the right work, the right way.",
+      "We help leadership teams build the organisation that the strategy requires - aligning structure, roles, leadership, talent, and culture so the right people are doing the right work, the right way.",
     image:
       "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1500&q=82",
     imageAlt: "Diverse leadership team collaborating around a table",
@@ -241,7 +241,7 @@ export const serviceOfferings: ServiceOffering[] = [
       "Diagnose current organisation, capability, and culture",
       "Design the future-state structure, roles, and leadership model",
       "Activate hiring, development, and reward programmes",
-      "Measure capability and culture uplift — refine continuously",
+      "Measure capability and culture uplift - refine continuously",
     ],
   },
 ];

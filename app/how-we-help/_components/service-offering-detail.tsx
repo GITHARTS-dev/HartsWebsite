@@ -29,7 +29,7 @@ const sceneBySlug: Record<string, ServiceScene> = {
 };
 
 type ServiceBodyContent = {
-  /** 1-2 sentence pain-recognition opener — sets up why this work matters. */
+  /** 1-2 sentence pain-recognition opener - sets up why this work matters. */
   challenge: string;
   howWeHelp: string[];
   /** Concrete artifacts the engagement produces. */
@@ -135,17 +135,17 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
   },
   transformation: {
     challenge:
-      "Large programmes report green status while value silently leaks. Dependencies, adoption, and benefit definitions drift apart faster than steering forums can catch them — and the gap between announced ambition and realised value widens quarter by quarter.",
+      "Large programmes report green status while value silently leaks. Dependencies, adoption, and benefit definitions drift apart faster than steering forums can catch them - and the gap between announced ambition and realised value widens quarter by quarter.",
     howWeHelp: [
-      "We turn broad transformation ambition into a managed delivery system — scope architecture, governance, milestones, dependencies, value tracking, adoption plans — so the programme behaves like a portfolio of decisions rather than a slogan.",
+      "We turn broad transformation ambition into a managed delivery system - scope architecture, governance, milestones, dependencies, value tracking, adoption plans - so the programme behaves like a portfolio of decisions rather than a slogan.",
       "We stand up the Transformation Management Office and equip the senior steering forum with the cadence and information required to make trade-offs, remove blockers, and protect benefits as conditions change.",
-      "We connect programme discipline with human adoption — applying ADKAR alongside design-led communication, role-based enablement, and leadership coaching — so process, technology, structure, and behaviour change in step.",
+      "We connect programme discipline with human adoption - applying ADKAR alongside design-led communication, role-based enablement, and leadership coaching - so process, technology, structure, and behaviour change in step.",
     ],
     deliverables: [
       "Transformation portfolio architecture, value model, and dependency map.",
       "TMO operating model with steering forum design and decision rights.",
       "Change architecture with role-based adoption plans and capability build.",
-      "Benefits realisation framework — tracking promise to P&L impact.",
+      "Benefits realisation framework - tracking promise to P&L impact.",
     ],
     outcomes: [
       "A portfolio leaders can govern, sequence, and fund with confidence.",
@@ -158,9 +158,9 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
     challenge:
       "Global Capability Centers too often plateau at labour arbitrage instead of becoming the capability platform the enterprise originally intended. Setup choices made in the first year quietly determine the ceiling for the next decade.",
     howWeHelp: [
-      "We stand up Global Capability Centers as enterprise capability platforms — shaping location strategy (informed by AI-driven labour-market analytics), business case, entity path (subsidiary, build-operate-transfer, partner), governance, service catalogue, leadership architecture, and migration roadmap.",
-      "We move work in disciplined waves with knowledge-transfer protocols, service-level definitions, capacity planning, and quality controls — protecting business continuity while building durable capability inside the centre.",
-      "We mature the GCC from launch through scale to Centre-of-Expertise positioning — migrating higher-value work, building specialist depth, integrating with enterprise governance, and measuring contribution beyond labour arbitrage.",
+      "We stand up Global Capability Centers as enterprise capability platforms - shaping location strategy (informed by AI-driven labour-market analytics), business case, entity path (subsidiary, build-operate-transfer, partner), governance, service catalogue, leadership architecture, and migration roadmap.",
+      "We move work in disciplined waves with knowledge-transfer protocols, service-level definitions, capacity planning, and quality controls - protecting business continuity while building durable capability inside the centre.",
+      "We mature the GCC from launch through scale to Centre-of-Expertise positioning - migrating higher-value work, building specialist depth, integrating with enterprise governance, and measuring contribution beyond labour arbitrage.",
     ],
     deliverables: [
       "Location decision pack and total business case with risk envelope.",
@@ -177,11 +177,11 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
   },
   sustainability: {
     challenge:
-      "Sustainability commitments outpace the operating systems, data, and governance required to deliver them. Disclosure deadlines arrive faster than the evidence base — and pledges made in annual reports start to look exposed.",
+      "Sustainability commitments outpace the operating systems, data, and governance required to deliver them. Disclosure deadlines arrive faster than the evidence base - and pledges made in annual reports start to look exposed.",
     howWeHelp: [
-      "We move sustainability from aspiration to operating discipline — connecting ESG materiality, strategic intent, capital allocation, operations, supply chain, governance, and reporting into one enterprise agenda.",
-      "We define material priorities, baselines, science-aligned targets, decarbonisation pathways across Scope 1, 2, and 3 emissions, and implementation initiatives with named owners and milestones — replacing pledges with plans.",
-      "We build the evidence base, AI-supported data layer, and reporting rhythm required for credible disclosure aligned to TCFD, ISSB, GRI, SASB, and CSRD — and for the harder conversations with investors, regulators, customers, and the board.",
+      "We move sustainability from aspiration to operating discipline - connecting ESG materiality, strategic intent, capital allocation, operations, supply chain, governance, and reporting into one enterprise agenda.",
+      "We define material priorities, baselines, science-aligned targets, decarbonisation pathways across Scope 1, 2, and 3 emissions, and implementation initiatives with named owners and milestones - replacing pledges with plans.",
+      "We build the evidence base, AI-supported data layer, and reporting rhythm required for credible disclosure aligned to TCFD, ISSB, GRI, SASB, and CSRD - and for the harder conversations with investors, regulators, customers, and the board.",
     ],
     deliverables: [
       "Materiality matrix and ESG priority map tied to enterprise risk.",
@@ -200,12 +200,12 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
     challenge:
       "Most reorganisations announce structural changes without changing where decisions actually happen, who owns what work, or how leaders behave day-to-day. The new chart goes live; the operating reality lags by months or years.",
     howWeHelp: [
-      "We design the organisation your strategy requires — structure, layers, spans of control, roles, decision rights, leadership model, workforce mix (informed by AI-led workforce analytics), talent architecture, and the cultural shifts that make the design real.",
+      "We design the organisation your strategy requires - structure, layers, spans of control, roles, decision rights, leadership model, workforce mix (informed by AI-led workforce analytics), talent architecture, and the cultural shifts that make the design real.",
       "We help leaders clarify what work must be done, where capability should sit, how teams should collaborate across boundaries, and which behaviours must change for the operating model to perform.",
-      "We turn organisation design into implementation — role mapping, transition planning, leadership alignment, communication, capability building, performance management, and adoption tracking — so the new model lives beyond the launch announcement.",
+      "We turn organisation design into implementation - role mapping, transition planning, leadership alignment, communication, capability building, performance management, and adoption tracking - so the new model lives beyond the launch announcement.",
     ],
     deliverables: [
-      "Organisation design pack — structure, spans, roles, and decision rights.",
+      "Organisation design pack - structure, spans, roles, and decision rights.",
       "Job architecture, capability gap map, and workforce shift plan.",
       "Transition plan with communications, leadership alignment, and milestones.",
       "Adoption dashboard and post-launch performance review framework.",
@@ -282,10 +282,10 @@ export function ServiceOfferingDetail({
         </div>
       </div>
 
-      {/* Challenge — pain match. Sets context before we describe our method.
+      {/* Challenge - pain match. Sets context before we describe our method.
           Eyebrow is user-centric ("the reality leaders face") rather than
           lecturing ("why this matters now"), because a leader landing on the
-          page already cares about the topic — they need recognition. */}
+          page already cares about the topic - they need recognition. */}
       <section className="service-challenge-section">
         <div className="industry-detail-shell">
           <p className="eyebrow">The reality leaders face</p>

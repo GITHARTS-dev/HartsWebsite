@@ -88,7 +88,7 @@ const challenges = [
   },
 ];
 
-/* Why Choose HARTS — three pillar synthesis (People / Process / Technology). */
+/* Why Choose HARTS - three pillar synthesis (People / Process / Technology). */
 const reasons = [
   {
     title: "People",

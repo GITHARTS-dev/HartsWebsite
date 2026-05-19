@@ -252,10 +252,22 @@
   background-image: url("/hero/innovation-service-hero.png");
 }
 
+.page-hero--service-innovation .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
+}
+
 /* Mergers & Acquisitions - global financial district at dusk, cinematic
    wide aspect (aerospace-caliber composition: single subject, atmospheric). */
 .page-hero--service-mergers-acquisitions .page-hero-scene-image {
   background-image: url("/hero/mergers-acquisitions-service-hero.png");
+}
+
+.page-hero--service-mergers-acquisitions .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 /* Operations - modern manufacturing / operational excellence, wide cinematic */
@@ -263,9 +275,21 @@
   background-image: url("/hero/operation-service-hero.png");
 }
 
+.page-hero--service-operation .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
+}
+
 /* Strategy - executive workspace with strategic planning */
 .page-hero--service-strategy .page-hero-scene-image {
   background-image: url("/hero/strategy-service-hero.jpg");
+}
+
+.page-hero--service-strategy .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 /* Transformation - futuristic corporate corridor, motion / change in flight */
@@ -273,14 +297,32 @@
   background-image: url("/hero/transformation-service-hero.png");
 }
 
+.page-hero--service-transformation .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
+}
+
 /* GCC Setup - enterprise data centre / global capability floor */
 .page-hero--service-gcc-setup .page-hero-scene-image {
   background-image: url("/hero/gcc-setup-service-hero.png");
 }
 
+.page-hero--service-gcc-setup .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
+}
+
 /* Sustainability - premium green corporate / clean energy */
 .page-hero--service-sustainability .page-hero-scene-image {
   background-image: url("/hero/sustainability-service-hero.jpg");
+}
+
+.page-hero--service-sustainability .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 /* People & Organization - leadership team alignment / organisation design */
@@ -291,8 +333,8 @@
 
 .page-hero--service-people-and-organization .page-hero-scene-veil {
   background:
-    radial-gradient(ellipse 58% 46% at 50% 46%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.22) 52%, rgba(255, 255, 255, 0.38) 100%),
-    linear-gradient(180deg, rgba(240, 240, 240, 0.16) 0%, rgba(240, 240, 240, 0.34) 100%);
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 /* How We Work - strategy workshop with team (user-provided) */
@@ -538,6 +580,67 @@
   color: rgba(255, 255, 255, 0.94);
   max-width: 540px;
   text-shadow: 0 1px 10px rgba(20, 20, 20, 0.18);
+}
+
+/* ── Premium 3D parallelogram subtitle box ──────────────────────────── */
+.page-hero--home .page-hero-subtitle,
+.page-hero--industries .page-hero-subtitle,
+.page-hero--how-we-help .page-hero-subtitle,
+.page-hero--how-we-work .page-hero-subtitle,
+.page-hero--about .page-hero-subtitle,
+.page-hero--careers .page-hero-subtitle,
+.page-hero--contact .page-hero-subtitle {
+  position: relative;
+  padding: 16px 32px 16px 24px;
+  color: #111111;
+  text-shadow: none;
+  font-weight: 500;
+  letter-spacing: 0.018em;
+  z-index: 0;
+}
+
+/* White top face */
+.page-hero--home .page-hero-subtitle::before,
+.page-hero--industries .page-hero-subtitle::before,
+.page-hero--how-we-help .page-hero-subtitle::before,
+.page-hero--how-we-work .page-hero-subtitle::before,
+.page-hero--about .page-hero-subtitle::before,
+.page-hero--careers .page-hero-subtitle::before,
+.page-hero--contact .page-hero-subtitle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #ffffff 0%, #f4f4f4 100%);
+  border: 1.5px solid #E7473C;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.22),
+    0 8px 20px rgba(0, 0, 0, 0.20),
+    0 24px 60px rgba(0, 0, 0, 0.28),
+    0 4px 16px rgba(231, 71, 60, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transform: skewX(-10deg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Red 3D extrusion — visible depth side + cast shadow onto the scene */
+.page-hero--home .page-hero-subtitle::after,
+.page-hero--industries .page-hero-subtitle::after,
+.page-hero--how-we-help .page-hero-subtitle::after,
+.page-hero--how-we-work .page-hero-subtitle::after,
+.page-hero--about .page-hero-subtitle::after,
+.page-hero--careers .page-hero-subtitle::after,
+.page-hero--contact .page-hero-subtitle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #E7473C 0%, #A82A20 100%);
+  box-shadow:
+    5px 14px 36px rgba(0, 0, 0, 0.45),
+    2px 6px 12px rgba(168, 42, 32, 0.55);
+  transform: skewX(-10deg) translate(7px, 8px);
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* Buttons stay on brand: red solid with white text, no border, clean pill. */

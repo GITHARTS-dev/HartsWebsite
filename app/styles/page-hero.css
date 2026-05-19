@@ -217,7 +217,7 @@
 
 /* About — leadership / team group portrait (user-provided photograph) */
 .page-hero--about .page-hero-scene-image {
-  background-image: url("/hero/about-hero.jpg");
+  background-image: url("/hero/about-hero.jpeg");
 }
 
 /* Home — sunrise team silhouette (user-provided photograph).
@@ -235,7 +235,7 @@
 
 /* How We Help — consulting workshop / collaboration (user-provided) */
 .page-hero--how-we-help .page-hero-scene-image {
-  background-image: url("/hero/how-we-help-2.jpg");
+  background-image: url("/hero/how-we-help-hero.jpg");
 }
 
 /* ── Service detail pages — premium, executive-grade photography.

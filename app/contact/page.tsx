@@ -56,14 +56,6 @@ export default function ContactRoute() {
               <p className="contact-info">
                 <strong>Phone:</strong> +91 422 000 0000
               </p>
-              <a
-                className="outline-button"
-                href="https://www.google.com/maps/search/7C,+Mayflower+Signature,+Avinashi+Road,+Peelamedu,+Coimbatore+641004"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Directions &rarr;
-              </a>
             </div>
             <div className="location-map-embed">
               <iframe

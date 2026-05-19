@@ -8,6 +8,7 @@ const REVEAL_SELECTOR = [
   ".vision-statement",
   ".home-section-heading",
   ".challenge-visual",
+  ".challenge-image-wrap",
   ".premium-info-card",
   ".partner-content",
   ".industry-grid-heading",

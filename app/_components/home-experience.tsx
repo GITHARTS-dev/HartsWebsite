@@ -222,13 +222,19 @@ export function HomeExperience() {
                 Organizations today face operational complexity, fragmented systems, and rapidly evolving expectations. HARTS helps leadership teams align strategy, transformation, and execution into one connected direction for sustainable growth.
               </p>
             </div>
-            <div
-              className="challenge-visual challenge-visual--premium scroll-reveal reveal-soft-up"
-              style={revealStyle(2)}
-              aria-label="Leaders reviewing operational insights together"
-            >
-              <span className="challenge-visual-offset" aria-hidden="true" />
-              <span className="challenge-visual-grid" aria-hidden="true" />
+           
+            <div className="challenge-image-wrap">
+              <span className="challenge-image-accent" aria-hidden="true" />
+              <div className="challenge-image-frame">
+                <img
+                  src="/images/home-page-discussion.jpg"
+                  alt="HARTS strategy consultants collaborating on enterprise challenges"
+                />
+                {/* <div className="challenge-image-badge" aria-hidden="true">
+                  <span className="badge-number">6</span>
+                  <span className="badge-label">Challenges<br />We&nbsp;Solve</span>
+                </div> */}
+              </div>
             </div>
           </div>
 

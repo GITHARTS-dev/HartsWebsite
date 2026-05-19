@@ -1,13 +1,7 @@
 import Link from "next/link";
 import {
   BadgeCheck,
-  Bot,
-  CircleDot,
-  Compass,
-  Layers3,
-  LineChart,
   Package,
-  Rocket,
 } from "lucide-react";
 
 import { PageHero } from "../../_shared/layout/page-hero";
@@ -38,8 +32,6 @@ type ServiceBodyContent = {
   /** 1-2 sentence pain-recognition opener - sets up why this work matters. */
   challenge: string;
   howWeHelp: string[];
-  /** Empty array means AI is supporting (not central) - no dedicated section rendered. */
-  aiRole: string[];
   /** Concrete artifacts the engagement produces. */
   deliverables: string[];
   outcomes: string[];
@@ -48,106 +40,97 @@ type ServiceBodyContent = {
 const serviceBodyContent: Record<string, ServiceBodyContent> = {
   innovation: {
     challenge:
-      "Most enterprise innovation accumulates pilots, decks, and demos without producing portfolio-level decisions. Leadership ends up debating ideas instead of allocating capital - and growth options stay theoretical when they should be commercial.",
+      "Many organizations invest in technology and innovation but struggle to turn ideas into measurable business outcomes. Digital initiatives become fragmented, technology investments lack strategic direction, and teams face challenges in scaling innovation across the business.",
     howWeHelp: [
-      "We translate innovation ambition into a governed Three-Horizons portfolio - protected core, scaled adjacencies, transformational bets - each with a thesis, capital envelope, and stage-gate decision rights.",
-      "We install a validation engine - opportunity hypotheses, customer-discovery sprints, MVP scoping, kill / pivot / scale triggers - so concepts advance on evidence rather than enthusiasm.",
-      "We design the innovation operating model that fits - central office, embedded teams, corporate venturing, or ecosystem partnerships - with funding mechanics, talent rotation, and rhythms that connect outputs back to the P&L.",
-    ],
-    aiRole: [
-      "Trend-sensing platforms scan patents, scientific publications, funding rounds, hiring patterns, and competitor moves to surface emerging opportunity spaces months before they appear in conventional market research.",
-      "Generative AI compresses concept development, persona modelling, narrative testing, and business-case scenario drafting - letting cross-functional teams iterate on ten hypotheses in the time previously needed for one.",
-      "Portfolio analytics rank ventures by funding need, strategic fit, risk-adjusted value, capability dependencies, and time-to-scale - giving leadership a transparent view of where corporate innovation capital is actually placed.",
+      "We identify business challenges and growth opportunities where innovation and technology can create measurable value.",
+      "We design innovation frameworks supported by digital tools, automation, data, and emerging technologies to improve efficiency and decision-making.",
+      "We validate and scale solutions through pilot programs, business case evaluation, and implementation roadmaps.",
     ],
     deliverables: [
-      "Innovation thesis, horizon allocation, and capital envelope.",
-      "Portfolio dashboard with stage-gate criteria and decision rights.",
-      "Validation playbook covering discovery, MVP, pivot, and scale.",
-      "Innovation operating model and governance cadence.",
+      "Innovation and technology strategy.",
+      "Digital transformation roadmap.",
+      "Innovation governance and operating model.",
+      "Technology opportunity assessment.",
+      "Scale and implementation roadmap.",
     ],
     outcomes: [
-      "A funded innovation portfolio with named owners, stage gates, and investment logic visible to leadership.",
-      "Shorter discovery-to-decision cycles and cleaner kill, pivot, or scale calls.",
-      "New growth options that connect to strategy and survive the next budget review.",
-      "An innovation cadence - pipeline reviews, capital rounds, knowledge transfer - your teams sustain after we leave.",
+      "Faster adoption of technology-driven solutions.",
+      "Improved operational efficiency and business performance.",
+      "Better alignment between innovation and strategic goals.",
+      "Scalable and sustainable innovation capability.",
     ],
   },
   "mergers-acquisitions": {
     challenge:
-      "A majority of deals deliver less than their announced synergy value. The gap rarely sits in the thesis - it shows up in the months between Day-1 and steady-state, where operating decisions either protect the deal model or quietly erode it.",
+      "Many mergers create uncertainty after the deal closes. Without a clear integration approach, organizations face delays, operational disruption, unclear ownership, cultural misalignment, and unrealized synergies.",
     howWeHelp: [
-      "We engage across the full deal arc - value thesis, commercial and operational due diligence, Day-1 readiness, 100-day plan, synergy delivery, post-close operating discipline - so the model signed at close shows up in the P&L.",
-      "We translate the integration thesis into a workstream architecture across customers, products, people, operations, technology, finance, legal, and culture - with explicit owners, dependencies, decision points, and risk concentrations.",
-      "We stand up the Integration Management Office - governance forums, weekly value-tracking, baseline-vs-target reporting, escalation paths, and TSA exit management - protecting the deal model from announcement through to full integration.",
-    ],
-    aiRole: [
-      "Document intelligence accelerates due diligence by triaging contracts, customer data, operational metrics, employee surveys, and external signals into decision-ready briefs at a scale traditional diligence teams cannot match.",
-      "Machine-learning models help identify duplicated capabilities, redundant systems, overlapping suppliers, dependency conflicts, and integration-risk concentrations that interview-based diligence routinely misses.",
-      "AI-enabled integration dashboards give leaders early signal on revenue leakage, customer attrition, talent flight, milestone slippage, and synergy-capture rates - shifting the IMO from lagging reporting to leading indicators.",
+      "We apply a structured Post-Merger playbook to define integration priorities, synergy targets, governance, and execution plans.",
+      "We align people, processes, technology, and operating models to ensure smooth business continuity and integration.",
+      "We drive disciplined execution through Day-1 readiness, milestone tracking, risk management, and value realization monitoring.",
     ],
     deliverables: [
-      "Integration thesis tied to the value model and named synergy pools.",
-      "Day-1 readiness pack and 100-day plan structured by workstream.",
-      "Synergy tracker with baselines, targets, owners, and milestone evidence.",
-      "TSA register and post-close operating cadence for the merged entity.",
+      "Post-Merger playbook.",
+      "Day-1 readiness framework.",
+      "100-day integration roadmap.",
+      "Synergy and value realization tracker.",
+      "Governance and Integration Office structure.",
+      "Technology and operating model integration plan.",
+      "Risk and dependency management framework.",
     ],
     outcomes: [
-      "A sharper value thesis and integration plan before capital is committed.",
-      "Day-1 readiness with continuity for customers, employees, and core operations.",
-      "Synergy capture tied to named initiatives, owners, baselines, and measurable milestones.",
-      "A merged operating model that holds together long after the announcement cycle ends.",
+      "Faster and smoother post-merger integration.",
+      "Reduced operational and transition risks.",
+      "Clear accountability and synergy realization.",
+      "Better alignment across teams, systems, and culture.",
+      "Sustainable long-term value creation from the merger.",
     ],
   },
   operation: {
     challenge:
-      "Cost pressure meets service expectations, and last year's improvements stop compounding. The operating system that worked at one scale starts to leak at the next - and root causes hide behind reporting that looks fine until it doesn't.",
+      "Organizations often face operational inefficiencies, rising costs, inconsistent performance, and slow execution. These challenges are rarely caused by a single issue and usually stem from disconnected processes, unclear ownership, limited visibility, and outdated operating practices.",
     howWeHelp: [
-      "We diagnose performance end-to-end - process, organisation, technology, suppliers, management routines, incentives - separating symptoms from root causes using process mining, value-stream analysis, and direct frontline observation.",
-      "We redesign workflows, KPIs, roles, service levels, governance, and management cadence so improvement becomes part of daily work - applying Lean, Six Sigma, and operational-excellence techniques anchored in your operating reality, not template-driven.",
-      "We pilot deliberately, prove impact against a defined baseline, and scale what works across sites, functions, or business units - transferring capability so your operations leaders own the gains and the ongoing optimisation rhythm.",
-    ],
-    aiRole: [
-      "Process mining and operational analytics expose bottlenecks, rework loops, exception handling, and cost-to-serve variance across thousands of process instances - compressing diagnostics from weeks of interviews into days of evidence.",
-      "Predictive models improve capacity planning, demand forecasting, inventory positioning, predictive maintenance, workforce scheduling, and service-level commitments - converting reactive operations into anticipatory ones.",
-      "AI copilots equip frontline operators, supervisors, and contact-centre agents with standard-work guidance, faster issue triage, knowledge retrieval, and decision support - lifting performance at the moments where it actually changes.",
+      "We assess current operations to identify bottlenecks, inefficiencies, performance gaps, and root causes across people, process, technology, and governance.",
+      "We redesign operating models, workflows, decision-making structures, and performance systems to improve speed, accountability, and service quality.",
+      "We support implementation through operational roadmaps, performance tracking, capability building, and continuous improvement practices.",
     ],
     deliverables: [
-      "Operational diagnostic with prioritised performance gaps and root causes.",
-      "Future-state operating design, KPI cascade, and cost-to-serve model.",
-      "Management operating system - cadences, reviews, and escalation paths.",
-      "Pilot evidence pack and scaling playbook validated on a working site.",
+      "Operational diagnostic and assessment.",
+      "Process optimization roadmap.",
+      "Operating model redesign.",
+      "KPI and performance framework.",
+      "Workflow and governance improvement plan.",
+      "Implementation and change roadmap.",
     ],
     outcomes: [
-      "Measurable lift in cost, throughput, quality, cycle time, and service reliability.",
-      "Clear accountability for performance at leadership, management, and frontline levels.",
-      "A management operating system that runs without a programme team holding it up.",
-      "Improvements that scale across sites and persist after the engagement closes.",
+      "Improved operational efficiency and productivity.",
+      "Reduced cost, delays, and process inefficiencies.",
+      "Clearer ownership and accountability.",
+      "Better performance visibility and decision-making.",
+      "Scalable operations that support growth.",
     ],
   },
   strategy: {
     challenge:
-      "Strategy work too often produces alignment on language without alignment on choices. The plan becomes a document leaders nod through rather than a set of decisions they own - and the next budget cycle re-opens the same debates.",
+      "Organizations often have growth ambitions but face uncertainty around priorities, market positioning, investment decisions, and execution. Without clear strategic direction, resources become fragmented and business goals are difficult to achieve.",
     howWeHelp: [
-      "We help leadership teams make the few choices that change the company - where to play, how to win, what to stop, and which capabilities must be built - making each choice visible, debatable, and decidable rather than buried in narrative.",
-      "We assemble the evidence base - market sizing, customer insight, competitor positioning, regulatory direction, internal capability, and unit economics - so strategic options are grounded, comparable, and stress-tested before commitment.",
-      "We translate the chosen direction into an execution architecture: initiatives, investment logic, milestones, KPIs, governance forums, and leadership alignment - so strategy stops being a document and starts producing decisions.",
-    ],
-    aiRole: [
-      "AI scans markets, customer signals, competitor moves, regulatory developments, and technology shifts at a frequency conventional research cycles cannot match - keeping strategy continuously aware rather than annually refreshed.",
-      "Scenario modelling, sensitivity analysis, and white-space mapping become richer with AI: leadership teams can compare ten paths instead of two, and see which assumptions actually drive value.",
-      "AI helps compress information into structured options, surface counter-arguments, and challenge consensus - improving the quality of the strategic conversation, not just the speed of producing materials.",
+      "We assess market conditions, business performance, customer needs, and competitive positioning to identify opportunities and strategic challenges.",
+      "We work with leadership teams to define strategic priorities, growth pathways, and decision frameworks aligned with business objectives.",
+      "We translate strategy into execution through actionable roadmaps, KPIs, governance models, and accountability structures.",
     ],
     deliverables: [
-      "Strategy on a page - choices, logic, and capabilities to build.",
-      "Prioritised initiative portfolio with investment logic and sequencing.",
-      "Capital and talent allocation framework with explicit resource shifts.",
-      "Strategic governance design and leadership review rhythm.",
+      "Strategic and business assessment.",
+      "Market and competitive analysis.",
+      "Growth and positioning strategy.",
+      "Strategic priorities and decision framework.",
+      "Execution roadmap and initiative portfolio.",
+      "KPI and governance framework.",
     ],
     outcomes: [
-      "A strategic direction backed by evidence and leadership conviction.",
-      "Prioritised choices that focus capital, talent, and executive attention.",
-      "A roadmap that connects ambition to initiatives, owners, metrics, and timing.",
-      "Better strategic conversations because assumptions are visible and testable.",
+      "Clear strategic direction and leadership alignment.",
+      "Better prioritization of investments and growth initiatives.",
+      "Stronger connection between strategy and execution.",
+      "Improved decision-making and resource allocation.",
+      "Measurable and sustainable business outcomes.",
     ],
   },
   transformation: {
@@ -157,11 +140,6 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
       "We turn broad transformation ambition into a managed delivery system - scope architecture, governance, milestones, dependencies, value tracking, adoption plans - so the programme behaves like a portfolio of decisions rather than a slogan.",
       "We stand up the Transformation Management Office and equip the senior steering forum with the cadence and information required to make trade-offs, remove blockers, and protect benefits as conditions change.",
       "We connect programme discipline with human adoption - applying ADKAR alongside design-led communication, role-based enablement, and leadership coaching - so process, technology, structure, and behaviour change in step.",
-    ],
-    aiRole: [
-      "Process mining and operational analytics quantify friction, cost pools, customer effort, workforce activity, and performance variance - anchoring the transformation portfolio in evidence rather than intuition.",
-      "AI-enabled programme controls flag dependency risk, milestone slippage, benefits leakage, adoption gaps, and change saturation earlier than human reporting can - giving leaders time to intervene rather than explain.",
-      "Generative AI scales communications, training, knowledge management, change-impact analysis, and stakeholder-specific support - keeping adoption tightly woven into delivery rather than treated as a final-mile activity.",
     ],
     deliverables: [
       "Transformation portfolio architecture, value model, and dependency map.",
@@ -184,7 +162,6 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
       "We move work in disciplined waves with knowledge-transfer protocols, service-level definitions, capacity planning, and quality controls - protecting business continuity while building durable capability inside the centre.",
       "We mature the GCC from launch through scale to Centre-of-Expertise positioning - migrating higher-value work, building specialist depth, integrating with enterprise governance, and measuring contribution beyond labour arbitrage.",
     ],
-    aiRole: [],
     deliverables: [
       "Location decision pack and total business case with risk envelope.",
       "Entity setup roadmap (subsidiary, build-operate-transfer, or partner).",
@@ -206,7 +183,6 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
       "We define material priorities, baselines, science-aligned targets, decarbonisation pathways across Scope 1, 2, and 3 emissions, and implementation initiatives with named owners and milestones - replacing pledges with plans.",
       "We build the evidence base, AI-supported data layer, and reporting rhythm required for credible disclosure aligned to TCFD, ISSB, GRI, SASB, and CSRD - and for the harder conversations with investors, regulators, customers, and the board.",
     ],
-    aiRole: [],
     deliverables: [
       "Materiality matrix and ESG priority map tied to enterprise risk.",
       "Decarbonisation pathway across Scope 1, 2, and 3 with milestones.",
@@ -228,7 +204,6 @@ const serviceBodyContent: Record<string, ServiceBodyContent> = {
       "We help leaders clarify what work must be done, where capability should sit, how teams should collaborate across boundaries, and which behaviours must change for the operating model to perform.",
       "We turn organisation design into implementation - role mapping, transition planning, leadership alignment, communication, capability building, performance management, and adoption tracking - so the new model lives beyond the launch announcement.",
     ],
-    aiRole: [],
     deliverables: [
       "Organisation design pack - structure, spans, roles, and decision rights.",
       "Job architecture, capability gap map, and workforce shift plan.",
@@ -334,41 +309,7 @@ export function ServiceOfferingDetail({
         </div>
       </section>
 
-      {/* AI section rendered only when AI is genuinely central to the
-          capability. For GCC, Sustainability, and P&O, AI is mentioned
-          briefly in How We Help instead - supporting, not defining. */}
-      {body.aiRole.length > 0 && (
-        <section className="industry-detail-section industry-challenges-section">
-          <div className="industry-detail-shell">
-            <div className="industry-detail-heading">
-              <p className="eyebrow">AI Built In</p>
-              <h2>How AI shows up in {service.title}</h2>
-              <p>
-                We use AI where it sharpens judgement, accelerates analysis,
-                and strengthens execution - not as a separate workstream, but
-                woven into how the work is delivered.
-              </p>
-            </div>
-            <div className="industry-detail-card-grid industry-detail-card-grid--challenge">
-              {body.aiRole.map((aiUse, index) => {
-                const icons = [Bot, Compass, Layers3, Rocket, LineChart, CircleDot];
-                const Icon = icons[index % icons.length];
-                return (
-                  <article className="industry-detail-card industry-detail-card--challenge" key={aiUse}>
-                    <span className="industry-card-icon" aria-hidden="true">
-                      <Icon size={22} strokeWidth={1.7} />
-                    </span>
-                    <h3>{`AI lever ${index + 1}`}</h3>
-                    <p>{aiUse}</p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* What You Walk Away With - deliverables (artifacts) + outcomes (results) side by side. */}
+      {/* What You Walk Away With — deliverables (artifacts) + outcomes (results) side by side. */}
       <section className="industry-detail-section service-walkaway-section">
         <div className="industry-detail-shell">
           <div className="industry-detail-heading">

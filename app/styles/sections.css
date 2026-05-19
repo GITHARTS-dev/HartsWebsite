@@ -153,7 +153,7 @@
   opacity: 0;
 }
 
-/* Scroll cue — invites the visitor to continue past the welcome scene */
+/* Scroll cue - invites the visitor to continue past the welcome scene */
 .welcome-scroll-cue {
   position: absolute;
   bottom: clamp(40px, 7vh, 84px);
@@ -256,7 +256,7 @@
   animation: cinematic-rise 900ms ease 820ms both;
 }
 
-/* ── Consulting Section — Cinematic Hero (McKinsey-style) ─────────────────── */
+/* ── Consulting Section - Cinematic Hero (McKinsey-style) ─────────────────── */
 .consulting-section {
   --consulting-rise: 0px;
   --consulting-veil: 0;
@@ -276,7 +276,7 @@
   will-change: transform, opacity, filter;
 }
 
-/* Static variant — used now that the home hero is a standard PageHero and
+/* Static variant - used now that the home hero is a standard PageHero and
    the scroll-driven reveal of this section has been removed. Lays the
    section after the hero (no negative margin), fully visible, no filter. */
 .consulting-section--static {
@@ -287,7 +287,7 @@
   will-change: auto;
 }
 
-/* Veil layer — preserved for scroll-driven reveal animation */
+/* Veil layer - preserved for scroll-driven reveal animation */
 .consulting-section::before {
   position: absolute;
   inset: 0;
@@ -318,7 +318,7 @@
 
 .consulting-visual:hover { transform: none; box-shadow: none; }
 
-/* Brand red wash — denser on the left for text legibility, fades early
+/* Brand red wash - denser on the left for text legibility, fades early
    so the workshop photo reads clearly across the rest of the surface. */
 .consulting-visual::before {
   content: "";
@@ -339,7 +339,7 @@
   pointer-events: none;
 }
 
-/* Subtle vertical depth gradient — keeps top/bottom edges from feeling flat */
+/* Subtle vertical depth gradient - keeps top/bottom edges from feeling flat */
 .consulting-visual::after {
   content: "";
   position: absolute;
@@ -355,10 +355,10 @@
   pointer-events: none;
 }
 
-/* Caption card hidden — content is now in the main copy column */
+/* Caption card hidden - content is now in the main copy column */
 .visual-card { display: none; }
 
-/* Copy column — positioned over the navy gradient side */
+/* Copy column - positioned over the navy gradient side */
 .consulting-copy {
   position: relative;
   z-index: 3;
@@ -1554,7 +1554,7 @@
 
 /* Contact Page Styles */
 .contact-page {
-  /* Themed identically to the home page — same neutral landing background
+  /* Themed identically to the home page - same neutral landing background
      so the contact route reads as a continuation of the home experience. */
   --contact-bg: #F0F0F0;
   background: var(--contact-bg);
@@ -1830,7 +1830,7 @@
   min-height: calc(100vh - 72px);
 }
 
-/* ── How We Work — Editorial Hero ─────────────────────────────────────────── */
+/* ── How We Work - Editorial Hero ─────────────────────────────────────────── */
 .work-hero--editorial {
   position: relative;
   display: grid;
@@ -1934,7 +1934,7 @@
 }
 
 /* Buttons inside the red editorial hero need inverse contrast so they
-   read against the brand-red surface. Scoped overrides only — global
+   read against the brand-red surface. Scoped overrides only - global
    buttons elsewhere on the site keep the standard red-fill treatment. */
 .work-hero--editorial .solid-button {
   background: #FFFFFF;
@@ -1969,7 +1969,7 @@
   line-height: 1.74;
 }
 
-/* The Method panel — five-phase preview, white surface against the red hero */
+/* The Method panel - five-phase preview, white surface against the red hero */
 .work-hero-method {
   position: relative;
   display: flex;
@@ -2063,7 +2063,7 @@
   line-height: 1.6;
 }
 
-/* Scroll cue — vertical pulsing line */
+/* Scroll cue - vertical pulsing line */
 .work-hero-scroll-cue {
   position: absolute;
   left: 50%;
@@ -2395,7 +2395,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* ── Phase 02 (Design) — decorative dot-matrix underlay on the empty left side ─
+/* ── Phase 02 (Design) - decorative dot-matrix underlay on the empty left side ─
    Faint red watermark on white smoke. Masked so it fades to transparent
    before reaching the central timeline line. Purely decorative, no layout. */
 .work-phase--has-underlay .work-phase-copy,
@@ -2419,7 +2419,7 @@
   z-index: 0;
 }
 
-/* ── Soft wave underlay — white background with layered gray shadow bands ──
+/* ── Soft wave underlay - white background with layered gray shadow bands ──
    Shared across all five phases. The phase's .work-phase-left/right class
    controls which side it appears on; the mask fades it at the centre line. */
 .work-phase-underlay--mesh {
@@ -2477,10 +2477,10 @@
   background-image: url("/images/wave-pattern-right.svg");
 }
 
-/* ── Phase 02 (Design) — Japanese ocean-wave variant ───────────────────
+/* ── Phase 02 (Design) - Japanese ocean-wave variant ───────────────────
    Stacked layered wave masses with seigaiha-style concentric arcs and
    spiral wave crests, all rendered in brand red. Communicates fluidity,
-   agility, and metamorphic adaptation — the language of design. */
+   agility, and metamorphic adaptation - the language of design. */
 .work-phase-underlay--waves {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600' preserveAspectRatio='none'><defs><radialGradient id='bg' cx='320' cy='180' r='640' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%23E7473C' stop-opacity='0.06'/><stop offset='1' stop-color='%23E7473C' stop-opacity='0'/></radialGradient></defs><rect width='800' height='600' fill='url(%23bg)'/><path d='M0,320 Q100,250 200,290 T400,300 T600,260 T800,310 L800,600 L0,600 Z' fill='%23E7473C' fill-opacity='0.05'/><path d='M0,380 Q120,310 240,360 T480,370 T720,340 L800,400 L800,600 L0,600 Z' fill='%23E7473C' fill-opacity='0.07'/><path d='M0,440 Q140,380 280,420 T560,430 T800,400 L800,600 L0,600 Z' fill='%23E7473C' fill-opacity='0.10'/><path d='M0,500 Q100,460 200,490 T400,500 T600,470 T800,500 L800,600 L0,600 Z' fill='%23E7473C' fill-opacity='0.14'/><g fill='none' stroke='%23E7473C' stroke-linecap='round'><path d='M0,320 Q100,250 200,290 T400,300 T600,260 T800,310' stroke-opacity='0.30' stroke-width='1.4'/><path d='M0,380 Q120,310 240,360 T480,370 T720,340 L800,400' stroke-opacity='0.32' stroke-width='1.4'/><path d='M0,440 Q140,380 280,420 T560,430 T800,400' stroke-opacity='0.38' stroke-width='1.6'/><path d='M0,500 Q100,460 200,490 T400,500 T600,470 T800,500' stroke-opacity='0.42' stroke-width='1.6'/></g><g fill='none' stroke='%23E7473C' stroke-linecap='round' stroke-linejoin='round'><path d='M150,255 q-15,-25 5,-40 q25,-12 38,12 q12,25 -12,38 q-18,8 -28,-12' stroke-opacity='0.55' stroke-width='1.8'/><path d='M156,250 q-8,-15 4,-23 q15,-7 22,8' stroke-opacity='0.35' stroke-width='1.2'/><path d='M580,225 q-15,-25 5,-40 q25,-12 38,12 q12,25 -12,38 q-18,8 -28,-12' stroke-opacity='0.55' stroke-width='1.8'/><path d='M586,220 q-8,-15 4,-23 q15,-7 22,8' stroke-opacity='0.35' stroke-width='1.2'/></g><g fill='none' stroke='%23E7473C'><path d='M40,505 Q75,455 110,505' stroke-opacity='0.38' stroke-width='1.3'/><path d='M48,505 Q75,470 102,505' stroke-opacity='0.28' stroke-width='1.1'/><path d='M56,505 Q75,485 94,505' stroke-opacity='0.20' stroke-width='1'/><path d='M180,510 Q225,460 270,510' stroke-opacity='0.38' stroke-width='1.3'/><path d='M192,510 Q225,475 258,510' stroke-opacity='0.28' stroke-width='1.1'/><path d='M204,510 Q225,490 246,510' stroke-opacity='0.20' stroke-width='1'/><path d='M335,505 Q375,455 415,505' stroke-opacity='0.38' stroke-width='1.3'/><path d='M345,505 Q375,470 405,505' stroke-opacity='0.28' stroke-width='1.1'/><path d='M355,505 Q375,485 395,505' stroke-opacity='0.20' stroke-width='1'/><path d='M485,495 Q525,445 565,495' stroke-opacity='0.38' stroke-width='1.3'/><path d='M495,495 Q525,465 555,495' stroke-opacity='0.28' stroke-width='1.1'/><path d='M505,495 Q525,480 545,495' stroke-opacity='0.20' stroke-width='1'/><path d='M635,490 Q675,440 715,490' stroke-opacity='0.38' stroke-width='1.3'/><path d='M645,490 Q675,460 705,490' stroke-opacity='0.28' stroke-width='1.1'/><path d='M655,490 Q675,475 695,490' stroke-opacity='0.20' stroke-width='1'/></g><g fill='none' stroke='%23E7473C'><path d='M100,440 Q140,400 180,440' stroke-opacity='0.25' stroke-width='1'/><path d='M110,440 Q140,415 170,440' stroke-opacity='0.18' stroke-width='1'/><path d='M280,445 Q320,405 360,445' stroke-opacity='0.25' stroke-width='1'/><path d='M290,445 Q320,420 350,445' stroke-opacity='0.18' stroke-width='1'/><path d='M460,440 Q500,400 540,440' stroke-opacity='0.25' stroke-width='1'/><path d='M470,440 Q500,415 530,440' stroke-opacity='0.18' stroke-width='1'/><path d='M640,430 Q680,390 720,430' stroke-opacity='0.25' stroke-width='1'/><path d='M650,430 Q680,405 710,430' stroke-opacity='0.18' stroke-width='1'/></g></svg>");
   background-size: 50% 100%;
@@ -3163,7 +3163,7 @@
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HOW WE HELP — Overview page  (hwh-*)
+   HOW WE HELP - Overview page  (hwh-*)
    Color system (experimental): #E7473C · #F0F0F0 · #1A1A1A · #FFFFFF
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -3179,7 +3179,7 @@
   color: #1A1A1A;
 }
 
-/* Soft "studio light" spotlight + ambient red wash — lifts the headline area
+/* Soft "studio light" spotlight + ambient red wash - lifts the headline area
    while a faint blush warms the rest of the surface. */
 .hwh-hero::before {
   content: "";
@@ -3192,7 +3192,7 @@
   pointer-events: none;
 }
 
-/* Faint bottom grounding fade — subtle edge weight, slight red tint */
+/* Faint bottom grounding fade - subtle edge weight, slight red tint */
 .hwh-hero::after {
   content: "";
   position: absolute;
@@ -3347,7 +3347,7 @@
   transform: translateY(-2px);
 }
 
-/* ── Services — Bento Box ─────────────────────────────────────────────────── */
+/* ── Services - Bento Box ─────────────────────────────────────────────────── */
 .hwh-services {
   padding: clamp(72px, 8vw, 108px) 5vw;
   background: #F0F0F0;
@@ -3389,7 +3389,7 @@
   align-self: end;
 }
 
-/* ── Uniform square grid — 4 columns (8 services = 2 rows of 4) ─────────── */
+/* ── Uniform square grid - 4 columns (8 services = 2 rows of 4) ─────────── */
 .hwh-bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3399,7 +3399,7 @@
   margin: 0 auto;
 }
 
-/* Base card — identical squares */
+/* Base card - identical squares */
 .hwh-bento-card {
   position: relative;
   display: flex;
@@ -3428,7 +3428,7 @@
   transform: translateY(0);
 }
 
-/* Premium hover treatment — replaces the legacy sliding red bottom border.
+/* Premium hover treatment - replaces the legacy sliding red bottom border.
    On hover the card lifts slightly, a soft red radial glow emanates from
    the bottom edge of the surface, and a thin solid red rule appears along
    the top edge. The whole motion is calm, executive, and clearly readable
@@ -3480,7 +3480,7 @@
   opacity: 1;
 }
 
-/* Service number — red accent, top-left */
+/* Service number - red accent, top-left */
 .hwh-bento-num {
   font-size: 11px;
   font-weight: 900;
@@ -3490,7 +3490,7 @@
   flex-shrink: 0;
 }
 
-/* Icon — red, pushed toward vertical centre */
+/* Icon - red, pushed toward vertical centre */
 .hwh-bento-icon {
   margin-top: 28px;
   margin-bottom: 14px;
@@ -3502,7 +3502,7 @@
   transform: translateY(-4px);
 }
 
-/* Title — near-black for hierarchy against red icon/number/border */
+/* Title - near-black for hierarchy against red icon/number/border */
 .hwh-bento-content h3 {
   margin: 0 0 7px;
   font-size: 16px;
@@ -3511,7 +3511,7 @@
   color: #1A1A1A;
 }
 
-/* Description — dark neutral for paragraph readability on white smoke */
+/* Description - dark neutral for paragraph readability on white smoke */
 .hwh-bento-content p {
   margin: 0;
   font-size: 13px;
@@ -3519,7 +3519,7 @@
   color: rgba(26, 26, 26, 0.72);
 }
 
-/* Arrow — appears on hover, bottom-right */
+/* Arrow - appears on hover, bottom-right */
 .hwh-bento-arrow {
   position: absolute;
   bottom: clamp(16px, 2vw, 26px);
@@ -3873,7 +3873,7 @@
   .hwh-cta-actions { flex-direction: column; align-items: stretch; }
 }
 
-/* ── HOW WE HELP — Detail page: scoped overrides for shared utility classes ── */
+/* ── HOW WE HELP - Detail page: scoped overrides for shared utility classes ── */
 .service-offering-detail.enhanced .eyebrow { color: #E7473C; }
 .service-offering-detail.enhanced h1,
 .service-offering-detail.enhanced h2,
@@ -4239,7 +4239,7 @@
   margin: 0 auto;
 }
 
-/* Portrait card — entire card is the LinkedIn anchor */
+/* Portrait card - entire card is the LinkedIn anchor */
 .au-team-card {
   position: relative;
   display: flex;
@@ -4259,7 +4259,7 @@
   border-color: rgba(231, 71, 60, 0.14);
 }
 
-/* Portrait image container — 3:4 aspect ratio */
+/* Portrait image container - 3:4 aspect ratio */
 .au-team-portrait {
   position: relative;
   width: 100%;
@@ -4349,7 +4349,7 @@
   line-height: 1.4;
 }
 
-/* LinkedIn icon — navy by default, amber on hover */
+/* LinkedIn icon - navy by default, amber on hover */
 .au-team-li-icon {
   flex-shrink: 0;
   color: rgba(231, 71, 60, 0.28);
@@ -5556,7 +5556,7 @@
   background: #FFFFFF;
 }
 
-/* Help section — single premium card with icon + copy + Know More CTA */
+/* Help section - single premium card with icon + copy + Know More CTA */
 .industry-help-card {
   display: grid;
   grid-template-columns: minmax(120px, 160px) 1fr;
@@ -5616,7 +5616,7 @@
   .industry-help-icon { width: 96px; }
 }
 
-/* ── Industries page — premium 10-industry grid ─────────────────── */
+/* ── Industries page - premium 10-industry grid ─────────────────── */
 .industry-grid-section--premium {
   padding: clamp(72px, 9vw, 120px) 5vw;
   background: #FFFFFF;
@@ -5770,7 +5770,7 @@
   opacity: 1;
 }
 
-/* Final CTA on industries page — keep light, brand-aligned */
+/* Final CTA on industries page - keep light, brand-aligned */
 .industry-final-cta {
   padding: clamp(72px, 9vw, 120px) 5vw;
   background:
@@ -5808,7 +5808,7 @@
   margin-top: 8px;
 }
 
-/* ── About page — premium story + leadership grid ──────────────── */
+/* ── About page - premium story + leadership grid ──────────────── */
 .au-story {
   padding: clamp(72px, 9vw, 120px) 5vw;
   background: #FFFFFF;
@@ -6084,7 +6084,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   PREMIUM POLISH — impress factor
+   PREMIUM POLISH - impress factor
    Subtle gradient sheen on bento cards, refined card lift,
    and a clean visual hierarchy lift on the FAQ accordions.
    ═══════════════════════════════════════════════════════════════════════ */
@@ -6121,7 +6121,7 @@
   z-index: 1;
 }
 
-/* FAQ items — gentle lift on hover so the user feels the interactive
+/* FAQ items - gentle lift on hover so the user feels the interactive
    surface, plus a brand-coloured left accent that grows on open. */
 .hwh-faq-item {
   position: relative;
@@ -6151,7 +6151,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   UNIFIED OVERRIDES — applied to every card/box style across all pages
+   UNIFIED OVERRIDES - applied to every card/box style across all pages
    so they share the same sizing, typography, and visual language.
    ═══════════════════════════════════════════════════════════════════════ */
 
@@ -6221,7 +6221,7 @@
   letter-spacing: 0 !important;
 }
 
-/* Icon SVG inside the icon wrap — same size everywhere */
+/* Icon SVG inside the icon wrap - same size everywhere */
 .premium-info-card span svg,
 .premium-info-card .card-icon-only svg,
 .hwh-bento-icon svg,
@@ -6234,7 +6234,7 @@
   color: #E7473C !important;
 }
 
-/* ── 4. Unify card title (h3) size — small black title ───────────────── */
+/* ── 4. Unify card title (h3) size - small black title ───────────────── */
 .premium-info-card h3,
 .hwh-bento-content h3,
 .careers-card h3,
@@ -6248,7 +6248,7 @@
   color: #1A1A1A !important;
 }
 
-/* ── 5. Unify card paragraph — dark text on white ────────────────────── */
+/* ── 5. Unify card paragraph - dark text on white ────────────────────── */
 .premium-info-card p,
 .hwh-bento-content p,
 .careers-card p,
@@ -6271,7 +6271,7 @@
   font-size: 0 !important;
 }
 
-/* ── 6. Fix the How We Help arrow — always visible at bottom-right ───── */
+/* ── 6. Fix the How We Help arrow - always visible at bottom-right ───── */
 .hwh-bento-arrow {
   position: absolute !important;
   bottom: 16px !important;
@@ -6336,7 +6336,7 @@
   margin: 0 0 12px !important;
 }
 
-/* Section h2 — big and black, consistent across every page */
+/* Section h2 - big and black, consistent across every page */
 .home-section-heading h2,
 .au-section-hd h2,
 .hwh-services-hd h2,
@@ -6389,7 +6389,7 @@ a.solid-button:visited {
   height: 86vh !important;
 }
 
-/* Hide the home page's bottom scroll cue and decorative horizontal line — per request */
+/* Hide the home page's bottom scroll cue and decorative horizontal line - per request */
 .welcome-scroll-cue,
 .welcome-scroll-line {
   display: none !important;
@@ -6400,7 +6400,7 @@ a.solid-button:visited {
 }
 
 /* ──────────────────────────────────────────────────────────────────────
-   Sprint refinements — home premium + page heading tints
+   Sprint refinements - home premium + page heading tints
    ────────────────────────────────────────────────────────────────────── */
 
 /* ── Home: premium challenge visual ───────────────────────────────────── */
@@ -6471,7 +6471,7 @@ a.solid-button:visited {
   vertical-align: middle;
 } */
 
-/* ── Home: pre-footer Connect band — red surface, white type ─────────── */
+/* ── Home: pre-footer Connect band - red surface, white type ─────────── */
 .partner-section {
   background: #E7473C;
   color: #FFFFFF;
@@ -6512,9 +6512,9 @@ a.solid-button:visited {
 }
 
 /* ── Section heading tints ────────────────────────────────────────────── */
-/* How We Work — principles section title */
+/* How We Work - principles section title */
 
-/* Where We Engage — Sector Coverage block (eyebrow + h2 both red) */
+/* Where We Engage - Sector Coverage block (eyebrow + h2 both red) */
 .industry-grid-section--premium .industry-grid-heading .eyebrow {
   color: #E7473C !important;
   /* Match the Capabilities eyebrow on How We Help exactly so all section
@@ -6634,9 +6634,9 @@ a.solid-button:visited {
 }
 
 /* ────────────────────────────────────────────────────────────────────────
-   Circle variant — "How We Help" panels on each service detail page.
+   Circle variant - "How We Help" panels on each service detail page.
    Numbered step cards, double-ring frame, dashed horizontal connector.
-   Auto-numbered via CSS counters — no JSX changes required. */
+   Auto-numbered via CSS counters - no JSX changes required. */
 .service-body-grid--circles {
   position: relative;
   gap: clamp(20px, 2.4vw, 36px);
@@ -6754,7 +6754,7 @@ a.solid-button:visited {
   }
 }
 
-/* ── Service detail — back-to-services link. */
+/* ── Service detail - back-to-services link. */
 .service-back-wrap {
   padding: clamp(20px, 2.4vw, 32px) 0 0;
   background: #FFFFFF;
@@ -6801,7 +6801,7 @@ a.solid-button:visited {
   transform: translateX(-3px);
 }
 
-/* ── Challenge section — pain-recognition opener. */
+/* ── Challenge section - pain-recognition opener. */
 .service-challenge-section {
   padding: clamp(36px, 5vw, 72px) 0 clamp(12px, 2vw, 28px);
   background: #FFFFFF;
@@ -6830,7 +6830,7 @@ a.solid-button:visited {
   border-left: 3px solid #E7473C;
 }
 
-/* ── What You Walk Away With — deliverables + outcomes side by side. */
+/* ── What You Walk Away With - deliverables + outcomes side by side. */
 .service-walkaway-section {
   background: #FFFFFF;
 }
@@ -7041,7 +7041,7 @@ a.solid-button:visited {
   }
 }
 
-/* Home hero photo background — user-provided photograph at
+/* Home hero photo background - user-provided photograph at
    /public/hero/home-hero.jpg. The static .welcome-scene-image layer above
    handles the actual photo; this rule simply ensures the wrapper has the
    correct fallback color and that the legacy ::before red tint is removed. */
@@ -7058,7 +7058,7 @@ a.solid-button:visited {
   display: none !important;
 }
 
-/* Center the welcome content (home-style) — no longer left-aligned. */
+/* Center the welcome content (home-style) - no longer left-aligned. */
 .cinematic-home .welcome-content {
   justify-items: center;
   width: min(100%, 900px);
@@ -7389,7 +7389,7 @@ a.solid-button:visited {
 
 
 /* ──────────────────────────────────────────────────────────────────────
-   Static photographic hero — replaces the scroll-locked welcome scene
+   Static photographic hero - replaces the scroll-locked welcome scene
    on the home page. The hero is now a single full-bleed panel: a real
    photograph + dark gradient veil + white typography. No scroll lock,
    no entrance animation, no red logo backdrop, no scroll-cue line.
@@ -7438,7 +7438,7 @@ a.solid-button:visited {
   display: none !important;
 }
 
-/* Photographic scene layers — image + soft dark veil for legibility. */
+/* Photographic scene layers - image + soft dark veil for legibility. */
 .welcome-screen--static .welcome-scene {
   position: absolute;
   inset: 0;
@@ -7453,7 +7453,7 @@ a.solid-button:visited {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* No animation — fully static. */
+  /* No animation - fully static. */
 }
 
 .welcome-screen--static .welcome-scene-veil {
@@ -7468,7 +7468,7 @@ a.solid-button:visited {
     );
 }
 
-/* Typography on the static hero — bright over the photograph, with no
+/* Typography on the static hero - bright over the photograph, with no
    entrance animation. */
 .welcome-screen--static .welcome-content {
   position: relative;
@@ -7532,7 +7532,7 @@ a.solid-button:visited {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   ABOUT PAGE — PREMIUM TEAM SECTION (light)
+   ABOUT PAGE - PREMIUM TEAM SECTION (light)
    Pearl-white backdrop · fluid-blob portrait accents · uniform image sizing
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -7558,7 +7558,7 @@ a.solid-button:visited {
   z-index: 0;
 }
 
-/* Decorative large soft orb — bottom-right */
+/* Decorative large soft orb - bottom-right */
 .au-team::after {
   content: "";
   position: absolute;
@@ -7635,7 +7635,7 @@ a.solid-button:visited {
   aspect-ratio: 3 / 3.5 !important;
   overflow: hidden !important;
   flex-shrink: 0 !important;
-  /* Subtle smoky atmosphere — gentle gradient base, soft mist puffs */
+  /* Subtle smoky atmosphere - gentle gradient base, soft mist puffs */
   background:
     radial-gradient(ellipse 80% 65% at 50% 48%, rgba(255,255,255,0.70) 0%, rgba(255,255,255,0.35) 42%, transparent 68%),
     radial-gradient(ellipse 50% 42% at 22% 80%, rgba(242,244,250,0.50) 0%, transparent 55%),
@@ -7644,7 +7644,7 @@ a.solid-button:visited {
     linear-gradient(168deg, #E2E6EE 0%, #EAEEf5 35%, #DDE2EC 70%, #D6DBE6 100%) !important;
 }
 
-/* Gentle floating mist — very soft, barely perceptible drift */
+/* Gentle floating mist - very soft, barely perceptible drift */
 .au-team-portrait--rounded::before {
   content: "";
   position: absolute;
@@ -7669,7 +7669,7 @@ a.solid-button:visited {
   100% { border-radius: 48% 52% 44% 56% / 52% 48% 56% 44%; transform: translate(2%, -3%) scale(1.02); }
 }
 
-/* ── Photo — transparent PNG floats above the smoke layer ───────── */
+/* ── Photo - transparent PNG floats above the smoke layer ───────── */
 .au-team-portrait--rounded .au-team-portrait-img {
   position: absolute !important;
   inset: 0 !important;
@@ -7685,7 +7685,7 @@ a.solid-button:visited {
   transform: scale(1.06) !important;
 }
 
-/* Very soft white fade at bottom — just enough to soften any edge */
+/* Very soft white fade at bottom - just enough to soften any edge */
 .au-team-card--premium .au-team-portrait-overlay {
   position: absolute !important;
   bottom: 0 !important;
@@ -7792,11 +7792,11 @@ a.solid-button:visited {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   ABOUT PAGE — MANIFESTO TEAM SECTION
+   ABOUT PAGE - MANIFESTO TEAM SECTION
    White background · 2×2 compact grid · team-colour titles & accents
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Section shell — white, compact vertical padding ─────────────────── */
+/* ── Section shell - white, compact vertical padding ─────────────────── */
 .au-manifesto {
   padding: clamp(52px, 6vw, 80px) 5vw;
   background:
@@ -7820,7 +7820,7 @@ a.solid-button:visited {
 
 .au-manifesto > * { position: relative; z-index: 1; }
 
-/* ── Heading — compact ──────────────────────────────────────────────── */
+/* ── Heading - compact ──────────────────────────────────────────────── */
 .au-manifesto-hd {
   text-align: center;
   max-width: 620px;
@@ -7847,7 +7847,7 @@ a.solid-button:visited {
   color: #6B7280;
 }
 
-/* ── 2×2 grid — compact gaps ────────────────────────────────────────── */
+/* ── 2×2 grid - compact gaps ────────────────────────────────────────── */
 .au-manifesto-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -7856,7 +7856,7 @@ a.solid-button:visited {
   margin: 0 auto;
 }
 
-/* ── Base card — white, light border, small shadow ──────────────────── */
+/* ── Base card - white, light border, small shadow ──────────────────── */
 .au-manifesto-card {
   position: relative;
   display: flex;
@@ -7883,7 +7883,7 @@ a.solid-button:visited {
     0 18px 48px rgba(0,0,0,0.10);
 }
 
-/* ── Hover background tint — per team ───────────────────────────────── */
+/* ── Hover background tint - per team ───────────────────────────────── */
 .au-manifesto-card::before {
   content: "";
   position: absolute;
@@ -8022,7 +8022,7 @@ a.solid-button:visited {
   }
 }
 
-/* ── Eyebrow colour fixes — beat the broad paragraph overrides ───────── */
+/* ── Eyebrow colour fixes - beat the broad paragraph overrides ───────── */
 /* "Our story" in about page */
 .au-story .eyebrow {
   color: #E7473C !important;
@@ -8033,7 +8033,7 @@ a.solid-button:visited {
   color: #E7473C !important;
 }
 
-/* ── Challenges section — premium image frame ─────────────────────────── */
+/* ── Challenges section - premium image frame ─────────────────────────── */
 .challenge-image-wrap {
   position: relative;
   align-self: stretch;

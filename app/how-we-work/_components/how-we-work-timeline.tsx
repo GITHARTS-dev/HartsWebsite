@@ -17,7 +17,7 @@ const phases: {
   {
     title: "Diagnose",
     focus: "We do not prescribe before we understand.",
-    desc: "HARTS begins by interrogating organizational priorities, leadership conviction, operational constraints, and long-term ambitions — forming a grounded baseline before a single recommendation is made.",
+    desc: "HARTS begins by interrogating organizational priorities, leadership conviction, operational constraints, and long-term ambitions - forming a grounded baseline before a single recommendation is made.",
     points: [
       "Organizational diagnostic",
       "Leadership alignment mapping",

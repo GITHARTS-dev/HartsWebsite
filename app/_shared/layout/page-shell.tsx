@@ -12,7 +12,7 @@ import { ScrollReveal } from "./scroll-reveal";
  * Every route should land at scroll-y 0 on initial mount / navigation, so the
  * hero is always the first thing in view. Browsers otherwise restore previous
  * scroll positions on refresh and Next's router can defer scroll-to-top under
- * some flag combinations — force it explicitly here.
+ * some flag combinations - force it explicitly here.
  */
 function useScrollToTopOnNavigation() {
   const pathname = usePathname();

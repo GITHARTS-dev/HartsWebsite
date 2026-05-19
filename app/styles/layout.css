@@ -8,7 +8,7 @@
   gap: clamp(18px, 3vw, 42px);
   min-height: 72px;
   padding: 0 5vw;
-  /* Solid, near-opaque header — readable on any background. */
+  /* Solid, near-opaque header - readable on any background. */
   background:
     linear-gradient(
       180deg,
@@ -67,7 +67,7 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: var(--ink);
+  color: #e63030;
   font-family: DM Sans, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14.5px;
   font-weight: 620;
@@ -83,19 +83,22 @@
 
 .nav-pill:hover,
 .nav-pill:focus-visible {
-  background: rgba(94, 98, 95, 0.12);
+  background: #e63030;
+  color: #ffffff;
   outline: none;
 }
 
 .nav-pill:active {
+  background: #e63030;
+  color: #ffffff;
   transform: scale(0.96);
   transition-duration: 60ms;
 }
 
-/* Active route: filled grey background + white underline pill */
+/* Active route: filled red background + white underline pill */
 .nav-pill--active {
-  background: #8A8F8C;
-  color: #FFFFFF;
+  background: #e63030;
+  color: #ffffff;
   font-weight: 720;
 }
 
@@ -185,7 +188,7 @@
   transform: translateX(3px);
 }
 
-/* ── Header action buttons — sized to match nav pills ──────────── */
+/* ── Header action buttons - sized to match nav pills ──────────── */
 .header-actions .outline-button,
 .header-actions .solid-button {
   min-height: 36px;

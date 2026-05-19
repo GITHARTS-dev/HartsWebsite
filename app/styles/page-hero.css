@@ -235,7 +235,7 @@
 
 /* How We Help — consulting workshop / collaboration (user-provided) */
 .page-hero--how-we-help .page-hero-scene-image {
-  background-image: url("/hero/how-we-help-hero.jpg");
+  background-image: url("/hero/how-we-help-2.jpg");
 }
 
 /* ── Service detail pages — premium, executive-grade photography.
@@ -311,19 +311,39 @@
 /* Industry detail scenes — each gets a sector-relevant photo */
 .page-hero--industry-aerospace .page-hero-scene-image {
   background-image: url("/hero/aerospace-hero.jpg");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-aerospace .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 .page-hero--industry-automotive .page-hero-scene-image {
   background-image: url("/hero/automotive-hero.jpg");
+  background-position: center 60%;
+  filter: grayscale(50%) brightness(0.95);
 }
 
-/* Oil & Gas — iconic offshore rig / refinery infrastructure, cinematic wide
-   composition matching the aerospace hero. Multiple fallbacks stacked so
-   one URL going stale doesn't break the hero. */
+/* Match the default aerospace-style veil — image shows through, text stays legible */
+.page-hero--industry-automotive .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
+}
+
 .page-hero--industry-oil-gas .page-hero-scene-image {
-  background-image:
-    url("/hero/oil-gas-hero.jpg"),
-    linear-gradient(135deg, #1a2530 0%, #2c3e50 100%);
+  background-image: url("/hero/oil-gas-hero.jpg");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-oil-gas .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 .page-hero--industry-healthcare .page-hero-scene-image {
@@ -332,26 +352,74 @@
 
 .page-hero--industry-chemicals .page-hero-scene-image {
   background-image: url("/hero/chemicals-hero.jpg");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-chemicals .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 .page-hero--industry-life-sciences .page-hero-scene-image {
   background-image: url("/hero/life-sciences-hero.png");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-life-sciences .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 .page-hero--industry-energy .page-hero-scene-image {
   background-image: url("/hero/energy-hero.jpg");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-energy .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 .page-hero--industry-technology .page-hero-scene-image {
   background-image: url("/hero/technology-hero.png");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-technology .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 .page-hero--industry-telecom .page-hero-scene-image {
   background-image: url("/hero/telecom-hero.png");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-telecom .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 .page-hero--industry-transportation .page-hero-scene-image {
   background-image: url("/hero/transportation-hero.jpg");
+  background-position: center 50%;
+  filter: grayscale(40%) brightness(0.95);
+}
+
+.page-hero--industry-transportation .page-hero-scene-veil {
+  background:
+    radial-gradient(ellipse 65% 50% at 50% 45%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 50%, rgba(255, 255, 255, 0.60) 100%),
+    linear-gradient(180deg, rgba(240, 240, 240, 0.38) 0%, rgba(240, 240, 240, 0.52) 100%);
 }
 
 /* Default fallback — generic professional photo */

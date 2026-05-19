@@ -67,6 +67,8 @@ type IndustryContent = {
   titleSoft: string;
   titleStrong: string;
   subtitle: string;
+  overviewEyebrow?: string;
+  overviewTitle?: string;
   overview: {
     paragraphs: string[];
     forces: string[];
@@ -85,96 +87,174 @@ const content: Record<string, IndustryContent> = {
     slug: "automotive",
     scene: "industry-automotive",
     label: "Automotive",
-    eyebrow: "Automotive consulting",
-    titleSoft: "Accelerating",
-    titleStrong: "Automotive transformation.",
+    eyebrow: "Automotive Consulting",
+    titleSoft: "Don't manage the shift.",
+    titleStrong: "Lead it.",
     subtitle:
-      "We support automotive enterprises in modernising operations, improving manufacturing scalability, driving mobility innovation, and enabling enterprise-wide transformation.",
+      "The automotive industry is undergoing its most consequential restructuring in over a century. OEMs and suppliers that win the next decade will not be those that survive the transition — they will be those who deliberately designed for it. We help you get there faster.",
+    overviewEyebrow: "Market Reality",
+    overviewTitle: "The $3 Trillion Restructuring.",
     overview: {
       paragraphs: [
-        "The automotive industry is rapidly evolving through electrification, connected mobility ecosystems, digital manufacturing, and changing customer expectations. Organisations must adapt operating models without sacrificing production efficiency, innovation speed, or supply-chain resilience.",
-        "Modern automotive enterprises require agile transformation frameworks capable of supporting smart manufacturing, operational scalability, and data-driven decision-making across global networks.",
+        "The automotive industry is at a genuine inflection point. Electrification, software-defined vehicle architectures, direct-to-consumer models, and aggressive new entrants from China and Silicon Valley are simultaneously compressing margins, disrupting legacy supply chains, and redefining what it means to build and sell a vehicle. Traditional competitive advantages — scale, brand, dealer networks, ICE engineering depth — are no longer reliable moats.",
+        "OEMs and Tier 1 suppliers that outperform over the next decade will do so not by reacting to these forces, but by building fundamentally different operating models around them. That requires clarity on where to compete, the organisational discipline to restructure what no longer fits, and the execution capability to move with the speed that new entrants already operate at.",
       ],
-      forces: ["Electrification", "Connected mobility", "Smart manufacturing", "Supply volatility"],
+      forces: ["EV platform profitability", "Software-defined vehicles", "Supply chain de-risking", "Direct-to-consumer shift"],
     },
     challenges: [
-      { title: "Supply-chain volatility", text: "Material constraints, supplier risk, and logistics disruption pressure production plans and margin discipline.", Icon: RefreshCw },
-      { title: "Manufacturing inefficiencies", text: "Uneven throughput, rework, downtime, and inconsistent process adherence limit performance gains.", Icon: Factory },
-      { title: "Production scalability", text: "New platforms and regional demand shifts require operating models that scale without disrupting quality.", Icon: Gauge },
-      { title: "Technology-integration complexity", text: "Digital factory, vehicle software, ERP, MES, and analytics programs often advance at different speeds.", Icon: Binary },
-      { title: "Compressed innovation cycles", text: "EV, software-defined vehicle, and connected-services programmes squeeze planning and execution windows.", Icon: Sparkles },
-      { title: "Data fragmentation", text: "Operational data is available but not trusted, connected, or translated into action.", Icon: BarChart3 },
+      {
+        title: "EV transition profitability",
+        text: "Scaling BEV platforms while managing ICE revenue decline, stranded asset risk, and battery cost curves demands a financial and operational strategy most incumbents have not yet built.",
+        Icon: Zap,
+      },
+      {
+        title: "Software-defined vehicle readiness",
+        text: "Hardware-centric R&D, fragmented supplier relationships, and waterfall development cycles are structurally incompatible with software-first product architectures. The gap is widening.",
+        Icon: Binary,
+      },
+      {
+        title: "Supply chain concentration risk",
+        text: "Semiconductor dependencies, battery material geopolitics, and single-source Tier 2 exposure have turned supply chain design into a board-level strategic risk — not a procurement issue.",
+        Icon: Globe2,
+      },
+      {
+        title: "Manufacturing cost restructuring",
+        text: "BEV platforms require 30–40% fewer components. The manufacturing footprint, workforce model, and supplier base built for ICE production cannot carry the next architecture.",
+        Icon: Factory,
+      },
+      {
+        title: "New-entrant competitive pressure",
+        text: "Tesla, BYD, and technology-native OEMs compete on software velocity, cost structure, and customer experience — not legacy brand equity or dealer volume. The benchmarks have moved.",
+        Icon: TrendingUp,
+      },
+      {
+        title: "Commercial model disruption",
+        text: "Agency sales, digital retail, over-the-air revenue, and subscription mobility require a complete redesign of the commercial operating model that most incumbents are still deferring.",
+        Icon: RefreshCw,
+      },
     ],
     helpStatement:
-      "HARTS partners with automotive leaders to convert market pressure into operating advantage — sharpening manufacturing maturity, scaling global capability models, and installing the governance that disciplined transformation requires.",
+      "HARTS partners with automotive OEMs, Tier 1 suppliers, and mobility platforms to navigate the most consequential restructuring in the industry's history. We bring the strategic clarity and operating discipline to execute EV transitions profitably, build software-ready organisations, redesign supply chains for resilience, and construct cost structures built for the next decade — not the last one. We work at the intersection of strategy and execution, which is where automotive transformations are actually won or lost.",
     HelpHeroIcon: Car,
     cta: {
-      title: "Move automotive transformation from initiative to operating advantage.",
-      text: "Work with HARTS to strengthen manufacturing maturity, scale global capabilities, and build the governance needed for modern mobility.",
+      title: "The window to define your position in the next automotive era is closing.",
+      text: "Leaders who act now — on EV profitability, software capability, supply chain resilience, and commercial model redesign — will compound advantage over competitors still deliberating. Work with HARTS to move from ambition to operating reality.",
     },
   },
   aerospace: {
     slug: "aerospace",
     scene: "industry-aerospace",
     label: "Aerospace",
-    eyebrow: "Aerospace consulting",
-    titleSoft: "Precision-driven",
-    titleStrong: "Aerospace operations.",
+    eyebrow: "Aerospace Consulting",
+    titleSoft: "Built for complexity.",
+    titleStrong: "Engineered to outperform.",
     subtitle:
-      "We help aerospace organisations modernise operational ecosystems, improve engineering collaboration, strengthen supply-chain visibility, and accelerate enterprise transformation initiatives.",
+      "Aerospace organisations face the most demanding operating environment on earth — where regulatory failure, supply chain fractures, and program overruns carry consequences that no other industry tolerates. We help you build the operational rigour, supply chain resilience, and transformation discipline to compete at the highest level.",
+    overviewEyebrow: "Industry Reality",
+    overviewTitle: "Record demand. Fractured supply. No margin for error.",
     overview: {
       paragraphs: [
-        "Aerospace operates within one of the world’s most complex, regulated environments. Organisations must balance innovation, operational efficiency, engineering precision, regulatory compliance, and supply-chain resilience while responding to evolving global demand.",
-        "Modern aerospace enterprises require scalable operating models, digitally connected ecosystems, and transformation frameworks that improve agility without compromising reliability or compliance.",
+        "Commercial aviation is carrying the largest order backlog in history — over 14,000 aircraft across Airbus and Boeing — yet the industry cannot deliver fast enough. The bottleneck is not demand. It is a supply chain that was hollowed out during COVID, a Tier 2 and Tier 3 supplier base under severe financial stress, engine shortages, and a workforce pipeline that has not recovered. The gap between what airlines ordered and what OEMs can certify and deliver is measured in years, not quarters.",
+        "At the same time, defence programmes face budget scrutiny, schedule pressure, and the challenge of integrating next-generation capabilities — autonomous systems, directed energy, advanced propulsion — into acquisition frameworks built for a slower era. Across both sectors, the operating model challenge is the same: how do you scale output, maintain certification integrity, and transform digitally without introducing the kind of systemic risk that grounds fleets and triggers regulatory intervention?",
       ],
-      forces: ["Certification rigour", "Program complexity", "Supplier resilience", "Engineering precision"],
+      forces: ["Supply chain reconstruction", "Certification integrity", "Program cost discipline", "Workforce recovery"],
     },
     challenges: [
-      { title: "Engineering collaboration", text: "Distributed engineering teams need decision clarity, configuration discipline, and stronger coordination from concept through certification.", Icon: Network },
-      { title: "Global supply-chain risk", text: "Multi-tier supplier exposure makes continuity, quality, and schedule assurance hard to govern in real time.", Icon: Globe2 },
-      { title: "Compliance pressure", text: "Regulatory obligations demand traceable processes, auditable evidence, and operating routines that withstand scrutiny.", Icon: FileCheck2 },
-      { title: "Legacy systems", text: "Fragmented platforms slow visibility across program management, engineering change, and quality.", Icon: Binary },
-      { title: "Production scalability", text: "Scaling output requires synchronised planning, standardised work, and operational controls that preserve precision.", Icon: Gauge },
-      { title: "Data silos", text: "Critical signals stay trapped across PLM, ERP, MES, and program-reporting layers.", Icon: Blocks },
+      {
+        title: "Supply chain fragility",
+        text: "Tier 2 and Tier 3 supplier financial distress, single-source dependencies, and raw material constraints are the primary brake on production rate recovery — and most OEMs do not have full visibility below Tier 1.",
+        Icon: Globe2,
+      },
+      {
+        title: "Program execution discipline",
+        text: "Cost overruns, schedule slippage, and scope creep remain endemic across both commercial and defence programs. The root cause is rarely technical — it is governance, decision rights, and change-control discipline.",
+        Icon: ShieldCheck,
+      },
+      {
+        title: "Certification and regulatory scrutiny",
+        text: "Post-737 MAX, FAA and EASA oversight has fundamentally intensified. Organisations without traceable, auditable quality systems face programme holds, delivery delays, and reputational consequences that compound across programmes.",
+        Icon: FileCheck2,
+      },
+      {
+        title: "MRO capacity constraints",
+        text: "Ageing fleets, parts shortages, and shop visit backlogs are pushing MRO capacity to its limits — creating commercial pressure on airlines and revenue opportunity for operators who can scale maintenance throughput reliably.",
+        Icon: Gauge,
+      },
+      {
+        title: "Sustainability and next-gen propulsion",
+        text: "SAF mandates, carbon-reduction commitments, and the race to certify hybrid-electric and hydrogen propulsion are forcing R&D prioritisation decisions that will define competitive positioning for the next 30 years.",
+        Icon: Sparkles,
+      },
+      {
+        title: "Engineering talent crisis",
+        text: "A generation of experienced aerospace engineers is retiring. The skills to replace them — digital engineering, model-based systems engineering, software integration — are scarce and intensely competed for across sectors.",
+        Icon: Network,
+      },
     ],
     helpStatement:
-      "HARTS helps aerospace leadership teams modernise critical workflows, embed transformation governance, and scale operating models with the precision regulated enterprises require.",
+      "HARTS partners with aerospace OEMs, Tier 1 suppliers, MRO operators, and defence primes to solve the operating challenges that determine whether programmes deliver and enterprises grow. We bring the programme governance discipline, supply chain intelligence, and organisational design capability that aerospace demands — applied by consultants who understand that in this industry, operational failure is not an option.",
     HelpHeroIcon: Plane,
     cta: {
-      title: "Build the next aerospace operating advantage.",
-      text: "Partner with HARTS to assess maturity, modernise critical workflows, and scale transformation with the precision your enterprise requires.",
+      title: "The order books are full. The question is whether you can deliver.",
+      text: "Every month of production delay, every regulatory hold, and every supply chain fracture compounds into lost revenue and eroded customer confidence. Work with HARTS to build the operating discipline, supply chain resilience, and programme governance that turns backlog into delivered aircraft — and ambitious programmes into certified ones.",
     },
   },
   "oil-gas": {
     slug: "oil-gas",
     scene: "industry-oil-gas",
     label: "Oil & Gas",
-    eyebrow: "Oil & Gas consulting",
-    titleSoft: "Disciplined operations.",
-    titleStrong: "Capital-grade execution.",
+    eyebrow: "Oil & Gas Consulting",
+    titleSoft: "Perform today.",
+    titleStrong: "Transition on your terms.",
     subtitle:
-      "We support oil & gas enterprises with operating-model design, asset-performance discipline, and transformation governance across upstream, midstream, and downstream operations.",
+      "The oil & gas industry is navigating its most complex strategic moment in decades — delivering shareholder returns under commodity volatility while simultaneously managing decarbonisation obligations, asset reliability, and the long-term question of where hydrocarbons fit in an evolving energy system. We help you hold both imperatives without sacrificing either.",
+    overviewEyebrow: "Sector Reality",
+    overviewTitle: "Caught between two eras — and answerable to both.",
     overview: {
       paragraphs: [
-        "Oil & gas operators are managing volatile markets, decarbonisation pressure, and the need to extract more value from existing assets while preparing for an evolving energy mix.",
-        "Sustained performance depends on operating discipline, capital governance, digitally enabled asset intelligence, and integrated decision-making across exploration, production, processing, and commercial functions.",
+        "Institutional investors are demanding credible energy-transition roadmaps. Governments are imposing methane reduction targets, carbon-pricing mechanisms, and scope emissions disclosure. And yet global oil demand remains above 100 million barrels per day, gas is indispensable to energy security across Europe and Asia, and the capital required to maintain production — let alone fund transition — demands that hydrocarbon assets stay commercially disciplined for the foreseeable future. The pressure is not to choose between performance and transition. It is to do both, with the same organisation, at the same time.",
+        "That dual mandate exposes every weakness in an operating model: capital allocation frameworks built for a single-horizon world, asset-reliability programmes that are reactive rather than predictive, workforce models that are losing experienced operators to retirement and skilled engineers to the energy transition sector, and digital programmes that have promised operational intelligence for a decade but rarely delivered it at scale. The organisations that outperform will be those that treat both imperatives — profitability and transition — as operating disciplines, not competing priorities.",
       ],
-      forces: ["Capital discipline", "Asset reliability", "Decarbonisation pressure", "Commodity volatility"],
+      forces: ["Dual-mandate capital discipline", "Asset reliability at scale", "Decarbonisation credibility", "Geopolitical supply risk"],
     },
     challenges: [
-      { title: "Asset reliability", text: "Unplanned downtime and reactive maintenance erode production, margin, and safety performance.", Icon: Gauge },
-      { title: "Capital programme delivery", text: "Major capital projects face schedule, cost, and integration risk without disciplined governance.", Icon: ShieldCheck },
-      { title: "Decarbonisation expectations", text: "Stakeholders demand measurable progress while assets must remain commercially performant.", Icon: Droplets },
-      { title: "Fragmented operations data", text: "SCADA, ERP, planning, and reliability systems rarely converge into one operating picture.", Icon: BarChart3 },
-      { title: "Workforce and HSE pressure", text: "Talent transition and safety performance require modernised processes and routines.", Icon: LifeBuoy },
-      { title: "Commercial volatility", text: "Trading, hedging, and portfolio decisions require sharper scenario intelligence.", Icon: TrendingUp },
+      {
+        title: "Stranded asset and portfolio risk",
+        text: "Long-cycle capital commitments made in a high-demand world now carry transition risk. Knowing which assets to develop, optimise, or divest — and when — is the most consequential strategic decision in O&G today.",
+        Icon: TrendingUp,
+      },
+      {
+        title: "Asset reliability and production loss",
+        text: "Unplanned downtime, reactive maintenance cultures, and ageing infrastructure cost the industry billions annually in deferred production. Predictive reliability is not a technology problem — it is an operating-model problem.",
+        Icon: Gauge,
+      },
+      {
+        title: "Capital programme discipline",
+        text: "Major upstream developments and midstream infrastructure projects chronically overrun on cost and schedule. The root cause is almost always governance — not engineering — and it is fixable.",
+        Icon: ShieldCheck,
+      },
+      {
+        title: "Decarbonisation under commercial pressure",
+        text: "Methane abatement, flaring reduction, carbon capture, and scope emissions reporting require genuine operational change. Programmes that live in the sustainability function rather than the operating model will not deliver credible results.",
+        Icon: Droplets,
+      },
+      {
+        title: "Workforce and knowledge transfer",
+        text: "A generation of experienced operators and reservoir engineers is retiring. The knowledge required to safely and efficiently run complex assets is walking out the door faster than it is being replaced or codified.",
+        Icon: LifeBuoy,
+      },
+      {
+        title: "Fragmented operational data",
+        text: "SCADA, historian, ERP, planning, and reliability systems generate data in silos that rarely converge into a single operating picture. The digital oilfield has been promised for twenty years — most organisations are still waiting for it.",
+        Icon: BarChart3,
+      },
     ],
     helpStatement:
-      "HARTS helps oil & gas leadership teams modernise asset operating models, strengthen capital governance, and translate decarbonisation ambition into operating discipline.",
+      "HARTS partners with upstream operators, midstream infrastructure owners, and integrated majors to solve the operating challenges that determine production performance, capital returns, and transition credibility. We bring the asset-management discipline, capital-governance rigour, and organisational design capability to help oil & gas enterprises run their current assets harder — while building the operating model that a lower-carbon future actually requires.",
     HelpHeroIcon: Flame,
     cta: {
-      title: "Run a more disciplined oil & gas operating model.",
-      text: "Partner with HARTS to lift asset reliability, sharpen capital governance, and convert decarbonisation ambition into measurable execution.",
+      title: "The transition is real. So is the obligation to perform right now.",
+      text: "The organisations that will define the next era of energy are not choosing between profitability and decarbonisation — they are building the operating discipline to deliver both. Work with HARTS to sharpen asset performance, strengthen capital governance, and make your transition strategy operationally credible.",
     },
   },
   healthcare: {
@@ -213,192 +293,348 @@ const content: Record<string, IndustryContent> = {
     slug: "chemicals",
     scene: "industry-chemicals",
     label: "Chemicals",
-    eyebrow: "Chemicals consulting",
-    titleSoft: "Process-driven.",
-    titleStrong: "Performance-disciplined.",
+    eyebrow: "Chemicals Consulting",
+    titleSoft: "Margin under pressure.",
+    titleStrong: "Discipline is the differentiator.",
     subtitle:
-      "We help chemical manufacturers optimise process performance, strengthen safety governance, and scale transformation across complex production networks.",
+      "The chemical industry is being compressed from every direction — feedstock volatility, energy cost spikes, sustainability mandates, and specialty competitors eroding commodity margins. The organisations that outperform do not have better chemistry. They have better operating discipline. We help you build it.",
+    overviewEyebrow: "Industry Reality",
+    overviewTitle: "Squeezed on every side. The middle is disappearing.",
     overview: {
       paragraphs: [
-        "Chemical enterprises face cyclical demand, sustainability obligations, asset-reliability pressure, and the need to modernise plant operations while protecting safety and quality.",
-        "Disciplined transformation requires connected process, asset, and supply-chain visibility — anchored in clear operating routines and capital governance.",
+        "The chemical industry's structural economics are under sustained attack. Commodity producers face margin compression from overcapacity in China, energy cost asymmetry versus Middle Eastern and US competitors, and feedstock volatility that punishes those without supply-chain optionality. Specialty chemical producers — once insulated by formulation complexity and customer lock-in — are watching their premium positions erode as customers intensify price scrutiny and alternative chemistries emerge. Across the value chain, the operational buffer that absorbed inefficiency during high-demand cycles is gone.",
+        "Simultaneously, the industry faces a sustainability reckoning that is no longer optional. REACH regulations, plastics legislation, carbon border adjustments, and Scope 3 emissions disclosure requirements are reshaping product portfolios, capital allocation, and customer relationships faster than most chemical enterprises have adapted their operating models. Plants designed for a different regulatory and cost environment are now carrying legacy burdens that compound every quarter. The organisations that close the gap between strategic ambition and operating reality will define the next generation of chemical industry leadership.",
       ],
-      forces: ["Process reliability", "Safety & sustainability", "Cyclical demand", "Asset modernisation"],
+      forces: ["Feedstock & energy volatility", "Sustainability regulation", "Specialty margin erosion", "Plant reliability & yield"],
     },
     challenges: [
-      { title: "Process variability", text: "Yield, energy, and quality variation undermine margin in commodity and specialty operations alike.", Icon: FlaskConical },
-      { title: "Asset reliability", text: "Aging assets and reactive maintenance constrain capacity and elevate operational risk.", Icon: Gauge },
-      { title: "Sustainability obligations", text: "Decarbonisation and circularity require credible operating-model change, not just reporting.", Icon: Droplets },
-      { title: "Safety governance", text: "Process safety and HSE performance demand disciplined routines and traceable evidence.", Icon: ShieldCheck },
-      { title: "Supply-chain complexity", text: "Feedstock volatility and logistics constraints require sharper planning intelligence.", Icon: Globe2 },
-      { title: "Fragmented data", text: "Process, lab, and ERP signals rarely come together for executive-grade decisions.", Icon: BarChart3 },
+      {
+        title: "Margin compression and cost position",
+        text: "Energy-intensive production facing elevated input costs, Chinese overcapacity, and regional cost asymmetries is structurally exposed. Cost position is now a strategic variable — not an operational one — and it requires deliberate redesign.",
+        Icon: LineChart,
+      },
+      {
+        title: "Process yield and variability",
+        text: "Every percentage point of yield loss, energy over-consumption, or off-spec production directly destroys margin. In commodity chemicals especially, the difference between a profitable and unprofitable plant is often process discipline, not capacity.",
+        Icon: FlaskConical,
+      },
+      {
+        title: "Asset reliability and maintenance strategy",
+        text: "Unplanned shutdowns in continuous-process environments cascade into production losses, quality failures, and customer penalties that take quarters to recover from. Most chemical plants are still running reactive maintenance cultures against assets that cannot afford them.",
+        Icon: Gauge,
+      },
+      {
+        title: "Sustainability and regulatory compliance",
+        text: "REACH, carbon border adjustment mechanisms, single-use plastics legislation, and Scope 3 reporting are not future risks — they are present obligations reshaping which products, processes, and geographies remain commercially viable.",
+        Icon: Droplets,
+      },
+      {
+        title: "Process safety and HSE governance",
+        text: "Chemical process safety failures carry consequences — human, regulatory, reputational, and financial — that dwarf those in most other industries. Organisations that treat safety as a compliance exercise rather than an operating discipline are one incident away from existential consequences.",
+        Icon: ShieldCheck,
+      },
+      {
+        title: "Feedstock and supply chain exposure",
+        text: "Single-source feedstock dependency, logistics fragility, and lack of supply-chain scenario intelligence leave chemical producers structurally exposed to disruptions that competitors with better supply architectures absorb without interruption.",
+        Icon: Globe2,
+      },
     ],
     helpStatement:
-      "HARTS helps chemical-manufacturing leaders convert process and asset complexity into disciplined operating performance — across plants, regions, and modernisation portfolios.",
+      "HARTS partners with commodity chemical producers, specialty manufacturers, and diversified chemical groups to convert operating complexity into competitive advantage. We work at the plant level and the portfolio level — improving process yield and asset reliability where margin is made, and redesigning operating models and capital governance where strategic direction is set. In an industry where the difference between profit and loss is measured in basis points, operating discipline is not a support function. It is the strategy.",
     HelpHeroIcon: FlaskConical,
     cta: {
-      title: "Run process-driven chemical operations with confidence.",
-      text: "Partner with HARTS to lift process performance, strengthen safety governance, and modernise operations across the network.",
+      title: "In chemicals, operating discipline is not a support function. It is the strategy.",
+      text: "Every point of yield loss, every unplanned shutdown, every regulatory penalty, and every feedstock disruption compounds into a cost position your competitors are building away from. Work with HARTS to sharpen process performance, strengthen asset reliability, and build the operating discipline that protects margin when the cycle turns.",
     },
   },
   "life-sciences": {
     slug: "life-sciences",
     scene: "industry-life-sciences",
     label: "Life Sciences",
-    eyebrow: "Life Sciences consulting",
-    titleSoft: "Pipeline-ready.",
-    titleStrong: "Regulator-grade.",
+    eyebrow: "Life Sciences Consulting",
+    titleSoft: "Science creates the opportunity.",
+    titleStrong: "Operations determines whether it becomes value.",
     subtitle:
-      "We partner with pharma, biotech, and medical-device leaders to accelerate pipelines, modernise operating models, and embed disciplined transformation across regulated environments.",
+      "Drug pricing reform, a $200 billion patent cliff, R&D productivity under scrutiny, and manufacturing complexity that has no peer in any other industry. Life sciences organisations face a commercial and operational reckoning that will separate durable leaders from those who relied too long on pipeline luck and pricing power.",
+    overviewEyebrow: "Sector Reality",
+    overviewTitle: "The patent cliff is here. The pipeline must deliver.",
     overview: {
       paragraphs: [
-        "Life-sciences enterprises operate under tightening regulation, accelerating innovation cycles, and intensifying commercial pressure. Sustained performance requires aligned operating models across R&D, supply, quality, and commercial.",
-        "Disciplined transformation depends on clear portfolio choices, robust quality systems, and digital enablement that supports — rather than complicates — regulated workflows.",
+        "Over $200 billion in branded drug revenues are set to go off-patent by 2030. The Inflation Reduction Act has handed Medicare the power to negotiate drug prices for the first time, fundamentally altering the commercial calculus for the world's largest and most profitable pharmaceutical market. Meanwhile, the cost of bringing a new molecular entity to market has crossed $2.6 billion, clinical trial failure rates in oncology remain above 90%, and the regulatory bar for cell and gene therapy approval continues to rise. The industry's traditional formula — patent-protected pricing combined with blockbuster pipeline productivity — is under simultaneous, structural assault.",
+        "The life sciences organisations that outperform through this cycle will not do so through scientific breakthroughs alone. They will do so by building operating models that move compounds through development faster, manufacture complex biologics and advanced therapies at reliable quality and scale, commercialise in a multi-channel access-constrained environment, and manage supply chains that remain dangerously concentrated in China and India for active pharmaceutical ingredients. Science creates the opportunity. Operations determines whether it becomes commercial value.",
       ],
-      forces: ["Regulatory rigour", "Pipeline velocity", "Commercial pressure", "Quality discipline"],
+      forces: ["Patent cliff & pricing reform", "R&D productivity", "Advanced therapy manufacturing", "Supply chain concentration risk"],
     },
     challenges: [
-      { title: "Regulatory complexity", text: "Evolving global obligations demand traceable processes and durable governance.", Icon: FileCheck2 },
-      { title: "Pipeline velocity", text: "Programme decisions, resourcing, and trial execution require sharper portfolio discipline.", Icon: Microscope },
-      { title: "Quality systems", text: "Quality and compliance routines must scale without slowing innovation or commercial cadence.", Icon: ShieldCheck },
-      { title: "Supply continuity", text: "Manufacturing networks face capacity, single-source, and serialisation pressure.", Icon: Network },
-      { title: "Commercial transformation", text: "Field models, access pathways, and digital engagement require modernised operating routines.", Icon: TrendingUp },
-      { title: "Data and digital", text: "Clinical, regulatory, commercial, and operational data rarely connect into trusted decision support.", Icon: BarChart3 },
+      {
+        title: "Patent cliff and revenue erosion",
+        text: "With over $200 billion in branded revenues facing genericisation by 2030, the pressure to refill pipelines — through internal R&D, licensing, or M&A — while managing the commercial decline of current assets is the defining strategic challenge of the decade.",
+        Icon: TrendingUp,
+      },
+      {
+        title: "R&D productivity and portfolio discipline",
+        text: "At $2.6 billion per approved asset, R&D spend allocation, clinical trial design, patient recruitment, and go/no-go decision discipline are not just scientific questions. They are operating-model questions that determine whether organisations can sustain innovation at commercial scale.",
+        Icon: Microscope,
+      },
+      {
+        title: "Cell, gene, and biologic manufacturing",
+        text: "Advanced therapy manufacturing — autologous cell therapies, gene editing, complex biologics — operates at a quality, scale, and supply-chain complexity that no other manufacturing sector has faced. Getting commercial manufacturing right is as hard as getting regulatory approval.",
+        Icon: Dna,
+      },
+      {
+        title: "Regulatory and quality systems at scale",
+        text: "FDA, EMA, and PMDA scrutiny is intensifying across drug approval, manufacturing inspection, and post-market surveillance. Quality systems built for a smaller pipeline or simpler portfolio cannot carry the regulatory burden of a modern life sciences enterprise.",
+        Icon: FileCheck2,
+      },
+      {
+        title: "Commercial model transformation",
+        text: "Payer access complexity, price transparency, value-based contracting, and the shift to digital HCP engagement are making the traditional field-force-led commercial model structurally insufficient. Organisations redesigning commercial operating models now will compound advantage.",
+        Icon: LineChart,
+      },
+      {
+        title: "API and supply chain concentration",
+        text: "Over 80% of active pharmaceutical ingredients used in Western markets are sourced from China or India. That concentration is a strategic vulnerability — and the industry has been slow to address it since COVID exposed it in 2020.",
+        Icon: Globe2,
+      },
     ],
     helpStatement:
-      "HARTS helps life-sciences leadership teams modernise operating models across R&D, supply, quality, and commercial — installing the discipline regulated growth requires.",
+      "HARTS partners with pharmaceutical, biotech, and medical device organisations to build the operating models, supply chain architectures, and commercial capabilities that translate scientific innovation into durable commercial value. We work across the full development and commercial lifecycle — from R&D operating model design to manufacturing scale-up to market access strategy — because in life sciences, the gap between a promising asset and a commercially successful product is almost always an operating gap.",
     HelpHeroIcon: Dna,
     cta: {
-      title: "Modernise with the discipline regulated growth demands.",
-      text: "Partner with HARTS to align pipeline velocity, operating discipline, and commercial transformation behind sustained outcomes.",
+      title: "The best pipeline in the industry means nothing if the operating model cannot deliver it.",
+      text: "The organisations that define the next decade of life sciences leadership will develop faster, manufacture reliably, access markets efficiently, and build supply chains that do not fracture under geopolitical stress. Work with HARTS to close the gap between scientific ambition and operating reality.",
     },
   },
   energy: {
     slug: "energy",
     scene: "industry-energy",
     label: "Energy",
-    eyebrow: "Energy consulting",
-    titleSoft: "Transition-ready.",
-    titleStrong: "Operationally resilient.",
+    eyebrow: "Energy Consulting",
+    titleSoft: "The transition is funded.",
+    titleStrong: "Now it has to be executed.",
     subtitle:
-      "We help integrated energy companies, utilities, and renewables operators navigate transition strategy, grid modernisation, and enterprise transformation.",
+      "The Inflation Reduction Act, the European Green Deal, and equivalent policy frameworks globally have unlocked the largest wave of energy investment in history. The constraint is no longer capital or political will. It is execution capacity, grid infrastructure, workforce readiness, and the operating discipline to deliver at speed and scale.",
+    overviewEyebrow: "Sector Reality",
+    overviewTitle: "Capital is not the constraint. Execution is.",
     overview: {
       paragraphs: [
-        "Energy enterprises must balance reliability, affordability, decarbonisation, and customer expectations while modernising assets, operating models, and digital infrastructure.",
-        "Sustained performance requires clarity on portfolio direction, capital discipline, and the operating routines that translate transition ambition into measurable execution.",
+        "The energy transition has crossed the point of policy-driven ambiguity into capital-committed reality. Over $1.7 trillion was invested globally in clean energy in 2023 alone — exceeding fossil fuel investment for the first time by a meaningful margin. Utility-scale solar and onshore wind are now the cheapest sources of new electricity generation in most markets. Battery storage costs have fallen 90% over a decade. The economics are no longer the argument. The argument is now whether the organisations tasked with delivery — utilities, developers, grid operators, and energy services companies — can execute at the pace the transition requires.",
+        "They largely cannot, yet. Grid interconnection queues in the US contain over 2,600 gigawatts of projects waiting for connection — a backlog measured in decades at current processing speeds. Offshore wind projects across Europe and the US are being cancelled or restructured because supply chain inflation, contract structures, and permitting timelines have made original financial models unviable. The hydrogen economy is struggling to cross the cost threshold for commercial self-sufficiency. And across every segment, the workforce required to build and operate the new energy system does not yet exist at sufficient scale. The transition is real. The execution gap is equally real.",
       ],
-      forces: ["Transition strategy", "Grid modernisation", "Capital discipline", "Customer expectation"],
+      forces: ["Grid infrastructure bottleneck", "Large-scale project execution", "Workforce development", "Merchant risk & commercial design"],
     },
     challenges: [
-      { title: "Transition strategy", text: "Portfolio shifts require structured choices on capital, capability, and operating model.", Icon: Zap },
-      { title: "Grid modernisation", text: "Network reliability, distributed generation, and customer signals require integrated decision-making.", Icon: Plug },
-      { title: "Capital programme delivery", text: "Major projects face schedule, cost, and stakeholder risk without disciplined governance.", Icon: ShieldCheck },
-      { title: "Operational reliability", text: "Asset performance, outage management, and safety routines remain core to enterprise trust.", Icon: Gauge },
-      { title: "Workforce transition", text: "Skill mix, contractor networks, and digital fluency require deliberate operating-model design.", Icon: HeartPulse },
-      { title: "Customer expectation", text: "Reliability, pricing, and digital engagement now define competitive positioning.", Icon: Eye },
+      {
+        title: "Grid infrastructure and interconnection",
+        text: "Transmission and distribution infrastructure built for centralised dispatchable generation cannot absorb the variability, distributed generation, and bidirectional flows that renewable-heavy grids require. The upgrade cycle is decades behind where it needs to be.",
+        Icon: Plug,
+      },
+      {
+        title: "Large-scale project execution",
+        text: "Offshore wind, green hydrogen, long-duration storage, and grid modernisation projects are routinely delayed, over-budget, or cancelled. Supply chain inflation, permitting complexity, and contract-risk misallocation are manageable — if the operating governance is right.",
+        Icon: ShieldCheck,
+      },
+      {
+        title: "Merchant risk and commercial structuring",
+        text: "As subsidy frameworks mature and merchant exposure increases, energy developers and utilities face revenue risk that PPAs, capacity markets, and hedging strategies can only partially manage. Commercial model design is now a source of competitive differentiation.",
+        Icon: TrendingUp,
+      },
+      {
+        title: "Asset operations and reliability",
+        text: "Renewable assets have different failure modes, O&M cost structures, and performance-monitoring requirements than the thermal assets most utilities built their operational capabilities around. Operating model transformation is lagging asset portfolio transformation.",
+        Icon: Gauge,
+      },
+      {
+        title: "Workforce and capability gap",
+        text: "The skills required to design, build, and operate the new energy system — offshore installation, power electronics, battery management, digital grid operations — are in acute global shortage. Workforce strategy is now a transition delivery constraint, not an HR question.",
+        Icon: HeartPulse,
+      },
+      {
+        title: "Customer and demand-side complexity",
+        text: "Electrification of transport, industrial heat, and buildings is creating load growth patterns, demand flexibility opportunities, and customer expectations that most utility operating models were not designed to handle.",
+        Icon: Zap,
+      },
     ],
     helpStatement:
-      "HARTS helps energy leadership teams turn transition strategy into operating reality — across asset performance, capital governance, and customer-facing modernisation.",
+      "HARTS partners with utilities, renewable developers, grid operators, and energy services companies to build the execution capability the transition demands. We work on the problems that determine whether clean energy projects get built on time and budget, whether grid operating models can manage distributed and variable generation, and whether the commercial frameworks and workforce strategies exist to sustain transition at pace. The transition is happening. The question is whether your organisation is positioned to lead it.",
     HelpHeroIcon: Zap,
     cta: {
-      title: "Make the energy transition operationally credible.",
-      text: "Work with HARTS to align portfolio direction, capital discipline, and operating routine behind a credible transition.",
+      title: "The energy transition will not wait for organisations that are not ready.",
+      text: "The window to build execution capability, grid infrastructure, and commercial operating models ahead of the competition is open now — and closing. Work with HARTS to convert transition ambition into delivered projects, operational resilience, and durable competitive position in the new energy system.",
     },
   },
   technology: {
     slug: "technology",
     scene: "industry-technology",
     label: "Technology",
-    eyebrow: "Technology consulting",
-    titleSoft: "Built to scale.",
-    titleStrong: "Disciplined to last.",
+    eyebrow: "Technology Consulting",
+    titleSoft: "The growth era is over.",
+    titleStrong: "The efficiency era demands a different operating model.",
     subtitle:
-      "We partner with high-velocity technology enterprises on operating-model design, growth scaling, platform transformation, and organisational maturity.",
+      "The 2021 era of growth-at-any-cost, unlimited hiring, and revenue-multiple valuations is gone. Boards and investors now demand growth and operating leverage simultaneously. Most technology companies built their organisations for a world where only one of those two things was required.",
+    overviewEyebrow: "Market Reality",
+    overviewTitle: "Efficiency is the new growth story.",
     overview: {
       paragraphs: [
-        "Technology companies face the dual challenge of sustaining growth and installing the operating discipline mature enterprises require — across product, go-to-market, engineering, and corporate functions.",
-        "Sustained outperformance depends on clearer operating choices, sharper portfolio governance, and the ability to scale capability without compounding complexity.",
+        "Between 2022 and 2024, the technology industry shed over 500,000 jobs, major platforms faced significant revenue multiple compression, and enterprise software buyers shifted from rapid adoption to intense scrutiny of renewal economics. The era in which growth metrics alone justified complex, high-cost operating models is over. Investors now demand the combination of growth and operating leverage — and most technology companies built their organisations, processes, and management layers for a world where only one of those two things was required.",
+        "Simultaneously, AI is beginning to reshape the economics of software development, customer support, sales engineering, and knowledge work in ways that create both threat and opportunity. SaaS companies face the genuine risk of AI-native competitors offering comparable functionality at structurally lower price points. The technology organisations that move fastest to embed AI into their own operating models — development velocity, GTM efficiency, support automation — will compound advantage over those treating it as a product feature rather than an operating-model transformation. The next five years in technology will be decided by operating discipline, not product innovation alone.",
       ],
-      forces: ["Scaling discipline", "Platform velocity", "Talent leverage", "Capital efficiency"],
+      forces: ["Operating leverage & efficiency", "AI-native competition", "Enterprise spend scrutiny", "GTM and portfolio discipline"],
     },
     challenges: [
-      { title: "Operating-model maturity", text: "Growth-era models often outlive their usefulness as enterprises scale globally.", Icon: Cog },
-      { title: "Portfolio discipline", text: "Product, market, and platform investments require sharper prioritisation and value tracking.", Icon: Target },
-      { title: "Platform velocity", text: "Engineering, data, and infrastructure platforms must support speed without accumulating risk.", Icon: Cpu },
-      { title: "Go-to-market alignment", text: "Sales, marketing, and customer-success operating models often drift apart at scale.", Icon: TrendingUp },
-      { title: "Talent leverage", text: "Talent operating models must adapt to hybrid work, capability scarcity, and AI-enabled productivity.", Icon: HeartPulse },
-      { title: "Capital efficiency", text: "Investors expect disciplined growth, not just absolute growth — operating routines must reflect this.", Icon: LineChart },
+      {
+        title: "Operating model complexity and cost structure",
+        text: "Organisations built for growth-at-all-costs carry layers of process complexity, management overhead, and organisational duplication that were invisible when revenue growth could absorb them. Restructuring for operating leverage requires far more than headcount reduction.",
+        Icon: Cog,
+      },
+      {
+        title: "AI disruption of core business models",
+        text: "AI-native competitors are beginning to offer enterprise software functionality at price points that challenge traditional SaaS economics. Organisations that adapt product, pricing, and GTM models proactively will fare better than those that treat AI as a feature add-on.",
+        Icon: Cpu,
+      },
+      {
+        title: "Enterprise customer scrutiny and retention",
+        text: "Enterprise buyers are renegotiating contracts, consolidating vendor relationships, and demanding proof of ROI before renewal. Net revenue retention — the defining metric of SaaS health — is under pressure across the market, and the recovery playbook is not obvious.",
+        Icon: Target,
+      },
+      {
+        title: "Product portfolio and investment discipline",
+        text: "Technology companies that scaled quickly often carry portfolios with unclear strategic rationale, duplicated capability, and underperforming bets absorbing engineering capacity and leadership attention. Portfolio discipline is a competitive capability, not a cost-cutting exercise.",
+        Icon: BarChart3,
+      },
+      {
+        title: "Go-to-market alignment and efficiency",
+        text: "Sales, marketing, and customer success functions built independently during the growth era often operate without shared data, aligned incentives, or coordinated customer engagement models. GTM efficiency is one of the largest untapped levers in technology operating models.",
+        Icon: TrendingUp,
+      },
+      {
+        title: "Engineering velocity and technical debt",
+        text: "Rapid growth came at the cost of architectural integrity for most technology organisations. Technical debt, platform fragmentation, and depleted engineering capacity now slow product velocity precisely when competitive pressure demands acceleration.",
+        Icon: Binary,
+      },
     ],
     helpStatement:
-      "HARTS helps technology leadership teams install enterprise-grade operating discipline without sacrificing the velocity that defines competitive advantage.",
+      "HARTS partners with technology companies — from growth-stage SaaS to established enterprise platforms — to build the operating models the efficiency era demands. We work across product portfolio discipline, GTM alignment, organisational design, and AI-enabled operating model transformation. In technology, the next competitive advantage is not always built in the product. Often it is built in the operating model.",
     HelpHeroIcon: Cpu,
     cta: {
-      title: "Scale technology operations with discipline.",
-      text: "Partner with HARTS to align operating model, portfolio governance, and platform velocity behind durable growth.",
+      title: "The next competitive advantage in technology is built in the operating model.",
+      text: "The organisations that compound advantage in the efficiency era will do so through disciplined product portfolios, AI-enabled operations, and cost structures that scale revenue without scaling headcount. Work with HARTS to build the operating discipline that investors now require and enterprise customers increasingly demand.",
     },
   },
   telecom: {
     slug: "telecom",
     scene: "industry-telecom",
     label: "Telecommunications",
-    eyebrow: "Telecom consulting",
-    titleSoft: "Network-grade.",
-    titleStrong: "Customer-grade.",
+    eyebrow: "Telecom Consulting",
+    titleSoft: "The network is built.",
+    titleStrong: "Now build the business model around it.",
     subtitle:
-      "We partner with communications operators on network modernisation, customer-experience transformation, and operating discipline across complex enterprises.",
+      "The global telecom industry has invested hundreds of billions in 5G infrastructure, fibre rollout, and network modernisation. The return on that investment has not materialised at the pace operators anticipated. The network is not the problem. The operating model is.",
+    overviewEyebrow: "Sector Reality",
+    overviewTitle: "5G is live. The business case is still loading.",
     overview: {
       paragraphs: [
-        "Telecom operators are modernising networks, evolving customer experience, and reshaping operating models under sustained margin pressure and accelerating technology change.",
-        "Sustainable performance requires connected operating routines across network, IT, customer, and corporate functions — anchored in disciplined transformation governance.",
+        "Global 5G capital expenditure has exceeded $500 billion since 2019, yet average revenue per user across most developed markets has been flat or declining in real terms. The consumer use cases projected to unlock 5G monetisation — holographic communication, mass AR/VR adoption, seamless edge computing for everyday applications — have not arrived on the timelines operators built their investment cases around. Meanwhile, fixed wireless access is disrupting cable incumbents in meaningful ways, but at price points that cannibalise operator economics. And the hyperscalers — Amazon, Microsoft, Google — are competing directly for enterprise connectivity and private network revenues that operators had identified as their primary 5G monetisation pathway.",
+        "The structural challenge is not that 5G lacks value. It is that the telecom industry's operating model — built for voice, SMS, and consumer broadband — has not transformed at the same pace as the network. Legacy BSS/OSS stacks, siloed product organisations, a sales motion built around consumer volumes rather than enterprise solution-selling, and a cost base shaped by decades of infrastructure ownership are not the operating foundations for a software-defined, enterprise-focused, platform-enabled telecom business. The organisations that close that gap will monetise the network they have spent a decade building.",
       ],
-      forces: ["Network modernisation", "Customer experience", "Margin discipline", "Operating clarity"],
+      forces: ["5G monetisation gap", "Enterprise B2B pivot", "Legacy cost base reduction", "Hyperscaler competition"],
     },
     challenges: [
-      { title: "Network modernisation", text: "Multi-generation network transitions require integrated planning, capital, and operational governance.", Icon: Radio },
-      { title: "Customer experience", text: "Service expectations evolve faster than legacy operating models can support.", Icon: Eye },
-      { title: "Operating complexity", text: "Long-standing process and system layers complicate everyday decision-making.", Icon: Blocks },
-      { title: "Margin pressure", text: "Cost-to-serve and capital intensity require disciplined operational simplification.", Icon: LineChart },
-      { title: "Workforce evolution", text: "Skill mix, partner networks, and AI-enabled productivity require deliberate operating-model design.", Icon: HeartPulse },
-      { title: "Data and digital", text: "Network, customer, and corporate data rarely converge into trusted operating intelligence.", Icon: Signal },
+      {
+        title: "5G monetisation gap",
+        text: "Hundreds of billions in 5G capex have not yet translated into proportionate revenue growth. The consumer market lacks the killer use cases; the enterprise market requires a sales and solution architecture capability most operators do not yet possess at scale.",
+        Icon: Signal,
+      },
+      {
+        title: "Enterprise and B2B transformation",
+        text: "Private networks, network slicing, IoT connectivity, and managed services require a fundamentally different go-to-market capability — consultative selling, solution design, long-cycle relationship management — than the high-volume consumer motion operators have historically built.",
+        Icon: Network,
+      },
+      {
+        title: "Legacy infrastructure and cost base",
+        text: "Copper decommissioning, legacy network retirement, and the transition from physical to software-defined infrastructure are running behind the pace required to fund 5G returns. Every month of delayed legacy cost removal compounds the investment recovery challenge.",
+        Icon: Blocks,
+      },
+      {
+        title: "BSS/OSS modernisation",
+        text: "Billing, customer management, order management, and network operations systems built for a previous technology era are creating operational friction, customer experience failures, and an inability to launch new services at the speed the market demands.",
+        Icon: Binary,
+      },
+      {
+        title: "Hyperscaler and OTT competition",
+        text: "AWS, Microsoft Azure, and Google Cloud are competing directly for enterprise network, edge compute, and private connectivity revenues. OTT players continue to capture communications value — messaging, video, collaboration — without bearing the infrastructure cost that operators carry.",
+        Icon: Globe2,
+      },
+      {
+        title: "Customer experience and churn",
+        text: "In markets where network quality has largely converged, customer experience — in service delivery, fault resolution, and digital engagement — has become the primary churn driver. Most operators are losing on experience, not on coverage.",
+        Icon: Eye,
+      },
     ],
     helpStatement:
-      "HARTS helps telecom leadership teams modernise operating models across network, customer, and corporate functions — installing the discipline modern networks require.",
+      "HARTS partners with telecommunications operators, tower companies, and network service providers to close the gap between network investment and commercial return. We work on B2B transformation, operating model redesign, legacy cost reduction, and customer experience improvement — because the operators that recover their 5G investment will be those that transformed their commercial capability and modernised their cost base, not just those that built the fastest network.",
     HelpHeroIcon: Radio,
     cta: {
-      title: "Run a more disciplined telecom operating model.",
-      text: "Partner with HARTS to align network modernisation, customer experience, and operating discipline behind sustained performance.",
+      title: "You built the network. Now build the operating model that monetises it.",
+      text: "The operators that recover their 5G investment and build durable enterprise positions will be those that transformed commercial capability, modernised their cost base, and designed customer experiences that justify the infrastructure they built. Work with HARTS to accelerate that transformation.",
     },
   },
   transportation: {
     slug: "transportation",
     scene: "industry-transportation",
     label: "Transportation",
-    eyebrow: "Transportation consulting",
-    titleSoft: "Move with",
-    titleStrong: "Operating clarity.",
+    eyebrow: "Transportation Consulting",
+    titleSoft: "The world moves differently now.",
+    titleStrong: "Your operating model must too.",
     subtitle:
-      "We partner with rail, road, port, and multi-modal operators on operational scalability, logistics modernisation, and digital enablement.",
+      "Nearshoring, e-commerce permanence, fleet electrification, port congestion, driver shortages, and carbon reporting obligations have simultaneously redesigned the economics of moving goods and people. The transportation operating models built for the pre-2020 world are structurally misaligned with the one operators are running in today.",
+    overviewEyebrow: "Sector Reality",
+    overviewTitle: "Every supply chain just got redesigned. Your network needs to follow.",
     overview: {
       paragraphs: [
-        "Transportation enterprises operate under demand volatility, capital intensity, regulatory pressure, and rising customer expectations. Performance depends on connected operating models across network, asset, and customer-facing functions.",
-        "Sustained outperformance requires clearer operating routines, disciplined capital governance, and digital enablement that supports — rather than burdens — front-line teams.",
+        "Three forces are simultaneously reshaping transportation economics in ways that compound rather than cancel each other. Supply chain nearshoring and friend-shoring — accelerated by pandemic disruption, US-China trade tensions, and geopolitical risk aversion — are redirecting freight flows away from the transpacific routes and hub-and-spoke logistics networks that carrier and infrastructure economics were built around. E-commerce permanence has made last-mile delivery both the most expensive and the most competitively differentiated segment of the logistics value chain. And fleet electrification — driven by urban emissions zones, corporate scope 3 commitments, and improving EV total cost of ownership — is forcing fleet operators to rethink depot infrastructure, route planning, and maintenance economics simultaneously.",
+        "Overlaying all of this is a structural driver shortage — the US alone faces a projected deficit of 160,000 truck drivers by 2030 — and carbon reporting obligations that are making scope 3 freight emissions a procurement and supplier-selection variable for large shippers for the first time. Transportation operators that adapt their network design, fleet strategy, and operating model to these intersecting forces will build durable advantage. Those that optimise incrementally against the old map will find the territory has changed.",
       ],
-      forces: ["Network reliability", "Capital discipline", "Customer expectation", "Workforce evolution"],
+      forces: ["Network redesign for nearshoring", "Last-mile economics", "Fleet electrification", "Emissions accountability"],
     },
     challenges: [
-      { title: "Network reliability", text: "Schedule discipline, asset uptime, and service consistency define enterprise trust.", Icon: TramFront },
-      { title: "Capital governance", text: "Major capital programmes face schedule, cost, and stakeholder risk without disciplined routines.", Icon: ShieldCheck },
-      { title: "Logistics complexity", text: "Multi-modal, cross-border, and last-mile flows require integrated planning intelligence.", Icon: Truck },
-      { title: "Workforce evolution", text: "Skill mix, contractor networks, and digital fluency require operating-model attention.", Icon: HeartPulse },
-      { title: "Customer expectation", text: "Reliability, communication, and digital convenience now define competitive positioning.", Icon: Eye },
-      { title: "Data and digital", text: "Network, asset, and customer data rarely converge into trusted operating intelligence.", Icon: BarChart3 },
+      {
+        title: "Network redesign for shifting freight flows",
+        text: "Nearshoring and the reorientation of manufacturing away from Asia are rerouting freight volumes that operators built capacity and pricing models around. Network design is a strategic decision — not a logistics optimisation — and it needs to be made now, not reactively.",
+        Icon: Globe2,
+      },
+      {
+        title: "Last-mile economics and profitability",
+        text: "Last-mile delivery is structurally loss-making at current density levels for many operators. The answer is not volume — it is route density, automation, consolidation models, and delivery experience design that reduce cost-per-stop while meeting next-day expectations.",
+        Icon: Truck,
+      },
+      {
+        title: "Fleet electrification transition",
+        text: "Electrifying commercial fleets requires more than buying different vehicles. Depot charging infrastructure, range-constrained route planning, new maintenance capabilities, and utility engagement for power capacity are operating-model changes that must run ahead of the vehicles.",
+        Icon: Zap,
+      },
+      {
+        title: "Driver shortage and workforce model",
+        text: "The trucking driver shortage is structural, not cyclical. Autonomous freight will partially address it — but not on the timelines that alleviate near-term pressure. Operating models that retain and deploy drivers more effectively are a source of competitive differentiation today.",
+        Icon: TramFront,
+      },
+      {
+        title: "Infrastructure capacity and resilience",
+        text: "Port congestion, rail network constraints, and highway infrastructure built for previous freight volumes create systemic bottlenecks that individual operators cannot solve — but can navigate better than competitors through smarter network design and modal flexibility.",
+        Icon: ShieldCheck,
+      },
+      {
+        title: "Carbon and emissions accountability",
+        text: "Scope 3 freight emissions are becoming a shipper procurement variable. Transportation operators that cannot measure, report, and credibly reduce their emissions footprint are becoming disqualified from tenders by large corporate shippers with net-zero supply chain commitments.",
+        Icon: BarChart3,
+      },
     ],
     helpStatement:
-      "HARTS helps transportation leadership teams modernise operating routines, sharpen capital governance, and lift digital enablement across complex multi-modal networks.",
+      "HARTS partners with logistics operators, freight carriers, rail networks, port authorities, and multi-modal transport groups to build operating models that match the geography, economics, and regulatory environment of transportation today — not five years ago. We work on network design, fleet strategy, last-mile economics, workforce models, and decarbonisation operating plans. In transportation, operating model relevance is not optional. It is the difference between winning freight and watching it move on a competitor's network.",
     HelpHeroIcon: TramFront,
     cta: {
-      title: "Run transportation operations with disciplined clarity.",
-      text: "Partner with HARTS to align network reliability, capital governance, and digital enablement behind durable outperformance.",
+      title: "The freight is moving. The question is whose network it moves on.",
+      text: "The transportation operators that capture the next decade of volume will be those that redesigned their networks for where freight is going, electrified ahead of regulation, solved last-mile economics, and built the sustainability credentials large shippers now require. Work with HARTS to get there first.",
     },
   },
 };
@@ -439,8 +675,8 @@ function IndustryDetailTemplate({ data }: { data: IndustryContent }) {
       <section className="industry-detail-section industry-overview-section" id="overview">
         <div className="industry-detail-shell">
           <div className="industry-detail-heading industry-detail-reveal">
-            <p className="eyebrow">Industry Overview</p>
-            <h2>Executive context</h2>
+            <p className="eyebrow">{data.overviewEyebrow ?? "Industry Overview"}</p>
+            <h2>{data.overviewTitle ?? "Executive context"}</h2>
           </div>
           <div className="industry-overview-grid">
             <div className="industry-overview-copy industry-detail-reveal">

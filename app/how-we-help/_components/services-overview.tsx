@@ -112,12 +112,12 @@ export function ServicesOverview() {
         <div className="hwh-services-hd">
           <div>
             <p className="hwh-section-eyebrow">Capabilities</p>
-            <h2>Distinct services. One disciplined approach.</h2>
+            <h2>Focused capabilities. Unified execution.</h2>
           </div>
           <p className="hwh-services-desc">
-            Whether the work calls for strategic clarity, operating discipline,
-            enterprise transformation, or capability building, the HARTS
-            consulting playbook adapts to the reality of the mandate.
+            HARTS brings together strategy, transformation, and operational
+            expertise to help organisations move forward with clarity and
+            confidence.
           </p>
         </div>
 

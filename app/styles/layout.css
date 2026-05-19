@@ -67,7 +67,7 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: #E7473C;
+  color: var(--ink);
   font-family: DM Sans, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14.5px;
   font-weight: 620;
@@ -83,7 +83,7 @@
 
 .nav-pill:hover,
 .nav-pill:focus-visible {
-  background: rgba(231, 71, 60, 0.1);
+  background: rgba(94, 98, 95, 0.12);
   outline: none;
 }
 
@@ -92,9 +92,9 @@
   transition-duration: 60ms;
 }
 
-/* Active route: filled red background + white underline pill */
+/* Active route: filled grey background + white underline pill */
 .nav-pill--active {
-  background: #E7473C;
+  background: #8A8F8C;
   color: #FFFFFF;
   font-weight: 720;
 }

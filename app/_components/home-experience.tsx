@@ -238,9 +238,9 @@ export function HomeExperience() {
             </div>
           </div>
 
-          <p className="challenges-subheading scroll-reveal reveal-soft-up">
-            Enterprise pain points we solve through strategic consulting
-          </p>
+          <div className="challenges-subheading-block">
+            <p className="eyebrow">Six Recurring Patterns</p>
+          </div>
 
           <div className="challenge-grid">
             {challenges.map((item, index) => (

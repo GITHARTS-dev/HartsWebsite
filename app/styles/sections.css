@@ -6369,7 +6369,7 @@
 .work-principles-copy p,
 .industry-grid-heading p,
 .industry-detail-heading p,
-.careers-culture-inner p,
+.careers-culture-inner p:not(.eyebrow),
 .au-section-sub {
   color: #2A2A2A !important;
 }
@@ -7686,6 +7686,15 @@ a.solid-button:visited {
   z-index: 1;
 }
 
+/* Sreema & Cristian are full-body shots — crop to upper body like Savio */
+.au-team-card--premium:nth-child(1) .au-team-portrait-img {
+  object-position: 50% -55% !important;
+}
+
+.au-team-card--premium:nth-child(2) .au-team-portrait-img {
+  object-position: 50% -55% !important;
+}
+
 .au-team-card--premium:hover .au-team-portrait-img {
   transform: scale(1.06) !important;
 }
@@ -7697,12 +7706,7 @@ a.solid-button:visited {
   left: 0 !important;
   right: 0 !important;
   height: 28% !important;
-  background: linear-gradient(
-    to top,
-    rgba(255,255,255,0.95) 0%,
-    rgba(255,255,255,0.30) 60%,
-    transparent 100%
-  ) !important;
+  background: transparent !important;
   transform: none !important;
   transition: none !important;
   z-index: 2;

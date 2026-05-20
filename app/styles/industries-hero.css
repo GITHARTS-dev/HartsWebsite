@@ -1,0 +1,149 @@
+.page-hero--industries .page-hero-scene-image {
+  background-position: center 52%;
+  filter: saturate(0.92) contrast(1.08) brightness(0.82);
+}
+
+.page-hero--industries.page-hero--layout-split {
+  min-height: calc(100svh - 72px);
+  padding-block: clamp(108px, 14vh, 154px) clamp(80px, 10vh, 124px);
+  background: #091923;
+}
+
+.page-hero--industries .page-hero-scene-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 16, 26, 0.92) 0%,
+      rgba(5, 22, 34, 0.82) 28%,
+      rgba(10, 54, 70, 0.48) 53%,
+      rgba(10, 45, 62, 0.16) 76%,
+      rgba(6, 26, 38, 0.04) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0) 34%,
+      rgba(0, 0, 0, 0.24) 100%
+    );
+}
+
+.page-hero--industries::after {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 34%;
+  background: linear-gradient(180deg, rgba(9, 25, 35, 0) 0%, rgba(9, 25, 35, 0.28) 100%);
+  content: "";
+  pointer-events: none;
+}
+
+.page-hero--industries .page-hero-shell {
+  max-width: 1360px;
+}
+
+.page-hero--industries.page-hero--layout-split .page-hero-content {
+  width: clamp(320px, 72vw, 920px);
+  max-width: 72%;
+  gap: clamp(16px, 2vh, 22px);
+}
+
+/* Kicker — matches home page base */
+.page-hero--industries .page-hero-kicker {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Title — matches home page: clamp(38px, 5.4vw, 64px), weight 780 */
+.page-hero--industries .page-hero-title {
+  max-width: 920px;
+  font-size: clamp(38px, 5.4vw, 64px);
+  line-height: 1.02;
+  font-weight: 780;
+  letter-spacing: -0.005em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.32);
+}
+
+/* Title-soft — matches home page base: 0.5em, weight 680 */
+.page-hero--industries .page-hero-title-soft {
+  font-size: 0.5em;
+  font-weight: 680;
+  line-height: 1.05;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Subtitle — matches home page base: clamp(15px, 1.15vw, 17px) */
+.page-hero--industries .page-hero-subtitle {
+  max-width: 760px;
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.6;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.34);
+}
+
+.page-hero--industries .page-hero-actions {
+  gap: 14px;
+  margin-top: clamp(14px, 2vh, 22px);
+}
+
+
+@media (max-width: 880px) {
+  .page-hero--industries.page-hero--layout-split {
+    min-height: calc(100svh - 72px);
+    padding: clamp(112px, 14vh, 150px) 6vw clamp(66px, 9vh, 96px);
+  }
+
+  .page-hero--industries .page-hero-scene-image {
+    background-position: 42% center;
+    filter: saturate(0.9) contrast(1.05) brightness(0.72);
+  }
+
+  .page-hero--industries .page-hero-scene-veil {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 16, 26, 0.9) 0%,
+        rgba(7, 23, 35, 0.78) 48%,
+        rgba(8, 32, 44, 0.62) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(231, 71, 60, 0.24) 0%,
+        rgba(231, 71, 60, 0.04) 100%
+      );
+  }
+
+  .page-hero--industries.page-hero--layout-split .page-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-hero--industries.page-hero--layout-split {
+    padding: 108px 22px 68px;
+  }
+
+  .page-hero--industries .page-hero-title,
+  .page-hero--industries .page-hero-subtitle,
+  .page-hero--industries .page-hero-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .page-hero--industries .page-hero-actions {
+    justify-items: stretch;
+  }
+
+  .page-hero--industries .page-hero-actions .solid-button,
+  .page-hero--industries .page-hero-actions .outline-button {
+    justify-self: stretch !important;
+    width: 100% !important;
+    inline-size: 100% !important;
+    min-height: 54px;
+    padding-inline: 22px;
+  }
+}

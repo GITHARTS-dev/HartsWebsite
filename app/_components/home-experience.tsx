@@ -192,9 +192,9 @@ export function HomeExperience() {
         scene="home"
         layout="split"
         eyebrow="Strategy. Transformation. Clarity."
-        titleSoft="Welcome to"
-        titleStrong="HARTS"
-        subtitle="Transforming ambitious organizations into resilient, future-ready enterprises."
+        titleSoft="Strategic Expertise."
+        titleStrong="Building Future Enterprises."
+        subtitle="Empowering organizations to navigate complexity, accelerate transformation, and build sustainable competitive advantage in a rapidly evolving world."
         actions={
           <Link className="solid-button large" href="/contact">
             Connect with us
@@ -227,7 +227,7 @@ export function HomeExperience() {
               <span className="challenge-image-accent" aria-hidden="true" />
               <div className="challenge-image-frame">
                 <img
-                  src="/images/home-page-discussion.jpg"
+                  src="/images/home-page-discussion.jpeg"
                   alt="HARTS strategy consultants collaborating on enterprise challenges"
                 />
                 {/* <div className="challenge-image-badge" aria-hidden="true">

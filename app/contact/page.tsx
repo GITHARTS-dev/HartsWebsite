@@ -19,7 +19,7 @@ export default function ContactRoute() {
           eyebrow="Connect"
           titleSoft="Let’s start a"
           titleStrong="conversation."
-          subtitle="Whether you are navigating a major transformation, exploring a growth opportunity, or seeking an independent strategic perspective - our team is ready to engage."
+          subtitle="Whether you are navigating a major transformation, exploring a growth opportunity, or seeking an independent strategic perspective, our team is ready to engage."
           actions={
             <Link className="solid-button large" href="#inquiry">
               Send an inquiry

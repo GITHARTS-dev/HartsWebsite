@@ -14,7 +14,7 @@ const principles: { title: string; text: string; icon: ReactNode }[] = [
   },
   {
     title: "Strategy With Execution",
-    text: "Every strategy should translate into measurable operational progress and real organizational movement.",
+    text: "Every strategy should translate into measurable operational progress and real organisational movement.",
     icon: <Target size={ICON_SIZE} strokeWidth={ICON_STROKE} aria-hidden="true" />,
   },
   {
@@ -24,7 +24,7 @@ const principles: { title: string; text: string; icon: ReactNode }[] = [
   },
   {
     title: "Adaptive Systems",
-    text: "Organizations must continuously evolve in response to changing operational and technological environments.",
+    text: "Organisations have to keep evolving as operational and technological environments shift around them.",
     icon: <RefreshCw size={ICON_SIZE} strokeWidth={ICON_STROKE} aria-hidden="true" />,
   },
   {
@@ -45,9 +45,9 @@ export function TransformationPrinciples() {
         <p className="eyebrow">Our Principles</p>
         <h2>Principles That Guide Transformation</h2>
         <p>
-          HARTS approaches transformation through clarity, collaboration,
-          adaptability, and long-term thinking - helping organizations move
-          forward with confidence and connected direction.
+          We approach transformation through clarity, collaboration,
+          adaptability, and long-term thinking. That is how organisations
+          move forward with confidence and connected direction.
         </p>
       </div>
 

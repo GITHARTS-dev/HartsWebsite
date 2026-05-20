@@ -152,8 +152,8 @@
   max-width: none;
   margin: 0;
   /* Unified title size across every page */
-  font-size: clamp(38px, 5.4vw, 64px);
-  font-weight: 780;
+  font-size: clamp(44px, 6.2vw, 74px);
+  font-weight: 860;
   line-height: 1.02;
   letter-spacing: -0.005em;
   color: #1A1A1A;
@@ -218,6 +218,25 @@
 /* About - leadership / team group portrait (user-provided photograph) */
 .page-hero--about .page-hero-scene-image {
   background-image: url("/hero/about-hero.jpeg");
+  filter: brightness(0.90) saturate(0.90);
+}
+
+.page-hero--about .page-hero-scene-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.65) 0%,
+      rgba(10, 10, 10, 0.48) 28%,
+      rgba(10, 10, 10, 0.22) 54%,
+      rgba(10, 10, 10, 0.06) 76%,
+      rgba(0, 0, 0, 0.00) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0) 34%,
+      rgba(0, 0, 0, 0.12) 100%
+    );
 }
 
 /* Home - sunrise team silhouette (user-provided photograph).
@@ -577,71 +596,12 @@
 }
 
 .page-hero--layout-split .page-hero-subtitle {
-  color: rgba(255, 255, 255, 0.94);
+  color: #ffffff;
   max-width: 540px;
-  text-shadow: 0 1px 10px rgba(20, 20, 20, 0.18);
+  font-style: italic;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
 }
 
-/* ── Premium 3D parallelogram subtitle box ──────────────────────────── */
-.page-hero--home .page-hero-subtitle,
-.page-hero--industries .page-hero-subtitle,
-.page-hero--how-we-help .page-hero-subtitle,
-.page-hero--how-we-work .page-hero-subtitle,
-.page-hero--about .page-hero-subtitle,
-.page-hero--careers .page-hero-subtitle,
-.page-hero--contact .page-hero-subtitle {
-  position: relative;
-  padding: 16px 32px 16px 24px;
-  color: #111111;
-  text-shadow: none;
-  font-weight: 500;
-  letter-spacing: 0.018em;
-  z-index: 0;
-}
-
-/* White top face */
-.page-hero--home .page-hero-subtitle::before,
-.page-hero--industries .page-hero-subtitle::before,
-.page-hero--how-we-help .page-hero-subtitle::before,
-.page-hero--how-we-work .page-hero-subtitle::before,
-.page-hero--about .page-hero-subtitle::before,
-.page-hero--careers .page-hero-subtitle::before,
-.page-hero--contact .page-hero-subtitle::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #ffffff 0%, #f4f4f4 100%);
-  border: 1.5px solid #E7473C;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.22),
-    0 8px 20px rgba(0, 0, 0, 0.20),
-    0 24px 60px rgba(0, 0, 0, 0.28),
-    0 4px 16px rgba(231, 71, 60, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
-  transform: skewX(-10deg);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Red 3D extrusion — visible depth side + cast shadow onto the scene */
-.page-hero--home .page-hero-subtitle::after,
-.page-hero--industries .page-hero-subtitle::after,
-.page-hero--how-we-help .page-hero-subtitle::after,
-.page-hero--how-we-work .page-hero-subtitle::after,
-.page-hero--about .page-hero-subtitle::after,
-.page-hero--careers .page-hero-subtitle::after,
-.page-hero--contact .page-hero-subtitle::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #E7473C 0%, #A82A20 100%);
-  box-shadow:
-    5px 14px 36px rgba(0, 0, 0, 0.45),
-    2px 6px 12px rgba(168, 42, 32, 0.55);
-  transform: skewX(-10deg) translate(7px, 8px);
-  z-index: -2;
-  pointer-events: none;
-}
 
 /* Buttons stay on brand: red solid with white text, no border, clean pill. */
 .page-hero--layout-split .page-hero-actions .solid-button {

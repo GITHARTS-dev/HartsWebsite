@@ -138,8 +138,8 @@ export function CareersPage() {
         scene="careers"
         layout="split"
         eyebrow="Careers"
-        titleSoft="Build a career that"
-        titleStrong="defines transformation."
+        titleSoft="Build a career that."
+        titleStrong="Defines Transformation."
         subtitle="Join a senior team of strategists, operators, and technologists shaping decisive, durable change for global leaders."
         crumbs={[
           { label: "Home", href: "/" },

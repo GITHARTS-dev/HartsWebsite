@@ -17,7 +17,7 @@ const phases: {
   {
     title: "Diagnose",
     focus: "We do not prescribe before we understand.",
-    desc: "HARTS begins by interrogating organizational priorities, leadership conviction, operational constraints, and long-term ambitions - forming a grounded baseline before a single recommendation is made.",
+    desc: "We begin by interrogating organisational priorities, leadership conviction, operational constraints, and long-term ambitions. The result is a grounded baseline before a single recommendation is made.",
     points: [
       "Organizational diagnostic",
       "Leadership alignment mapping",
@@ -29,7 +29,7 @@ const phases: {
   {
     title: "Design",
     focus: "Designing transformation with intention.",
-    desc: "HARTS designs transformation strategies that align people, operations, systems, and long-term organizational goals into one connected direction.",
+    desc: "We design transformation strategies that bring people, operations, systems, and long-term organisational goals into one connected direction.",
     points: [
       "Human-centered thinking",
       "Strategic clarity",
@@ -41,7 +41,7 @@ const phases: {
   {
     title: "Collaborative Engagement",
     focus: "Transformation through collaboration.",
-    desc: "HARTS works closely with organizations through continuous alignment, shared visibility, and iterative engagement across every phase of transformation.",
+    desc: "We work closely with organisations through continuous alignment, shared visibility, and iterative engagement across every phase of transformation.",
     points: [
       "Leadership Collaboration",
       "Strategic Planning",
@@ -53,7 +53,7 @@ const phases: {
   {
     title: "Outcomes Over Deliverables",
     focus: "Transformation should create measurable organizational progress.",
-    desc: "HARTS focuses on improving visibility, alignment, adaptability, and strategic decision-making rather than simply producing reports or frameworks.",
+    desc: "We focus on improving visibility, alignment, adaptability, and strategic decision-making, not on producing reports or frameworks.",
     points: [
       "Operational Visibility",
       "Strategic Alignment",
@@ -66,7 +66,7 @@ const phases: {
   {
     title: "Sustain",
     focus: "Transformation is not a one-time initiative.",
-    desc: "HARTS continues supporting organizations through optimization, adaptation, strategic evolution, and ongoing transformation guidance beyond implementation.",
+    desc: "We continue supporting organisations through optimisation, adaptation, strategic evolution, and ongoing guidance well beyond implementation.",
     points: [
       "Continuous Optimization",
       "Strategic Evolution",

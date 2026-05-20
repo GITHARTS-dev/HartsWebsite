@@ -21,7 +21,7 @@ export default function HowWeWorkRoute() {
           layout="split"
           titleSoft="Disciplined Execution."
           titleStrong="Measurable Outcomes."
-          subtitle="We combine strategic diagnosis, product thinking, and disciplined delivery - moving from uncertain ideas to practical transformation with clear decisions, visible progress, and outcomes your teams can sustain."
+          subtitle="We combine strategic diagnosis, product thinking, and disciplined delivery. Uncertain ideas become practical transformation, with clear decisions, visible progress, and outcomes your teams can sustain."
           actions={
             <Link className="solid-button large" href="/contact">
               Connect with us

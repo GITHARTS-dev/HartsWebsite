@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "Do you work alongside our internal teams?",
-    a: "Yes - we embed with your teams, transfer capability throughout the engagement, and structure the work so your people own the outcome long after we step back.",
+    a: "Yes. We embed with your teams, transfer capability throughout the engagement, and structure the work so your people own the outcome long after we step back.",
   },
   {
     q: "What makes HARTS different from a traditional consultancy?",
@@ -99,7 +99,7 @@ export function ServicesOverview() {
         eyebrow="How We Help"
         titleSoft="Focused expertise."
         titleStrong="Decisive results."
-        subtitle="Focused service lines - engineered to clarify choices, design practical transformation, and mobilise people around work that matters."
+        subtitle="Focused service lines that clarify choices, design practical transformation, and mobilise people around work that matters."
         actions={
           <Link className="solid-button large" href="/contact">
             Connect with us

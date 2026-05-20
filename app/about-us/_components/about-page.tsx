@@ -10,28 +10,28 @@ const manifesto = [
     id: "blue",
     
     title: "Transparency & Communication",
-    desc: "Ensures transparency within and beyond the organisation - fostering open, honest communication at every level so that trust is built and sustained across leadership, teams, and external partners.",
+    desc: "We hold ourselves to open, honest communication at every level. Trust is built and sustained through how leadership, teams, and external partners actually talk to each other.",
     icon: <Eye size={22} strokeWidth={1.7} aria-hidden="true" />,
   },
   {
     id: "red",
-   
+
     title: "Attitude of Excellence",
-    desc: "Sets and upholds an attitude of excellence across everything HARTS does - raising the bar on quality, commitment, rigour, and the standard of outcomes we deliver for our clients.",
+    desc: "Excellence is an attitude we carry across everything HARTS does. We raise the bar on quality, commitment, rigour, and the standard of outcomes we deliver for our clients.",
     icon: <Flame size={22} strokeWidth={1.7} aria-hidden="true" />,
   },
   {
     id: "green",
-    
+
     title: "Well Being",
-    desc: "Champions the well-being of every individual within the organisation - cultivating a healthy, supportive, and balanced environment where people are genuinely cared for and can thrive.",
+    desc: "We champion the well-being of every individual within the organisation. A healthy, supportive, balanced environment is how people thrive, and how good work gets done.",
     icon: <Leaf size={22} strokeWidth={1.7} aria-hidden="true" />,
   },
   {
     id: "yellow",
-    
+
     title: "Inclusivity",
-    desc: "Drives inclusivity across the organisation - ensuring every voice is heard, every person is seen, and that diversity of perspective, background, and experience is celebrated as a strategic strength.",
+    desc: "Inclusivity is non-negotiable. Every voice is heard, every person is seen, and diversity of perspective, background, and experience is treated as a strategic strength.",
     icon: <HeartHandshake size={22} strokeWidth={1.7} aria-hidden="true" />,
   },
 ];
@@ -60,7 +60,7 @@ const team = [
   },
   {
     name: "Flavio Gall",
-    role: "Director - Business Development",
+    role: "Director, Business Development",
     intro: "Partners with leadership teams on growth, market clarity, and long-horizon strategy.",
     image: "/team/flavio.png",
     linkedin: "#",
@@ -108,13 +108,13 @@ export function AboutPage() {
             <h2>Built for the moments where progress matters.</h2>
             <p>
               HARTS partners with leadership teams navigating moments of decisive
-              change - restructuring, expansion, modernisation, and the messy
+              change: restructuring, expansion, modernisation, and the messy
               middle of transformation. Our craft is helping organisations think
               clearly, decide deliberately, and execute with operating discipline.
             </p>
             <p>
               We are a senior team of strategists, operators, and technologists.
-              We work side-by-side with our clients, leave capability behind, and
+              We work side by side with our clients, leave capability behind, and
               measure ourselves by the durability of the outcomes we help create.
             </p>
           </div>
@@ -189,7 +189,7 @@ export function AboutPage() {
             <h2 id="manifesto-heading">Manifesto Team</h2>
             <p className="au-manifesto-sub">
               Four dedicated teams that represent and protect the core values
-              HARTS is built on - each holding the organisation accountable to
+              HARTS is built on. Each holds the organisation accountable to
               what matters most.
             </p>
           </div>

@@ -664,6 +664,13 @@
 
 .challenges-intro .home-section-heading {
   margin-bottom: 0;
+  /* Vertically centre the eyebrow + h2 + paragraph against the taller
+     image on the right so the text column reads balanced beside it
+     instead of clustered at the top with empty space below. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
 }
 
 .challenge-visual {
@@ -6453,16 +6460,26 @@ a.solid-button:visited {
   transform: translate(6px, 6px);
 }
 
-/* Consultative subheading sitting above the challenge card grid. */
-.challenges-subheading {
-  max-width: 720px;
+/* Eyebrow + subheading block sitting above the challenge card grid —
+   labels the six cards as a coherent group so the user knows what they
+   are about to scan. */
+.challenges-subheading-block {
   margin: clamp(28px, 4vw, 44px) 0 clamp(20px, 3vw, 32px);
+  max-width: 760px;
+}
+
+.challenges-subheading-block .eyebrow {
+  margin: 0 0 10px;
+}
+
+.challenges-subheading {
+  margin: 0;
   color: var(--ink);
   font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  font-size: clamp(20px, 1.9vw, 28px);
+  font-size: clamp(22px, 2.1vw, 32px);
   font-weight: 760;
   letter-spacing: -0.005em;
-  line-height: 1.25;
+  line-height: 1.22;
 }
 
 /* .challenges-subheading::before {

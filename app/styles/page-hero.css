@@ -12,15 +12,15 @@
   display: grid;
   place-items: center;
   width: 100%;
-  /* Fill one full viewport panel (minus the 72px sticky header) so the next
-     section is only visible after the user scrolls down - mirrors the home
-     page's full-bleed welcome scene. */
+  /* Fill one viewport panel below the 72px sticky header. `dvh` (dynamic
+     viewport) collapses cleanly with mobile address bars so the bottom of
+     the hero is never clipped on iOS Safari; `vh` is the fallback. */
   min-height: calc(100vh - 72px);
+  min-height: calc(100dvh - 72px);
   padding: clamp(96px, 12vh, 128px) 5vw clamp(64px, 8vh, 96px);
   overflow: hidden;
   background: var(--soft, #F0F0F0);
   color: var(--ink);
-  /* Anchor scrolls land below the sticky 72px header. */
   scroll-margin-top: 80px;
 }
 

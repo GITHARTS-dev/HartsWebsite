@@ -19,7 +19,7 @@ export const domains: Domain[] = [
     label: "Setup",
     color: "green",
     sub: "Building something new",
-    body: "New entity, first 100 days post-deal, greenfield capability. Everything starts from zero — and the bar is whether it runs cleanly the day we leave.",
+    body: "New entity, first 100 days post-deal, greenfield capability. Everything starts from zero - and the bar is whether it runs cleanly the day we leave.",
     triggers: [
       "You've signed off on a new GCC or shared service centre.",
       "You've just acquired an entity and Day 1 is on the calendar.",
@@ -58,7 +58,7 @@ export const domains: Domain[] = [
     label: "Scale Up",
     color: "orange",
     sub: "Expanding what works",
-    body: "Proven operations ready to replicate across geographies, functions, or acquired entities. The risk isn't whether you'll grow — it's whether the people, process, and performance machinery survives the growth.",
+    body: "Proven operations ready to replicate across geographies, functions, or acquired entities. The risk isn't whether you'll grow - it's whether the people, process, and performance machinery survives the growth.",
     triggers: [
       "A working model needs to be cloned into a new market or business unit.",
       "An acquisition is being folded in without disrupting the parent operation.",

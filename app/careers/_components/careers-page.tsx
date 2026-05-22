@@ -16,14 +16,14 @@ const openings = [
     title: "GCC & Shared Services",
     role: "Senior Consultant",
     description:
-      "Stand up Global Capability Centres for clients — site selection through to live operations. Carry the BOT lifecycle end-to-end, from first hire to full transfer.",
+      "Stand up Global Capability Centres for clients - site selection through to live operations. Carry the BOT lifecycle end-to-end, from first hire to full transfer.",
   },
   {
     slug: "people-talent",
     title: "People & Talent",
     role: "Senior Consultant",
     description:
-      "Design and run the people side of transformation — job architecture, EVP, recruitment-as-a-service, leadership development. Make sure the change actually lands with the humans doing the work.",
+      "Design and run the people side of transformation - job architecture, EVP, recruitment-as-a-service, leadership development. Make sure the change actually lands with the humans doing the work.",
   },
 ];
 
@@ -149,8 +149,8 @@ export function CareersPage() {
           <p>
             We hire people who&apos;ve done the work, not people who&apos;ve studied it. HARTS
             runs on radical clarity, disciplined thinking, and a bias to ship. If you&apos;ve
-            built, scaled, or turned something around — and you want to do that work for the
-            clients we serve — we should talk.
+            built, scaled, or turned something around - and you want to do that work for the
+            clients we serve - we should talk.
           </p>
         </div>
       </section>

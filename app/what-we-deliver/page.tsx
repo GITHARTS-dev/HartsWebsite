@@ -22,7 +22,7 @@ export default function WhatWeDeliverRoute() {
           eyebrow="What We Deliver"
           titleSoft="Six services."
           titleStrong="One operating discipline."
-          subtitle="We are not a generalist firm. These six are what we do — and we do them all under one model: Build, Operate, Transfer. Pick the work that matches your moment; the discipline behind it stays the same."
+          subtitle="We are not a generalist firm. These six are what we do - and we do them all under one model: Build, Operate, Transfer. Pick the work that matches your moment; the discipline behind it stays the same."
           actions={
             <Link className="solid-button large" href="/contact">
               Let&apos;s talk
@@ -39,7 +39,7 @@ export default function WhatWeDeliverRoute() {
                   key={svc.slug}
                   href={`/what-we-deliver/${svc.slug}`}
                   className="ed-svc-row"
-                  aria-label={`${svc.title} — ${svc.line}`}
+                  aria-label={`${svc.title} - ${svc.line}`}
                 >
                   <span className="ed-svc-num">{svc.num}</span>
                   <span className="ed-svc-icon" aria-hidden="true">

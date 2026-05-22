@@ -1,9 +1,9 @@
-# HARTS Consulting — Master Brand & Content Document
+# HARTS Consulting - Master Brand & Content Document
 
 > **Purpose:** Single source of truth for the Claude Code local codebase build.
 > All copy marked `[LIVE SITE]` is verbatim from harts-website.vercel.app.
 > All copy marked `[STRATEGY SESSION]` is approved content from whiteboard analysis and positioning workshops.
-> Do not mix or substitute between the two — both are intentional and complementary.
+> Do not mix or substitute between the two - both are intentional and complementary.
 >
 > **Live site:** https://harts-website.vercel.app
 > **Last synced:** May 2026
@@ -17,7 +17,7 @@
 3. [Page: Home](#3-page-home)
 4. [Page: How We Help](#4-page-how-we-help)
 5. [Page: How We Work](#5-page-how-we-work)
-6. [Page: Where We Engage — Industries](#6-page-where-we-engage--industries)
+6. [Page: Where We Engage - Industries](#6-page-where-we-engage--industries)
 7. [Page: About Us](#7-page-about-us)
 8. [Page: Careers](#8-page-careers)
 9. [Page: Contact](#9-page-contact)
@@ -25,8 +25,8 @@
 11. [Strategic Layer: BOT Delivery Model](#11-strategic-layer-bot-delivery-model)
 12. [Strategic Layer: Capability Confidence Map](#12-strategic-layer-capability-confidence-map)
 13. [Strategic Layer: Competitive Positioning](#13-strategic-layer-competitive-positioning)
-14. [Strategic Layer: Sreema's Voice — Approved Quotes](#14-strategic-layer-sreemas-voice--approved-quotes)
-15. [Strategic Layer: OKRs — Immediate Focus Q3 2026](#15-strategic-layer-okrs--immediate-focus-q3-2026)
+14. [Strategic Layer: Sreema's Voice - Approved Quotes](#14-strategic-layer-sreemas-voice--approved-quotes)
+15. [Strategic Layer: OKRs - Immediate Focus Q3 2026](#15-strategic-layer-okrs--immediate-focus-q3-2026)
 16. [Design System & Assets](#16-design-system--assets)
 
 ---
@@ -67,7 +67,7 @@
 
 ### 1.4 Colour Palette
 
-`[STRATEGY SESSION]` — derived from live site visual inspection and brand assets.
+`[STRATEGY SESSION]` - derived from live site visual inspection and brand assets.
 
 | Token | Hex | Usage |
 |---|---|---|
@@ -75,7 +75,7 @@
 | `--color-navy` | `#0B1120` | Section backgrounds, card surfaces |
 | `--color-navy-mid` | `#131C33` | Card backgrounds |
 | `--color-navy-light` | `#1A2744` | Hover elevated surfaces |
-| `--color-accent` | `#3B82F6` | Primary — CTAs, links, active states, stats |
+| `--color-accent` | `#3B82F6` | Primary - CTAs, links, active states, stats |
 | `--color-accent-hover` | `#2563EB` | Button hover |
 | `--color-green` | `#34D399` | People & Organisation, success |
 | `--color-amber` | `#FBBF24` | GCC Setup, Innovation |
@@ -109,7 +109,7 @@
 | Principle | Application |
 |---|---|
 | Direct | No hedge words, no softeners. Say it plainly. |
-| Confident | We know this work because we've done it — not studied it. |
+| Confident | We know this work because we've done it - not studied it. |
 | People-first | Transformation is about people before process. Always. |
 | Action-oriented | Every sentence moves toward an outcome. |
 | Honest | If we're not the right fit, we say so. |
@@ -125,8 +125,8 @@
 [HARTS Logo]  |  Where We Engage  |  How We Help  |  How We Work  |  About Us  |  Careers  |  Connect
 ```
 
-- `Careers` — secondary style button
-- `Connect` — primary CTA button → `/contact`
+- `Careers` - secondary style button
+- `Connect` - primary CTA button → `/contact`
 
 ### 2.2 Routes
 
@@ -134,24 +134,24 @@
 |---|---|---|
 | Home | `/` | https://harts-website.vercel.app/ |
 | How We Help | `/how-we-help` | https://harts-website.vercel.app/how-we-help |
-| — Innovation | `/how-we-help/innovation` | |
-| — M&A | `/how-we-help/mergers-acquisitions` | |
-| — Operation | `/how-we-help/operation` | |
-| — Strategy | `/how-we-help/strategy` | |
-| — Transformation | `/how-we-help/transformation` | |
-| — GCC Setup | `/how-we-help/gcc-setup` | |
-| — Sustainability | `/how-we-help/sustainability` | |
-| — People & Organization | `/how-we-help/people-and-organization` | |
+| - Innovation | `/how-we-help/innovation` | |
+| - M&A | `/how-we-help/mergers-acquisitions` | |
+| - Operation | `/how-we-help/operation` | |
+| - Strategy | `/how-we-help/strategy` | |
+| - Transformation | `/how-we-help/transformation` | |
+| - GCC Setup | `/how-we-help/gcc-setup` | |
+| - Sustainability | `/how-we-help/sustainability` | |
+| - People & Organization | `/how-we-help/people-and-organization` | |
 | Where We Engage | `/industries` | https://harts-website.vercel.app/industries |
-| — Automotive | `/industries/automotive` | |
-| — Aerospace | `/industries/aerospace` | |
-| — Oil & Gas | `/industries/oil-gas` | |
-| — Chemicals | `/industries/chemicals` | |
-| — Life Sciences | `/industries/life-sciences` | |
-| — Energy | `/industries/energy` | |
-| — Technology | `/industries/technology` | |
-| — Telecommunications | `/industries/telecom` | |
-| — Transportation | `/industries/transportation` | |
+| - Automotive | `/industries/automotive` | |
+| - Aerospace | `/industries/aerospace` | |
+| - Oil & Gas | `/industries/oil-gas` | |
+| - Chemicals | `/industries/chemicals` | |
+| - Life Sciences | `/industries/life-sciences` | |
+| - Energy | `/industries/energy` | |
+| - Technology | `/industries/technology` | |
+| - Telecommunications | `/industries/telecom` | |
+| - Transportation | `/industries/transportation` | |
 | How We Work | `/how-we-work` | https://harts-website.vercel.app/how-we-work |
 | About Us | `/about-us` | https://harts-website.vercel.app/about-us |
 | Careers | `/careers` | https://harts-website.vercel.app/careers |
@@ -212,7 +212,7 @@ Clarity.                  Where We Engage
 **Body:**
 > Organizations today face operational complexity, fragmented systems, and rapidly evolving expectations. HARTS helps leadership teams align strategy, transformation, and execution into one connected direction for sustainable growth.
 
-**Image:** `home-page-discussion.jpeg` — alt: `HARTS strategy consultants collaborating on enterprise challenges`
+**Image:** `home-page-discussion.jpeg` - alt: `HARTS strategy consultants collaborating on enterprise challenges`
 
 **Section label:** Six Recurring Patterns
 
@@ -262,7 +262,7 @@ Clarity.                  Where We Engage
 
 **CTA:** `Connect With Us` → `/contact`
 
-**Image:** `image.png` — alt: `HARTS Consulting`
+**Image:** `image.png` - alt: `HARTS Consulting`
 
 ---
 
@@ -282,7 +282,7 @@ Clarity.                  Where We Engage
 > Decisive results.
 
 **Body:**
-> Eight focused service lines — engineered to clarify choices, design practical transformation, and mobilise people around work that matters.
+> Eight focused service lines - engineered to clarify choices, design practical transformation, and mobilise people around work that matters.
 
 **CTA:** `Connect with us` → `/contact`
 
@@ -307,9 +307,9 @@ Each card: title + one-liner description + route.
 | # | Service | One-liner | Route |
 |---|---|---|---|
 | 1 | Innovation | Turn enterprise scale into a disciplined engine for new growth, not ad-hoc experimentation. | `/how-we-help/innovation` |
-| 2 | M&A | Capture the full value of every deal — from thesis through integration and synergy realisation. | `/how-we-help/mergers-acquisitions` |
+| 2 | M&A | Capture the full value of every deal - from thesis through integration and synergy realisation. | `/how-we-help/mergers-acquisitions` |
 | 3 | Operation | Bring rigour, throughput, and cost discipline to the operations that run your business. | `/how-we-help/operation` |
-| 4 | Strategy | Clarify the choices that matter — and align leadership around a confident way forward. | `/how-we-help/strategy` |
+| 4 | Strategy | Clarify the choices that matter - and align leadership around a confident way forward. | `/how-we-help/strategy` |
 | 5 | Transformation | Run complex, multi-year change programmes with the discipline they actually require. | `/how-we-help/transformation` |
 | 6 | GCC Setup | Stand up Global Capability Centers that scale strategic capability at competitive economics. | `/how-we-help/gcc-setup` |
 | 7 | Sustainability | Move from ESG ambition to credible, measurable, audit-ready sustainability performance. | `/how-we-help/sustainability` |
@@ -330,7 +330,7 @@ Each card: title + one-liner description + route.
 > Most focused workstreams run six to twelve weeks. Larger transformation programs are phased over several months with clear milestones and decision points built in.
 
 **Q2:** Do you work alongside our internal teams?
-> Yes — we embed with your teams, transfer capability throughout the engagement, and structure the work so your people own the outcome long after we step back.
+> Yes - we embed with your teams, transfer capability throughout the engagement, and structure the work so your people own the outcome long after we step back.
 
 **Q3:** What makes HARTS different from a traditional consultancy?
 > We prioritise decision-making over documentation. Every engagement produces clear owners, measurable milestones, and momentum your teams can sustain after the engagement ends.
@@ -351,7 +351,7 @@ Each card: title + one-liner description + route.
 
 ---
 
-### 4.6 Service Detail Pages — Expanded Copy `[STRATEGY SESSION]`
+### 4.6 Service Detail Pages - Expanded Copy `[STRATEGY SESSION]`
 
 *These pages are linked from the service grid above. The live site sub-pages were not fully scraped. Use the following approved content for each sub-page build.*
 
@@ -362,7 +362,7 @@ Each card: title + one-liner description + route.
 **H1:** Turn enterprise scale into a disciplined engine for new growth.
 
 **Body:**
-> Innovation at enterprise scale requires the same rigour as any other business function — a clear mandate, a defined process, and accountability for outcomes. HARTS helps organisations move from scattered ideation to a repeatable innovation operating model that generates commercial value, not just ideas.
+> Innovation at enterprise scale requires the same rigour as any other business function - a clear mandate, a defined process, and accountability for outcomes. HARTS helps organisations move from scattered ideation to a repeatable innovation operating model that generates commercial value, not just ideas.
 
 **Sreema's voice:**
 > Innovation isn't a hackathon. It's a system. We build the system.
@@ -371,10 +371,10 @@ Each card: title + one-liner description + route.
 
 #### `/how-we-help/mergers-acquisitions`
 
-**H1:** Capture the full value of every deal — from thesis through integration.
+**H1:** Capture the full value of every deal - from thesis through integration.
 
 **Body:**
-> Most deals lose value in the integration phase — not in the deal room. HARTS partners with leadership teams through the 100 days that make or break an acquisition: operating model design, people integration, governance setup, synergy tracking, and the operational handover that makes the combined entity actually function.
+> Most deals lose value in the integration phase - not in the deal room. HARTS partners with leadership teams through the 100 days that make or break an acquisition: operating model design, people integration, governance setup, synergy tracking, and the operational handover that makes the combined entity actually function.
 
 **Service lines:**
 - 100-day post-merger operating playbook
@@ -396,7 +396,7 @@ Each card: title + one-liner description + route.
 **H1:** Bring rigour, throughput, and cost discipline to the operations that run your business.
 
 **Body:**
-> Operational complexity accumulates quietly — fragmented processes, inconsistent standards, manual handoffs, and visibility gaps that slow the whole enterprise. HARTS diagnoses, redesigns, and stabilises the operational core so leadership teams can focus forward rather than firefighting.
+> Operational complexity accumulates quietly - fragmented processes, inconsistent standards, manual handoffs, and visibility gaps that slow the whole enterprise. HARTS diagnoses, redesigns, and stabilises the operational core so leadership teams can focus forward rather than firefighting.
 
 **Sreema's voice:**
 > Operations are where strategy either lives or dies. We make sure it lives.
@@ -405,10 +405,10 @@ Each card: title + one-liner description + route.
 
 #### `/how-we-help/strategy`
 
-**H1:** Clarify the choices that matter — and align leadership around a confident way forward.
+**H1:** Clarify the choices that matter - and align leadership around a confident way forward.
 
 **Body:**
-> Strategy without execution is decoration. HARTS doesn't deliver strategy as a document — we work with leadership teams to define the choices, build the alignment, and create the conditions for confident execution. Every strategy engagement ends with clear owners, measurable milestones, and a leadership team that knows what it's committing to.
+> Strategy without execution is decoration. HARTS doesn't deliver strategy as a document - we work with leadership teams to define the choices, build the alignment, and create the conditions for confident execution. Every strategy engagement ends with clear owners, measurable milestones, and a leadership team that knows what it's committing to.
 
 **Sreema's voice:**
 > We don't write strategy reports. We sit with leadership teams until they can make the decision they've been avoiding.
@@ -437,7 +437,7 @@ Each card: title + one-liner description + route.
 **H1:** Stand up Global Capability Centres that scale strategic capability at competitive economics.
 
 **Body:**
-> Building a Global Capability Centre is not a procurement exercise — it is an operating model decision. HARTS designs, builds, and transfers GCCs from ground zero: org structure, hiring, governance, SLAs, knowledge transfer, and the operational handover that ensures the centre runs independently. We have done it. For 39 countries. That is not theory — it is experience.
+> Building a Global Capability Centre is not a procurement exercise - it is an operating model decision. HARTS designs, builds, and transfers GCCs from ground zero: org structure, hiring, governance, SLAs, knowledge transfer, and the operational handover that ensures the centre runs independently. We have done it. For 39 countries. That is not theory - it is experience.
 
 **Service lines:**
 - GCC / SSC operating model design
@@ -450,7 +450,7 @@ Each card: title + one-liner description + route.
 - Regulated-industry centre build
 
 **Sreema's voice:**
-> I spent 14 years building and running Metro's global solution centre. This isn't theory for us — it's muscle memory. We've done the night shifts, the compliance audits, the first go-live.
+> I spent 14 years building and running Metro's global solution centre. This isn't theory for us - it's muscle memory. We've done the night shifts, the compliance audits, the first go-live.
 
 ---
 
@@ -459,7 +459,7 @@ Each card: title + one-liner description + route.
 **H1:** Move from ESG ambition to credible, measurable, audit-ready sustainability performance.
 
 **Body:**
-> Sustainability is no longer a communications function — it is a strategic and operational discipline. HARTS helps organisations translate ESG commitments into measurable programmes, reporting frameworks, and operational changes that survive audit scrutiny and stakeholder challenge.
+> Sustainability is no longer a communications function - it is a strategic and operational discipline. HARTS helps organisations translate ESG commitments into measurable programmes, reporting frameworks, and operational changes that survive audit scrutiny and stakeholder challenge.
 
 ---
 
@@ -468,7 +468,7 @@ Each card: title + one-liner description + route.
 **H1:** Design the organisation, leadership, and culture your strategy actually needs to succeed.
 
 **Body:**
-> Every transformation has a people problem underneath it. HARTS addresses it directly — organisation design, leadership development, OCM, talent architecture, and the cultural change that makes new ways of working actually stick. We connect the people agenda to the process and performance agenda so they reinforce rather than resist each other.
+> Every transformation has a people problem underneath it. HARTS addresses it directly - organisation design, leadership development, OCM, talent architecture, and the cultural change that makes new ways of working actually stick. We connect the people agenda to the process and performance agenda so they reinforce rather than resist each other.
 
 **Service lines:**
 - Organisation design & restructuring
@@ -481,7 +481,7 @@ Each card: title + one-liner description + route.
 - Learning organisation build
 
 **Sreema's voice:**
-> I've sat in the chair. I know what it feels like when you're trying to change a 3,000-person organisation and nobody has told the people why. We start there — with the why — and build outward.
+> I've sat in the chair. I know what it feels like when you're trying to change a 3,000-person organisation and nobody has told the people why. We start there - with the why - and build outward.
 
 ---
 
@@ -499,7 +499,7 @@ Each card: title + one-liner description + route.
 > Measurable Outcomes.
 
 **Body:**
-> We combine strategic diagnosis, product thinking, and disciplined delivery — moving from uncertain ideas to practical transformation with clear decisions, visible progress, and outcomes your teams can sustain.
+> We combine strategic diagnosis, product thinking, and disciplined delivery - moving from uncertain ideas to practical transformation with clear decisions, visible progress, and outcomes your teams can sustain.
 
 **CTA:** `Connect with us` → `/contact`
 
@@ -513,7 +513,7 @@ Each card: title + one-liner description + route.
 > Principles That Guide Transformation
 
 **Body:**
-> HARTS approaches transformation through clarity, collaboration, adaptability, and long-term thinking — helping organizations move forward with confidence and connected direction.
+> HARTS approaches transformation through clarity, collaboration, adaptability, and long-term thinking - helping organizations move forward with confidence and connected direction.
 
 **5 Principles:**
 
@@ -541,7 +541,7 @@ Each card: title + one-liner description + route.
 
 ---
 
-## 6. Page: Where We Engage — Industries
+## 6. Page: Where We Engage - Industries
 
 **Page title:** `Industries | HARTS`  
 **Meta description:** `HARTS partners with organizations across industries to align strategy, operations, and transformation execution.`
@@ -573,7 +573,7 @@ Each card: title + one-liner description + route.
 **Body:**
 > HARTS adapts its consulting, operational, and technology frameworks to the realities of each industry enabling organizations to navigate complexity with clarity, resilience, and measurable impact.
 
-**9 Industry Sectors — verbatim descriptions:**
+**9 Industry Sectors - verbatim descriptions:**
 
 | # | Industry | Route | Description |
 |---|---|---|---|
@@ -633,15 +633,15 @@ Each card: title + one-liner description + route.
 > Built for the moments where progress matters.
 
 **Paragraph 1:**
-> HARTS partners with leadership teams navigating moments of decisive change — restructuring, expansion, modernisation, and the messy middle of transformation. Our craft is helping organisations think clearly, decide deliberately, and execute with operating discipline.
+> HARTS partners with leadership teams navigating moments of decisive change - restructuring, expansion, modernisation, and the messy middle of transformation. Our craft is helping organisations think clearly, decide deliberately, and execute with operating discipline.
 
 **Paragraph 2:**
 > We are a senior team of strategists, operators, and technologists. We work side-by-side with our clients, leave capability behind, and measure ourselves by the durability of the outcomes we help create.
 
 **3 proof bullets:**
-- **Strategic clarity** — Sharper choices, calmer execution.
-- **Operating discipline** — Decisions translated into running cadence.
-- **Capability transfer** — Your teams own the outcome long after we leave.
+- **Strategic clarity** - Sharper choices, calmer execution.
+- **Operating discipline** - Decisions translated into running cadence.
+- **Capability transfer** - Your teams own the outcome long after we leave.
 
 ---
 
@@ -655,7 +655,7 @@ Each card: title + one-liner description + route.
 **Body:**
 > A senior team of strategists and operators united by a commitment to sustainable, measurable change.
 
-**4 team members — verbatim titles and bios:**
+**4 team members - verbatim titles and bios:**
 
 ---
 
@@ -681,7 +681,7 @@ Each card: title + one-liner description + route.
 ---
 
 **Flavio Gall**
-- Role: Director — Business Development
+- Role: Director - Business Development
 - Bio (live): Partners with leadership teams on growth, market clarity, and long-horizon strategy.
 - LinkedIn: `#` (not yet published)
 
@@ -695,16 +695,16 @@ Each card: title + one-liner description + route.
 > Manifesto Team
 
 **Body:**
-> Four dedicated teams that represent and protect the core values HARTS is built on — each holding the organisation accountable to what matters most.
+> Four dedicated teams that represent and protect the core values HARTS is built on - each holding the organisation accountable to what matters most.
 
-**4 manifesto teams — verbatim:**
+**4 manifesto teams - verbatim:**
 
 | Team name | Description |
 |---|---|
-| Transparency & Communication | Ensures transparency within and beyond the organisation — fostering open, honest communication at every level so that trust is built and sustained across leadership, teams, and external partners. |
-| Attitude of Excellence | Sets and upholds an attitude of excellence across everything HARTS does — raising the bar on quality, commitment, rigour, and the standard of outcomes we deliver for our clients. |
-| Well Being | Champions the well-being of every individual within the organisation — cultivating a healthy, supportive, and balanced environment where people are genuinely cared for and can thrive. |
-| Inclusivity | Drives inclusivity across the organisation — ensuring every voice is heard, every person is seen, and that diversity of perspective, background, and experience is celebrated as a strategic strength. |
+| Transparency & Communication | Ensures transparency within and beyond the organisation - fostering open, honest communication at every level so that trust is built and sustained across leadership, teams, and external partners. |
+| Attitude of Excellence | Sets and upholds an attitude of excellence across everything HARTS does - raising the bar on quality, commitment, rigour, and the standard of outcomes we deliver for our clients. |
+| Well Being | Champions the well-being of every individual within the organisation - cultivating a healthy, supportive, and balanced environment where people are genuinely cared for and can thrive. |
+| Inclusivity | Drives inclusivity across the organisation - ensuring every voice is heard, every person is seen, and that diversity of perspective, background, and experience is celebrated as a strategic strength. |
 
 ---
 
@@ -878,11 +878,11 @@ Phone: +91 422 000 0000
 
 ## 10. Strategic Layer: Identity & Positioning
 
-`[STRATEGY SESSION]` — Approved at strategy workshop. Supplements and deepens the live site copy.
+`[STRATEGY SESSION]` - Approved at strategy workshop. Supplements and deepens the live site copy.
 
 ### 10.1 Core Positioning Statement
 
-> The transformation partner for organisations in motion — navigating mergers, scaling operations, and building the people and process capability to sustain what comes next.
+> The transformation partner for organisations in motion - navigating mergers, scaling operations, and building the people and process capability to sustain what comes next.
 
 ### 10.2 Strategic Taglines
 
@@ -895,25 +895,25 @@ Phone: +91 422 000 0000
 **Recommended lead:** *"We build the operating model. We leave the capability."*
 Rationale: 14 words. No competitor can say this honestly. Signals BOT delivery, client ownership, a fundamentally different model to advisory-only firms.
 
-### 10.3 The Four Verbs — Identity Architecture
+### 10.3 The Four Verbs - Identity Architecture
 
 These four verbs define HARTS' differentiated position. Use consistently across all pages alongside live site copy.
 
 | Verb | What it means |
 |---|---|
-| **We integrate** | People, process, and operational strategy in one engagement — not separate workstreams |
-| **We execute** | Build-Operate-Transfer — not advisory alone, not implementation alone, both |
-| **We transfer** | When we leave, the client owns a functioning capability — not a report |
+| **We integrate** | People, process, and operational strategy in one engagement - not separate workstreams |
+| **We execute** | Build-Operate-Transfer - not advisory alone, not implementation alone, both |
+| **We transfer** | When we leave, the client owns a functioning capability - not a report |
 | **We measure** | Success = how the organisation performs after we exit |
 
 ### 10.4 What HARTS Is Not
 
 Use to maintain identity discipline and say no to the wrong briefs:
 
-- ❌ Not a strategy house — strategy is embedded in delivery, never the standalone product
-- ❌ Not a technology integrator — vendor-neutral, tool-agnostic
-- ❌ Not an HR advisory — people work connects directly to process and performance
-- ❌ Not a generalist consultancy — serves organisations in motion, not every brief
+- ❌ Not a strategy house - strategy is embedded in delivery, never the standalone product
+- ❌ Not a technology integrator - vendor-neutral, tool-agnostic
+- ❌ Not an HR advisory - people work connects directly to process and performance
+- ❌ Not a generalist consultancy - serves organisations in motion, not every brief
 
 ### 10.5 Target Client Profile
 
@@ -929,11 +929,11 @@ Use to maintain identity discipline and say no to the wrong briefs:
 
 ### 10.6 The 5 Core USPs
 
-1. **Integrated people + process + tech** — neither people-first nor tech-first; both in one team
-2. **Post-merger 100-day playbook with a COE that stays** — builds, operates, and transfers; doesn't leave a slide deck
-3. **Vendor-neutral process intelligence** — no Celonis/Signavio/SAP licence conflict
-4. **Build-Operate-Transfer across all service lines** — not just GCC; applies to every engagement
-5. **Culture + innovation as CI multiplier** — culture as an operational lever, not a byproduct
+1. **Integrated people + process + tech** - neither people-first nor tech-first; both in one team
+2. **Post-merger 100-day playbook with a COE that stays** - builds, operates, and transfers; doesn't leave a slide deck
+3. **Vendor-neutral process intelligence** - no Celonis/Signavio/SAP licence conflict
+4. **Build-Operate-Transfer across all service lines** - not just GCC; applies to every engagement
+5. **Culture + innovation as CI multiplier** - culture as an operational lever, not a byproduct
 
 ---
 
@@ -980,15 +980,15 @@ ADVISE → BUILD → OPERATE → TRANSFER
 
 ## 12. Strategic Layer: Capability Confidence Map
 
-`[STRATEGY SESSION]` — Derived from capability mapping workshop (Evora/ESP/GMR tracks).
+`[STRATEGY SESSION]` - Derived from capability mapping workshop (Evora/ESP/GMR tracks).
 
 ### 12.1 Confidence Tiers
 
 | Tier | Services | Action |
 |---|---|---|
-| Lead now — sell actively | People & Organisation, M&A / PMI | Front every pitch with these |
-| Sell with proof — invest | COE Design & CI, GCC Setup (BOT) | Need case studies before scaling BD |
-| Embed only — do not lead | Strategy as standalone product | Deliver inside other engagements only |
+| Lead now - sell actively | People & Organisation, M&A / PMI | Front every pitch with these |
+| Sell with proof - invest | COE Design & CI, GCC Setup (BOT) | Need case studies before scaling BD |
+| Embed only - do not lead | Strategy as standalone product | Deliver inside other engagements only |
 
 ### 12.2 Capability Detail
 
@@ -997,8 +997,8 @@ ADVISE → BUILD → OPERATE → TRANSFER
 | People, OD & change | High | Evora (exec coaching, OD, E4C), ESP (org design, recruitment), GMR (talent, EVP, learning org) | Needs published case studies |
 | M&A / Post-merger integration | High | Evora (100-day playbook), ESP (MSA, BOT transition, hypercare) | How many live PMI tracks? Document them. |
 | COE design & CI | Medium | Evora (COE, control tower), GMR (CI COE culture, innovation) | Vendor-neutral positioning must be explicit |
-| GCC / shared service setup | Medium | ESP (entire track = GCC setup lifecycle) | Crowded market — position on regulated-industry angle |
-| Strategy as product | Do not lead | GMR (BD, portfolio expansion) | Most commoditised consulting service — fold into other engagements |
+| GCC / shared service setup | Medium | ESP (entire track = GCC setup lifecycle) | Crowded market - position on regulated-industry angle |
+| Strategy as product | Do not lead | GMR (BD, portfolio expansion) | Most commoditised consulting service - fold into other engagements |
 
 ---
 
@@ -1017,40 +1017,40 @@ ADVISE → BUILD → OPERATE → TRANSFER
 
 ### 13.2 White Space Statement
 
-> HARTS operates in the white space every competitor leaves: the integration of people, process, and operational strategy — executed through a Build-Operate-Transfer model — in a single engagement that doesn't end until the client owns the outcome.
+> HARTS operates in the white space every competitor leaves: the integration of people, process, and operational strategy - executed through a Build-Operate-Transfer model - in a single engagement that doesn't end until the client owns the outcome.
 
 ### 13.3 What No Competitor Does
 
-1. BOT across all service lines — not just GCC setup
-2. People + process in one team — not referred out
-3. Vendor-neutral process advisory — no licence dependency
-4. Retainer-based CI governance — recurring revenue anchor
-5. Founders who've operated at scale — Sreema's 14-year GCC leadership is practitioner credibility no advisory firm can match
+1. BOT across all service lines - not just GCC setup
+2. People + process in one team - not referred out
+3. Vendor-neutral process advisory - no licence dependency
+4. Retainer-based CI governance - recurring revenue anchor
+5. Founders who've operated at scale - Sreema's 14-year GCC leadership is practitioner credibility no advisory firm can match
 
 ---
 
-## 14. Strategic Layer: Sreema's Voice — Approved Quotes
+## 14. Strategic Layer: Sreema's Voice - Approved Quotes
 
-`[STRATEGY SESSION]` — In-character, approved for use across pages, case studies, and thought leadership.
+`[STRATEGY SESSION]` - In-character, approved for use across pages, case studies, and thought leadership.
 
 | Context | Quote |
 |---|---|
 | General identity | "The world doesn't need another consulting firm that tells you what to do. It needs one that stays long enough to make sure it gets done." |
 | Founding story | "We built HARTS because we were tired of watching transformation projects end with a beautiful slide deck and no lasting change." |
-| On people & change | "I've sat in the chair. I know what it feels like when you're trying to change a 3,000-person organisation and nobody has told the people why. We start there — with the why — and build outward." |
+| On people & change | "I've sat in the chair. I know what it feels like when you're trying to change a 3,000-person organisation and nobody has told the people why. We start there - with the why - and build outward." |
 | On M&A | "Most consultants hand you a 200-slide integration plan and leave. We stay. We run the first 100 days alongside your team because that's when deals are won or lost." |
-| On GCC | "I spent 14 years building and running Metro's global solution centre. This isn't theory for us — it's muscle memory. We've done the night shifts, the compliance audits, the first go-live." |
+| On GCC | "I spent 14 years building and running Metro's global solution centre. This isn't theory for us - it's muscle memory. We've done the night shifts, the compliance audits, the first go-live." |
 | On process tools | "Everyone sells process mining tools. We build the team that makes those tools actually work. The tool is 20% of the value. The people running it are the other 80%." |
 | On the BOT model | "The deliverable is not a framework. It is a functioning capability. If it doesn't run without us, we haven't finished the job." |
 | On contact | "We don't do discovery calls that waste your time. If you've read this far, you already know what we do. Let's talk about what you need." |
-| On hiring | "We hire people who've done the work, not people who've studied it. If you've built something, scaled something, or turned something around — we should talk." |
+| On hiring | "We hire people who've done the work, not people who've studied it. If you've built something, scaled something, or turned something around - we should talk." |
 | On strategy | "We don't write strategy reports. We sit with leadership teams until they can make the decision they've been avoiding." |
 | On operations | "Operations are where strategy either lives or dies. We make sure it lives." |
 | On innovation | "Innovation isn't a hackathon. It's a system. We build the system." |
 
 ---
 
-## 15. Strategic Layer: OKRs — Immediate Focus Q3 2026
+## 15. Strategic Layer: OKRs - Immediate Focus Q3 2026
 
 `[STRATEGY SESSION]`
 
@@ -1061,27 +1061,27 @@ ADVISE → BUILD → OPERATE → TRANSFER
 | OKR 01 | Formalise Evora channel and build qualified pipeline | Flavio Gall + Sreema | Weeks 1–12 |
 | OKR 02 | Publish proof of delivery (case studies + LinkedIn) | Savio + Sreema | Weeks 1–8 |
 | OKR 03 | Productise the 100-day PMI playbook | Cristian + Flavio | Weeks 2–10 |
-| OKR 04 | Lock identity — one voice everywhere | Sreema (final) + Cristian | Weeks 1–6 |
+| OKR 04 | Lock identity - one voice everywhere | Sreema (final) + Cristian | Weeks 1–6 |
 | OKR 05 | Build internal delivery operating rhythm | Savio + all leaders | Weeks 1–12 |
 
 ### 15.2 OKR Detail
 
 ---
 
-**OKR 01 — Pipeline: Revenue engine**
+**OKR 01 - Pipeline: Revenue engine**
 
 Objective: Formalise the Evora channel and build a qualified pipeline that funds the first 12 months.
 
 Key Results:
-1. Sign formal co-sell / referral agreement with Evora IT Solutions — defined trigger events and commission structure → **1 signed MSA**
+1. Sign formal co-sell / referral agreement with Evora IT Solutions - defined trigger events and commission structure → **1 signed MSA**
 2. Generate 6 qualified leads from Evora ecosystem (clients in active M&A, S/4HANA migration, or GCC setup) → **6 leads**
 3. Close 2 paid engagements sourced from Evora referral or PE portfolio → **2 closed deals**
 
 ---
 
-**OKR 02 — Credibility: Proof before positioning**
+**OKR 02 - Credibility: Proof before positioning**
 
-Objective: Publish proof of delivery so the market knows HARTS does this work — not just claims it.
+Objective: Publish proof of delivery so the market knows HARTS does this work - not just claims it.
 
 Key Results:
 1. Publish 3 anonymised case studies (Evora scale-up, ESP BOT setup, GMR capability build) with quantified outcomes → **3 published**
@@ -1090,7 +1090,7 @@ Key Results:
 
 ---
 
-**OKR 03 — Product: Package the 100-day playbook**
+**OKR 03 - Product: Package the 100-day playbook**
 
 Objective: Turn the post-merger 100-day playbook into a named, scoped, priced product the BD team can sell without customisation.
 
@@ -1101,7 +1101,7 @@ Key Results:
 
 ---
 
-**OKR 04 — Identity: One voice, everywhere**
+**OKR 04 - Identity: One voice, everywhere**
 
 Objective: Lock the HARTS strategic identity so every touchpoint says the same thing.
 
@@ -1112,12 +1112,12 @@ Key Results:
 
 ---
 
-**OKR 05 — Delivery engine: Operating discipline**
+**OKR 05 - Delivery engine: Operating discipline**
 
 Objective: Build internal operating cadence that makes HARTS a firm, not individuals running separate client tracks.
 
 Key Results:
-1. Fortnightly leadership cadence (60 min) — no missed sessions for 6 consecutive weeks → **6/6 sessions**
+1. Fortnightly leadership cadence (60 min) - no missed sessions for 6 consecutive weeks → **6/6 sessions**
 2. Document internal delivery SLA (response time, deliverable cadence, escalation protocol) → **1 SLA doc**
 3. Shared knowledge base (Notion / Confluence) housing all case studies, templates, playbooks → **1 KB live**
 
@@ -1232,7 +1232,7 @@ Week 6  →  Delivery cadence running (OKR 05)
 <blockquote class="quote-sreema">
   <span class="quote-mark" aria-hidden="true">"</span>
   <p>Quote text here.</p>
-  <cite>— Sreema Nallasivam, CEO & Co-Founder</cite>
+  <cite>- Sreema Nallasivam, CEO & Co-Founder</cite>
 </blockquote>
 ```
 ```css

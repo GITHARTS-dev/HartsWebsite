@@ -10,7 +10,7 @@ import { services, getService } from "../_data/services";
 export const metadata: Metadata = {
   title: "Where We Deliver | HARTS",
   description:
-    "Set-up, Develop, Scale-up — three moments of intervention. One partner across all of them.",
+    "Set-up, Develop, Scale-up - three moments of intervention. One partner across all of them.",
 };
 
 export default function WhereWeDeliverRoute() {
@@ -23,7 +23,7 @@ export default function WhereWeDeliverRoute() {
           eyebrow="Where We Deliver"
           titleSoft="Three contexts."
           titleStrong="One approach."
-          subtitle="HARTS organises around where you are, not what we sell. Set-up, Develop, Scale-up — one capability, one engagement model, three moments of intervention. Many clients engage HARTS for Set-up, return for Develop, and stay for Scale-up."
+          subtitle="HARTS organises around where you are, not what we sell. Set-up, Develop, Scale-up - one capability, one engagement model, three moments of intervention. Many clients engage HARTS for Set-up, return for Develop, and stay for Scale-up."
           actions={
             <Link className="solid-button large" href="/contact">
               Let&apos;s talk
@@ -86,47 +86,6 @@ export default function WhereWeDeliverRoute() {
             </div>
           </section>
         ))}
-
-        {/* ─── Cross-domain note ───────────────────────────────────── */}
-        <section className="ed-section">
-          <div className="ed-shell">
-            <header className="ed-section-head" style={{ maxWidth: 760 }}>
-              <p className="ed-eyebrow">One firm. All three moments.</p>
-              <h2>
-                You don&apos;t re-hire a new partner to <em>learn your business twice.</em>
-              </h2>
-              <p>
-                Many clients engage HARTS for Set-up, return for Develop, and
-                stay for Scale-up. The continuity matters — the same team, the
-                same methodology, the same accountability across every phase of
-                your capability&apos;s life.
-              </p>
-            </header>
-
-            <div className="ed-svc-list">
-              {services.map((svc) => (
-                <Link
-                  key={svc.slug}
-                  href={`/what-we-deliver/${svc.slug}`}
-                  className="ed-svc-row"
-                  aria-label={`${svc.title} — ${svc.line}`}
-                >
-                  <span className="ed-svc-num">{svc.num}</span>
-                  <span className="ed-svc-icon" aria-hidden="true">
-                    <ServiceIcon slug={svc.slug} />
-                  </span>
-                  <div className="ed-svc-body">
-                    <h3 className="ed-svc-title">{svc.title}</h3>
-                    <p className="ed-svc-tag">{svc.line}</p>
-                  </div>
-                  <span className="ed-svc-arrow" aria-hidden="true">
-                    <ArrowIcon size={20} />
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ─── CTA ──────────────────────────────────────────────────── */}
         <section className="ed-cta">

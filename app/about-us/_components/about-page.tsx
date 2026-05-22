@@ -143,7 +143,7 @@ export function AboutPage() {
               The architects <em>of clarity.</em>
             </h2>
             <p className="au-roster-sub">
-              A senior team of strategists and operators — united by a
+              A senior team of strategists and operators - united by a
               commitment to sustainable, measurable change.
             </p>
           </header>

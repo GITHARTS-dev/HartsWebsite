@@ -41,7 +41,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* ─── WHAT IT IS — sub-capability editorial list ────────────── */}
+      {/* ─── WHAT IT IS - sub-capability editorial list ────────────── */}
       <section className="ed-section">
         <div className="ed-shell">
           <header className="ed-section-head">
@@ -83,7 +83,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* ─── HOW WE DELIVER THIS — BOT prose, 3 columns ────────────── */}
+      {/* ─── HOW WE DELIVER THIS - BOT prose, 3 columns ────────────── */}
       <section className="ed-section ed-section--soft">
         <div className="ed-shell">
           <header className="ed-section-head">
@@ -93,7 +93,7 @@ export function ServiceDetail({ service }: { service: Service }) {
             </h2>
             <p>
               The HARTS methodology applied to {service.title.toLowerCase()}.
-              Three phases, in plain language — what we do, how we run it, what
+              Three phases, in plain language - what we do, how we run it, what
               we leave behind.
             </p>
           </header>
@@ -123,7 +123,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* ─── WHERE WE DELIVER THIS — domain context rows ───────────── */}
+      {/* ─── WHERE WE DELIVER THIS - domain context rows ───────────── */}
       <section className="ed-section">
         <div className="ed-shell">
           <header className="ed-section-head">

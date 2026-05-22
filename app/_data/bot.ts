@@ -25,7 +25,7 @@ export const botPhases: BotPhase[] = [
     num: "01",
     label: "Build",
     color: "green",
-    desc: "We design and construct alongside your team — not for you, with you.",
+    desc: "We design and construct alongside your team - not for you, with you.",
     items: [
       { label: "Scope", desc: "Define boundaries, deliverables, team shape, success criteria." },
       { label: "KT / nurturing / mentoring", desc: "Transfer knowledge and build internal capability from day one." },
@@ -41,7 +41,7 @@ export const botPhases: BotPhase[] = [
     desc: "We carry the weight through transition until it's safe to let go.",
     items: [
       { label: "Stabilise process", desc: "Run the function, remove friction, bring operations to steady state." },
-      { label: "Shadowing", desc: "Your team shadows ours — learning by doing, not by reading docs." },
+      { label: "Shadowing", desc: "Your team shadows ours - learning by doing, not by reading docs." },
       { label: "SLA execution & strategy", desc: "Prove SLAs work in practice. Adjust where reality meets design." },
     ],
   },

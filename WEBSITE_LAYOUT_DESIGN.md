@@ -1,8 +1,8 @@
-# HARTS Website — Layout Design
+# HARTS Website - Layout Design
 
 > Refines `NEW_WEBSITE_ARCHITECTURE.md` with concrete page layouts.
 > **Service taxonomy:** 6 services (confirmed by Sreema), each delivered via the BOT methodology, applied across 3 domains (Setup / Develop / Scale Up).
-> **Style cues:** `harts-website-full.jsx` prototype — dark canvas, four-colour gradient accent, numbered service cards, operator voice, Sreema quotes treated as a design element.
+> **Style cues:** `harts-website-full.jsx` prototype - dark canvas, four-colour gradient accent, numbered service cards, operator voice, Sreema quotes treated as a design element.
 > **Voice:** crisp, direct, no hedge words. The brand doc's voice principles, applied without compromise.
 
 ---
@@ -42,12 +42,12 @@ Every service page connects to all three: **what** the service is, **how** BOT a
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **Logo** — wordmark with the 4-colour gradient bar from the prototype (red → blue → green → orange).
-- **What We Deliver** — opens a 6-card mega-menu on hover (one card per service, colour-coded).
-- **How We Deliver** — single page on BOT.
-- **Where We Deliver** — single page on Setup / Develop / Scale Up.
-- **About** — quiet text link (firm story, leadership, manifesto, partners).
-- **Let's Talk →** — primary CTA, four-colour gradient hover.
+- **Logo** - wordmark with the 4-colour gradient bar from the prototype (red → blue → green → orange).
+- **What We Deliver** - opens a 6-card mega-menu on hover (one card per service, colour-coded).
+- **How We Deliver** - single page on BOT.
+- **Where We Deliver** - single page on Setup / Develop / Scale Up.
+- **About** - quiet text link (firm story, leadership, manifesto, partners).
+- **Let's Talk →** - primary CTA, four-colour gradient hover.
 
 ### What We Deliver mega-menu (on hover)
 
@@ -100,7 +100,7 @@ Every service page connects to all three: **what** the service is, **how** BOT a
 
 Single scroll. Five blocks. No portal overlay.
 
-### Block 1 — Hero (full viewport, two-column)
+### Block 1 - Hero (full viewport, two-column)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -112,11 +112,11 @@ Single scroll. Five blocks. No portal overlay.
 │   We build the                       ┌────────────────────────────────┐  │
 │   operating model.                   │                                │  │
 │   We leave the                       │   [Hero image: senior team in  │  │
-│   capability.                        │    working session — operator  │  │
+│   capability.                        │    working session - operator  │  │
 │                                      │    energy, not stock photo]    │  │
 │                                      │                                │  │
 │   The partner for mid-market         │                                │  │
-│   organisations in motion —          │                                │  │
+│   organisations in motion -          │                                │  │
 │   mergers, scale-up, new             │                                │  │
 │   capability builds. We don't        │                                │  │
 │   leave until it runs                └────────────────────────────────┘  │
@@ -128,9 +128,9 @@ Single scroll. Five blocks. No portal overlay.
 ```
 
 - H1 uses Cormorant Garamond (display). Short lines, two-stack.
-- Image-right keeps the page asymmetric and modern — avoid centred-stack.
+- Image-right keeps the page asymmetric and modern - avoid centred-stack.
 
-### Block 2 — Our Vision (quiet, single-statement)
+### Block 2 - Our Vision (quiet, single-statement)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -148,7 +148,7 @@ Single scroll. Five blocks. No portal overlay.
 
 One sentence. Lots of whitespace. A short gradient bar at the bottom is the only ornament.
 
-### Block 3 — What We Deliver (short intro + 6-card grid)
+### Block 3 - What We Deliver (short intro + 6-card grid)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -193,7 +193,7 @@ One sentence. Lots of whitespace. A short gradient bar at the bottom is the only
 - Each card: number + colour swatch + title + 2-line description, hover reveals "Read more →".
 - Click → service detail page.
 
-### Block 4 — How We Deliver (the BOT promise)
+### Block 4 - How We Deliver (the BOT promise)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -219,7 +219,7 @@ One sentence. Lots of whitespace. A short gradient bar at the bottom is the only
 - Three dots on a gradient line. Hover each = brief expansion. Click = page.
 - One-line teaser caption per phase.
 
-### Block 5 — Where We Deliver (3 domains)
+### Block 5 - Where We Deliver (3 domains)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -243,7 +243,7 @@ One sentence. Lots of whitespace. A short gradient bar at the bottom is the only
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Block 6 — Sreema quote band (close)
+### Block 6 - Sreema quote band (close)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -254,7 +254,7 @@ One sentence. Lots of whitespace. A short gradient bar at the bottom is the only
 │      stays long enough to make sure it gets done.                         │
 │   "                                                                        │
 │                                                                            │
-│   — Sreema Nallasivam, CEO & Co-Founder                                   │
+│   - Sreema Nallasivam, CEO & Co-Founder                                   │
 │                                                                            │
 │   [ Let's talk → ]                                                         │
 │                                                                            │
@@ -265,7 +265,7 @@ Full-bleed, Cormorant Garamond italic, large display quote mark in green at 30% 
 
 ---
 
-## 4. What We Deliver — overview page (`/what-we-deliver`)
+## 4. What We Deliver - overview page (`/what-we-deliver`)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -276,7 +276,7 @@ Full-bleed, Cormorant Garamond italic, large display quote mark in green at 30% 
 │   Six services. One disciplined thread.                                   │
 │                                                                            │
 │   We're not a generalist firm. These six are what we do, and we do        │
-│   them all under one operating model — built, run, transferred.           │
+│   them all under one operating model - built, run, transferred.           │
 └──────────────────────────────────────────────────────────────────────────┘
 
    ── 01 ─────────────────────────────────────────────────  ── green ──
@@ -292,29 +292,29 @@ Full-bleed, Cormorant Garamond italic, large display quote mark in green at 30% 
 
    "I've sat in the chair. I know what it feels like when you're trying
     to change a 3,000-person organisation and nobody has told the people
-    why. We start with the why — and build outward."
-                                            — Sreema Nallasivam
+    why. We start with the why - and build outward."
+                                            - Sreema Nallasivam
                                                           [ Read more → ]
 
    ── 02 ─────────────────────────────────────────────────  ── blue ──
-   COE — CENTRE OF EXCELLENCE
+   COE - CENTRE OF EXCELLENCE
    The function that keeps the organisation moving after the project ends.
 
      • OCM + Communications + Governance
      • Control Tower (Business Intelligence)
-         — OKRs & Goals
-         — Policy Deployment
-         — Org Performance Reporting & Insights
+         - OKRs & Goals
+         - Policy Deployment
+         - Org Performance Reporting & Insights
      • Innovation
      • Continuous Improvement (CI)
-         — Problem Classification
-         — Agile
-         — Innovation Hub
-         — Automation Strategy
+         - Problem Classification
+         - Agile
+         - Innovation Hub
+         - Automation Strategy
 
    "Everyone sells process mining tools. We build the team that makes
     those tools actually work."
-                                            — Sreema Nallasivam
+                                            - Sreema Nallasivam
                                                           [ Read more → ]
 
    [ ... continues for 03, 04, 05, 06 ... ]
@@ -332,7 +332,7 @@ Layout alternates left/right alignment per block to keep rhythm. Generous vertic
 
 ---
 
-## 5. Service detail page — template
+## 5. Service detail page - template
 
 Every service page follows the same 5-section template. Filled with content specific to that service.
 
@@ -349,19 +349,19 @@ Every service page follows the same 5-section template. Filled with content spec
 │ Designing the organisation,                                                │
 │ then making it run.                                                        │
 │                                                                            │
-│ The job, the talent, the development path, the EVP — designed             │
+│ The job, the talent, the development path, the EVP - designed             │
 │ and built into a working system. Not a slide on org design.               │
 │                                                                            │
 │ [ Let's talk → ]                                                           │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-#### Section A — What this service is
+#### Section A - What this service is
 
 ```
    ── WHAT IT IS
 
-   [ Lead paragraph — 2–3 sentences, plain operator language ]
+   [ Lead paragraph - 2–3 sentences, plain operator language ]
 
    THE WORK INCLUDES
    ┌────────────────────────────┐ ┌────────────────────────────┐
@@ -379,14 +379,14 @@ Every service page follows the same 5-section template. Filled with content spec
    ┌────────────────────────────┐ ┌────────────────────────────┐
    │ Mini-CXO                   │ │ EVP                        │
    │ Operating leadership at    │ │ Why the right people stay  │
-   │ fractional cadence for     │ │ — written in language they │
+   │ fractional cadence for     │ │ - written in language they │
    │ mid-market clients.        │ │ actually use.              │
    └────────────────────────────┘ └────────────────────────────┘
 ```
 
 Six cards in a 3×2 grid (or 2×3 on mobile). Each card: sub-capability title + one-line plain description.
 
-#### Section B — How we deliver this service (BOT lens, service-specific)
+#### Section B - How we deliver this service (BOT lens, service-specific)
 
 ```
    ── HOW WE DELIVER THIS
@@ -401,7 +401,7 @@ Six cards in a 3×2 grid (or 2×3 on mobile). Each card: sub-capability title + 
    │    talent        │ │    structure     │ │    transfer     │
    │    baseline      │ │  • Shadow the   │ │    to HR /       │
    │  • Knowledge    │ │    leaders       │ │    People team   │
-   │    transfer to   │ │  • Execute      │ │  • Handover —   │
+   │    transfer to   │ │  • Execute      │ │  • Handover -   │
    │    HR / leaders  │ │    SLAs on       │ │    governance & │
    │  • OKR &         │ │    OD rollout    │ │    knowledge    │
    │    perf design   │ │                  │ │  • Steering     │
@@ -422,7 +422,7 @@ Six cards in a 3×2 grid (or 2×3 on mobile). Each card: sub-capability title + 
 
 Three vertical pillars. The Transfer pillar contains the three sub-phases (Transition / Hypercare / Steady state) as nested groups.
 
-#### Section C — Where we deliver this service (3 domains, service-specific)
+#### Section C - Where we deliver this service (3 domains, service-specific)
 
 ```
    ── WHERE WE DELIVER THIS
@@ -442,11 +442,11 @@ Three vertical pillars. The Transfer pillar contains the three sub-phases (Trans
 
 Three cards, each one-paragraph, framed around *this* service in *that* domain.
 
-#### Section D — Sreema's voice
+#### Section D - Sreema's voice
 
 A full-bleed quote, one per service. Already drafted in the brand doc and prototype.
 
-#### Section E — CTA
+#### Section E - CTA
 
 ```
    Ready to do this work?
@@ -457,7 +457,7 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 
 ### Per-service content packages (for the 6 detail pages)
 
-#### 01 — OD & Implementation (green)
+#### 01 - OD & Implementation (green)
 
 **Tagline:** Designing the organisation, then making it run.
 
@@ -473,7 +473,7 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 
 ---
 
-#### 02 — COE — Centre of Excellence (blue)
+#### 02 - COE - Centre of Excellence (blue)
 
 **Tagline:** The function that keeps the organisation moving after the project ends.
 
@@ -494,12 +494,12 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 
 ---
 
-#### 03 — M&A & Post-Merger Integration (orange)
+#### 03 - M&A & Post-Merger Integration (orange)
 
 **Tagline:** The 100 days that decide whether the deal works.
 
 **Sub-capabilities:**
-- 100-Day PMI Playbook (the productised version — OKR 03)
+- 100-Day PMI Playbook (the productised version - OKR 03)
 - Day 1 Readiness
 - MSA + Governance Setup
 - Synergy Tracking & Realisation
@@ -510,7 +510,7 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 
 ---
 
-#### 04 — GCC & Shared Services (red)
+#### 04 - GCC & Shared Services (red)
 
 **Tagline:** Build it. Run it. Hand it over.
 
@@ -524,11 +524,11 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 - Recruitment & Onboarding at Scale
 - Regulated-Industry Centre Build
 
-**Sreema quote:** *"I spent 14 years building and running Metro's global solution centre. This isn't theory for us — it's muscle memory."*
+**Sreema quote:** *"I spent 14 years building and running Metro's global solution centre. This isn't theory for us - it's muscle memory."*
 
 ---
 
-#### 05 — Recruitment as a Service (teal)
+#### 05 - Recruitment as a Service (teal)
 
 **Tagline:** Hire at scale without renting forever.
 
@@ -540,11 +540,11 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 - Hiring Manager Coaching
 - Capability Transfer to In-house Talent Team
 
-**Sreema quote:** *(to draft — operator voice, e.g. "We don't sell req sheets. We build the engine, then we hand you the keys.")*
+**Sreema quote:** *(to draft - operator voice, e.g. "We don't sell req sheets. We build the engine, then we hand you the keys.")*
 
 ---
 
-#### 06 — Executive Coaching / Board Advisory (amber)
+#### 06 - Executive Coaching / Board Advisory (amber)
 
 **Tagline:** The seat at the table you can't get from a Big 4.
 
@@ -555,22 +555,22 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 - Operating-Model Sounding Board
 - CEO / COO Transition Support
 
-**Sreema quote:** *(to draft — "When you're three years in and the board is asking the question you've been avoiding, that's when we matter most.")*
+**Sreema quote:** *(to draft - "When you're three years in and the board is asking the question you've been avoiding, that's when we matter most.")*
 
 ---
 
-## 6. How We Deliver — BOT page (`/how-we-deliver`)
+## 6. How We Deliver - BOT page (`/how-we-deliver`)
 
 Single long page. Covers BOT in general, not service-specific.
 
-### Block 1 — Hero
+### Block 1 - Hero
 
 ```
    ── HOW WE DELIVER
 
    Most firms advise.
    Some build.
-   We do both — and we transfer.
+   We do both - and we transfer.
 
    The Build–Operate–Transfer methodology is the spine of every HARTS
    engagement. Not a service. The way we work.
@@ -578,7 +578,7 @@ Single long page. Covers BOT in general, not service-specific.
    [ Talk to us → ]
 ```
 
-### Block 2 — The 5-step journey (visualised)
+### Block 2 - The 5-step journey (visualised)
 
 ```
    ●──────●──────●──────●──────●
@@ -592,7 +592,7 @@ Single long page. Covers BOT in general, not service-specific.
 
 A horizontal timeline. The Transfer phase shows three sub-nodes (Transition / Hypercare / Steady State) because that's where the differentiation lives.
 
-### Block 3 — Each phase, in detail
+### Block 3 - Each phase, in detail
 
 Five stacked rows. One per phase. Each row uses left-side icon, right-side detail.
 
@@ -611,9 +611,9 @@ Five stacked rows. One per phase. Each row uses left-side icon, right-side detai
    ╰──────────────────────────────────────────────────────────╯
 ```
 
-Repeat for OPERATE, TRANSITION, HYPERCARE, STEADY STATE — each with the user-specified items.
+Repeat for OPERATE, TRANSITION, HYPERCARE, STEADY STATE - each with the user-specified items.
 
-### Block 4 — Advisory firms vs. HARTS
+### Block 4 - Advisory firms vs. HARTS
 
 Two-column comparison table (from brand doc §11.3):
 
@@ -629,19 +629,19 @@ Two-column comparison table (from brand doc §11.3):
    └────────────────────────────┴────────────────────────────┘
 ```
 
-### Block 5 — The non-negotiable
+### Block 5 - The non-negotiable
 
 ```
    "
        If it doesn't run without us,
        we haven't finished the job.
    "
-                       — HARTS founding principle
+                       - HARTS founding principle
 ```
 
 Full-bleed, centred, Cormorant Garamond italic.
 
-### Block 6 — CTA
+### Block 6 - CTA
 
 ```
    See the BOT model applied to your moment.
@@ -650,11 +650,11 @@ Full-bleed, centred, Cormorant Garamond italic.
 
 ---
 
-## 7. Where We Deliver — Domains page (`/where-we-deliver`)
+## 7. Where We Deliver - Domains page (`/where-we-deliver`)
 
 Single page. Covers all 3 domains in general, not service-specific.
 
-### Block 1 — Hero
+### Block 1 - Hero
 
 ```
    ── WHERE WE DELIVER
@@ -662,11 +662,11 @@ Single page. Covers all 3 domains in general, not service-specific.
    Three domains. The same partner across all of them.
 
    HARTS organises around where you are, not what we sell. Setup,
-   Develop, Scale Up — one capability, one engagement model, three
+   Develop, Scale Up - one capability, one engagement model, three
    moments of intervention.
 ```
 
-### Block 2 — Three domain blocks (stacked, alternating)
+### Block 2 - Three domain blocks (stacked, alternating)
 
 ```
    ╭──── DOMAIN 01 ──────────────────────────────────  ── green ───╮
@@ -676,7 +676,7 @@ Single page. Covers all 3 domains in general, not service-specific.
    │                                                                 │
    │  You've signed off on a new GCC. You've just acquired           │
    │  an entity. You're spinning out a shared-service function.      │
-   │  You need it standing — not in a slide, in operation.           │
+   │  You need it standing - not in a slide, in operation.           │
    │                                                                 │
    │  Where the six services apply:                                  │
    │  GCC & Shared Services · M&A & PMI · OD & Implementation        │
@@ -691,7 +691,7 @@ Single page. Covers all 3 domains in general, not service-specific.
    │  From running to world-class.                                   │
    │                                                                 │
    │  The function exists. It works. But it isn't yet generating     │
-   │  the leverage you bought it for. We mature it — the CoE,        │
+   │  the leverage you bought it for. We mature it - the CoE,        │
    │  the CI cadence, the leadership bench, the operating rhythm.    │
    │                                                                 │
    │  Where the six services apply:                                  │
@@ -708,7 +708,7 @@ Single page. Covers all 3 domains in general, not service-specific.
    │                                                                 │
    │  You're absorbing an acquisition, doubling headcount,           │
    │  reorganising for a new strategy. The risk isn't whether        │
-   │  you'll change — it's whether the people, process, and          │
+   │  you'll change - it's whether the people, process, and          │
    │  performance machinery survives the change.                     │
    │                                                                 │
    │  Where the six services apply:                                  │
@@ -718,17 +718,17 @@ Single page. Covers all 3 domains in general, not service-specific.
    ╰─────────────────────────────────────────────────────────────────╯
 ```
 
-### Block 3 — Cross-domain note
+### Block 3 - Cross-domain note
 
 ```
    One firm, all three moments.
 
    Many clients engage HARTS for Setup, return for Develop, and
-   stay for Scale Up. The continuity matters — you don't re-hire
+   stay for Scale Up. The continuity matters - you don't re-hire
    a new firm to learn your business twice.
 ```
 
-### Block 4 — CTA
+### Block 4 - CTA
 
 ```
    [ Tell us where you are → ]
@@ -738,7 +738,7 @@ Single page. Covers all 3 domains in general, not service-specific.
 
 ## 8. About / Firm pages (kept compact)
 
-Single `/about` page, four sections — already covered in `NEW_WEBSITE_ARCHITECTURE.md` §3.7. No re-layout needed here; the new visual style (dark canvas, gradient accents, numbered cards, Sreema quotes) applies.
+Single `/about` page, four sections - already covered in `NEW_WEBSITE_ARCHITECTURE.md` §3.7. No re-layout needed here; the new visual style (dark canvas, gradient accents, numbered cards, Sreema quotes) applies.
 
 ---
 
@@ -771,7 +771,7 @@ Every line on the site should survive this filter:
 | "End-to-end" | Name the start and the end |
 | "Synergy" | "What you get back when two functions merge" |
 | "Leverage our expertise" | "We've done this before" |
-| "Holistic transformation" | "People, process, performance — in one engagement" |
+| "Holistic transformation" | "People, process, performance - in one engagement" |
 | "Industry-leading" | Drop it. Show the work instead. |
 
 If Sreema wouldn't say it out loud to a CEO across the table, it doesn't go on the site.

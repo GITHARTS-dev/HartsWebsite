@@ -67,7 +67,7 @@ export function SiteHeader() {
         </Link>
       </div>
 
-      {/* Hamburger toggle — visible only at narrow widths. */}
+      {/* Hamburger toggle - visible only at narrow widths. */}
       <button
         type="button"
         className="nav-toggle"
@@ -81,7 +81,7 @@ export function SiteHeader() {
         <span className="nav-toggle-bar" aria-hidden="true" />
       </button>
 
-      {/* Mobile drawer — overlays the page when open. */}
+      {/* Mobile drawer - overlays the page when open. */}
       <div
         id="mobile-drawer"
         className="mobile-drawer"

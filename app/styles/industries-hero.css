@@ -47,7 +47,7 @@
   gap: clamp(16px, 2vh, 22px);
 }
 
-/* Kicker — matches home page base */
+/* Kicker - matches home page base */
 .page-hero--industries .page-hero-kicker {
   margin: 0;
   color: rgba(255, 255, 255, 0.92);
@@ -56,7 +56,7 @@
   text-transform: uppercase;
 }
 
-/* Title — matches home page: clamp(38px, 5.4vw, 64px), weight 780 */
+/* Title - matches home page: clamp(38px, 5.4vw, 64px), weight 780 */
 .page-hero--industries .page-hero-title {
   max-width: 920px;
   font-size: clamp(38px, 5.4vw, 64px);
@@ -66,7 +66,7 @@
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.32);
 }
 
-/* Title-soft — matches home page base: 0.5em, weight 680 */
+/* Title-soft - matches home page base: 0.5em, weight 680 */
 .page-hero--industries .page-hero-title-soft {
   font-size: 0.5em;
   font-weight: 680;
@@ -74,7 +74,7 @@
   color: rgba(255, 255, 255, 0.88);
 }
 
-/* Subtitle — matches home page base: clamp(15px, 1.15vw, 17px) */
+/* Subtitle - matches home page base: clamp(15px, 1.15vw, 17px) */
 .page-hero--industries .page-hero-subtitle {
   max-width: 760px;
   margin-top: 0;

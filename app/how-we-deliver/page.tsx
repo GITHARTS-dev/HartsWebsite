@@ -8,7 +8,7 @@ import { BotIcon } from "../_shared/icons";
 export const metadata: Metadata = {
   title: "How We Deliver | HARTS",
   description:
-    "Build. Operate. Transfer. The way HARTS makes sure the capability runs without us — and stays that way.",
+    "Build. Operate. Transfer. The way HARTS makes sure the capability runs without us - and stays that way.",
 };
 
 const phases = [
@@ -32,7 +32,7 @@ const phases = [
     key: "transfer" as const,
     num: "03",
     name: "Transfer",
-    line: "We hand it over — fully documented, fully working, fully yours.",
+    line: "We hand it over - fully documented, fully working, fully yours.",
     promise:
       "Ownership transfers. We stay close through hypercare, then leave a light governance retainer in place so the work keeps improving.",
   },
@@ -47,12 +47,12 @@ const outcomes = [
   {
     title: "A team that's ready.",
     text:
-      "Your people don't learn the new way from a manual. They learn it by running it alongside us — so by the time we leave, the work is muscle memory.",
+      "Your people don't learn the new way from a manual. They learn it by running it alongside us - so by the time we leave, the work is muscle memory.",
   },
   {
     title: "A future-proof operation.",
     text:
-      "What we leave behind keeps improving. The CI rhythm, the governance, the ownership — built to last well beyond our involvement.",
+      "What we leave behind keeps improving. The CI rhythm, the governance, the ownership - built to last well beyond our involvement.",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function HowWeDeliverRoute() {
           eyebrow="How We Deliver"
           titleSoft="Build. Operate."
           titleStrong="Transfer."
-          subtitle="Most firms advise and leave. We don't. The way HARTS works means the capability we build runs without us — and stays that way."
+          subtitle="Most firms advise and leave. We don't. The way HARTS works means the capability we build runs without us - and stays that way."
           actions={
             <Link className="solid-button large" href="/contact">
               Let&apos;s talk
@@ -74,7 +74,7 @@ export default function HowWeDeliverRoute() {
           }
         />
 
-        {/* ─── 1. The arc — three high-level tiles ───────────────────── */}
+        {/* ─── 1. The arc - three high-level tiles ───────────────────── */}
         <section className="ed-section">
           <div className="ed-shell">
             <header className="ed-section-head">
@@ -84,7 +84,7 @@ export default function HowWeDeliverRoute() {
               </h2>
               <p>
                 Every HARTS engagement runs through Build, Operate, Transfer. It
-                isn&apos;t a methodology you read about — it&apos;s the reason the
+                isn&apos;t a methodology you read about - it&apos;s the reason the
                 work still runs after we&apos;ve gone.
               </p>
             </header>

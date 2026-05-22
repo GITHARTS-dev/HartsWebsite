@@ -77,12 +77,12 @@ const SERVICES = [
     title: "People, organisation\n& change",
     tagline: "Because transformation doesn't happen in PowerPoint. It happens through people.",
     items: ["Organisation design & restructuring", "Change management (OCM + comms governance)", "Executive coaching & leadership development", "Talent attraction & pipeline architecture", "Recruitment as a service", "Employee value proposition (EVP) design", "Performance management frameworks", "Learning organisation build"],
-    sreema: "I've sat in the chair. I know what it feels like when you're trying to change a 3,000-person organisation and nobody has told the people why. We start there — with the why — and build outward."
+    sreema: "I've sat in the chair. I know what it feels like when you're trying to change a 3,000-person organisation and nobody has told the people why. We start there - with the why - and build outward."
   },
   {
     num: "02", color: B.blue, colorL: B.blueL,
     title: "M&A & post-merger\nintegration",
-    tagline: "The 100 days that make or break a deal. We've built the playbook — and we run it with you.",
+    tagline: "The 100 days that make or break a deal. We've built the playbook - and we run it with you.",
     items: ["100-day post-merger operating playbook", "Ownership transfer & governance design", "Knowledge handover & documentation", "Synergy tracking & realisation", "MSA (legal & commercial structuring)", "Steering committee setup & cadence", "Hypercare & SLA stabilisation", "Day 1 readiness planning"],
     sreema: "Most consultants hand you a 200-slide integration plan and leave. We stay. We run the first 100 days alongside your team because that's when deals are won or lost."
   },
@@ -96,20 +96,20 @@ const SERVICES = [
   {
     num: "04", color: B.red, colorL: B.redL,
     title: "GCC & shared service\nsetup",
-    tagline: "End-to-end capability centre build — from first hire to full transfer.",
+    tagline: "End-to-end capability centre build - from first hire to full transfer.",
     items: ["GCC / SSC operating model design", "Build-operate-transfer lifecycle management", "Scope definition & knowledge transfer", "OKR & performance management setup", "SLA build, shadow run & parallel run", "Hypercare & completion of transfer", "Recruitment & onboarding at scale", "Regulated-industry centre build"],
-    sreema: "I spent 14 years building and running Metro's global solution centre. This isn't theory for us — it's muscle memory. We've done the night shifts, the compliance audits, the first go-live."
+    sreema: "I spent 14 years building and running Metro's global solution centre. This isn't theory for us - it's muscle memory. We've done the night shifts, the compliance audits, the first go-live."
   },
 ];
 
 const BOT_STEPS = [
-  { label: "Build", color: B.green, desc: "We design the operating model, hire the team, establish governance, and build the function alongside your people. Not for you — with you." },
+  { label: "Build", color: B.green, desc: "We design the operating model, hire the team, establish governance, and build the function alongside your people. Not for you - with you." },
   { label: "Operate", color: B.blue, desc: "We run the function through transition. Shadow runs, parallel operations, SLA stabilisation, knowledge transfer. We carry the weight until it's safe to let go." },
   { label: "Transfer", color: B.orange, desc: "We hand over a functioning capability your organisation owns and runs without us. Clean documentation, trained people, proven processes. Then we step back." },
 ];
 
 const LEADERS = [
-  { initials: "SN", name: "Sreema Nallasivam", role: "CEO & Co-Founder", color: B.green, bio: "14 years as CEO of Metro Business Solution Center. Board member of Metro GSC India. Built and scaled a global GCC serving 39 countries across 25+ languages. Sreema doesn't advise on transformation — she's lived it, from the first hire to the thousandth.", tags: ["GCC operations", "People-first culture", "Global transformation", "Board-level advisory"] },
+  { initials: "SN", name: "Sreema Nallasivam", role: "CEO & Co-Founder", color: B.green, bio: "14 years as CEO of Metro Business Solution Center. Board member of Metro GSC India. Built and scaled a global GCC serving 39 countries across 25+ languages. Sreema doesn't advise on transformation - she's lived it, from the first hire to the thousandth.", tags: ["GCC operations", "People-first culture", "Global transformation", "Board-level advisory"] },
   { initials: "SA", name: "Savio James Abraham", role: "Co-Founder & Transformation Lead", color: B.blue, bio: "Background spanning EY, Amazon, and e2x. Deep expertise in change management, leadership development, process optimisation, and Lean Six Sigma. Savio connects the human side of change to the operational machinery that makes it stick.", tags: ["Change management", "Process excellence", "Lean Six Sigma", "Leadership development"] },
   { initials: "RD", name: "Rufus D'Souza", role: "Senior Advisor", color: B.orange, bio: "Senior leader from Metro GSC India, with deep experience in multi-geography GCC delivery across finance and business operations. Rufus brings the operational rigour that turns GCC blueprints into running operations.", tags: ["GCC delivery", "Finance operations", "Multi-geography", "Operational governance"] },
 ];
@@ -238,7 +238,7 @@ function HomePage({ go, activeBot, setActiveBot }) {
 
         <Fade delay={.25}>
           <p style={{ fontSize: 16, color: B.textM, lineHeight: 1.75, maxWidth: 500, marginTop: 36, fontWeight: 300 }}>
-            The transformation partner for organisations in motion — navigating mergers, scaling operations, and building the people and process capability to sustain what comes next.
+            The transformation partner for organisations in motion - navigating mergers, scaling operations, and building the people and process capability to sustain what comes next.
           </p>
         </Fade>
 
@@ -267,7 +267,7 @@ function HomePage({ go, activeBot, setActiveBot }) {
           <div style={{ maxWidth: 640, position: "relative" }}>
             <span className="quote-mark">"</span>
             <p style={{ fontFamily: FONT.display, fontSize: 26, fontStyle: "italic", fontWeight: 400, lineHeight: 1.45, color: B.text, paddingLeft: 32 }}>
-              I've spent my career building organisations from the inside — not advising from the outside. That's the difference. We know what it takes because we've done it.
+              I've spent my career building organisations from the inside - not advising from the outside. That's the difference. We know what it takes because we've done it.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 24, paddingLeft: 32 }}>
               <div style={{ width: 36, height: 36, borderRadius: "50%", background: `${B.green}22`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 500, color: B.green }}>SN</div>
@@ -370,13 +370,13 @@ function AboutPage({ go }) {
         <Fade delay={.2}>
           <div>
             <p style={{ fontSize: 15, color: B.textM, lineHeight: 1.8, fontWeight: 300, marginBottom: 20 }}>
-              HARTS was founded on a simple observation: transformation fails not because the strategy is wrong or the technology doesn't work — but because nobody connects the people to the process to the operating model in a way that actually sticks.
+              HARTS was founded on a simple observation: transformation fails not because the strategy is wrong or the technology doesn't work - but because nobody connects the people to the process to the operating model in a way that actually sticks.
             </p>
             <p style={{ fontSize: 15, color: B.textM, lineHeight: 1.8, fontWeight: 300, marginBottom: 20 }}>
-              Every competitor is either people-first or tech-first. We are both — and we execute through to transfer, not just through to the recommendation.
+              Every competitor is either people-first or tech-first. We are both - and we execute through to transfer, not just through to the recommendation.
             </p>
             <p style={{ fontSize: 15, color: B.textM, lineHeight: 1.8, fontWeight: 300 }}>
-              Our leadership team has collectively built and run global capability centres, led post-merger integrations, and scaled organisations across 39 countries. We don't advise on what transformation looks like. We know what it <em>feels</em> like — because we've lived it.
+              Our leadership team has collectively built and run global capability centres, led post-merger integrations, and scaled organisations across 39 countries. We don't advise on what transformation looks like. We know what it <em>feels</em> like - because we've lived it.
             </p>
           </div>
         </Fade>
@@ -385,7 +385,7 @@ function AboutPage({ go }) {
             <div style={{ fontSize: 11, color: B.textD, letterSpacing: 2, textTransform: "uppercase", marginBottom: 20 }}>What defines us</div>
             {[
               { label: "We integrate", text: "People, process, and operations in a single engagement", c: B.green },
-              { label: "We execute", text: "Build-operate-transfer — not advisory, both", c: B.blue },
+              { label: "We execute", text: "Build-operate-transfer - not advisory, both", c: B.blue },
               { label: "We transfer", text: "When we leave, the client owns the capability", c: B.orange },
               { label: "We measure", text: "Success = how the org performs after we exit", c: B.red },
             ].map((item, i) => (
@@ -434,7 +434,7 @@ function ServicesPage({ go }) {
           What we can <span style={{ color: B.green, fontStyle: "italic" }}>confidently deliver.</span>
         </h1>
         <p style={{ fontSize: 15, color: B.textM, fontWeight: 300, lineHeight: 1.7, maxWidth: 540, marginBottom: 64 }}>
-          Four capability areas. Thirty service lines. Every one delivered through our Build-Operate-Transfer model — because the deliverable is never a report. It's a functioning capability.
+          Four capability areas. Thirty service lines. Every one delivered through our Build-Operate-Transfer model - because the deliverable is never a report. It's a functioning capability.
         </p>
       </Fade>
 
@@ -454,7 +454,7 @@ function ServicesPage({ go }) {
                 <div style={{ position: "relative", background: B.bgCard, border: `.5px solid ${B.border}`, padding: "20px 24px", marginTop: 20 }}>
                   <span style={{ fontFamily: FONT.display, fontSize: 36, lineHeight: 1, color: s.color, opacity: .25, position: "absolute", top: -2, left: 8 }}>"</span>
                   <p style={{ fontFamily: FONT.display, fontSize: 14, fontStyle: "italic", fontWeight: 400, lineHeight: 1.55, color: B.textM, paddingLeft: 16 }}>{s.sreema}</p>
-                  <div style={{ fontSize: 10, color: B.textD, paddingLeft: 16, marginTop: 8 }}>— Sreema Nallasivam</div>
+                  <div style={{ fontSize: 10, color: B.textD, paddingLeft: 16, marginTop: 8 }}>- Sreema Nallasivam</div>
                 </div>
               </div>
 
@@ -515,7 +515,7 @@ function ModelPage({ go, activeBot, setActiveBot }) {
           Build. Operate. <span style={{ color: B.green, fontStyle: "italic" }}>Transfer.</span>
         </h1>
         <p style={{ fontSize: 15, color: B.textM, fontWeight: 300, lineHeight: 1.7, maxWidth: 540, marginBottom: 56 }}>
-          Every engagement follows the same discipline. We don't advise and leave. We don't build and leave. We advise, build, operate, and transfer — four verbs, not two. That's the difference.
+          Every engagement follows the same discipline. We don't advise and leave. We don't build and leave. We advise, build, operate, and transfer - four verbs, not two. That's the difference.
         </p>
       </Fade>
 
@@ -562,7 +562,7 @@ function ModelPage({ go, activeBot, setActiveBot }) {
           <p style={{ fontFamily: FONT.display, fontSize: 16, fontStyle: "italic", fontWeight: 400, lineHeight: 1.55, color: B.textM, paddingLeft: 24 }}>
             The deliverable is not a framework. It is a functioning capability. If it doesn't run without us, we haven't finished the job.
           </p>
-          <div style={{ fontSize: 10, color: B.textD, paddingLeft: 24, marginTop: 8 }}>— Sreema Nallasivam</div>
+          <div style={{ fontSize: 10, color: B.textD, paddingLeft: 24, marginTop: 8 }}>- Sreema Nallasivam</div>
         </div>
       </Fade>
     </section>
@@ -580,7 +580,7 @@ function LeadershipPage({ go }) {
         <h1 style={{ fontFamily: FONT.display, fontSize: 52, fontWeight: 400, lineHeight: 1.1, maxWidth: 600, marginBottom: 20 }}>
           People who've <span style={{ color: B.green, fontStyle: "italic" }}>built it themselves.</span>
         </h1>
-        <p style={{ fontSize: 15, color: B.textM, fontWeight: 300, lineHeight: 1.7, maxWidth: 520, marginBottom: 56 }}>Not career consultants. Operators who moved into advisory because they know what works — and what doesn't — from sitting in the chair.</p>
+        <p style={{ fontSize: 15, color: B.textM, fontWeight: 300, lineHeight: 1.7, maxWidth: 520, marginBottom: 56 }}>Not career consultants. Operators who moved into advisory because they know what works - and what doesn't - from sitting in the chair.</p>
       </Fade>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
@@ -620,7 +620,7 @@ function ContactPage() {
           Every transformation starts with a <span style={{ color: B.green, fontStyle: "italic" }}>conversation.</span>
         </h1>
         <p style={{ fontSize: 15, color: B.textM, fontWeight: 300, lineHeight: 1.7, maxWidth: 480, marginBottom: 48 }}>
-          Whether you're mid-merger, building a capability centre, or redesigning how your organisation works — we should talk. No pitch deck. No sales process. Just an honest conversation about where you are and what comes next.
+          Whether you're mid-merger, building a capability centre, or redesigning how your organisation works - we should talk. No pitch deck. No sales process. Just an honest conversation about where you are and what comes next.
         </p>
       </Fade>
 
@@ -651,7 +651,7 @@ function ContactPage() {
           <div style={{ paddingTop: 8 }}>
             <div style={{ background: B.bgCard, border: `.5px solid ${B.border}`, padding: "28px 24px", marginBottom: 16 }}>
               <div style={{ fontSize: 11, color: B.textD, letterSpacing: 2, textTransform: "uppercase", marginBottom: 12 }}>What to expect</div>
-              {["A 30-minute call to understand your situation", "An honest assessment of whether we're the right fit", "If we are — a scoped proposal within 5 working days", "If we're not — we'll tell you, and point you somewhere better"].map((t, i) => (
+              {["A 30-minute call to understand your situation", "An honest assessment of whether we're the right fit", "If we are - a scoped proposal within 5 working days", "If we're not - we'll tell you, and point you somewhere better"].map((t, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 8 }}>
                   <div style={{ width: 5, height: 5, borderRadius: "50%", background: B.green, marginTop: 5, flexShrink: 0 }} />
                   <span style={{ fontSize: 12, color: B.textM, fontWeight: 300, lineHeight: 1.55 }}>{t}</span>
@@ -664,7 +664,7 @@ function ContactPage() {
               <p style={{ fontFamily: FONT.display, fontSize: 14, fontStyle: "italic", fontWeight: 400, lineHeight: 1.55, color: B.textM, paddingLeft: 16 }}>
                 We don't do discovery calls that waste your time. If you've read this far, you already know what we do. Let's talk about what you need.
               </p>
-              <div style={{ fontSize: 10, color: B.textD, paddingLeft: 16, marginTop: 6 }}>— Sreema</div>
+              <div style={{ fontSize: 10, color: B.textD, paddingLeft: 16, marginTop: 6 }}>- Sreema</div>
             </div>
           </div>
         </div>

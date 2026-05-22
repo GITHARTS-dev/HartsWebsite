@@ -15,11 +15,11 @@ function revealStyle(index = 0): CSSProperties {
 const botSteps = [
   {
     title: "Build",
-    text: "We define scope, transfer knowledge in, design OKRs and the SLAs your new function will run on — alongside your team, not for them.",
+    text: "We define scope, transfer knowledge in, design OKRs and the SLAs your new function will run on - alongside your team, not for them.",
   },
   {
     title: "Operate",
-    text: "We stabilise the process, shadow your people, and execute SLAs in practice — carrying the weight through transition.",
+    text: "We stabilise the process, shadow your people, and execute SLAs in practice - carrying the weight through transition.",
   },
   {
     title: "Transfer",
@@ -185,7 +185,7 @@ export function HomeExperience() {
             ))}
           </div>
 
-          <div className="challenges-subheading-block" style={{ marginTop: 28, textAlign: "center" }}>
+          <div className="challenges-subheading-block" style={{ marginLeft: -250, marginTop: 28, textAlign: "center" }}>
             <Link className="outline-button magnetic-button" href="/how-we-deliver">
               See how the methodology works
             </Link>
@@ -205,7 +205,7 @@ export function HomeExperience() {
             <h2>Three moments. One partner across all of them.</h2>
             <p>
               HARTS organises around where you are, not what we sell. Setup, Develop,
-              Scale Up — one capability, one engagement model, three moments of intervention.
+              Scale Up - one capability, one engagement model, three moments of intervention.
             </p>
           </div>
 

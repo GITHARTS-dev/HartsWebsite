@@ -331,7 +331,7 @@
   .ed-cap { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
 }
 
-/* BOT prose for this service — 3-column, no boxes */
+/* BOT prose for this service - 3-column, no boxes */
 .ed-bot-cols {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -497,7 +497,7 @@
   .ed-bot-tile { border-top: 2px solid #E7473C; }
 }
 
-/* BOT chapter — side label + body content */
+/* BOT chapter - side label + body content */
 .ed-chapter {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) 2.4fr;

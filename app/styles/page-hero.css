@@ -151,13 +151,12 @@
   gap: 4px;
   max-width: none;
   margin: 0;
-  /* Unified title size across every page */
-  font-size: clamp(44px, 6.2vw, 74px);
-  font-weight: 860;
-  line-height: 1.02;
-  letter-spacing: -0.005em;
+  /* Unified title size across every page (calmer, less pushy) */
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 760;
+  line-height: 1.08;
+  letter-spacing: -0.004em;
   color: #1A1A1A;
-  /* Entrance animation removed per request - hero is fully static. */
   opacity: 1;
 }
 

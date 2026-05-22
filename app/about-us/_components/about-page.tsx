@@ -135,49 +135,49 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="au-team">
-        <div className="au-section-hd">
-          <p className="au-eyebrow">Our people</p>
-          <h2>The architects of clarity</h2>
-          <p className="au-section-sub">
-            A senior team of strategists and operators united by a commitment to
-            sustainable, measurable change.
-          </p>
-        </div>
-        <div className="au-team-grid au-team-grid--premium">
-          {team.map((member) => (
-            <a
-              className="au-team-card au-team-card--premium au-reveal"
-              key={member.name}
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${member.name} on LinkedIn`}
-            >
-              <div className="au-team-portrait au-team-portrait--rounded">
-                {member.image ? (
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="au-team-portrait-img"
-                  />
-                ) : (
-                  <div className="au-team-portrait-placeholder" aria-hidden="true">
-                    <span>{member.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}</span>
-                  </div>
-                )}
-                <div className="au-team-portrait-overlay" aria-hidden="true" />
-              </div>
-              <div className="au-team-info">
-                <div className="au-team-name-row">
-                  <p className="au-team-name">{member.name}</p>
-                  <LinkedInIcon />
+      <section className="au-roster">
+        <div className="au-roster-shell">
+          <header className="au-roster-head">
+            <p className="au-eyebrow">Our people</p>
+            <h2>
+              The architects <em>of clarity.</em>
+            </h2>
+            <p className="au-roster-sub">
+              A senior team of strategists and operators — united by a
+              commitment to sustainable, measurable change.
+            </p>
+          </header>
+
+          <ol className="au-roster-list">
+            {team.map((member, idx) => (
+              <li key={member.name} className="au-roster-row">
+                <span className="au-roster-num">{String(idx + 1).padStart(2, "0")}</span>
+                <span className="au-roster-mark" aria-hidden="true">
+                  {member.image ? (
+                    <img src={member.image} alt="" className="au-roster-portrait" />
+                  ) : (
+                    <span className="au-roster-initials">
+                      {member.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                    </span>
+                  )}
+                </span>
+                <div className="au-roster-meta">
+                  <p className="au-roster-name">{member.name}</p>
+                  <p className="au-roster-role">{member.role}</p>
                 </div>
-                <p className="au-team-role">{member.role}</p>
-                <p className="au-team-intro">{member.intro}</p>
-              </div>
-            </a>
-          ))}
+                <p className="au-roster-bio">{member.intro}</p>
+                <a
+                  className="au-roster-link"
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} on LinkedIn`}
+                >
+                  <LinkedInIcon />
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

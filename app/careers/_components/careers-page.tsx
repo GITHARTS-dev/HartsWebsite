@@ -5,65 +5,53 @@ import { PageHero } from "../../_shared/layout/page-hero";
 
 const openings = [
   {
-    slug: "management-consulting",
-    title: "Management Consulting",
-    role: "Strategy & Growth Partner",
+    slug: "transformation-operating-models",
+    title: "Transformation & Operating Models",
+    role: "Senior Consultant",
     description:
-      "Shape growth agendas, executive priorities, and transformation roadmaps for complex organisations.",
+      "Lead client engagements across OD, post-merger integration, and CoE build. Work alongside leadership teams to design and run the operating model that the strategy actually needs.",
   },
   {
-    slug: "digital-enablement",
-    title: "Digital Enablement",
-    role: "Transformation Architect",
+    slug: "gcc-shared-services",
+    title: "GCC & Shared Services",
+    role: "Senior Consultant",
     description:
-      "Design practical digital ecosystems, operating rhythms, and change pathways that teams can sustain.",
+      "Stand up Global Capability Centres for clients — site selection through to live operations. Carry the BOT lifecycle end-to-end, from first hire to full transfer.",
   },
   {
-    slug: "business-operations",
-    title: "Business Operations",
-    role: "Operations Lead",
+    slug: "people-talent",
+    title: "People & Talent",
+    role: "Senior Consultant",
     description:
-      "Build leaner operating models, clearer governance, and measurable execution across functions.",
-  },
-  {
-    slug: "analytics-data-research",
-    title: "Analytics, Data & Research",
-    role: "Data Strategy Director",
-    description:
-      "Turn fragmented data into sharper decisions, better visibility, and actionable business intelligence.",
-  },
-  {
-    slug: "design",
-    title: "Design",
-    role: "Transformation Design Lead",
-    description:
-      "Translate complex challenges into clear journeys, service models, and elegant delivery experiences.",
-  },
-  {
-    slug: "technology-cloud",
-    title: "Technology",
-    role: "Senior Cloud Consultant",
-    description:
-      "Help clients modernise systems, improve resilience, and move critical services to scalable platforms.",
-  },
-  {
-    slug: "technology-ai-ml",
-    title: "Technology",
-    role: "AI/ML Specialist",
-    description:
-      "Apply AI and machine learning to improve insight generation, workflow automation, and decision support.",
-  },
-  {
-    slug: "product",
-    title: "Product",
-    role: "Digital Product Manager",
-    description:
-      "Lead product discovery, prioritisation, and delivery to create useful, measurable digital products.",
+      "Design and run the people side of transformation — job architecture, EVP, recruitment-as-a-service, leadership development. Make sure the change actually lands with the humans doing the work.",
   },
 ];
 
 function OpeningIcon({ slug }: { slug: string }) {
   switch (slug) {
+    case "transformation-operating-models":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 20v-3.5M10 20V9.5M16 20V12M22 20H2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M5.5 8.5 10 5l4 3 4.5-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "gcc-shared-services":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
+          <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
+      );
+    case "people-talent":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.8" />
+          <circle cx="16" cy="8" r="3" stroke="currentColor" strokeWidth="1.8" />
+          <path d="M2 19c0-3 2.5-5 6-5s6 2 6 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <path d="M14 19c0-3 2.5-5 5-5s3 2 3 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      );
     case "management-consulting":
       return (
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -159,9 +147,10 @@ export function CareersPage() {
           <p className="eyebrow">Culture</p>
           <h2>Shape the Future of Consulting.</h2>
           <p>
-            At HARTS, we foster an environment of radical clarity, collaborative innovation,
-            and disciplined thinking. We’re looking for leaders who want to move fast and apply
-            digital enablement to the world&apos;s most complex business challenges.
+            We hire people who&apos;ve done the work, not people who&apos;ve studied it. HARTS
+            runs on radical clarity, disciplined thinking, and a bias to ship. If you&apos;ve
+            built, scaled, or turned something around — and you want to do that work for the
+            clients we serve — we should talk.
           </p>
         </div>
       </section>
@@ -170,7 +159,7 @@ export function CareersPage() {
         <div className="section-heading careers-opening-heading">
           <p className="eyebrow">Openings</p>
           <h2>Where you fit in</h2>
-          <p>Eight disciplines. One mission. Find your place.</p>
+          <p>Three roles. One mission. Find where you fit.</p>
         </div>
 
         <div className="careers-grid">

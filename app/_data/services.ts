@@ -39,20 +39,20 @@ export const services: Service[] = [
     voice:
       "Organisation design without implementation is wallpaper. We do both — because a beautiful org chart that nobody follows is worse than no org chart at all.",
     subs: [
-      { label: "Job architecture programme", desc: "Role clarity, grade frameworks, and career pathways aligned to strategy." },
-      { label: "Talent evaluation & development", desc: "Assess capability gaps. Build development pathways that retain your best." },
-      { label: "Talent attraction & acquisition", desc: "Employer brand, sourcing strategy, and a hiring process built to move fast." },
-      { label: "Fellowship", desc: "Structured leadership cohorts that accelerate capability across the org." },
-      { label: "Mini-CXO", desc: "A high-potential programme giving emerging leaders C-suite decision exposure." },
-      { label: "EVP", desc: "Define and activate what makes your organisation worth joining — and staying." },
+      { label: "Job architecture", desc: "Role clarity, grade frameworks, and career pathways aligned to your strategy." },
+      { label: "Talent evaluation & development", desc: "Assess capability gaps and build the pathways that retain your best people." },
+      { label: "Talent attraction & acquisition", desc: "Employer brand, sourcing strategy, and a hiring process designed to move fast." },
+      { label: "Leadership Fellowship", desc: "A structured cohort programme that accelerates the next layer of leaders." },
+      { label: "Mini-CxO programme", desc: "A high-potential programme giving emerging leaders genuine C-suite decision exposure." },
+      { label: "Employer Value Proposition", desc: "Define and activate what makes your organisation worth joining — and staying with." },
     ],
     bot: {
       build:
-        "Scope the OD engagement, map current state, transfer knowledge with the leadership team, set OKRs for the new design, and build the SLAs for every delivery milestone.",
+        "We work alongside your leadership team to map where you are and design the structure your strategy needs — roles, grades, performance measures and all.",
       operate:
-        "Stabilise the new structure through transition. Shadow role changes, coach managers through the shift, and execute against the delivery SLAs.",
+        "We run the new design with your managers, coaching them through the change so the org feels lived-in by the time we step back.",
       transfer:
-        "Hand ownership to HR and the COO. Governance and runbooks transferred. Hypercare on adoption metrics. CI advisory retainer for ongoing tuning.",
+        "You own a working organisation with the playbooks, governance and people in place to keep developing it after we leave.",
     },
     ctx: {
       setup: "Design the entire org from zero — roles, grades, reporting lines, EVP — before the first hire.",
@@ -71,35 +71,35 @@ export const services: Service[] = [
     voice:
       "Everyone sells process mining tools. We build the team that makes those tools actually work. The tool is 20% of the value. The people running it are the other 80%.",
     subs: [
-      { label: "OCM + comms + governance", desc: "Change management, communication cadence, and governance that keeps transformation on track." },
+      { label: "Change management & governance", desc: "Change management, communication cadence, and the governance that keeps transformation on track." },
       {
-        label: "Control tower (business intelligence)",
-        desc: "Central visibility across OKRs, policy deployment, and organisational performance.",
+        label: "Performance control tower",
+        desc: "A single view across goals, policy, and operational performance — for leadership to act on, not just admire.",
         children: [
-          { label: "OKR + goals", desc: "Cascading objectives from board to team with measurable key results." },
-          { label: "Policy deployment", desc: "Hoshin Kanri-style strategy connecting corporate intent to operational action." },
-          { label: "Org performance reporting", desc: "Dashboards that surface the signals leadership needs to act on." },
+          { label: "OKRs & goals", desc: "Cascading objectives from board to team with measurable key results." },
+          { label: "Policy deployment", desc: "Strategy connected to operational action, one cascade at a time." },
+          { label: "Performance reporting", desc: "Dashboards that surface the signals leadership needs to act on." },
         ],
       },
-      { label: "Innovation", desc: "Structured methodology producing commercial outcomes — not hackathons." },
+      { label: "Innovation", desc: "A structured methodology that produces commercial outcomes — not hackathons." },
       {
         label: "Continuous improvement",
         desc: "CI embedded in operations, not bolted on.",
         children: [
           { label: "Problem classification", desc: "Triage issues by impact and root cause." },
-          { label: "Agile methodology", desc: "Sprint-based improvement cycles for operational teams." },
-          { label: "Innovation hub", desc: "A space for testing improvements at speed." },
+          { label: "Agile delivery", desc: "Sprint-based improvement cycles for operational teams." },
+          { label: "Innovation hub", desc: "A safe space for testing improvements at speed." },
           { label: "Automation strategy", desc: "Identify, prioritise, and govern automation across the enterprise." },
         ],
       },
     ],
     bot: {
       build:
-        "Scope the CoE mandate, transfer knowledge of the current process landscape, define OKRs for CI maturity, and build the SLA framework for CoE delivery.",
+        "We design the Centre of Excellence around your business — its remit, its team, the dashboards and cadences leadership will actually use.",
       operate:
-        "Stabilise the CoE cadence. Shadow governance rituals. Execute SLAs across control-tower dashboards and CI sprints.",
+        "We run the cadence while your team learns it in flight. Reviews happen, decisions get made, the rhythm becomes routine.",
       transfer:
-        "Hand CoE ownership to the internal lead. Governance and playbooks transferred. Hypercare through the first independent quarter. Retainer for advisory.",
+        "Your internal lead takes ownership of a working CoE. We stay close through the first quarter, then move to a lightweight advisory role.",
     },
     ctx: {
       setup: "Stand up the CoE from first principles — governance, tooling, team, cadence.",
@@ -118,17 +118,17 @@ export const services: Service[] = [
     voice:
       "Most consultants hand you a 200-slide integration plan and leave. We stay. We run the first 100 days because that's when deals are won or lost.",
     subs: [
-      { label: "100-day playbook", desc: "Day 1 readiness through synergy realisation — every decision, milestone, and owner named." },
-      { label: "Integration office design", desc: "Governance, cadence, and escalation paths for the PMI programme." },
-      { label: "Synergy tracking & realisation", desc: "From target identification to verified delivery — not just a spreadsheet." },
+      { label: "100-day playbook", desc: "Day 1 readiness through to synergy delivery — every decision, milestone, and owner named in advance." },
+      { label: "Integration office", desc: "Governance, cadence, and escalation paths designed to keep the integration programme moving." },
+      { label: "Synergy tracking", desc: "From target identification to verified delivery — accountability, not a spreadsheet." },
     ],
     bot: {
       build:
-        "Scope the integration, transfer knowledge from the deal team to the integration team, set OKRs for the 100-day milestones, and build SLAs for every PMI workstream.",
+        "We stand up the integration office and define the 100-day plan — every workstream, every milestone, every owner, named and aligned.",
       operate:
-        "Stabilise the integration office cadence. Shadow governance forums. Execute SLAs across all workstreams in parallel.",
+        "We run the integration cadence with your team — keeping decisions moving, surfacing risks early, and protecting the deal's value.",
       transfer:
-        "Ownership to your integration lead. Governance handover complete. Steering committee self-sufficient. Hypercare on synergy realisation. Advisory retainer.",
+        "Your integration lead takes the chair with the full governance, scorecard and steering rhythm running. We stay close on synergy delivery.",
     },
     ctx: {
       setup: "First acquisition — build the integration office and 100-day cadence from zero.",
@@ -147,18 +147,18 @@ export const services: Service[] = [
     voice:
       "I spent 14 years building and running Metro's global solution centre. This isn't theory — it's muscle memory.",
     subs: [
-      { label: "Operating model design", desc: "Structure, governance, SLA framework, and the service catalogue." },
-      { label: "BOT lifecycle management", desc: "End-to-end GCC setup through to client ownership." },
-      { label: "Recruitment & onboarding at scale", desc: "High-volume hiring calibrated to local talent markets." },
-      { label: "Regulated-industry centre build", desc: "Compliance-first design for pharma, financial services, and utilities." },
+      { label: "Operating model design", desc: "The structure, governance, service catalogue, and performance commitments your centre will run on." },
+      { label: "Build-Operate-Transfer lifecycle", desc: "End-to-end GCC setup, from feasibility through to the moment you take the keys." },
+      { label: "Hiring & onboarding at scale", desc: "High-volume recruitment calibrated to the local talent market and the work you actually need done." },
+      { label: "Regulated-industry centres", desc: "Compliance-first design for pharma, financial services, and utilities." },
     ],
     bot: {
       build:
-        "Scope the GCC mandate, transfer knowledge from HQ to the new centre, set OKRs for operational readiness, and build the SLA framework for every service line.",
+        "We design the centre — its mandate, structure, hiring plan, service catalogue — and stand it up alongside your team.",
       operate:
-        "Stabilise operations through ramp-up. Shadow every function. Run SLAs through parallel operations with HQ until the centre is steady.",
+        "We run live operations in parallel with HQ, working through ramp-up issues until the centre is delivering steady-state quality.",
       transfer:
-        "Formal ownership transfer to local leadership. Full governance and knowledge handover. Steering committee. Hypercare through the first independent quarter. CI retainer.",
+        "Local leadership takes full ownership. We hand over a running centre with the governance, documentation, and people to keep it that way.",
     },
     ctx: {
       setup: "Greenfield — site selection through to the first 100 hires and the initial SLA go-live.",
@@ -177,17 +177,17 @@ export const services: Service[] = [
     voice:
       "Recruitment isn't an HR function. It's a strategic capability. We build it like one.",
     subs: [
-      { label: "Sourcing strategy & process design", desc: "Employer brand, channel mix, screening, and candidate experience." },
-      { label: "Managed recruitment operations", desc: "We run hiring end-to-end until your team is ready." },
-      { label: "TA capability transfer", desc: "Train your team, hand over tooling and playbooks, step back." },
+      { label: "Sourcing & process design", desc: "Employer brand, channel mix, screening, and candidate experience — engineered for the talent you actually need." },
+      { label: "Managed recruitment operations", desc: "We run hiring end-to-end until your team is ready to take it on." },
+      { label: "Capability transfer", desc: "We train your team, hand over the tooling and playbooks, and step back." },
     ],
     bot: {
       build:
-        "Scope the TA function, transfer knowledge on existing processes and employer brand, set hiring OKRs, and build SLAs for time-to-fill and quality.",
+        "We design your hiring engine — the brand, the channels, the screening — and set the targets your business actually needs to hit.",
       operate:
-        "Stabilise the hiring pipeline. Shadow your TA team. Execute against SLAs across every open role.",
+        "We run hiring end-to-end while your team learns the playbook, with weekly visibility on pipeline, quality and speed.",
       transfer:
-        "Ownership to the internal TA lead. Playbooks and tooling transferred. Hypercare through the first solo quarter. Advisory retainer.",
+        "Your internal recruitment lead takes the engine over with everything in place — process, tools, training, and clear performance targets.",
     },
     ctx: {
       setup: "No TA function exists — we build and run it from day one.",
@@ -206,17 +206,17 @@ export const services: Service[] = [
     voice:
       "Transformation is lonely at the top. We've sat in that chair. We know what it feels like when the board wants answers and the organisation isn't moving.",
     subs: [
-      { label: "Executive coaching", desc: "1:1 and team coaching for the C-suite navigating transformation or crisis." },
-      { label: "Board advisory", desc: "Independent perspective for boards overseeing M&A or restructuring." },
-      { label: "Leadership alignment", desc: "Facilitated sessions moving teams from debate to decision to action." },
+      { label: "Executive coaching", desc: "1:1 and team coaching for C-suite leaders navigating transformation, crisis, or growth." },
+      { label: "Board advisory", desc: "An independent voice for boards overseeing M&A, restructuring, or strategic inflection points." },
+      { label: "Leadership alignment", desc: "Facilitated sessions that move leadership teams from debate to decision to action." },
     ],
     bot: {
       build:
-        "Scope the coaching mandate, transfer knowledge on leadership dynamics and organisational context, set OKRs for leadership effectiveness, and establish cadence.",
+        "We listen first — to you, your team, your board — and shape a coaching plan around the decisions you're actually facing.",
       operate:
-        "Stabilise the coaching rhythm. Shadow leadership meetings. Execute against agreed development milestones.",
+        "We work alongside you through the hard calls. The cadence becomes part of how leadership moves, not an extra meeting on the calendar.",
       transfer:
-        "The leadership team becomes self-sufficient. Governance for ongoing development is embedded. Retainer for quarterly board advisory.",
+        "Your team is self-sufficient on the routine decisions. We stay available for the board moments and the inflection points that matter.",
     },
     ctx: {
       setup: "New leadership — align on strategy, operating rhythm, and decision-making cadence.",

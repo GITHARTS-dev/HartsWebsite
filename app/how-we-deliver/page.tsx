@@ -3,28 +3,60 @@ import Link from "next/link";
 
 import { PageShell } from "../_shared/layout/page-shell";
 import { PageHero } from "../_shared/layout/page-hero";
-import { BotIcon, CheckIcon, XIcon } from "../_shared/icons";
-import { botPhases } from "../_data/bot";
+import { BotIcon } from "../_shared/icons";
 
 export const metadata: Metadata = {
   title: "How We Deliver | HARTS",
   description:
-    "Build. Operate. Transfer. The methodology that runs through every HARTS engagement — designed, run, and handed over until your team owns the outcome.",
+    "Build. Operate. Transfer. The way HARTS makes sure the capability runs without us — and stays that way.",
 };
 
-const advisoryVsHarts = [
-  { advisory: "A 200-slide deck", harts: "A functioning team" },
-  { advisory: "A target operating model", harts: "The model, running" },
-  { advisory: "A change roadmap", harts: "The change, in flight" },
-  { advisory: "A KPI framework", harts: "KPIs your team owns" },
-  { advisory: "“Phase 2 recommended”", harts: "We stay until you’re done" },
+const phases = [
+  {
+    key: "build" as const,
+    num: "01",
+    name: "Build",
+    line: "We design the capability with your team in the room.",
+    promise:
+      "You don't get a generic playbook. You get an operating model designed for your business, your strategy, and the people who will actually run it.",
+  },
+  {
+    key: "operate" as const,
+    num: "02",
+    name: "Operate",
+    line: "We run it through the early months so your team can take over without disruption.",
+    promise:
+      "While we hold the weight, your people shadow, learn, and own decisions. By the time we step back, the work is already theirs.",
+  },
+  {
+    key: "transfer" as const,
+    num: "03",
+    name: "Transfer",
+    line: "We hand it over — fully documented, fully working, fully yours.",
+    promise:
+      "Ownership transfers. We stay close through hypercare, then leave a light governance retainer in place so the work keeps improving.",
+  },
+];
+
+const outcomes = [
+  {
+    title: "A capability that fits.",
+    text:
+      "The model we leave behind is built for your context, not lifted from a template. It works on day one and keeps working.",
+  },
+  {
+    title: "A team that's ready.",
+    text:
+      "Your people don't learn the new way from a manual. They learn it by running it alongside us — so by the time we leave, the work is muscle memory.",
+  },
+  {
+    title: "A future-proof operation.",
+    text:
+      "What we leave behind keeps improving. The CI rhythm, the governance, the ownership — built to last well beyond our involvement.",
+  },
 ];
 
 export default function HowWeDeliverRoute() {
-  const build = botPhases[0]!;
-  const operate = botPhases[1]!;
-  const transfer = botPhases[2]!;
-
   return (
     <PageShell>
       <main className="ed-page">
@@ -34,7 +66,7 @@ export default function HowWeDeliverRoute() {
           eyebrow="How We Deliver"
           titleSoft="Build. Operate."
           titleStrong="Transfer."
-          subtitle="Most firms advise. Some build. We do both — and we transfer. Three verbs, one unbroken arc. We don’t leave until the capability runs without us."
+          subtitle="Most firms advise and leave. We don't. The way HARTS works means the capability we build runs without us — and stays that way."
           actions={
             <Link className="solid-button large" href="/contact">
               Let&apos;s talk
@@ -42,181 +74,65 @@ export default function HowWeDeliverRoute() {
           }
         />
 
-        {/* ─── 1. The arc ─────────────────────────────────────────── */}
+        {/* ─── 1. The arc — three high-level tiles ───────────────────── */}
         <section className="ed-section">
           <div className="ed-shell">
             <header className="ed-section-head">
-              <p className="ed-eyebrow">The Spine</p>
+              <p className="ed-eyebrow">The Approach</p>
               <h2>
                 Three phases. <em>One unbroken arc.</em>
               </h2>
               <p>
-                Build, Operate, Transfer is how HARTS converts strategy into a
-                capability your team owns. Each phase has its own discipline —
-                and the engagement does not end until the last one is complete.
+                Every HARTS engagement runs through Build, Operate, Transfer. It
+                isn&apos;t a methodology you read about — it&apos;s the reason the
+                work still runs after we&apos;ve gone.
               </p>
             </header>
 
             <div className="ed-bot-timeline">
-              <div className="ed-bot-tile">
-                <div className="ed-bot-tile-head">
-                  <span className="ed-bot-tile-icon"><BotIcon phase="build" /></span>
-                  <span className="ed-bot-tile-num">01</span>
+              {phases.map((p) => (
+                <div key={p.key} className="ed-bot-tile">
+                  <div className="ed-bot-tile-head">
+                    <span className="ed-bot-tile-icon"><BotIcon phase={p.key} /></span>
+                    <span className="ed-bot-tile-num">{p.num}</span>
+                  </div>
+                  <h3>{p.name}</h3>
+                  <p>{p.line}</p>
                 </div>
-                <h3>{build.label}</h3>
-                <p>{build.desc}</p>
-              </div>
-              <div className="ed-bot-tile">
-                <div className="ed-bot-tile-head">
-                  <span className="ed-bot-tile-icon"><BotIcon phase="operate" /></span>
-                  <span className="ed-bot-tile-num">02</span>
-                </div>
-                <h3>{operate.label}</h3>
-                <p>{operate.desc}</p>
-              </div>
-              <div className="ed-bot-tile">
-                <div className="ed-bot-tile-head">
-                  <span className="ed-bot-tile-icon"><BotIcon phase="transfer" /></span>
-                  <span className="ed-bot-tile-num">03</span>
-                </div>
-                <h3>{transfer.label}</h3>
-                <p>{transfer.desc}</p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ─── 2. BUILD chapter ───────────────────────────────────── */}
-        <section className="ed-section--rule">
-          <div className="ed-shell">
-            <div className="ed-chapter">
-              <aside className="ed-chapter-side">
-                <span className="ed-chapter-icon"><BotIcon phase="build" size={26} /></span>
-                <span className="ed-chapter-num">Phase 01</span>
-                <h2 className="ed-chapter-name">
-                  Build, <em>with you.</em>
-                </h2>
-                <p>{build.desc} Scope, knowledge transfer, OKRs, SLA build — done with your people in the room, not for them.</p>
-              </aside>
-              <div className="ed-chapter-body">
-                {build.items!.map((it, idx) => (
-                  <article key={it.label} className="ed-item">
-                    <span className="ed-item-num">{String(idx + 1).padStart(2, "0")}</span>
-                    <div>
-                      <h4>{it.label}</h4>
-                      <p>{it.desc}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── 3. OPERATE chapter ─────────────────────────────────── */}
-        <section className="ed-section--rule ed-section--soft">
-          <div className="ed-shell">
-            <div className="ed-chapter">
-              <aside className="ed-chapter-side">
-                <span className="ed-chapter-icon"><BotIcon phase="operate" size={26} /></span>
-                <span className="ed-chapter-num">Phase 02</span>
-                <h2 className="ed-chapter-name">
-                  Operate, <em>through transition.</em>
-                </h2>
-                <p>{operate.desc} Stabilising the process, shadowing your team, and proving the SLAs work in practice — not just on paper.</p>
-              </aside>
-              <div className="ed-chapter-body">
-                {operate.items!.map((it, idx) => (
-                  <article key={it.label} className="ed-item">
-                    <span className="ed-item-num">{String(idx + 1).padStart(2, "0")}</span>
-                    <div>
-                      <h4>{it.label}</h4>
-                      <p>{it.desc}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── 4. TRANSFER chapter (with 3 sub-stages) ───────────── */}
-        <section className="ed-section--rule">
-          <div className="ed-shell">
-            <div className="ed-chapter">
-              <aside className="ed-chapter-side">
-                <span className="ed-chapter-icon"><BotIcon phase="transfer" size={26} /></span>
-                <span className="ed-chapter-num">Phase 03</span>
-                <h2 className="ed-chapter-name">
-                  Transfer, <em>and step back.</em>
-                </h2>
-                <p>{transfer.desc} Transition, hypercare, steady state — three nested moments that ensure ownership transfer is real, not a calendar event.</p>
-              </aside>
-              <div className="ed-chapter-body">
-                <div className="ed-stages">
-                  {transfer.stages!.map((stg) => (
-                    <article key={stg.key} className="ed-stage">
-                      <h4>{stg.label}</h4>
-                      <ul>
-                        {stg.items.map((it) => (
-                          <li key={it.label}>
-                            <span>
-                              <span className="ed-stage-label">{it.label}</span>
-                              <span className="ed-stage-desc">{it.desc}</span>
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── 5. Advisory vs HARTS ──────────────────────────────── */}
+        {/* ─── 2. What it means for you ──────────────────────────────── */}
         <section className="ed-section ed-section--soft">
           <div className="ed-shell">
             <header className="ed-section-head">
-              <p className="ed-eyebrow">Why It Matters</p>
+              <p className="ed-eyebrow">What It Means For You</p>
               <h2>
-                Advisory firms vs. <em>HARTS.</em>
+                The work doesn&apos;t end with a deck. <em>It ends with you running it.</em>
               </h2>
               <p>
-                The difference is not in the slide quality. It is in what you
-                are left with when the team leaves the building.
+                Three outcomes you can count on, regardless of which of our six
+                services you engage us for.
               </p>
             </header>
 
-            <div className="ed-compare">
-              <div className="ed-compare-col ed-compare-col--advisory">
-                <h3>Advisory firms deliver</h3>
-                <ul>
-                  {advisoryVsHarts.map((row) => (
-                    <li key={row.advisory}>
-                      <XIcon />
-                      <span>{row.advisory}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="ed-compare-col ed-compare-col--harts">
-                <h3>HARTS delivers</h3>
-                <ul>
-                  {advisoryVsHarts.map((row) => (
-                    <li key={row.harts}>
-                      <CheckIcon />
-                      <span>{row.harts}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="ed-bot-cols">
+              {outcomes.map((o, idx) => (
+                <div key={o.title} className="ed-bot-col">
+                  <div className="ed-bot-col-head">
+                    <span className="ed-bot-col-num">0{idx + 1}</span>
+                    <h3 className="ed-bot-col-name">{o.title}</h3>
+                  </div>
+                  <p className="ed-bot-col-desc">{o.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ─── 6. Pull quote ─────────────────────────────────────── */}
+        {/* ─── 3. Pull quote ─────────────────────────────────────────── */}
         <section className="ed-section">
           <div className="ed-shell">
             <div className="ed-quote">
@@ -228,15 +144,15 @@ export default function HowWeDeliverRoute() {
           </div>
         </section>
 
-        {/* ─── 7. CTA ────────────────────────────────────────────── */}
+        {/* ─── 4. CTA ───────────────────────────────────────────────── */}
         <section className="ed-cta">
           <div className="ed-shell">
             <h2>
               See BOT applied to <em>your moment.</em>
             </h2>
             <p>
-              Tell us where your organisation is. We will come back with the
-              service mix and the BOT path that fits.
+              Tell us where your organisation is. We&apos;ll come back with the
+              service mix and the path that fits.
             </p>
             <div className="ed-cta-actions">
               <Link className="solid-button large" href="/contact">Connect with HARTS</Link>

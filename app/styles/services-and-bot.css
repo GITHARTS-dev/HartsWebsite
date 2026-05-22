@@ -10,14 +10,16 @@
    ──────────────────────────────────────────────────────────────────────── */
 
 /* ─── Shared shell ──────────────────────────────────────────────────── */
+/* Match PageHero (max-width 1280, 5vw padding) so left edges align across
+   hero + editorial sections. Inner widths constrained per-element. */
 .ed-shell {
-  max-width: 1080px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 5vw, 56px);
+  padding: 0 5vw;
 }
 
 .ed-section {
-  padding: clamp(64px, 9vw, 112px) 0;
+  padding: clamp(48px, 6vw, 88px) 0;
 }
 
 .ed-section + .ed-section,
@@ -48,15 +50,15 @@
 
 .ed-section-head {
   max-width: 760px;
-  margin-bottom: clamp(40px, 6vw, 72px);
+  margin-bottom: clamp(28px, 4vw, 48px);
 }
 
 .ed-section-head h2 {
-  margin: 0 0 18px;
-  font-size: clamp(32px, 4vw, 52px);
-  line-height: 1.08;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.16;
+  font-weight: 720;
+  letter-spacing: -0.005em;
 }
 
 .ed-accent {
@@ -68,8 +70,8 @@
 .ed-section-head p {
   margin: 0;
   max-width: 620px;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--muted);
   font-weight: 400;
 }
@@ -81,10 +83,10 @@
 
 .ed-svc-row {
   display: grid;
-  grid-template-columns: 64px 56px 1fr auto;
+  grid-template-columns: 56px 52px 1fr auto;
   align-items: center;
-  gap: clamp(18px, 3vw, 40px);
-  padding: 38px 0;
+  gap: clamp(16px, 2.5vw, 32px);
+  padding: 26px 0;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
   color: inherit;
@@ -130,10 +132,10 @@
 
 .ed-svc-title {
   margin: 0;
-  font-size: clamp(22px, 2.4vw, 30px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-size: clamp(18px, 1.7vw, 22px);
+  font-weight: 720;
+  line-height: 1.2;
+  letter-spacing: -0.003em;
   color: var(--ink);
 }
 
@@ -171,7 +173,7 @@
 /* ─── 2.  Service detail page  (/what-we-deliver/[slug]) ────────────── */
 
 .ed-detail-hero {
-  padding: clamp(96px, 12vw, 144px) 0 clamp(48px, 8vw, 80px);
+  padding: clamp(72px, 9vw, 104px) 0 clamp(32px, 4.5vw, 56px);
 }
 
 .ed-breadcrumb {
@@ -212,11 +214,11 @@
 .ed-detail-mark svg { width: 30px; height: 30px; }
 
 .ed-detail-headline h1 {
-  margin: 0 0 18px;
-  font-size: clamp(38px, 5.4vw, 64px);
-  font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 720;
+  line-height: 1.1;
+  letter-spacing: -0.008em;
   max-width: none;
 }
 
@@ -226,8 +228,8 @@
 .ed-detail-line {
   margin: 0;
   max-width: 600px;
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--muted);
   font-weight: 400;
 }
@@ -250,8 +252,8 @@
 .ed-cap {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) 2.2fr;
-  gap: clamp(20px, 4vw, 56px);
-  padding: 32px 0;
+  gap: clamp(20px, 4vw, 48px);
+  padding: 22px 0;
   border-top: 1px solid var(--line);
   align-items: start;
 }
@@ -263,10 +265,10 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 17px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 720;
   color: var(--ink);
-  letter-spacing: -0.005em;
+  letter-spacing: -0.003em;
 }
 
 .ed-cap-label .num {
@@ -283,8 +285,8 @@
 
 .ed-cap-body > p {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.65;
   color: var(--muted);
 }
 
@@ -333,7 +335,7 @@
 .ed-bot-cols {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: clamp(28px, 4vw, 64px);
+  gap: clamp(20px, 2.5vw, 40px);
 }
 
 .ed-bot-col {
@@ -372,16 +374,16 @@
 
 .ed-bot-col-name {
   margin: 0;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.005em;
+  font-size: 17px;
+  font-weight: 720;
+  letter-spacing: -0.003em;
   color: var(--ink);
 }
 
 .ed-bot-col-desc {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 13.5px;
+  line-height: 1.7;
   color: var(--muted);
 }
 
@@ -398,10 +400,10 @@
 .ed-ctx {
   display: grid;
   grid-template-columns: minmax(160px, 1fr) 2.4fr;
-  gap: clamp(20px, 4vw, 56px);
-  padding: 28px 0;
+  gap: clamp(18px, 3vw, 40px);
+  padding: 18px 0;
   border-top: 1px solid var(--line);
-  align-items: start;
+  align-items: center;
 }
 
 .ed-ctx:last-child { border-bottom: 1px solid var(--line); }
@@ -434,18 +436,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0;
-  max-width: 940px;
-  margin: 0 auto;
+  max-width: 1080px;
 }
 
 .ed-bot-tile {
   position: relative;
-  padding: 28px 24px;
+  padding: 22px 22px 22px 0;
   border-top: 2px solid #E7473C;
 }
 
 .ed-bot-tile + .ed-bot-tile {
   border-left: 1px solid var(--line);
+  padding-left: 24px;
 }
 
 .ed-bot-tile-head {
@@ -477,15 +479,15 @@
 
 .ed-bot-tile h3 {
   margin: 0 0 6px;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.005em;
+  font-size: 18px;
+  font-weight: 720;
+  letter-spacing: -0.003em;
 }
 
 .ed-bot-tile p {
   margin: 0;
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--muted);
 }
 
@@ -499,8 +501,8 @@
 .ed-chapter {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) 2.4fr;
-  gap: clamp(32px, 6vw, 88px);
-  padding: clamp(64px, 9vw, 104px) 0;
+  gap: clamp(24px, 4vw, 64px);
+  padding: clamp(40px, 5vw, 72px) 0;
   border-top: 1px solid var(--line);
 }
 
@@ -534,11 +536,11 @@
 }
 
 .ed-chapter-name {
-  margin: 0 0 18px;
-  font-size: clamp(34px, 4.5vw, 56px);
-  line-height: 1.02;
-  font-weight: 800;
-  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.1;
+  font-weight: 720;
+  letter-spacing: -0.008em;
 }
 
 .ed-chapter-name em {
@@ -555,13 +557,13 @@
   color: var(--muted);
 }
 
-.ed-chapter-body { display: grid; gap: 28px; }
+.ed-chapter-body { display: grid; gap: 20px; }
 
 .ed-item {
   display: grid;
   grid-template-columns: 28px 1fr;
-  gap: 20px;
-  padding-bottom: 24px;
+  gap: 18px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--line);
   align-items: baseline;
 }
@@ -596,7 +598,7 @@
 }
 
 /* Transfer sub-stages */
-.ed-stages { display: grid; gap: 36px; }
+.ed-stages { display: grid; gap: 24px; }
 
 .ed-stage h4 {
   margin: 0 0 16px;
@@ -706,8 +708,8 @@
 .ed-dom-block {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) 1.6fr;
-  gap: clamp(36px, 7vw, 96px);
-  padding: clamp(72px, 10vw, 128px) 0;
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(48px, 6vw, 80px) 0;
   border-top: 1px solid var(--line);
   align-items: start;
 }
@@ -737,10 +739,10 @@
 
 .ed-dom-side h2 {
   margin: 0 0 12px;
-  font-size: clamp(36px, 4.5vw, 56px);
-  line-height: 1.02;
-  font-weight: 800;
-  letter-spacing: -0.015em;
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.08;
+  font-weight: 720;
+  letter-spacing: -0.008em;
 }
 
 .ed-dom-side h2 em { font-style: italic; color: #E7473C; font-weight: 700; }
@@ -754,7 +756,7 @@
   max-width: 320px;
 }
 
-.ed-dom-body { display: grid; gap: 36px; }
+.ed-dom-body { display: grid; gap: 24px; }
 
 .ed-dom-body > p {
   margin: 0;
@@ -858,12 +860,12 @@
 
 .ed-quote blockquote {
   margin: 0 0 22px;
-  font-size: clamp(22px, 2.6vw, 32px);
-  line-height: 1.4;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.45;
   font-weight: 500;
   font-style: italic;
   color: var(--ink);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 .ed-quote cite {
@@ -878,17 +880,17 @@
 
 /* ─── CTA band (single, clean) ──────────────────────────────────────── */
 .ed-cta {
-  padding: clamp(72px, 10vw, 128px) 0;
+  padding: clamp(48px, 6vw, 80px) 0;
   border-top: 1px solid var(--line);
   text-align: center;
 }
 
 .ed-cta h2 {
   margin: 0 auto 16px;
-  font-size: clamp(30px, 3.6vw, 44px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 720;
+  line-height: 1.16;
+  letter-spacing: -0.005em;
   max-width: 600px;
 }
 
@@ -897,7 +899,7 @@
 .ed-cta p {
   margin: 0 auto 30px;
   max-width: 480px;
-  font-size: 16px;
+  font-size: 14.5px;
   line-height: 1.65;
   color: var(--muted);
 }

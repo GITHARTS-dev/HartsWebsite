@@ -55,26 +55,26 @@ p {
 }
 
 h1 {
-  max-width: 590px;
-  margin-bottom: 24px;
-  font-size: clamp(40px, 4.7vw, 72px);
-  line-height: 1.04;
-  font-weight: 750;
-  letter-spacing: 0;
+  max-width: 640px;
+  margin-bottom: 22px;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.1;
+  font-weight: 720;
+  letter-spacing: -0.005em;
 }
 
 h2 {
-  margin-bottom: 18px;
-  font-size: clamp(30px, 3vw, 48px);
-  line-height: 1.08;
+  margin-bottom: 16px;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.16;
   font-weight: 720;
-  letter-spacing: 0;
+  letter-spacing: -0.003em;
 }
 
 h3 {
-  font-size: 22px;
-  line-height: 1.2;
-  font-weight: 720;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 700;
   letter-spacing: 0;
 }
 

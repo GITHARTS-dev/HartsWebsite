@@ -5,133 +5,27 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 import { PageHero } from "../_shared/layout/page-hero";
-
-const iconProps = {
-  viewBox: "0 0 24 24",
-  fill: "none" as const,
-  width: 15,
-  height: 15,
-  "aria-hidden": true as const,
-};
-
-const strokeProps = {
-  stroke: "currentColor",
-  strokeWidth: 1.6,
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
-};
-
-const challenges = [
-  {
-    title: "Disconnected Systems",
-    text: "Fragmented workflows and isolated platforms reduce visibility and slow collaboration.",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="6" cy="12" r="2.5" {...strokeProps} />
-        <circle cx="18" cy="12" r="2.5" {...strokeProps} />
-        <path d="M9 12h2M13 12h2" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "Slow Decision-Making",
-    text: "Leaders need clearer insights and faster access to meaningful operational intelligence.",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="12" cy="12" r="8.5" {...strokeProps} />
-        <path d="M12 7.5v5l3 2" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "Operational Inefficiencies",
-    text: "Outdated processes and disconnected operations limit scalability and adaptability.",
-    icon: (
-      <svg {...iconProps}>
-        <path d="M3 7l9-4 9 4-9 4-9-4z" {...strokeProps} />
-        <path d="M3 12l9 4 9-4M3 17l9 4 9-4" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "Unclear Digital Direction",
-    text: "Many organizations struggle to align transformation initiatives with long-term goals.",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="12" cy="12" r="9" {...strokeProps} />
-        <path d="M15.5 8.5l-2.2 5.3-5.3 2.2 2.2-5.3 5.3-2.2z" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "Data Silos",
-    text: "Disconnected data sources create gaps in visibility and enterprise-wide understanding.",
-    icon: (
-      <svg {...iconProps}>
-        <ellipse cx="12" cy="5" rx="7.5" ry="2.5" {...strokeProps} />
-        <path
-          d="M4.5 5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5V5M4.5 11v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6"
-          {...strokeProps}
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Transformation Visibility",
-    text: "Organizations need measurable clarity into transformation progress and outcomes.",
-    icon: (
-      <svg {...iconProps}>
-        <path d="M3 17l5-5 4 4 8-8" {...strokeProps} />
-        <path d="M14 8h6v6" {...strokeProps} />
-      </svg>
-    ),
-  },
-];
-
-/* Why Choose HARTS - three pillar synthesis (People / Process / Technology). */
-const reasons = [
-  {
-    title: "People",
-    text: "Executive alignment, leadership development, and people-centered transformation that strengthen collaboration, adaptability, and long-term organizational resilience. We help teams navigate change with confidence and shared clarity.",
-    direction: "from-left",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="9" cy="8.5" r="3" {...strokeProps} />
-        <path d="M3.5 19a5.5 5.5 0 0 1 11 0" {...strokeProps} />
-        <circle cx="17" cy="10" r="2.5" {...strokeProps} />
-        <path d="M15 19a4 4 0 0 1 6.5-1.5" {...strokeProps} />
-      </svg>
-    ),
-  },
-  {
-    title: "Process",
-    text: "Strategic frameworks and scalable operating models engineered to simplify complexity, improve execution, and accelerate business performance across evolving operational environments.",
-    direction: "from-bottom",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="12" cy="12" r="9" {...strokeProps} />
-        <circle cx="12" cy="12" r="5" {...strokeProps} />
-        <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    title: "Technology",
-    text: "AI-enabled intelligence, connected systems, and integrated data ecosystems that empower organizations with real-time insight, smarter decisions, and future-ready transformation.",
-    direction: "from-right",
-    icon: (
-      <svg {...iconProps}>
-        <rect x="6" y="6" width="12" height="12" rx="2" {...strokeProps} />
-        <rect x="10" y="10" width="4" height="4" {...strokeProps} />
-        <path d="M10 3v3M14 3v3M10 18v3M14 18v3M3 10h3M3 14h3M18 10h3M18 14h3" {...strokeProps} />
-      </svg>
-    ),
-  },
-];
+import { services } from "../_data/services";
+import { domains } from "../_data/domains";
 
 function revealStyle(index = 0): CSSProperties {
   return { "--reveal-delay": `${index * 90}ms` } as CSSProperties;
 }
+
+const botSteps = [
+  {
+    title: "Build",
+    text: "We define scope, transfer knowledge in, design OKRs and the SLAs your new function will run on — alongside your team, not for them.",
+  },
+  {
+    title: "Operate",
+    text: "We stabilise the process, shadow your people, and execute SLAs in practice — carrying the weight through transition.",
+  },
+  {
+    title: "Transfer",
+    text: "Transition, hypercare, steady-state. We hand over a functioning capability your organisation owns and runs without us.",
+  },
+];
 
 export function HomeExperience() {
   useEffect(() => {
@@ -211,78 +105,138 @@ export function HomeExperience() {
         </div>
       </section>
 
-      <section className="home-premium-section challenges-section parallax-section" id="challenges">
+      {/* ─── WHAT WE DELIVER (6 services) ─────────────────────────────── */}
+      <section
+        className="home-premium-section challenges-section parallax-section"
+        id="what-we-deliver"
+      >
         <div className="section-orb orb-one" aria-hidden="true" />
         <div className="home-section-shell">
-          <div className="challenges-intro">
-            <div className="home-section-heading scroll-reveal">
-              <p className="eyebrow">Strategic Challenges We Solve</p>
-              <h2>Navigating Complexity with Confidence.</h2>
-              <p>
-                Organizations today face operational complexity, fragmented systems, and rapidly evolving expectations. HARTS helps leadership teams align strategy, transformation, and execution into one connected direction for sustainable growth.
-              </p>
-            </div>
-           
-            <div className="challenge-image-wrap">
-              <span className="challenge-image-accent" aria-hidden="true" />
-              <div className="challenge-image-frame">
-                <img
-                  src="/images/home-page-discussion.jpeg"
-                  alt="HARTS strategy consultants collaborating on enterprise challenges"
-                />
-                {/* <div className="challenge-image-badge" aria-hidden="true">
-                  <span className="badge-number">6</span>
-                  <span className="badge-label">Challenges<br />We&nbsp;Solve</span>
-                </div> */}
-              </div>
-            </div>
-          </div>
-
-          <div className="challenges-subheading-block">
-            <p className="eyebrow">Six Recurring Patterns</p>
+          <div className="home-section-heading scroll-reveal">
+            <p className="eyebrow">What We Deliver</p>
+            <h2>Six services. One unbroken thread.</h2>
+            <p>
+              Each one built and run by people who have sat in the operator&apos;s chair.
+              No generalists. No detached strategy decks. Six disciplined practices that
+              connect strategy to outcomes your team owns.
+            </p>
           </div>
 
           <div className="challenge-grid">
-            {challenges.map((item, index) => (
-              <article
+            {services.map((svc, index) => (
+              <Link
+                key={svc.slug}
+                href={`/what-we-deliver/${svc.slug}`}
                 className="premium-info-card challenge-card scroll-reveal reveal-soft-up"
-                key={item.title}
                 style={revealStyle(index)}
               >
-                <span className="card-icon-only">{item.icon}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+                <span className="card-icon-only" aria-hidden="true">
+                  <strong style={{ fontFamily: "DM Sans", fontSize: 13, fontWeight: 800, color: "#E7473C" }}>
+                    {svc.num}
+                  </strong>
+                </span>
+                <h3>{svc.title}</h3>
+                <p>{svc.line}</p>
+              </Link>
             ))}
+          </div>
+
+          <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
+            <Link className="outline-button magnetic-button" href="/what-we-deliver">
+              See all six services
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="home-premium-section choose-section parallax-section" id="why-harts">
+      {/* ─── HOW WE DELIVER (BOT) ─────────────────────────────────────── */}
+      <section
+        className="home-premium-section choose-section parallax-section"
+        id="how-we-deliver"
+      >
         <div className="section-orb orb-two" aria-hidden="true" />
         <div className="home-section-shell">
           <div className="home-section-heading centered scroll-reveal">
-            <p className="eyebrow">Why Organizations Choose HARTS</p>
-            <h2>A Trusted Transformation Partner for Organizations.</h2>
+            <p className="eyebrow">How We Deliver</p>
+            <h2>Build. Operate. Transfer.</h2>
+            <p style={{ maxWidth: 640, margin: "0 auto" }}>
+              The Build–Operate–Transfer methodology is the spine of every HARTS engagement.
+              We don&apos;t advise and leave. We build the capability, run it through transition,
+              and hand it over to your team.
+            </p>
           </div>
 
           <div className="choose-network" aria-hidden="true" />
           <div className="choose-grid">
-            {reasons.map((item, index) => (
+            {botSteps.map((step, index) => (
               <article
-                className={`premium-info-card choose-card scroll-reveal reveal-${item.direction}`}
-                key={item.title}
+                key={step.title}
+                className="premium-info-card choose-card scroll-reveal reveal-soft-up"
                 style={revealStyle(index)}
               >
-                <span className="card-icon-only">{item.icon}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+                <span className="card-icon-only" aria-hidden="true">
+                  <strong style={{ fontFamily: "DM Sans", fontSize: 13, fontWeight: 800, color: "#E7473C" }}>
+                    {`0${index + 1}`}
+                  </strong>
+                </span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
               </article>
             ))}
+          </div>
+
+          <div className="challenges-subheading-block" style={{ marginTop: 28, textAlign: "center" }}>
+            <Link className="outline-button magnetic-button" href="/how-we-deliver">
+              See how the methodology works
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* ─── WHERE WE DELIVER (3 domains) ─────────────────────────────── */}
+      <section
+        className="home-premium-section challenges-section parallax-section"
+        id="where-we-deliver"
+      >
+        <div className="section-orb orb-one" aria-hidden="true" />
+        <div className="home-section-shell">
+          <div className="home-section-heading scroll-reveal">
+            <p className="eyebrow">Where We Deliver</p>
+            <h2>Three moments. One partner across all of them.</h2>
+            <p>
+              HARTS organises around where you are, not what we sell. Setup, Develop,
+              Scale Up — one capability, one engagement model, three moments of intervention.
+            </p>
+          </div>
+
+          <div className="choose-grid">
+            {domains.map((d, index) => (
+              <Link
+                key={d.id}
+                href={`/where-we-deliver#${d.slug}`}
+                className="premium-info-card choose-card scroll-reveal reveal-soft-up"
+                style={revealStyle(index)}
+              >
+                <span className="card-icon-only" aria-hidden="true">
+                  <strong style={{ fontFamily: "DM Sans", fontSize: 13, fontWeight: 800, color: "#E7473C" }}>
+                    {`0${index + 1}`}
+                  </strong>
+                </span>
+                <h3>{d.label}</h3>
+                <p>{d.body}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
+            <Link className="outline-button magnetic-button" href="/where-we-deliver">
+              Explore the three domains
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PARTNER CTA (kept) ───────────────────────────────────────── */}
       <section className="partner-section parallax-section" id="partner">
         <div className="partner-content scroll-reveal">
           <p className="eyebrow">Partner With HARTS</p>
@@ -305,4 +259,3 @@ export function HomeExperience() {
     </main>
   );
 }
- 

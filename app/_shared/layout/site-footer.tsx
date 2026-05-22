@@ -4,9 +4,9 @@ const navCols = [
   {
     heading: "Practice",
     links: [
-      { label: "How We Help", href: "/how-we-help" },
-      { label: "How We Work", href: "/how-we-work" },
-      { label: "Where We Engage", href: "/industries" },
+      { label: "What We Deliver", href: "/what-we-deliver" },
+      { label: "How We Deliver", href: "/how-we-deliver" },
+      { label: "Where We Deliver", href: "/where-we-deliver" },
     ],
   },
   {
@@ -49,7 +49,7 @@ export function SiteFooter() {
             <div className="sf-nav-col" key={col.heading}>
               <p className="sf-col-head">{col.heading}</p>
               {col.links.map((link) =>
-                link.external ? (
+                "external" in link && link.external ? (
                   <a
                     key={link.label}
                     href={link.href}

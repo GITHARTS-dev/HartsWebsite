@@ -16,7 +16,7 @@ const phases = [
     key: "build" as const,
     num: "01",
     name: "Build",
-    line: "We design the capability with your team in the room.",
+    line: "We design the operating model, governance structure, workforce capability, and execution framework required to support the business objective.",
     promise:
       "You don't get a generic playbook. You get an operating model designed for your business, your strategy, and the people who will actually run it.",
   },
@@ -24,7 +24,7 @@ const phases = [
     key: "operate" as const,
     num: "02",
     name: "Operate",
-    line: "We run it through the early months so your team can take over without disruption.",
+    line: "We run the capability alongside your teams while stabilizing operations, embedding governance, and building execution maturity.",
     promise:
       "While we hold the weight, your people shadow, learn, and own decisions. By the time we step back, the work is already theirs.",
   },
@@ -32,7 +32,7 @@ const phases = [
     key: "transfer" as const,
     num: "03",
     name: "Transfer",
-    line: "We hand it over - fully documented, fully working, fully yours.",
+    line: "We transition operational ownership, leadership accountability, and delivery capability into your organization with long-term sustainability embedded.",
     promise:
       "Ownership transfers. We stay close through hypercare, then leave a light governance retainer in place so the work keeps improving.",
   },
@@ -40,19 +40,19 @@ const phases = [
 
 const outcomes = [
   {
-    title: "A capability that fits.",
+    title: "Operational Capability That Fits",
     text:
-      "The model we leave behind is built for your context, not lifted from a template. It works on day one and keeps working.",
+      "Every capability is designed around your operating environment, workforce reality, governance structure, and growth objectives not generic frameworks.",
   },
   {
-    title: "A team that's ready.",
+    title: "Teams That Can Run Independently",
     text:
-      "Your people don't learn the new way from a manual. They learn it by running it alongside us - so by the time we leave, the work is muscle memory.",
+      "We embed execution capability directly into your teams so operational ownership remains sustainable long after transition.",
   },
   {
-    title: "A future-proof operation.",
+    title: "Scalable Operating Foundations",
     text:
-      "What we leave behind keeps improving. The CI rhythm, the governance, the ownership - built to last well beyond our involvement.",
+      "Governance, reporting rhythm, decision accountability, and operational discipline remain embedded beyond the engagement lifecycle.",
   },
 ];
 
@@ -66,10 +66,10 @@ export default function HowWeDeliverRoute() {
           eyebrow="How We Deliver"
           titleSoft="Build. Operate."
           titleStrong="Transfer."
-          subtitle="Most firms advise and leave. We don't. The way HARTS works means the capability we build runs without us - and stays that way."
+          subtitle="HARTS doesn’t stop at strategy. We build operational capability, run it alongside your teams, and transfer ownership only when the organization is ready to sustain it independently."
           actions={
             <Link className="solid-button large" href="/contact">
-              Let&apos;s talk
+              Connect With Us
             </Link>
           }
         />
@@ -83,9 +83,7 @@ export default function HowWeDeliverRoute() {
                 Three phases. <em>One unbroken arc.</em>
               </h2>
               <p>
-                Every HARTS engagement runs through Build, Operate, Transfer. It
-                isn&apos;t a methodology you read about - it&apos;s the reason the
-                work still runs after we&apos;ve gone.
+                Every HARTS engagement follows a Build–Operate–Transfer delivery model designed to create long-term operational ownership not dependency on consultants.
               </p>
             </header>
 
@@ -113,7 +111,7 @@ export default function HowWeDeliverRoute() {
                 The work doesn&apos;t end with a deck. <em>It ends with you running it.</em>
               </h2>
               <p>
-                Three outcomes you can count on, regardless of which of our six
+                Three outcomes you can count on, regardless of which of our
                 services you engage us for.
               </p>
             </header>

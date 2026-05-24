@@ -83,7 +83,7 @@
 
 .ed-svc-row {
   display: grid;
-  grid-template-columns: 56px 52px 1fr auto;
+  grid-template-columns: 52px 1fr auto;
   align-items: center;
   gap: clamp(16px, 2.5vw, 32px);
   padding: 26px 0;
@@ -97,13 +97,6 @@
   padding-left: 14px;
   padding-right: 6px;
   background: linear-gradient(90deg, rgba(231, 71, 60, 0.04) 0%, transparent 60%);
-}
-
-.ed-svc-num {
-  font-size: 16px;
-  font-weight: 600;
-  color: #E7473C;
-  letter-spacing: 0.08em;
 }
 
 .ed-svc-icon {
@@ -272,10 +265,15 @@
 }
 
 .ed-cap-label .num {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(231, 71, 60, 0.1);
   color: #E7473C;
+  flex-shrink: 0;
 }
 
 .ed-cap-body {

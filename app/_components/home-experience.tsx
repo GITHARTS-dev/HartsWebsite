@@ -114,11 +114,9 @@ export function HomeExperience() {
         <div className="home-section-shell">
           <div className="home-section-heading scroll-reveal">
             <p className="eyebrow">What We Deliver</p>
-            <h2>Six services. One unbroken thread.</h2>
+            <h2>Strategy is only valuable when operations can sustain it.</h2>
             <p>
-              Each one built and run by people who have sat in the operator&apos;s chair.
-              No generalists. No detached strategy decks. Six disciplined practices that
-              connect strategy to outcomes your team owns.
+              HARTS helps organizations build, operationalize, and scale critical business capabilities combining strategy, execution, and transition under one integrated consulting model.
             </p>
           </div>
 
@@ -185,7 +183,7 @@ export function HomeExperience() {
             ))}
           </div>
 
-          <div className="challenges-subheading-block" style={{ marginLeft: -250, marginTop: 28, textAlign: "center" }}>
+          <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
             <Link className="outline-button magnetic-button" href="/how-we-deliver">
               See how the methodology works
             </Link>

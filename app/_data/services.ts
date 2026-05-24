@@ -35,29 +35,29 @@ export const services: Service[] = [
     title: "OD & Implementation",
     titleSoft: "OD &",
     titleStrong: "Implementation",
-    line: "Design the organisation your strategy needs - then build it.",
+    line: "We help organizations build scalable operating structures, leadership capability, and workforce systems that support growth, transformation, and execution at scale.",
     voice:
       "Organisation design without implementation is wallpaper. We do both - because a beautiful org chart that nobody follows is worse than no org chart at all.",
     subs: [
-      { label: "Job architecture", desc: "Role clarity, grade frameworks, and career pathways aligned to your strategy." },
-      { label: "Talent evaluation & development", desc: "Assess capability gaps and build the pathways that retain your best people." },
-      { label: "Talent attraction & acquisition", desc: "Employer brand, sourcing strategy, and a hiring process designed to move fast." },
-      { label: "Leadership Fellowship", desc: "A structured cohort programme that accelerates the next layer of leaders." },
-      { label: "Mini-CxO programme", desc: "A high-potential programme giving emerging leaders genuine C-suite decision exposure." },
-      { label: "Employer Value Proposition", desc: "Define and activate what makes your organisation worth joining - and staying with." },
+      { label: "Organization Structure & Role Design", desc: "Design reporting structures, accountability models, and role frameworks aligned to operational scale and business strategy." },
+      { label: "Workforce Capability Development", desc: "Identify capability gaps and implement structured development programs that improve performance, retention, and leadership readiness." },
+      { label: "Talent Acquisition Strategy", desc: "Build scalable hiring models, employer positioning, and recruitment operations designed for growth-stage and transformation environments." },
+      { label: "Leadership Development Programs", desc: "Develop future-ready leaders through structured learning, operational exposure, and transformation-focused leadership initiatives." },
+      { label: "Emerging Leadership Acceleration", desc: "Prepare high-potential talent for strategic decision-making and enterprise leadership responsibilities." },
+      { label: "Employer Brand & Employee Value Proposition", desc: "Define and strengthen the employee experience to improve attraction, engagement, and long-term workforce retention." },
     ],
     bot: {
       build:
-        "We work alongside your leadership team to map where you are and design the structure your strategy needs - roles, grades, performance measures and all.",
+        "Define the future operating model, organizational structure, governance framework, and workforce requirements needed to support business objectives.",
       operate:
-        "We run the new design with your managers, coaching them through the change so the org feels lived-in by the time we step back.",
+        "Work alongside leadership and operational teams to implement structures, embed processes, and stabilize workforce execution.",
       transfer:
-        "You own a working organisation with the playbooks, governance and people in place to keep developing it after we leave.",
+        "Transition ownership with governance, capability maturity, and operational continuity fully embedded within the organization.",
     },
     ctx: {
-      setup: "Design the entire org from zero - roles, grades, reporting lines, EVP - before the first hire.",
-      develop: "Audit the current structure, close skill gaps, and embed performance management that sticks.",
-      scaleup: "Replicate proven org models across new geographies and entities without losing culture.",
+      setup: "Design the organization from the ground up including structure, leadership roles, workforce planning, and operating governance.",
+      develop: "Strengthen existing teams through capability assessment, leadership development, and performance alignment.",
+      scaleup: "Replicate proven organizational models across new regions, business units, and operational environments.",
     },
   },
   {
@@ -67,44 +67,44 @@ export const services: Service[] = [
     title: "Centre of Excellence",
     titleSoft: "Centre of",
     titleStrong: "Excellence",
-    line: "The engine room for continuous improvement - not a slide deck about it.",
+    line: "We build operational excellence functions that improve governance, accelerate execution, standardize delivery, and drive continuous business improvement across the enterprise.",
     voice:
       "Everyone sells process mining tools. We build the team that makes those tools actually work. The tool is 20% of the value. The people running it are the other 80%.",
     subs: [
-      { label: "Change management & governance", desc: "Change management, communication cadence, and the governance that keeps transformation on track." },
+      { label: "Transformation Governance & Change Management", desc: "Establish governance structures, communication frameworks, and transformation controls that keep strategic initiatives aligned and accountable." },
       {
-        label: "Performance control tower",
-        desc: "A single view across goals, policy, and operational performance - for leadership to act on, not just admire.",
+        label: "Enterprise Performance Control Tower",
+        desc: "Create centralized operational visibility across goals, execution metrics, governance, and business performance to support faster leadership decision-making.",
         children: [
-          { label: "OKRs & goals", desc: "Cascading objectives from board to team with measurable key results." },
-          { label: "Policy deployment", desc: "Strategy connected to operational action, one cascade at a time." },
-          { label: "Performance reporting", desc: "Dashboards that surface the signals leadership needs to act on." },
+          { label: "OKRs & Strategic Alignment", desc: "Align enterprise objectives with measurable operational outcomes across teams and functions." },
+          { label: "Policy deployment", desc: "Translate strategy into executable operational priorities with clear ownership and accountability." },
+          { label: "Performance Reporting & Insights", desc: "Build dashboards and reporting structures that surface operational risks, progress, and performance trends." },
         ],
       },
-      { label: "Innovation", desc: "A structured methodology that produces commercial outcomes - not hackathons." },
+      { label: "Innovation & Transformation Programs", desc: "Establish structured innovation practices that convert improvement initiatives into measurable operational and commercial outcomes." },
       {
-        label: "Continuous improvement",
-        desc: "CI embedded in operations, not bolted on.",
+        label: "Continuous Improvement Operations",
+        desc: "Embed continuous improvement into day-to-day operations through structured problem-solving, operational reviews, and scalable improvement systems.",
         children: [
-          { label: "Problem classification", desc: "Triage issues by impact and root cause." },
-          { label: "Agile delivery", desc: "Sprint-based improvement cycles for operational teams." },
-          { label: "Innovation hub", desc: "A safe space for testing improvements at speed." },
-          { label: "Automation strategy", desc: "Identify, prioritise, and govern automation across the enterprise." },
+          { label: "Root Cause & Problem Classification", desc: "Prioritize operational issues based on impact, recurrence, and business risk." },
+          { label: "Agile Improvement Delivery", desc: "Execute rapid operational improvement cycles focused on measurable business outcomes." },
+          { label: "Innovation & Experimentation Hub", desc: "Create controlled environments for testing operational improvements and transformation initiatives." },
+          { label: "Enterprise Automation Strategy", desc: "Identify, prioritize, and govern automation opportunities across business functions." },
         ],
       },
     ],
     bot: {
       build:
-        "We design the Centre of Excellence around your business - its remit, its team, the dashboards and cadences leadership will actually use.",
+        "Design the Centre of Excellence structure, governance model, reporting cadence, operational metrics, and leadership framework.",
       operate:
-        "We run the cadence while your team learns it in flight. Reviews happen, decisions get made, the rhythm becomes routine.",
+        "Run the CoE alongside your teams while embedding operational discipline, decision governance, and continuous improvement practices.",
       transfer:
-        "Your internal lead takes ownership of a working CoE. We stay close through the first quarter, then move to a lightweight advisory role.",
+        "Transition the CoE with governance maturity, operational ownership, and sustainable execution capability fully embedded.",
     },
     ctx: {
-      setup: "Stand up the CoE from first principles - governance, tooling, team, cadence.",
-      develop: "Mature an existing CoE - embed CI culture, sharpen the control tower, link OCM to execution.",
-      scaleup: "Replicate the CoE model across business units and geographies with consistent governance.",
+      setup: "Establish the CoE from the ground up, including governance, tooling, reporting structures, operational cadence, and leadership ownership.",
+      develop: "Strengthen existing CoEs through operational maturity, performance governance, continuous improvement, and execution alignment.",
+      scaleup: "Replicate proven CoE models across business units, geographies, and enterprise functions with consistent governance standards.",
     },
   },
   {
@@ -114,26 +114,26 @@ export const services: Service[] = [
     title: "M&A & Post-Merger Integration",
     titleSoft: "M&A &",
     titleStrong: "Post-Merger Integration",
-    line: "The 100 days that make or break a deal.",
+    line: "We help organizations stabilize operations, align leadership, integrate teams, and accelerate synergy realization during mergers, acquisitions, and large-scale business transitions.",
     voice:
       "Most consultants hand you a 200-slide integration plan and leave. We stay. We run the first 100 days because that's when deals are won or lost.",
     subs: [
-      { label: "100-day playbook", desc: "Day 1 readiness through to synergy delivery - every decision, milestone, and owner named in advance." },
-      { label: "Integration office", desc: "Governance, cadence, and escalation paths designed to keep the integration programme moving." },
-      { label: "Synergy tracking", desc: "From target identification to verified delivery - accountability, not a spreadsheet." },
+      { label: "100-Day Integration Program", desc: "Build and execute a structured post-merger integration roadmap covering governance, operational priorities, leadership alignment, and synergy milestones." },
+      { label: "Integration Management Office", desc: "Establish the governance structure, reporting cadence, escalation framework, and execution controls required to manage complex integration programs." },
+      { label: "Synergy Planning & Value Tracking", desc: "Identify, monitor, and validate synergy opportunities across operations, workforce, processes, and enterprise functions with measurable accountability." },
     ],
     bot: {
       build:
-        "We stand up the integration office and define the 100-day plan - every workstream, every milestone, every owner, named and aligned.",
+        "Establish the integration office, define governance structures, align leadership responsibilities, and develop the post-merger execution roadmap.",
       operate:
-        "We run the integration cadence with your team - keeping decisions moving, surfacing risks early, and protecting the deal's value.",
+        "Run the integration program alongside leadership teams while managing execution cadence, operational risks, dependency tracking, and synergy delivery.",
       transfer:
-        "Your integration lead takes the chair with the full governance, scorecard and steering rhythm running. We stay close on synergy delivery.",
+        "Transition integration governance, reporting structures, and operational ownership into the client organization with long-term sustainability embedded.",
     },
     ctx: {
-      setup: "First acquisition - build the integration office and 100-day cadence from zero.",
-      develop: "Serial acquirer - strengthen the playbook and embed repeatable PMI capability in-house.",
-      scaleup: "Multi-entity roll-up - parallel integration tracks across geographies with unified governance.",
+      setup: "Support first-time acquisitions with integration governance, leadership alignment, operational planning, and structured 100-day execution.",
+      develop: "Strengthen internal integration capabilities through repeatable playbooks, governance maturity, and operational integration discipline.",
+      scaleup: "Manage multi-entity integration programs across regions and business units with unified governance and centralized execution control.",
     },
   },
   {
@@ -143,27 +143,27 @@ export const services: Service[] = [
     title: "GCC & Shared Services",
     titleSoft: "GCC &",
     titleStrong: "Shared Services",
-    line: "From first hire to full transfer - 39 countries of experience.",
+    line: "We help organizations establish, operationalize, and scale Global Capability Centers and shared service operations with embedded governance, workforce readiness, and execution control.",
     voice:
       "I spent 14 years building and running Metro's global solution centre. This isn't theory - it's muscle memory.",
     subs: [
-      { label: "Operating model design", desc: "The structure, governance, service catalogue, and performance commitments your centre will run on." },
-      { label: "Build-Operate-Transfer lifecycle", desc: "End-to-end GCC setup, from feasibility through to the moment you take the keys." },
-      { label: "Hiring & onboarding at scale", desc: "High-volume recruitment calibrated to the local talent market and the work you actually need done." },
-      { label: "Regulated-industry centres", desc: "Compliance-first design for pharma, financial services, and utilities." },
+      { label: "GCC Operating Model & Governance Design", desc: "Define the organizational structure, governance framework, service catalogue, delivery model, and performance standards required to run a scalable GCC operation." },
+      { label: "Build–Operate–Transfer GCC Execution", desc: "Deliver end-to-end GCC setup and operationalization — from feasibility and transition planning through operational stabilization and capability transfer." },
+      { label: "Workforce Ramp-Up & Operational Readiness", desc: "Build scalable recruitment, onboarding, workforce planning, and operational enablement programs aligned to delivery demand and business priorities." },
+      { label: "Regulated & Enterprise-Grade Delivery Environments", desc: "Establish compliance-ready GCC operations for regulated industries including healthcare, financial services, manufacturing, and utilities." },
     ],
     bot: {
       build:
-        "We design the centre - its mandate, structure, hiring plan, service catalogue - and stand it up alongside your team.",
+        "Design the GCC structure, operating model, governance framework, workforce plan, and transition roadmap required for operational launch.",
       operate:
-        "We run live operations in parallel with HQ, working through ramp-up issues until the centre is delivering steady-state quality.",
+        "Run the GCC alongside enterprise stakeholders while stabilizing operations, embedding governance, and achieving delivery maturity.",
       transfer:
-        "Local leadership takes full ownership. We hand over a running centre with the governance, documentation, and people to keep it that way.",
+        "Transition operational ownership, leadership capability, governance structures, and delivery accountability into the client organization.",
     },
     ctx: {
-      setup: "Greenfield - site selection through to the first 100 hires and the initial SLA go-live.",
-      develop: "Existing centre - governance uplift, process maturity, and performance embedding.",
-      scaleup: "Multi-site expansion - replicate the model, unify governance, maintain quality at scale.",
+      setup: "Support greenfield GCC establishment from location strategy and workforce planning through operational launch and early-stage stabilization.",
+      develop: "Strengthen existing GCC operations through governance maturity, process optimization, delivery stabilization, and workforce capability development.",
+      scaleup: "Expand GCC operations across functions, business units, and geographies while maintaining governance consistency and operational quality.",
     },
   },
   {
@@ -173,26 +173,28 @@ export const services: Service[] = [
     title: "Recruitment as a Service",
     titleSoft: "Recruitment",
     titleStrong: "as a Service",
-    line: "Your hiring engine - built, run, and transferred when you're ready.",
+    line: "We help organizations build scalable talent acquisition operations, workforce ramp-up programs, and hiring systems that support rapid business growth and operational expansion.",
     voice:
       "Recruitment isn't an HR function. It's a strategic capability. We build it like one.",
     subs: [
-      { label: "Sourcing & process design", desc: "Employer brand, channel mix, screening, and candidate experience - engineered for the talent you actually need." },
-      { label: "Managed recruitment operations", desc: "We run hiring end-to-end until your team is ready to take it on." },
-      { label: "Capability transfer", desc: "We train your team, hand over the tooling and playbooks, and step back." },
+      { label: "Talent Acquisition Strategy & Hiring Operations", desc: "Design scalable hiring processes, sourcing strategies, employer positioning, and recruitment operations aligned to workforce growth objectives." },
+      { label: "Managed Recruitment Delivery", desc: "Run end-to-end recruitment operations including sourcing, screening, pipeline management, hiring governance, and workforce reporting." },
+      { label: "Workforce Ramp-Up & Deployment", desc: "Build rapid hiring and onboarding programs that support operational launch, GCC expansion, and large-scale business growth initiatives." },
+      { label: "Recruitment Process Transformation", desc: "Improve hiring speed, candidate quality, operational visibility, and recruitment governance through structured process redesign."},
+      { label: "Talent Acquisition Capability Transfer", desc: "Transition recruitment operations, hiring playbooks, reporting structures, and operational ownership into internal HR and talent teams."},
     ],
     bot: {
       build:
-        "We design your hiring engine - the brand, the channels, the screening - and set the targets your business actually needs to hit.",
+        "Design the talent acquisition operating model, sourcing strategy, hiring governance, employer positioning, and recruitment workflows.",
       operate:
-        "We run hiring end-to-end while your team learns the playbook, with weekly visibility on pipeline, quality and speed.",
+        "Run recruitment operations alongside business leaders while managing hiring delivery, workforce visibility, pipeline quality, and operational performance.",
       transfer:
-        "Your internal recruitment lead takes the engine over with everything in place - process, tools, training, and clear performance targets.",
+        "Transition recruitment ownership, hiring systems, governance frameworks, and operational capability into the internal talent acquisition function.",
     },
     ctx: {
-      setup: "No TA function exists - we build and run it from day one.",
-      develop: "TA underperforms - we redesign the process and upskill the team.",
-      scaleup: "Rapid growth - we absorb volume spikes and transfer capability as you hire permanent TA.",
+      setup: "Establish the talent acquisition function from the ground up, including hiring processes, sourcing operations, governance, and workforce planning.",
+      develop: "Improve recruitment performance through process redesign, hiring governance, capability development, and operational optimization.",
+      scaleup: "Support rapid workforce expansion through scalable recruitment operations, hiring acceleration, and structured capability transfer.",
     },
   },
   {
@@ -202,26 +204,28 @@ export const services: Service[] = [
     title: "Executive Coaching & Board Advisory",
     titleSoft: "Executive Coaching &",
     titleStrong: "Board Advisory",
-    line: "For the leaders who have to make the call - and live with it.",
+    line: "We support leadership teams and boards through strategic decision-making, organizational alignment, governance challenges, and high-impact transformation periods.",
     voice:
       "Transformation is lonely at the top. We've sat in that chair. We know what it feels like when the board wants answers and the organisation isn't moving.",
     subs: [
-      { label: "Executive coaching", desc: "1:1 and team coaching for C-suite leaders navigating transformation, crisis, or growth." },
-      { label: "Board advisory", desc: "An independent voice for boards overseeing M&A, restructuring, or strategic inflection points." },
-      { label: "Leadership alignment", desc: "Facilitated sessions that move leadership teams from debate to decision to action." },
+      { label: "Executive Leadership Advisory", desc: "Support senior leaders through organizational change, operational scaling, strategic uncertainty, and high-stakes decision environments." },
+      { label: "Board & Strategic Governance Advisory", desc: "Provide independent advisory support for boards and executive teams navigating mergers, restructuring, operational transformation, and enterprise risk." },
+      { label: "Leadership Alignment & Decision Facilitation", desc: "Align leadership teams around priorities, governance cadence, operational accountability, and enterprise execution decisions." },
+      { label: "Transformation Leadership Support", desc: "Help executives lead large-scale organizational change through structured advisory, communication alignment, and execution governance."},
+      { label: "Executive Capability & Succession Readiness", desc: "Develop leadership capability, succession preparedness, and decision maturity for growing organizations and scaling enterprises."}
     ],
     bot: {
       build:
-        "We listen first - to you, your team, your board - and shape a coaching plan around the decisions you're actually facing.",
+        "Assess leadership dynamics, governance challenges, strategic priorities, and organizational risks to define the advisory framework.",
       operate:
-        "We work alongside you through the hard calls. The cadence becomes part of how leadership moves, not an extra meeting on the calendar.",
+        "Work alongside leadership teams through decision-making cycles, operational pressure points, and enterprise transformation milestones.",
       transfer:
-        "Your team is self-sufficient on the routine decisions. We stay available for the board moments and the inflection points that matter.",
+        "Strengthen internal leadership rhythm, governance maturity, and executive decision capability for long-term organizational continuity.",
     },
     ctx: {
-      setup: "New leadership - align on strategy, operating rhythm, and decision-making cadence.",
-      develop: "Stalled decisions - break through misalignment, rebuild trust, restore momentum.",
-      scaleup: "Growing team - onboard new leaders, preserve culture, scale decisions without bottlenecks.",
+      setup: "Support newly formed leadership teams through strategic alignment, governance establishment, and operational decision structure.",
+      develop: "Resolve leadership friction, improve decision cadence, and strengthen executive accountability during organizational growth.",
+      scaleup: "Help scaling organizations expand leadership capability, preserve operational alignment, and maintain governance discipline across growth phases.",
     },
   },
 ];

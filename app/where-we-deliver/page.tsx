@@ -23,10 +23,10 @@ export default function WhereWeDeliverRoute() {
           eyebrow="Where We Deliver"
           titleSoft="Three contexts."
           titleStrong="One approach."
-          subtitle="HARTS organises around where you are, not what we sell. Set-up, Develop, Scale-up - one capability, one engagement model, three moments of intervention. Many clients engage HARTS for Set-up, return for Develop, and stay for Scale-up."
+          subtitle="HARTS aligns its services to the operational stage of your organization — whether you are building a new capability, strengthening an existing operation, or scaling proven models across the enterprise."
           actions={
             <Link className="solid-button large" href="/contact">
-              Let&apos;s talk
+              Connect With Us
             </Link>
           }
         />

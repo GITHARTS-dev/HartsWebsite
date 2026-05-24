@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { ServiceIcon, BotIcon, DomainIcon } from "../../_shared/icons";
+import { ServiceIcon, BotIcon, DomainIcon, CheckIcon } from "../../_shared/icons";
 import type { Service } from "../../_data/services";
 import { domains } from "../../_data/domains";
 
@@ -33,8 +33,8 @@ export function ServiceDetail({ service }: { service: Service }) {
               </h1>
               <p className="ed-detail-line">{service.line}</p>
               <div className="ed-detail-actions">
-                <Link className="solid-button" href="/contact">Let&apos;s talk</Link>
-                <Link className="outline-button" href="/how-we-deliver">See the BOT methodology</Link>
+                <Link className="solid-button" href="/contact">Discuss Your Transformation</Link>
+                <Link className="outline-button" href="/how-we-deliver">Explore Our Delivery Model</Link>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ export function ServiceDetail({ service }: { service: Service }) {
             {service.subs.map((sub, i) => (
               <article key={sub.label} className="ed-cap">
                 <h3 className="ed-cap-label">
-                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="num" aria-hidden="true"><CheckIcon size={13} strokeWidth={2.5} /></span>
                   {sub.label}
                 </h3>
                 <div className="ed-cap-body">
@@ -173,8 +173,8 @@ export function ServiceDetail({ service }: { service: Service }) {
             on how this work fits.
           </p>
           <div className="ed-cta-actions">
-            <Link className="solid-button large" href="/contact">Let&apos;s talk</Link>
-            <Link className="outline-button large" href="/what-we-deliver">See the other services</Link>
+            <Link className="solid-button" href="/contact">Discuss Your Transformation</Link>
+                <Link className="outline-button" href="/how-we-deliver">Explore Our Delivery Model</Link>
           </div>
         </div>
       </section>

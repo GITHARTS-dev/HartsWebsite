@@ -25,7 +25,7 @@ export default function WhatWeDeliverRoute() {
           subtitle="We are not a generalist firm. These six are what we do - and we do them all under one model: Build, Operate, Transfer. Pick the work that matches your moment; the discipline behind it stays the same."
           actions={
             <Link className="solid-button large" href="/contact">
-              Let&apos;s talk
+              Connect With Us
             </Link>
           }
         />
@@ -41,7 +41,6 @@ export default function WhatWeDeliverRoute() {
                   className="ed-svc-row"
                   aria-label={`${svc.title} - ${svc.line}`}
                 >
-                  <span className="ed-svc-num">{svc.num}</span>
                   <span className="ed-svc-icon" aria-hidden="true">
                     <ServiceIcon slug={svc.slug} />
                   </span>

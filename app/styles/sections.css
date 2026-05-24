@@ -457,9 +457,9 @@
 .vision-statement-section {
   position: relative;
   display: grid;
-  min-height: 56vh;
+  min-height: 0;
   place-items: center;
-  padding: clamp(64px, 8vw, 110px) 5vw;
+  padding: clamp(20px, 2.5vw, 36px) 5vw;
   text-align: center;
   overflow: hidden;
   background: transparent;
@@ -475,15 +475,15 @@
 
 .vision-statement .eyebrow {
   color: var(--ink);
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .vision-statement h2 {
   margin: 0;
-  font-size: clamp(30px, 4.2vw, 58px);
+  font-size: clamp(22px, 2.8vw, 38px);
   font-weight: 720;
-  line-height: 1.12;
-  letter-spacing: 0;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
 }
 
 .home-premium-section,
@@ -494,7 +494,7 @@
 }
 
 .home-premium-section {
-  padding: clamp(86px, 10vw, 144px) 5vw;
+  padding: clamp(36px, 4vw, 56px) 5vw;
 }
 
 .home-section-shell {
@@ -506,7 +506,7 @@
 
 .home-section-heading {
   max-width: 760px;
-  margin-bottom: clamp(34px, 5vw, 62px);
+  margin-bottom: clamp(20px, 2.5vw, 32px);
 }
 
 .home-section-heading.centered {
@@ -516,11 +516,11 @@
 
 .home-section-heading h2,
 .partner-content h2 {
-  margin-bottom: 22px;
-  font-size: clamp(38px, 5.8vw, 82px);
-  line-height: 0.98;
+  margin-bottom: 14px;
+  font-size: clamp(30px, 4vw, 56px);
+  line-height: 1.02;
   font-weight: 760;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .home-section-heading p:not(.eyebrow),
@@ -784,9 +784,9 @@
 
 .partner-section {
   display: grid;
-  min-height: 72vh;
+  min-height: 0;
   place-items: center;
-  padding: clamp(84px, 10vw, 136px) 5vw;
+  padding: clamp(36px, 4vw, 56px) 5vw;
   color: var(--ink);
   text-align: center;
   background: transparent;

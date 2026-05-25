@@ -71,7 +71,7 @@
   top: 50%;
   left: 50%;
   z-index: 1;
-  font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   font-size: clamp(140px, 22vw, 320px);
   font-weight: 900;
   line-height: 0.86;

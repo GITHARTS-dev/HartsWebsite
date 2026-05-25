@@ -56,11 +56,19 @@ export default function ContactRoute() {
               <p className="contact-info">
                 <strong>Phone:</strong> +91 422 000 0000
               </p>
+              <a
+                className="outline-button"
+                href="https://maps.app.goo.gl/sQyjGTZzVEdVLYC67"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions
+              </a>
             </div>
             <div className="location-map-embed">
               <iframe
                 title="HARTS Coimbatore Office"
-                src="https://maps.google.com/maps?q=Mayflower+Signature+Avinashi+Road+Peelamedu+Coimbatore+641004&output=embed&z=16"
+                src="https://maps.google.com/maps?q=7C,+Mayflower+Signature,+Avinashi+Road,+Peelamedu,+Coimbatore+641004,+Tamil+Nadu,+India&output=embed&z=17"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

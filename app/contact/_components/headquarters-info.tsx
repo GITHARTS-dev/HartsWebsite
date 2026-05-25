@@ -21,7 +21,7 @@ export default function HeadquartersInfo() {
         <li><span>{hqInfo.offices}</span></li>
       </ul>
       <div className="hq-actions">
-        <a className="outline-button" href="#">Directions</a>
+        <a className="outline-button" href="https://maps.app.goo.gl/sQyjGTZzVEdVLYC67" target="_blank" rel="noopener noreferrer">Directions</a>
         <a className="outline-button" href="/contact">Explore</a>
       </div>
     </div>

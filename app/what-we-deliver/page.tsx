@@ -20,8 +20,8 @@ export default function WhatWeDeliverRoute() {
           scene="how-we-help"
           layout="split"
           eyebrow="What We Deliver"
-          titleSoft="Six services."
-          titleStrong="One operating discipline."
+          titleSoft="Integrated capabilities."
+          titleStrong="Measurable outcomes."
           subtitle="We are not a generalist firm. These six are what we do - and we do them all under one model: Build, Operate, Transfer. Pick the work that matches your moment; the discipline behind it stays the same."
           actions={
             <Link className="solid-button large" href="/contact">

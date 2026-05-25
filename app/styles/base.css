@@ -3,6 +3,8 @@
      so every existing var(--gold), var(--navy), var(--sage), etc. reference
      auto-redirects without per-rule edits. Neutral tokens (muted/line) stay
      neutral. --soft lifted to white smoke. */
+  --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:    "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --ink: #1A1A1A;
   --muted: #5e625f;
   --line: #d8dad6;
@@ -32,7 +34,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -50,8 +52,20 @@ img {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 p {
   margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }
 
 h1 {
@@ -59,7 +73,7 @@ h1 {
   margin-bottom: 22px;
   font-size: clamp(30px, 3.6vw, 48px);
   line-height: 1.1;
-  font-weight: 720;
+  font-weight: 700;
   letter-spacing: -0.005em;
 }
 
@@ -67,14 +81,14 @@ h2 {
   margin-bottom: 16px;
   font-size: clamp(22px, 2.4vw, 32px);
   line-height: 1.16;
-  font-weight: 720;
+  font-weight: 700;
   letter-spacing: -0.003em;
 }
 
 h3 {
   font-size: 17px;
   line-height: 1.25;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0;
 }
 
@@ -192,8 +206,9 @@ button:disabled {
 .eyebrow {
   margin: 0 0 16px;
   color: var(--sage);
+  font-family: var(--font-body);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }

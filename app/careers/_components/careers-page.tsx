@@ -7,21 +7,21 @@ const openings = [
   {
     slug: "transformation-operating-models",
     title: "Transformation & Operating Models",
-    role: "Senior Consultant",
+    role: "Strategy & Transformation Consultant",
     description:
       "Lead client engagements across OD, post-merger integration, and CoE build. Work alongside leadership teams to design and run the operating model that the strategy actually needs.",
   },
   {
     slug: "gcc-shared-services",
     title: "GCC & Shared Services",
-    role: "Senior Consultant",
+    role: "Global Capability Center Consultant",
     description:
       "Stand up Global Capability Centres for clients - site selection through to live operations. Carry the BOT lifecycle end-to-end, from first hire to full transfer.",
   },
   {
     slug: "people-talent",
     title: "People & Talent",
-    role: "Senior Consultant",
+    role: "People & Change Consultant",
     description:
       "Design and run the people side of transformation - job architecture, EVP, recruitment-as-a-service, leadership development. Make sure the change actually lands with the humans doing the work.",
   },

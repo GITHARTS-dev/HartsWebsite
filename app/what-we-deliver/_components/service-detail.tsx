@@ -45,9 +45,9 @@ export function ServiceDetail({ service }: { service: Service }) {
       <section className="ed-section">
         <div className="ed-shell">
           <header className="ed-section-head">
-            <p className="ed-eyebrow">The Work</p>
+            <p className="ed-eyebrow">Outcomes</p>
             <h2>
-              What this service <em>actually delivers.</em>
+              What this <em>engagement unlocks.</em>
             </h2>
             <p>
               Each line below names a deliverable our team builds, runs, and

@@ -3,10 +3,28 @@
 import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
+import { Users, Award, GitMerge, Globe, UserPlus, Target, Hammer, Settings, ArrowLeftRight, Layers, TrendingUp, Rocket } from "lucide-react";
 
 import { PageHero } from "../_shared/layout/page-hero";
 import { services } from "../_data/services";
 import { domains } from "../_data/domains";
+
+const serviceIcons: Record<string, React.ElementType> = {
+  "od-and-implementation": Users,
+  "coe": Award,
+  "ma-and-pmi": GitMerge,
+  "gcc-and-shared-services": Globe,
+  "recruitment-as-a-service": UserPlus,
+  "executive-coaching": Target,
+};
+
+const botIcons: React.ElementType[] = [Hammer, Settings, ArrowLeftRight];
+
+const domainIcons: Record<string, React.ElementType> = {
+  "setup": Layers,
+  "develop": TrendingUp,
+  "scale-up": Rocket,
+};
 
 function revealStyle(index = 0): CSSProperties {
   return { "--reveal-delay": `${index * 90}ms` } as CSSProperties;
@@ -121,27 +139,30 @@ export function HomeExperience() {
           </div>
 
           <div className="challenge-grid">
-            {services.map((svc, index) => (
-              <Link
-                key={svc.slug}
-                href={`/what-we-deliver/${svc.slug}`}
-                className="premium-info-card challenge-card scroll-reveal reveal-soft-up"
-                style={revealStyle(index)}
-              >
-                <span className="card-icon-only" aria-hidden="true">
-                  <strong style={{ fontFamily: "DM Sans", fontSize: 13, fontWeight: 800, color: "#E7473C" }}>
-                    {svc.num}
-                  </strong>
-                </span>
-                <h3>{svc.title}</h3>
-                <p>{svc.line}</p>
-              </Link>
-            ))}
+            {services.map((svc, index) => {
+              const Icon = serviceIcons[svc.slug] ?? Users;
+              return (
+                <Link
+                  key={svc.slug}
+                  href={`/what-we-deliver/${svc.slug}`}
+                  className="premium-info-card challenge-card scroll-reveal reveal-soft-up"
+                  style={revealStyle(index)}
+                >
+                  <span className="card-icon-badge" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <div className="card-body">
+                    <h3>{svc.title}</h3>
+                    <p>{svc.line}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
             <Link className="outline-button magnetic-button" href="/what-we-deliver">
-              See all six services
+              See all our services
             </Link>
           </div>
         </div>
@@ -154,10 +175,10 @@ export function HomeExperience() {
       >
         <div className="section-orb orb-two" aria-hidden="true" />
         <div className="home-section-shell">
-          <div className="home-section-heading centered scroll-reveal">
+          <div className="home-section-heading scroll-reveal">
             <p className="eyebrow">How We Deliver</p>
             <h2>Build. Operate. Transfer.</h2>
-            <p style={{ maxWidth: 640, margin: "0 auto" }}>
+            <p>
               The Build–Operate–Transfer methodology is the spine of every HARTS engagement.
               We don&apos;t advise and leave. We build the capability, run it through transition,
               and hand it over to your team.
@@ -166,21 +187,24 @@ export function HomeExperience() {
 
           <div className="choose-network" aria-hidden="true" />
           <div className="choose-grid">
-            {botSteps.map((step, index) => (
-              <article
-                key={step.title}
-                className="premium-info-card choose-card scroll-reveal reveal-soft-up"
-                style={revealStyle(index)}
-              >
-                <span className="card-icon-only" aria-hidden="true">
-                  <strong style={{ fontFamily: "DM Sans", fontSize: 13, fontWeight: 800, color: "#E7473C" }}>
-                    {`0${index + 1}`}
-                  </strong>
-                </span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
-            ))}
+            {botSteps.map((step, index) => {
+              const Icon = botIcons[index] ?? Hammer;
+              return (
+                <article
+                  key={step.title}
+                  className="premium-info-card choose-card scroll-reveal reveal-soft-up"
+                  style={revealStyle(index)}
+                >
+                  <span className="card-icon-badge" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <div className="card-body">
+                    <h3>{step.title}</h3>
+                    <p>{step.text}</p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
@@ -208,22 +232,25 @@ export function HomeExperience() {
           </div>
 
           <div className="choose-grid">
-            {domains.map((d, index) => (
-              <Link
-                key={d.id}
-                href={`/where-we-deliver#${d.slug}`}
-                className="premium-info-card choose-card scroll-reveal reveal-soft-up"
-                style={revealStyle(index)}
-              >
-                <span className="card-icon-only" aria-hidden="true">
-                  <strong style={{ fontFamily: "DM Sans", fontSize: 13, fontWeight: 800, color: "#E7473C" }}>
-                    {`0${index + 1}`}
-                  </strong>
-                </span>
-                <h3>{d.label}</h3>
-                <p>{d.body}</p>
-              </Link>
-            ))}
+            {domains.map((d, index) => {
+              const Icon = domainIcons[d.slug] ?? Layers;
+              return (
+                <Link
+                  key={d.id}
+                  href={`/where-we-deliver#${d.slug}`}
+                  className="premium-info-card choose-card scroll-reveal reveal-soft-up"
+                  style={revealStyle(index)}
+                >
+                  <span className="card-icon-badge" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <div className="card-body">
+                    <h3>{d.label}</h3>
+                    <p>{d.body}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>

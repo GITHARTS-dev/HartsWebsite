@@ -138,36 +138,51 @@ export function AboutPage() {
       <section className="au-roster">
         <div className="au-roster-shell">
           <header className="au-roster-head">
-            <p className="au-eyebrow">Our people</p>
-            <h2>
-              The architects <em>of clarity.</em>
-            </h2>
+            <div className="au-roster-head-left">
+              <p className="au-eyebrow">Leadership</p>
+              <div className="au-roster-eyebrow-line" aria-hidden="true" />
+              <h2>
+                Leadership with<br />
+                <em>depth and direction.</em>
+              </h2>
+            </div>
             <p className="au-roster-sub">
-              A senior team of strategists and operators - united by a
-              commitment to sustainable, measurable change.
+              Across industries and markets, our leadership team combines deep
+              operational experience with a shared commitment to building
+              resilient, future-ready organisations.
             </p>
           </header>
 
-          <ol className="au-roster-list">
-            {team.map((member, idx) => (
-              <li key={member.name} className="au-roster-row">
-                <span className="au-roster-num">{String(idx + 1).padStart(2, "0")}</span>
-                <span className="au-roster-mark" aria-hidden="true">
+          <div className="au-leadership-grid">
+            {team.map((member) => (
+              <div key={member.name} className="au-leader-card">
+                <div className="au-leader-photo-wrap">
+                  <svg className="au-leader-arc" viewBox="0 0 188 188" fill="none" aria-hidden="true">
+                    <circle
+                      cx="94" cy="94" r="87"
+                      stroke="rgba(231,71,60,0.22)"
+                      strokeWidth="1.5"
+                      strokeDasharray="468 82"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="157" cy="36" r="4" fill="#E7473C" />
+                  </svg>
                   {member.image ? (
-                    <img src={member.image} alt="" className="au-roster-portrait" />
+                    <img src={member.image} alt={member.name} className="au-leader-photo" />
                   ) : (
-                    <span className="au-roster-initials">
+                    <span className="au-leader-initials">
                       {member.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
                     </span>
                   )}
-                </span>
-                <div className="au-roster-meta">
-                  <p className="au-roster-name">{member.name}</p>
-                  <p className="au-roster-role">{member.role}</p>
                 </div>
-                <p className="au-roster-bio">{member.intro}</p>
+                <div className="au-leader-info">
+                  <p className="au-leader-name">{member.name}</p>
+                  <p className="au-leader-role">{member.role}</p>
+                  <div className="au-leader-divider" aria-hidden="true" />
+                  <p className="au-leader-bio">{member.intro}</p>
+                </div>
                 <a
-                  className="au-roster-link"
+                  className="au-leader-li"
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -175,9 +190,9 @@ export function AboutPage() {
                 >
                   <LinkedInIcon />
                 </a>
-              </li>
+              </div>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
@@ -185,12 +200,10 @@ export function AboutPage() {
       <section className="au-manifesto" aria-labelledby="manifesto-heading">
         <div className="au-manifesto-shell">
           <div className="au-manifesto-hd">
-            <p className="au-eyebrow">Our manifesto</p>
-            <h2 id="manifesto-heading">Manifesto Team</h2>
+            <p className="au-eyebrow">Our Values</p>
+            <h2 id="manifesto-heading">The HARTS Ethos</h2>
             <p className="au-manifesto-sub">
-              Four dedicated teams that represent and protect the core values
-              HARTS is built on. Each holds the organisation accountable to
-              what matters most.
+              Four principles that shape how we lead, collaborate, and deliver lasting impact.
             </p>
           </div>
 

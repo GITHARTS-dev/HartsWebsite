@@ -72,7 +72,7 @@ export default function WhereWeDeliverRoute() {
                         return (
                           <li key={slug}>
                             <Link href={`/what-we-deliver/${slug}`}>
-                              <span className="num">{svc.num}</span>
+                              <ServiceIcon slug={slug} size={16} strokeWidth={1.8} />
                               <span>{svc.title}</span>
                               <ArrowIcon />
                             </Link>

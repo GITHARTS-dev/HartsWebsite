@@ -354,13 +354,23 @@
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   Roster - editorial leadership list (replaces .au-team card grid).
-   Numbered rows separated by hairlines. No card backgrounds.
+   Leadership card grid — circular photos, arc decoration, number badge.
    ──────────────────────────────────────────────────────────────────────── */
 
 .au-roster {
-  padding: clamp(48px, 6vw, 88px) 5vw;
+  padding: clamp(28px, 3vw, 44px) 5vw;
   background: var(--paper);
+}
+
+/* Tighten vertical spacing between about-us sections */
+.au-story {
+  padding-top: clamp(28px, 3vw, 44px) !important;
+  padding-bottom: clamp(28px, 3vw, 44px) !important;
+}
+
+.au-manifesto {
+  padding-top: clamp(28px, 3vw, 44px) !important;
+  padding-bottom: clamp(28px, 3vw, 44px) !important;
 }
 
 .au-roster-shell {
@@ -368,146 +378,186 @@
   margin: 0 auto;
 }
 
+/* Two-column header */
 .au-roster-head {
-  max-width: 720px;
-  margin-bottom: clamp(28px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px clamp(48px, 6vw, 96px);
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+.au-roster-eyebrow-line {
+  width: 32px;
+  height: 2.5px;
+  background: #E7473C;
+  border-radius: 999px;
+  margin: 8px 0 14px;
 }
 
 .au-roster-head h2 {
-  margin: 0 0 14px;
-  font-size: clamp(24px, 2.8vw, 36px);
-  font-weight: 720;
-  line-height: 1.16;
-  letter-spacing: -0.005em;
+  margin: 0;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 750;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
 }
 
 .au-roster-head h2 em {
   font-style: italic;
-  font-weight: 700;
+  font-weight: 720;
   color: #E7473C;
 }
 
 .au-roster-sub {
   margin: 0;
   font-size: 15px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 600px;
+  line-height: 1.7;
+  color: #2A2A2A;
 }
 
-.au-roster-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-}
-
-.au-roster-row {
+/* 4-column card grid */
+.au-leadership-grid {
   display: grid;
-  grid-template-columns: 52px 56px minmax(220px, 1.1fr) minmax(0, 1.6fr) 28px;
-  align-items: center;
-  gap: clamp(16px, 2.5vw, 32px);
-  padding: 22px 0;
-  border-bottom: 1px solid var(--line);
-  transition: padding 320ms cubic-bezier(.23, 1, .32, 1), background 200ms ease;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 24px;
 }
 
-.au-roster-row:hover {
-  padding-left: 10px;
-  background: linear-gradient(90deg, rgba(231, 71, 60, 0.04) 0%, transparent 60%);
+/* Individual card */
+.au-leader-card {
+  display: flex;
+  flex-direction: column;
 }
 
-.au-roster-num {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  color: #E7473C;
+/* Circular photo with SVG arc */
+.au-leader-photo-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 172px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 18px;
 }
 
-.au-roster-mark {
-  width: 48px;
-  height: 48px;
+.au-leader-arc {
+  position: absolute;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.au-leader-photo {
+  position: absolute;
+  inset: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
   border-radius: 50%;
-  background: var(--soft);
-  display: inline-flex;
+  object-fit: cover;
+  object-position: top center;
+  background: #f0f0f0;
+  z-index: 1;
+}
+
+.au-leader-initials {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: rgba(231, 71, 60, 0.08);
+  display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-.au-roster-portrait {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.au-roster-initials {
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 800;
   color: #E7473C;
-  letter-spacing: 0.05em;
+  z-index: 1;
 }
 
-.au-roster-meta {
-  display: grid;
-  gap: 4px;
-  min-width: 0;
+.au-leader-num {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  border: 1.5px solid rgba(231, 71, 60, 0.35);
+  border-radius: 7px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #E7473C;
+  line-height: 1.4;
 }
 
-.au-roster-name {
-  margin: 0;
-  font-size: 16px;
+/* Text info */
+.au-leader-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.au-leader-name {
+  margin: 0 0 4px;
+  font-size: 19px;
   font-weight: 720;
-  color: var(--ink);
+  color: #1A1A1A;
+  line-height: 1.2;
   letter-spacing: -0.003em;
 }
 
-.au-roster-role {
+.au-leader-role {
   margin: 0;
-  font-size: 11.5px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #E7473C;
 }
 
-.au-roster-bio {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--muted);
+.au-leader-divider {
+  width: 28px;
+  height: 2px;
+  background: #E7473C;
+  border-radius: 999px;
+  margin: 10px 0 12px;
 }
 
-.au-roster-link {
+.au-leader-bio {
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(26, 26, 26, 0.62);
+  flex: 1;
+}
+
+/* LinkedIn button */
+.au-leader-li {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  color: var(--muted);
-  transition: color 200ms ease, background 200ms ease;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(231, 71, 60, 0.30);
+  border-radius: 8px;
+  color: #E7473C;
+  text-decoration: none;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
-.au-roster-link:hover {
+.au-leader-li:hover {
   background: #E7473C;
   color: #fff;
+  border-color: #E7473C;
 }
 
-@media (max-width: 880px) {
-  .au-roster-row {
-    grid-template-columns: 44px 44px 1fr 28px;
-    grid-template-areas:
-      "num mark meta link"
-      "bio bio bio bio";
-    gap: 14px;
-    padding: 22px 0;
-  }
-  .au-roster-num  { grid-area: num; }
-  .au-roster-mark { grid-area: mark; width: 44px; height: 44px; }
-  .au-roster-meta { grid-area: meta; }
-  .au-roster-link { grid-area: link; }
-  .au-roster-bio  { grid-area: bio; margin-top: 8px; }
+@media (max-width: 960px) {
+  .au-roster-head { grid-template-columns: 1fr; }
+  .au-leadership-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 540px) {
+  .au-leadership-grid { grid-template-columns: 1fr; }
+  .au-leader-photo-wrap { max-width: 140px; }
 }
 

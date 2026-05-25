@@ -63,3 +63,28 @@
     transition: none !important;
   }
 }
+
+/* ── Allow hover transitions on home cards after reveal completes ─────── */
+.challenge-card:hover,
+.challenge-card:focus-within,
+.choose-card:hover,
+.choose-card:focus-within {
+  transform: translateY(-6px) scale(1.02) !important;
+  border-color: rgba(231, 71, 60, 0.55) !important;
+  box-shadow:
+    0 20px 56px rgba(231, 71, 60, 0.18),
+    0 4px 12px rgba(231, 71, 60, 0.10) !important;
+  background: #fff !important;
+  transition:
+    transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background 200ms ease !important;
+  transition-delay: 0ms !important;
+}
+
+.challenge-card:hover .card-icon-badge,
+.choose-card:hover .card-icon-badge {
+  background: rgba(231, 71, 60, 0.16) !important;
+  transform: scale(1.1) !important;
+}

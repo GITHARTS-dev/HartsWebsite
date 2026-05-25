@@ -5986,6 +5986,16 @@
   padding-bottom: clamp(44px, 5vw, 72px);
 }
 
+.challenges-section {
+  padding-top: clamp(20px, 2vw, 32px);
+  padding-bottom: clamp(20px, 2vw, 32px);
+}
+
+.choose-section {
+  padding-top: clamp(20px, 2vw, 32px);
+  padding-bottom: clamp(20px, 2vw, 32px);
+}
+
 .partner-section {
   min-height: auto;
   padding-top: clamp(44px, 5vw, 70px);
@@ -6007,7 +6017,8 @@
   line-height: 1.16;
 }
 
-.challenges-section .home-section-heading p:not(.eyebrow) {
+.challenges-section .home-section-heading p:not(.eyebrow),
+.choose-section .home-section-heading p:not(.eyebrow) {
   font-size: 14.5px;
   line-height: 1.55;
 }
@@ -8173,4 +8184,77 @@ a.solid-button:visited {
 .challenges-subheading {
   padding-left: 16px;
   border-left: 3px solid #E7473C;
+}
+
+/* ── All home cards: horizontal icon-left / text-right layout ─────────── */
+.challenge-card,
+.choose-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  padding: 16px 18px !important;
+  min-height: 0 !important;
+  align-content: unset !important;
+  cursor: pointer;
+  transition:
+    transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease !important;
+}
+
+.challenge-card:hover,
+.choose-card:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  border-color: rgba(231, 71, 60, 0.55) !important;
+  box-shadow:
+    0 20px 56px rgba(231, 71, 60, 0.18),
+    0 4px 12px rgba(231, 71, 60, 0.10) !important;
+  background: #fff !important;
+}
+
+.card-icon-badge {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(231, 71, 60, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E7473C;
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.challenge-card:hover .card-icon-badge {
+  background: rgba(231, 71, 60, 0.16);
+  transform: scale(1.08);
+}
+
+.card-icon-badge svg {
+  width: 20px !important;
+  height: 20px !important;
+  stroke-width: 1.8 !important;
+  color: #E7473C !important;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-body h3 {
+  margin: 0 0 5px !important;
+  font-size: 15px !important;
+  font-weight: 720 !important;
+  line-height: 1.25 !important;
+  color: #1A1A1A !important;
+}
+
+.card-body p {
+  margin: 0 !important;
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+  color: rgba(26, 26, 26, 0.68) !important;
 }

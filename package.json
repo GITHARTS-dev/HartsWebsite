@@ -6,13 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.14.0",
     "next": "16.2.4",
     "nodemailer": "^6.10.1",
+    "pg": "^8.21.0",
     "react": "19.2.5",
     "react-dom": "19.2.5"
   },
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@types/node": "25.6.0",
     "@types/nodemailer": "^6.4.23",
+    "@types/pg": "^8.20.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "typescript": "6.0.3"

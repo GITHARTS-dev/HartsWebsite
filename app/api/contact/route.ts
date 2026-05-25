@@ -1,75 +1,93 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { getPostgresPool } from '../../_lib/postgres';
 
-const RECIPIENT = 'rajmadhan296@gmail.com';
+export const runtime = 'nodejs';
+
+type ContactRequestBody = {
+  name?: unknown;
+  company?: unknown;
+  role?: unknown;
+  email?: unknown;
+  phone?: unknown;
+  service?: unknown;
+  message?: unknown;
+};
+
+async function readContactBody(request: Request): Promise<ContactRequestBody> {
+  const contentType = request.headers.get('content-type') || '';
+
+  if (contentType.includes('application/json')) {
+    return (await request.json()) as ContactRequestBody;
+  }
+
+  const formData = await request.formData();
+
+  return {
+    name: formData.get('name'),
+    company: formData.get('company'),
+    role: formData.get('role'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    service: formData.get('service'),
+    message: formData.get('message'),
+  };
+}
+
+function fieldToString(value: unknown) {
+  return typeof value === 'string' ? value.trim() : '';
+}
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, company, role, email, phone, service, message } = body;
+    const body = await readContactBody(request);
 
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Name, email, and message are required.' }, { status: 400 });
+    const name = fieldToString(body.name);
+    const company = fieldToString(body.company);
+    const role = fieldToString(body.role);
+    const email = fieldToString(body.email);
+    const phone = fieldToString(body.phone);
+    const service = fieldToString(body.service);
+    const message = fieldToString(body.message);
+
+    if (!name || !company || !email || !phone || !service || !message) {
+      return NextResponse.json(
+        { error: 'Name, company, email, phone, service, and message are required.' },
+        { status: 400 }
+      );
     }
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"HARTS Website" <${process.env.SMTP_USER}>`,
-      to: RECIPIENT,
-      replyTo: email,
-      subject: `New Inquiry from ${name} - HARTS Consulting`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a1a1a;">
-          <h2 style="border-bottom: 2px solid #c9a84c; padding-bottom: 12px; color: #1a1a1a;">
-            New Client Inquiry - HARTS Consulting
-          </h2>
-          <table style="width:100%; border-collapse: collapse; margin-top: 16px;">
-            <tr>
-              <td style="padding: 8px 12px; font-weight: bold; width: 36%; background: #f5f5f5;">Full Name</td>
-              <td style="padding: 8px 12px;">${name}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Company</td>
-              <td style="padding: 8px 12px;">${company || '-'}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Role / Title</td>
-              <td style="padding: 8px 12px;">${role || '-'}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Email</td>
-              <td style="padding: 8px 12px;"><a href="mailto:${email}">${email}</a></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Phone</td>
-              <td style="padding: 8px 12px;">${phone || '-'}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 12px; font-weight: bold; background: #f5f5f5;">Area of Interest</td>
-              <td style="padding: 8px 12px;">${service || '-'}</td>
-            </tr>
-          </table>
-          <div style="margin-top: 24px; padding: 16px; background: #f9f9f9; border-left: 4px solid #c9a84c; border-radius: 4px;">
-            <p style="font-weight: bold; margin: 0 0 8px 0;">Message</p>
-            <p style="margin: 0; line-height: 1.7; white-space: pre-wrap;">${message}</p>
-          </div>
-          <p style="margin-top: 24px; font-size: 12px; color: #888;">
-            Submitted via the HARTS website contact form.
-          </p>
-        </div>
+    const pool = getPostgresPool();
+    const result = await pool.query<{ id: number }>(
+      `
+        INSERT INTO contact_inquiries (
+          name,
+          email,
+          company,
+          role,
+          phone,
+          service,
+          message
+        )
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
+        RETURNING id
       `,
-    });
+      [name, email, company, role || null, phone, service, message]
+    );
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json(
+      { success: true, inquiryId: result.rows[0].id },
+      { status: 201 }
+    );
   } catch (error) {
     console.error('Contact API Error:', error);
-    return NextResponse.json({ error: 'Failed to send your inquiry. Please try again.' }, { status: 500 });
+    const errorMessage =
+      process.env.NODE_ENV === 'development' && error instanceof Error
+        ? `Failed to save your inquiry: ${error.message}`
+        : 'Failed to save your inquiry. Please try again.';
+
+    return NextResponse.json(
+      { error: errorMessage },
+      { status: 500 }
+    );
   }
 }

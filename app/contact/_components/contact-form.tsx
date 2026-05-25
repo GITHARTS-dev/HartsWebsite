@@ -56,7 +56,12 @@ export function ContactForm() {
   }
 
   return (
-    <form className="contact-form contact-form--premium" onSubmit={handleSubmit} noValidate>
+    <form
+      action="/api/contact"
+      className="contact-form contact-form--premium"
+      method="post"
+      onSubmit={handleSubmit}
+    >
       <label>
         Full Name <span aria-hidden="true">*</span>
         <input type="text" name="name" placeholder="Your full name" required />
@@ -78,13 +83,13 @@ export function ContactForm() {
       </label>
 
       <label>
-        Phone Number
-        <input type="tel" name="phone" placeholder="+91 000 000 0000" />
+        Phone Number <span aria-hidden="true">*</span>
+        <input type="tel" name="phone" placeholder="+91 000 000 0000" required />
       </label>
 
       <label>
-        Area of Interest
-        <select name="service">
+        Area of Interest <span aria-hidden="true">*</span>
+        <select name="service" required>
           <option value="">Select a service area</option>
           {SERVICES.map((s) => (
             <option key={s} value={s}>{s}</option>
@@ -117,7 +122,7 @@ export function ContactForm() {
 
       {status === "success" && (
         <p className="form-note form-note--success">
-          Thank you. A senior HARTS consultant will review your inquiry and reach out within one business day.
+          Thank you. A senior HARTS consultant will review your inquiry and get back to you shortly.
         </p>
       )}
 

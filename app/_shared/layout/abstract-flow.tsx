@@ -9,13 +9,13 @@ export function AbstractFlow({ className }: { className?: string }) {
   const STRANDS = 150;
   const STEP = 0.7;
 
-  // Sharp bell — focal strand at the centre is clearly the dominant line,
-  // surrounding strands fade quickly into pale blush.
+  // Softer bell — focal strand remains dominant, but surrounding strands
+  // stay more visible so the ribbon reads as a filled swathe of colour.
   const bell = (i: number) => {
     const half = STRANDS / 2;
     const dist = Math.abs(i - half) / half;
-    const peak = Math.pow(1 - dist, 1.6);
-    return 0.04 + peak * 0.6;
+    const peak = Math.pow(1 - dist, 1.2);
+    return 0.06 + peak * 0.82;
   };
 
   // Wave A — upper ribbon. Single graceful sweep from upper-right edge
@@ -54,7 +54,7 @@ export function AbstractFlow({ className }: { className?: string }) {
           d={s.d}
           fill="none"
           stroke="#E7473C"
-          strokeWidth={0.38}
+          strokeWidth={0.55}
           strokeOpacity={s.o}
         />
       ))}

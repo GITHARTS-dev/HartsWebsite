@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { ServiceIcon, BotIcon, DomainIcon, CheckIcon } from "../../_shared/icons";
 import { FinalCTA } from "../../_shared/layout/final-cta";
-import { AbstractFlow } from "../../_shared/layout/abstract-flow";
 import type { Service } from "../../_data/services";
 import { domains } from "../../_data/domains";
 
@@ -12,12 +11,12 @@ const PHASE_LABELS = [
   { key: "transfer", num: "03", name: "Transfer" },
 ] as const;
 
+
 export function ServiceDetail({ service }: { service: Service }) {
   return (
     <main className="ed-page">
       {/* ─── HERO (editorial, no PageHero) ─────────────────────────── */}
       <section className="ed-detail-hero">
-        <AbstractFlow className="ed-detail-hero-flow" />
         <div className="ed-shell">
           <nav className="ed-breadcrumb" aria-label="Breadcrumb">
             <Link href="/what-we-deliver">What We Deliver</Link>
@@ -59,7 +58,7 @@ export function ServiceDetail({ service }: { service: Service }) {
           </header>
 
           <div className="ed-cap-list">
-            {service.subs.map((sub, i) => (
+            {service.subs.map((sub) => (
               <article key={sub.label} className="ed-cap">
                 <h3 className="ed-cap-label">
                   <span className="num" aria-hidden="true"><CheckIcon size={13} strokeWidth={2.5} /></span>

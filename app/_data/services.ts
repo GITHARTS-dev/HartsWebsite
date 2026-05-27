@@ -75,22 +75,22 @@ export const services: Service[] = [
       {
         label: "Enterprise Performance Control Tower",
         desc: "Create centralized operational visibility across goals, execution metrics, governance, and business performance to support faster leadership decision-making.",
-        children: [
-          { label: "OKRs & Strategic Alignment", desc: "Align enterprise objectives with measurable operational outcomes across teams and functions." },
-          { label: "Policy deployment", desc: "Translate strategy into executable operational priorities with clear ownership and accountability." },
-          { label: "Performance Reporting & Insights", desc: "Build dashboards and reporting structures that surface operational risks, progress, and performance trends." },
-        ],
+        // children: [
+        //   { label: "OKRs & Strategic Alignment", desc: "Align enterprise objectives with measurable operational outcomes across teams and functions." },
+        //   { label: "Policy deployment", desc: "Translate strategy into executable operational priorities with clear ownership and accountability." },
+        //   { label: "Performance Reporting & Insights", desc: "Build dashboards and reporting structures that surface operational risks, progress, and performance trends." },
+        // ],
       },
       { label: "Innovation & Transformation Programs", desc: "Establish structured innovation practices that convert improvement initiatives into measurable operational and commercial outcomes." },
       {
         label: "Continuous Improvement Operations",
         desc: "Embed continuous improvement into day-to-day operations through structured problem-solving, operational reviews, and scalable improvement systems.",
-        children: [
-          { label: "Root Cause & Problem Classification", desc: "Prioritize operational issues based on impact, recurrence, and business risk." },
-          { label: "Agile Improvement Delivery", desc: "Execute rapid operational improvement cycles focused on measurable business outcomes." },
-          { label: "Innovation & Experimentation Hub", desc: "Create controlled environments for testing operational improvements and transformation initiatives." },
-          { label: "Enterprise Automation Strategy", desc: "Identify, prioritize, and govern automation opportunities across business functions." },
-        ],
+        // children: [
+        //   { label: "Root Cause & Problem Classification", desc: "Prioritize operational issues based on impact, recurrence, and business risk." },
+        //   { label: "Agile Improvement Delivery", desc: "Execute rapid operational improvement cycles focused on measurable business outcomes." },
+        //   { label: "Innovation & Experimentation Hub", desc: "Create controlled environments for testing operational improvements and transformation initiatives." },
+        //   { label: "Enterprise Automation Strategy", desc: "Identify, prioritize, and govern automation opportunities across business functions." },
+        // ],
       },
     ],
     bot: {

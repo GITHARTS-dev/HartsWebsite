@@ -55,7 +55,7 @@
 .cinematic-home {
   /* Palette scope for the home page only: redirect the legacy gold/sage
      tokens to the new bright red, and lift landing-bg to white smoke. */
-  --landing-bg: #F0F0F0;
+  --landing-bg: #ffffff;
   --gold: #E7473C;
   --gold-deep: #E7473C;
   --sage: #E7473C;

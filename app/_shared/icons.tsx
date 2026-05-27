@@ -10,7 +10,7 @@ import {
   Repeat,
   Sprout,
   TrendingUp,
-  Maximize,
+  LineChart,
   ArrowUpRight,
   Check,
   X,
@@ -60,7 +60,7 @@ export function BotIcon({
 const domainIconMap = {
   setup: Sprout,
   develop: TrendingUp,
-  scaleup: Maximize,
+  scaleup: LineChart,
 } as const;
 
 export function DomainIcon({

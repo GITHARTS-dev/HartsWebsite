@@ -6,12 +6,20 @@ import { PageHero } from "../_shared/layout/page-hero";
 import { FinalCTA } from "../_shared/layout/final-cta";
 import { DomainIcon, ServiceIcon, ArrowIcon } from "../_shared/icons";
 import { domains } from "../_data/domains";
-import { services, getService } from "../_data/services";
+import { getService } from "../_data/services";
 
 export const metadata: Metadata = {
-  title: "Where We Deliver | HARTS",
+  title: "Where We Deliver — Setup, Develop, Scale Up",
   description:
-    "Set-up, Develop, Scale-up - three moments of intervention. One partner across all of them.",
+    "HARTS engages across three operational moments: Setup (building from the ground up), Develop (strengthening operational maturity), and Scale Up (expanding proven operations with control).",
+  alternates: { canonical: "/where-we-deliver" },
+  openGraph: {
+    title: "Where We Deliver | HARTS",
+    description:
+      "Three operational moments — Setup, Develop, Scale Up. One consulting partner across all of them.",
+    url: "/where-we-deliver",
+    type: "article",
+  },
 };
 
 export default function WhereWeDeliverRoute() {
@@ -22,9 +30,9 @@ export default function WhereWeDeliverRoute() {
           scene="industries"
           layout="split"
           eyebrow="Where We Deliver"
-          titleSoft="Three contexts."
-          titleStrong="One approach."
-          subtitle="HARTS aligns its services to the operational stage of your organization whether you are building a new capability, strengthening an existing operation, or scaling proven models across the enterprise."
+          titleSoft="Three Contexts."
+          titleStrong="One Approach."
+          subtitle="HARTS aligns its services to the operational stage of your organization — whether you are building a new capability, strengthening an existing operation, or scaling proven models across the enterprise."
           actions={
             <Link className="solid-button large" href="/contact">
               Connect With Us
@@ -42,7 +50,6 @@ export default function WhereWeDeliverRoute() {
             <div className="ed-shell">
               <div className="ed-dom-block">
                 <aside className="ed-dom-side">
-                  <span className="ed-dom-num">Domain 0{idx + 1}</span>
                   <span className="ed-dom-icon" aria-hidden="true">
                     <DomainIcon id={d.id} size={28} strokeWidth={1.7} />
                   </span>
@@ -90,9 +97,15 @@ export default function WhereWeDeliverRoute() {
 
         <FinalCTA
           heading={<>Tell us <em>where you are.</em></>}
+<<<<<<< HEAD
           body="Every organization moves through different stages of growth and change. We help define the right operational path forward."
           primary={{ label: "Connect with HARTS", href: "/contact" }}
           secondary={{ label: "How we deliver", href: "/how-we-deliver" }}
+=======
+          body="We will come back with the service mix and the BOT path that fits the moment your organisation is in."
+          primary={{ label: "Connect With HARTS", href: "/contact" }}
+          secondary={{ label: "How We Deliver", href: "/how-we-deliver" }}
+>>>>>>> 23af61325afbf554b6905fb4ac5b9fb5d7221d42
         />
       </main>
     </PageShell>

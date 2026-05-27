@@ -494,7 +494,7 @@ A full-bleed quote, one per service. Already drafted in the brand doc and protot
 
 ---
 
-#### 03 - M&A & Post-Merger Integration (orange)
+#### 03 -  Post-MeM&A &rger Integration (orange)
 
 **Tagline:** The 100 days that decide whether the deal works.
 

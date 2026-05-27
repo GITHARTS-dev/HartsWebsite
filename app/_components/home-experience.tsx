@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
-import { Users, Award, GitMerge, Globe, UserPlus, Target, Hammer, Settings, ArrowLeftRight, Layers, TrendingUp, Rocket } from "lucide-react";
+import { Users, Award, GitMerge, Globe, UserPlus, Target, Hammer, Settings, ArrowLeftRight, Sprout, TrendingUp, LineChart } from "lucide-react";
 
 import { PageHero } from "../_shared/layout/page-hero";
 import { FinalCTA } from "../_shared/layout/final-cta";
@@ -22,9 +22,9 @@ const serviceIcons: Record<string, React.ElementType> = {
 const botIcons: React.ElementType[] = [Hammer, Settings, ArrowLeftRight];
 
 const domainIcons: Record<string, React.ElementType> = {
-  "setup": Layers,
+  "setup": Sprout,
   "develop": TrendingUp,
-  "scale-up": Rocket,
+  "scale-up": LineChart,
 };
 
 function revealStyle(index = 0): CSSProperties {
@@ -135,7 +135,7 @@ export function HomeExperience() {
             <p className="eyebrow">What We Deliver</p>
             <h2>Strategy is only valuable when operations can sustain it.</h2>
             <p>
-              HARTS helps organizations build, operationalize, and scale critical business capabilities combining strategy, execution, and transition under one integrated consulting model.
+              HARTS partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and seamless transition into a disciplined model.
             </p>
           </div>
 
@@ -163,7 +163,7 @@ export function HomeExperience() {
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
             <Link className="outline-button magnetic-button" href="/what-we-deliver">
-              See all our services
+              Explore Capabilities
             </Link>
           </div>
         </div>
@@ -257,7 +257,7 @@ export function HomeExperience() {
 
           <div className="choose-grid">
             {domains.map((d, index) => {
-              const Icon = domainIcons[d.slug] ?? Layers;
+              const Icon = domainIcons[d.slug] ?? Sprout;
               return (
                 <Link
                   key={d.id}

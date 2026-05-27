@@ -5,8 +5,17 @@ import { PageShell } from "../_shared/layout/page-shell";
 import { PageHero } from "../_shared/layout/page-hero";
 
 export const metadata: Metadata = {
-  title: "Contact Us | HARTS",
-  description: "Connect with HARTS global headquarters and regional offices.",
+  title: "Contact HARTS — Start a Conversation",
+  description:
+    "Connect with HARTS Consulting in Coimbatore, India. Email hello@globalharts.com or send a project inquiry to start a senior-led conversation.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact HARTS",
+    description:
+      "Start a conversation with HARTS Consulting. Senior-led, focused responses within one business day.",
+    url: "/contact",
+    type: "website",
+  },
 };
 
 export default function ContactRoute() {
@@ -18,7 +27,7 @@ export default function ContactRoute() {
           layout="split"
           eyebrow="Connect"
           titleSoft="Let’s start a"
-          titleStrong="conversation."
+          titleStrong="Conversation."
           subtitle="Whether you are navigating a major transformation, exploring a growth opportunity, or seeking an independent strategic perspective, our team is ready to engage."
           // actions={
           //   <Link className="solid-button large" href="#inquiry">
@@ -28,13 +37,10 @@ export default function ContactRoute() {
         />
 
         <section className="section contact-inquiry-section" id="inquiry">
-          <div className="contact-apply-wrap reveal">
-            <div className="apply-form-card">
-              <header className="apply-form-head">
-                <h2>Send us your inquiry</h2>
-                <p>Share your challenge and a senior consultant will respond within one business day.</p>
-              </header>
-              <ContactForm />
+          <div className="contact-form-block reveal">
+            <div className="contact-form-header">
+              <h2>Send Us Your Inquiry</h2>
+              <p>Share your challenge and a senior consultant will respond within one business day.</p>
             </div>
           </div>
         </section>

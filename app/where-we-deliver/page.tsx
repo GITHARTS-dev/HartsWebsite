@@ -90,7 +90,7 @@ export default function WhereWeDeliverRoute() {
 
         <FinalCTA
           heading={<>Tell us <em>where you are.</em></>}
-          body="We will come back with the service mix and the BOT path that fits the moment your organisation is in."
+          body="Every organization moves through different stages of growth and change. We help define the right operational path forward."
           primary={{ label: "Connect with HARTS", href: "/contact" }}
           secondary={{ label: "How we deliver", href: "/how-we-deliver" }}
         />

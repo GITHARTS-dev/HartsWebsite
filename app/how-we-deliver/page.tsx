@@ -85,7 +85,7 @@ export default function HowWeDeliverRoute() {
                   Three phases. <em>One unbroken arc.</em>
                 </h2>
                 <p className="approach-intro-text">
-                  Every HARTS engagement follows a Build–Operate–Transfer
+                  Every HARTS engagement follows a Build–Operate–Transfer(BOT)
                   delivery model designed to create long-term operational
                   ownership not dependency on consultants.
                 </p>

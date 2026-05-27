@@ -1618,6 +1618,12 @@
   justify-content: center;
 }
 
+/* Wrapper that centres the apply-form-card on the contact page */
+.contact-apply-wrap {
+  width: 100%;
+  max-width: 840px;
+}
+
 .contact-inquiry-section .contact-form-block {
   width: 100%;
   max-width: 840px;
@@ -7841,9 +7847,9 @@ a.solid-button:visited {
 .au-manifesto {
   padding: clamp(52px, 6vw, 80px) 5vw;
   background:
-    radial-gradient(ellipse 55% 45% at 8%  35%, rgba(37,99,235,0.04)  0%, transparent 50%),
-    radial-gradient(ellipse 45% 40% at 92% 65%, rgba(22,163,74,0.03)  0%, transparent 48%),
-    radial-gradient(ellipse 40% 35% at 50% 100%, rgba(231,71,60,0.03) 0%, transparent 45%),
+    radial-gradient(ellipse 55% 45% at 8%  35%, rgba(82,130,185,0.05)  0%, transparent 50%),
+    radial-gradient(ellipse 45% 40% at 92% 65%, rgba(138,199,71,0.04)  0%, transparent 48%),
+    radial-gradient(ellipse 40% 35% at 50% 100%, rgba(209,58,1,0.03)   0%, transparent 45%),
     #FFFFFF;
   position: relative;
   overflow: hidden;
@@ -7994,65 +8000,65 @@ a.solid-button:visited {
    TEAM-SPECIFIC COLOUR TOKENS  (title + label + icon + accents)
    ══════════════════════════════════════════════════════════════ */
 
-/* ── Blue ── */
-.au-manifesto-card--blue { border-color: rgba(37,99,235,0.14); }
+/* ── Blue  #5282B9 ── */
+.au-manifesto-card--blue { border-color: rgba(82,130,185,0.16); }
 .au-manifesto-card--blue::before {
-  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(37,99,235,0.06) 0%, transparent 62%);
+  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(82,130,185,0.07) 0%, transparent 62%);
 }
-.au-manifesto-card--blue:hover { border-color: rgba(37,99,235,0.30); }
+.au-manifesto-card--blue:hover { border-color: rgba(82,130,185,0.34); }
 .au-manifesto-card--blue .au-manifesto-icon {
-  background: rgba(37,99,235,0.10);
-  border: 1px solid rgba(37,99,235,0.20);
-  color: #2563EB;
+  background: rgba(82,130,185,0.10);
+  border: 1px solid rgba(82,130,185,0.22);
+  color: #5282B9;
 }
-.au-manifesto-card--blue .au-manifesto-label  { color: #2563EB; }
-.au-manifesto-card--blue .au-manifesto-title  { color: #1D4ED8; }
-.au-manifesto-card--blue .au-manifesto-accent { background: linear-gradient(90deg, #2563EB, #93C5FD, #2563EB); }
+.au-manifesto-card--blue .au-manifesto-label  { color: #5282B9; }
+.au-manifesto-card--blue .au-manifesto-title  { color: #3D6090; }
+.au-manifesto-card--blue .au-manifesto-accent { background: linear-gradient(90deg, #5282B9, #A8C4DF, #5282B9); }
 
-/* ── Red ── */
-.au-manifesto-card--red { border-color: rgba(231,71,60,0.14); }
+/* ── Red  #D13A01 ── */
+.au-manifesto-card--red { border-color: rgba(209,58,1,0.14); }
 .au-manifesto-card--red::before {
-  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(231,71,60,0.06) 0%, transparent 62%);
+  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(209,58,1,0.06) 0%, transparent 62%);
 }
-.au-manifesto-card--red:hover { border-color: rgba(231,71,60,0.30); }
+.au-manifesto-card--red:hover { border-color: rgba(209,58,1,0.30); }
 .au-manifesto-card--red .au-manifesto-icon {
-  background: rgba(231,71,60,0.10);
-  border: 1px solid rgba(231,71,60,0.22);
-  color: #E7473C;
+  background: rgba(209,58,1,0.10);
+  border: 1px solid rgba(209,58,1,0.22);
+  color: #D13A01;
 }
-.au-manifesto-card--red .au-manifesto-label  { color: #E7473C; }
-.au-manifesto-card--red .au-manifesto-title  { color: #C0392B; }
-.au-manifesto-card--red .au-manifesto-accent { background: linear-gradient(90deg, #E7473C, #FCA5A5, #E7473C); }
+.au-manifesto-card--red .au-manifesto-label  { color: #D13A01; }
+.au-manifesto-card--red .au-manifesto-title  { color: #A52D01; }
+.au-manifesto-card--red .au-manifesto-accent { background: linear-gradient(90deg, #D13A01, #F4A98A, #D13A01); }
 
-/* ── Green ── */
-.au-manifesto-card--green { border-color: rgba(22,163,74,0.14); }
+/* ── Green  #8AC747 ── */
+.au-manifesto-card--green { border-color: rgba(138,199,71,0.18); }
 .au-manifesto-card--green::before {
-  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(22,163,74,0.06) 0%, transparent 62%);
+  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(138,199,71,0.08) 0%, transparent 62%);
 }
-.au-manifesto-card--green:hover { border-color: rgba(22,163,74,0.30); }
+.au-manifesto-card--green:hover { border-color: rgba(138,199,71,0.36); }
 .au-manifesto-card--green .au-manifesto-icon {
-  background: rgba(22,163,74,0.10);
-  border: 1px solid rgba(22,163,74,0.22);
-  color: #16A34A;
+  background: rgba(138,199,71,0.10);
+  border: 1px solid rgba(138,199,71,0.26);
+  color: #6A9A30;
 }
-.au-manifesto-card--green .au-manifesto-label  { color: #16A34A; }
-.au-manifesto-card--green .au-manifesto-title  { color: #15803D; }
-.au-manifesto-card--green .au-manifesto-accent { background: linear-gradient(90deg, #16A34A, #86EFAC, #16A34A); }
+.au-manifesto-card--green .au-manifesto-label  { color: #6A9A30; }
+.au-manifesto-card--green .au-manifesto-title  { color: #507820; }
+.au-manifesto-card--green .au-manifesto-accent { background: linear-gradient(90deg, #8AC747, #C5E895, #8AC747); }
 
-/* ── Yellow ── */
-.au-manifesto-card--yellow { border-color: rgba(217,119,6,0.14); }
+/* ── Yellow / Orange  #F7A708 ── */
+.au-manifesto-card--yellow { border-color: rgba(247,167,8,0.16); }
 .au-manifesto-card--yellow::before {
-  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(217,119,6,0.06) 0%, transparent 62%);
+  background: radial-gradient(ellipse 85% 75% at 0% 0%, rgba(247,167,8,0.07) 0%, transparent 62%);
 }
-.au-manifesto-card--yellow:hover { border-color: rgba(217,119,6,0.30); }
+.au-manifesto-card--yellow:hover { border-color: rgba(247,167,8,0.34); }
 .au-manifesto-card--yellow .au-manifesto-icon {
-  background: rgba(217,119,6,0.10);
-  border: 1px solid rgba(217,119,6,0.22);
-  color: #D97706;
+  background: rgba(247,167,8,0.10);
+  border: 1px solid rgba(247,167,8,0.26);
+  color: #C27D05;
 }
-.au-manifesto-card--yellow .au-manifesto-label  { color: #D97706; }
-.au-manifesto-card--yellow .au-manifesto-title  { color: #B45309; }
-.au-manifesto-card--yellow .au-manifesto-accent { background: linear-gradient(90deg, #D97706, #FDE68A, #D97706); }
+.au-manifesto-card--yellow .au-manifesto-label  { color: #C27D05; }
+.au-manifesto-card--yellow .au-manifesto-title  { color: #9A5F02; }
+.au-manifesto-card--yellow .au-manifesto-accent { background: linear-gradient(90deg, #F7A708, #FDDFA0, #F7A708); }
 
 /* ── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 720px) {

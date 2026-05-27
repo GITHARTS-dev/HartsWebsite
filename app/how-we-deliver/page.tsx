@@ -7,9 +7,17 @@ import { PageHero } from "../_shared/layout/page-hero";
 import { FinalCTA } from "../_shared/layout/final-cta";
 
 export const metadata: Metadata = {
-  title: "How We Deliver | HARTS",
+  title: "How We Deliver — Build, Operate, Transfer",
   description:
-    "Build. Operate. Transfer. The way HARTS makes sure the capability runs without us - and stays that way.",
+    "Build, Operate, Transfer is the spine of every HARTS engagement. We build the capability, run it through transition, and transfer ownership when your team is ready to sustain it.",
+  alternates: { canonical: "/how-we-deliver" },
+  openGraph: {
+    title: "How We Deliver | HARTS",
+    description:
+      "The HARTS Build-Operate-Transfer delivery model — build capability, run it alongside your teams, transfer ownership.",
+    url: "/how-we-deliver",
+    type: "article",
+  },
 };
 
 const phases = [
@@ -154,8 +162,8 @@ export default function HowWeDeliverRoute() {
         <FinalCTA
           heading={<>See BOT applied to <em>your moment.</em></>}
           body="Tell us where your organisation is. We'll come back with the service mix and the path that fits."
-          primary={{ label: "Connect with HARTS", href: "/contact" }}
-          secondary={{ label: "See the six services", href: "/what-we-deliver" }}
+          primary={{ label: "Connect With HARTS", href: "/contact" }}
+          secondary={{ label: "See the Six Services", href: "/what-we-deliver" }}
         />
       </main>
     </PageShell>

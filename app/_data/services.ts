@@ -35,7 +35,7 @@ export const services: Service[] = [
     title: "OD & Implementation",
     titleSoft: "OD &",
     titleStrong: "Implementation",
-    line: "We help organizations build scalable operating structures, leadership capability, and workforce systems that support growth, transformation, and execution at scale.",
+    line: "Operating structures, leadership capability, and workforce systems built to scale with you.",
     voice:
       "Organisation design without implementation is wallpaper. We do both - because a beautiful org chart that nobody follows is worse than no org chart at all.",
     subs: [
@@ -67,7 +67,7 @@ export const services: Service[] = [
     title: "Centre of Excellence",
     titleSoft: "Centre of",
     titleStrong: "Excellence",
-    line: "We build operational excellence functions that improve governance, accelerate execution, standardize delivery, and drive continuous business improvement across the enterprise.",
+    line: "Operational excellence functions that standardize delivery and accelerate execution across the enterprise.",
     voice:
       "Everyone sells process mining tools. We build the team that makes those tools actually work. The tool is 20% of the value. The people running it are the other 80%.",
     subs: [
@@ -111,10 +111,10 @@ export const services: Service[] = [
     slug: "ma-and-pmi",
     num: "03",
     color: "orange",
-    title: "M&A & Post-Merger Integration",
-    titleSoft: "M&A &",
-    titleStrong: "Post-Merger Integration",
-    line: "We help organizations stabilize operations, align leadership, integrate teams, and accelerate synergy realization during mergers, acquisitions, and large-scale business transitions.",
+    title: "Post M&A Integration",
+    titleSoft: "Post M&A",
+    titleStrong: "Integration",
+    line: "Stabilize operations, integrate teams, and accelerate synergy realization through mergers and acquisitions.",
     voice:
       "Most consultants hand you a 200-slide integration plan and leave. We stay. We run the first 100 days because that's when deals are won or lost.",
     subs: [
@@ -143,7 +143,7 @@ export const services: Service[] = [
     title: "GCC & Shared Services",
     titleSoft: "GCC &",
     titleStrong: "Shared Services",
-    line: "We help organizations establish, operationalize, and scale Global Capability Centers and shared service operations with embedded governance, workforce readiness, and execution control.",
+    line: "Establish, operationalize, and scale Global Capability Centers with embedded governance and execution control.",
     voice:
       "I spent 14 years building and running Metro's global solution centre. This isn't theory - it's muscle memory.",
     subs: [
@@ -173,7 +173,7 @@ export const services: Service[] = [
     title: "Recruitment as a Service",
     titleSoft: "Recruitment",
     titleStrong: "as a Service",
-    line: "We help organizations build scalable talent acquisition operations, workforce ramp-up programs, and hiring systems that support rapid business growth and operational expansion.",
+    line: "Scalable talent acquisition and workforce ramp-up programs built for rapid growth.",
     voice:
       "Recruitment isn't an HR function. It's a strategic capability. We build it like one.",
     subs: [
@@ -204,7 +204,7 @@ export const services: Service[] = [
     title: "Executive Coaching & Board Advisory",
     titleSoft: "Executive Coaching &",
     titleStrong: "Board Advisory",
-    line: "We support leadership teams and boards through strategic decision-making, organizational alignment, governance challenges, and high-impact transformation periods.",
+    line: "Leadership advisory through strategic decision-making, alignment, and high-impact transformation.",
     voice:
       "Transformation is lonely at the top. We've sat in that chair. We know what it feels like when the board wants answers and the organisation isn't moving.",
     subs: [

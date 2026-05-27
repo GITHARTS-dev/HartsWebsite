@@ -104,7 +104,7 @@ export function CareersPage() {
         scene="careers"
         layout="split"
         eyebrow="Careers"
-        titleSoft="Build a career that."
+        titleSoft="Build a career that"
         titleStrong="Defines Transformation."
         subtitle="Join a senior team of strategists, operators, and technologists shaping decisive, durable change for global leaders."
         actions={
@@ -132,7 +132,7 @@ export function CareersPage() {
       <section className="careers-openings section" id="openings">
         <div className="section-heading careers-opening-heading">
           <p className="eyebrow">Openings</p>
-          <h2>Where you fit in</h2>
+          <h2>Where You Fit In</h2>
           <p>Three roles. One mission. Find where you fit.</p>
         </div>
 
@@ -158,11 +158,11 @@ export function CareersPage() {
       </section>
 
       <FinalCTA
-        eyebrow="Coming soon"
+        eyebrow="Coming Soon"
         heading="More openings will be published here shortly."
         body="If you don’t see a perfect fit yet, share your profile with us and tell us how you can contribute."
-        primary={{ label: "Send your interest", href: "/contact?source=careers" }}
-        secondary={{ label: "Talk to talent team", href: "/contact" }}
+        primary={{ label: "Send Your Interest", href: "/contact?source=careers" }}
+        secondary={{ label: "Talk to Talent Team", href: "/contact" }}
       />
     </main>
   );

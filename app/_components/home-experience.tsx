@@ -3,7 +3,7 @@
 import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
-import { Users, Award, GitMerge, Globe, UserPlus, Target, Hammer, Settings, ArrowLeftRight, Layers, TrendingUp, Rocket } from "lucide-react";
+import { Users, Award, GitMerge, Globe, UserPlus, Target, Hammer, Settings, ArrowLeftRight, Sprout, TrendingUp, LineChart } from "lucide-react";
 
 import { PageHero } from "../_shared/layout/page-hero";
 import { FinalCTA } from "../_shared/layout/final-cta";
@@ -22,9 +22,9 @@ const serviceIcons: Record<string, React.ElementType> = {
 const botIcons: React.ElementType[] = [Hammer, Settings, ArrowLeftRight];
 
 const domainIcons: Record<string, React.ElementType> = {
-  "setup": Layers,
+  "setup": Sprout,
   "develop": TrendingUp,
-  "scale-up": Rocket,
+  "scale-up": LineChart,
 };
 
 function revealStyle(index = 0): CSSProperties {
@@ -135,7 +135,7 @@ export function HomeExperience() {
             <p className="eyebrow">What We Deliver</p>
             <h2>Strategy is only valuable when operations can sustain it.</h2>
             <p>
-              HARTS helps organizations build, operationalize, and scale critical business capabilities combining strategy, execution, and transition under one integrated consulting model.
+              HARTS partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and seamless transition into a disciplined model.
             </p>
           </div>
 
@@ -163,7 +163,7 @@ export function HomeExperience() {
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
             <Link className="outline-button magnetic-button" href="/what-we-deliver">
-              See all our services
+              Explore Capabilities
             </Link>
           </div>
         </div>
@@ -186,21 +186,46 @@ export function HomeExperience() {
             </p>
           </div>
 
-          <div className="bot-milestones">
-            <div className="bot-milestones-line" aria-hidden="true" />
+          <div className="bot-pathway">
+            <svg
+              className="bot-pathway-curve"
+              viewBox="0 0 1100 340"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M 40 186 L 183.33 186 C 340 186, 420 131, 550 131 S 770 76, 916.67 76 L 1056 76"
+                fill="none"
+                stroke="#E7473C"
+                strokeWidth="1.4"
+                strokeDasharray="5 7"
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d="M 1046 67 L 1066 76 L 1046 85"
+                fill="none"
+                stroke="#E7473C"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+
             {botSteps.map((step, index) => {
               const Icon = botIcons[index] ?? Hammer;
-              const num = String(index + 1).padStart(2, "0");
               return (
-                <article key={step.title} className="bot-milestone">
-                  <div className="bot-milestone-marker">
-                    <span className="bot-milestone-num">{num}</span>
-                    <span className="bot-milestone-icon" aria-hidden="true">
-                      <Icon />
-                    </span>
-                  </div>
-                  <h3 className="bot-milestone-title">{step.title}</h3>
-                  <p className="bot-milestone-text">{step.text}</p>
+                <article
+                  key={step.title}
+                  className={`bot-step bot-step--${index + 1}`}
+                >
+                  <span className="bot-step-icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span className="bot-step-dot" aria-hidden="true" />
+                  <h3 className="bot-step-title">{step.title}</h3>
+                  <p className="bot-step-text">{step.text}</p>
                 </article>
               );
             })}
@@ -232,7 +257,7 @@ export function HomeExperience() {
 
           <div className="choose-grid">
             {domains.map((d, index) => {
-              const Icon = domainIcons[d.slug] ?? Layers;
+              const Icon = domainIcons[d.slug] ?? Sprout;
               return (
                 <Link
                   key={d.id}

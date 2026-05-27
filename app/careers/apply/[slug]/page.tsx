@@ -62,12 +62,12 @@ export default async function ApplyPage({ params }: RouteProps) {
           <div className="apply-body-inner">
             <aside className="apply-summary">
               <section>
-                <h2>About the role</h2>
+                <h2>About the Role</h2>
                 <p>{opening.description}</p>
               </section>
 
               <section>
-                <h2>What you&apos;ll do</h2>
+                <h2>What You&apos;ll Do</h2>
                 <ul>
                   {opening.responsibilities.map((r) => (
                     <li key={r}>{r}</li>
@@ -76,7 +76,7 @@ export default async function ApplyPage({ params }: RouteProps) {
               </section>
 
               <section>
-                <h2>What we&apos;re looking for</h2>
+                <h2>What We&apos;re Looking For</h2>
                 <ul>
                   {opening.qualifications.map((q) => (
                     <li key={q}>{q}</li>
@@ -88,7 +88,7 @@ export default async function ApplyPage({ params }: RouteProps) {
             <div className="apply-form-wrap">
               <div className="apply-form-card">
                 <header className="apply-form-head">
-                  <h2>Submit your application</h2>
+                  <h2>Submit Your Application</h2>
                   <p>
                     Tell us about you. We respond to every application within
                     five business days.

@@ -8,9 +8,17 @@ import { ServiceIcon, ArrowIcon } from "../_shared/icons";
 import { services } from "../_data/services";
 
 export const metadata: Metadata = {
-  title: "What We Deliver | HARTS",
+  title: "What We Deliver — Six Consulting Services",
   description:
-    "Six services. One operating discipline. Built, run, and transferred so your team owns the outcome.",
+    "Six end-to-end consulting services: OD & Implementation, Centre of Excellence, Post M&A Integration, GCC & Shared Services, Recruitment as a Service, and Executive Coaching.",
+  alternates: { canonical: "/what-we-deliver" },
+  openGraph: {
+    title: "What We Deliver | HARTS",
+    description:
+      "Six consulting services delivered end-to-end via the Build-Operate-Transfer model.",
+    url: "/what-we-deliver",
+    type: "article",
+  },
 };
 
 export default function WhatWeDeliverRoute() {
@@ -21,9 +29,9 @@ export default function WhatWeDeliverRoute() {
           scene="how-we-help"
           layout="split"
           eyebrow="What We Deliver"
-          titleSoft="Integrated capabilities."
-          titleStrong="Measurable outcomes."
-          subtitle="We are not a generalist firm. These six are what we do - and we do them all under one model: Build, Operate, Transfer. Pick the work that matches your moment; the discipline behind it stays the same."
+          titleSoft="Integrated Capabilities."
+          titleStrong="Measurable Outcomes."
+          subtitle="We bring deep, specialized focus to the capabilities that matter most, all driven by a singular, disciplined execution model: Build, Operate, Transfer. Pick the work that matches your moment."
           actions={
             <Link className="solid-button large" href="/contact">
               Connect With Us
@@ -73,8 +81,8 @@ export default function WhatWeDeliverRoute() {
         <FinalCTA
           heading={<>Not sure which service fits? <em>Start with where you are.</em></>}
           body="Tell us about the moment your organisation is in. We will come back with the service mix that actually fits."
-          primary={{ label: "Connect with HARTS", href: "/contact" }}
-          secondary={{ label: "See the three domains", href: "/where-we-deliver" }}
+          primary={{ label: "Connect With HARTS", href: "/contact" }}
+          secondary={{ label: "See the Three Domains", href: "/where-we-deliver" }}
         />
       </main>
     </PageShell>

@@ -90,7 +90,7 @@ export function AboutPage() {
         layout="split"
         eyebrow="About HARTS"
         titleSoft="We exist to create"
-        titleStrong="clarity."
+        titleStrong="Clarity."
         subtitle="HARTS closes the distance between strategic intent and organisational reality with the right rigour, the right people, and an uncompromising focus on what actually moves the needle."
         actions={
           <>
@@ -239,8 +239,8 @@ export function AboutPage() {
       <FinalCTA
         heading="The right partner changes everything."
         body="Connect with HARTS to explore how strategic clarity and disciplined execution can unlock transformative value for your organisation."
-        primary={{ label: "Connect with HARTS", href: "/contact" }}
-        secondary={{ label: "How we work", href: "/how-we-deliver" }}
+        primary={{ label: "Connect With HARTS", href: "/contact" }}
+        secondary={{ label: "How We Work", href: "/how-we-deliver" }}
       />
     </main>
   );

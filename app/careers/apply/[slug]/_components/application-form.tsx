@@ -78,7 +78,7 @@ export function ApplicationForm({ roleSlug, roleTitle }: Props) {
     return (
       <div className="apply-success" role="status">
         <div className="apply-success-check" aria-hidden="true">✓</div>
-        <h3>Application received</h3>
+        <h3>Application Received</h3>
         <p>
           Thanks for applying to the <strong>{roleTitle}</strong> role. A member
           of our talent team will review your profile and follow up within five

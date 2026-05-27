@@ -8267,6 +8267,120 @@ a.solid-button:visited {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
+   BOT (Build · Operate · Transfer) — clean horizontal milestone timeline
+   used on the HOME page. Three numbered station markers connected by a
+   thin red rule; title + description hang below each marker. Editorial
+   process-flow look, kept compact so it fits the home viewport.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.bot-milestones {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  padding: 14px 0 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Thin red rule running behind all three markers at marker centre */
+.bot-milestones-line {
+  position: absolute;
+  top: 36px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(231, 71, 60, 0) 0%,
+    rgba(231, 71, 60, 0.5) 15%,
+    rgba(231, 71, 60, 0.5) 85%,
+    rgba(231, 71, 60, 0) 100%
+  );
+  z-index: 0;
+}
+
+.bot-milestone {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: #FFFFFF;
+  padding: 0 4px;
+}
+
+.bot-milestone-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 0 8px 0 0;
+  background: #FFFFFF;
+  /* white pill behind the marker so the connecting red rule visually
+     "passes through" the gap to either side */
+}
+
+.bot-milestone-num {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #E7473C;
+  line-height: 1;
+}
+
+.bot-milestone-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #E7473C;
+  background: #FFFFFF;
+  color: #E7473C;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.bot-milestone-icon svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.7;
+}
+
+.bot-milestone:hover .bot-milestone-icon {
+  background: #E7473C;
+  color: #FFFFFF;
+}
+
+.bot-milestone-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 720;
+  letter-spacing: -0.005em;
+  color: #1A1A1A;
+}
+
+.bot-milestone-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(26, 26, 26, 0.68);
+  max-width: 320px;
+}
+
+@media (max-width: 880px) {
+  .bot-milestones {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .bot-milestones-line { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
    BOT (Build · Operate · Transfer) flowing-pathway layout.
    Canvas uses a fixed-pixel coordinate system (1100 × 340) shared by:
      - the SVG curve (viewBox 0 0 1100 340, preserveAspectRatio="none")

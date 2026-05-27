@@ -552,8 +552,8 @@
    together on the left, with a rule below separating it from the phases. */
 .approach-head {
   max-width: 720px;
-  padding-bottom: clamp(40px, 5vw, 64px);
-  margin-bottom: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(20px, 2.5vw, 32px);
+  margin-bottom: clamp(20px, 2.5vw, 32px);
   border-bottom: 1px solid rgba(231, 71, 60, 0.18);
 }
 

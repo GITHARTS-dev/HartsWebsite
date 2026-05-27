@@ -37,42 +37,40 @@ export default function ContactRoute() {
           </div>
         </section>
 
-        <section className="section locations-section">
-          <div className="section-heading reveal">
-            <h2>Find Us</h2>
-          </div>
-          <div className="location-map-block reveal">
-            <div className="location-map-info">
-              <h3>Coimbatore</h3>
-              <p>
-                7C, Mayflower Signature<br />
-                Avinashi Road, Peelamedu<br />
-                Coimbatore &ndash; 641004<br />
-                Tamil Nadu, India
-              </p>
-              <p className="contact-info">
-                <strong>Email:</strong> hello@globalharts.com
-              </p>
-              <p className="contact-info">
-                <strong>Phone:</strong> +91 422 000 0000
-              </p>
-              <a
-                className="outline-button"
-                href="https://maps.app.goo.gl/sQyjGTZzVEdVLYC67"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Directions
-              </a>
-            </div>
-            <div className="location-map-embed">
-              <iframe
-                title="HARTS Coimbatore Office"
-                src="https://maps.google.com/maps?q=7C,+Mayflower+Signature,+Avinashi+Road,+Peelamedu,+Coimbatore+641004,+Tamil+Nadu,+India&output=embed&z=17"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+        <section className="contact-offices-section">
+          <div className="contact-offices-shell">
+
+            <header className="contact-offices-head">
+              <p className="contact-offices-eyebrow">Find Us</p>
+              <h2 className="contact-offices-heading">Our global offices</h2>
+            </header>
+
+            <div className="contact-offices-grid">
+
+              {/* Germany — Headquarters */}
+              <div className="contact-office-card">
+                <span className="contact-office-tag">Europe</span>
+                <h3 className="contact-office-city">Düsseldorf</h3>
+                <address className="contact-office-address">
+                  350 ABC Street<br />
+                  Boston, XYZ 02116<br />
+                  Germany
+                </address>
+                {/* <span className="contact-office-country">Germany</span> */}
+              </div>
+
+              {/* India */}
+              <div className="contact-office-card">
+                <span className="contact-office-tag">India</span>
+                <h3 className="contact-office-city">Coimbatore</h3>
+                <address className="contact-office-address">
+                  7C, Mayflower Signature<br />
+                  Avinashi Road, Peelamedu<br />
+                  Coimbatore &ndash; 641004
+                </address>
+                {/* <span className="contact-office-country">India</span> */}
+              </div>
+
             </div>
           </div>
         </section>

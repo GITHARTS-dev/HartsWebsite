@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 520">
+  <defs>
+    <linearGradient id="w1" x1="1440" y1="0" x2="360" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#E7473C" stop-opacity="0.22"/>
+      <stop offset="68%"  stop-color="#E7473C" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="1440" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#E7473C" stop-opacity="0.17"/>
+      <stop offset="70%"  stop-color="#E7473C" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="w3" x1="1440" y1="0" x2="460" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#E7473C" stop-opacity="0.14"/>
+      <stop offset="72%"  stop-color="#E7473C" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="w4" x1="1440" y1="0" x2="520" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#E7473C" stop-opacity="0.11"/>
+      <stop offset="75%"  stop-color="#E7473C" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="w5" x1="1440" y1="0" x2="440" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#E7473C" stop-opacity="0.09"/>
+      <stop offset="78%"  stop-color="#E7473C" stop-opacity="0.025"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="w6" x1="1440" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#E7473C" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="w7" x1="1440" y1="0" x2="680" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#E7473C" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wave 1 — widest, most prominent -->
+  <path d="M1440,28 C1282,28 1158,82 976,116 C794,150 662,166 498,172"
+        fill="none" stroke="url(#w1)" stroke-width="82" stroke-linecap="round"/>
+
+  <!-- Wave 2 -->
+  <path d="M1440,122 C1284,122 1154,174 974,202 C794,230 664,250 480,256"
+        fill="none" stroke="url(#w2)" stroke-width="66" stroke-linecap="round"/>
+
+  <!-- Wave 3 -->
+  <path d="M1440,226 C1314,226 1182,268 1012,292 C842,316 724,334 558,340"
+        fill="none" stroke="url(#w3)" stroke-width="56" stroke-linecap="round"/>
+
+  <!-- Wave 4 -->
+  <path d="M1440,318 C1344,318 1220,354 1068,372 C916,390 808,404 674,408"
+        fill="none" stroke="url(#w4)" stroke-width="46" stroke-linecap="round"/>
+
+  <!-- Wave 5 — thin accent between wave 1 and 2 -->
+  <path d="M1440,64 C1296,64 1184,106 1018,132 C852,158 738,172 596,178"
+        fill="none" stroke="url(#w5)" stroke-width="26" stroke-linecap="round"/>
+
+  <!-- Wave 6 — lower accent -->
+  <path d="M1440,394 C1372,394 1290,418 1172,426 C1054,434 962,444 850,448"
+        fill="none" stroke="url(#w6)" stroke-width="20" stroke-linecap="round"/>
+
+  <!-- Wave 7 — fine detail near bottom-right -->
+  <path d="M1440,458 C1400,458 1352,472 1292,476 C1232,480 1180,488 1120,490"
+        fill="none" stroke="url(#w7)" stroke-width="14" stroke-linecap="round"/>
+</svg>

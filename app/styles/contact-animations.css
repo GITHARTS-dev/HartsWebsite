@@ -183,3 +183,137 @@
     transition-timing-function: ease;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Contact — Global Offices (premium editorial, no map)
+   ────────────────────────────────────────────────────────────── */
+
+.contact-offices-section {
+  padding: clamp(56px, 7vw, 96px) 0;
+  border-top: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.contact-offices-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+/* Eyebrow + heading block */
+.contact-offices-head {
+  margin-bottom: clamp(36px, 4.5vw, 56px);
+}
+
+.contact-offices-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #E7473C;
+}
+
+.contact-offices-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1.5px;
+  background: #E7473C;
+  flex-shrink: 0;
+}
+
+.contact-offices-heading {
+  margin: 0;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 720;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+/* Two-column office cards */
+.contact-offices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.contact-office-card {
+  padding: clamp(28px, 3.5vw, 44px) 0;
+  border-top: 2px solid #E7473C;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-office-card + .contact-office-card {
+  padding-left: clamp(32px, 5vw, 72px);
+  border-left: 1px solid var(--line);
+}
+
+/* Tag — HEADQUARTERS / INDIA */
+.contact-office-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E7473C;
+}
+
+/* City name — large editorial type */
+.contact-office-city {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 760;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.0;
+}
+
+/* Address block */
+.contact-office-address {
+  font-style: normal;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.9;
+  color: var(--muted);
+  font-weight: 400;
+  margin: 4px 0 0;
+}
+
+/* Country footer label */
+.contact-office-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.35;
+}
+
+.contact-office-country::before {
+  content: "";
+  width: 22px;
+  height: 1.5px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Responsive — stack on narrow screens */
+@media (max-width: 640px) {
+  .contact-offices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-office-card + .contact-office-card {
+    padding-left: 0;
+    border-left: none;
+    margin-top: clamp(28px, 4vw, 40px);
+  }
+}

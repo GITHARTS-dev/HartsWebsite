@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Users, Award, GitMerge, Globe, UserPlus, Target, Hammer, Settings, ArrowLeftRight, Layers, TrendingUp, Rocket } from "lucide-react";
 
 import { PageHero } from "../_shared/layout/page-hero";
+import { FinalCTA } from "../_shared/layout/final-cta";
 import { services } from "../_data/services";
 import { domains } from "../_data/domains";
 
@@ -27,7 +28,7 @@ const domainIcons: Record<string, React.ElementType> = {
 };
 
 function revealStyle(index = 0): CSSProperties {
-  return { "--reveal-delay": `${index * 90}ms` } as CSSProperties;
+  return { "--reveal-delay": `${index * 55}ms` } as CSSProperties;
 }
 
 const botSteps = [
@@ -185,23 +186,46 @@ export function HomeExperience() {
             </p>
           </div>
 
-          <div className="choose-network" aria-hidden="true" />
-          <div className="choose-grid">
+          <div className="bot-pathway">
+            <svg
+              className="bot-pathway-curve"
+              viewBox="0 0 1100 340"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M 40 186 L 183.33 186 C 340 186, 420 131, 550 131 S 770 76, 916.67 76 L 1056 76"
+                fill="none"
+                stroke="#E7473C"
+                strokeWidth="1.4"
+                strokeDasharray="5 7"
+                strokeLinecap="round"
+                vectorEffect="non-scaling-stroke"
+              />
+              <path
+                d="M 1046 67 L 1066 76 L 1046 85"
+                fill="none"
+                stroke="#E7473C"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+
             {botSteps.map((step, index) => {
               const Icon = botIcons[index] ?? Hammer;
               return (
                 <article
                   key={step.title}
-                  className="premium-info-card choose-card scroll-reveal reveal-soft-up"
-                  style={revealStyle(index)}
+                  className={`bot-step bot-step--${index + 1}`}
                 >
-                  <span className="card-icon-badge" aria-hidden="true">
+                  <span className="bot-step-icon" aria-hidden="true">
                     <Icon />
                   </span>
-                  <div className="card-body">
-                    <h3>{step.title}</h3>
-                    <p>{step.text}</p>
-                  </div>
+                  <span className="bot-step-dot" aria-hidden="true" />
+                  <h3 className="bot-step-title">{step.title}</h3>
+                  <p className="bot-step-text">{step.text}</p>
                 </article>
               );
             })}
@@ -261,26 +285,12 @@ export function HomeExperience() {
         </div>
       </section>
 
-      {/* ─── PARTNER CTA (kept) ───────────────────────────────────────── */}
-      <section className="partner-section parallax-section" id="partner">
-        <div className="partner-content scroll-reveal">
-          <p className="eyebrow">Partner With HARTS</p>
-          <h2>
-            <span>Navigate transformation</span>
-            <span>with confidence.</span>
-          </h2>
-          <p>
-            The future belongs to organizations that adapt, evolve, and lead
-            with clarity. HARTS helps businesses move forward with intelligent
-            strategy and connected transformation.
-          </p>
-          <div className="partner-actions">
-            <Link className="outline-button large magnetic-button ghost-glow-button" href="/contact">
-              Connect With Us
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTA
+        eyebrow="Partner With HARTS"
+        heading={<>Navigate transformation <em>with confidence.</em></>}
+        body="The future belongs to organizations that adapt, evolve, and lead with clarity. HARTS helps businesses move forward with intelligent strategy and connected transformation."
+        primary={{ label: "Connect With Us", href: "/contact" }}
+      />
     </main>
   );
 }

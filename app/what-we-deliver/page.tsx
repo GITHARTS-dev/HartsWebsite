@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PageShell } from "../_shared/layout/page-shell";
 import { PageHero } from "../_shared/layout/page-hero";
+import { FinalCTA } from "../_shared/layout/final-cta";
 import { ServiceIcon, ArrowIcon } from "../_shared/icons";
 import { services } from "../_data/services";
 
@@ -33,7 +34,19 @@ export default function WhatWeDeliverRoute() {
         {/* Editorial service rows */}
         <section className="ed-section">
           <div className="ed-shell">
-            <div className="ed-svc-list">
+            <header className="ed-section-head">
+              <p className="eyebrow">Our Services</p>
+              <h2>
+                Six services we deliver <span className="ed-accent">end-to-end.</span>
+              </h2>
+              <p>
+                Each row is a capability we build, run, and transfer. Pick the
+                one that matches the moment you&apos;re in — the discipline
+                behind it stays the same.
+              </p>
+            </header>
+
+            <div className="ed-svc-list ed-svc-list--two-col">
               {services.map((svc) => (
                 <Link
                   key={svc.slug}
@@ -57,26 +70,12 @@ export default function WhatWeDeliverRoute() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="ed-cta">
-          <div className="ed-shell">
-            <h2>
-              Not sure which service fits? <em>Start with where you are.</em>
-            </h2>
-            <p>
-              Tell us about the moment your organisation is in. We will come
-              back with the service mix that actually fits.
-            </p>
-            <div className="ed-cta-actions">
-              <Link className="solid-button large" href="/contact">
-                Connect with HARTS
-              </Link>
-              <Link className="outline-button large" href="/where-we-deliver">
-                See the three domains
-              </Link>
-            </div>
-          </div>
-        </section>
+        <FinalCTA
+          heading={<>Not sure which service fits? <em>Start with where you are.</em></>}
+          body="Tell us about the moment your organisation is in. We will come back with the service mix that actually fits."
+          primary={{ label: "Connect with HARTS", href: "/contact" }}
+          secondary={{ label: "See the three domains", href: "/where-we-deliver" }}
+        />
       </main>
     </PageShell>
   );

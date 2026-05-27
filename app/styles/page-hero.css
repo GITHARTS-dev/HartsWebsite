@@ -148,28 +148,23 @@
 .page-hero-title {
   display: grid;
   justify-items: center;
-  gap: 4px;
+  gap: 6px;
   max-width: none;
   margin: 0;
   /* Unified title size across every page (calmer, less pushy) */
   font-size: clamp(30px, 4vw, 50px);
   font-weight: 760;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.004em;
   color: #1A1A1A;
   opacity: 1;
 }
 
-.page-hero-title-soft {
-  font-size: 0.5em;
-  font-weight: 680;
-  line-height: 1.05;
-  color: rgba(26, 26, 26, 0.72);
-}
-
+.page-hero-title-soft,
 .page-hero-title-strong {
   font-size: 1em;
-  line-height: 1;
+  font-weight: 760;
+  line-height: 1.1;
   color: #1A1A1A;
 }
 

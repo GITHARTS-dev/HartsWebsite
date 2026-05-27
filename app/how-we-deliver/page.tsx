@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 
 import { PageShell } from "../_shared/layout/page-shell";
 import { PageHero } from "../_shared/layout/page-hero";
-import { BotIcon } from "../_shared/icons";
+import { FinalCTA } from "../_shared/layout/final-cta";
 
 export const metadata: Metadata = {
   title: "How We Deliver | HARTS",
@@ -74,29 +75,37 @@ export default function HowWeDeliverRoute() {
           }
         />
 
-        {/* ─── 1. The arc - three high-level tiles ───────────────────── */}
-        <section className="ed-section">
+        {/* ─── 1. The Approach - three phases with watermark numbers ──── */}
+        <section className="ed-section approach-section">
           <div className="ed-shell">
-            <header className="ed-section-head">
-              <p className="ed-eyebrow">The Approach</p>
-              <h2>
-                Three phases. <em>One unbroken arc.</em>
-              </h2>
-              <p>
-                Every HARTS engagement follows a Build–Operate–Transfer delivery model designed to create long-term operational ownership not dependency on consultants.
-              </p>
+            <header className="approach-head">
+              <p className="approach-eyebrow">The Approach</p>
+              <div className="approach-intro">
+                <h2 className="approach-heading">
+                  Three phases. <em>One unbroken arc.</em>
+                </h2>
+                <p className="approach-intro-text">
+                  Every HARTS engagement follows a Build–Operate–Transfer
+                  delivery model designed to create long-term operational
+                  ownership not dependency on consultants.
+                </p>
+              </div>
             </header>
 
-            <div className="ed-bot-timeline">
-              {phases.map((p) => (
-                <div key={p.key} className="ed-bot-tile">
-                  <div className="ed-bot-tile-head">
-                    <span className="ed-bot-tile-icon"><BotIcon phase={p.key} /></span>
-                    <span className="ed-bot-tile-num">{p.num}</span>
-                  </div>
-                  <h3>{p.name}</h3>
-                  <p>{p.line}</p>
-                </div>
+            <div className="approach-phases">
+              {phases.map((p, idx) => (
+                <Fragment key={p.key}>
+                  <article className="approach-phase">
+                    <span className="approach-phase-num" aria-hidden="true">
+                      {p.num}
+                    </span>
+                    <h3 className="approach-phase-title">{p.name}</h3>
+                    <p className="approach-phase-text">{p.line}</p>
+                  </article>
+                  {idx < phases.length - 1 && (
+                    <span className="approach-arrow" aria-hidden="true">→</span>
+                  )}
+                </Fragment>
               ))}
             </div>
           </div>
@@ -142,22 +151,12 @@ export default function HowWeDeliverRoute() {
           </div>
         </section>
 
-        {/* ─── 4. CTA ───────────────────────────────────────────────── */}
-        <section className="ed-cta">
-          <div className="ed-shell">
-            <h2>
-              See BOT applied to <em>your moment.</em>
-            </h2>
-            <p>
-              Tell us where your organisation is. We&apos;ll come back with the
-              service mix and the path that fits.
-            </p>
-            <div className="ed-cta-actions">
-              <Link className="solid-button large" href="/contact">Connect with HARTS</Link>
-              <Link className="outline-button large" href="/what-we-deliver">See the six services</Link>
-            </div>
-          </div>
-        </section>
+        <FinalCTA
+          heading={<>See BOT applied to <em>your moment.</em></>}
+          body="Tell us where your organisation is. We'll come back with the service mix and the path that fits."
+          primary={{ label: "Connect with HARTS", href: "/contact" }}
+          secondary={{ label: "See the six services", href: "/what-we-deliver" }}
+        />
       </main>
     </PageShell>
   );

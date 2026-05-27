@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import { ServiceIcon, BotIcon, DomainIcon, CheckIcon } from "../../_shared/icons";
+import { FinalCTA } from "../../_shared/layout/final-cta";
+import { AbstractFlow } from "../../_shared/layout/abstract-flow";
 import type { Service } from "../../_data/services";
 import { domains } from "../../_data/domains";
 
@@ -15,6 +17,7 @@ export function ServiceDetail({ service }: { service: Service }) {
     <main className="ed-page">
       {/* ─── HERO (editorial, no PageHero) ─────────────────────────── */}
       <section className="ed-detail-hero">
+        <AbstractFlow className="ed-detail-hero-flow" />
         <div className="ed-shell">
           <nav className="ed-breadcrumb" aria-label="Breadcrumb">
             <Link href="/what-we-deliver">What We Deliver</Link>
@@ -162,22 +165,12 @@ export function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* ─── CTA ───────────────────────────────────────────────────── */}
-      <section className="ed-cta">
-        <div className="ed-shell">
-          <h2>
-            Ready to talk about <em>{service.title.toLowerCase()}?</em>
-          </h2>
-          <p>
-            Tell us where you are. We will respond with a focused perspective
-            on how this work fits.
-          </p>
-          <div className="ed-cta-actions">
-            <Link className="solid-button" href="/contact">Discuss Your Transformation</Link>
-                <Link className="outline-button" href="/how-we-deliver">Explore Our Delivery Model</Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTA
+        heading={<>Ready to talk about <em>{service.title.toLowerCase()}?</em></>}
+        body="Tell us where you are. We will respond with a focused perspective on how this work fits."
+        primary={{ label: "Discuss Your Transformation", href: "/contact" }}
+        secondary={{ label: "Explore Our Delivery Model", href: "/how-we-deliver" }}
+      />
     </main>
   );
 }

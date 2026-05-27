@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PageShell } from "../_shared/layout/page-shell";
 import { PageHero } from "../_shared/layout/page-hero";
+import { FinalCTA } from "../_shared/layout/final-cta";
 import { DomainIcon, ServiceIcon, ArrowIcon } from "../_shared/icons";
 import { domains } from "../_data/domains";
 import { services, getService } from "../_data/services";
@@ -87,22 +88,12 @@ export default function WhereWeDeliverRoute() {
           </section>
         ))}
 
-        {/* ─── CTA ──────────────────────────────────────────────────── */}
-        <section className="ed-cta">
-          <div className="ed-shell">
-            <h2>
-              Tell us <em>where you are.</em>
-            </h2>
-            <p>
-              We will come back with the service mix and the BOT path that
-              fits the moment your organisation is in.
-            </p>
-            <div className="ed-cta-actions">
-              <Link className="solid-button large" href="/contact">Connect with HARTS</Link>
-              <Link className="outline-button large" href="/how-we-deliver">How we deliver</Link>
-            </div>
-          </div>
-        </section>
+        <FinalCTA
+          heading={<>Tell us <em>where you are.</em></>}
+          body="We will come back with the service mix and the BOT path that fits the moment your organisation is in."
+          primary={{ label: "Connect with HARTS", href: "/contact" }}
+          secondary={{ label: "How we deliver", href: "/how-we-deliver" }}
+        />
       </main>
     </PageShell>
   );

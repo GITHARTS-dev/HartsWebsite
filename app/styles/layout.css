@@ -75,31 +75,44 @@
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
-  transition:
-    background 160ms ease,
-    color 160ms ease,
-    transform 120ms ease;
+  /* No transition on bg/color so the active-route swap on page navigation
+     is instant — no perceived lag when switching pages. */
+  transition: transform 80ms ease;
 }
 
-.nav-pill:hover,
+/* Hover on a non-active pill: no visual change. Cursor pointer is the
+   affordance. The :not(--active) guard means hovering the active pill
+   never strips its red background. */
+.nav-pill:not(.nav-pill--active):hover {
+  background: transparent;
+  color: #e63030;
+}
+
+/* Keyboard focus: subtle outline for accessibility, no fill. */
 .nav-pill:focus-visible {
-  background: #e63030;
-  color: #ffffff;
-  outline: none;
+  outline: 2px solid rgba(231, 71, 60, 0.45);
+  outline-offset: 2px;
 }
 
-.nav-pill:active {
+/* Mouse-down on a non-active pill: red fill flashes instantly. */
+.nav-pill:not(.nav-pill--active):active {
   background: #e63030;
   color: #ffffff;
   transform: scale(0.96);
-  transition-duration: 60ms;
 }
 
-/* Active route: filled red background + white underline pill */
-.nav-pill--active {
+/* Active route — locked red with a soft brand shadow for premium depth.
+   Stays red regardless of hover, focus, or press state. */
+.nav-pill--active,
+.nav-pill--active:hover,
+.nav-pill--active:focus,
+.nav-pill--active:focus-visible,
+.nav-pill--active:active {
   background: #e63030;
   color: #ffffff;
   font-weight: 720;
+  box-shadow: 0 6px 16px rgba(231, 71, 60, 0.22);
+  transform: none;
 }
 
 .nav-pill--active::after {
@@ -122,6 +135,17 @@
   padding: 0 18px;
   font-size: 14.5px;
   font-weight: 700;
+}
+
+/* Header buttons don't get the brand-red glow/lift on hover — the
+   floating shadow looks out of place in the slim navbar. They keep the
+   colour swap only. */
+.header-actions .outline-button:hover,
+.header-actions .outline-button:focus-visible,
+.header-actions .solid-button:hover,
+.header-actions .solid-button:focus-visible {
+  box-shadow: none;
+  transform: none;
 }
 
 /* ────────────────────────────────────────────────────────────────────────

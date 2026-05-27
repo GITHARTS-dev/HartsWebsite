@@ -546,9 +546,9 @@
 }
 
 .au-leader-li:hover {
-  background: #E7473C;
-  color: #fff;
-  border-color: #E7473C;
+  background: rgba(231, 71, 60, 0.08);
+  color: #E7473C;
+  border-color: rgba(231, 71, 60, 0.55);
 }
 
 @media (max-width: 960px) {

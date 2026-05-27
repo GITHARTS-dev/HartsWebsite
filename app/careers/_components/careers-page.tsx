@@ -2,30 +2,8 @@
 
 import Link from "next/link";
 import { PageHero } from "../../_shared/layout/page-hero";
-
-const openings = [
-  {
-    slug: "transformation-operating-models",
-    title: "Transformation & Operating Models",
-    role: "Strategy & Transformation Consultant",
-    description:
-      "Lead client engagements across OD, post-merger integration, and CoE build. Work alongside leadership teams to design and run the operating model that the strategy actually needs.",
-  },
-  {
-    slug: "gcc-shared-services",
-    title: "GCC & Shared Services",
-    role: "Global Capability Center Consultant",
-    description:
-      "Stand up Global Capability Centres for clients - site selection through to live operations. Carry the BOT lifecycle end-to-end, from first hire to full transfer.",
-  },
-  {
-    slug: "people-talent",
-    title: "People & Talent",
-    role: "People & Change Consultant",
-    description:
-      "Design and run the people side of transformation - job architecture, EVP, recruitment-as-a-service, leadership development. Make sure the change actually lands with the humans doing the work.",
-  },
-];
+import { FinalCTA } from "../../_shared/layout/final-cta";
+import { openings } from "../../_data/openings";
 
 function OpeningIcon({ slug }: { slug: string }) {
   switch (slug) {
@@ -129,10 +107,6 @@ export function CareersPage() {
         titleSoft="Build a career that."
         titleStrong="Defines Transformation."
         subtitle="Join a senior team of strategists, operators, and technologists shaping decisive, durable change for global leaders."
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "Careers" },
-        ]}
         actions={
           <>
             <Link className="solid-button large" href="#openings">
@@ -174,8 +148,8 @@ export function CareersPage() {
               <p className="careers-card-label">{item.title}</p>
               <h3>{item.role}</h3>
               <p>{item.description}</p>
-              <Link className="careers-card-link" href={`/contact?role=${item.slug}`}>
-                View roles
+              <Link className="careers-card-link" href={`/careers/apply/${item.slug}`}>
+                Apply for this role
                 <span aria-hidden="true">→</span>
               </Link>
             </article>
@@ -183,24 +157,13 @@ export function CareersPage() {
         </div>
       </section>
 
-      <section className="careers-coming-soon section">
-        <div className="careers-coming-soon-inner">
-          <p className="eyebrow">Coming soon</p>
-          <h2>More openings will be published here shortly.</h2>
-          <p>
-            If you don’t see a perfect fit yet, share your profile with us and tell us how you
-            can contribute.
-          </p>
-          <div className="careers-actions careers-actions--center">
-            <Link className="solid-button large" href="/contact?source=careers">
-              Send your interest
-            </Link>
-            <Link className="careers-ghost-button large" href="/contact">
-              Talk to talent team
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTA
+        eyebrow="Coming soon"
+        heading="More openings will be published here shortly."
+        body="If you don’t see a perfect fit yet, share your profile with us and tell us how you can contribute."
+        primary={{ label: "Send your interest", href: "/contact?source=careers" }}
+        secondary={{ label: "Talk to talent team", href: "/contact" }}
+      />
     </main>
   );
 }

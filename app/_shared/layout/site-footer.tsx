@@ -22,7 +22,7 @@ const navCols = [
       { label: "Contact", href: "/contact" },
       {
         label: "LinkedIn",
-        href: "https://www.linkedin.com/company/harts-consulting/",
+        href: "https://www.linkedin.com/company/harts-consultiing/",
         external: true,
       },
     ],

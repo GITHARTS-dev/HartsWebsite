@@ -1,15 +1,11 @@
 import type { ReactNode } from "react";
 
-export type Crumb = { label: string; href?: string };
-
 export type PageHeroProps = {
   eyebrow?: string;
   titleSoft?: string;
   titleStrong: string;
   subtitle?: ReactNode;
   watermark?: string;
-  /** Breadcrumb data is accepted for backwards compatibility but no longer rendered. */
-  crumbs?: Crumb[];
   scene?:
     | "default"
     | "home"

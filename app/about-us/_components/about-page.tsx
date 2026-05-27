@@ -4,15 +4,9 @@ import Link from "next/link";
 import { Eye, Flame, Leaf, HeartHandshake } from "lucide-react";
 
 import { PageHero } from "../../_shared/layout/page-hero";
+import { FinalCTA } from "../../_shared/layout/final-cta";
 
 const manifesto = [
-  {
-    id: "blue",
-    
-    title: "Transparency & Communication",
-    desc: "We hold ourselves to open, honest communication at every level. Trust is built and sustained through how leadership, teams, and external partners actually talk to each other.",
-    icon: <Eye size={22} strokeWidth={1.7} aria-hidden="true" />,
-  },
   {
     id: "red",
 
@@ -21,18 +15,25 @@ const manifesto = [
     icon: <Flame size={22} strokeWidth={1.7} aria-hidden="true" />,
   },
   {
-    id: "green",
-
-    title: "Well Being",
-    desc: "We champion the well-being of every individual within the organisation. A healthy, supportive, balanced environment is how people thrive, and how good work gets done.",
-    icon: <Leaf size={22} strokeWidth={1.7} aria-hidden="true" />,
-  },
-  {
     id: "yellow",
 
     title: "Inclusivity",
     desc: "Inclusivity is non-negotiable. Every voice is heard, every person is seen, and diversity of perspective, background, and experience is treated as a strategic strength.",
     icon: <HeartHandshake size={22} strokeWidth={1.7} aria-hidden="true" />,
+  },
+  {
+    id: "blue",
+
+    title: "Transparency & Communication",
+    desc: "We hold ourselves to open, honest communication at every level. Trust is built and sustained through how leadership, teams, and external partners actually talk to each other.",
+    icon: <Eye size={22} strokeWidth={1.7} aria-hidden="true" />,
+  },
+  {
+    id: "green",
+
+    title: "Well Being",
+    desc: "We champion the well-being of every individual within the organisation. A healthy, supportive, balanced environment is how people thrive, and how good work gets done.",
+    icon: <Leaf size={22} strokeWidth={1.7} aria-hidden="true" />,
   },
 ];
 
@@ -49,7 +50,7 @@ const team = [
     role: "CEO & Co-Founder",
     intro: "Operator-turned-advisor focused on strategy, operating models, and durable execution.",
     image: "/team/cristian.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/cmargaretic/",
   },
   {
     name: "Savio James Abraham",
@@ -63,21 +64,20 @@ const team = [
     role: "Director, Business Development",
     intro: "Partners with leadership teams on growth, market clarity, and long-horizon strategy.",
     image: "/team/flavio.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/flavio-gall/",
   },
 ];
 
 function LinkedInIcon() {
   return (
     <svg
-      className="au-team-li-icon"
-      width="16"
-      height="16"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="currentColor"
       aria-hidden="true"
     >
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
     </svg>
   );
 }
@@ -168,7 +168,13 @@ export function AboutPage() {
                     <circle cx="157" cy="36" r="4" fill="#E7473C" />
                   </svg>
                   {member.image ? (
-                    <img src={member.image} alt={member.name} className="au-leader-photo" />
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="au-leader-photo"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   ) : (
                     <span className="au-leader-initials">
                       {member.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
@@ -181,15 +187,17 @@ export function AboutPage() {
                   <div className="au-leader-divider" aria-hidden="true" />
                   <p className="au-leader-bio">{member.intro}</p>
                 </div>
-                <a
-                  className="au-leader-li"
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${member.name} on LinkedIn`}
-                >
-                  <LinkedInIcon />
-                </a>
+                {member.linkedin && member.linkedin !== "#" ? (
+                  <a
+                    className="au-leader-li"
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${member.name} on LinkedIn`}
+                  >
+                    <LinkedInIcon />
+                  </a>
+                ) : null}
               </div>
             ))}
           </div>
@@ -228,23 +236,12 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="au-cta">
-        <div className="au-cta-inner">
-          <h2>The right partner changes everything.</h2>
-          <p>
-            Connect with HARTS to explore how strategic clarity and disciplined
-            execution can unlock transformative value for your organisation.
-          </p>
-          <div className="au-cta-actions">
-            <Link className="solid-button large" href="/contact">
-              Connect with HARTS
-            </Link>
-            <Link className="outline-button large" href="/how-we-work">
-              How we work
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTA
+        heading="The right partner changes everything."
+        body="Connect with HARTS to explore how strategic clarity and disciplined execution can unlock transformative value for your organisation."
+        primary={{ label: "Connect with HARTS", href: "/contact" }}
+        secondary={{ label: "How we work", href: "/how-we-deliver" }}
+      />
     </main>
   );
 }

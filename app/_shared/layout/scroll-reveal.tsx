@@ -10,7 +10,7 @@ const REVEAL_SELECTOR = [
   ".challenge-visual",
   ".challenge-image-wrap",
   ".premium-info-card",
-  ".partner-content",
+  ".final-cta-inner",
   ".industry-grid-heading",
   ".industry-sector-card",
   ".industry-final-cta-inner",
@@ -33,12 +33,10 @@ const REVEAL_SELECTOR = [
   ".au-story-copy",
   ".au-story-pillars li",
   ".au-section-hd",
-  ".au-cta-inner",
   ".au-reveal",
   ".careers-culture-inner",
   ".careers-opening-heading",
   ".careers-card",
-  ".careers-coming-soon-inner",
   ".contact-hero-content",
   ".contact-hero-media",
   ".contact-form-block",
@@ -73,7 +71,7 @@ export function ScrollReveal() {
       items.forEach((item, index) => {
         item.classList.remove("site-reveal--visible");
         item.classList.add("site-reveal");
-        item.style.setProperty("--site-reveal-delay", `${Math.min(index % 8, 7) * 70}ms`);
+        item.style.setProperty("--site-reveal-delay", `${Math.min(index % 8, 7) * 40}ms`);
       });
 
       if (!("IntersectionObserver" in window)) {

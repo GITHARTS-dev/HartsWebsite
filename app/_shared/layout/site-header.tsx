@@ -43,7 +43,13 @@ export function SiteHeader() {
   return (
     <header className={`site-header${menuOpen ? " site-header--menu-open" : ""}`}>
       <Link className="brand" href="/" aria-label="HARTS home">
-        <img src="/HARTS Consulting LBG.png" alt="HARTS Consulting" />
+        <img
+          src="/HARTS Consulting LBG.png"
+          alt="HARTS Consulting"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
       </Link>
 
       <nav className="primary-nav" aria-label="Primary navigation">

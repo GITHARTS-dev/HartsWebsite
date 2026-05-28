@@ -135,7 +135,6 @@ export function ContactForm() {
           </label>
         </div>
       </fieldset>
-
       {errorMsg && (
         <p className="apply-form-error" role="alert">{errorMsg}</p>
       )}

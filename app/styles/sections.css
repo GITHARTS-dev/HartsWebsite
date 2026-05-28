@@ -8626,6 +8626,7 @@ a.solid-button:visited {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 32px;
 }
 
 .apply-fieldset {

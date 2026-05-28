@@ -42,6 +42,7 @@ export default function ContactRoute() {
               <h2>Send Us Your Inquiry</h2>
               <p>Share your challenge and a senior consultant will respond within one business day.</p>
             </div>
+            <ContactForm />
           </div>
         </section>
 
@@ -50,7 +51,7 @@ export default function ContactRoute() {
 
             <header className="contact-offices-head">
               <p className="contact-offices-eyebrow">Find Us</p>
-              <h2 className="contact-offices-heading">Our global offices</h2>
+              <h2 className="contact-offices-heading">Our Global Presence</h2>
             </header>
 
             <div className="contact-offices-grid">

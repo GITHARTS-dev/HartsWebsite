@@ -211,7 +211,7 @@ export function ApplicationForm({ roleSlug, roleTitle }: Props) {
           {status === "submitting" ? "Submitting…" : "Submit application"}
         </button>
         <p className="apply-form-privacy">
-          Your information is handled in strict confidence and used solely for
+          Your information is handled in confidence and used solely for
           the recruitment process.
         </p>
       </div>

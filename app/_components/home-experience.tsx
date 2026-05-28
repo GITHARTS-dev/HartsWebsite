@@ -163,7 +163,7 @@ export function HomeExperience() {
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
             <Link className="outline-button magnetic-button" href="/what-we-deliver">
-              Explore Capabilities
+              Explore Our Capabilities
             </Link>
           </div>
         </div>

@@ -29,11 +29,11 @@ export default function ContactRoute() {
           titleSoft="Let’s start a"
           titleStrong="Conversation."
           subtitle="Whether you are navigating a major transformation, exploring a growth opportunity, or seeking an independent strategic perspective, our team is ready to engage."
-          actions={
-            <Link className="solid-button large" href="#inquiry">
-              Send an inquiry
-            </Link>
-          }
+          // actions={
+          //   <Link className="solid-button large" href="#inquiry">
+          //     Send an inquiry
+          //   </Link>
+          // }
         />
 
         <section className="section contact-inquiry-section" id="inquiry">
@@ -42,7 +42,6 @@ export default function ContactRoute() {
               <h2>Send Us Your Inquiry</h2>
               <p>Share your challenge and a senior consultant will respond within one business day.</p>
             </div>
-            <ContactForm />
           </div>
         </section>
 
@@ -61,8 +60,8 @@ export default function ContactRoute() {
                 <span className="contact-office-tag">Europe</span>
                 <h3 className="contact-office-city">Düsseldorf</h3>
                 <address className="contact-office-address">
-                  350 ABC Street<br />
-                  Boston, XYZ 02116<br />
+                  Am Wildpark 51<br />
+                  40629 Düsseldorf<br />
                   Germany
                 </address>
                 {/* <span className="contact-office-country">Germany</span> */}

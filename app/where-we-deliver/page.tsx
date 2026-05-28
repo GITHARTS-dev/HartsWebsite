@@ -9,7 +9,7 @@ import { domains } from "../_data/domains";
 import { getService } from "../_data/services";
 
 export const metadata: Metadata = {
-  title: "Where We Deliver — Setup, Develop, Scale Up",
+  title: "Where We Deliver Setup, Develop, Scale Up",
   description:
     "HARTS engages across three operational moments: Setup (building from the ground up), Develop (strengthening operational maturity), and Scale Up (expanding proven operations with control).",
   alternates: { canonical: "/where-we-deliver" },

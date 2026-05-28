@@ -72,7 +72,6 @@ export function ContactForm() {
     );
   }
 
-  
   return (
     <form
       action="/api/contact"

@@ -8,7 +8,7 @@ import { ServiceIcon, ArrowIcon } from "../_shared/icons";
 import { services } from "../_data/services";
 
 export const metadata: Metadata = {
-  title: "What We Deliver — Six Consulting Services",
+  title: "What We Deliver Six Consulting Services",
   description:
     "Six end-to-end consulting services: OD & Implementation, Centre of Excellence, Post M&A Integration, GCC & Shared Services, Recruitment as a Service, and Executive Coaching.",
   alternates: { canonical: "/what-we-deliver" },
@@ -49,7 +49,7 @@ export default function WhatWeDeliverRoute() {
               </h2>
               <p>
                 Each row is a capability we build, run, and transfer. Pick the
-                one that matches the moment you&apos;re in — the discipline
+                one that matches the moment you&apos;re in the discipline
                 behind it stays the same.
               </p>
             </header>

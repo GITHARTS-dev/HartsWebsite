@@ -56,7 +56,7 @@ const team = [
     name: "Savio James Abraham",
     role: "Chief Operating Officer",
     intro: "Builds the operational discipline that converts strategic intent into measurable progress.",
-    image: "/team/savio.png",
+    image: "/team/savio-abraham.png",
     linkedin: "https://www.linkedin.com/in/savio-james-abraham/",
   },
   {

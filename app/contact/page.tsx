@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { MapPin } from "lucide-react";
 import { ContactForm } from "./_components/contact-form";
 import { PageShell } from "../_shared/layout/page-shell";
 import { PageHero } from "../_shared/layout/page-hero";
+
+const offices = [
+  {
+    region: "Europe",
+    city: "Düsseldorf",
+    lines: ["Am Wildpark 51", "40629 Düsseldorf", "Germany"],
+    directions:
+      "https://www.google.com/maps/search/?api=1&query=Am+Wildpark+51+40629+D%C3%BCsseldorf+Germany",
+  },
+  {
+    region: "India",
+    city: "Coimbatore",
+    lines: ["7C, Mayflower Signature", "Avinashi Road, Peelamedu", "Coimbatore – 641004"],
+    directions: "https://maps.app.goo.gl/sQyjGTZzVEdVLYC67",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Contact HARTS — Start a Conversation",
@@ -46,40 +62,41 @@ export default function ContactRoute() {
           </div>
         </section>
 
-        <section className="contact-offices-section">
-          <div className="contact-offices-shell">
-
-            <header className="contact-offices-head">
-              <p className="contact-offices-eyebrow">Find Us</p>
-              <h2 className="contact-offices-heading">Our Global Presence</h2>
+        <section className="locations-section">
+          <div className="locations-shell">
+            <header className="locations-head">
+              <p className="locations-eyebrow">Find Us</p>
+              <h2 className="locations-heading">
+                Where you can <em>reach us.</em>
+              </h2>
             </header>
 
-            <div className="contact-offices-grid">
-
-              {/* Germany — Headquarters */}
-              <div className="contact-office-card">
-                <span className="contact-office-tag">Europe</span>
-                <h3 className="contact-office-city">Düsseldorf</h3>
-                <address className="contact-office-address">
-                  Am Wildpark 51<br />
-                  40629 Düsseldorf<br />
-                  Germany
-                </address>
-                {/* <span className="contact-office-country">Germany</span> */}
-              </div>
-
-              {/* India */}
-              <div className="contact-office-card">
-                <span className="contact-office-tag">India</span>
-                <h3 className="contact-office-city">Coimbatore</h3>
-                <address className="contact-office-address">
-                  7C, Mayflower Signature<br />
-                  Avinashi Road, Peelamedu<br />
-                  Coimbatore &ndash; 641004
-                </address>
-                {/* <span className="contact-office-country">India</span> */}
-              </div>
-
+            <div className="locations-grid">
+              {offices.map((office) => (
+                <article key={office.city} className="location-card">
+                  <span className="location-pin" aria-hidden="true">
+                    <MapPin size={22} strokeWidth={1.8} />
+                  </span>
+                  <span className="location-region">{office.region}</span>
+                  <h3 className="location-city">{office.city}</h3>
+                  <address className="location-address">
+                    {office.lines.map((line, i) => (
+                      <span key={line}>
+                        {line}
+                        {i < office.lines.length - 1 && <br />}
+                      </span>
+                    ))}
+                  </address>
+                  <a
+                    className="location-directions"
+                    href={office.directions}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get directions <span aria-hidden="true">→</span>
+                  </a>
+                </article>
+              ))}
             </div>
           </div>
         </section>

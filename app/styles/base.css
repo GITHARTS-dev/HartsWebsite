@@ -28,10 +28,11 @@
 
 html {
   scroll-behavior: smooth;
-  /* Offset hash-anchor scrolling by the sticky-header height (72px) +
-     a small breathing buffer so the target section's top sits cleanly
-     below the navbar rather than getting hidden by it. */
-  scroll-padding-top: 88px;
+  /* Offset hash-anchor scrolling by exactly the sticky-header height
+     (72px). No extra buffer — adding one lets a strip of the previous
+     section bleed through above the target. Sections supply their own
+     internal top padding for breathing room below the navbar. */
+  scroll-padding-top: 72px;
 }
 
 body {

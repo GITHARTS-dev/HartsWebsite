@@ -4,9 +4,9 @@ import { PageShell } from "../_shared/layout/page-shell";
 import { CareersPage } from "./_components/careers-page";
 
 export const metadata: Metadata = {
-  title: "Careers — Join HARTS Consulting",
+  title: "Careers Join HARTS Consulting",
   description:
-    "Join HARTS — a senior team of strategists, operators, and technologists. Open roles across Strategy & Transformation, GCC & Shared Services, and People & Talent.",
+    "Join HARTS a senior team of strategists, operators, and technologists. Open roles across Strategy & Transformation, GCC & Shared Services, and People & Talent.",
   alternates: { canonical: "/careers" },
   openGraph: {
     title: "Careers at HARTS Consulting",

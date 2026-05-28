@@ -7,7 +7,7 @@ import { PageHero } from "../_shared/layout/page-hero";
 import { FinalCTA } from "../_shared/layout/final-cta";
 
 export const metadata: Metadata = {
-  title: "How We Deliver — Build, Operate, Transfer",
+  title: "How We Deliver Build, Operate, Transfer",
   description:
     "Build, Operate, Transfer is the spine of every HARTS engagement. We build the capability, run it through transition, and transfer ownership when your team is ready to sustain it.",
   alternates: { canonical: "/how-we-deliver" },

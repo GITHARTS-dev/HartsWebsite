@@ -68,7 +68,7 @@ export const openings: Opening[] = [
       "Design job architecture, competency frameworks, and EVP for client organisations.",
       "Run recruitment-as-a-service mandates for niche and leadership hiring needs.",
       "Build and facilitate leadership-development and change-enablement programmes.",
-      "Bring measurement discipline to people initiatives — adoption, engagement, attrition.",
+      "Bring measurement discipline to people initiatives adoption, engagement, attrition.",
     ],
     qualifications: [
       "7+ years across HR strategy, talent, OD, or learning consulting.",

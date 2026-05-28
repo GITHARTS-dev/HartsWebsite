@@ -248,7 +248,7 @@ export function HomeExperience() {
         <div className="home-section-shell">
           <div className="home-section-heading scroll-reveal">
             <p className="eyebrow">Where We Deliver</p>
-            <h2>Three moments. One partner across all of them.</h2>
+            <h2>From setup to scale, we partner across every stage of growth.</h2>
             <p>
               HARTS organises around where you are, not what we sell. Setup, Develop,
               Scale Up - one capability, one engagement model, three moments of intervention.

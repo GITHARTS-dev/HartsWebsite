@@ -237,7 +237,8 @@ export function AboutPage() {
       </section>
 
       <FinalCTA
-        heading="The right partner changes everything."
+        heading={<>The right partner <em>changes everything.</em></>}
+        // heading="The right partner changes everything."
         body="Connect with HARTS to explore how strategic clarity and disciplined execution can unlock transformative value for your organisation."
         primary={{ label: "Connect With HARTS", href: "/contact" }}
         secondary={{ label: "How We Work", href: "/how-we-deliver" }}

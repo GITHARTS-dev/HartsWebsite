@@ -8012,7 +8012,7 @@ a.solid-button:visited {
   color: #5282B9;
 }
 .au-manifesto-card--blue .au-manifesto-label  { color: #5282B9; }
-.au-manifesto-card--blue .au-manifesto-title  { color: #3D6090; }
+.au-manifesto-card--blue .au-manifesto-title  { color: #5282B9; }
 .au-manifesto-card--blue .au-manifesto-accent { background: linear-gradient(90deg, #5282B9, #A8C4DF, #5282B9); }
 
 /* ── Red  #D13A01 ── */
@@ -8027,7 +8027,7 @@ a.solid-button:visited {
   color: #D13A01;
 }
 .au-manifesto-card--red .au-manifesto-label  { color: #D13A01; }
-.au-manifesto-card--red .au-manifesto-title  { color: #A52D01; }
+.au-manifesto-card--red .au-manifesto-title  { color: #D13A01; }
 .au-manifesto-card--red .au-manifesto-accent { background: linear-gradient(90deg, #D13A01, #F4A98A, #D13A01); }
 
 /* ── Green  #8AC747 ── */
@@ -8042,7 +8042,7 @@ a.solid-button:visited {
   color: #6A9A30;
 }
 .au-manifesto-card--green .au-manifesto-label  { color: #6A9A30; }
-.au-manifesto-card--green .au-manifesto-title  { color: #507820; }
+.au-manifesto-card--green .au-manifesto-title  { color: #6A9A30; }
 .au-manifesto-card--green .au-manifesto-accent { background: linear-gradient(90deg, #8AC747, #C5E895, #8AC747); }
 
 /* ── Yellow / Orange  #F7A708 ── */
@@ -8057,7 +8057,7 @@ a.solid-button:visited {
   color: #C27D05;
 }
 .au-manifesto-card--yellow .au-manifesto-label  { color: #C27D05; }
-.au-manifesto-card--yellow .au-manifesto-title  { color: #9A5F02; }
+.au-manifesto-card--yellow .au-manifesto-title  { color: #C27D05; }
 .au-manifesto-card--yellow .au-manifesto-accent { background: linear-gradient(90deg, #F7A708, #FDDFA0, #F7A708); }
 
 /* ── Responsive ──────────────────────────────────────────────────────── */

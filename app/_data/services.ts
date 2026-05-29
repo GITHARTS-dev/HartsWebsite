@@ -25,6 +25,8 @@ export type Service = {
   /** Service-specific BOT prose - three paragraphs, one per phase. */
   bot: { build: string; operate: string; transfer: string };
   ctx: { setup: string; develop: string; scaleup: string };
+  /** SEO keywords targeted by this service's detail page. */
+  keywords: string[];
 };
 
 export const services: Service[] = [
@@ -59,6 +61,17 @@ export const services: Service[] = [
       develop: "Strengthen existing teams through capability assessment, leadership development, and performance alignment.",
       scaleup: "Replicate proven organizational models across new regions, business units, and operational environments.",
     },
+    keywords: [
+      "organisational design consulting",
+      "operating model design",
+      "OD and implementation",
+      "workforce structure consulting",
+      "leadership capability development",
+      "talent acquisition strategy",
+      "employer value proposition",
+      "EVP design",
+      "organisation transformation consultant",
+    ],
   },
   {
     slug: "coe",
@@ -106,6 +119,16 @@ export const services: Service[] = [
       develop: "Strengthen existing CoEs through operational maturity, performance governance, continuous improvement, and execution alignment.",
       scaleup: "Replicate proven CoE models across business units, geographies, and enterprise functions with consistent governance standards.",
     },
+    keywords: [
+      "centre of excellence setup",
+      "centre of excellence consulting",
+      "CoE setup",
+      "operational excellence consulting",
+      "governance framework consulting",
+      "enterprise performance management",
+      "continuous improvement consulting",
+      "process standardisation consulting",
+    ],
   },
   {
     slug: "ma-and-pmi",
@@ -135,6 +158,17 @@ export const services: Service[] = [
       develop: "Strengthen internal integration capabilities through repeatable playbooks, governance maturity, and operational integration discipline.",
       scaleup: "Manage multi-entity integration programs across regions and business units with unified governance and centralized execution control.",
     },
+    keywords: [
+      "post merger integration consultant",
+      "M&A integration India",
+      "post merger integration services",
+      "100 day integration plan",
+      "integration management office",
+      "IMO consulting",
+      "synergy realisation consulting",
+      "merger integration consultant",
+      "acquisition integration playbook",
+    ],
   },
   {
     slug: "gcc-and-shared-services",
@@ -148,7 +182,7 @@ export const services: Service[] = [
       "I spent 14 years building and running Metro's global solution centre. This isn't theory - it's muscle memory.",
     subs: [
       { label: "GCC Operating Model & Governance Design", desc: "Define the organizational structure, governance framework, service catalogue, delivery model, and performance standards required to run a scalable GCC operation." },
-      { label: "Build–Operate–Transfer GCC Execution", desc: "Deliver end-to-end GCC setup and operationalization — from feasibility and transition planning through operational stabilization and capability transfer." },
+      { label: "Build,Operate,Transfer GCC Execution", desc: "Deliver end-to-end GCC setup and operationalization, from feasibility and transition planning through operational stabilization and capability transfer." },
       { label: "Workforce Ramp-Up & Operational Readiness", desc: "Build scalable recruitment, onboarding, workforce planning, and operational enablement programs aligned to delivery demand and business priorities." },
       { label: "Regulated & Enterprise-Grade Delivery Environments", desc: "Establish compliance-ready GCC operations for regulated industries including healthcare, financial services, manufacturing, and utilities." },
     ],
@@ -165,6 +199,17 @@ export const services: Service[] = [
       develop: "Strengthen existing GCC operations through governance maturity, process optimization, delivery stabilization, and workforce capability development.",
       scaleup: "Expand GCC operations across functions, business units, and geographies while maintaining governance consistency and operational quality.",
     },
+    keywords: [
+      "GCC setup India",
+      "global capability center consultant",
+      "global capability centre setup",
+      "captive center setup India",
+      "shared services setup",
+      "BOT GCC model",
+      "offshore capability center consulting",
+      "GCC build operate transfer",
+      "GCC site selection India",
+    ],
   },
   {
     slug: "recruitment-as-a-service",
@@ -196,6 +241,16 @@ export const services: Service[] = [
       develop: "Improve recruitment performance through process redesign, hiring governance, capability development, and operational optimization.",
       scaleup: "Support rapid workforce expansion through scalable recruitment operations, hiring acceleration, and structured capability transfer.",
     },
+    keywords: [
+      "recruitment as a service",
+      "RaaS provider India",
+      "talent acquisition outsourcing",
+      "workforce ramp up programme",
+      "scalable hiring solutions",
+      "recruitment process outsourcing",
+      "RPO consulting India",
+      "tech recruitment outsourcing",
+    ],
   },
   {
     slug: "executive-coaching",
@@ -227,6 +282,16 @@ export const services: Service[] = [
       develop: "Resolve leadership friction, improve decision cadence, and strengthen executive accountability during organizational growth.",
       scaleup: "Help scaling organizations expand leadership capability, preserve operational alignment, and maintain governance discipline across growth phases.",
     },
+    keywords: [
+      "executive coaching India",
+      "board advisory consulting",
+      "C-suite coaching",
+      "leadership coaching during transformation",
+      "CEO coaching India",
+      "board effectiveness consulting",
+      "executive coaching for transformation",
+      "leadership development coaching",
+    ],
   },
 ];
 

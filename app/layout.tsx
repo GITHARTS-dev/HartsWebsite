@@ -10,6 +10,7 @@ import {
   siteTagline,
   siteUrl,
 } from "./_lib/site";
+import { homepageKeywords } from "./_lib/keywords";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -22,21 +23,7 @@ export const metadata: Metadata = {
   authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
   publisher: siteName,
-  keywords: [
-    "consulting",
-    "strategy consulting",
-    "transformation",
-    "build operate transfer",
-    "BOT methodology",
-    "post merger integration",
-    "global capability center",
-    "GCC setup",
-    "operating model",
-    "OD and implementation",
-    "centre of excellence",
-    "executive coaching",
-    "HARTS Consulting",
-  ],
+  keywords: homepageKeywords,
   alternates: {
     canonical: "/",
   },
@@ -79,20 +66,29 @@ export const metadata: Metadata = {
     apple: "/logo (1).png",
   },
   category: "business",
+  other: {
+    "format-detection": "telephone=no",
+  },
 };
 
+// LocalBusiness extends ProfessionalService — Google understands the
+// hierarchy and merges both into a single entity but uses LocalBusiness
+// for Maps + Knowledge Panel features.
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "LocalBusiness", "Organization"],
   "@id": `${siteUrl}/#organization`,
   name: organization.legalName,
   alternateName: siteName,
+  legalName: organization.legalName,
   url: siteUrl,
   logo: `${siteUrl}${ogImagePath}`,
   image: `${siteUrl}${ogImagePath}`,
   description: siteDescription,
+  slogan: "Build. Operate. Transfer.",
   email: organization.email,
   telephone: organization.phone,
+  priceRange: "$$$",
   address: {
     "@type": "PostalAddress",
     streetAddress: organization.address.streetAddress,
@@ -101,8 +97,44 @@ const organizationJsonLd = {
     postalCode: organization.address.postalCode,
     addressCountry: organization.address.addressCountry,
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 11.0291,
+    longitude: 77.0252,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: organization.email,
+      telephone: organization.phone,
+      areaServed: ["IN", "AE", "GB", "US", "DE"],
+      availableLanguage: ["English"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: organization.email,
+      areaServed: ["IN", "AE", "GB", "US", "DE"],
+      availableLanguage: ["English"],
+    },
+  ],
   sameAs: organization.sameAs,
-  areaServed: ["IN", "AE", "GB", "US"],
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    { "@type": "Country", name: "Germany" },
+    { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "United States" },
+  ],
   knowsAbout: [
     "Strategy Consulting",
     "Operating Model Design",
@@ -111,8 +143,21 @@ const organizationJsonLd = {
     "Global Capability Centres",
     "Centre of Excellence",
     "Executive Coaching",
+    "Board Advisory",
     "Talent Acquisition",
+    "Recruitment Process Outsourcing",
+    "Organisational Design",
+    "Transformation Execution",
   ],
+  makesOffer: [
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "OD & Implementation" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Centre of Excellence" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Post M&A Integration" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "GCC & Shared Services" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Recruitment as a Service" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Executive Coaching & Board Advisory" } },
+  ],
+  foundingDate: "2020",
 };
 
 const websiteJsonLd = {
@@ -134,6 +179,18 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <head>
+        {/* Resource hints — speed up first-paint of Google Fonts (used by DM Sans
+            via app/globals.css) and the LinkedIn-cookie path that runs on hover
+            of the leadership LinkedIn buttons. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://www.linkedin.com" />
+        <link rel="dns-prefetch" href="https://maps.app.goo.gl" />
+        <meta name="theme-color" content="#E7473C" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

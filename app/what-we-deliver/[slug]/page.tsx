@@ -23,11 +23,12 @@ export async function generateMetadata({ params }: ServiceRouteProps): Promise<M
   }
 
   const canonical = `/what-we-deliver/${service.slug}`;
-  const description = `${service.line} ${siteName} delivers ${service.title} end-to-end through the Build–Operate–Transfer model.`;
+  const description = `${service.line} ${siteName} delivers ${service.title} end-to-end through the Build,Operate,Transfer model.`;
 
   return {
     title: service.title,
     description,
+    keywords: service.keywords,
     alternates: { canonical },
     openGraph: {
       title: `${service.title} | ${siteName}`,

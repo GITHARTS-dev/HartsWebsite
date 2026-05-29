@@ -107,10 +107,12 @@ export function AboutPage() {
             <p className="eyebrow">Our story</p>
             <h2>Built for the moments where progress matters.</h2>
             <p>
-              HARTS partners with leadership teams navigating moments of decisive
-              change: restructuring, expansion, modernisation, and the messy
-              middle of transformation. Our craft is helping organisations think
-              clearly, decide deliberately, and execute with operating discipline.
+              HARTS is a boutique strategy and transformation consulting firm.
+              We partner with leadership teams navigating moments of decisive
+              change: restructuring, expansion, post-merger integration,
+              modernisation, and the messy middle of transformation. Our craft
+              is helping organisations think clearly, decide deliberately, and
+              execute with operating discipline.
             </p>
             <p>
               We are a senior team of strategists, operators, and technologists.
@@ -170,7 +172,7 @@ export function AboutPage() {
                   {member.image ? (
                     <img
                       src={member.image}
-                      alt={member.name}
+                      alt={`${member.name}, ${member.role} at HARTS Consulting`}
                       className="au-leader-photo"
                       loading="lazy"
                       decoding="async"

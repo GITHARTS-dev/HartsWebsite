@@ -44,7 +44,7 @@ export const openings: Opening[] = [
     team: "GCC & Shared Services",
     responsibilities: [
       "Run feasibility, location, and entity-structure analyses for new GCC builds.",
-      "Lead Build–Operate–Transfer engagements across legal, talent, real estate, and tech.",
+      "Lead Build,Operate,Transfer engagements across legal, talent, real estate, and tech.",
       "Define SLAs, operating KPIs, and the governance model that the client will inherit.",
       "Partner with leadership to scale headcount, capability, and process maturity.",
     ],

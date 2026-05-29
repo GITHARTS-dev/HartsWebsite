@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PageShell } from "../_shared/layout/page-shell";
 import { PageHero } from "../_shared/layout/page-hero";
 import { FinalCTA } from "../_shared/layout/final-cta";
+import { siteUrl } from "../_lib/site";
 
 export const metadata: Metadata = {
   title: "How We Deliver Build, Operate, Transfer",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How We Deliver | HARTS",
     description:
-      "The HARTS Build-Operate-Transfer delivery model — build capability, run it alongside your teams, transfer ownership.",
+      "The HARTS Build, Operate, Transfer delivery model. Build capability, run it alongside your teams, transfer ownership.",
     url: "/how-we-deliver",
     type: "article",
   },
@@ -65,9 +66,116 @@ const outcomes = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${siteUrl}/how-we-deliver#faq`,
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the Build-Operate-Transfer (BOT) methodology?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Build-Operate-Transfer is HARTS's end-to-end delivery model. We design the operating model and governance (Build), run the capability alongside your teams while they shadow and learn (Operate), then formally transfer ownership and exit through a structured hypercare period (Transfer). The methodology is engineered to create long-term operational ownership rather than dependency on consultants.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens during the Build phase?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "During Build, HARTS designs the operating model, governance structure, workforce capability framework, and execution model required to support the business objective. The output is an operating model designed specifically for your organisation, not a generic playbook.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens during the Operate phase?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "HARTS runs the capability alongside your teams. We hold the weight while your people shadow, learn, and take decisions. By the time we step back, the work is already theirs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens during the Transfer phase?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Operational ownership, leadership accountability, and delivery capability transition formally into your organisation. HARTS stays close through a hypercare period, then leaves a light governance retainer so the work keeps improving after we leave.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is HARTS different from traditional management consulting?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Traditional consulting ends with a recommendation deck and a long-term retainer. HARTS doesn't advise and leave. We build the capability, run it through transition, and hand it over to your team. Our founding principle: if it doesn't run without us, we haven't finished the job.",
+      },
+    },
+  ],
+};
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": `${siteUrl}/how-we-deliver#howto`,
+  name: "How HARTS delivers Build-Operate-Transfer (BOT) engagements",
+  description:
+    "The three-phase HARTS BOT methodology for designing, running, and transferring operational capabilities to client organisations.",
+  totalTime: "P12M",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Build",
+      text: "HARTS designs the operating model, governance structure, workforce capability framework, and execution model required to support the business objective.",
+      url: `${siteUrl}/how-we-deliver#build`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Operate",
+      text: "HARTS runs the capability alongside the client's teams while stabilising operations, embedding governance, and building execution maturity.",
+      url: `${siteUrl}/how-we-deliver#operate`,
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Transfer",
+      text: "HARTS transitions operational ownership, leadership accountability, and delivery capability into the client organisation with long-term sustainability embedded.",
+      url: `${siteUrl}/how-we-deliver#transfer`,
+    },
+  ],
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "How We Deliver",
+      item: `${siteUrl}/how-we-deliver`,
+    },
+  ],
+};
+
 export default function HowWeDeliverRoute() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <main className="ed-page">
         <PageHero
           scene="how-we-work"
@@ -93,9 +201,10 @@ export default function HowWeDeliverRoute() {
                   Three phases. <em>One unbroken arc.</em>
                 </h2>
                 <p className="approach-intro-text">
-                  Every HARTS engagement follows a Build–Operate–Transfer(BOT)
-                  delivery model designed to create long-term operational
-                  ownership not dependency on consultants.
+                  Every HARTS consulting engagement follows a structured
+                  Build,Operate,Transfer (BOT) delivery model designed to
+                  create long-term operational ownership inside your
+                  organisation, not dependency on consultants.
                 </p>
               </div>
             </header>

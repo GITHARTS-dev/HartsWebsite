@@ -135,7 +135,7 @@ export function HomeExperience() {
             <p className="eyebrow">What We Deliver</p>
             <h2>Strategy is only valuable when operations can sustain it.</h2>
             <p>
-              HARTS partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and seamless transition into a disciplined model.
+              HARTS is a strategy and transformation consulting firm that partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and disciplined transfer under one operating model.
             </p>
           </div>
 
@@ -180,7 +180,7 @@ export function HomeExperience() {
             <p className="eyebrow">How We Deliver</p>
             <h2>Build. Operate. Transfer.</h2>
             <p>
-              The Build–Operate–Transfer methodology is the spine of every HARTS engagement.
+              The Build,Operate,Transfer (BOT) consulting methodology is the spine of every HARTS engagement.
               We don&apos;t advise and leave. We build the capability, run it through transition,
               and hand it over to your team.
             </p>
@@ -251,7 +251,8 @@ export function HomeExperience() {
             <h2>From setup to scale, we partner across every stage of growth.</h2>
             <p>
               HARTS organises around where you are, not what we sell. Setup, Develop,
-              Scale Up - one capability, one engagement model, three moments of intervention.
+              Scale Up; one consulting partner, one engagement model, three moments
+              of intervention across your transformation lifecycle.
             </p>
           </div>
 

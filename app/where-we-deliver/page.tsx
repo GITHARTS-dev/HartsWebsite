@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Where We Deliver | HARTS",
     description:
-      "Three operational moments — Setup, Develop, Scale Up. One consulting partner across all of them.",
+      "Three operational moments: Setup, Develop, Scale Up. One consulting partner across all of them.",
     url: "/where-we-deliver",
     type: "article",
   },
@@ -32,7 +32,7 @@ export default function WhereWeDeliverRoute() {
           eyebrow="Where We Deliver"
           titleSoft="Three Contexts."
           titleStrong="One Approach."
-          subtitle="HARTS aligns its services to the operational stage of your organization — whether you are building a new capability, strengthening an existing operation, or scaling proven models across the enterprise."
+          subtitle="HARTS aligns its services to the operational stage of your organization whether you are building a new capability, strengthening an existing operation, or scaling proven models across the enterprise."
           actions={
             <Link className="solid-button large" href="/contact">
               Connect With Us

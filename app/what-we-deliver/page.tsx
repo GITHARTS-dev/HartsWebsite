@@ -48,9 +48,10 @@ export default function WhatWeDeliverRoute() {
                 Six services we deliver <span className="ed-accent">end-to-end.</span>
               </h2>
               <p>
-                Each row is a capability we build, run, and transfer. Pick the
-                one that matches the moment you&apos;re in the discipline
-                behind it stays the same.
+                Six consulting services we build, run, and transfer. Pick the
+                one that matches the moment you&apos;re in the disciplined
+                Build,Operate,Transfer methodology behind each engagement stays
+                the same.
               </p>
             </header>
 

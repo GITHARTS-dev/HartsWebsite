@@ -15,20 +15,28 @@ const offices = [
   {
     region: "India",
     city: "Coimbatore",
-    lines: ["7C, Mayflower Signature", "Avinashi Road, Peelamedu", "Coimbatore – 641004"],
+    lines: ["7C, Mayflower Signature", "Avinashi Road, Peelamedu", "Coimbatore - 641004"],
     directions: "https://maps.app.goo.gl/sQyjGTZzVEdVLYC67",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Contact HARTS — Start a Conversation",
+  title: "Contact HARTS Consulting | Coimbatore & Düsseldorf",
   description:
-    "Connect with HARTS Consulting in Coimbatore, India. Email hello@globalharts.com or send a project inquiry to start a senior-led conversation.",
+    "Contact HARTS Consulting, a strategy and transformation consulting firm with offices in Coimbatore (India) and Düsseldorf (Germany). Email hello@globalharts.com to start a senior-led conversation about your operating model, integration, GCC setup, or capability build.",
+  keywords: [
+    "contact HARTS Consulting",
+    "consulting firm Coimbatore",
+    "consulting firm Düsseldorf",
+    "management consulting contact India",
+    "request consulting proposal",
+    "hire consulting firm India",
+  ],
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact HARTS",
+    title: "Contact HARTS Consulting",
     description:
-      "Start a conversation with HARTS Consulting. Senior-led, focused responses within one business day.",
+      "Start a conversation with HARTS Consulting. Offices in Coimbatore and Düsseldorf. Senior-led responses within one business day.",
     url: "/contact",
     type: "website",
   },

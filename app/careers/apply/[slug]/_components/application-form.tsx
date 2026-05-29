@@ -9,8 +9,8 @@ type Props = {
   roleTitle: string;
 };
 
-const EXPERIENCE = ["0–2 years", "3–5 years", "6–10 years", "11–15 years", "16+ years"];
-const NOTICE = ["Immediate", "Up to 30 days", "30–60 days", "60–90 days", "90+ days"];
+const EXPERIENCE = ["0 to 2 years", "3 to 5 years", "6 to 10 years", "11 to 15 years", "16+ years"];
+const NOTICE = ["Immediate", "Up to 30 days", "30 to 60 days", "60 to 90 days", "90+ days"];
 const HEARD = ["LinkedIn", "Referral", "HARTS website", "Search engine", "Industry event", "Other"];
 
 const ACCEPTED = [".pdf", ".doc", ".docx"];

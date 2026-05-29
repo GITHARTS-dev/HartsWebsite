@@ -179,7 +179,7 @@ export const services: Service[] = [
     titleStrong: "Shared Services",
     line: "Establish, operationalize, and scale Global Capability Centers with embedded governance and execution control.",
     voice:
-      "I spent 14 years building and running Metro's global solution centre. This isn't theory - it's muscle memory.",
+      "I spent 14 years building and running Metro's global solution centre. This isn't theory - it's knowledge forged in practice.",
     subs: [
       { label: "GCC Operating Model & Governance Design", desc: "Define the organizational structure, governance framework, service catalogue, delivery model, and performance standards required to run a scalable GCC operation." },
       { label: "Build,Operate,Transfer GCC Execution", desc: "Deliver end-to-end GCC setup and operationalization, from feasibility and transition planning through operational stabilization and capability transfer." },

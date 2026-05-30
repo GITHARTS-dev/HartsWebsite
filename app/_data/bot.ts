@@ -9,6 +9,7 @@ export type BotStage = {
   items: BotItem[];
 };
 
+
 export type BotPhase = {
   key: "build" | "operate" | "transfer";
   num: string;

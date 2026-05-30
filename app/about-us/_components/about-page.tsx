@@ -107,17 +107,10 @@ export function AboutPage() {
             <p className="eyebrow">Our story</p>
             <h2>Built for the moments where progress matters.</h2>
             <p>
-              HARTS is a boutique strategy and transformation consulting firm.
-              We partner with leadership teams navigating moments of decisive
-              change: restructuring, expansion, post-merger integration,
-              modernisation, and the messy middle of transformation. Our craft
-              is helping organisations think clearly, decide deliberately, and
-              execute with operating discipline.
+              HARTS is a consulting partner for organizations navigating growth, change, and critical business decisions. We work closely with leadership teams to strengthen operations, build capabilities, integrate acquisitions, and drive sustainable performance.
             </p>
             <p>
-              We are a senior team of strategists, operators, and technologists.
-              We work side by side with our clients, leave capability behind, and
-              measure ourselves by the durability of the outcomes we help create.
+              Our team combines strategic insight, operational expertise, and practical execution to help organizations move forward with confidence. We don't just advise we work alongside our clients to deliver measurable results, build internal capability, and create lasting value.
             </p>
           </div>
           <ul className="au-story-pillars">

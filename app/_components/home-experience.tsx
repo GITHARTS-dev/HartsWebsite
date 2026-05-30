@@ -173,7 +173,7 @@ export function HomeExperience() {
       </section>
 
       {/* ─── HOW WE DELIVER (BOT) ─────────────────────────────────────── */}
-      <section
+      {/* <section
         className="home-premium-section choose-section parallax-section"
         id="how-we-deliver"
       >
@@ -240,7 +240,7 @@ export function HomeExperience() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ─── WHERE WE DELIVER (3 domains) ─────────────────────────────── */}
       <section

@@ -23,7 +23,7 @@ export type Service = {
   voice: string;
   subs: ServiceSub[];
   /** Service-specific BOT prose - three paragraphs, one per phase. */
-  bot: { build: string; operate: string; transfer: string };
+  bot: { build: string; operate: string; transfer: string; names?: [string, string, string] };
   ctx: { setup: string; develop: string; scaleup: string };
   /** SEO keywords targeted by this service's detail page. */
   keywords: string[];
@@ -49,12 +49,13 @@ export const services: Service[] = [
       { label: "Employer Brand & Employee Value Proposition", desc: "Define and strengthen the employee experience to improve attraction, engagement, and long-term workforce retention." },
     ],
     bot: {
+      names: ["Assess & Align", "Design & Execute", "Embed & Sustain"],
       build:
-        "Define the future operating model, organizational structure, governance framework, and workforce requirements needed to support business objectives.",
+        "We evaluate your organizational structure, operating model, and strategic objectives while aligning key stakeholders around the desired future state.",
       operate:
-        "Work alongside leadership and operational teams to implement structures, embed processes, and stabilize workforce execution.",
+        "We develop practical solutions and implement them through structured change, governance, and execution plans.",
       transfer:
-        "Transition ownership with governance, capability maturity, and operational continuity fully embedded within the organization.",
+        "We build internal ownership, monitor adoption, and ensure improvements are sustained over the long term.",
     },
     ctx: {
       setup: "Design the organization from the ground up including structure, leadership roles, workforce planning, and operating governance.",
@@ -107,12 +108,13 @@ export const services: Service[] = [
       },
     ],
     bot: {
+      names: ["Assess & Define", "Design & Establish", "Operate & Optimize"],
       build:
-        "Design the Centre of Excellence structure, governance model, reporting cadence, operational metrics, and leadership framework.",
+        "We identify capability requirements, operating model needs, and business priorities.",
       operate:
-        "Run the CoE alongside your teams while embedding operational discipline, decision governance, and continuous improvement practices.",
+        "We create the governance, processes, roles, and frameworks required for an effective CoE.",
       transfer:
-        "Transition the CoE with governance maturity, operational ownership, and sustainable execution capability fully embedded.",
+        "We support implementation and continuously refine the CoE to maximize value and performance.",
     },
     ctx: {
       setup: "Establish the CoE from the ground up, including governance, tooling, reporting structures, operational cadence, and leadership ownership.",
@@ -146,12 +148,13 @@ export const services: Service[] = [
       { label: "Synergy Planning & Value Tracking", desc: "Identify, monitor, and validate synergy opportunities across operations, workforce, processes, and enterprise functions with measurable accountability." },
     ],
     bot: {
+      names: ["Assess & Prioritize", "Integrate & Align", "Realize & Optimize"],
       build:
-        "Establish the integration office, define governance structures, align leadership responsibilities, and develop the post-merger execution roadmap.",
+        "We evaluate integration opportunities, risks, and critical business dependencies.",
       operate:
-        "Run the integration program alongside leadership teams while managing execution cadence, operational risks, dependency tracking, and synergy delivery.",
+        "We execute integration plans across people, processes, governance, and culture.",
       transfer:
-        "Transition integration governance, reporting structures, and operational ownership into the client organization with long-term sustainability embedded.",
+        "We monitor progress, capture synergies, and ensure long-term value realization.",
     },
     ctx: {
       setup: "Support first-time acquisitions with integration governance, leadership alignment, operational planning, and structured 100-day execution.",
@@ -182,7 +185,6 @@ export const services: Service[] = [
       "I spent 14 years building and running Metro's global solution centre. This isn't theory - it's knowledge forged in practice.",
     subs: [
       { label: "GCC Operating Model & Governance Design", desc: "Define the organizational structure, governance framework, service catalogue, delivery model, and performance standards required to run a scalable GCC operation." },
-      { label: "Build,Operate,Transfer GCC Execution", desc: "Deliver end-to-end GCC setup and operationalization, from feasibility and transition planning through operational stabilization and capability transfer." },
       { label: "Workforce Ramp-Up & Operational Readiness", desc: "Build scalable recruitment, onboarding, workforce planning, and operational enablement programs aligned to delivery demand and business priorities." },
       { label: "Regulated & Enterprise-Grade Delivery Environments", desc: "Establish compliance-ready GCC operations for regulated industries including healthcare, financial services, manufacturing, and utilities." },
     ],
@@ -229,12 +231,13 @@ export const services: Service[] = [
       { label: "Talent Acquisition Capability Transfer", desc: "Transition recruitment operations, hiring playbooks, reporting structures, and operational ownership into internal HR and talent teams."},
     ],
     bot: {
+      names: ["Understand & Plan", "Source & Select", "Hire & Integrate"],
       build:
-        "Design the talent acquisition operating model, sourcing strategy, hiring governance, employer positioning, and recruitment workflows.",
+        "We align with your workforce strategy, hiring priorities, and talent requirements.",
       operate:
-        "Run recruitment operations alongside business leaders while managing hiring delivery, workforce visibility, pipeline quality, and operational performance.",
+        "We identify, assess, and present high-quality candidates who match both role and culture.",
       transfer:
-        "Transition recruitment ownership, hiring systems, governance frameworks, and operational capability into the internal talent acquisition function.",
+        "We support the hiring process through onboarding to ensure a seamless transition and faster productivity.",
     },
     ctx: {
       setup: "Establish the talent acquisition function from the ground up, including hiring processes, sourcing operations, governance, and workforce planning.",
@@ -270,12 +273,13 @@ export const services: Service[] = [
       { label: "Executive Capability & Succession Readiness", desc: "Develop leadership capability, succession preparedness, and decision maturity for growing organizations and scaling enterprises."}
     ],
     bot: {
+      names: ["Assess & Understand", "Advise & Develop", "Enable & Accelerate"],
       build:
-        "Assess leadership dynamics, governance challenges, strategic priorities, and organizational risks to define the advisory framework.",
+        "We identify leadership priorities, organizational challenges, and strategic objectives.",
       operate:
-        "Work alongside leadership teams through decision-making cycles, operational pressure points, and enterprise transformation milestones.",
+        "We provide tailored coaching, insights, and guidance to strengthen leadership effectiveness.",
       transfer:
-        "Strengthen internal leadership rhythm, governance maturity, and executive decision capability for long-term organizational continuity.",
+        "We support sustained leadership impact, stronger decision-making, and business growth.",
     },
     ctx: {
       setup: "Support newly formed leadership teams through strategic alignment, governance establishment, and operational decision structure.",

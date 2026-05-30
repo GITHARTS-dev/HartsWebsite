@@ -5,14 +5,21 @@ import { FinalCTA } from "../../_shared/layout/final-cta";
 import type { Service } from "../../_data/services";
 import { domains } from "../../_data/domains";
 
-const PHASE_LABELS = [
-  { key: "build", num: "01", name: "Build" },
-  { key: "operate", num: "02", name: "Operate" },
-  { key: "transfer", num: "03", name: "Transfer" },
-] as const;
+type PhaseKey = "build" | "operate" | "transfer";
 
+const PHASE_NUMS = ["01", "02", "03"] as const;
+const PHASE_KEYS: PhaseKey[] = ["build", "operate", "transfer"];
 
 export function ServiceDetail({ service }: { service: Service }) {
+  const phaseNames: [string, string, string] =
+    service.bot.names ?? ["Build", "Operate", "Transfer"];
+
+  const phaseLabels = PHASE_KEYS.map((key, i) => ({
+    key,
+    num: PHASE_NUMS[i],
+    name: phaseNames[i],
+  }));
+
   return (
     <main className="ed-page">
       {/* ─── HERO (editorial, no PageHero) ─────────────────────────── */}
@@ -36,7 +43,7 @@ export function ServiceDetail({ service }: { service: Service }) {
               <p className="ed-detail-line">{service.line}</p>
               <div className="ed-detail-actions">
                 <Link className="solid-button" href="/contact">Discuss Your Transformation</Link>
-                <Link className="outline-button" href="/how-we-deliver">Explore Our Delivery Model</Link>
+                <Link className="outline-button" href="/contact">Connect With Us</Link>
               </div>
             </div>
           </div>
@@ -51,10 +58,6 @@ export function ServiceDetail({ service }: { service: Service }) {
             <h2>
               What this <em>engagement unlocks.</em>
             </h2>
-            <p>
-              Each line below names a deliverable our team builds, runs, and
-              transfers to yours. No vague workstreams. No theatre.
-            </p>
           </header>
 
           <div className="ed-cap-list">
@@ -91,35 +94,72 @@ export function ServiceDetail({ service }: { service: Service }) {
           <header className="ed-section-head">
             <p className="ed-eyebrow">How We Deliver This</p>
             <h2>
-              Build. Operate. <em>Transfer.</em>
+              A structured journey from <em>insight to impact.</em>
             </h2>
-            <p>
-              The HARTS methodology applied to {service.title.toLowerCase()}.
-              Three phases, in plain language - what we do, how we run it, what
-              we leave behind.
-            </p>
           </header>
 
-          <div className="ed-bot-cols">
-            {PHASE_LABELS.map((phase) => (
-              <div key={phase.key} className="ed-bot-col">
-                <div className="ed-bot-col-head">
-                  <span className="ed-bot-col-icon" aria-hidden="true">
+          {service.slug !== "gcc-and-shared-services" && (
+            <div className="ed-bot-cols">
+              {phaseLabels.map((phase) => (
+                <div key={phase.key} className="ed-bot-col">
+                  <div className="ed-bot-col-head">
+                    <span className="ed-bot-col-icon" aria-hidden="true">
+                      <BotIcon phase={phase.key} />
+                    </span>
+                    <div>
+                      <span className="ed-bot-col-num">{phase.num}</span>
+                      <h3 className="ed-bot-col-name">{phase.name}</h3>
+                    </div>
+                  </div>
+                  <p className="ed-bot-col-desc">{service.bot[phase.key]}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {service.slug === "gcc-and-shared-services" && (
+            <div className="bot-pathway" style={{ marginTop: 48 }}>
+              <svg
+                className="bot-pathway-curve"
+                viewBox="0 0 1100 340"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M 40 186 L 183.33 186 C 340 186, 420 131, 550 131 S 770 76, 916.67 76 L 1056 76"
+                  fill="none"
+                  stroke="#E7473C"
+                  strokeWidth="1.4"
+                  strokeDasharray="5 7"
+                  strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+                <path
+                  d="M 1046 67 L 1066 76 L 1046 85"
+                  fill="none"
+                  stroke="#E7473C"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
+              {phaseLabels.map((phase, index) => (
+                <article key={phase.key} className={`bot-step bot-step--${index + 1}`}>
+                  <span className="bot-step-icon" aria-hidden="true">
                     <BotIcon phase={phase.key} />
                   </span>
-                  <div>
-                    <span className="ed-bot-col-num">{phase.num}</span>
-                    <h3 className="ed-bot-col-name">{phase.name}</h3>
-                  </div>
-                </div>
-                <p className="ed-bot-col-desc">{service.bot[phase.key]}</p>
-              </div>
-            ))}
-          </div>
+                  <span className="bot-step-dot" aria-hidden="true" />
+                  <h3 className="bot-step-title">{phase.name}</h3>
+                  <p className="bot-step-text">{service.bot[phase.key]}</p>
+                </article>
+              ))}
+            </div>
+          )}
 
           <div className="ed-detail-actions" style={{ marginTop: 32 }}>
-            <Link className="outline-button" href="/how-we-deliver">
-              See the full methodology
+            <Link className="outline-button" href="/contact">
+              Connect With Us
             </Link>
           </div>
         </div>
@@ -131,13 +171,9 @@ export function ServiceDetail({ service }: { service: Service }) {
           <header className="ed-section-head">
             <p className="ed-eyebrow">Where We Deliver This</p>
             <h2>
-              The same service. <em>Shaped to your moment.</em>
+              Tailored to your <em>business context.</em>
             </h2>
-            <p>
-              How this work flexes across the three moments where HARTS
-              engages: setting something new up, developing what exists, or
-              scaling what already works.
-            </p>
+            
           </header>
 
           <div className="ed-ctx-list">
@@ -154,21 +190,12 @@ export function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* ─── SREEMA'S VOICE ────────────────────────────────────────── */}
-      <section className="ed-section ed-section--soft">
-        <div className="ed-shell">
-          <div className="ed-quote">
-            <blockquote>&ldquo;{service.voice}&rdquo;</blockquote>
-            <cite>Sreema Nallasivam · CEO &amp; Co-Founder</cite>
-          </div>
-        </div>
-      </section>
 
       <FinalCTA
         heading={<>Ready to talk about <em>{service.title.toLowerCase()}?</em></>}
         body="Tell us where you are. We will respond with a focused perspective on how this work fits."
         primary={{ label: "Discuss Your Transformation", href: "/contact" }}
-        secondary={{ label: "Explore Our Delivery Model", href: "/how-we-deliver" }}
+        secondary={{ label: "Explore Our Services", href: "/what-we-deliver" }}
       />
     </main>
   );

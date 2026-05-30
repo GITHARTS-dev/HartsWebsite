@@ -61,6 +61,11 @@
   letter-spacing: -0.005em;
 }
 
+.ed-section-head h2 em {
+  color: #E7473C;
+  font-style: italic;
+}
+
 .ed-accent {
   color: #E7473C;
   font-style: italic;

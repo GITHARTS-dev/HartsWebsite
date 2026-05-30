@@ -124,47 +124,50 @@ export function HomeExperience() {
         </div>
       </section>
 
-      {/* ─── WHAT WE DELIVER (6 services) ─────────────────────────────── */}
+      {/* ─── WHAT WE DELIVER (split layout) ──────────────────────────── */}
       <section
         className="home-premium-section challenges-section parallax-section"
         id="what-we-deliver"
       >
         <div className="section-orb orb-one" aria-hidden="true" />
         <div className="home-section-shell">
-          <div className="home-section-heading scroll-reveal">
-            <p className="eyebrow">What We Deliver</p>
-            <h2>Strategy is only valuable when operations can sustain it.</h2>
-            <p>
-              HARTS is a strategy and transformation consulting firm that partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and disciplined transfer under one operating model.
-            </p>
-          </div>
+          <div className="what-deliver-split">
+            {/* Left: heading + description + CTA */}
+            <div className="what-deliver-left">
+              <p className="eyebrow">What We Deliver</p>
+              <h2>Strategy is only valuable when operations can sustain it.</h2>
+              <p>
+                HARTS partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and disciplined transfer under one operating model.
+              </p>
+              
+            </div>
 
-          <div className="challenge-grid">
-            {services.map((svc, index) => {
-              const Icon = serviceIcons[svc.slug] ?? Users;
-              return (
-                <Link
-                  key={svc.slug}
-                  href={`/what-we-deliver/${svc.slug}`}
-                  className="premium-info-card challenge-card scroll-reveal reveal-soft-up"
-                  style={revealStyle(index)}
-                >
-                  <span className="card-icon-badge" aria-hidden="true">
-                    <Icon />
-                  </span>
-                  <div className="card-body">
-                    <h3>{svc.title}</h3>
-                    <p>{svc.line}</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
-            <Link className="outline-button magnetic-button" href="/what-we-deliver">
-              Explore our capabilities
-            </Link>
+            {/* Right: floating diagonal card stack */}
+            <div className="what-deliver-right">
+              <div className="deliver-cards-stack">
+                {services.slice(0, 3).map((svc, index) => {
+                  const Icon = serviceIcons[svc.slug] ?? Users;
+                  return (
+                    <Link
+                      key={svc.slug}
+                      href={`/what-we-deliver/${svc.slug}`}
+                      className={`deliver-float-card deliver-float-card--${index + 1}`}
+                    >
+                      <span className="deliver-float-icon" aria-hidden="true">
+                        <Icon />
+                      </span>
+                      <div>
+                        <h3>{svc.title}</h3>
+                        <p>{svc.line}</p>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+              <Link className="outline-button magnetic-button" href="/what-we-deliver">
+                View all capabilities &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -232,8 +235,8 @@ export function HomeExperience() {
           </div>
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
-            <Link className="outline-button magnetic-button" href="/how-we-deliver">
-              See how the methodology works
+            <Link className="outline-button magnetic-button" href="/contact">
+              Connect with us
             </Link>
           </div>
         </div>

@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
 import { getPostgresPool } from "../../../_lib/postgres";
+import {
+  capLength,
+  isHoneypotTripped,
+  isValidEmail,
+  isValidPhone,
+} from "../../../_lib/validate";
 
 export const runtime = "nodejs";
 
@@ -11,29 +17,53 @@ const ALLOWED_MIME = new Set([
 ]);
 const ALLOWED_EXT = [".pdf", ".doc", ".docx"];
 
-function str(value: FormDataEntryValue | null) {
-  return typeof value === "string" ? value.trim() : "";
+const FIELD_MAX = {
+  roleSlug: 120,
+  roleTitle: 200,
+  firstName: 80,
+  lastName: 80,
+  email: 254,
+  phone: 30,
+  city: 120,
+  country: 120,
+  linkedin: 300,
+  currentCompany: 200,
+  currentTitle: 200,
+  experience: 40,
+  notice: 80,
+  coverLetter: 5000,
+  heardFrom: 200,
+};
+
+function str(value: FormDataEntryValue | null, max?: number) {
+  const s = typeof value === "string" ? value.trim() : "";
+  return max ? capLength(s, max) : s;
 }
 
 export async function POST(request: Request) {
   try {
     const form = await request.formData();
 
-    const roleSlug = str(form.get("roleSlug"));
-    const roleTitle = str(form.get("roleTitle"));
-    const firstName = str(form.get("firstName"));
-    const lastName = str(form.get("lastName"));
-    const email = str(form.get("email"));
-    const phone = str(form.get("phone"));
-    const city = str(form.get("city"));
-    const country = str(form.get("country"));
-    const linkedin = str(form.get("linkedin"));
-    const currentCompany = str(form.get("currentCompany"));
-    const currentTitle = str(form.get("currentTitle"));
-    const experience = str(form.get("experience"));
-    const notice = str(form.get("notice"));
-    const coverLetter = str(form.get("coverLetter"));
-    const heardFrom = str(form.get("heardFrom"));
+    // Honeypot — silent 200.
+    if (isHoneypotTripped(form.get("website"))) {
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
+
+    const roleSlug = str(form.get("roleSlug"), FIELD_MAX.roleSlug);
+    const roleTitle = str(form.get("roleTitle"), FIELD_MAX.roleTitle);
+    const firstName = str(form.get("firstName"), FIELD_MAX.firstName);
+    const lastName = str(form.get("lastName"), FIELD_MAX.lastName);
+    const email = str(form.get("email"), FIELD_MAX.email).toLowerCase();
+    const phone = str(form.get("phone"), FIELD_MAX.phone);
+    const city = str(form.get("city"), FIELD_MAX.city);
+    const country = str(form.get("country"), FIELD_MAX.country);
+    const linkedin = str(form.get("linkedin"), FIELD_MAX.linkedin);
+    const currentCompany = str(form.get("currentCompany"), FIELD_MAX.currentCompany);
+    const currentTitle = str(form.get("currentTitle"), FIELD_MAX.currentTitle);
+    const experience = str(form.get("experience"), FIELD_MAX.experience);
+    const notice = str(form.get("notice"), FIELD_MAX.notice);
+    const coverLetter = str(form.get("coverLetter"), FIELD_MAX.coverLetter);
+    const heardFrom = str(form.get("heardFrom"), FIELD_MAX.heardFrom);
     const consent = form.get("consent");
     const resume = form.get("resume");
 
@@ -50,6 +80,27 @@ export async function POST(request: Request) {
     ) {
       return NextResponse.json(
         { error: "Please fill in all required fields." },
+        { status: 400 },
+      );
+    }
+
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Please enter a valid email address." },
+        { status: 400 },
+      );
+    }
+
+    if (!isValidPhone(phone)) {
+      return NextResponse.json(
+        { error: "Please enter a valid phone number." },
+        { status: 400 },
+      );
+    }
+
+    if (linkedin && linkedin.length > 0 && !/^https?:\/\//i.test(linkedin)) {
+      return NextResponse.json(
+        { error: "LinkedIn URL must start with http(s)://." },
         { status: 400 },
       );
     }
@@ -86,6 +137,22 @@ export async function POST(request: Request) {
     }
 
     const buffer = Buffer.from(await resume.arrayBuffer());
+
+    // Magic-byte sniff — extension and MIME are client-supplied. PDF starts
+    // with "%PDF", DOCX is a ZIP ("PK\x03\x04"), legacy DOC is OLE ("\xD0\xCF\x11\xE0").
+    const isPdf = buffer.length >= 4 && buffer.slice(0, 4).toString("ascii") === "%PDF";
+    const isDocx =
+      buffer.length >= 4 &&
+      buffer[0] === 0x50 && buffer[1] === 0x4b && buffer[2] === 0x03 && buffer[3] === 0x04;
+    const isDoc =
+      buffer.length >= 8 &&
+      buffer[0] === 0xd0 && buffer[1] === 0xcf && buffer[2] === 0x11 && buffer[3] === 0xe0;
+    if (!isPdf && !isDocx && !isDoc) {
+      return NextResponse.json(
+        { error: "Resume file appears corrupted or is not a real PDF/DOC/DOCX." },
+        { status: 400 },
+      );
+    }
 
     const pool = getPostgresPool();
     const result = await pool.query<{ id: number }>(

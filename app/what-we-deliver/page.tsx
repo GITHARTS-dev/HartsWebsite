@@ -31,7 +31,7 @@ export default function WhatWeDeliverRoute() {
           eyebrow="What We Deliver"
           titleSoft="Integrated Capabilities."
           titleStrong="Measurable Outcomes."
-          subtitle="We bring deep, specialized focus to the capabilities that matter most, all driven by a singular, disciplined execution model: Build, Operate, Transfer. Pick the work that matches your moment."
+          subtitle="We bring deep, specialized focus to the capabilities that matter most to your business, combining strategic insight, practical execution, and hands-on partnership to deliver sustainable results. Choose the support that aligns with your priorities and stage of growth."
           actions={
             <Link className="solid-button large" href="/contact">
               Connect With Us
@@ -45,13 +45,10 @@ export default function WhatWeDeliverRoute() {
             <header className="ed-section-head">
               <p className="eyebrow">Our Services</p>
               <h2>
-                Six services we deliver <span className="ed-accent">end-to-end.</span>
+                Core capabilities we deliver <span className="ed-accent">end-to-end.</span>
               </h2>
               <p>
-                Six consulting services we build, run, and transfer. Pick the
-                one that matches the moment you&apos;re in the disciplined
-                Build,Operate,Transfer methodology behind each engagement stays
-                the same.
+                From organizational effectiveness and talent acquisition to leadership advisory and integration support, we help organizations address critical priorities and achieve meaningful outcomes.
               </p>
             </header>
 

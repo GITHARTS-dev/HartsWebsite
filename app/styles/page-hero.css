@@ -237,7 +237,7 @@
    Uses the same split layout + red gradient veil as how-we-work so the
    home, careers, connect, and inner pages share one unified template. */
 .page-hero--home .page-hero-scene-image {
-  background-image: url("/hero/home-hero.jpg");
+  background-image: url("/hero/home-hero.jpg?v=2");
 }
 
 /* Industries (Where We Engage) - capital-intensive infrastructure / global commerce. */
@@ -364,7 +364,7 @@
    same dark veil, same white typography. Achieved by reusing /hero/home-hero.jpg
    and overriding the split layout's red gradient veil below. */
 .page-hero--contact .page-hero-scene-image {
-  background-image: url("/hero/home-hero.jpg");
+  background-image: url("/hero/home-hero.jpg?v=2");
 }
 
 /* Industry detail scenes - each gets a sector-relevant photo */

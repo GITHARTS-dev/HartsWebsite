@@ -104,7 +104,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                 <div key={phase.key} className="ed-bot-col">
                   <div className="ed-bot-col-head">
                     <span className="ed-bot-col-icon" aria-hidden="true">
-                      <BotIcon phase={phase.key} />
+                      <BotIcon phase={phase.key} slug={service.slug} />
                     </span>
                     <div>
                       <span className="ed-bot-col-num">{phase.num}</span>

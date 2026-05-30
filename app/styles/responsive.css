@@ -185,6 +185,22 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .what-deliver-split {
+    grid-template-columns: 1fr;
+  }
+
+  /* Flatten diagonal cascade on smaller screens — cards stack straight */
+  .deliver-float-card--1 { transform: none; }
+  .deliver-float-card--2 { transform: none; margin-top: -28px; }
+  .deliver-float-card--3 { transform: none; margin-top: -28px; }
+  .deliver-float-card--1:hover,
+  .deliver-float-card--2:hover,
+  .deliver-float-card--3:hover { transform: translateY(-6px); }
+
+  .deliver-view-all {
+    align-self: flex-start;
+  }
+
   .challenges-intro {
     grid-template-columns: 1fr;
   }

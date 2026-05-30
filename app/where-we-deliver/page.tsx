@@ -27,7 +27,7 @@ export default function WhereWeDeliverRoute() {
     <PageShell>
       <main className="ed-page">
         <PageHero
-          scene="industries"
+          scene="how-we-work"
           layout="split"
           eyebrow="Where We Deliver"
           titleSoft="Three Contexts."
@@ -99,7 +99,7 @@ export default function WhereWeDeliverRoute() {
           heading={<>Tell us <em>where you are.</em></>}
           body="Every organization moves through different stages of growth and change. We help define the right operational path forward."
           primary={{ label: "Connect With HARTS", href: "/contact" }}
-          secondary={{ label: "How We Deliver", href: "/how-we-deliver" }}
+          secondary={{ label: "What We Deliver", href: "/what-we-deliver" }}
         />
       </main>
     </PageShell>

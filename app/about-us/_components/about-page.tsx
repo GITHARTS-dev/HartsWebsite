@@ -243,7 +243,7 @@ export function AboutPage() {
         // heading="The right partner changes everything."
         body="Connect with HARTS to explore how strategic clarity and disciplined execution can unlock transformative value for your organisation."
         primary={{ label: "Connect With HARTS", href: "/contact" }}
-        secondary={{ label: "How We Work", href: "/how-we-deliver" }}
+        secondary={{ label: "What We Deliver", href: "/what-we-deliver" }}
       />
     </main>
   );

@@ -44,6 +44,7 @@ const REVEAL_SELECTOR = [
   ".section-heading",
   ".office-card",
   ".location-card",
+  ".what-deliver-left",
 ].join(",");
 
 function getRevealItems() {

@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { headers } from "next/headers";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import "./styles/about.css";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
 import {
   ogImagePath,
   organization,
@@ -171,34 +181,40 @@ const websiteJsonLd = {
   inLanguage: "en-US",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
+  // Nonce is generated per-request by proxy.ts and forwarded via x-nonce.
+  // Attaching it to our JSON-LD scripts lets a strict CSP block injected
+  // inline scripts while allowing these. In dev we leave it undefined —
+  // browsers strip the nonce attribute from the DOM after parsing, which
+  // collides with React's dev-mode hydration check on every request.
+  const nonce =
+    process.env.NODE_ENV === "production"
+      ? ((await headers()).get("x-nonce") ?? undefined)
+      : undefined;
+
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" className={dmSans.variable}>
       <head>
-        {/* Resource hints — speed up first-paint of Google Fonts (used by DM Sans
-            via app/globals.css) and the LinkedIn-cookie path that runs on hover
-            of the leadership LinkedIn buttons. */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        {/* Resource hints — DM Sans is now self-hosted via next/font, so the
+            Google Fonts preconnects are gone. LinkedIn / Google Maps hints
+            stay; they fire on user interaction. */}
         <link rel="dns-prefetch" href="https://www.linkedin.com" />
         <link rel="dns-prefetch" href="https://maps.app.goo.gl" />
         <meta name="theme-color" content="#E7473C" />
         <script
           type="application/ld+json"
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
           }}
         />
         <script
           type="application/ld+json"
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteJsonLd),
           }}

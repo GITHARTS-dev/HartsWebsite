@@ -3,8 +3,10 @@
      so every existing var(--gold), var(--navy), var(--sage), etc. reference
      auto-redirects without per-rule edits. Neutral tokens (muted/line) stay
      neutral. --soft lifted to white smoke. */
-  --font-heading: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-body:    "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* --font-dm-sans is injected by next/font/google in app/layout.tsx and
+     self-hosted from /_next/static — no Google Fonts round-trip. */
+  --font-heading: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body:    var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --ink: #1A1A1A;
   --muted: #5e625f;
   --line: #d8dad6;

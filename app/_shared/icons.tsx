@@ -14,7 +14,20 @@ import {
   ArrowUpRight,
   Check,
   X,
+  Target,
+  PenTool,
+  Layers,
+  Gauge,
+  ListChecks,
+  Workflow,
+  ClipboardList,
+  UserSearch,
+  Handshake,
+  Lightbulb,
+  MessageSquare,
+  Rocket,
 } from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
 
 const serviceIconMap = {
   "od-and-implementation": Users,
@@ -38,22 +51,66 @@ export function ServiceIcon({
   return <Icon size={size} strokeWidth={strokeWidth} aria-hidden="true" />;
 }
 
-const botIconMap = {
+type LucideIcon = ComponentType<SVGProps<SVGSVGElement> & { size?: number; strokeWidth?: number }>;
+type BotPhase = "build" | "operate" | "transfer";
+
+// Generic fallback — also used for GCC's BOT pathway, which the brief explicitly
+// asked us to leave alone.
+const defaultBotIcons: Record<BotPhase, LucideIcon> = {
   build: Wrench,
   operate: Activity,
   transfer: Repeat,
-} as const;
+};
+
+// Per-service step icons keyed by service slug. Chosen to match each service's
+// step heading + body copy (see app/_data/services.ts → bot.names + bot.{build,operate,transfer}).
+const botIconByService: Partial<Record<string, Record<BotPhase, LucideIcon>>> = {
+  // Assess & Align / Design & Execute / Embed & Sustain
+  "od-and-implementation": {
+    build: Compass,
+    operate: PenTool,
+    transfer: Sprout,
+  },
+  // Assess & Define / Design & Establish / Operate & Optimize
+  coe: {
+    build: Target,
+    operate: Layers,
+    transfer: Gauge,
+  },
+  // Assess & Prioritize / Integrate & Align / Realize & Optimize
+  "ma-and-pmi": {
+    build: ListChecks,
+    operate: Workflow,
+    transfer: TrendingUp,
+  },
+  // Understand & Plan / Source & Select / Hire & Integrate
+  "recruitment-as-a-service": {
+    build: ClipboardList,
+    operate: UserSearch,
+    transfer: Handshake,
+  },
+  // Assess & Understand / Advise & Develop / Enable & Accelerate
+  "executive-coaching": {
+    build: Lightbulb,
+    operate: MessageSquare,
+    transfer: Rocket,
+  },
+  // gcc-and-shared-services intentionally omitted — falls through to defaultBotIcons.
+};
 
 export function BotIcon({
   phase,
+  slug,
   size = 18,
   strokeWidth = 1.8,
 }: {
-  phase: "build" | "operate" | "transfer";
+  phase: BotPhase;
+  slug?: string;
   size?: number;
   strokeWidth?: number;
 }) {
-  const Icon = botIconMap[phase];
+  const map = (slug && botIconByService[slug]) || defaultBotIcons;
+  const Icon = map[phase];
   return <Icon size={size} strokeWidth={strokeWidth} aria-hidden="true" />;
 }
 

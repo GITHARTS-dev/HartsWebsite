@@ -185,20 +185,30 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .what-deliver-split {
+  .wd-index-head {
     grid-template-columns: 1fr;
+    row-gap: 16px;
   }
 
-  /* Flatten diagonal cascade on smaller screens — cards stack straight */
-  .deliver-float-card--1 { transform: none; }
-  .deliver-float-card--2 { transform: none; margin-top: -28px; }
-  .deliver-float-card--3 { transform: none; margin-top: -28px; }
-  .deliver-float-card--1:hover,
-  .deliver-float-card--2:hover,
-  .deliver-float-card--3:hover { transform: translateY(-6px); }
+  .wd-index-row {
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas:
+      "num icon title arrow"
+      ".   .    desc  desc";
+    row-gap: 10px;
+    padding: clamp(20px, 3.5vw, 28px) clamp(4px, 1vw, 12px);
+  }
 
-  .deliver-view-all {
-    align-self: flex-start;
+  .wd-index-num   { grid-area: num; }
+  .wd-index-icon  { grid-area: icon; }
+  .wd-index-title { grid-area: title; }
+  .wd-index-desc  { grid-area: desc; }
+  .wd-index-arrow { grid-area: arrow; }
+
+  .wd-index-row:hover { padding-left: clamp(10px, 2vw, 18px); }
+
+  .wd-index-foot {
+    justify-content: flex-start;
   }
 
   .challenges-intro {

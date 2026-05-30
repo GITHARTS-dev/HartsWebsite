@@ -43,7 +43,21 @@ export function ServiceDetail({ service }: { service: Service }) {
               <p className="ed-detail-line">{service.line}</p>
               <div className="ed-detail-actions">
                 <Link className="solid-button" href="/contact">Discuss Your Transformation</Link>
-                <Link className="outline-button" href="/contact">Connect With Us</Link>
+              </div>
+
+              <div className="ed-detail-preview" aria-label="Sections in this engagement">
+                <span className="ed-detail-preview-label">In this engagement</span>
+                <ol className="ed-detail-preview-list">
+                  <li>
+                    <a href="#outcomes" data-num="01"><span>Outcomes</span></a>
+                  </li>
+                  <li>
+                    <a href="#methodology" data-num="02"><span>How We Deliver</span></a>
+                  </li>
+                  <li>
+                    <a href="#context" data-num="03"><span>Where We Deliver</span></a>
+                  </li>
+                </ol>
               </div>
             </div>
           </div>
@@ -51,7 +65,7 @@ export function ServiceDetail({ service }: { service: Service }) {
       </section>
 
       {/* ─── WHAT IT IS - sub-capability editorial list ────────────── */}
-      <section className="ed-section">
+      <section className="ed-section" id="outcomes">
         <div className="ed-shell">
           <header className="ed-section-head">
             <p className="ed-eyebrow">Outcomes</p>
@@ -89,7 +103,7 @@ export function ServiceDetail({ service }: { service: Service }) {
       </section>
 
       {/* ─── HOW WE DELIVER THIS - BOT prose, 3 columns ────────────── */}
-      <section className="ed-section ed-section--soft">
+      <section className="ed-section ed-section--soft" id="methodology">
         <div className="ed-shell">
           <header className="ed-section-head">
             <p className="ed-eyebrow">How We Deliver This</p>
@@ -166,7 +180,7 @@ export function ServiceDetail({ service }: { service: Service }) {
       </section>
 
       {/* ─── WHERE WE DELIVER THIS - domain context rows ───────────── */}
-      <section className="ed-section">
+      <section className="ed-section" id="context">
         <div className="ed-shell">
           <header className="ed-section-head">
             <p className="ed-eyebrow">Where We Deliver This</p>

@@ -41,7 +41,7 @@ const leadership = [
   },
   {
     name: "Flavio Gall",
-    role: "Director, Business Development",
+    role: "Director-Business Development",
     bio: "Partners with leadership teams on growth, market clarity, and long-horizon strategy.",
     image: "/team/flavio.png",
     linkedin: "https://www.linkedin.com/in/flavio-gall/",

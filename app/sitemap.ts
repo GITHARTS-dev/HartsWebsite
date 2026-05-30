@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "./_lib/site";
 import { services } from "./_data/services";
-import { openings } from "./_data/openings";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -23,12 +22,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const careerRoutes: MetadataRoute.Sitemap = openings.map((o) => ({
-    url: `${siteUrl}/careers/apply/${o.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly",
-    priority: 0.6,
-  }));
-
-  return [...staticRoutes, ...serviceRoutes, ...careerRoutes];
+  return [...staticRoutes, ...serviceRoutes];
 }

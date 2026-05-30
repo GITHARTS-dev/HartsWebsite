@@ -33,7 +33,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/careers/apply/*"],
+        disallow: ["/api/"],
       },
       ...AI_BOTS.map((userAgent) => ({
         userAgent,

@@ -124,48 +124,47 @@ export function HomeExperience() {
         </div>
       </section>
 
-      {/* ─── WHAT WE DELIVER (split layout) ──────────────────────────── */}
+      {/* ─── WHAT WE DELIVER (editorial index list) ──────────────────── */}
       <section
         className="home-premium-section challenges-section parallax-section"
         id="what-we-deliver"
       >
         <div className="section-orb orb-one" aria-hidden="true" />
         <div className="home-section-shell">
-          <div className="what-deliver-split">
-            {/* Left: heading + description + CTA */}
-            <div className="what-deliver-left">
+          <div className="wd-index">
+            <header className="wd-index-head">
               <p className="eyebrow">What We Deliver</p>
-              <h2>Strategy is only valuable when operations can sustain it.</h2>
-              <p>
-                HARTS partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and disciplined transfer under one operating model.
-              </p>
-              
-            </div>
+              <div className="wd-index-head-body">
+                <h2>Strategy is only valuable when operations can sustain it.</h2>
+                <p>
+                  HARTS partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and disciplined transfer under one operating model.
+                </p>
+              </div>
+            </header>
 
-            {/* Right: floating diagonal card stack */}
-            <div className="what-deliver-right">
-              <div className="deliver-cards-stack">
-                {services.slice(0, 3).map((svc, index) => {
-                  const Icon = serviceIcons[svc.slug] ?? Users;
-                  return (
-                    <Link
-                      key={svc.slug}
-                      href={`/what-we-deliver/${svc.slug}`}
-                      className={`deliver-float-card deliver-float-card--${index + 1}`}
-                    >
-                      <span className="deliver-float-icon" aria-hidden="true">
+            <ol className="wd-index-list">
+              {services.slice(0, 3).map((svc, index) => {
+                const Icon = serviceIcons[svc.slug] ?? Users;
+                const num = String(index + 1).padStart(2, "0");
+                return (
+                  <li key={svc.slug} className="wd-index-item">
+                    <Link href={`/what-we-deliver/${svc.slug}`} className="wd-index-row">
+                      <span className="wd-index-num">{num}</span>
+                      <span className="wd-index-icon" aria-hidden="true">
                         <Icon />
                       </span>
-                      <div>
-                        <h3>{svc.title}</h3>
-                        <p>{svc.line}</p>
-                      </div>
+                      <span className="wd-index-title">{svc.title}</span>
+                      <span className="wd-index-desc">{svc.line}</span>
+                      <span className="wd-index-arrow" aria-hidden="true">→</span>
                     </Link>
-                  );
-                })}
-              </div>
-              <Link className="outline-button magnetic-button" href="/what-we-deliver">
-                View all capabilities &rarr;
+                  </li>
+                );
+              })}
+            </ol>
+
+            <div className="wd-index-foot">
+              <Link className="wd-index-link" href="/what-we-deliver">
+                View all capabilities <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>

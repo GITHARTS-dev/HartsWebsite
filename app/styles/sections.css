@@ -8272,195 +8272,201 @@ a.solid-button:visited {
   color: rgba(26, 26, 26, 0.68) !important;
 }
 
-/* ─── WHAT WE DELIVER: split two-column layout ────────────────────── */
-.what-deliver-split {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.1fr);
-  gap: clamp(40px, 6vw, 88px);
-  align-items: center;
+/* ─── WHAT WE DELIVER: editorial index list ────────────────────────── */
+/* Tighten the section's outer padding so the whole block fits one viewport. */
+#what-we-deliver.home-premium-section {
+  padding-top: clamp(24px, 2.8vw, 40px);
+  padding-bottom: clamp(24px, 2.8vw, 40px);
 }
 
-.what-deliver-left {
-  margin-top: -100px;
+.wd-index {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.6vw, 32px);
+  width: 100%;
+}
+
+.wd-index-head {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 16px;
 }
 
-.what-deliver-left h2 {
-  font-size: clamp(28px, 3.6vw, 50px);
+.wd-index-head .eyebrow {
+  margin: 0;
+  align-self: flex-start;
+}
+
+.wd-index-head-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.wd-index-head-body h2 {
+  margin: 0;
+  font-size: clamp(24px, 2.8vw, 38px);
   font-weight: 760;
-  line-height: 1.06;
+  line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--ink);
+}
+
+.wd-index-head-body p {
   margin: 0;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.65;
+  color: rgba(26, 26, 26, 0.72);
+  max-width: 620px;
 }
 
-.what-deliver-left p:not(.eyebrow) {
-  color: #1A1A1A;
-  font-size: clamp(14px, 1.35vw, 16px);
-  line-height: 1.75;
+/* The numbered index list — each row is a full-width editorial item */
+.wd-index-list {
+  list-style: none;
   margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(26, 26, 26, 0.10);
 }
 
-.what-deliver-right {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  position: relative;
+.wd-index-item {
+  border-bottom: 1px solid rgba(26, 26, 26, 0.10);
 }
 
-/* ── Overlapping card stack with visual hierarchy ───────────────────── */
-.deliver-cards-stack {
+.wd-index-row {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: visible;
-}
-
-.deliver-float-card {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 36px 32px 40px;
-  max-width: 450px;
-  width: 100%;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.93);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.78);
+  display: grid;
+  grid-template-columns:
+    clamp(40px, 4vw, 56px)
+    clamp(40px, 3.6vw, 48px)
+    minmax(160px, 22%)
+    minmax(0, 1fr)
+    clamp(32px, 2.6vw, 40px);
+  align-items: center;
+  column-gap: clamp(14px, 2vw, 26px);
+  padding: clamp(14px, 1.6vw, 20px) clamp(6px, 0.8vw, 14px);
   text-decoration: none;
   color: inherit;
-  transition:
-    transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 300ms ease,
-    border-color 300ms ease;
+  isolation: isolate;
+  transition: padding 260ms ease;
 }
 
-/* Card 1 — top card, sits behind cards below it */
-.deliver-float-card--1 {
-  z-index: 1;
-  transform: translateX(32px);
-  box-shadow:
-    0 1px 4px rgba(26, 26, 26, 0.04),
-    0 6px 18px rgba(26, 26, 26, 0.07);
+.wd-index-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(231, 71, 60, 0.045) 0%, rgba(231, 71, 60, 0) 60%);
+  opacity: 0;
+  transition: opacity 280ms ease;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Card 2 — slides UP and sits ON TOP of card 1 */
-.deliver-float-card--2 {
-  z-index: 2;
-  transform: translateX(16px);
-  margin-top: -28px;
-  box-shadow:
-    0 2px 6px rgba(26, 26, 26, 0.05),
-    0 10px 28px rgba(26, 26, 26, 0.09);
+.wd-index-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #E7473C;
+  transition: width 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Card 3 — slides UP and sits ON TOP of card 2 */
-.deliver-float-card--3 {
-  z-index: 3;
-  transform: translateX(0);
-  margin-top: -28px;
-  box-shadow:
-    0 2px 8px rgba(26, 26, 26, 0.07),
-    0 14px 40px rgba(26, 26, 26, 0.11);
-}
+.wd-index-row:hover::before { opacity: 1; }
+.wd-index-row:hover::after { width: 3px; }
+.wd-index-row:hover { padding-left: clamp(16px, 1.6vw, 24px); }
 
-/* Hover — lift upward, preserve horizontal offset */
-.deliver-float-card:hover {
-  z-index: 10 !important;
-  border-color: rgba(231, 71, 60, 0.22) !important;
-}
-
-.deliver-float-card--1:hover {
-  transform: translateX(32px) translateY(-8px);
-  box-shadow:
-    0 8px 20px rgba(26, 26, 26, 0.08),
-    0 28px 60px rgba(231, 71, 60, 0.14);
-}
-
-.deliver-float-card--2:hover {
-  transform: translateX(16px) translateY(-8px);
-  box-shadow:
-    0 8px 20px rgba(26, 26, 26, 0.08),
-    0 28px 60px rgba(231, 71, 60, 0.14);
-}
-
-.deliver-float-card--3:hover {
-  transform: translateX(0) translateY(-8px);
-  box-shadow:
-    0 8px 20px rgba(26, 26, 26, 0.08),
-    0 28px 60px rgba(231, 71, 60, 0.14);
-}
-
-/* Icon badge inside floating card */
-.deliver-float-icon {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(231, 71, 60, 0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #E7473C;
-  transition: background 220ms ease, transform 220ms ease;
-}
-
-.deliver-float-icon svg {
-  width: 22px;
-  height: 22px;
-  stroke-width: 1.7;
-  color: #E7473C;
-}
-
-.deliver-float-card:hover .deliver-float-icon {
-  background: rgba(231, 71, 60, 0.13);
-  transform: scale(1.08);
-}
-
-.deliver-float-card h3 {
-  margin: 0 0 6px;
-  font-size: 15px;
+.wd-index-num {
+  font-size: clamp(18px, 1.7vw, 24px);
   font-weight: 720;
-  line-height: 1.3;
-  color: #1A1A1A;
+  letter-spacing: 0.04em;
+  color: #E7473C;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
 }
 
-.deliver-float-card p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.64;
-  color: rgba(26, 26, 26, 0.60);
-}
-
-/* Prevent the outline-button inside the card stack column from stretching full width */
-.what-deliver-right .outline-button {
-  align-self: flex-end;
-  width: auto;
-  margin-right: 90px;
-}
-
-/* "View all" link below the stack */
-.deliver-view-all {
+.wd-index-icon {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  align-self: flex-end;
+  justify-content: center;
+  width: clamp(36px, 3vw, 42px);
+  height: clamp(36px, 3vw, 42px);
+  border-radius: 50%;
+  background: rgba(231, 71, 60, 0.08);
   color: #E7473C;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  transition: gap 200ms ease, opacity 200ms ease;
+  transition: background 240ms ease, transform 240ms ease;
 }
 
-.deliver-view-all:hover {
+.wd-index-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.7;
+}
+
+.wd-index-row:hover .wd-index-icon {
+  background: rgba(231, 71, 60, 0.14);
+  transform: scale(1.06);
+}
+
+.wd-index-title {
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 720;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  transition: color 240ms ease;
+}
+
+.wd-index-row:hover .wd-index-title { color: #E7473C; }
+
+.wd-index-desc {
+  font-size: clamp(12.5px, 0.95vw, 14px);
+  line-height: 1.55;
+  color: rgba(26, 26, 26, 0.66);
+}
+
+.wd-index-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #E7473C;
+  opacity: 0.55;
+  transition: opacity 240ms ease, transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wd-index-row:hover .wd-index-arrow {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+.wd-index-foot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wd-index-link {
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
-  opacity: 0.75;
+  padding-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E7473C;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(231, 71, 60, 0.32);
+  transition: gap 220ms ease, border-color 220ms ease;
+}
+
+.wd-index-link:hover {
+  gap: 12px;
+  border-color: #E7473C;
 }
 
 /* ══════════════════════════════════════════════════════════════════════

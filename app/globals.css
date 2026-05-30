@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700&display=swap");
-
+/* DM Sans is loaded via next/font/google in app/layout.tsx — self-hosted,
+   no render-blocking @import to fonts.googleapis.com. */
 @import "./styles/base.css";
 @import "./styles/layout.css";
 @import "./styles/sections.css";

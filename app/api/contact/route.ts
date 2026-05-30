@@ -1,8 +1,26 @@
 import { NextResponse } from "next/server";
 import { getMailTransporter, getSmtpConfig } from "../../_lib/mailer";
 import { getPostgresPool } from "../../_lib/postgres";
+import {
+  capLength,
+  isHoneypotTripped,
+  isValidEmail,
+  isValidPhone,
+} from "../../_lib/validate";
 
 export const runtime = "nodejs";
+
+// Hard caps so a single payload can't OOM the Node process or balloon the
+// row size. Values match the longest realistic input + headroom.
+const MAX = {
+  name: 120,
+  company: 200,
+  role: 120,
+  email: 254,
+  phone: 30,
+  service: 120,
+  message: 5000,
+};
 
 type ContactRequestBody = {
   name?: unknown;
@@ -12,6 +30,7 @@ type ContactRequestBody = {
   phone?: unknown;
   service?: unknown;
   message?: unknown;
+  website?: unknown;
 };
 
 async function readContactBody(request: Request): Promise<ContactRequestBody> {
@@ -31,6 +50,7 @@ async function readContactBody(request: Request): Promise<ContactRequestBody> {
     phone: formData.get("phone"),
     service: formData.get("service"),
     message: formData.get("message"),
+    website: formData.get("website"),
   };
 }
 
@@ -64,9 +84,18 @@ export async function POST(request: Request) {
   try {
     const body = await readContactBody(request);
 
-    const name = fieldToString(body.name);
-    const email = fieldToString(body.email);
-    const message = fieldToString(body.message);
+    // Honeypot: silently succeed so bots don't learn what tripped the filter.
+    if (isHoneypotTripped(body.website)) {
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
+
+    const name = capLength(fieldToString(body.name), MAX.name);
+    const company = capLength(fieldToString(body.company), MAX.company);
+    const role = capLength(fieldToString(body.role), MAX.role);
+    const email = capLength(fieldToString(body.email), MAX.email).toLowerCase();
+    const phone = capLength(fieldToString(body.phone), MAX.phone);
+    const service = capLength(fieldToString(body.service), MAX.service);
+    const message = capLength(fieldToString(body.message), MAX.message);
 
     if (!name || !email || !message) {
       console.warn("Contact API validation failed: missing required field.");
@@ -76,10 +105,19 @@ export async function POST(request: Request) {
       );
     }
 
-    const company = fieldToString(body.company);
-    const role = fieldToString(body.role);
-    const phone = fieldToString(body.phone);
-    const service = fieldToString(body.service);
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { success: false, error: "Please enter a valid email address." },
+        { status: 400 },
+      );
+    }
+
+    if (phone && !isValidPhone(phone)) {
+      return NextResponse.json(
+        { success: false, error: "Please enter a valid phone number." },
+        { status: 400 },
+      );
+    }
 
     const pool = getPostgresPool();
     const result = await pool.query<{ id: number }>(

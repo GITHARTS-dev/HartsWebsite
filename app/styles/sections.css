@@ -7492,7 +7492,7 @@ a.solid-button:visited {
 .welcome-screen--static .welcome-scene-image {
   position: absolute;
   inset: 0;
-  background-image: url("/hero/home-hero.jpg");
+  background-image: url("/hero/home-hero.jpg?v=2");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getMailTransporter, getSmtpConfig } from "../../_lib/mailer";
-import { getPostgresPool } from "../../_lib/postgres";
+import { Resend } from "resend";
+import { supabase } from "../../_lib/supabase";
 import {
   capLength,
   isHoneypotTripped,
@@ -8,10 +8,10 @@ import {
   isValidPhone,
 } from "../../_lib/validate";
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export const runtime = "nodejs";
 
-// Hard caps so a single payload can't OOM the Node process or balloon the
-// row size. Values match the longest realistic input + headroom.
 const MAX = {
   name: 120,
   company: 200,
@@ -28,6 +28,7 @@ type ContactRequestBody = {
   role?: unknown;
   email?: unknown;
   phone?: unknown;
+  country?: unknown;
   service?: unknown;
   message?: unknown;
   website?: unknown;
@@ -41,13 +42,13 @@ async function readContactBody(request: Request): Promise<ContactRequestBody> {
   }
 
   const formData = await request.formData();
-
   return {
-    name: formData.get("name"),
+    name:    formData.get("name"),
     company: formData.get("company"),
-    role: formData.get("role"),
-    email: formData.get("email"),
-    phone: formData.get("phone"),
+    role:    formData.get("role"),
+    email:   formData.get("email"),
+    phone:   formData.get("phone"),
+    country: formData.get("country"),
     service: formData.get("service"),
     message: formData.get("message"),
     website: formData.get("website"),
@@ -58,26 +59,15 @@ function fieldToString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function escapeHtml(value: string) {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function formatOptionalField(label: string, value: string) {
-  if (!value) {
-    return "";
-  }
-
-  return `
-    <tr>
-      <td style="padding: 8px 0; color: #475569; width: 140px;">${label}</td>
-      <td style="padding: 8px 0; color: #111827;">${escapeHtml(value)}</td>
-    </tr>
-  `;
+// Max 3 submissions per email per hour.
+async function isRateLimited(email: string): Promise<boolean> {
+  const since = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+  const { count } = await supabase
+    .from("contact_inquiries")
+    .select("*", { count: "exact", head: true })
+    .eq("email", email)
+    .gte("created_at", since);
+  return (count ?? 0) >= 3;
 }
 
 export async function POST(request: Request) {
@@ -89,16 +79,16 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true }, { status: 200 });
     }
 
-    const name = capLength(fieldToString(body.name), MAX.name);
+    const name    = capLength(fieldToString(body.name),    MAX.name);
     const company = capLength(fieldToString(body.company), MAX.company);
-    const role = capLength(fieldToString(body.role), MAX.role);
-    const email = capLength(fieldToString(body.email), MAX.email).toLowerCase();
-    const phone = capLength(fieldToString(body.phone), MAX.phone);
+    const role    = capLength(fieldToString(body.role),    MAX.role);
+    const email   = capLength(fieldToString(body.email),   MAX.email).toLowerCase();
+    const phone   = capLength(fieldToString(body.phone),   MAX.phone);
+    const country = capLength(fieldToString(body.country), 100);
     const service = capLength(fieldToString(body.service), MAX.service);
     const message = capLength(fieldToString(body.message), MAX.message);
 
     if (!name || !email || !message) {
-      console.warn("Contact API validation failed: missing required field.");
       return NextResponse.json(
         { success: false, error: "Name, email, and message are required." },
         { status: 400 },
@@ -119,98 +109,77 @@ export async function POST(request: Request) {
       );
     }
 
-    const pool = getPostgresPool();
-    const result = await pool.query<{ id: number }>(
-      `
-        INSERT INTO contact_inquiries (
-          name,
-          email,
-          company,
-          role,
-          phone,
-          service,
-          message
-        )
-        VALUES ($1, $2, $3, $4, $5, $6, $7)
-        RETURNING id
-      `,
-      [
-        name,
-        email,
-        company || "Not provided",
-        role || null,
-        phone || "Not provided",
-        service || "General inquiry",
-        message,
-      ],
-    );
-
-    const inquiryId = result.rows[0].id;
-    console.info(`Contact inquiry ${inquiryId} saved successfully.`);
-
-    const transporter = getMailTransporter();
-    const smtpConfig = getSmtpConfig();
-    const mailTo = process.env.MAIL_TO;
-
-    if (!mailTo) {
-      throw new Error("Missing required environment variable: MAIL_TO");
+    if (!country) {
+      return NextResponse.json(
+        { success: false, error: "Please select your country." },
+        { status: 400 },
+      );
     }
 
-    const safeName = escapeHtml(name);
-    const safeEmail = escapeHtml(email);
-    const safeMessage = escapeHtml(message).replace(/\r?\n/g, "<br />");
+    if (await isRateLimited(email)) {
+      return NextResponse.json(
+        { success: false, error: "Too many submissions. Please try again later." },
+        { status: 429 },
+      );
+    }
 
-    await transporter.sendMail({
-      from: `"HARTS Website" <${smtpConfig.user}>`,
-      to: mailTo,
-      replyTo: email,
-      subject: "New Contact Form Submission",
-      text: `
-New Contact Inquiry
+    const { data, error } = await supabase
+      .from("contact_inquiries")
+      .insert({
+        name,
+        email,
+        company: company || "Not provided",
+        role:    role    || null,
+        phone:   phone   || "Not provided",
+        country: country || "Not provided",
+        service: service || "General inquiry",
+        message,
+      })
+      .select("id")
+      .single();
 
-Name: ${name}
-Email: ${email}
-${company ? `Company: ${company}\n` : ""}${role ? `Role: ${role}\n` : ""}${phone ? `Phone: ${phone}\n` : ""}${service ? `Service: ${service}\n` : ""}
-Message:
-${message}
-      `.trim(),
+    if (error) throw new Error(`Supabase insert failed: ${error.message}`);
+
+    console.info(`Contact inquiry ${data.id} saved to Supabase.`);
+
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to:   "rajmadhan296@gmail.com",
+      subject: `New Inquiry from ${name} — HARTS Website`,
       html: `
-        <div style="font-family: Arial, sans-serif; color: #111827; line-height: 1.6;">
-          <h2 style="margin: 0 0 16px; color: #111827;">New Contact Inquiry</h2>
-          <table role="presentation" style="border-collapse: collapse; width: 100%; max-width: 640px;">
+        <div style="font-family:Arial,sans-serif;color:#111827;line-height:1.6;max-width:600px;">
+          <h2 style="margin:0 0 16px;color:#E7473C;">New Contact Inquiry</h2>
+          <table role="presentation" style="border-collapse:collapse;width:100%;">
             <tr>
-              <td style="padding: 8px 0; color: #475569; width: 140px;">Name</td>
-              <td style="padding: 8px 0; color: #111827;">${safeName}</td>
+              <td style="padding:8px 0;color:#475569;width:130px;">Name</td>
+              <td style="padding:8px 0;color:#111827;">${name}</td>
             </tr>
             <tr>
-              <td style="padding: 8px 0; color: #475569;">Email</td>
-              <td style="padding: 8px 0; color: #111827;">${safeEmail}</td>
+              <td style="padding:8px 0;color:#475569;">Email</td>
+              <td style="padding:8px 0;color:#111827;">${email}</td>
             </tr>
-            ${formatOptionalField("Company", company)}
-            ${formatOptionalField("Role", role)}
-            ${formatOptionalField("Phone", phone)}
-            ${formatOptionalField("Service", service)}
+            ${company ? `<tr><td style="padding:8px 0;color:#475569;">Company</td><td style="padding:8px 0;color:#111827;">${company}</td></tr>` : ""}
+            ${role ? `<tr><td style="padding:8px 0;color:#475569;">Role</td><td style="padding:8px 0;color:#111827;">${role}</td></tr>` : ""}
+            ${phone ? `<tr><td style="padding:8px 0;color:#475569;">Phone</td><td style="padding:8px 0;color:#111827;">${phone}</td></tr>` : ""}
+            ${country ? `<tr><td style="padding:8px 0;color:#475569;">Country</td><td style="padding:8px 0;color:#111827;">${country}</td></tr>` : ""}
+            ${service ? `<tr><td style="padding:8px 0;color:#475569;">Service</td><td style="padding:8px 0;color:#111827;">${service}</td></tr>` : ""}
           </table>
-          <div style="margin-top: 18px;">
-            <p style="margin: 0 0 8px; color: #475569;">Message</p>
-            <div style="padding: 14px 16px; background: #f8fafc; border-left: 4px solid #2563eb;">
-              ${safeMessage}
-            </div>
+          <div style="margin-top:18px;">
+            <p style="margin:0 0 8px;color:#475569;">Message</p>
+            <div style="padding:14px 16px;background:#f8fafc;border-left:4px solid #E7473C;white-space:pre-wrap;">${message}</div>
           </div>
+          <p style="margin-top:20px;font-size:12px;color:#9ca3af;">Inquiry #${data.id} · HARTS Website</p>
         </div>
       `,
     });
 
-    console.info(`Contact inquiry ${inquiryId} email notification sent.`);
+    console.info(`Notification email sent for inquiry ${data.id}.`);
 
-    return NextResponse.json(
-      { success: true, message: "Mail sent successfully" },
-      { status: 201 },
-    );
+    return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {
-    console.error("Contact API Error:", error);
+    console.error("Contact API error:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to send mail" },
+      { success: false, error: "Something went wrong. Please try again." },
       { status: 500 },
     );
   }

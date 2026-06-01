@@ -109,7 +109,7 @@ export function HomeExperience() {
         titleStrong="Building Future Enterprises."
         subtitle="Standing beside leaders and their teams as they build the structures, capabilities, and confidence to navigate what comes next."
         actions={
-          <Link className="solid-button large" href="/contact">
+          <Link className="solid-button large" href="/contact#inquiry">
             Connect with us
           </Link>
         }
@@ -161,8 +161,8 @@ export function HomeExperience() {
             </ol>
 
             <div className="wd-index-foot">
-              <Link className="wd-index-link" href="/what-we-deliver">
-                View all capabilities <span aria-hidden="true">→</span>
+              <Link className="outline-button magnetic-button" href="/what-we-deliver">
+                View all capabilities
               </Link>
             </div>
           </div>
@@ -232,7 +232,7 @@ export function HomeExperience() {
           </div>
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
-            <Link className="outline-button magnetic-button" href="/contact">
+            <Link className="outline-button magnetic-button" href="/contact#inquiry">
               Connect with us
             </Link>
           </div>

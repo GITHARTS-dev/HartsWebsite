@@ -33,7 +33,7 @@ export default function WhatWeDeliverRoute() {
           titleStrong="Measurable Outcomes."
           subtitle="We bring deep, specialized focus to the capabilities that matter most to your business, combining strategic insight, practical execution, and hands-on partnership to deliver sustainable results. Choose the support that aligns with your priorities and stage of growth."
           actions={
-            <Link className="solid-button large" href="/contact">
+            <Link className="solid-button large" href="/contact#inquiry">
               Connect With Us
             </Link>
           }

@@ -72,6 +72,15 @@ export function SiteFooter() {
         <p className="sf-legal">
           &copy; {new Date().getFullYear()} HARTS Consulting. All rights reserved.
         </p>
+        <div className="sf-legal-links">
+          <Link href="/privacy-policy" className="sf-legal-link">
+            Privacy Policy
+          </Link>
+          <span className="sf-legal-sep" aria-hidden="true">·</span>
+          <Link href="/terms-of-use" className="sf-legal-link">
+            Terms of Use
+          </Link>
+        </div>
       </div>
     </footer>
   );

@@ -94,7 +94,7 @@ export function AboutPage() {
         subtitle="HARTS closes the distance between strategic intent and organisational reality with the right rigour, the right people, and an uncompromising focus on what actually moves the needle."
         actions={
           <>
-            <Link className="solid-button large" href="/contact">
+            <Link className="solid-button large" href="/contact#inquiry">
               Connect with HARTS
             </Link>
           </>

@@ -79,7 +79,7 @@ export function SiteHeader() {
         <Link className="outline-button" href="/careers">
           Careers
         </Link>
-        <Link className="solid-button" href="/contact">
+        <Link className="solid-button" href="/contact#inquiry">
           Connect
         </Link>
       </div>
@@ -122,7 +122,7 @@ export function SiteHeader() {
           <Link className="outline-button large" href="/careers">
             Careers
           </Link>
-          <Link className="solid-button large" href="/contact">
+          <Link className="solid-button large" href="/contact#inquiry">
             Connect
           </Link>
         </div>

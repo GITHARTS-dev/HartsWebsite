@@ -34,7 +34,7 @@ export default function WhereWeDeliverRoute() {
           titleStrong="One Approach."
           subtitle="HARTS aligns its services to the operational stage of your organization whether you are building a new capability, strengthening an existing operation, or scaling proven models across the enterprise."
           actions={
-            <Link className="solid-button large" href="/contact">
+            <Link className="solid-button large" href="/contact#inquiry">
               Connect With Us
             </Link>
           }

@@ -43,6 +43,21 @@
   animation: none !important;
 }
 
+/* Defensive default — legacy .scroll-reveal CSS hid elements with opacity:0
+   and waited for a JS-added .is-visible class that no longer exists. Now the
+   runtime observer adds .site-reveal (overrides this back to 0 !important)
+   and then .site-reveal--visible to show. If the observer never runs (JS
+   error, race), elements stay readable instead of permanently invisible. */
+.scroll-reveal,
+.reveal-soft-up,
+.reveal-from-left,
+.reveal-from-right,
+.reveal-from-bottom {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
 .scroll-reveal,
 .industry-reveal,
 .industry-detail-reveal,

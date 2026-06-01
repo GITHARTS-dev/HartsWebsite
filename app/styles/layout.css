@@ -207,10 +207,14 @@
   z-index: 19;
   display: grid;
   gap: 20px;
-  padding: clamp(24px, 5vw, 36px) 5vw clamp(32px, 7vw, 48px);
+  padding:
+    clamp(24px, 5vw, 36px)
+    5vw
+    calc(clamp(32px, 7vw, 48px) + env(safe-area-inset-bottom, 0px));
   max-height: calc(100vh - 72px);
   max-height: calc(100dvh - 72px);
   overflow-y: auto;
+  overscroll-behavior: contain;
   background:
     linear-gradient(180deg, #FFFFFF 0%, #F8F8F8 100%);
   border-bottom: 1px solid rgba(231, 71, 60, 0.16);
@@ -223,6 +227,38 @@
     transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
     opacity 200ms ease,
     visibility 0s linear 260ms;
+}
+
+/* Scrim behind the drawer — only mounted while the menu is open
+   (see site-header.tsx). Sits below the drawer (z 19) and the sticky
+   header (z 20). Hidden on desktop. */
+.mobile-drawer-scrim {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .mobile-drawer-scrim {
+    display: block;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgba(10, 12, 20, 0.42);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    cursor: pointer;
+    z-index: 18;
+    animation: scrim-fade-in 220ms ease both;
+  }
+}
+
+@keyframes scrim-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .mobile-drawer[data-open="true"] {
@@ -280,6 +316,9 @@
 @media (max-width: 980px) {
   .site-header {
     grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 0 4vw;
+    min-height: 64px;
   }
 
   .primary-nav,
@@ -290,16 +329,52 @@
   .nav-toggle {
     display: inline-flex;
   }
+
+  /* Align scrim + drawer to the actual mobile header height. */
+  .mobile-drawer,
+  .mobile-drawer-scrim {
+    top: 64px;
+  }
+
+  .mobile-drawer {
+    max-height: calc(100vh - 64px);
+    max-height: calc(100dvh - 64px);
+  }
+
+  .brand {
+    width: 160px;
+    height: 56px;
+  }
 }
 
 @media (max-width: 560px) {
   .site-header {
     padding: 0 4vw;
+    min-height: 60px;
+  }
+
+  .mobile-drawer,
+  .mobile-drawer-scrim {
+    top: 60px;
+  }
+
+  .mobile-drawer {
+    max-height: calc(100vh - 60px);
+    max-height: calc(100dvh - 60px);
   }
 
   .brand {
-    width: 148px;
-    height: 52px;
+    width: 132px;
+    height: 46px;
+  }
+
+  .nav-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-toggle-bar {
+    width: 20px;
   }
 }
 

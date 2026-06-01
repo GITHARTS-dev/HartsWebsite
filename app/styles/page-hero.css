@@ -642,13 +642,18 @@
     max-width: 100%;
   }
 
+  /* Soft dark gradient — keeps the photo visible on mobile while
+     preserving legibility of the white headline/subtitle (which already
+     carry a text-shadow). Mirrors the desktop intent: image-first,
+     text overlaid. The page-specific .page-hero--<scene> .page-hero-scene-veil
+     rules still win when they exist (about, industries, etc.). */
   .page-hero--layout-split .page-hero-scene-veil {
     background:
       linear-gradient(
         180deg,
-        rgba(231, 71, 60, 0.78) 0%,
-        rgba(231, 71, 60, 0.7) 60%,
-        rgba(231, 71, 60, 0.62) 100%
+        rgba(10, 12, 20, 0.55) 0%,
+        rgba(10, 12, 20, 0.40) 55%,
+        rgba(10, 12, 20, 0.30) 100%
       );
   }
 }

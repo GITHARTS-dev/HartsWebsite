@@ -143,13 +143,11 @@ export function HomeExperience() {
             </header>
 
             <ol className="wd-index-list">
-              {services.slice(0, 3).map((svc, index) => {
+              {services.slice(0, 3).map((svc) => {
                 const Icon = serviceIcons[svc.slug] ?? Users;
-                const num = String(index + 1).padStart(2, "0");
                 return (
                   <li key={svc.slug} className="wd-index-item">
                     <Link href={`/what-we-deliver/${svc.slug}`} className="wd-index-row">
-                      <span className="wd-index-num">{num}</span>
                       <span className="wd-index-icon" aria-hidden="true">
                         <Icon />
                       </span>

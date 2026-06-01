@@ -41,6 +41,18 @@ export function SiteHeader() {
 
   return (
     <header className={`site-header${menuOpen ? " site-header--menu-open" : ""}`}>
+      {/* Scrim only exists while the drawer is open. Mounting it conditionally
+          avoids a permanently DOM-present <button> intercepting taps on some
+          mobile browsers, and removes any chance of the `hidden` attribute
+          fighting our display rules. */}
+      {menuOpen ? (
+        <button
+          type="button"
+          className="mobile-drawer-scrim"
+          aria-label="Close menu"
+          onClick={() => setMenuOpen(false)}
+        />
+      ) : null}
       <Link className="brand" href="/" aria-label="HARTS home">
         <img
           src="/HARTS Consulting LBG.png"

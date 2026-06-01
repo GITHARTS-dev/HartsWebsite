@@ -35,6 +35,9 @@ html {
      section bleed through above the target. Sections supply their own
      internal top padding for breathing room below the navbar. */
   scroll-padding-top: 72px;
+  /* Guard against any wide element (table, code block, oversized image)
+     leaking a horizontal scrollbar on mobile. */
+  overflow-x: clip;
 }
 
 body {
@@ -45,6 +48,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 a {

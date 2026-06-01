@@ -182,11 +182,16 @@
 
 @media (max-width: 720px) {
   .ed-svc-row {
-    grid-template-columns: 44px 1fr 28px;
+    /* Icon is hidden below; collapse the grid to body + arrow so the
+       description doesn't get squeezed into the (now-empty) icon track. */
+    grid-template-columns: 1fr auto;
     gap: 14px;
-    padding: 28px 0;
+    padding: 22px 0;
   }
   .ed-svc-icon { display: none; }
+  .ed-svc-arrow { width: 28px; height: 28px; }
+  .ed-svc-title { font-size: 17px; }
+  .ed-svc-tag { font-size: 13.5px; }
 }
 
 /* ─── 2.  Service detail page  (/what-we-deliver/[slug]) ────────────── */

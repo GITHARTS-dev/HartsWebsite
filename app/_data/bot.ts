@@ -20,6 +20,7 @@ export type BotPhase = {
   stages?: BotStage[];
 };
 
+
 export const botPhases: BotPhase[] = [
   {
     key: "build",

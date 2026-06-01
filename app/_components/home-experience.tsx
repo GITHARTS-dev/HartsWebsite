@@ -107,7 +107,7 @@ export function HomeExperience() {
         eyebrow="Strategy. Transformation. Clarity."
         titleSoft="Strategic Expertise."
         titleStrong="Building Future Enterprises."
-        subtitle="Empowering organizations to navigate complexity, accelerate transformation, and build sustainable competitive advantage in a rapidly evolving world."
+        subtitle="Standing beside leaders and their teams as they build the structures, capabilities, and confidence to navigate what comes next."
         actions={
           <Link className="solid-button large" href="/contact">
             Connect with us

@@ -67,7 +67,7 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: #e63030;
+  color: #E7473C;
   font-family: var(--font-body);
   font-size: 14.5px;
   font-weight: 620;
@@ -85,7 +85,7 @@
    never strips its red background. */
 .nav-pill:not(.nav-pill--active):hover {
   background: transparent;
-  color: #e63030;
+  color: #E7473C;
 }
 
 /* Keyboard focus: subtle outline for accessibility, no fill. */
@@ -96,7 +96,7 @@
 
 /* Mouse-down on a non-active pill: red fill flashes instantly. */
 .nav-pill:not(.nav-pill--active):active {
-  background: #e63030;
+  background: #E7473C;
   color: #ffffff;
   transform: scale(0.96);
 }
@@ -108,7 +108,7 @@
 .nav-pill--active:focus,
 .nav-pill--active:focus-visible,
 .nav-pill--active:active {
-  background: #e63030;
+  background: #E7473C;
   color: #ffffff;
   font-weight: 720;
   box-shadow: 0 6px 16px rgba(231, 71, 60, 0.22);

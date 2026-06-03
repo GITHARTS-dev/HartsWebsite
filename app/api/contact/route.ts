@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { supabase } from "../../_lib/supabase";
+import { escapeHtml } from "../../_lib/sanitize";
 import {
   capLength,
   isHoneypotTripped,
@@ -142,31 +143,40 @@ export async function POST(request: Request) {
 
     console.info(`Contact inquiry ${data.id} saved to Supabase.`);
 
+    const eName    = escapeHtml(name);
+    const eEmail   = escapeHtml(email);
+    const eCompany = escapeHtml(company);
+    const eRole    = escapeHtml(role);
+    const ePhone   = escapeHtml(phone);
+    const eCountry = escapeHtml(country);
+    const eService = escapeHtml(service);
+    const eMessage = escapeHtml(message);
+
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to:   "rajmadhan296@gmail.com",
-      subject: `New Inquiry from ${name} — HARTS Website`,
+      subject: `New Inquiry from ${eName} — HARTS Website`,
       html: `
         <div style="font-family:Arial,sans-serif;color:#111827;line-height:1.6;max-width:600px;">
           <h2 style="margin:0 0 16px;color:#E7473C;">New Contact Inquiry</h2>
           <table role="presentation" style="border-collapse:collapse;width:100%;">
             <tr>
               <td style="padding:8px 0;color:#475569;width:130px;">Name</td>
-              <td style="padding:8px 0;color:#111827;">${name}</td>
+              <td style="padding:8px 0;color:#111827;">${eName}</td>
             </tr>
             <tr>
               <td style="padding:8px 0;color:#475569;">Email</td>
-              <td style="padding:8px 0;color:#111827;">${email}</td>
+              <td style="padding:8px 0;color:#111827;">${eEmail}</td>
             </tr>
-            ${company ? `<tr><td style="padding:8px 0;color:#475569;">Company</td><td style="padding:8px 0;color:#111827;">${company}</td></tr>` : ""}
-            ${role ? `<tr><td style="padding:8px 0;color:#475569;">Role</td><td style="padding:8px 0;color:#111827;">${role}</td></tr>` : ""}
-            ${phone ? `<tr><td style="padding:8px 0;color:#475569;">Phone</td><td style="padding:8px 0;color:#111827;">${phone}</td></tr>` : ""}
-            ${country ? `<tr><td style="padding:8px 0;color:#475569;">Country</td><td style="padding:8px 0;color:#111827;">${country}</td></tr>` : ""}
-            ${service ? `<tr><td style="padding:8px 0;color:#475569;">Service</td><td style="padding:8px 0;color:#111827;">${service}</td></tr>` : ""}
+            ${eCompany ? `<tr><td style="padding:8px 0;color:#475569;">Company</td><td style="padding:8px 0;color:#111827;">${eCompany}</td></tr>` : ""}
+            ${eRole ? `<tr><td style="padding:8px 0;color:#475569;">Role</td><td style="padding:8px 0;color:#111827;">${eRole}</td></tr>` : ""}
+            ${ePhone ? `<tr><td style="padding:8px 0;color:#475569;">Phone</td><td style="padding:8px 0;color:#111827;">${ePhone}</td></tr>` : ""}
+            ${eCountry ? `<tr><td style="padding:8px 0;color:#475569;">Country</td><td style="padding:8px 0;color:#111827;">${eCountry}</td></tr>` : ""}
+            ${eService ? `<tr><td style="padding:8px 0;color:#475569;">Service</td><td style="padding:8px 0;color:#111827;">${eService}</td></tr>` : ""}
           </table>
           <div style="margin-top:18px;">
             <p style="margin:0 0 8px;color:#475569;">Message</p>
-            <div style="padding:14px 16px;background:#f8fafc;border-left:4px solid #E7473C;white-space:pre-wrap;">${message}</div>
+            <div style="padding:14px 16px;background:#f8fafc;border-left:4px solid #E7473C;white-space:pre-wrap;">${eMessage}</div>
           </div>
           <p style="margin-top:20px;font-size:12px;color:#9ca3af;">Inquiry #${data.id} · HARTS Website</p>
         </div>

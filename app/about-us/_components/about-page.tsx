@@ -105,26 +105,26 @@ export function AboutPage() {
         <div className="au-story-shell">
           <div className="au-story-copy">
             <p className="eyebrow">Our story</p>
-            <h2>Built for the moments where progress matters.</h2>
+            <h2>Built for organizations that want more than advice.</h2>
             <p>
-              HARTS is a consulting partner for organizations navigating growth, change, and critical business decisions. We work closely with leadership teams to strengthen operations, build capabilities, integrate acquisitions, and drive sustainable performance.
+              HARTS partners with leaders and organizations navigating growth, transformation, and critical business decisions. We help turn strategic priorities into practical action, enabling businesses to move forward with clarity, confidence, and measurable results.
             </p>
             <p>
-              Our team combines strategic insight, operational expertise, and practical execution to help organizations move forward with confidence. We don't just advise we work alongside our clients to deliver measurable results, build internal capability, and create lasting value.
+              We believe meaningful progress happens when strategy and execution work together. That's why we don't stop at recommendations. We work alongside our clients to align teams, strengthen operations, build capabilities, and ensure initiatives deliver lasting impact.
             </p>
           </div>
           <ul className="au-story-pillars">
             <li>
-              <strong>Strategic clarity</strong>
-              <span>Sharper choices, calmer execution.</span>
+              <strong>Strategic Clarity</strong>
+              <span>Turning complex business challenges into actionable growth strategies.</span>
             </li>
             <li>
-              <strong>Operating discipline</strong>
-              <span>Decisions translated into running cadence.</span>
+              <strong>Operational Excellence</strong>
+              <span>Building scalable operations that deliver consistent performance.</span>
             </li>
             <li>
-              <strong>Capability transfer</strong>
-              <span>Your teams own the outcome long after we leave.</span>
+              <strong>Capability Building</strong>
+              <span>Developing internal teams, processes, and systems for long-term success.</span>
             </li>
           </ul>
         </div>

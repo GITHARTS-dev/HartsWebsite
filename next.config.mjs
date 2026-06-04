@@ -42,6 +42,27 @@ const nextConfig = {
 
   async headers() {
     return [
+      // Security headers applied to every response as a baseline.
+      // The middleware (middleware.ts → proxy.ts) also sets these per-request
+      // with a stricter nonce-based CSP; this config-level layer acts as a
+      // fallback for paths the middleware matcher excludes (static assets,
+      // images) and for environments where middleware doesn't run.
+      {
+        source: '/(.*)',
+        headers: [
+          { key: 'X-Content-Type-Options',       value: 'nosniff' },
+          { key: 'X-Frame-Options',               value: 'DENY' },
+          { key: 'Referrer-Policy',               value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy',            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=(), interest-cohort=()' },
+          { key: 'Cross-Origin-Opener-Policy',    value: 'same-origin' },
+          { key: 'Cross-Origin-Resource-Policy',  value: 'same-origin' },
+          { key: 'Strict-Transport-Security',     value: 'max-age=63072000; includeSubDomains; preload' },
+          // Broad CSP fallback — middleware overrides this with a tighter
+          // nonce-based policy on dynamic responses.
+          { key: 'Content-Security-Policy',       value: "default-src 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'" },
+        ],
+      },
+
       // Long-cache static hero / team images (originals served from /public).
       {
         source: '/hero/:path*',

@@ -9010,6 +9010,14 @@ a.solid-button:visited {
   color: rgba(26, 26, 26, 0.6);
 }
 
+.apply-form-privacy-link {
+  color: #E7473C;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 150ms ease;
+}
+.apply-form-privacy-link:hover { opacity: 0.75; }
+
 .apply-form-error {
   margin: 0;
   padding: 12px 14px;

@@ -42,7 +42,7 @@ export function ServiceDetail({ service }: { service: Service }) {
               </h1>
               <p className="ed-detail-line">{service.line}</p>
               <div className="ed-detail-actions">
-                <Link className="solid-button" href="/contact">Discuss Your Transformation</Link>
+                <Link className="solid-button" href="/contact#inquiry">Discuss Your Transformation</Link>
               </div>
 
               <div className="ed-detail-preview" aria-label="Sections in this engagement">
@@ -170,7 +170,7 @@ export function ServiceDetail({ service }: { service: Service }) {
           )}
 
           <div className="ed-detail-actions" style={{ marginTop: 32 }}>
-            <Link className="outline-button" href="/contact">
+            <Link className="outline-button" href="/contact#inquiry">
               Connect With Us
             </Link>
           </div>

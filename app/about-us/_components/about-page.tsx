@@ -107,10 +107,10 @@ export function AboutPage() {
             <p className="eyebrow">Our story</p>
             <h2>Built for the moments where progress matters.</h2>
             <p>
-              HARTS is a consulting partner for organizations navigating growth, change, and critical business decisions. We work closely with leadership teams to strengthen operations, build capabilities, integrate acquisitions, and drive sustainable performance.
+              HARTS is a consulting partner for organisations navigating growth, change, and critical business decisions. We work closely with leadership teams to strengthen operations, build capabilities, integrate acquisitions, and drive sustainable performance.
             </p>
             <p>
-              Our team combines strategic insight, operational expertise, and practical execution to help organizations move forward with confidence. We don't just advise we work alongside our clients to deliver measurable results, build internal capability, and create lasting value.
+              Our team combines strategic insight, operational expertise, and practical execution to help organisations move forward with confidence. We don't just advise we work alongside our clients to deliver measurable results, build internal capability, and create lasting value.
             </p>
           </div>
           <ul className="au-story-pillars">

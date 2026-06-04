@@ -3,12 +3,12 @@
 import type { CSSProperties } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
-import { Users, Award, GitMerge, Globe, UserPlus, Target, Hammer, Settings, ArrowLeftRight, Sprout, TrendingUp, LineChart } from "lucide-react";
+import { Users, Award, GitMerge, Globe, UserPlus, Target, Sprout, TrendingUp, LineChart } from "lucide-react";
 
 import { PageHero } from "../_shared/layout/page-hero";
 import { FinalCTA } from "../_shared/layout/final-cta";
 import { services } from "../_data/services";
-import { domains } from "../_data/domains";
+import { stages } from "../_data/stages";
 
 const serviceIcons: Record<string, React.ElementType> = {
   "od-and-implementation": Users,
@@ -19,9 +19,7 @@ const serviceIcons: Record<string, React.ElementType> = {
   "executive-coaching": Target,
 };
 
-const botIcons: React.ElementType[] = [Hammer, Settings, ArrowLeftRight];
-
-const domainIcons: Record<string, React.ElementType> = {
+const stageIcons: Record<string, React.ElementType> = {
   "setup": Sprout,
   "develop": TrendingUp,
   "scale-up": LineChart,
@@ -30,21 +28,6 @@ const domainIcons: Record<string, React.ElementType> = {
 function revealStyle(index = 0): CSSProperties {
   return { "--reveal-delay": `${index * 55}ms` } as CSSProperties;
 }
-
-const botSteps = [
-  {
-    title: "Build",
-    text: "We define scope, transfer knowledge in, design OKRs and the SLAs your new function will run on - alongside your team, not for them.",
-  },
-  {
-    title: "Operate",
-    text: "We stabilise the process, shadow your people, and execute SLAs in practice - carrying the weight through transition.",
-  },
-  {
-    title: "Transfer",
-    text: "Transition, hypercare, steady-state. We hand over a functioning capability your organisation owns and runs without us.",
-  },
-];
 
 export function HomeExperience() {
   useEffect(() => {
@@ -105,24 +88,15 @@ export function HomeExperience() {
         scene="home"
         layout="split"
         eyebrow="Strategy. Transformation. Clarity."
-        titleSoft="Strategic Expertise."
-        titleStrong="Building Future Enterprises."
+        titleSoft="When restructuring, integration, or transformation"
+        titleStrong="has to work."
         subtitle="Standing beside leaders and their teams as they build the structures, capabilities, and confidence to navigate what comes next."
         actions={
           <Link className="solid-button large" href="/contact">
-            Connect with us
+            Start a Conversation
           </Link>
         }
       />
-
-      <section className="vision-statement-section" id="vision">
-        <div className="vision-statement reveal">
-          <p className="eyebrow">Our Vision</p>
-          <h2>
-            Bringing People Together Through Equity and Purpose to Create Lasting Value
-          </h2>
-        </div>
-      </section>
 
       {/* ─── WHAT WE DELIVER (editorial index list) ──────────────────── */}
       <section
@@ -137,7 +111,7 @@ export function HomeExperience() {
               <div className="wd-index-head-body">
                 <h2>Strategy is only valuable when operations can sustain it.</h2>
                 <p>
-                  HARTS partners with leaders to architect, embed, and scale critical capabilities by unifying strategy, execution, and disciplined transfer under one operating model.
+                  We build the operations that make strategy stick. Six capabilities, delivered end-to-end.
                 </p>
               </div>
             </header>
@@ -169,100 +143,28 @@ export function HomeExperience() {
         </div>
       </section>
 
-      {/* ─── HOW WE DELIVER (BOT) ─────────────────────────────────────── */}
-      {/* <section
-        className="home-premium-section choose-section parallax-section"
-        id="how-we-deliver"
-      >
-        <div className="section-orb orb-two" aria-hidden="true" />
-        <div className="home-section-shell">
-          <div className="home-section-heading scroll-reveal">
-            <p className="eyebrow">How We Deliver</p>
-            <h2>Build. Operate. Transfer.</h2>
-            <p>
-              The Build,Operate,Transfer (BOT) consulting methodology is the spine of every HARTS engagement.
-              We don&apos;t advise and leave. We build the capability, run it through transition,
-              and hand it over to your team.
-            </p>
-          </div>
-
-          <div className="bot-pathway">
-            <svg
-              className="bot-pathway-curve"
-              viewBox="0 0 1100 340"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M 40 186 L 183.33 186 C 340 186, 420 131, 550 131 S 770 76, 916.67 76 L 1056 76"
-                fill="none"
-                stroke="#E7473C"
-                strokeWidth="1.4"
-                strokeDasharray="5 7"
-                strokeLinecap="round"
-                vectorEffect="non-scaling-stroke"
-              />
-              <path
-                d="M 1046 67 L 1066 76 L 1046 85"
-                fill="none"
-                stroke="#E7473C"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
-
-            {botSteps.map((step, index) => {
-              const Icon = botIcons[index] ?? Hammer;
-              return (
-                <article
-                  key={step.title}
-                  className={`bot-step bot-step--${index + 1}`}
-                >
-                  <span className="bot-step-icon" aria-hidden="true">
-                    <Icon />
-                  </span>
-                  <span className="bot-step-dot" aria-hidden="true" />
-                  <h3 className="bot-step-title">{step.title}</h3>
-                  <p className="bot-step-text">{step.text}</p>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
-            <Link className="outline-button magnetic-button" href="/contact">
-              Connect with us
-            </Link>
-          </div>
-        </div>
-      </section> */}
-
-      {/* ─── WHERE WE DELIVER (3 domains) ─────────────────────────────── */}
+      {/* ─── WHERE YOU STAND (3 stages) ───────────────────────────────── */}
       <section
         className="home-premium-section challenges-section parallax-section"
-        id="where-we-deliver"
+        id="where-you-stand"
       >
         <div className="section-orb orb-one" aria-hidden="true" />
         <div className="home-section-shell">
           <div className="home-section-heading scroll-reveal">
-            <p className="eyebrow">Where We Deliver</p>
-            <h2>From setup to scale, we partner across every stage of growth.</h2>
+            <p className="eyebrow">Where You Stand</p>
+            <h2>Where is your business right now?</h2>
             <p>
-              HARTS organises around where you are, not what we sell. Setup, Develop,
-              Scale Up; one consulting partner, one engagement model, three moments
-              of intervention across your transformation lifecycle.
+              The engagement looks different at every stage. Find the one that fits where you actually are.
             </p>
           </div>
 
           <div className="choose-grid">
-            {domains.map((d, index) => {
-              const Icon = domainIcons[d.slug] ?? Sprout;
+            {stages.map((s, index) => {
+              const Icon = stageIcons[s.slug] ?? Sprout;
               return (
                 <Link
-                  key={d.id}
-                  href={`/where-we-deliver#${d.slug}`}
+                  key={s.id}
+                  href={`/where-you-stand#${s.slug}`}
                   className="premium-info-card choose-card scroll-reveal reveal-soft-up"
                   style={revealStyle(index)}
                 >
@@ -270,8 +172,8 @@ export function HomeExperience() {
                     <Icon />
                   </span>
                   <div className="card-body">
-                    <h3>{d.label}</h3>
-                    <p>{d.body}</p>
+                    <h3>{s.label}</h3>
+                    <p>{s.body}</p>
                   </div>
                 </Link>
               );
@@ -279,17 +181,27 @@ export function HomeExperience() {
           </div>
 
           <div className="challenges-subheading-block" style={{ marginTop: 28 }}>
-            <Link className="outline-button magnetic-button" href="/where-we-deliver">
-              Explore the three domains
+            <Link className="outline-button magnetic-button" href="/where-you-stand">
+              Explore the three stages
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ─── VISION — emotional close before the final CTA ─────────────── */}
+      <section className="vision-statement-section" id="vision">
+        <div className="vision-statement reveal">
+          <p className="eyebrow">Our Vision</p>
+          <h2>
+            Bringing People Together Through Equity and Purpose to Create Lasting Value
+          </h2>
         </div>
       </section>
 
       <FinalCTA
         eyebrow="Partner With HARTS"
         heading={<>Navigate transformation <em>with confidence.</em></>}
-        body="The future belongs to organizations that adapt, evolve, and lead with clarity. HARTS helps businesses move forward with intelligent strategy and connected transformation."
+        body="The future belongs to organisations that adapt, evolve, and lead with clarity. HARTS helps businesses move forward with intelligent strategy and connected transformation."
         primary={{ label: "Connect With Us", href: "/contact" }}
       />
     </main>

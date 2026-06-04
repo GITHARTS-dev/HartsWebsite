@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What We Deliver | HARTS",
     description:
-      "Six consulting services delivered end-to-end via the Build-Operate-Transfer model.",
+      "Six consulting services delivered end-to-end, with the Build-Operate-Transfer model applied where it fits, most prominently to GCC & Shared Services.",
     url: "/what-we-deliver",
     type: "article",
   },
@@ -29,12 +29,12 @@ export default function WhatWeDeliverRoute() {
           scene="how-we-help"
           layout="split"
           eyebrow="What We Deliver"
-          titleSoft="Integrated Capabilities."
-          titleStrong="Measurable Outcomes."
-          subtitle="We bring deep, specialized focus to the capabilities that matter most to your business, combining strategic insight, practical execution, and hands-on partnership to deliver sustainable results. Choose the support that aligns with your priorities and stage of growth."
+          titleSoft="Specialized expertise."
+          titleStrong=" Practical outcomes."
+          subtitle="We work alongside your team and stay until the change runs. Pick the engagement that fits the work in front of you."
           actions={
             <Link className="solid-button large" href="/contact">
-              Connect With Us
+              Talk to a partner
             </Link>
           }
         />
@@ -45,11 +45,8 @@ export default function WhatWeDeliverRoute() {
             <header className="ed-section-head">
               <p className="eyebrow">Our Services</p>
               <h2>
-                Core capabilities we deliver <span className="ed-accent">end-to-end.</span>
+                Pick the capability that fits <span className="ed-accent">the work.</span>
               </h2>
-              <p>
-                From organizational effectiveness and talent acquisition to leadership advisory and integration support, we help organizations address critical priorities and achieve meaningful outcomes.
-              </p>
             </header>
 
             <div className="ed-svc-list ed-svc-list--two-col">
@@ -77,10 +74,10 @@ export default function WhatWeDeliverRoute() {
         </section>
 
         <FinalCTA
-          heading={<>Not sure which service fits? <em>Start with where you are.</em></>}
-          body="Tell us about the moment your organisation is in. We will come back with the service mix that actually fits."
-          primary={{ label: "Connect With HARTS", href: "/contact" }}
-          secondary={{ label: "See the Three Domains", href: "/where-we-deliver" }}
+          heading={<>Not sure which one fits? <em>Start with where you are.</em></>}
+          body="Tell us the moment your organisation is in. We will come back with the service mix that actually fits."
+          primary={{ label: "Talk to a partner", href: "/contact" }}
+          secondary={{ label: "See the Three Stages", href: "/where-you-stand" }}
         />
       </main>
     </PageShell>

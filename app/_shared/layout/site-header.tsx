@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/where-you-stand", label: "Where You Stand" },
   { href: "/what-we-deliver", label: "What We Deliver" },
-  { href: "/where-we-deliver", label: "Where We Deliver" },
   { href: "/about-us", label: "About Us" },
 ];
 
@@ -64,15 +65,23 @@ export function SiteHeader() {
       </Link>
 
       <nav className="primary-nav" aria-label="Primary navigation">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`nav-pill${pathname.startsWith(item.href) ? " nav-pill--active" : ""}`}
-          >
-            {item.label}
-          </Link>
-        ))}
+        {navItems.map((item) => {
+          // Home matches only the exact root; everything else uses prefix-match
+          // so sub-routes (e.g. /what-we-deliver/[slug]) light up the parent.
+          const isActive =
+            item.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`nav-pill${isActive ? " nav-pill--active" : ""}`}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
 
       <div className="header-actions">
@@ -106,17 +115,21 @@ export function SiteHeader() {
         data-open={menuOpen}
       >
         <nav className="mobile-drawer-nav" aria-label="Mobile primary navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`mobile-drawer-link${
-                pathname.startsWith(item.href) ? " mobile-drawer-link--active" : ""
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`mobile-drawer-link${isActive ? " mobile-drawer-link--active" : ""}`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
         <div className="mobile-drawer-actions">
           <Link className="outline-button large" href="/careers">

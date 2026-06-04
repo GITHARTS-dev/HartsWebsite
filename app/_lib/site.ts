@@ -11,7 +11,7 @@ export const siteUrl =
 export const siteName = "HARTS Consulting";
 
 export const siteTagline =
-  "Strategy, Transformation & Digital Enablement";
+  "Strategy. Transformation. Clarity.";
 
 export const siteDescription =
   "HARTS partners with senior leadership teams to navigate complexity, accelerate transformation, and deliver measurable outcomes across strategy, operations, and digital enablement.";

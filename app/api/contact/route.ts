@@ -18,6 +18,7 @@ const MAX = {
   role: 120,
   email: 254,
   phone: 30,
+  industry: 120,
   service: 120,
   message: 5000,
 };
@@ -28,6 +29,7 @@ type ContactRequestBody = {
   role?: unknown;
   email?: unknown;
   phone?: unknown;
+  industry?: unknown;
   service?: unknown;
   message?: unknown;
   website?: unknown;
@@ -48,6 +50,7 @@ async function readContactBody(request: Request): Promise<ContactRequestBody> {
     role: formData.get("role"),
     email: formData.get("email"),
     phone: formData.get("phone"),
+    industry: formData.get("industry"),
     service: formData.get("service"),
     message: formData.get("message"),
     website: formData.get("website"),
@@ -94,6 +97,7 @@ export async function POST(request: Request) {
     const role = capLength(fieldToString(body.role), MAX.role);
     const email = capLength(fieldToString(body.email), MAX.email).toLowerCase();
     const phone = capLength(fieldToString(body.phone), MAX.phone);
+    const industry = capLength(fieldToString(body.industry), MAX.industry);
     const service = capLength(fieldToString(body.service), MAX.service);
     const message = capLength(fieldToString(body.message), MAX.message);
 
@@ -128,10 +132,11 @@ export async function POST(request: Request) {
           company,
           role,
           phone,
+          industry,
           service,
           message
         )
-        VALUES ($1, $2, $3, $4, $5, $6, $7)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING id
       `,
       [
@@ -140,6 +145,7 @@ export async function POST(request: Request) {
         company || "Not provided",
         role || null,
         phone || "Not provided",
+        industry || "Not provided",
         service || "General inquiry",
         message,
       ],
@@ -170,7 +176,7 @@ New Contact Inquiry
 
 Name: ${name}
 Email: ${email}
-${company ? `Company: ${company}\n` : ""}${role ? `Role: ${role}\n` : ""}${phone ? `Phone: ${phone}\n` : ""}${service ? `Service: ${service}\n` : ""}
+${company ? `Company: ${company}\n` : ""}${role ? `Role: ${role}\n` : ""}${phone ? `Phone: ${phone}\n` : ""}${industry ? `Industry: ${industry}\n` : ""}${service ? `Service: ${service}\n` : ""}
 Message:
 ${message}
       `.trim(),
@@ -189,6 +195,7 @@ ${message}
             ${formatOptionalField("Company", company)}
             ${formatOptionalField("Role", role)}
             ${formatOptionalField("Phone", phone)}
+            ${formatOptionalField("Industry", industry)}
             ${formatOptionalField("Service", service)}
           </table>
           <div style="margin-top: 18px;">

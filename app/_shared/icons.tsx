@@ -114,13 +114,13 @@ export function BotIcon({
   return <Icon size={size} strokeWidth={strokeWidth} aria-hidden="true" />;
 }
 
-const domainIconMap = {
+const stageIconMap = {
   setup: Sprout,
   develop: TrendingUp,
   scaleup: LineChart,
 } as const;
 
-export function DomainIcon({
+export function StageIcon({
   id,
   size = 20,
   strokeWidth = 1.8,
@@ -129,7 +129,7 @@ export function DomainIcon({
   size?: number;
   strokeWidth?: number;
 }) {
-  const Icon = domainIconMap[id];
+  const Icon = stageIconMap[id];
   return <Icon size={size} strokeWidth={strokeWidth} aria-hidden="true" />;
 }
 

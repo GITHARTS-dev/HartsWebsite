@@ -29,15 +29,20 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* `scroll-behavior: smooth` is scoped to :focus-within so that the
+     browser still uses instant scroll on back/forward navigation —
+     otherwise the scroll-restoration target gets fought by a smooth
+     animation and the page lands at the wrong position. Smooth still
+     applies to anchor-link clicks because clicking focuses the link. */
   /* Offset hash-anchor scrolling by exactly the sticky-header height
      (72px). No extra buffer — adding one lets a strip of the previous
      section bleed through above the target. Sections supply their own
      internal top padding for breathing room below the navbar. */
   scroll-padding-top: 72px;
-  /* Guard against any wide element (table, code block, oversized image)
-     leaking a horizontal scrollbar on mobile. */
-  overflow-x: clip;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 body {

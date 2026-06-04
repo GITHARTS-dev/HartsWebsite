@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { ServiceIcon, BotIcon, DomainIcon, CheckIcon } from "../../_shared/icons";
+import { ServiceIcon, BotIcon, StageIcon, CheckIcon } from "../../_shared/icons";
 import { FinalCTA } from "../../_shared/layout/final-cta";
 import type { Service } from "../../_data/services";
-import { domains } from "../../_data/domains";
+import { stages } from "../../_data/stages";
 
 type PhaseKey = "build" | "operate" | "transfer";
 
@@ -55,7 +55,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                     <a href="#methodology" data-num="02"><span>How We Deliver</span></a>
                   </li>
                   <li>
-                    <a href="#context" data-num="03"><span>Where We Deliver</span></a>
+                    <a href="#context" data-num="03"><span>Where You Stand</span></a>
                   </li>
                 </ol>
               </div>
@@ -107,9 +107,7 @@ export function ServiceDetail({ service }: { service: Service }) {
         <div className="ed-shell">
           <header className="ed-section-head">
             <p className="ed-eyebrow">How We Deliver This</p>
-            <h2>
-              A structured journey from <em>insight to impact.</em>
-            </h2>
+            <h2>{service.deliveryHeading}</h2>
           </header>
 
           {service.slug !== "gcc-and-shared-services" && (
@@ -179,25 +177,25 @@ export function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* ─── WHERE WE DELIVER THIS - domain context rows ───────────── */}
+      {/* ─── WHERE YOU STAND - stage context rows ───────────────────── */}
       <section className="ed-section" id="context">
         <div className="ed-shell">
           <header className="ed-section-head">
-            <p className="ed-eyebrow">Where We Deliver This</p>
+            <p className="ed-eyebrow">Where You Stand</p>
             <h2>
-              Tailored to your <em>business context.</em>
+              Tailored to your <em>stage of growth.</em>
             </h2>
-            
+
           </header>
 
           <div className="ed-ctx-list">
-            {domains.map((d) => (
-              <Link key={d.id} href={`/where-we-deliver#${d.slug}`} className="ed-ctx">
+            {stages.map((s) => (
+              <Link key={s.id} href={`/where-you-stand#${s.slug}`} className="ed-ctx">
                 <span className="ed-ctx-label">
-                  <DomainIcon id={d.id} size={16} />
-                  {d.label}
+                  <StageIcon id={s.id} size={16} />
+                  {s.label}
                 </span>
-                <p className="ed-ctx-body">{service.ctx[d.id]}</p>
+                <p className="ed-ctx-body">{service.ctx[s.id]}</p>
               </Link>
             ))}
           </div>

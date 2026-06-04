@@ -31,6 +31,15 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
+  // Permanent redirects for renamed routes so existing bookmarks and
+  // search-engine-cached links don't 404.
+  async redirects() {
+    return [
+      { source: '/where-we-deliver', destination: '/where-you-stand', permanent: true },
+      { source: '/where-we-deliver/:path*', destination: '/where-you-stand/:path*', permanent: true },
+    ];
+  },
+
   async headers() {
     return [
       // Long-cache static hero / team images (originals served from /public).

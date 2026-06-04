@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { headers } from "next/headers";
 import { DM_Sans } from "next/font/google";
+import { ScrollRestoration } from "./_shared/layout/scroll-restoration";
 import "./globals.css";
 import "./styles/about.css";
 
@@ -95,7 +96,7 @@ const organizationJsonLd = {
   logo: `${siteUrl}${ogImagePath}`,
   image: `${siteUrl}${ogImagePath}`,
   description: siteDescription,
-  slogan: "Build. Operate. Transfer.",
+  slogan: "Strategy. Transformation. Clarity.",
   email: organization.email,
   telephone: organization.phone,
   priceRange: "$$$",
@@ -220,7 +221,10 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ScrollRestoration />
+        {children}
+      </body>
     </html>
   );
 }

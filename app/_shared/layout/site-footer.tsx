@@ -5,7 +5,7 @@ const navCols = [
     heading: "Practice",
     links: [
       { label: "What We Deliver", href: "/what-we-deliver" },
-      { label: "Where We Deliver", href: "/where-we-deliver" },
+      { label: "Where You Stand", href: "/where-you-stand" },
     ],
   },
   {

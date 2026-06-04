@@ -59,7 +59,7 @@ export const methodologyKeywords = [
 export const serviceKeywords = [
   // OD & Implementation
   "organisational design consulting",
-  "organizational design firm",
+  "organisational design firm",
   "operating model design",
   "OD and implementation",
   "workforce structure consulting",

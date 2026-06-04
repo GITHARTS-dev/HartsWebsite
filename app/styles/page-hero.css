@@ -237,7 +237,83 @@
    Uses the same split layout + red gradient veil as how-we-work so the
    home, careers, connect, and inner pages share one unified template. */
 .page-hero--home .page-hero-scene-image {
-  background-image: url("/hero/home-hero.jpg?v=2");
+  /* Original architectural SVG — clean structured composition with
+     brand-red accents on deep navy. */
+  background-image: url("/hero/home-hero-architecture.svg");
+  background-position: center right;
+  background-size: cover;
+}
+
+/* Inline animated SVG layer — sits above the static image, below the veil. */
+.page-hero-scene-art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.page-hero-scene-art svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Cursor-parallax layers. The host .page-hero element exposes
+   --cursor-x and --cursor-y in [-0.5, +0.5] from its centre, eased at
+   ~6% per frame in JS (see HomeHeroArt useEffect). The three layers
+   translate proportionally to depth so the visitor feels physical
+   parallax, not raw 1-to-1 tracking. */
+.page-hero-scene-art .hh-far {
+  transform: translate3d(
+    calc(var(--cursor-x, 0) * 12px),
+    calc(var(--cursor-y, 0) * 8px),
+    0
+  );
+  will-change: transform;
+}
+
+.page-hero-scene-art .hh-mid {
+  transform: translate3d(
+    calc(var(--cursor-x, 0) * 22px),
+    calc(var(--cursor-y, 0) * 14px),
+    0
+  );
+  will-change: transform;
+}
+
+.page-hero-scene-art .hh-near {
+  transform: translate3d(
+    calc(var(--cursor-x, 0) * 36px),
+    calc(var(--cursor-y, 0) * 22px),
+    0
+  );
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-scene-art svg animate,
+  .page-hero-scene-art svg animateMotion,
+  .page-hero-scene-art svg animateTransform {
+    display: none;
+  }
+  /* Disable parallax too, but keep the static composition. */
+  .page-hero-scene-art .hh-far,
+  .page-hero-scene-art .hh-mid,
+  .page-hero-scene-art .hh-near {
+    transform: none;
+  }
+}
+
+/* Soft left-side dark wash so the white headline stays legible over the
+   architectural SVG. Fades off on the right so the artwork reads fully. */
+.page-hero--home .page-hero-scene-veil {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 10, 18, 0.55) 0%,
+      rgba(8, 10, 18, 0.30) 40%,
+      rgba(8, 10, 18, 0.10) 75%,
+      rgba(8, 10, 18, 0.00) 100%
+    );
 }
 
 /* Industries (Where We Engage) - capital-intensive infrastructure / global commerce. */

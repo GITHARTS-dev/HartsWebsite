@@ -21,6 +21,9 @@ export type Service = {
   titleStrong?: string;
   line: string;
   voice: string;
+  /** Headline shown above the "How We Deliver This" section on the service
+   *  detail page. Per-service so the page doesn't read as boilerplate. */
+  deliveryHeading: string;
   subs: ServiceSub[];
   /** Service-specific BOT prose - three paragraphs, one per phase. */
   bot: { build: string; operate: string; transfer: string; names?: [string, string, string] };
@@ -35,13 +38,14 @@ export const services: Service[] = [
     num: "01",
     color: "green",
     title: "OD & Implementation",
-    titleSoft: "OD &",
+    titleSoft: "Organisation Design &",
     titleStrong: "Implementation",
     line: "Operating structures, leadership capability, and workforce systems built to scale with you.",
     voice:
       "Organisation design without implementation is wallpaper. We do both - because a beautiful org chart that nobody follows is worse than no org chart at all.",
+    deliveryHeading: "Built around your structure, not a template.",
     subs: [
-      { label: "Organization Structure & Role Design", desc: "Design reporting structures, accountability models, and role frameworks aligned to operational scale and business strategy." },
+      { label: "Organisation Structure & Role Design", desc: "Design reporting structures, accountability models, and role frameworks aligned to operational scale and business strategy." },
       { label: "Workforce Capability Development", desc: "Identify capability gaps and implement structured development programs that improve performance, retention, and leadership readiness." },
       { label: "Talent Acquisition Strategy", desc: "Build scalable hiring models, employer positioning, and recruitment operations designed for growth-stage and transformation environments." },
       { label: "Leadership Development Programs", desc: "Develop future-ready leaders through structured learning, operational exposure, and transformation-focused leadership initiatives." },
@@ -51,16 +55,16 @@ export const services: Service[] = [
     bot: {
       names: ["Assess & Align", "Design & Execute", "Embed & Sustain"],
       build:
-        "We evaluate your organizational structure, operating model, and strategic objectives while aligning key stakeholders around the desired future state.",
+        "We evaluate your organisational structure, operating model, and strategic objectives while aligning key stakeholders around the desired future state.",
       operate:
         "We develop practical solutions and implement them through structured change, governance, and execution plans.",
       transfer:
         "We build internal ownership, monitor adoption, and ensure improvements are sustained over the long term.",
     },
     ctx: {
-      setup: "Design the organization from the ground up including structure, leadership roles, workforce planning, and operating governance.",
+      setup: "Design the organisation from the ground up including structure, leadership roles, workforce planning, and operating governance.",
       develop: "Strengthen existing teams through capability assessment, leadership development, and performance alignment.",
-      scaleup: "Replicate proven organizational models across new regions, business units, and operational environments.",
+      scaleup: "Replicate proven organisational models across new regions, business units, and operational environments.",
     },
     keywords: [
       "organisational design consulting",
@@ -81,9 +85,10 @@ export const services: Service[] = [
     title: "Centre of Excellence",
     titleSoft: "Centre of",
     titleStrong: "Excellence",
-    line: "Operational excellence functions that standardize delivery and accelerate execution across the enterprise.",
+    line: "An operational backbone that standardizes delivery across the enterprise.",
     voice:
       "Everyone sells process mining tools. We build the team that makes those tools actually work. The tool is 20% of the value. The people running it are the other 80%.",
+    deliveryHeading: "From concept to operating centre.",
     subs: [
       { label: "Transformation Governance & Change Management", desc: "Establish governance structures, communication frameworks, and transformation controls that keep strategic initiatives aligned and accountable." },
       {
@@ -137,11 +142,12 @@ export const services: Service[] = [
     num: "03",
     color: "orange",
     title: "Post M&A Integration",
-    titleSoft: "Post M&A",
+    titleSoft: "Post Mergers & Acquisitions",
     titleStrong: "Integration",
-    line: "Stabilize operations, integrate teams, and accelerate synergy realization through mergers and acquisitions.",
+    line: "Stabilize operations, integrate teams, and turn deal logic into operating reality.",
     voice:
       "Most consultants hand you a 200-slide integration plan and leave. We stay. We run the first 100 days because that's when deals are won or lost.",
+    deliveryHeading: "From deal close to operational reality.",
     subs: [
       { label: "100-Day Integration Program", desc: "Build and execute a structured post-merger integration roadmap covering governance, operational priorities, leadership alignment, and synergy milestones." },
       { label: "Integration Management Office", desc: "Establish the governance structure, reporting cadence, escalation framework, and execution controls required to manage complex integration programs." },
@@ -178,13 +184,14 @@ export const services: Service[] = [
     num: "04",
     color: "red",
     title: "GCC & Shared Services",
-    titleSoft: "GCC &",
+    titleSoft: "Global Capability Centre &",
     titleStrong: "Shared Services",
-    line: "Establish, operationalize, and scale Global Capability Centers with embedded governance and execution control.",
+    line: "Stand up, run, and transfer a Global Capability Centre. Build-Operate-Transfer in practice.",
     voice:
       "I spent 14 years building and running Metro's global solution centre. This isn't theory - it's knowledge forged in practice.",
+    deliveryHeading: "Build. Operate. Transfer. In sequence.",
     subs: [
-      { label: "GCC Operating Model & Governance Design", desc: "Define the organizational structure, governance framework, service catalogue, delivery model, and performance standards required to run a scalable GCC operation." },
+      { label: "GCC Operating Model & Governance Design", desc: "Define the organisational structure, governance framework, service catalogue, delivery model, and performance standards required to run a scalable GCC operation." },
       { label: "Workforce Ramp-Up & Operational Readiness", desc: "Build scalable recruitment, onboarding, workforce planning, and operational enablement programs aligned to delivery demand and business priorities." },
       { label: "Regulated & Enterprise-Grade Delivery Environments", desc: "Establish compliance-ready GCC operations for regulated industries including healthcare, financial services, manufacturing, and utilities." },
     ],
@@ -194,7 +201,7 @@ export const services: Service[] = [
       operate:
         "Run the GCC alongside enterprise stakeholders while stabilizing operations, embedding governance, and achieving delivery maturity.",
       transfer:
-        "Transition operational ownership, leadership capability, governance structures, and delivery accountability into the client organization.",
+        "Transition operational ownership, leadership capability, governance structures, and delivery accountability into the client organisation.",
     },
     ctx: {
       setup: "Support greenfield GCC establishment from location strategy and workforce planning through operational launch and early-stage stabilization.",
@@ -220,9 +227,10 @@ export const services: Service[] = [
     title: "Recruitment as a Service",
     titleSoft: "Recruitment",
     titleStrong: "as a Service",
-    line: "Scalable talent acquisition and workforce ramp-up programs built for rapid growth.",
+    line: "Scalable hiring and workforce ramp-up, built for rapid growth.",
     voice:
       "Recruitment isn't an HR function. It's a strategic capability. We build it like one.",
+    deliveryHeading: "From workforce brief to embedded team.",
     subs: [
       { label: "Talent Acquisition Strategy & Hiring Operations", desc: "Design scalable hiring processes, sourcing strategies, employer positioning, and recruitment operations aligned to workforce growth objectives." },
       { label: "Managed Recruitment Delivery", desc: "Run end-to-end recruitment operations including sourcing, screening, pipeline management, hiring governance, and workforce reporting." },
@@ -262,20 +270,21 @@ export const services: Service[] = [
     title: "Executive Coaching & Board Advisory",
     titleSoft: "Executive Coaching &",
     titleStrong: "Board Advisory",
-    line: "Leadership advisory through strategic decision-making, alignment, and high-impact transformation.",
+    line: "Independent counsel for leaders carrying the weight of decisive change.",
     voice:
       "Transformation is lonely at the top. We've sat in that chair. We know what it feels like when the board wants answers and the organisation isn't moving.",
+    deliveryHeading: "Grounded in your context, not a programme.",
     subs: [
-      { label: "Executive Leadership Advisory", desc: "Support senior leaders through organizational change, operational scaling, strategic uncertainty, and high-stakes decision environments." },
+      { label: "Executive Leadership Advisory", desc: "Support senior leaders through organisational change, operational scaling, strategic uncertainty, and high-stakes decision environments." },
       { label: "Board & Strategic Governance Advisory", desc: "Provide independent advisory support for boards and executive teams navigating mergers, restructuring, operational transformation, and enterprise risk." },
       { label: "Leadership Alignment & Decision Facilitation", desc: "Align leadership teams around priorities, governance cadence, operational accountability, and enterprise execution decisions." },
-      { label: "Transformation Leadership Support", desc: "Help executives lead large-scale organizational change through structured advisory, communication alignment, and execution governance."},
-      { label: "Executive Capability & Succession Readiness", desc: "Develop leadership capability, succession preparedness, and decision maturity for growing organizations and scaling enterprises."}
+      { label: "Transformation Leadership Support", desc: "Help executives lead large-scale organisational change through structured advisory, communication alignment, and execution governance."},
+      { label: "Executive Capability & Succession Readiness", desc: "Develop leadership capability, succession preparedness, and decision maturity for growing organisations and scaling enterprises."}
     ],
     bot: {
       names: ["Assess & Understand", "Advise & Develop", "Enable & Accelerate"],
       build:
-        "We identify leadership priorities, organizational challenges, and strategic objectives.",
+        "We identify leadership priorities, organisational challenges, and strategic objectives.",
       operate:
         "We provide tailored coaching, insights, and guidance to strengthen leadership effectiveness.",
       transfer:
@@ -283,8 +292,8 @@ export const services: Service[] = [
     },
     ctx: {
       setup: "Support newly formed leadership teams through strategic alignment, governance establishment, and operational decision structure.",
-      develop: "Resolve leadership friction, improve decision cadence, and strengthen executive accountability during organizational growth.",
-      scaleup: "Help scaling organizations expand leadership capability, preserve operational alignment, and maintain governance discipline across growth phases.",
+      develop: "Resolve leadership friction, improve decision cadence, and strengthen executive accountability during organisational growth.",
+      scaleup: "Help scaling organisations expand leadership capability, preserve operational alignment, and maintain governance discipline across growth phases.",
     },
     keywords: [
       "executive coaching India",

@@ -13,7 +13,23 @@ const SERVICES = [
   "GCC",
   "Leadership Pipeline",
   "Automation Strategy",
-  "Organization Design",
+  "Organisation Design",
+  "Other",
+];
+
+const INDUSTRIES = [
+  "Banking, Financial Services & Insurance",
+  "Consumer Goods & Retail",
+  "Energy, Oil & Gas",
+  "Healthcare & Life Sciences",
+  "Industrial Manufacturing",
+  "Information Technology & Software",
+  "Logistics & Transportation",
+  "Media & Telecommunications",
+  "Private Equity & Investment",
+  "Professional Services",
+  "Public Sector & Non-Profit",
+  "Real Estate & Construction",
   "Other",
 ];
 
@@ -30,13 +46,14 @@ export function ContactForm() {
 
     const form = e.currentTarget;
     const data = {
-      name:    (form.elements.namedItem("name")    as HTMLInputElement).value,
-      email:   (form.elements.namedItem("email")   as HTMLInputElement).value,
-      company: (form.elements.namedItem("company") as HTMLInputElement).value,
-      role:    (form.elements.namedItem("role")    as HTMLInputElement).value,
-      phone:   (form.elements.namedItem("phone")   as HTMLInputElement).value,
-      service: (form.elements.namedItem("service") as HTMLSelectElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      name:     (form.elements.namedItem("name")     as HTMLInputElement).value,
+      email:    (form.elements.namedItem("email")    as HTMLInputElement).value,
+      company:  (form.elements.namedItem("company")  as HTMLInputElement).value,
+      role:     (form.elements.namedItem("role")     as HTMLInputElement).value,
+      phone:    (form.elements.namedItem("phone")    as HTMLInputElement).value,
+      industry: (form.elements.namedItem("industry") as HTMLSelectElement).value,
+      service:  (form.elements.namedItem("service")  as HTMLSelectElement).value,
+      message:  (form.elements.namedItem("message")  as HTMLTextAreaElement).value,
     };
 
     try {
@@ -103,9 +120,19 @@ export function ContactForm() {
             <input type="text" name="role" placeholder="e.g. Chief Operating Officer" />
           </label>
 
-          <label className="apply-full">
-            Phone Number <span aria-hidden="true">*</span>
-            <input type="tel" name="phone" placeholder="+91 000 000 0000" required />
+          <label>
+            Phone Number
+            <input type="tel" name="phone" placeholder="+91 000 000 0000" />
+          </label>
+
+          <label>
+            Industry / Sector <span aria-hidden="true">*</span>
+            <select name="industry" required defaultValue="">
+              <option value="" disabled>Select your sector</option>
+              {INDUSTRIES.map((i) => (
+                <option key={i} value={i}>{i}</option>
+              ))}
+            </select>
           </label>
         </div>
       </fieldset>

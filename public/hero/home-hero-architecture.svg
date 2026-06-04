@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <defs>
+    <!-- Deep navy → near-black vertical wash -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1024"/>
+      <stop offset="55%" stop-color="#0A0E1A"/>
+      <stop offset="100%" stop-color="#080B14"/>
+    </linearGradient>
+
+    <!-- Soft warm glow originating from upper-right (suggests interior light) -->
+    <radialGradient id="glow" cx="0.78" cy="0.32" r="0.58">
+      <stop offset="0%"  stop-color="#E7473C" stop-opacity="0.22"/>
+      <stop offset="45%" stop-color="#E7473C" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#E7473C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Cool counter-light from upper-left, very subtle, adds atmospheric depth -->
+    <radialGradient id="cool" cx="0.12" cy="0.18" r="0.55">
+      <stop offset="0%"  stop-color="#5B7AA8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#5B7AA8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Fade mask: vertical strokes fade out at top and bottom -->
+    <linearGradient id="strokeFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#fff" stop-opacity="0"/>
+      <stop offset="22%"  stop-color="#fff" stop-opacity="1"/>
+      <stop offset="78%"  stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="vfade">
+      <rect width="1920" height="1080" fill="url(#strokeFade)"/>
+    </mask>
+  </defs>
+
+  <!-- 1. Base wash -->
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <!-- 2. Far-field vertical "facade" strokes — receding glass tower feel.
+       Slightly clustered toward the right where the visual weight lives. -->
+  <g stroke="#FFFFFF" stroke-width="0.6" stroke-opacity="0.05" mask="url(#vfade)">
+    <line x1="120"  y1="0" x2="120"  y2="1080"/>
+    <line x1="180"  y1="0" x2="180"  y2="1080"/>
+    <line x1="244"  y1="0" x2="244"  y2="1080"/>
+    <line x1="312"  y1="0" x2="312"  y2="1080"/>
+    <line x1="386"  y1="0" x2="386"  y2="1080"/>
+    <line x1="466"  y1="0" x2="466"  y2="1080"/>
+    <line x1="552"  y1="0" x2="552"  y2="1080"/>
+    <line x1="646"  y1="0" x2="646"  y2="1080"/>
+    <line x1="748"  y1="0" x2="748"  y2="1080"/>
+    <line x1="858"  y1="0" x2="858"  y2="1080"/>
+    <line x1="976"  y1="0" x2="976"  y2="1080"/>
+    <line x1="1100" y1="0" x2="1100" y2="1080"/>
+    <line x1="1228" y1="0" x2="1228" y2="1080"/>
+    <line x1="1360" y1="0" x2="1360" y2="1080"/>
+    <line x1="1494" y1="0" x2="1494" y2="1080"/>
+    <line x1="1628" y1="0" x2="1628" y2="1080"/>
+    <line x1="1762" y1="0" x2="1762" y2="1080"/>
+    <line x1="1894" y1="0" x2="1894" y2="1080"/>
+  </g>
+
+  <!-- 3. Mid-field stronger verticals — closer building edges -->
+  <g stroke="#FFFFFF" stroke-width="1.1" stroke-opacity="0.085" mask="url(#vfade)">
+    <line x1="312"  y1="0" x2="312"  y2="1080"/>
+    <line x1="646"  y1="0" x2="646"  y2="1080"/>
+    <line x1="976"  y1="0" x2="976"  y2="1080"/>
+    <line x1="1360" y1="0" x2="1360" y2="1080"/>
+    <line x1="1628" y1="0" x2="1628" y2="1080"/>
+  </g>
+
+  <!-- 4. Foreground tower edge — single confident vertical, brand red, glowing -->
+  <g>
+    <line x1="1450" y1="40" x2="1450" y2="1040"
+          stroke="#E7473C" stroke-width="2" stroke-opacity="0.55"/>
+    <line x1="1450" y1="40" x2="1450" y2="1040"
+          stroke="#E7473C" stroke-width="6" stroke-opacity="0.18"/>
+    <line x1="1450" y1="40" x2="1450" y2="1040"
+          stroke="#E7473C" stroke-width="14" stroke-opacity="0.06"/>
+  </g>
+
+  <!-- 5. Architectural diagonal — single sweeping line evoking trajectory / build -->
+  <g stroke="#E7473C" stroke-opacity="0.42" stroke-linecap="round">
+    <line x1="1080" y1="980" x2="1880" y2="240" stroke-width="1.4"/>
+  </g>
+  <g stroke="#E7473C" stroke-opacity="0.12" stroke-linecap="round">
+    <line x1="1080" y1="980" x2="1880" y2="240" stroke-width="6"/>
+  </g>
+
+  <!-- 6. Horizon line — quiet, near the lower third — anchors composition -->
+  <line x1="0" y1="780" x2="1920" y2="780"
+        stroke="#FFFFFF" stroke-width="0.7" stroke-opacity="0.06"/>
+
+  <!-- 7. Constellation of small dots — distant building windows lit at dusk.
+       Concentrated on the right to keep weight off the headline. -->
+  <g fill="#E7473C" fill-opacity="0.55">
+    <circle cx="1492" cy="320" r="1.6"/>
+    <circle cx="1492" cy="412" r="1.6"/>
+    <circle cx="1492" cy="556" r="1.6"/>
+    <circle cx="1492" cy="704" r="1.6"/>
+    <circle cx="1492" cy="828" r="1.6"/>
+    <circle cx="1628" cy="296" r="1.4"/>
+    <circle cx="1628" cy="468" r="1.4"/>
+    <circle cx="1628" cy="612" r="1.4"/>
+    <circle cx="1762" cy="380" r="1.2"/>
+    <circle cx="1762" cy="540" r="1.2"/>
+    <circle cx="1762" cy="700" r="1.2"/>
+    <circle cx="1360" cy="350" r="1.2"/>
+    <circle cx="1360" cy="520" r="1.2"/>
+    <circle cx="1228" cy="640" r="1.0"/>
+    <circle cx="1100" cy="420" r="1.0"/>
+  </g>
+
+  <!-- 8. Warm glow on top (above strokes so it kisses the lit window cluster) -->
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+
+  <!-- 9. Subtle cool counter-light -->
+  <rect width="1920" height="1080" fill="url(#cool)"/>
+</svg>

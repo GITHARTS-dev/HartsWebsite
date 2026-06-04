@@ -8,19 +8,35 @@
   gap: clamp(18px, 3vw, 42px);
   min-height: 72px;
   padding: 0 5vw;
-  /* Solid, near-opaque header - readable on any background. */
+  /* Liquid Glass material — modelled on the iOS 26 system bar.
+       1. Layered background gradient: a brighter specular band at the
+          top fading to a slightly cooler middle and back up at the
+          bottom; this is the "light catching the curved edge" of glass.
+       2. Heavy backdrop-filter with saturation + brightness boost —
+          the saturate gives content beneath that iridescent pop;
+          the brightness lifts the highlight so the bar reads premium
+          even on dark backgrounds.
+       3. Multi-stop box-shadow: a hairline white specular at the very
+          top edge, a soft inner glow, then a wide diffuse drop so the
+          bar "floats" instead of being painted on.
+       4. Border-bottom is a very faint white — the glass rim — not the
+          previous red accent line, which read as a UI separator. */
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.96) 0%,
-      rgba(248, 248, 248, 0.94) 100%
+      rgba(255, 255, 255, 0.52) 0%,
+      rgba(255, 255, 255, 0.42) 50%,
+      rgba(255, 255, 255, 0.48) 100%
     );
-  border-bottom: 1px solid rgba(231, 71, 60, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 8px 24px rgba(20, 20, 20, 0.06);
-  backdrop-filter: blur(18px) saturate(150%);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 22px rgba(255, 255, 255, 0.18),
+    0 12px 36px rgba(20, 20, 20, 0.10),
+    0 1px 2px rgba(20, 20, 20, 0.04);
+  isolation: isolate;
+  backdrop-filter: blur(32px) saturate(180%) brightness(1.04);
+  -webkit-backdrop-filter: blur(32px) saturate(180%) brightness(1.04);
 }
 
 .brand {

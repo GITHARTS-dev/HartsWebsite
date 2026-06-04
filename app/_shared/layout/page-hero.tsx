@@ -37,6 +37,9 @@ export type PageHeroProps = {
    *  text to the left over a red-to-transparent gradient layered on the scene image. */
   layout?: "center" | "split";
   actions?: ReactNode;
+  /** Optional inline scene art rendered above the static image layer.
+   *  Used by the home hero for an animated SVG composition. Decorative. */
+  sceneArt?: ReactNode;
 };
 
 export function PageHero({
@@ -48,6 +51,7 @@ export function PageHero({
   scene = "default",
   layout = "center",
   actions,
+  sceneArt,
 }: PageHeroProps) {
   return (
     <section
@@ -57,6 +61,11 @@ export function PageHero({
       <div className="page-hero-scene" aria-hidden="true">
         <div className="page-hero-scene-layer page-hero-scene-image" />
         <div className="page-hero-scene-layer page-hero-scene-grid" />
+        {sceneArt ? (
+          <div className="page-hero-scene-layer page-hero-scene-art">
+            {sceneArt}
+          </div>
+        ) : null}
         <div className="page-hero-scene-layer page-hero-scene-veil" />
       </div>
 

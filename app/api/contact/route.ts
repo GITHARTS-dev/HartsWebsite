@@ -30,6 +30,7 @@ type ContactRequestBody = {
   email?: unknown;
   phone?: unknown;
   country?: unknown;
+  sector?: unknown;
   service?: unknown;
   message?: unknown;
   website?: unknown;
@@ -52,6 +53,7 @@ async function readContactBody(request: Request): Promise<ContactRequestBody> {
     country: formData.get("country"),
     service: formData.get("service"),
     message: formData.get("message"),
+    sector:  formData.get("sector"),
     website: formData.get("website"),
   };
 }
@@ -86,6 +88,7 @@ export async function POST(request: Request) {
     const email   = capLength(fieldToString(body.email),   MAX.email).toLowerCase();
     const phone   = capLength(fieldToString(body.phone),   MAX.phone);
     const country = capLength(fieldToString(body.country), 100);
+    const sector  = capLength(fieldToString(body.sector),  120);
     const service = capLength(fieldToString(body.service), MAX.service);
     const message = capLength(fieldToString(body.message), MAX.message);
 
@@ -133,6 +136,7 @@ export async function POST(request: Request) {
         role:    role    || null,
         phone:   phone   || "Not provided",
         country: country || "Not provided",
+        sector:  sector  || null,
         service: service || "General inquiry",
         message,
       })
@@ -149,6 +153,7 @@ export async function POST(request: Request) {
     const eRole    = escapeHtml(role);
     const ePhone   = escapeHtml(phone);
     const eCountry = escapeHtml(country);
+    const eSector  = escapeHtml(sector);
     const eService = escapeHtml(service);
     const eMessage = escapeHtml(message);
 
@@ -172,6 +177,7 @@ export async function POST(request: Request) {
             ${eRole ? `<tr><td style="padding:8px 0;color:#475569;">Role</td><td style="padding:8px 0;color:#111827;">${eRole}</td></tr>` : ""}
             ${ePhone ? `<tr><td style="padding:8px 0;color:#475569;">Phone</td><td style="padding:8px 0;color:#111827;">${ePhone}</td></tr>` : ""}
             ${eCountry ? `<tr><td style="padding:8px 0;color:#475569;">Country</td><td style="padding:8px 0;color:#111827;">${eCountry}</td></tr>` : ""}
+            ${eSector  ? `<tr><td style="padding:8px 0;color:#475569;">Sector</td><td style="padding:8px 0;color:#111827;">${eSector}</td></tr>` : ""}
             ${eService ? `<tr><td style="padding:8px 0;color:#475569;">Service</td><td style="padding:8px 0;color:#111827;">${eService}</td></tr>` : ""}
           </table>
           <div style="margin-top:18px;">

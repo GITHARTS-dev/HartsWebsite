@@ -105,26 +105,26 @@ export function AboutPage() {
         <div className="au-story-shell">
           <div className="au-story-copy">
             <p className="eyebrow">Our story</p>
-            <h2>Built for the moments where progress matters.</h2>
+            {/* <h2>Built for the moments where progress matters.</h2> */}
             <p>
-              HARTS is a consulting partner for organisations navigating growth, change, and critical business decisions. We work closely with leadership teams to strengthen operations, build capabilities, integrate acquisitions, and drive sustainable performance.
+              HARTS is a consulting and execution partner that helps organizations navigate growth, transformation, and change with confidence. We work closely with leadership teams to solve complex challenges, accelerate progress, and build the foundations for long-term success.
             </p>
             <p>
-              Our team combines strategic insight, operational expertise, and practical execution to help organisations move forward with confidence. We don't just advise we work alongside our clients to deliver measurable results, build internal capability, and create lasting value.
+              Our approach combines strategic insight, operational discipline, and practical execution. Rather than delivering recommendations from a distance, we collaborate closely with our clients to implement solutions, strengthen internal capabilities, and drive measurable outcomes.
             </p>
           </div>
           <ul className="au-story-pillars">
             <li>
-              <strong>Strategic clarity</strong>
-              <span>Sharper choices, calmer execution.</span>
+              <strong>Strategic Clarity</strong>
+              <span>Sharper decisions guided by insight and experience.</span>
             </li>
             <li>
-              <strong>Operating discipline</strong>
-              <span>Decisions translated into running cadence.</span>
+              <strong>Execution Excellence</strong>
+              <span>Turning priorities into disciplined action.</span>
             </li>
             <li>
-              <strong>Capability transfer</strong>
-              <span>Your teams own the outcome long after we leave.</span>
+              <strong>Lasting Capability</strong>
+              <span>Building the skills and systems that sustain success.</span>
             </li>
           </ul>
         </div>

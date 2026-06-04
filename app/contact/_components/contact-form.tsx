@@ -3,6 +3,32 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+const SECTORS = [
+  "Aerospace & Defense",
+  "Agribusiness",
+  "Automotive",
+  "Chemicals",
+  "Construction & Infrastructure",
+  "Consumer Products",
+  "Financial Services",
+  "Healthcare & Life Sciences",
+  "Industrial Machinery & Equipment",
+  "Media & Entertainment",
+  "Metals",
+  "Mining",
+  "Oil & Gas",
+  "Paper & Packaging",
+  "Private Equity",
+  "Retail",
+  "Social Impact",
+  "Technology",
+  "Telecommunications",
+  "Transportation",
+  "Travel & Leisure",
+  "Utilities & Renewables",
+  "Other",
+];
+
 const SERVICES = [
   "Strategy & Advisory",
   "Operational Transformation",
@@ -69,13 +95,14 @@ type FormFields = {
   role: string;
   phone: string;
   country: string;
+  sector: string;
   service: string;
   message: string;
 };
 
 const EMPTY: FormFields = {
   name: "", email: "", company: "", role: "",
-  phone: "", country: "", service: "", message: "",
+  phone: "", country: "", sector: "", service: "", message: "",
 };
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -228,11 +255,10 @@ export function ContactForm() {
           </label>
 
           <label>
-            Phone Number <span aria-hidden="true">*</span>
+            Phone Number
             <input
               type="tel" name="phone"
               value={fields.phone} onChange={(e) => update("phone", e.target.value)}
-              required
             />
           </label>
 
@@ -255,6 +281,19 @@ export function ContactForm() {
       <fieldset className="apply-fieldset">
         <legend>Your inquiry</legend>
         <div className="apply-grid">
+          <label>
+            Sector / Industry
+            <select
+              name="sector"
+              value={fields.sector} onChange={(e) => update("sector", e.target.value)}
+            >
+              <option value="" disabled>Select your sector</option>
+              {SECTORS.map((s) => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
+          </label>
+
           <label>
             Support Needed <span aria-hidden="true">*</span>
             <select

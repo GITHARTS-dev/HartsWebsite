@@ -30,8 +30,8 @@ export function CareersPage() {
           <p>
             We hire people who&apos;ve done the work, not people who&apos;ve studied it. HARTS
             runs on radical clarity, disciplined thinking, and a bias to ship. If you&apos;ve
-            built, scaled, or turned something around - and you want to do that work for the
-            clients we serve - we should talk.
+            built, scaled, or turned something around and you want to do that work for the
+            clients we serve we should talk.
           </p>
         </div>
       </section>

@@ -8,7 +8,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/where-you-stand", label: "Where You Stand" },
   { href: "/what-we-deliver", label: "What We Deliver" },
-  { href: "/about-us", label: "About Us" },
+  { href: "/about-us", label: "Who We are" },
 ];
 
 export function SiteHeader() {

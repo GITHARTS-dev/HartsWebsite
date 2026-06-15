@@ -28,10 +28,7 @@ export function CareersPage() {
           <p className="eyebrow">Culture</p>
           <h2>Shape the Future of Consulting.</h2>
           <p>
-            We hire people who&apos;ve done the work, not people who&apos;ve studied it. HARTS
-            runs on radical clarity, disciplined thinking, and a bias to ship. If you&apos;ve
-            built, scaled, or turned something around and you want to do that work for the
-            clients we serve we should talk.
+            At HARTS, we work with talented professionals who are passionate about solving business challenges and delivering meaningful results. We value collaboration, practical thinking, and a commitment to excellence.
           </p>
         </div>
       </section>
@@ -44,21 +41,21 @@ export function CareersPage() {
               HARTS is not actively recruiting for any roles at the moment.
               New opportunities will be published on this page as they open.
             </p>
-            <p>
+            {/* <p>
               If you believe your experience aligns with the way we work, we
               welcome you to share your profile with our talent team. Every
               submission is reviewed, and we will reach out when a suitable
               opportunity arises.
-            </p>
+            </p> */}
         </div>
       </section>
 
-      <FinalCTA
+      {/* <FinalCTA
         eyebrow="Stay Connected"
         heading="Introduce yourself before the next opening goes live."
         body="Share your profile and a short note on how you can contribute. We will reach out when a role aligns with your experience."
         primary={{ label: "Send Your Interest", href: "/contact?source=careers" }}
-      />
+      /> */}
     </main>
   );
 }

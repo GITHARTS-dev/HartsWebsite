@@ -159,7 +159,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to:   "rajmadhan296@gmail.com",
+      to:   "info@globalharts.com",
       subject: `New Inquiry from ${eName} — HARTS Website`,
       html: `
         <div style="font-family:Arial,sans-serif;color:#111827;line-height:1.6;max-width:600px;">

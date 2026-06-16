@@ -201,8 +201,8 @@ export function ContactForm() {
         <div className="apply-success-check" aria-hidden="true">✓</div>
         <h3>Inquiry received</h3>
         <p>
-          Thank you. A senior HARTS consultant will review your inquiry and get
-          back to you within one business day.
+          Thank you for contacting us. we will review your inquiry and
+          respond at the earliest opportunity.
         </p>
       </div>
     );

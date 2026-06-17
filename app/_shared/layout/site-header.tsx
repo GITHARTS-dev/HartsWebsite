@@ -14,6 +14,13 @@ const navItems = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Auto-close menu on route change.
   useEffect(() => {
@@ -41,7 +48,7 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return (
-    <header className={`site-header${menuOpen ? " site-header--menu-open" : ""}`}>
+    <header className={`site-header${scrolled ? " site-header--scrolled" : ""}${menuOpen ? " site-header--menu-open" : ""}`}>
       {/* Scrim only exists while the drawer is open. Mounting it conditionally
           avoids a permanently DOM-present <button> intercepting taps on some
           mobile browsers, and removes any chance of the `hidden` attribute

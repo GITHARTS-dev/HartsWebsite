@@ -64,7 +64,7 @@ export default function ContactRoute() {
           <div className="contact-form-block reveal">
             <div className="contact-form-header">
               <h2>Send Us Your Inquiry</h2>
-              <p>Share your challenge and a consultanting team will respond within one business day.</p>
+              <p>Share your challenge and our consultanting team will respond within one business day.</p>
             </div>
             <ContactForm />
           </div>

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: ['127.0.0.1', '192.168.29.131'],
+  allowedDevOrigins: ['127.0.0.1', '192.168.29.131', '172.28.192.1'],
 
   // Build a self-contained server bundle. Required for the Docker image we
   // push to ECR / run on Fargate / App Runner — copies only the deps the

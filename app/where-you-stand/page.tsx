@@ -9,7 +9,7 @@ import { stages } from "../_data/stages";
 import { getService } from "../_data/services";
 
 export const metadata: Metadata = {
-  title: "Your Stage: Setup, Develop, Scale Up",
+  title: "Where You Stand: Setup, Develop, Scale Up",
   description:
     "HARTS organises around your stage of operational maturity, not your industry. Setup, Develop, Scale Up. Three moments, one disciplined partner.",
   alternates: { canonical: "/where-you-stand" },

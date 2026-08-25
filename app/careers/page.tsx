@@ -4,7 +4,7 @@ import { PageShell } from "../_shared/layout/page-shell";
 import { CareersPage } from "./_components/careers-page";
 
 export const metadata: Metadata = {
-  title: "Careers at HARTS Consulting | Consulting Jobs in India",
+  title: "Careers: Consulting Jobs in India",
   description:
     "Consulting jobs at HARTS. Senior roles for strategists, operators, and technologists in Coimbatore, Bengaluru, Dubai, and Düsseldorf. Open positions across Strategy & Transformation, GCC & Shared Services, and People & Talent.",
   keywords: [

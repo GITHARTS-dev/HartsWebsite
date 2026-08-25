@@ -21,7 +21,7 @@ const offices = [
 ];
 
 export const metadata: Metadata = {
-  title: "Contact HARTS Consulting | Coimbatore & Düsseldorf",
+  title: "Contact: Coimbatore & Düsseldorf",
   description:
     "Contact HARTS Consulting, a strategy and transformation consulting firm with offices in Coimbatore (India) and Düsseldorf (Germany). Email hello@globalharts.com to start a senior-led conversation about your operating model, integration, GCC setup, or capability build.",
   keywords: [

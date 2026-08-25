@@ -33,10 +33,69 @@ const nextConfig = {
 
   // Permanent redirects for renamed routes so existing bookmarks and
   // search-engine-cached links don't 404.
+  //
+  // The second block maps the pre-2026 manufacturing/sourcing site (WordPress,
+  // same domain) onto the consulting site. Those URLs are still in Google's
+  // index and still drive the sitelinks under a "harts" search, so every one
+  // of them has to answer 308 -> nearest live page instead of 404. Remove an
+  // entry only once Search Console shows zero impressions for it.
   async redirects() {
     return [
       { source: '/where-we-deliver', destination: '/where-you-stand', permanent: true },
       { source: '/where-we-deliver/:path*', destination: '/where-you-stand/:path*', permanent: true },
+
+      // --- legacy site: company ---
+      { source: '/about', destination: '/about-us', permanent: true },
+      { source: '/about-harts', destination: '/about-us', permanent: true },
+      { source: '/contact-us', destination: '/contact', permanent: true },
+
+      // --- legacy site: offering pages -> the consulting service index ---
+      // /services had children (/services/capabilities, /services/innai,
+      // /services/our-services), so the :path* rule collapses the whole
+      // subtree rather than mapping it onto /what-we-deliver/:slug, which
+      // would just 404 again on a slug that no longer exists.
+      { source: '/services', destination: '/what-we-deliver', permanent: true },
+      { source: '/services/:path*', destination: '/what-we-deliver', permanent: true },
+      { source: '/capabilities', destination: '/what-we-deliver', permanent: true },
+      { source: '/capabilities/:path*', destination: '/what-we-deliver', permanent: true },
+      { source: '/consulting', destination: '/what-we-deliver', permanent: true },
+      { source: '/consulting/:path*', destination: '/what-we-deliver', permanent: true },
+      { source: '/consulting-service', destination: '/what-we-deliver', permanent: true },
+      { source: '/engineering-services', destination: '/what-we-deliver', permanent: true },
+      { source: '/electronics', destination: '/what-we-deliver', permanent: true },
+      { source: '/electronics/:path*', destination: '/what-we-deliver', permanent: true },
+      { source: '/innai', destination: '/what-we-deliver', permanent: true },
+      { source: '/innai/:path*', destination: '/what-we-deliver', permanent: true },
+      { source: '/expert-fabrication', destination: '/what-we-deliver', permanent: true },
+      { source: '/expert-fabrication/:path*', destination: '/what-we-deliver', permanent: true },
+      { source: '/sheet-metal', destination: '/what-we-deliver', permanent: true },
+      { source: '/machining', destination: '/what-we-deliver', permanent: true },
+      { source: '/castings', destination: '/what-we-deliver', permanent: true },
+      { source: '/manufacturing-lines-and-sites', destination: '/what-we-deliver', permanent: true },
+      { source: '/manufacturing-lines-and-sites/:path*', destination: '/what-we-deliver', permanent: true },
+
+      // WordPress left a duplicate About page behind at /about-2.
+      { source: '/about-2', destination: '/about-us', permanent: true },
+
+      // --- legacy site: sections with no successor on the consulting site ---
+      // Nothing on the new site covers a news archive, so these land on the
+      // homepage. Google may still class a homepage redirect as a soft 404;
+      // that is fine here -- the point is that a visitor arriving from a
+      // stale result sees the company, not an error.
+      { source: '/news', destination: '/', permanent: true },
+      { source: '/news/:path*', destination: '/', permanent: true },
+      { source: '/blog', destination: '/', permanent: true },
+      { source: '/blog/:path*', destination: '/', permanent: true },
+      { source: '/category/:path*', destination: '/', permanent: true },
+      { source: '/tag/:path*', destination: '/', permanent: true },
+      { source: '/author/:path*', destination: '/', permanent: true },
+      // Old posts also sat at the root, not under /news — e.g.
+      // /lets-connect-in-hannover. Root-level slugs can't be pattern-matched
+      // without swallowing the real routes, so anything not listed here falls
+      // through to app/not-found.tsx, which returns a real 404 with links to
+      // the live sections. Add a rule here if Search Console reports traffic
+      // on a specific one.
+      { source: '/lets-connect-in-hannover', destination: '/', permanent: true },
     ];
   },
 

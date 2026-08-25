@@ -8,7 +8,7 @@ import { ServiceIcon, ArrowIcon } from "../_shared/icons";
 import { services } from "../_data/services";
 
 export const metadata: Metadata = {
-  title: "What We Deliver Six Consulting Services",
+  title: "What We Deliver: Six Consulting Services",
   description:
     "Six end-to-end consulting services: OD & Implementation, Centre of Excellence, Post M&A Integration, GCC & Shared Services, Recruitment as a Service, and Executive Coaching.",
   alternates: { canonical: "/what-we-deliver" },

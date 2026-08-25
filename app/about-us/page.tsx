@@ -4,7 +4,7 @@ import { AboutPage } from "./_components/about-page";
 import { siteUrl } from "../_lib/site";
 
 export const metadata: Metadata = {
-  title: "About HARTS Consulting | Leadership & Founding Story",
+  title: "Who We Are: About HARTS Leadership & Founding Story",
   description:
     "HARTS is a senior team of strategists, operators, and technologists who close the distance between strategic intent and operational reality. Meet our leadership.",
   alternates: { canonical: "/about-us" },

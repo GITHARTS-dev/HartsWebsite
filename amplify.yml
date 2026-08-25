@@ -14,7 +14,7 @@ frontend:
         # Writing them into .env.production bakes them into the deployed bundle
         # so Next.js can read them at runtime. If this line fails the build, the
         # variable names in the Amplify console do not match the names below.
-        - env | grep -E '^(SUPABASE_URL|SUPABASE_SERVICE_ROLE_KEY|RESEND_API_KEY|NEXT_PUBLIC_SITE_URL)=' >> .env.production
+        - env | grep -E '^(SUPABASE_URL|SUPABASE_SERVICE_ROLE_KEY|RESEND_API_KEY|RESEND_FROM|MAIL_TO|NEXT_PUBLIC_SITE_URL)=' >> .env.production
         # Print only the NAMES that were captured — never the values, since
         # build logs are readable by anyone with console access.
         - cut -d= -f1 .env.production

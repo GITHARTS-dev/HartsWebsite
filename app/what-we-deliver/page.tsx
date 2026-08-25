@@ -34,7 +34,7 @@ export default function WhatWeDeliverRoute() {
           subtitle="We work alongside your team and stay until the change runs. Pick the engagement that fits the work in front of you."
           actions={
             <Link className="solid-button large" href="/contact">
-              Talk to a partner
+              Connect With HARTS
             </Link>
           }
         />
@@ -76,7 +76,7 @@ export default function WhatWeDeliverRoute() {
         <FinalCTA
           heading={<>Not sure which one fits? <em>Start with where you are.</em></>}
           body="Tell us the moment your organisation is in. We will come back with the service mix that actually fits."
-          primary={{ label: "Talk to a partner", href: "/contact" }}
+          primary={{ label: "Connect With HARTS", href: "/contact" }}
           secondary={{ label: "See the Three Stages", href: "/where-you-stand" }}
         />
       </main>

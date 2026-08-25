@@ -11,7 +11,7 @@ export type ServiceSub = {
   children?: ServiceSubChild[];
 };
 
-export type Service = {
+type ServiceBase = {
   slug: string;
   num: string;
   color: ServiceColor;
@@ -20,6 +20,21 @@ export type Service = {
   titleSoft?: string;
   titleStrong?: string;
   line: string;
+};
+
+/**
+ * A sector we have named but not yet entered. Carries no delivery content by
+ * design — the detail page renders the hero only. Nothing here may describe
+ * capabilities, methodology, or outcomes that do not exist yet.
+ */
+type UpcomingService = ServiceBase & {
+  upcoming: true;
+  /** Single paragraph shown in the hero. State the intent, nothing more. */
+  upcomingNote: string;
+};
+
+type DeliveredService = ServiceBase & {
+  upcoming?: false;
   voice: string;
   /** Headline shown above the "How We Deliver This" section on the service
    *  detail page. Per-service so the page doesn't read as boilerplate. */
@@ -31,6 +46,8 @@ export type Service = {
   /** SEO keywords targeted by this service's detail page. */
   keywords: string[];
 };
+
+export type Service = DeliveredService | UpcomingService;
 
 export const services: Service[] = [
   {
@@ -305,6 +322,18 @@ export const services: Service[] = [
       "executive coaching for transformation",
       "leadership development coaching",
     ],
+  },
+  {
+    slug: "manufacturing",
+    num: "07",
+    color: "orange",
+    title: "Manufacturing",
+    titleSoft: "Manufacturing",
+    titleStrong: "On our horizon.",
+    line: "A sector HARTS is preparing to move into.",
+    upcoming: true,
+    upcomingNote:
+      "Manufacturing is a sector HARTS is preparing to move into as the firm grows. We are not taking on manufacturing engagements at this stage. As this work takes shape, the detail will be published here.",
   },
 ];
 

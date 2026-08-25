@@ -23,12 +23,14 @@ export async function generateMetadata({ params }: ServiceRouteProps): Promise<M
   }
 
   const canonical = `/what-we-deliver/${service.slug}`;
-  const description = `${service.line} ${siteName} delivers ${service.title} end-to-end as an embedded partner.`;
+  const description = service.upcoming
+    ? service.upcomingNote
+    : `${service.line} ${siteName} delivers ${service.title} end-to-end as an embedded partner.`;
 
   return {
     title: service.title,
     description,
-    keywords: service.keywords,
+    keywords: service.upcoming ? undefined : service.keywords,
     alternates: { canonical },
     openGraph: {
       title: `${service.title} | ${siteName}`,
@@ -53,30 +55,34 @@ export default async function ServiceRoute({ params }: ServiceRouteProps) {
 
   const canonical = `${siteUrl}/what-we-deliver/${service.slug}`;
 
-  const serviceJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${canonical}#service`,
-    name: service.title,
-    serviceType: service.title,
-    description: service.line,
-    provider: { "@id": `${siteUrl}/#organization` },
-    url: canonical,
-    areaServed: ["IN", "AE", "GB", "US"],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: `${service.title} sub-capabilities`,
-      itemListElement: service.subs.map((sub, idx) => ({
-        "@type": "Offer",
-        position: idx + 1,
-        itemOffered: {
-          "@type": "Service",
-          name: sub.label,
-          description: sub.desc,
+  // No Service schema for a sector we haven't entered — publishing one would
+  // advertise an offering that doesn't exist.
+  const serviceJsonLd = service.upcoming
+    ? null
+    : {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${canonical}#service`,
+        name: service.title,
+        serviceType: service.title,
+        description: service.line,
+        provider: { "@id": `${siteUrl}/#organization` },
+        url: canonical,
+        areaServed: ["IN", "AE", "GB", "US"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: `${service.title} sub-capabilities`,
+          itemListElement: service.subs.map((sub, idx) => ({
+            "@type": "Offer",
+            position: idx + 1,
+            itemOffered: {
+              "@type": "Service",
+              name: sub.label,
+              description: sub.desc,
+            },
+          })),
         },
-      })),
-    },
-  };
+      };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -100,10 +106,12 @@ export default async function ServiceRoute({ params }: ServiceRouteProps) {
 
   return (
     <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
+      {serviceJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

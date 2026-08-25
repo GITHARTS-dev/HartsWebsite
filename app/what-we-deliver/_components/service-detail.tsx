@@ -11,6 +11,42 @@ const PHASE_NUMS = ["01", "02", "03"] as const;
 const PHASE_KEYS: PhaseKey[] = ["build", "operate", "transfer"];
 
 export function ServiceDetail({ service }: { service: Service }) {
+  // Sectors we haven't entered yet get the hero and nothing else. There is no
+  // delivery content to show, and inventing any would misrepresent the firm.
+  if (service.upcoming) {
+    return (
+      <main className="ed-page">
+        <section className="ed-detail-hero ed-detail-hero--solo">
+          <div className="ed-shell">
+            <nav className="ed-breadcrumb" aria-label="Breadcrumb">
+              <Link href="/what-we-deliver">What We Deliver</Link>
+              <span className="sep">/</span>
+              <span className="cur">{service.num} · {service.title}</span>
+            </nav>
+
+            <div className="ed-detail-headline">
+              <div className="ed-detail-mark" aria-hidden="true">
+                <ServiceIcon slug={service.slug} size={28} strokeWidth={1.7} />
+              </div>
+              <div>
+                <h1>
+                  {service.titleSoft && <span className="soft">{service.titleSoft}</span>}
+                  <span className="strong">{service.titleStrong ?? service.title}</span>
+                </h1>
+                <p className="ed-detail-line">{service.upcomingNote}</p>
+                <div className="ed-detail-actions">
+                  <Link className="solid-button" href="/contact#inquiry">
+                    Connect With HARTS
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   const phaseNames: [string, string, string] =
     service.bot.names ?? ["Build", "Operate", "Transfer"];
 
@@ -171,7 +207,7 @@ export function ServiceDetail({ service }: { service: Service }) {
 
           <div className="ed-detail-actions" style={{ marginTop: 32 }}>
             <Link className="outline-button" href="/contact#inquiry">
-              Connect With Us
+              Connect With HARTS
             </Link>
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function WhereYouStandRoute() {
           subtitle="Three stages of operational maturity. We organise around the moment your business is in, not the sector it operates in."
           actions={
             <Link className="solid-button large" href="/contact">
-              Talk to a partner
+              Connect With HARTS
             </Link>
           }
         />
@@ -123,7 +123,7 @@ export default function WhereYouStandRoute() {
         <FinalCTA
           heading={<>Tell us <em>where you are.</em></>}
           body="A short conversation is faster than a brochure. We will come back with the engagement model that fits the stage you are in."
-          primary={{ label: "Talk to a partner", href: "/contact" }}
+          primary={{ label: "Connect With HARTS", href: "/contact" }}
           secondary={{ label: "What We Deliver", href: "/what-we-deliver" }}
         />
       </main>

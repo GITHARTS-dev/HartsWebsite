@@ -202,7 +202,7 @@ export function HomeExperience() {
         eyebrow="Partner With HARTS"
         heading={<>Navigate transformation <em>with confidence.</em></>}
         body="The future belongs to organisations that adapt, evolve, and lead with clarity. HARTS helps businesses move forward with intelligent strategy and connected transformation."
-        primary={{ label: "Connect With Us", href: "/contact" }}
+        primary={{ label: "Connect With HARTS", href: "/contact" }}
       />
     </main>
   );

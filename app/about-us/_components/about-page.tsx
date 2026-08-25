@@ -95,7 +95,7 @@ export function AboutPage() {
         actions={
           <>
             <Link className="solid-button large" href="/contact">
-              Connect with HARTS
+              Connect With HARTS
             </Link>
           </>
         }

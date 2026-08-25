@@ -26,6 +26,7 @@ import {
   Lightbulb,
   MessageSquare,
   Rocket,
+  Factory,
 } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
 
@@ -36,6 +37,7 @@ const serviceIconMap = {
   "gcc-and-shared-services": Globe2,
   "recruitment-as-a-service": UserPlus,
   "executive-coaching": Compass,
+  manufacturing: Factory,
 } as const;
 
 export function ServiceIcon({

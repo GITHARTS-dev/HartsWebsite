@@ -20,14 +20,15 @@ export const siteTagline =
  * This line carries the search title instead.
  */
 export const siteCategory =
-  "Management Consulting in India & Germany";
+  "Global Management Consulting Firm";
 
-// Leads with the category and where HARTS operates, then names the actual
-// services. Search engines lift the opening clause for the result snippet, so
-// the identifying sentence has to come first and survive truncation at ~160
-// characters.
+// Leads with the category, then who HARTS is, then the actual services. Search
+// engines lift the opening clause for the result snippet, so the identifying
+// sentence has to come first and survive truncation at ~160 characters. The
+// office cities live on /contact and in the JSON-LD address, not here — naming
+// them in the site-wide description reads as a two-country firm.
 export const siteDescription =
-  "HARTS Consulting is a management consulting firm in India and Germany — organisational design, post-merger integration, Global Capability Centres, and executive advisory.";
+  "HARTS Consulting is a global management consulting firm of senior strategists and operators — organisational design, post-merger integration, Global Capability Centres, and executive advisory.";
 
 export const ogImagePath = "/HARTS Consulting LBG.png";
 

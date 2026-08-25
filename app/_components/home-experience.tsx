@@ -88,9 +88,9 @@ export function HomeExperience() {
         scene="home"
         layout="split"
         eyebrow="Strategy. Transformation. Clarity."
-        titleSoft="A management consulting firm for when transformation"
-        titleStrong="has to work."
-        subtitle="HARTS partners with leadership teams across India and Germany on organisational design, post-merger integration, Global Capability Centres, and executive advisory — six consulting services, delivered end to end."
+        titleSoft="Transformation that drives"
+        titleStrong="Real Impact."
+        subtitle="We partner with organisations to design, build and scale capabilities that deliver measurable outcomes - today and for the future."
         actions={
           <Link className="solid-button large" href="/contact">
             Start a Conversation

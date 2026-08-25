@@ -6,7 +6,7 @@ import { siteUrl } from "../_lib/site";
 export const metadata: Metadata = {
   title: "Who We Are: About HARTS Leadership & Founding Story",
   description:
-    "HARTS Consulting is a management consulting firm with offices in Coimbatore, India and Düsseldorf, Germany. Meet the senior team of strategists, operators, and technologists behind it.",
+    "HARTS Consulting is a global management consulting firm. Meet the senior strategists, operators, and technologists behind it — working from India and Germany with clients across Europe, the Gulf, and North America.",
   alternates: { canonical: "/about-us" },
   openGraph: {
     title: "About HARTS Consulting",

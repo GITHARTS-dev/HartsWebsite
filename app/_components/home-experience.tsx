@@ -88,9 +88,9 @@ export function HomeExperience() {
         scene="home"
         layout="split"
         eyebrow="Strategy. Transformation. Clarity."
-        titleSoft="When restructuring, integration, or transformation"
+        titleSoft="A management consulting firm for when transformation"
         titleStrong="has to work."
-        subtitle="Standing beside leaders and their teams as they build the structures, capabilities, and confidence to navigate what comes next."
+        subtitle="HARTS partners with leadership teams across India and Germany on organisational design, post-merger integration, Global Capability Centres, and executive advisory — six consulting services, delivered end to end."
         actions={
           <Link className="solid-button large" href="/contact">
             Start a Conversation

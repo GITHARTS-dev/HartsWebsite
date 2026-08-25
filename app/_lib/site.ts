@@ -13,8 +13,21 @@ export const siteName = "HARTS Consulting";
 export const siteTagline =
   "Strategy. Transformation. Clarity.";
 
+/**
+ * What HARTS *is*, in the plainest words available. siteTagline is brand voice
+ * and reads well on a social card, but it never says "consulting firm" — so a
+ * search result for "harts" gave a reader nothing to identify the company by.
+ * This line carries the search title instead.
+ */
+export const siteCategory =
+  "Management Consulting in India & Germany";
+
+// Leads with the category and where HARTS operates, then names the actual
+// services. Search engines lift the opening clause for the result snippet, so
+// the identifying sentence has to come first and survive truncation at ~160
+// characters.
 export const siteDescription =
-  "HARTS partners with senior leadership teams to navigate complexity, accelerate transformation, and deliver measurable outcomes across strategy, operations, and digital enablement.";
+  "HARTS Consulting is a management consulting firm in India and Germany — organisational design, post-merger integration, Global Capability Centres, and executive advisory.";
 
 export const ogImagePath = "/HARTS Consulting LBG.png";
 

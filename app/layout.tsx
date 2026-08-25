@@ -18,6 +18,7 @@ import {
   organization,
   siteDescription,
   siteName,
+  siteCategory,
   siteTagline,
   siteUrl,
 } from "./_lib/site";
@@ -26,7 +27,7 @@ import { homepageKeywords } from "./_lib/keywords";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} | ${siteTagline}`,
+    default: `${siteName} | ${siteCategory}`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,

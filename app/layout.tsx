@@ -72,11 +72,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: "/logo (1).png",
-    shortcut: "/logo (1).png",
-    apple: "/logo (1).png",
-  },
   category: "business",
   other: {
     "format-detection": "telephone=no",

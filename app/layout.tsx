@@ -73,6 +73,9 @@ export const metadata: Metadata = {
     },
   },
   category: "business",
+  verification: {
+    google: "6vpWxEQL1kUKnJnWafeNGI0ItkMcGDU7tI-_ktpBl_U",
+  },
   other: {
     "format-detection": "telephone=no",
   },

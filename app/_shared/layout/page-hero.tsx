@@ -7,29 +7,9 @@ export type PageHeroProps = {
   subtitle?: ReactNode;
   watermark?: string;
   scene?:
-    | "default"
     | "home"
     | "about"
-    | "industries"
-    | "industry-aerospace"
-    | "industry-automotive"
-    | "industry-oil-gas"
-    | "industry-healthcare"
-    | "industry-chemicals"
-    | "industry-life-sciences"
-    | "industry-energy"
-    | "industry-technology"
-    | "industry-telecom"
-    | "industry-transportation"
     | "how-we-help"
-    | "service-innovation"
-    | "service-mergers-acquisitions"
-    | "service-operation"
-    | "service-strategy"
-    | "service-transformation"
-    | "service-gcc-setup"
-    | "service-sustainability"
-    | "service-people-and-organization"
     | "how-we-work"
     | "careers"
     | "contact";
@@ -48,7 +28,7 @@ export function PageHero({
   titleStrong,
   subtitle,
   watermark = "CACHE",
-  scene = "default",
+  scene = "home",
   layout = "center",
   actions,
   sceneArt,
